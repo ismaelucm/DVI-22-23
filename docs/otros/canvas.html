@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Canvas</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../juegosweb.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Canvas</h1>
+</section>
+
+<section>
+<section id="el-elemento-canvas" class="title-slide slide level1">
+<h1>El elemento <code class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code></h1>
+
+</section>
+<section id="canvas" class="slide level2">
+<h2><code class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code></h2>
+<ul>
+<li>Introducido en HTML5</li>
+<li>Nos permite pintar gráficos 2D o 3D usando JavaScript</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">&lt;canvas</span><span class="ot"> width=</span><span class="st">&quot;320&quot;</span><span class="ot"> height=</span><span class="st">&quot;200&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span></code></pre></div>
+</section>
+<section id="escalado" class="slide level2">
+<h2>Escalado</h2>
+<p>Las dimensiones del canvas no tienen por qué corresponderse con las dimensiones en pantalla</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>canvas {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="kw">width</span>: <span class="dv">640</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="kw">height</span>: <span class="dv">480</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>}</span></code></pre></div>
+<p><small>Podemos usar esto a nuestro favor y jugar con los escalados, o adaptar nuestro juego a distintos tamaños de pantalla. Ejemplo: <a href="https://belenalbeza.com/retro-crisp-pixel-art-in-html-5-games/">Retro, crisp pixel art in HTML5 games</a></small></p>
+</section>
+<section id="contextos" class="slide level2">
+<h2>Contextos</h2>
+<p>Para hacer cualquier operación de pintado, necesitamos el <strong>contexto</strong> de un <code class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code></p>
+<p>Lo obtenemos con <code class="sourceCode javascript">getContext</code>, al que debemos indicar si lo queremos 2D o 3D</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">var</span> c <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&#39;canvas&#39;</span>)<span class="op">.</span><span class="fu">getContext</span>(<span class="st">&#39;2d&#39;</span>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="canvas-api" class="slide level2">
+<h2>Canvas API</h2>
+<ul>
+<li>Es la API de dibujo 2D en canvas</li>
+<li>Permite pintar imágenes, manipular píxeles, dibujar primitivas, curvas, etc</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Documentación en la MDN</a></li>
+<li><a href="http://joshondesign.com/p/books/canvasdeepdive/toc.html">Canvas Deep Dive</a> (libro online conciso, pero bastante completo)</li>
+</ul>
+</section>
+<section id="ejemplo" class="slide level2">
+<h2>Ejemplo</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">var</span> ctx <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&#39;canvas&#39;</span>)<span class="op">.</span><span class="fu">getContext</span>(<span class="st">&#39;2d&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>ctx<span class="op">.</span><span class="fu">fillRect</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">100</span>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="canvas_ex01.png" alt="Screenshot" /><figcaption aria-hidden="true">Screenshot</figcaption>
+</figure>
+<p><small><a href="https://jsfiddle.net/nea366Lm/">Snippet de código</a> online.</small></p>
+</section>
+<section id="colores-bordes-etc" class="slide level2">
+<h2>Colores, bordes, etc</h2>
+<ul>
+<li>Es similar a cómo funciona un programa de dibujo</li>
+<li>En el <strong>contexto</strong> indicamos los estilos que queremos que las “herramientas” (operaciones) usen</li>
+<li>¡Ojo que hay que “deshacer”!</li>
+</ul>
+</section>
+<section id="ejemplo-1" class="slide level2">
+<h2>Ejemplo</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">// red rectangles</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>ctx<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="st">&#39;#FF004D&#39;</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>ctx<span class="op">.</span><span class="fu">fillRect</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>ctx<span class="op">.</span><span class="fu">fillRect</span>(<span class="dv">190</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="co">// blue rect with white border</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>ctx<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="st">&#39;rgba(41, 173, 255, 0.8)&#39;</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>ctx<span class="op">.</span><span class="fu">fillRect</span>(<span class="dv">50</span><span class="op">,</span> <span class="dv">50</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>ctx<span class="op">.</span><span class="at">strokeStyle</span> <span class="op">=</span> <span class="st">&#39;#fff&#39;</span><span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>ctx<span class="op">.</span><span class="at">lineWidth</span> <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>ctx<span class="op">.</span><span class="fu">strokeRect</span>(<span class="dv">50</span><span class="op">,</span> <span class="dv">50</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">100</span>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="canvas_ex02.png" alt="Screenshot" /><figcaption aria-hidden="true">Screenshot</figcaption>
+</figure>
+<p><small><a href="https://jsfiddle.net/x8knv6w3/2/">Snippet de código</a> online.</small></p>
+</section>
+<section id="imágenes" class="slide level2">
+<h2>Imágenes</h2>
+<ul>
+<li>Las imágenes deben estar <strong>ya cargadas</strong> (por ejemplo con <code class="sourceCode html"><span class="kw">&lt;img&gt;</span></code>) para poder pintarlas</li>
+<li>Podemos obtener <em>sources</em> de imágenes de otros medios: la webcam del usuario, un <code class="sourceCode html"><span class="kw">&lt;video&gt;</span></code>, otro <code class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code>, etc</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;kitten.png&quot;</span><span class="ot"> alt=</span><span class="st">&quot;A cute kitten&quot;</span><span class="ot"> id=</span><span class="st">&quot;kitten&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="kw">&lt;canvas</span><span class="ot"> width=</span><span class="st">&quot;300&quot;</span><span class="ot"> height=</span><span class="st">&quot;300&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">var</span> img <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;kitten&#39;</span>)<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="kw">var</span> ctx <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&#39;canvas&#39;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="op">.</span><span class="fu">getContext</span>(<span class="st">&#39;2d&#39;</span>)<span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>ctx<span class="op">.</span><span class="fu">drawImage</span>(img<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="canvas_ex03.png" alt="Screenshot" /><figcaption aria-hidden="true">Screenshot</figcaption>
+</figure>
+<p><small><a href="https://jsfiddle.net/j4hbb46h/1/">Snippet de código</a> online</small></p>
+</section>
+<section id="cargar-imágenes-al-vuelo" class="slide level2">
+<h2>Cargar imágenes al vuelo</h2>
+<p>Podemos cargar imágenes al vuelo <strong>desde JavaScript</strong></p>
+<ol type="1">
+<li>Usamos el constructor <strong><code class="sourceCode javascript">Image</code></strong></li>
+<li>Nos subscribimos al evento de <strong><code class="sourceCode javascript">load</code></strong> (para pintar la imagen cuando se haya producido)</li>
+<li>Establecemos el atributo <strong><code class="sourceCode html">src</code></strong> de la imagen para iniciar la carga</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">var</span> img <span class="op">=</span> <span class="kw">new</span> <span class="fu">Image</span>()<span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>img<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;load&#39;</span><span class="op">,</span> <span class="kw">function</span> () {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    ctx<span class="op">.</span><span class="fu">drawImage</span>(img<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>})<span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>img<span class="op">.</span><span class="at">src</span> <span class="op">=</span> <span class="st">&#39;https://placekitten.com/g/300/300&#39;</span><span class="op">;</span></span></code></pre></div>
+<p><small><a href="https://jsfiddle.net/Lm56dcb6/">Snippet de código</a> online</small></p>
+</section>
+<section id="sobre-la-carga-de-imágenes" class="slide level2">
+<h2>Sobre la carga de imágenes</h2>
+<ul>
+<li>Las <code class="sourceCode html"><span class="kw">&lt;img&gt;</span></code> con el estilo <code class="sourceCode html">display:none</code> se siguen cargando igualmente</li>
+<li><code class="sourceCode javascript"><span class="bu">window</span><span class="op">.</span><span class="at">onload</span></code> se dispara cuando las imágenes creadas con <code class="sourceCode html"><span class="kw">&lt;img&gt;</span></code> se han cargado</li>
+<li>Para precargar varias imágenes, se suelen utilizar <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promesas</a>, o bien un contador para detectar cuándo se han cargado todas</li>
+</ul>
+</section>
+<section id="qué-más-se-puede-hacer-con-la-api" class="slide level2">
+<h2>Qué más se puede hacer con la API</h2>
+<ul>
+<li>Dibujar curvas y paths complejos</li>
+<li>Pintar gradientes</li>
+<li>Clipping</li>
+<li>Transformaciones</li>
+<li>Manipular píxeles</li>
+<li>¡Y más!</li>
+</ul>
+</section>
+<section id="webgl" class="slide level2">
+<h2>WebGL</h2>
+<ul>
+<li>Implementación en JavaScript de OpenGL ES 2.0</li>
+<li>Es una API estándar de gráficos 3D</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">Documentación MDN</a></li>
+<li>Para pedir un contexto 3D a <code class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code> debemos especificar <strong><code class="sourceCode javascript">webgl</code></strong><sup>1</sup> en <code class="sourceCode javascript">getContext</code></li>
+</ul>
+<p><small>1. O <code class="sourceCode html">experimental-webgl</code> en algunos navegadores.</small></p>
+</section>
+<section id="gráficos-2d-en-webgl" class="slide level2">
+<h2>¿Gráficos 2D en WebGL?</h2>
+<ul>
+<li>Podemos dibujar gráficos 2D usando una API 3D como WebGL</li>
+<li>El “truco” es utilizar una proyección ortográfica, que no deforme los objetos con perspectiva</li>
+</ul>
+</section>
+<section id="recursos" class="slide level2">
+<h2>Recursos</h2>
+<ul>
+<li><em>Introduction to WebGL</em> <a href="https://dev.opera.com/articles/introduction-to-webgl-part-1/">parte 1</a> y <a href="https://dev.opera.com/articles/introduction-to-webgl-part-2-porting-3d/">parte 2</a></li>
+<li><a href="http://webglfundamentals.org/">WebGL fundamentals</a>: tutoriales paso a paso</li>
+</ul>
+</section></section>
+<section>
+<section id="librerías" class="title-slide slide level1">
+<h1>Librerías</h1>
+
+</section>
+<section id="d-pixi.js" class="slide level2">
+<h2>2D: Pixi.js</h2>
+<ul>
+<li><a href="http://www.pixijs.com/">www.pixijs.com</a></li>
+<li>Renderiza gráficos 2D</li>
+<li>Funciona por defecto con WebGL, pero tiene fallback a Canvas 2D</li>
+<li>Phaser utiliza Pixi para renderizar gráficos</li>
+</ul>
+</section>
+<section id="d-three.js" class="slide level2">
+<h2>3D: THREE.js</h2>
+<ul>
+<li><a href="https://threejs.org/">THREE.js</a></li>
+<li>Es la librería de referencia para trabajar con WebGL</li>
+<li>Hay infinidad de tutoriales, libros, etc</li>
+</ul>
+</section></section>
+<section>
+<section id="animaciones" class="title-slide slide level1">
+<h1>Animaciones</h1>
+
+</section>
+<section id="cómo-animar-gráficos" class="slide level2">
+<h2>¿Cómo animar gráficos?</h2>
+<ul>
+<li>Necesitamos renderizar 60 veces por segundo (idealmente)</li>
+<li><strong><code class="sourceCode javascript">setTimeout</code></strong> y <code class="sourceCode javascript">setInterval</code> <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout#Reasons_for_delays_longer_than_specified"><em>no</em> nos sirven</a></li>
+<li><strong><code class="sourceCode javascript">requestAnimationFrame</code></strong> FTW</li>
+</ul>
+</section>
+<section id="requestanimationframe" class="slide level2">
+<h2><code class="sourceCode javascript">requestAnimationFrame</code></h2>
+<ul>
+<li>Proporcionamos un <strong>callback</strong> con nuestras operaciones de dibujo</li>
+<li>Se llama automáticamente la siguiente vez que el navegador <strong><em>pueda</em> pintar</strong> en pantalla</li>
+<li>Si llamamos a <code class="sourceCode javascript">requstAnimationFrame</code> cada vez que acabamos de pintar, establecemos un <strong>bucle</strong></li>
+</ul>
+</section>
+<section id="ejemplo-2" class="slide level2">
+<h2>Ejemplo</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">render</span>() {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    ctx<span class="op">.</span><span class="fu">clearRect</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> canvas<span class="op">.</span><span class="at">width</span><span class="op">,</span> canvas<span class="op">.</span><span class="at">height</span>)<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    ctx<span class="op">.</span><span class="fu">fillRect</span>(x<span class="op">,</span> <span class="dv">25</span><span class="op">,</span> <span class="dv">50</span><span class="op">,</span> <span class="dv">50</span>)<span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>  x <span class="op">=</span> (x <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> canvas<span class="op">.</span><span class="at">width</span><span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>  <span class="fu">requestAnimationFrame</span>(render)<span class="op">;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>}</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a><span class="fu">requestAnimationFrame</span>(render)<span class="op">;</span></span></code></pre></div>
+<ul>
+<li><a href="https://jsfiddle.net/oxx3h8dp/2/">Snippet de código</a> con <code class="sourceCode javascript">requestAnimationFrame</code></li>
+<li><a href="https://jsfiddle.net/m92kpe4n/2/">Snippet de código</a> con <code class="sourceCode javascript">setInterval</code></li>
+</ul>
+</section>
+<section id="tiempo-delta" class="slide level2">
+<h2>Tiempo delta</h2>
+<ul>
+<li><code class="sourceCode javascript">requestAnimationFrame</code> pasa un <strong>timestamp</strong> como parámetro al callback</li>
+<li>El timestamp es el tiempo en <strong>milisegundos</strong> desde que se llamó por primera vez</li>
+<li>El timestamp se obtiene con <code class="sourceCode javascript"><span class="bu">Performance</span><span class="op">.</span><span class="fu">now</span>()</code> (más eficiente y preciso que construir un <code class="sourceCode javascript"><span class="bu">Date</span></code>)</li>
+<li>Con este timestamp podemos calcular el tiempo que ha pasado entre este frame y el anterior (<strong>delta time</strong>)</li>
+</ul>
+</section>
+<section id="ejemplo-3" class="slide level2">
+<h2>Ejemplo</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">const</span> SPEED <span class="op">=</span> <span class="dv">60</span><span class="op">;</span> <span class="co">// pixels per second</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="kw">var</span> oldTimestamp <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">render</span>(timestamp) {</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>  <span class="kw">var</span> delta <span class="op">=</span> (timestamp <span class="op">-</span> oldTimestamp) <span class="op">/</span> <span class="fl">1000.0</span><span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>  oldTimestamp <span class="op">=</span> timestamp<span class="op">;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a>  <span class="co">// ..</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a>  x <span class="op">=</span> (x <span class="op">+</span> SPEED <span class="op">*</span> delta) <span class="op">%</span> canvas<span class="op">.</span><span class="at">width</span><span class="op">;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true"></a>  <span class="fu">requestAnimationFrame</span>(render)<span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true"></a>}</span></code></pre></div>
+<p><small><a href="https://jsfiddle.net/0e11fv91/2/">Snippet de código</a> online</small></p>
+</section>
+<section id="consideraciones-con-el-tiempo-delta" class="slide level2">
+<h2>Consideraciones con el tiempo delta</h2>
+<ul>
+<li><em>Siempre</em> tenéis que poner una <strong>cota</strong> al valor del tiempo delta (por ejemplo 250ms) para evitar glitches en la lógica del juego</li>
+<li>A veces es recomendable saltarse el <em>update</em> de nuestro juego un frame</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/search/search.js"></script>
+  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="../reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

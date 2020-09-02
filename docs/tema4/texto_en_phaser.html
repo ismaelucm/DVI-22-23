@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Texto en Phaser</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../juegosweb.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Texto en Phaser</h1>
+</section>
+
+<section>
+<section id="crear-texto-usando-fuentes-del-sistema" class="title-slide slide level1">
+<h1>Crear texto usando fuentes del sistema</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Para crear texto simplemente podemos usar la clase <code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Text</span></code> con la factoría de Phaser <code class="sourceCode javascript">add<span class="op">.</span><span class="at">text</span></code> de <code class="sourceCode javascript">Scene</code></p>
+</section>
+<section class="slide level2">
+
+<p>Pero podemos modificar los atributos de <code class="sourceCode javascript">text</code> para cambiar su aspecto como:</p>
+<ul>
+<li><code class="sourceCode javascript">setAlign</code>: alineación del texto</li>
+<li><code class="sourceCode javascript">setFont</code>: tipo de letra</li>
+<li><code class="sourceCode javascript">setFontSize</code>: tamaño</li>
+<li><code class="sourceCode javascript">setStroke</code>: color del borde y grosor</li>
+<li><code class="sourceCode javascript">setFill</code>: color de relleno</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">// this es una `Scene`</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="kw">let</span> text <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="kw">this</span><span class="op">.</span><span class="at">cameras</span><span class="op">.</span><span class="at">main</span><span class="op">.</span><span class="at">centerX</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">cameras</span><span class="op">.</span><span class="at">main</span><span class="op">.</span><span class="at">centerY</span><span class="op">,</span> <span class="st">&#39;- phaser text stroke -&#39;</span>)<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">// alineación del texto</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>text<span class="op">.</span><span class="fu">setAlign</span>(<span class="st">&#39;center&#39;</span>)<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">// Font style</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>text<span class="op">.</span><span class="fu">setFont</span>(<span class="st">&#39;Arial Black&#39;</span>)<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>text<span class="op">.</span><span class="fu">setFontSize</span>(<span class="dv">50</span>)<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="co">//Color del reborde de la letra y grosor.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>text<span class="op">.</span><span class="fu">setStroke</span>(<span class="st">&#39;#000000&#39;</span><span class="op">,</span> <span class="dv">6</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>text<span class="op">.</span><span class="fu">setFill</span>(<span class="st">&#39;#43d637&#39;</span>)<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>text<span class="op">.</span><span class="fu">setShadow</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="st">&#39;rgba(0,0,0,0.5)&#39;</span><span class="op">,</span> <span class="dv">5</span>)<span class="op">;</span></span></code></pre></div>
+</section></section>
+<section>
+<section id="problema-de-las-fuentes-del-sistema" class="title-slide slide level1">
+<h1>Problema de las fuentes del sistema</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Una fuente de nuestra máquina puede no estar disponible en la máquina del usuario</p>
+<p>¿Solución? Usar fuentes estándar, crear nuestras propias fuentes de mapa de bits (bitmaps) o usar fuentes Web (<strong>webfonts</strong>) como <a href="https://fonts.google.com/">Google Fonts</a></p>
+</section>
+<section id="texto-con-fuentes-de-mapa-de-bits" class="slide level2">
+<h2>Texto con fuentes de mapa de bits</h2>
+<p>Para cargar un fuente de mapa de bits hay que usar <code class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>()</code> en el <code class="sourceCode javascript">preload</code></p>
+<p>Hay que pasarle el bitmap (en <a href="https://es.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>, por ejemplo) con las fuentes y el XML que las describe</p>
+</section>
+<section class="slide level2">
+
+<p>Para generar el XML y el mapa de bits podemos usar:</p>
+<ul>
+<li><a href="http://kvazars.com/littera/">Littera</a></li>
+<li><a href="http://www.angelcode.com/products/bmfont/">Bmfont</a> (Windows)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">preload</span>(){</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>        <span class="st">&#39;bitmapFont&#39;</span><span class="op">,</span> <span class="st">&#39;assets/fonts/bitmapFonts/bitmapFont.png&#39;</span><span class="op">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        <span class="st">&#39;assets/fonts/bitmapFonts/bitmapFont.xml&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="fu">create</span>(){</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">greeting</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">bitmapText</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="st">&#39;bitmapFont&#39;</span><span class="op">,</span><span class="st">&#39;Bitmap Fonts!&#39;</span><span class="op">,</span> <span class="dv">64</span>)<span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>}</span></code></pre></div>
+</section></section>
+<section>
+<section id="texto-con-fuentes-web" class="title-slide slide level1">
+<h1>Texto con fuentes Web</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Podemos cargar fuentes desde la web, por ejemplo desde Google Fonts</p>
+<p>Hay que cargar la fuente previamente antes de usarla</p>
+</section>
+<section class="slide level2">
+
+<p>Cargamos el código para usar webfonts:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="fu">preload</span>() {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">script</span>(<span class="st">&#39;webfont&#39;</span><span class="op">,</span> <span class="st">&#39;https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js&#39;</span>)<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Después, llamamos a <code class="sourceCode javascript">WebFont<span class="op">.</span><span class="fu">load</span>()</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="fu">create</span>() {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    WebFont<span class="op">.</span><span class="fu">load</span>({</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>        <span class="dt">google</span><span class="op">:</span> {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>            <span class="dt">families</span><span class="op">:</span> [ <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="st">&#39;Finger Paint&#39;</span><span class="op">,</span> <span class="st">&#39;Nosifer&#39;</span> ]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>        }<span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>        <span class="dt">active</span><span class="op">:</span> <span class="kw">function</span> () <span class="co">// se llama a esta función cuando está cargada</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>        {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>            <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>                <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="dv">16</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>                    <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>                    { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>            nuevoTexto<span class="op">.</span><span class="fu">setShadow</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="st">&quot;#333333&quot;</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>        }</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>    })<span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="problemas-de-las-google-fonts-u-otras-fuentes-web" class="slide level2">
+<h2>¿Problemas de las Google Fonts u otras fuentes Web?</h2>
+<p>Que dependemos de ellas para que el juego funcione y no tenemos control sobre ellas</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/search/search.js"></script>
+  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="../reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

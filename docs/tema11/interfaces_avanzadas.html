@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Interfaces de usuario web avanzadas</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../juegosweb.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Interfaces de usuario web avanzadas</h1>
+</section>
+
+<section>
+<section id="librerías-para-interfaz-web" class="title-slide slide level1">
+<h1>Librerías para interfaz web</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Modificar el DOM directamente es tedioso</p>
+</section>
+<section class="slide level2">
+
+<p>Hay modelos de ingeniería software que han demostrado ser muy útiles para gestionar interfaces</p>
+<p>El API del DOM no es, precisamente, uno de ellos</p>
+</section>
+<section class="slide level2">
+
+<p>Por eso, y gracias a la evolución de los navegadores, la máquina virtual JS y el lenguaje en sí, existen librerías que nos permiten hacer interfaces</p>
+</section>
+<section id="alternativas-para-interfaces-web" class="slide level2">
+<h2>Alternativas para interfaces web</h2>
+<p><a href="https://angular.io/"><code>Angular</code></a> (de Google), <a href="https://reactjs.org/"><code>React</code></a> (de Facebook) y <a href="https://vuejs.org/"><code>Vue.js</code></a> son algunas de las más usadas</p>
+</section>
+<section class="slide level2">
+
+<p>Vamos a ver una introducción a los principios básicos de una versión ligera de <code>React</code> (<code>Preact</code>)</p>
+</section></section>
+<section>
+<section id="react" class="title-slide slide level1">
+<h1>React</h1>
+
+</section>
+<section class="slide level2">
+
+<p>React es una librería creada por Facebook en 2013, y mantenida desde entonces por Facebook y la comunidad (se publica como código abierto)</p>
+</section>
+<section class="slide level2">
+
+<p>El desarrollo está muy activo, y es uno de los proyecto más usados para crear interfaces</p>
+<p>En particular, <a href="https://facebook.com" class="uri">https://facebook.com</a> usa React</p>
+</section>
+<section id="dom-virtual" class="slide level2">
+<h2>DOM Virtual</h2>
+<p>Veremos que React construye un árbol DOM cuando creamos componentes</p>
+<p>Sin embargo, React hace uso del <em>DOM virtual</em></p>
+</section>
+<section class="slide level2">
+
+<p>El DOM virtual es una representación interna de la librería en la que se almacena el estado actual del DOM (la estructura de la página), independientemente de cómo lo almacene el navegador</p>
+</section>
+<section class="slide level2">
+
+<p>Esto permite mucha <em>flexibilidad</em> en la librería, y una mejora del <em>rendimiento</em></p>
+<p>Aunque aparentemente modifiquemos mucha parte del DOM en nuestros componentes, React sólo aplicará las diferencias entre el estado anterior y el nuevo</p>
+</section>
+<section id="jsx" class="slide level2">
+<h2>JSX</h2>
+<p>Para representar los cambios en el DOM que modifican los componentes de la página, podemos usar llamadas al API</p>
+<p>Pero también podemos usar algo muy parecido a HTML</p>
+</section>
+<section class="slide level2">
+
+<p>JSX es una extensión sintáctica de JavaScript, que permite poner etiquetas HTML dentro del mismo código:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">const</span> parrafo <span class="op">= </span><span class="kw">&lt;p&gt;</span>Esto es un párrafo de verdad<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>JSX permite interpolar contenido de JavaScript dentro de las etiquetas:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode jsx"><code class="sourceCode javascriptreact"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">const</span> nombre <span class="op">=</span> <span class="st">&#39;Juan&#39;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="kw">const</span> parrafo <span class="op">= </span><span class="kw">&lt;p&gt;</span>Creo que el señor se llamaba <span class="va">{</span>nombre<span class="va">}</span><span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Pero la máquina virtual de los navegadores no entiende JSX</p>
+<p>Necesitamos un proceso que transforme un archivo con extensión <code>.jsx</code> a otro <code>.js</code>, y que transforme las etiquetas HTML a código JavaScript normal</p>
+</section>
+<section id="babel" class="slide level2">
+<h2>Babel</h2>
+<p><a href="https://babeljs.io/">Babel</a> es una herramienta que procesa JavaScript y lo transforma (lo que se llama, en la jerga, un “transpilador”)</p>
+</section>
+<section class="slide level2">
+
+<p>En particular (y con algo de configuración), Babel puede transformar JSX en JS</p>
+<p>Y hacer muchas cosas más, como transformar JavaScript moderno en JavaScript más antiguo, para que funcione en navegadores sin compatibilidad</p>
+</section></section>
+<section>
+<section id="preact" class="title-slide slide level1">
+<h1><code>Preact</code></h1>
+
+</section>
+<section class="slide level2">
+
+<p>Usar JSX con Babel y React funciona muy bien (y tiene buen apoyo de editores como VSCode), pero requiere desplegar bastante “tooling”</p>
+</section>
+<section class="slide level2">
+
+<p>Vamos a usar Preact (una alternativa ligera a React, con un API muy parecido), y vamos a usar una alternativa a JSX que no necesita Babel</p>
+</section>
+<section class="slide level2">
+
+<p>Para empezar, sólo necesitamos un <code>index.html</code> normal y corriente, que tenga un <code class="sourceCode html"><span class="kw">&lt;script&gt;</span></code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>  <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>  <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>  <span class="kw">&lt;title&gt;</span>Test Preact<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>  <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;gui.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;module&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>En nuestro <code>gui.js</code>, tenemos que importar la librería:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="im">import</span> { html<span class="op">,</span> render<span class="op">,</span> Component } </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>   <span class="im">from</span> <span class="st">&#39;https://unpkg.com/htm/preact/standalone.module.js&#39;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Estamos usando <a href="https://unpkg.com/"><code>unpkg</code></a></p>
+<p><code>unpkg</code> es un proyecto que sirve paquetes de <code>npm</code> para que se puedan usar directamente desde JavaScript en una web (¡sin necesidad de herramientas!)</p>
+</section>
+<section class="slide level2">
+
+<p>Con el <code class="sourceCode javascript"><span class="im">import</span></code> anterior, estamos usando directamente Preact y <code>htm</code>, una librería que nos permite usar etiquetas HTML en el código</p>
+</section>
+<section class="slide level2">
+
+<p>Después, sólo tenemos que crear llamar a <code class="sourceCode javascript">render</code>, que sustituirá un nodo del DOM (en este caso <code class="sourceCode javascript"><span class="bu">document</span><span class="op">.</span><span class="at">body</span></code>, la raíz):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="fu">render</span>(<span class="fu">html</span><span class="vs">`&lt;p&gt;Esto es un párrafo&lt;/p&gt;`</span><span class="op">,</span> <span class="bu">document</span><span class="op">.</span><span class="at">body</span>)</span></code></pre></div>
+<p><small>Ahora veremos lo de <code class="sourceCode javascript"><span class="fu">html</span><span class="vs">`...`</span></code></small></p>
+</section>
+<section id="componentes" class="slide level2">
+<h2>Componentes</h2>
+<p>Esto no tendría mucho uso por sí mismo, pero Preact nos permite definir <strong>componentes</strong></p>
+</section>
+<section class="slide level2">
+
+<p>Un <em>componente</em> es un objeto JavaScript que representa un nodo complejo en el DOM:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">class</span> Parrafo <span class="kw">extends</span> Component {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>  <span class="fu">render</span>() {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;p&gt;Esto sigue siendo un párrafo&lt;/p&gt;`</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>  }</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Así, tendríamos una manera un poco más potente de crear interfaces de usuario:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="fu">render</span>(<span class="fu">html</span><span class="vs">`&lt;</span><span class="sc">${</span>Parrafo<span class="sc">}</span><span class="vs"> /&gt;`</span><span class="op">,</span> <span class="bu">document</span><span class="op">.</span><span class="at">body</span>)</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Pero, antes, veamos cómo estamos construyendo el HTML dentro de JavaScript</p>
+</section></section>
+<section>
+<section id="htm" class="title-slide slide level1">
+<h1>htm</h1>
+
+</section>
+<section class="slide level2">
+
+<p><a href="https://github.com/developit/htm"><code>htm</code></a> es una librería que procesa cadenas JavaScript (<code class="sourceCode javascript">string</code>) y las usa como llamadas a funciones de construir el DOM</p>
+<p>Como lo que hace Babel, pero sólo desde código, sin herramienta adicional</p>
+</section>
+<section id="plantillas-de-cadena-de-texto" class="slide level2">
+<h2>Plantillas de cadena de texto</h2>
+<p><code>htm</code> usa “plantillas de cadena de texto” para conseguir esto (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">“template literals”</a>)</p>
+<p>Estas cadenas son especiales, y se denotan con <code class="sourceCode javascript"><span class="vs">`...`</span></code></p>
+</section>
+<section class="slide level2">
+
+<h3 id="cadenas-multilínea">Cadenas multilínea</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="vs">`hola</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="vs">qué</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="vs">tal</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="vs">estamos`</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="interpolar-código">Interpolar código</h3>
+<p>Antes:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">const</span> a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;&quot;a&quot; vale&#39;</span><span class="op">,</span> a) <span class="co">// &quot;a&quot; vale 5</span></span></code></pre></div>
+<p>Después:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">const</span> a <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`&quot;a&quot; vale </span><span class="sc">${</span>a<span class="sc">}</span><span class="vs">`</span>) <span class="co">// &quot;a&quot; vale 5</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<h3 id="postprocesado-de-cadenas">Postprocesado de cadenas</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="fu">html</span><span class="vs">`Cadena JS`</span> <span class="co">// === html(&#39;Cadena JS&#39;)---más o menos</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Esto quiere decir que hay una función <code class="sourceCode javascript">html</code> que transforma la cadena en algo más interesante</p>
+</section>
+<section class="slide level2">
+
+<p>Es lo que hace la librería <code>htm</code></p>
+<p>Define una función especial, <code class="sourceCode javascript"><span class="fu">html</span>()</code>, que transforma nuestro string con HTML a una estructura que se usará en el DOM virtual</p>
+</section>
+<section class="slide level2">
+
+<p>En VSCode, por ejemplo, si instalamos la extensión <a href="https://marketplace.visualstudio.com/items?itemName=bierner.lit-html"><code>lit-html</code></a>, veremos los templates que empiezan con <code class="sourceCode javascript"><span class="fu">html</span><span class="vs">`...`</span></code> con resaltado de sintaxis HTML</p>
+</section>
+<section class="slide level2">
+
+<p>Con esto, podemos usar <code>Preact</code> y <code>htm</code> para hacer nuestra interfaz web</p>
+</section></section>
+<section>
+<section id="componentes-preact-o-react" class="title-slide slide level1">
+<h1>Componentes Preact (o React…)</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Los componentes son las unidades en Preact</p>
+<p>Crearemos componentes que representes nuestros objetos de interfaz</p>
+</section>
+<section class="slide level2">
+
+<p>Empezamos (como antes) importando <code>Preact</code> y <code>htm</code>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="im">import</span> { html<span class="op">,</span> render<span class="op">,</span> Component } <span class="im">from</span> <span class="st">&#39;https://unpkg.com/htm/preact/standalone.module.js&#39;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Para crear un componente, podemos extender la clase <code class="sourceCode javascript">Component</code> de <code>Preact</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="kw">class</span> Aviso <span class="kw">extends</span> Component {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>  <span class="fu">render</span>() {</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;b&gt;¡Hola!&lt;/b&gt;`</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>  }</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>El componente <code class="sourceCode javascript">Aviso</code> corresponderá a lo que devuelva la función <code class="sourceCode javascript"><span class="fu">render</span>()</code>, que en este caso es sólo una cadena en negrita</p>
+</section>
+<section class="slide level2">
+
+<p>Para que se vea en la página, usamos plantillas de cadena con el nombre de la clase:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="fu">render</span>(<span class="fu">html</span><span class="vs">`&lt;</span><span class="sc">${</span>Aviso<span class="sc">}</span><span class="vs"> /&gt;`</span><span class="op">,</span> <span class="bu">document</span><span class="op">.</span><span class="at">body</span>)</span></code></pre></div>
+</section>
+<section id="estado-en-las-clases" class="slide level2">
+<h2>Estado en las clases</h2>
+<p>También podemos usar la clase para guardar el estado de un componente:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="kw">class</span> Aviso <span class="kw">extends</span> Component {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>  <span class="fu">constructor</span>(props) {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>    <span class="kw">super</span>(props)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">valor</span> <span class="op">=</span> props<span class="op">.</span><span class="at">valor</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true"></a>  }</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true"></a>  <span class="fu">render</span>() {</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;b&gt;¡mi valor es </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">valor</span><span class="sc">}</span><span class="vs">!&lt;/b&gt;`</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true"></a>  }</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Es fundamental llamar al costructor padre de <code class="sourceCode javascript">Component</code> con <code class="sourceCode javascript">props</code>, para que funcione:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a> <span class="fu">constructor</span>(props) {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>  <span class="kw">super</span>(props)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Si queremos pasarle argumentos propios al constructor, seguimos usando HTML:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="kw">class</span> Aviso <span class="kw">extends</span> Component {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a>  <span class="fu">constructor</span>(props) {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a>    <span class="kw">super</span>(props)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true"></a>    <span class="co">// ¡props.tamano viene del HTML!</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">tamano</span> <span class="op">=</span> props<span class="op">.</span><span class="at">tamano</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true"></a>  }</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true"></a>}</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true"></a><span class="fu">render</span>(<span class="fu">html</span><span class="vs">`&lt;</span><span class="sc">${</span>Aviso<span class="sc">}</span><span class="vs"> tamano=6 /&gt;`</span><span class="op">,</span> <span class="bu">document</span><span class="op">.</span><span class="at">body</span>)</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>La función <code class="sourceCode javascript"><span class="fu">render</span>()</code> puede devolver diferentes <code class="sourceCode javascript"><span class="fu">html</span><span class="vs">`...`</span></code>, según el estado de la clase</p>
+<p>Con esto, podemos cambiar lo que se muestra por pantalla en nuestra interfaz de usuario</p>
+</section>
+<section id="combinar-componentes" class="slide level2">
+<h2>Combinar componentes</h2>
+<p>Para combinar componentes, simplemente los usamos como HTML</p>
+</section>
+<section class="slide level2">
+
+<p>Componente base:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a><span class="kw">class</span> Aviso <span class="kw">extends</span> Component {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true"></a>  <span class="fu">constructor</span>(props) {</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true"></a>    <span class="kw">super</span>(props)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">valor</span> <span class="op">=</span> props<span class="op">.</span><span class="at">valor</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true"></a>  }</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true"></a>  <span class="fu">render</span>() {</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;b&gt;¡mi valor es </span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">valor</span><span class="sc">}</span><span class="vs">!&lt;/b&gt;`</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true"></a>  }</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Componente que usa <code class="sourceCode javascript">Aviso</code>:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a><span class="kw">class</span> Parrafo <span class="kw">extends</span> Component {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true"></a>  <span class="fu">render</span>() {</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;p&gt;Un componente con </span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true"></a><span class="vs">       un aviso (&lt;</span><span class="sc">${</span>Aviso<span class="sc">}</span><span class="vs"> valor=15 /&gt;) &lt;/p&gt;`</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true"></a>  }</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="componentes-como-funciones" class="slide level2">
+<h2>Componentes como funciones</h2>
+<p>Si el componente es sencillo y no tiene que gestionar estado, puede ser una función y no una clase entera:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">Nota</span>(props) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true"></a>  <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;em&gt;frase con énfasis&lt;/em&gt;`</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="eventos" class="slide level2">
+<h2>Eventos</h2>
+<p>También tenemos que programar la funcionalidad de responder a eventos</p>
+</section>
+<section class="slide level2">
+
+<p>Para esto, en el “HTML”, vamos a registrar eventos JavaScript, igual que lo haríamos en etiquetas en un archivo <code>.html</code></p>
+<p>Usaremos interpolación de cadenas para poner nuestro código JavaScript</p>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">Nota</span>(props) {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true"></a>  <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;em onclick=</span><span class="sc">${</span>(e) <span class="kw">=&gt;</span> {</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true"></a>    e<span class="op">.</span><span class="fu">stopPropagation</span>()</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Este evento no se progaga&#39;</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true"></a>  }<span class="sc">}</span><span class="vs">&gt;¡Pincha aquí para ver lo que imprimo!&lt;/em&gt;`</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="métodos-para-callbacks" class="slide level2">
+<h2>Métodos para callbacks</h2>
+<p>Es posible que queramos, en un componente descrito como clase, usar métodos para los callbacks</p>
+</section>
+<section class="slide level2">
+
+<p>Para ello, tenemos que usar <code class="sourceCode javascript">bind</code>, para que cuando se llame al método, <code class="sourceCode javascript"><span class="kw">this</span></code> apunte a la instancia del objeto</p>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true"></a><span class="kw">class</span> ComponenteMetodoCallback <span class="kw">extends</span> Component {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true"></a>  <span class="fu">render</span>() {</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true"></a>    <span class="cf">return</span> <span class="fu">html</span><span class="vs">`&lt;p </span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true"></a><span class="vs">      onclick=</span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">handleClick</span><span class="op">.</span><span class="fu">bind</span>(<span class="kw">this</span>)<span class="sc">}</span><span class="vs">&gt;Prueba&lt;/p&gt;`</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true"></a>  }</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true"></a>  <span class="fu">handleClick</span>(e) {</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true"></a>    <span class="co">// `this` funciona si hemos hecho `bind`</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true"></a>    e<span class="op">.</span><span class="fu">preventDefault</span>()</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Se ha hecho clic.&#39;</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true"></a>  }</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true"></a>}</span></code></pre></div>
+</section>
+<section id="mucho-más" class="slide level2">
+<h2>Mucho más</h2>
+<p>React/Preact y todas estas librerías hacen <em>muchas más cosas</em></p>
+<p>Podéis mirar la <a href="https://preactjs.com/guide/v10/getting-started">documentación de Preact</a>, pero con estos pasos ya se puede montar una funcionalidad básica</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/search/search.js"></script>
+  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="../reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

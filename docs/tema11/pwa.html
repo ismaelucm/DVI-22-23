@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Progressive Web Apps</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../juegosweb.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Progressive Web Apps</h1>
+</section>
+
+<section>
+<section id="qué-es-una-pwa" class="title-slide slide level1">
+<h1>Qué es una PWA</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Son aplicaciones web (HTML, JS, CSS), pero con ciertas cosas especiales que permiten:</p>
+<ul>
+<li>Funcionar sin conexión</li>
+<li>Usar notificaciones nativas</li>
+<li>Acceder al hardware del dispositivo</li>
+<li>Instalarse fácilmente</li>
+<li>Almacenamiento local</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Aunque sean, técnicamente, una página web, reemplazan a las aplicaciones nativas</p>
+<p>Además, <em>el mismo código nos vale para una aplicación en escritorio, móvil y web</em></p>
+</section>
+<section id="por-qué-progressive" class="slide level2">
+<h2>¿Por qué “progressive”?</h2>
+<p>Son “progresivas” porque se diseñan con la estrategia de “mejorado progresivo”</p>
+</section>
+<section class="slide level2">
+
+<p>El mejorado progresive consiste en diseñar un núcleo básico fundamental (contenido y estructura básica), e ir añadiendo capas de funcionalidad sobre ese núcleo</p>
+</section>
+<section class="slide level2">
+
+<p>Por ejemplo, una PWA bien hecha funcionará sin conexión en navegadores nuevos, y sin conexión en los viejos, pero aún así <em>podrá verse su contenido</em></p>
+</section>
+<section class="slide level2">
+
+<p>Para hacer una PWA sencilla, sólo hay que hacer una página web (aplicación), y añadir ciertas cosas</p>
+</section></section>
+<section>
+<section id="manifest" class="title-slide slide level1">
+<h1>Manifest</h1>
+
+</section>
+<section class="slide level2">
+
+<p>El <a href="https://web.dev/add-manifest/">manifiesto</a> es un archivo de texto con datos (JSON) que describe nuestra aplicación progresiva</p>
+</section>
+<section class="slide level2">
+
+<p>Cuando hay un archivo <code>manifest.json</code> (o como le queramos llamar) apuntado por nuestro <code>index.html</code>, el navegador sabrá que tenemos una PWA</p>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="dt">&quot;short_name&quot;</span><span class="fu">:</span> <span class="st">&quot;Nombre corto&quot;</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Nombre largo de mi aplicación chula&quot;</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;La mejor PWA que existe&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>  <span class="dt">&quot;icons&quot;</span><span class="fu">:</span> <span class="ot">[</span> <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  <span class="dt">&quot;start_url&quot;</span><span class="fu">:</span> <span class="st">&quot;/&quot;</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>  <span class="dt">&quot;background_color&quot;</span><span class="fu">:</span> <span class="st">&quot;#26AF31&quot;</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>  <span class="dt">&quot;display&quot;</span><span class="fu">:</span> <span class="st">&quot;standalone&quot;</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>  <span class="dt">&quot;scope&quot;</span><span class="fu">:</span> <span class="st">&quot;/&quot;</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Es importante declarar el “manifest” en <code>index.html</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;manifest&quot;</span><span class="ot"> href=</span><span class="st">&quot;manifest.json&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Para que en el móvil se vea como una aplicación “nativa” en vez de como una pestaña de navegador, añadimos esto a <code>manifest.json</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>  <span class="fu">{</span>  <span class="dt">&quot;display&quot;</span><span class="fu">:</span> <span class="st">&quot;standalone&quot;</span>  <span class="fu">}</span></span></code></pre></div>
+</section></section>
+<section>
+<section id="service-workers" class="title-slide slide level1">
+<h1>Service Workers</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Son scripts que se ejecutan en navegador, <em>independientemente de una página web</em></p>
+</section>
+<section class="slide level2">
+
+<p>No tienen acceso al DOM (porque no tienen acceso a una página)</p>
+</section>
+<section class="slide level2">
+
+<p>Sólo funcionan con HTTPS</p>
+<p>(Pero nos deja funcionar sin HTTPS cuando el dominio es <code>localhost</code>)</p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="ver_service_workers.png" alt="Se pueden ver los Service Workers que están activos en “Application”" /><figcaption aria-hidden="true">Se pueden ver los Service Workers que están activos en “Application”</figcaption>
+</figure>
+</section>
+<section class="slide level2">
+
+<p>Gracias a la tecnología de service workers, podemos <em>instalar</em> uno desde nuestra página web</p>
+<p>(Para esto, obviamente, necesitamos haber accedido a nuestra página por primera vez)</p>
+</section>
+<section class="slide level2">
+
+<p>Cuando el service worker esté instalado, el navegador recordará que hay uno en nuestro dominio (la raíz de la URL), y lo usará cuando volvamos a intentar acceder a ese dominio</p>
+<p><strong>Aunque estemos sin conexión</strong></p>
+</section>
+<section id="instalar-un-service-worker" class="slide level2">
+<h2>Instalar un service worker</h2>
+<p>Para instalar un service worker, sólo hay que ejecutar algo de código JavaScript en nuestro <code>index.html</code></p>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co">// si nuestro navegador ejecuta service workers</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="st">&#39;serviceWorker&#39;</span> <span class="kw">in</span> <span class="bu">navigator</span>) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>        <span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;load&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>            <span class="bu">navigator</span><span class="op">.</span><span class="at">serviceWorker</span><span class="op">.</span><span class="fu">register</span>(<span class="st">&#39;sw.js&#39;</span>)<span class="op">.</span><span class="fu">then</span>(reg <span class="kw">=&gt;</span> {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>                <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Todo bien:&#39;</span><span class="op">,</span> reg)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>            }<span class="op">,</span> <span class="kw">function</span> (err) {</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>                <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Fallo:&#39;</span><span class="op">,</span> err)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>            })</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>        })</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>    }</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a><span class="kw">&lt;/script&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a><span class="kw">&lt;/head&gt;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>En el código anterior, nuestro service worker estará en <code>sw.js</code> (lo veremos un poco más adelante)</p>
+</section>
+<section id="borrar-service" class="slide level2">
+<h2>Borrar service</h2>
+<figure>
+<img data-src="unregister_sw.png" alt="Podemos borrar un service worker instalado por una página con “Unregister”" /><figcaption aria-hidden="true">Podemos borrar un service worker instalado por una página con “Unregister”</figcaption>
+</figure>
+</section>
+<section id="cache-de-archivos" class="slide level2">
+<h2>Cache de archivos</h2>
+<p>A través de un service worker, podemos acceder al almacenamiento de cache del navegador</p>
+<p>Aquí podremos almacenar archivos (<code>index.html</code>, <code>app.js</code>, <code>dude.png</code>, <code>fondo.css</code>), que estarán disponibles para acceso, independientemente del estado de la conexión</p>
+</section>
+<section class="slide level2">
+
+<p>En un <em>almacenamiento local al navegador</em>, lo que quiere decir que si vamos a otro navegador (o a otro ordenador), no estarán los archivos ahí</p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="recurso_almacenado_cache.png" alt="Podemos ver qué recursos se han almacenado en la cache" /><figcaption aria-hidden="true">Podemos ver qué recursos se han almacenado en la cache</figcaption>
+</figure>
+</section>
+<section id="borrar-datos-de-la-cache" class="slide level2">
+<h2>Borrar datos de la cache</h2>
+<figure>
+<img data-src="borrar_cache_sw.png" alt="Con el botón derecho sobre el ítem de cache, podemos borrarla para forzar una recarga" /><figcaption aria-hidden="true">Con el botón derecho sobre el ítem de cache, podemos borrarla para forzar una recarga</figcaption>
+</figure>
+</section>
+<section id="borrar-todo" class="slide level2">
+<h2>¡Borrar todo!</h2>
+<figure>
+<img data-src="clear_site_data.png" alt="También podemos borrar todo lo guardado en el sitio con Clear site data" /><figcaption aria-hidden="true">También podemos borrar todo lo guardado en el sitio con <code>Clear site data</code></figcaption>
+</figure>
+</section></section>
+<section>
+<section id="caching" class="title-slide slide level1">
+<h1>Caching</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Para tener una aplicación web que funcione sin conexión, simplemente guardaremos los archivos en una cache</p>
+<p>Después, tendremos un service worker que almacene los archivos, y los recupere cuando volvamos a una URL</p>
+</section>
+<section class="slide level2">
+
+<p>Y, cuando haya una versión nueva de los archivos (sólo lo sabremos cuando estemos conectados) que actualice la cache</p>
+</section>
+<section class="slide level2">
+
+<p>Para hacer el <em>caching</em> de archivos, y luego acceder a ellos, podríamos usar la API de service workers</p>
+<p>Pero vamos a usar <a href="https://developers.google.com/web/tools/workbox/"><code>workbox</code></a>, que es una librería que nos ahorra casi todo el trabajo con los service workers</p>
+</section>
+<section class="slide level2">
+
+<p>Con <code>workbox</code>, es fácil activar la cache de archivos:</p>
+</section>
+<section class="slide level2">
+
+<p>Ejemplo de archivo <code>sw.js</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="fu">importScripts</span>(<span class="st">&#39;https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js&#39;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Workbox </span><span class="sc">${</span>workbox <span class="op">?</span> <span class="st">&#39;sí&#39;</span> <span class="op">:</span> <span class="st">&#39;no&#39;</span><span class="sc">}</span><span class="vs"> está funcionando`</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>workbox<span class="op">.</span><span class="at">precaching</span><span class="op">.</span><span class="fu">precacheAndRoute</span>([</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>  {<span class="dt">url</span><span class="op">:</span> <span class="st">&#39;/index.html&#39;</span><span class="op">,</span> <span class="dt">revision</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>  {<span class="dt">url</span><span class="op">:</span> <span class="st">&#39;/app.js&#39;</span><span class="op">,</span> <span class="dt">revision</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>])</span></code></pre></div>
+</section>
+<section id="revisiones" class="slide level2">
+<h2>Revisiones</h2>
+<p>Vemos que hemos puesto <code class="sourceCode javascript">{<span class="dt">revision</span><span class="op">:</span> <span class="kw">null</span>}</code></p>
+<p>Esto quiere decir que no hay información de revisión, y que la cache no se actualizará cuando haya modificaciones</p>
+</section>
+<section class="slide level2">
+
+<p>En <code>workbox</code>, esta información de revisiones es necesaria para que el navegador reconozca qué archivos han cambiado</p>
+</section>
+<section class="slide level2">
+
+<p>Pero mantener el número de revisión a mano es un trabajo tedioso</p>
+</section>
+<section id="workbox-cli" class="slide level2">
+<h2><code>workbox-cli</code></h2>
+<p><code>workbox</code> ofrece una aplicación de línea de comandos que se encargará de gestionar el valor de <code class="sourceCode javascript">revision</code></p>
+</section>
+<section class="slide level2">
+
+<p>Instalamos node.js (versión más nueva que haya):</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># Iniciamos el proyecto node.js</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="ex">npm</span> init --yes</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Instalamos <code>workbox-cli</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># en el directorio del proyecto</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="ex">npm</span> install -D workbox-cli</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Iniciamos el asistente de gestión de las revisiones:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co"># en el directorio del proyecto</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="ex">npx</span> workbox wizard</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Con esto, dejando las opciones por defecto, nos creará un archivo <code>sw.js</code> (podemos cambiarle el nombre)</p>
+<p>Este archivo reemplaza al que habíamos hecho a mano (así que no hay que hacerlo)</p>
+</section>
+<section class="slide level2">
+
+<p>Este archivo <code>sw.js</code> tiene nuestro nuevo service worker, que gestiona el cache y las revisiones</p>
+</section>
+<section class="slide level2">
+
+<p>Así, cuando hagamos cambios, la revisión cambiará y el navegador recargará el recurso</p>
+<p><em>Hay que llamar a este comando cada vez que hagamos cambios</em></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co"># Para regenerar una versión, simplemente usamos la herramienta</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="co"># Esto asume que nuestra configuración se llama `workbox-config.js`</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="ex">npx</span> workbox generateSW</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Si hacemos un cambio, pero no regeramos el SW, no se recargará en el navegador</p>
+</section>
+<section class="slide level2">
+
+<p>En resumen:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co"># Instalar node.js (que viene con `npm`)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="bu">cd</span> ruta_a_la_carpeta_de_mi_proyecto</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="ex">npm</span> init --yes</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="ex">npm</span> install -D workbox-cli</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="ex">npx</span> workbox wizard</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a><span class="co"># Repetir cada vez que haya cambios:</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a><span class="ex">npx</span> workbox generateSW</span></code></pre></div>
+</section></section>
+<section>
+<section id="ciclo-de-trabajo" class="title-slide slide level1">
+<h1>Ciclo de trabajo</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Tener que ejecutar <code>generateSW</code> cada vez que hacemos algo para probar es tedioso</p>
+</section>
+<section class="slide level2">
+
+<p>Una solución es desarrollar nuestra <em>app</em> como una aplicación web sin service workers, y desplegarla cuando sea necesario</p>
+<p>Así es mucho más rápido</p>
+</section>
+<section class="slide level2">
+
+<p>Para eso, podemos tener:</p>
+<ul>
+<li>un <code>index.html</code> que haga referencia al service worker</li>
+<li>un <code>devel.html</code> que sea igual, pero que no use el service worker</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Así, usaremos <code>devel.html</code> en desarrollo, pero desplegaremos con <code>index.html</code></p>
+</section>
+<section id="app-shell" class="slide level2">
+<h2>App shell</h2>
+<p>El modelo de desarrollo de “app shell” consiste en hacer caching de todo el <em>núcleo</em> de la aplicación (los HTML, CSS y JS que definen la funcionalidad y la interfaz), y hacer que los datos (que podrían cambiar) se carguen <em>dinámicamente</em></p>
+</section></section>
+<section>
+<section id="almacenamiento-local" class="title-slide slide level1">
+<h1>Almacenamiento local</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Las PWA se pueden beneficiar del <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">API de almacenamiento local</a></p>
+</section>
+<section id="usar-localstorage" class="slide level2">
+<h2>Usar <code>localStorage</code></h2>
+</section>
+<section class="slide level2">
+
+<p>Existe una variable <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"><code class="sourceCode javascript">localStorage</code></a>, que es un objeto que permite guardar y leer valores</p>
+<p>Estos valores se mantienen <em>entre sesiones</em> (a diferencia de <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage"><code class="sourceCode javascript">sessionStorage</code></a>), y cada dominio tiene su propio objeto</p>
+</section>
+<section class="slide level2">
+
+<p>Añadir o modificar una clave:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>localStorage<span class="op">.</span><span class="fu">setItem</span>(<span class="st">&#39;clave&#39;</span><span class="op">,</span> <span class="dv">6</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>localStorage<span class="op">.</span><span class="at">clave</span> <span class="op">=</span> <span class="dv">6</span></span></code></pre></div>
+<p><strong>La clave se guarda siempre como <code class="sourceCode javascript">string</code></strong></p>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="co">// para acceder al valor</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>localStorage<span class="op">.</span><span class="fu">getItem</span>(<span class="st">&#39;clave&#39;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a>localStorage<span class="op">.</span><span class="at">clave</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Borrar:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="co">// borrar una clave</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>localStorage<span class="op">.</span><span class="fu">removeItem</span>(<span class="st">&#39;clave&#39;</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="co">// borrar todo</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>localStorage<span class="op">.</span><span class="fu">clear</span>()</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="localstorage_chrome.png" alt="Se puede ver la lista de datos guardados, por dominio" /><figcaption aria-hidden="true">Se puede ver la lista de datos guardados, por dominio</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="auditoría-con-lighthouse" class="title-slide slide level1">
+<h1>Auditoría con <em>Lighthouse</em></h1>
+
+</section>
+<section class="slide level2">
+
+<p>Chrome incluye un sistema de auditoría de calidad de PWA, <a href="https://developers.google.com/web/tools/lighthouse#devtools">Lighthouse</a></p>
+</section>
+<section class="slide level2">
+
+<p>Lighthouse nos emite un informe de la página en la que estamos, dándonos nota a cada apartado</p>
+<p>En particular, nos evalúa si la aplicación cumple los estándares de una PWA</p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="lighthouse.png" style="width:60.0%" alt="Para arrancar la auditoría, sólo hay que seleccionar las opciones y darle al botón" /><figcaption aria-hidden="true">Para arrancar la auditoría, sólo hay que seleccionar las opciones y darle al botón</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="ver-como-en-un-móvil" class="title-slide slide level1">
+<h1>Ver como en un móvil</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Para probar la aplicación en un móvil, podemos ir a nuestro dispositivo y cargar la URL (en Chrome, por ejemplo)</p>
+</section>
+<section class="slide level2">
+
+<p>Pero Chrome tiene una manera mucho más cómoda, haciendo que podamos ver, en el navegador, la aplicación con el aspecto de un pantalla de móvil o tableta</p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="toggle_device_toolbar.png" alt="Podemos ver nuestra PWA como se vería en un dispositivo móvil" /><figcaption aria-hidden="true">Podemos ver nuestra PWA como se vería en un dispositivo móvil</figcaption>
+</figure>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="cambiar_opciones_device.png" alt="Podemos elegir las opciones del dispositivo que estamos simulando" /><figcaption aria-hidden="true">Podemos elegir las opciones del dispositivo que estamos simulando</figcaption>
+</figure>
+</section></section>
+    </div>
+  </div>
+
+  <script src="../reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/search/search.js"></script>
+  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="../reveal.js/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
