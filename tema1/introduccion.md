@@ -22,7 +22,7 @@ Ventajas e inconvenientes sobre los compilados a código máquina
 
 Cómo funciona un navegador por dentro
 
-A gestionar el desarrollo con un "toolset", y no a mano
+A gestionar el desarrollo con un *toolset* real
 
 A hacer proyectos de forma profesional, presentarlos y entregarlos
 
@@ -37,17 +37,39 @@ Tener ganas de **aprender**, no de aprobar
 
 Proponer cosas, intentar cosas nuevas
 
-[Soltar sermón motivador]{.fragment}
+<!-- [Soltar sermón motivador]{.fragment} -->
+
+
+## Aprendizaje real
+
+<https://www.pnas.org/content/116/39/19251>
+
+<https://mobile.twitter.com/hruizmartin/status/1289461266847682560>
+
+## El proyecto más allá de la asignatura
+
+El objetivo es que lo que hagáis en la asignatura valga más allá de la asignatura
+
+- Portafolio
+- Expresión
+- Comunicación
+
 
 
 # Equipo docente
 
-## Coordinación
+---
 
 **Carlos León**
 
 Despacho 444 (4ª planta), tlf. 7643 \
 <cleon@ucm.es>
+
+**Guillermo Jiménez**
+
+Despacho 436 (4ª planta), tlf. 7560 \
+<guille@ucm.es>
+
 
 ## Desarrollo de la asignatura
 
@@ -70,16 +92,16 @@ Proyecto, por grupos (40% de la nota)
 
 Hay que entregar *todo* (examen y proyecto)
 
-Todo tiene que tener una nota >=5
+Todo tiene que tener una nota $\geq 5$
 
 Todo lo aprobado se guarda para la convocatoria extraordinaria
 
 
 ## Entregas del proyecto
 
-Se calificarán 3 entregas, pero la nota final será la última
+Se calificarán varios hitos, pero la nota final será la última
 
-Las entregas son obligatorias, y su presentación pública en clase, también
+Las hitos son obligatorias, y su presentación pública en clase, también
 
 
 ## Copias

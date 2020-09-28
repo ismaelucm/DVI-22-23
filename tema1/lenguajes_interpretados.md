@@ -29,11 +29,9 @@ Es decir, hay un programa que emula a un procesador: el **intérprete**
 
 ECMAScript/JavaScript es el lenguaje de los navegadores
 
-Comenzó como un pequeño lenguaje que se interpretaba dentro de
-[Netscape](https://es.wikipedia.org/wiki/Netscape_Navigator), principalmente para incluir efectos y operaciones sencillas
+Comenzó como un pequeño lenguaje que se interpretaba dentro de [Netscape](https://es.wikipedia.org/wiki/Netscape_Navigator), principalmente para incluir efectos y operaciones sencillas
 
-![Logo
-Netscape](netscape_logo.svg){width=50%}\
+![Logo Netscape](netscape_logo.svg){width=50%}\
 
 # Lenguajes dinámicos
 
@@ -52,7 +50,7 @@ Los lenguajes dinámicos suelen ser capaces de evaluar código generado dinámic
 Los lenguajes dinámicos pueden cambiar los campos de sus estructuras de datos en tiempo de ejecución:
 
 ```javascript
-var a = {};       // se define el objeto sin campos
+const a = {};     // se define el objeto sin campos
 a.campo = 'hola'; // se añade un campo nuevo
 ```
 
@@ -110,7 +108,7 @@ JavaScript es un dialecto de
 [ECMAScript](https://es.wikipedia.org/wiki/ECMAScript)
 
 ```javascript
-var variable = 6;
+const variable = 6;
 
 if(variable === 5) {
     console.log("Sí, es igual a 5.")

@@ -10,7 +10,8 @@ Es normal (y positivo) que, durante el desarrollo de la asignatura, surjan error
 
 #. Busca en el foro de la asignatura, si es una duda concreta sobre la práctica.
 #. Busca en Internet ([Stack Overflow](http://stackoverflow.com/), Google...) si los problemas son generales (librería, lenguaje...)
-#. Intenta arreglarlo. Piensa, reduce el error al mínimo. #. Depura (`print` funciona, pero usa depuración gráfica) #. Identifica qué puede ir mal
+#. Intenta arreglarlo. Piensa, reduce el error al mínimo. 
+#. Depura (`print` funciona, pero usa depuración gráfica) #. Identifica qué puede ir mal
 
 Ten en cuenta que cada pregunta requiere tiempo tuyo, de tus compañeros y de tus profesores. Y a nadie le sobra. Además, aunque sea cómodo y tentador preguntar sin haber hecho el trabajo primero, buscar e intentar encontrar la solución **es el mejor camino para convertirse en un buen programador**.
 
@@ -43,6 +44,7 @@ Para tener una solución, hay que hacer un diagnóstico. Y, para tener un diagn�
     #. Ejecuto `node init.js`{.bash}
     #. Cuando sale el menú (ejemplo en <http://pastebin.com/s2n986aund>), elijo `0`{.bash}.
     #. El error salta.
+- Qué cosas se han intentado para conseguir que funcione.
 
 ## Ejemplo
 
@@ -71,7 +73,7 @@ Para tener una solución, hay que hacer un diagnóstico. Y, para tener un diagn�
 
 ## ¿Dónde pongo la pregunta?
 
-En el foro del Campus Virtual.
+En el foro del Campus Virtual. **No se contestará a dudas técnicas en el correo electrónico**.
 
 Cualquier pregunta privada ocurre varias veces, todos los años. Si vuestra pregunta está en el foro, todos podrán beneficiarse de la solución, además de que otro compañero puede ayudaros y, a veces, con menos retraso que el equipo docente (estamos siempre atentos, pero no damos abasto muchas veces).
 

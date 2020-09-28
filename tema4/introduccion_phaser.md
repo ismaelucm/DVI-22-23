@@ -1,5 +1,5 @@
 ---
-title: Carga de recursos con Phaser
+title: Intoducción a Phaser
 ---
 
 

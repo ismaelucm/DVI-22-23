@@ -16,6 +16,7 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
@@ -44,7 +45,7 @@
 <p>Qué es un lenguaje interpretado</p>
 <p>Ventajas e inconvenientes sobre los compilados a código máquina</p>
 <p>Cómo funciona un navegador por dentro</p>
-<p>A gestionar el desarrollo con un “toolset”, y no a mano</p>
+<p>A gestionar el desarrollo con un <em>toolset</em> real</p>
 <p>A hacer proyectos de forma profesional, presentarlos y entregarlos</p>
 </section>
 <section id="cómo-enfocar-la-asignatura" class="slide level2">
@@ -53,18 +54,35 @@
 <p>Buscar recursos en Internet: <a href="https://es.wikipedia.org/wiki/GIYF">GIYF</a></p>
 <p>Tener ganas de <strong>aprender</strong>, no de aprobar</p>
 <p>Proponer cosas, intentar cosas nuevas</p>
-<p><span class="fragment">Soltar sermón motivador</span></p>
+<!-- [Soltar sermón motivador]{.fragment} -->
+</section>
+<section id="aprendizaje-real" class="slide level2">
+<h2>Aprendizaje real</h2>
+<p><a href="https://www.pnas.org/content/116/39/19251" class="uri">https://www.pnas.org/content/116/39/19251</a></p>
+<p><a href="https://mobile.twitter.com/hruizmartin/status/1289461266847682560" class="uri">https://mobile.twitter.com/hruizmartin/status/1289461266847682560</a></p>
+</section>
+<section id="el-proyecto-más-allá-de-la-asignatura" class="slide level2">
+<h2>El proyecto más allá de la asignatura</h2>
+<p>El objetivo es que lo que hagáis en la asignatura valga más allá de la asignatura</p>
+<ul>
+<li>Portafolio</li>
+<li>Expresión</li>
+<li>Comunicación</li>
+</ul>
 </section></section>
 <section>
 <section id="equipo-docente" class="title-slide slide level1">
 <h1>Equipo docente</h1>
 
 </section>
-<section id="coordinación" class="slide level2">
-<h2>Coordinación</h2>
+<section class="slide level2">
+
 <p><strong>Carlos León</strong></p>
 <p>Despacho 444 (4ª planta), tlf. 7643<br />
 <a href="mailto:cleon@ucm.es" class="email">cleon@ucm.es</a></p>
+<p><strong>Guillermo Jiménez</strong></p>
+<p>Despacho 436 (4ª planta), tlf. 7560<br />
+<a href="mailto:guille@ucm.es" class="email">guille@ucm.es</a></p>
 </section>
 <section id="desarrollo-de-la-asignatura" class="slide level2">
 <h2>Desarrollo de la asignatura</h2>
@@ -86,13 +104,13 @@
 <section id="entregas" class="slide level2">
 <h2>Entregas</h2>
 <p>Hay que entregar <em>todo</em> (examen y proyecto)</p>
-<p>Todo tiene que tener una nota &gt;=5</p>
+<p>Todo tiene que tener una nota <span class="math inline"> ≥ 5</span></p>
 <p>Todo lo aprobado se guarda para la convocatoria extraordinaria</p>
 </section>
 <section id="entregas-del-proyecto" class="slide level2">
 <h2>Entregas del proyecto</h2>
-<p>Se calificarán 3 entregas, pero la nota final será la última</p>
-<p>Las entregas son obligatorias, y su presentación pública en clase, también</p>
+<p>Se calificarán varios hitos, pero la nota final será la última</p>
+<p>Las hitos son obligatorias, y su presentación pública en clase, también</p>
 </section>
 <section id="copias" class="slide level2">
 <h2>Copias</h2>
@@ -144,7 +162,6 @@
   <script src="../reveal.js/plugin/notes/notes.js"></script>
   <script src="../reveal.js/plugin/search/search.js"></script>
   <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-  <script src="../reveal.js/plugin/math/math.js"></script>
 
   <script>
 
@@ -157,26 +174,9 @@
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
         // reveal.js plugins
         plugins: [
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
