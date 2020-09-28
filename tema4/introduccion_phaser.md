@@ -1,5 +1,5 @@
 ---
-title: Intoducción a Phaser
+title: Introducción a Phaser
 ---
 
 

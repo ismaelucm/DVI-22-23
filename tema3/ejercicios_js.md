@@ -1,5 +1,5 @@
 ---
-title: Ejercicios de laboratorio
+title: Ejercicios
 ---
 
 # Objetivos
@@ -11,7 +11,7 @@ Probad estos ejemplos y tratad de responder a las preguntas. Si os atascáis con
 En JavaScript cualquier valor puede considerarse verdadero o falso según el contexto. Por ejemplo, el `0`{.js} es considerado `false`{.js} y cualquier número distinto de `0`{.js} es `true`{.js}:
 
 ```js
-var v = 0; // después de esta prueba, cambia el valor de v por otro número.
+const v = 0; // después de esta prueba, cambia el valor de v por otro número.
 !!v; // la doble negación al comienzo lo convierte en booleano.
 ```
 
@@ -22,14 +22,14 @@ Descubre qué valores son ciertos y cuales falsos para todos los tipos: números
 En JavaScript, las expresiones booleanas son _vagas_, esto significa que en cuanto sabemos lo que va a valer la expresión, dejamos de evaluar. Por ejemplo, ¿qué crees que le pasará a la siguiente expressión?
 
 ```js
-var hero = { name: 'Link', weapon: null };
+const hero = { name: 'Link', weapon: null };
 console.log('Hero weapon power is:', hero.weapon.power);
 ```
 
 Pero, ¿y ahora?
 
 ```js
-var hero = { name: 'Link', weapon: null };
+const hero = { name: 'Link', weapon: null };
 if (hero.weapon && hero.weapon.power) {
   console.log('Hero weapon power is:', hero.weapon.power);
 } else {
@@ -46,7 +46,7 @@ En caso de expresiones `||` (_or_ u _o_), la evaluación termina tan pronto como
 Contra el sentido común, el resultado de una expresión booleana no es un booleano sino el último término evaluado. Recuerda que la evaluación es _vaga_ y dejamos de evaluar tan pronto como podemos determinar el resultado de la expresión. Con esto en cuenta, trata de predecir el resultado de las siguientes expresiones:
 
 ```js
-var v;
+let v;
 function noop() { return; };
 
 1 && true && { name: 'Link' };
@@ -60,10 +60,10 @@ null || v || void "Eggs!" || 0;
 Puedes ver una aplicación real de lo anterior en esta función para rellenar números. En JavaScript no hay parámetros por defecto, pero los parámetros omitidos tienen el valor especial `undefined`{.js} que es falso.
 
 ```js
-function pad(target, targetLength, fill) {
-  var result = target.toString();
-  var targetLength = targetLength || result.length + 1;
-  var fill = fill || '0';
+function pad(target, targetLengthIn, fillIn) {
+  let result = target.toString();
+  const targetLength = targetLengthIn || result.length + 1;
+  const fill = fillIn || '0';
   while (result.length < targetLength) {
     result = fill + result;
   }
@@ -81,7 +81,7 @@ pad(2, 5, '*');
 Hemos dicho muchas veces que el estado no se debería exponer pero siempre acabamos enseñando este tipo de modelado para los puntos:
 
 ```js
-var p = { x: 5, y: 5 };
+const p = { x: 5, y: 5 };
 
 function scale(point, factor) {
   point.x = point.x * factor;
@@ -95,7 +95,7 @@ scale(p, 10);
 La implementación correcta sería:
 
 ```js
-var p = {
+const p = {
   _x: 5,
   _y: 5,
   getX: function () {
@@ -128,7 +128,7 @@ Pero reconozcámoslo, escribir esto es un rollo soberano.
 JavaScript permite definir un tipo especial de propiedades llamadas normalmente _propiedades computadas_ de esta guisa:
 
 ```js
-var p = {
+const p = {
   _x: 5,
   _y: 5,
   get x() {
@@ -157,7 +157,7 @@ scale(p, 10);
 Escribirlo sigue siendo un muermo (menos mal que estudiaremos como hacer factorías de objetos) pero utilizarlo es mucho más claro. Así, si ahora decides que sería mejor exponer el nombre de los ejes en mayúscula, puedes hacer:
 
 ```js
-var p = {
+const p = {
   _x: 5,
   _y: 5,
   get X() {
@@ -188,7 +188,7 @@ scale(p, 10);
 Si quisieras añadir una propiedad a un objeto ya existente tendrías que utilizar [`Object.defineProperty()`{.js}](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty):
 
 ```js
-var point = {};
+const point = {};
 Object.defineProperty(point, '_x', { value: 5 });
 Object.defineProperty(point, '_y', { value: 5 });
 Object.defineProperty(point, 'x', {
@@ -222,7 +222,7 @@ Hemos visto que cualquier función puede usarse como un método si se referencia
 [`.call()`{.js}](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call).
 
 ```js
-var ship = { name: 'Death Star' };
+const ship = { name: 'Death Star' };
 
 function fire(shot) {
   console.log(this.name + ' is firing: ' + shot.toUpperCase() + '!!!');
@@ -240,13 +240,13 @@ fire.call(ship, 'pañum');
 La notación corchete para acceder a las propiedades de un objeto es especialmente útil para acceder a propiedades de manera genérica. Por ejemplo, imagina el siguiente código:
 
 ```js
-var hero = {
+const hero = {
   name: 'Link',
   hp: 10,
   stamina: 10,
   weapon: { name: 'sword', effect: { hp: -2 } }
 };
-var enemy = {
+const enemy = {
   name: 'Ganondorf',
   hp: 20,
   stamina: 5,
@@ -265,9 +265,9 @@ function attack(character, target) {
 
 function applyEffect(effect, target) {
   // Obtiene los nombres de las propiedades del objeto. Búscalo en la MDN.
-  var propertyNames = Object.keys(effect);
-  for (var i = 0; i < propertyNames.length; i++) {
-    var name = propertyNames[i];
+  const propertyNames = Object.keys(effect);
+  for (let i = 0; i < propertyNames.length; i++) {
+    const name = propertyNames[i];
     target[name] += effect[name];
   }
 }
@@ -287,10 +287,10 @@ Los objetos de JavaScript no solo sirven para modelar los objetos de la programa
 
 ```js
 function wordHistogram(text) {
-  var wordList = text.split(' ');
-  var histogram = {};
-  for (var i = 0; i < wordList.length; i++) {
-    var word = wordList[i];
+  const wordList = text.split(' ');
+  const histogram = {};
+  for (let i = 0; i < wordList.length; i++) {
+    const word = wordList[i];
     if (!histogram.hasOwnProperty(word)) {
       histogram[word] = 0;
     }
@@ -312,8 +312,8 @@ Las listas de JavaScript tiene algunos métodos que aceptan funciones como pará
 
 ```js
 function wordHistogram(text) {
-  var wordList = text.split(' ');
-  var histogram = {};
+  const wordList = text.split(' ');
+  const histogram = {};
   wordList.forEach(function (word) {
     if (!histogram.hasOwnProperty(word)) {
       histogram[word] = 0;
@@ -323,7 +323,7 @@ function wordHistogram(text) {
   return histogram;
 }
 
-var poem = 'Todo pasa y todo queda, ' +
+const poem = 'Todo pasa y todo queda, ' +
            'pero lo nuestro es pasar, ' +
            'pasar haciendo caminos, ' +
            'caminos sobre la mar';
@@ -335,8 +335,8 @@ El resultado no es correcto porque al separar las palabras por los espacios esta
 
 ```js
 function wordHistogram(text) {
-  var wordList = text.split(/\b/); // Eso entre / / es una expresión regular.
-  var histogram = {};
+  const wordList = text.split(/\b/); // Eso entre / / es una expresión regular.
+  const histogram = {};
   wordList.forEach(function (word) {
     if (!histogram.hasOwnProperty(word)) {
       histogram[word] = 0;
@@ -346,7 +346,7 @@ function wordHistogram(text) {
   return histogram;
 }
 
-var poem = 'Todo pasa y todo queda, ' +
+const poem = 'Todo pasa y todo queda, ' +
            'pero lo nuestro es pasar, ' +
            'pasar haciendo caminos, ' +
            'caminos sobre la mar';
@@ -369,9 +369,9 @@ function isWord(candidate) {
 }
 
 function wordHistogram(text) {
-  var wordList = text.split(/\b/);
+  let wordList = text.split(/\b/);
   wordList = wordList.filter(isWord);
-  var histogram = {};
+  const histogram = {};
 
   wordList.forEach(function (word) {
     if (!histogram.hasOwnProperty(word)) {
@@ -382,7 +382,7 @@ function wordHistogram(text) {
   return histogram;
 }
 
-var poem = 'Todo pasa y todo queda, ' +
+const poem = 'Todo pasa y todo queda, ' +
            'pero lo nuestro es pasar, ' +
            'pasar haciendo caminos, ' +
            'caminos sobre la mar';
@@ -402,10 +402,10 @@ function toLowerCase(word) {
 }
 
 function wordHistogram(text) {
-  var wordList = text.split(/\b/);
+  let wordList = text.split(/\b/);
   wordList = wordList.filter(isWord);
   wordList = wordList.map(toLowerCase);
-  var histogram = {};
+  const histogram = {};
 
   wordList.forEach(function (word) {
     if (!histogram.hasOwnProperty(word)) {
@@ -416,7 +416,7 @@ function wordHistogram(text) {
   return histogram;
 }
 
-var poem = 'Todo pasa y todo queda, ' +
+const poem = 'Todo pasa y todo queda, ' +
            'pero lo nuestro es pasar, ' +
            'pasar haciendo caminos, ' +
            'caminos sobre la mar';
@@ -444,14 +444,14 @@ function buildHistogram(inProgressHistogram, word) {
 }
 
 function wordHistogram(text) {
-  var emptyHistogram = {};
+  const emptyHistogram = {};
   return text.split(/\b/)
              .filter(isWord)
              .map(toLowerCase)
              .reduce(buildHistogram, emptyHistogram);
 }
 
-var poem = 'Todo pasa y todo queda, ' +
+const poem = 'Todo pasa y todo queda, ' +
            'pero lo nuestro es pasar, ' +
            'pasar haciendo caminos, ' +
            'caminos sobre la mar';
@@ -503,10 +503,10 @@ Esta función crea funciones que llamarán a `console.log()`{.js} pero con una e
 Sin embargo, advierte el siguiente comportamiento:
 
 ```js
-var log1 = newLog('Default');
-var log2 = newLog('Ziltoid');
+const log1 = newLog('Default');
+const log2 = newLog('Ziltoid');
 
-var p = { x: 1, y: 10 };
+const p = { x: 1, y: 10 };
 log1(p);
 log2(p);
 log1('Greetings', 'humans!');
@@ -520,16 +520,16 @@ Para hacer que funcione, tendríamos que llamar a `console.log()`{.js} con un n�
 function newLog(label) {
   return function() {
     // ¿Por qué tenemos que hacer esto?
-    var args = Array.prototype.slice.call(arguments);
+    const args = Array.prototype.slice.call(arguments);
     args.splice(0, 0, label + ':');
     console.log.apply(console, args);
   }
 }
 
-var log1 = newLog('Default');
-var log2 = newLog('Ziltoid');
+const log1 = newLog('Default');
+const log2 = newLog('Ziltoid');
 
-var p = { x: 1, y: 10 };
+const p = { x: 1, y: 10 };
 log1(p);
 log2(p);
 log1('Greetings', 'humans!');
@@ -543,7 +543,7 @@ Carga el siguiente código:
 
 ```js
 function scheduleTasks(count) {
-  for(var i = 1; i <= count; i++) {
+  for(let i = 1; i <= count; i++) {
     setTimeout(function () {
       console.log('Executing task', i);
     }, i * 1000);
@@ -564,7 +564,7 @@ scheduleTasks(5);
 Hay veces en las que debemos llamar a un método de un objeto cuando ocurra algo. Por ejemplo, supón que el método avanzar de un supuesto objeto debe llamarse en un intervalo de tiempo. Pongamos cada segundo:
 
 ```js
-var obj = {
+const obj = {
   x: 10,
   y: 2,
   advance: function () {
@@ -573,7 +573,7 @@ var obj = {
   }
 };
 
-var id = setInterval(obj.advance, 1 * 1000);
+const id = setInterval(obj.advance, 1 * 1000);
 ```
 
 Este ejemplo falla porque en la última línea **no estamos llamando** a la función sino sólo pasándola como parámetro. La función `setInterval()`{.js} no tiene idea del destinatario del mensaje y por tanto no puede llamar a la función como si fuera un método.
@@ -587,7 +587,7 @@ clearInterval(id);
 Ahora podemos solucionarlo con:
 
 ```js
-var id = setInterval(obj.advance.bind(obj), 1 * 1000);
+const id = setInterval(obj.advance.bind(obj), 1 * 1000);
 ```
 
 # La función `bind()`{.js}
@@ -598,12 +598,12 @@ La tarea es la siguiente: crea una función `bind()`{.js} que simule el comporta
 
 ```js
 function die(sides) {
-  var result = Math.floor(Math.random() * sides) + 1;
+  const result = Math.floor(Math.random() * sides) + 1;
   this.history.push(result);
   return result;
 }
-var obj = { history: [] };
-var d20 = die.bind(obj, 20);
+const obj = { history: [] };
+const d20 = die.bind(obj, 20);
 d20();
 ```
 
@@ -611,11 +611,11 @@ La usaremos de esta otra forma:
 
 ```js
 function die(sides) {
-  var result = Math.floor(Math.random() * sides) + 1;
+  const result = Math.floor(Math.random() * sides) + 1;
   this.history.push(result);
   return result;
 }
-var obj = { history: [] };
-var d20 = bind(die, obj, 20); // fíjate en que ahora die es el primer parámetro
+const obj = { history: [] };
+const d20 = bind(die, obj, 20); // fíjate en que ahora die es el primer parámetro
 d20();
 ```

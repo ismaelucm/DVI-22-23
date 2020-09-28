@@ -1,5 +1,5 @@
 ---
-title: Introducción a las videojuegos en red
+title: Introducción a los videojuegos en red
 ---
 
 # Aviso

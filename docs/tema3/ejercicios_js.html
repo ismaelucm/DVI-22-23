@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Ejercicios de laboratorio</title>
+  <title>Ejercicios</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -74,30 +74,30 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../docs.css" />
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Ejercicios de laboratorio</h1>
+<h1 class="title">Ejercicios</h1>
 </header>
 <h1 id="objetivos">Objetivos</h1>
 <p>Probad estos ejemplos y tratad de responder a las preguntas. Si os atascáis con lo que hace una función, buscad en Internet la función acompañado de “mdn”.</p>
 <h1 id="valores-booleanos-en-javascript">Valores booleanos en JavaScript</h1>
 <p>En JavaScript cualquier valor puede considerarse verdadero o falso según el contexto. Por ejemplo, el <code class="sourceCode javascript"><span class="dv">0</span></code> es considerado <code class="sourceCode javascript"><span class="kw">false</span></code> y cualquier número distinto de <code class="sourceCode javascript"><span class="dv">0</span></code> es <code class="sourceCode javascript"><span class="kw">true</span></code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">var</span> v <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// después de esta prueba, cambia el valor de v por otro número.</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">const</span> v <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// después de esta prueba, cambia el valor de v por otro número.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="op">!!</span>v<span class="op">;</span> <span class="co">// la doble negación al comienzo lo convierte en booleano.</span></span></code></pre></div>
 <p>Descubre qué valores son ciertos y cuales falsos para todos los tipos: números, cadenas, objetos, funciones y undefined.</p>
 <h1 id="expresiones-booleanas-en-javascript">Expresiones booleanas en JavaScript</h1>
 <p>En JavaScript, las expresiones booleanas son <em>vagas</em>, esto significa que en cuanto sabemos lo que va a valer la expresión, dejamos de evaluar. Por ejemplo, ¿qué crees que le pasará a la siguiente expressión?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">var</span> hero <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span><span class="op">,</span> <span class="dt">weapon</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">;</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">const</span> hero <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span><span class="op">,</span> <span class="dt">weapon</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Hero weapon power is:&#39;</span><span class="op">,</span> hero<span class="op">.</span><span class="at">weapon</span><span class="op">.</span><span class="at">power</span>)<span class="op">;</span></span></code></pre></div>
 <p>Pero, ¿y ahora?</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">var</span> hero <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span><span class="op">,</span> <span class="dt">weapon</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">;</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">const</span> hero <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span><span class="op">,</span> <span class="dt">weapon</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="cf">if</span> (hero<span class="op">.</span><span class="at">weapon</span> <span class="op">&amp;&amp;</span> hero<span class="op">.</span><span class="at">weapon</span><span class="op">.</span><span class="at">power</span>) {</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Hero weapon power is:&#39;</span><span class="op">,</span> hero<span class="op">.</span><span class="at">weapon</span><span class="op">.</span><span class="at">power</span>)<span class="op">;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>} <span class="cf">else</span> {</span>
@@ -107,7 +107,7 @@
 <p>En caso de expresiones <code>||</code> (<em>or</em> u <em>o</em>), la evaluación termina tan pronto como encontramos un término verdadero.</p>
 <h1 id="el-resultado-de-las-expresiones-booleanas">El resultado de las expresiones booleanas</h1>
 <p>Contra el sentido común, el resultado de una expresión booleana no es un booleano sino el último término evaluado. Recuerda que la evaluación es <em>vaga</em> y dejamos de evaluar tan pronto como podemos determinar el resultado de la expresión. Con esto en cuenta, trata de predecir el resultado de las siguientes expresiones:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">var</span> v<span class="op">;</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">let</span> v<span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">noop</span>() { <span class="cf">return</span><span class="op">;</span> }<span class="op">;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="dv">1</span> <span class="op">&amp;&amp;</span> <span class="kw">true</span> <span class="op">&amp;&amp;</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span> }<span class="op">;</span></span>
@@ -116,10 +116,10 @@
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="kw">null</span> <span class="op">||</span> v <span class="op">||</span> <span class="kw">void</span> <span class="st">&quot;Eggs!&quot;</span> <span class="op">||</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div>
 <h1 id="parámetros-por-defecto">Parámetros por defecto</h1>
 <p>Puedes ver una aplicación real de lo anterior en esta función para rellenar números. En JavaScript no hay parámetros por defecto, pero los parámetros omitidos tienen el valor especial <code class="sourceCode javascript"><span class="kw">undefined</span></code> que es falso.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">pad</span>(target<span class="op">,</span> targetLength<span class="op">,</span> fill) {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  <span class="kw">var</span> result <span class="op">=</span> target<span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>  <span class="kw">var</span> targetLength <span class="op">=</span> targetLength <span class="op">||</span> result<span class="op">.</span><span class="at">length</span> <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>  <span class="kw">var</span> fill <span class="op">=</span> fill <span class="op">||</span> <span class="st">&#39;0&#39;</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">pad</span>(target<span class="op">,</span> targetLengthIn<span class="op">,</span> fillIn) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  <span class="kw">let</span> result <span class="op">=</span> target<span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>  <span class="kw">const</span> targetLength <span class="op">=</span> targetLengthIn <span class="op">||</span> result<span class="op">.</span><span class="at">length</span> <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>  <span class="kw">const</span> fill <span class="op">=</span> fillIn <span class="op">||</span> <span class="st">&#39;0&#39;</span><span class="op">;</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>  <span class="cf">while</span> (result<span class="op">.</span><span class="at">length</span> <span class="op">&lt;</span> targetLength) {</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    result <span class="op">=</span> fill <span class="op">+</span> result<span class="op">;</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>  }</span>
@@ -132,7 +132,7 @@
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="fu">pad</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="st">&#39;*&#39;</span>)<span class="op">;</span></span></code></pre></div>
 <h1 id="buenas-prácticas-en-el-diseño-de-apis">Buenas prácticas en el diseño de APIs</h1>
 <p>Hemos dicho muchas veces que el estado no se debería exponer pero siempre acabamos enseñando este tipo de modelado para los puntos:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">var</span> p <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">5</span> }<span class="op">;</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">const</span> p <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">5</span> }<span class="op">;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">scale</span>(point<span class="op">,</span> factor) {</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>  point<span class="op">.</span><span class="at">x</span> <span class="op">=</span> point<span class="op">.</span><span class="at">x</span> <span class="op">*</span> factor<span class="op">;</span></span>
@@ -142,7 +142,7 @@
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="fu">scale</span>(p<span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span></code></pre></div>
 <p>La implementación correcta sería:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">var</span> p <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">const</span> p <span class="op">=</span> {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>  <span class="dt">_x</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>  <span class="dt">_y</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>  <span class="dt">getX</span><span class="op">:</span> <span class="kw">function</span> () {</span>
@@ -169,7 +169,7 @@
 <p>Pero reconozcámoslo, escribir esto es un rollo soberano.</p>
 <h1 id="propiedades-computadas-al-rescate">Propiedades computadas al rescate</h1>
 <p>JavaScript permite definir un tipo especial de propiedades llamadas normalmente <em>propiedades computadas</em> de esta guisa:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">var</span> p <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">const</span> p <span class="op">=</span> {</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>  <span class="dt">_x</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>  <span class="dt">_y</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>  get <span class="fu">x</span>() {</span>
@@ -194,7 +194,7 @@
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a><span class="fu">scale</span>(p<span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span></code></pre></div>
 <p>Escribirlo sigue siendo un muermo (menos mal que estudiaremos como hacer factorías de objetos) pero utilizarlo es mucho más claro. Así, si ahora decides que sería mejor exponer el nombre de los ejes en mayúscula, puedes hacer:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">var</span> p <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">const</span> p <span class="op">=</span> {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>  <span class="dt">_x</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>  <span class="dt">_y</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>  get <span class="fu">X</span>() {</span>
@@ -220,7 +220,7 @@
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true"></a><span class="fu">scale</span>(p<span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span></code></pre></div>
 <p>¿Se te ocurre la manera de hacer que una propiedad pueda ser de sólo lectura? Es decir, que su valor no pueda cambiarse (asumiendo que el usuario no accederá a las propiedades que comiencen por ’_’).</p>
 <p>Si quisieras añadir una propiedad a un objeto ya existente tendrías que utilizar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>()</code></a>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">var</span> point <span class="op">=</span> {}<span class="op">;</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">const</span> point <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(point<span class="op">,</span> <span class="st">&#39;_x&#39;</span><span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="dv">5</span> })<span class="op">;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(point<span class="op">,</span> <span class="st">&#39;_y&#39;</span><span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="dv">5</span> })<span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(point<span class="op">,</span> <span class="st">&#39;x&#39;</span><span class="op">,</span> {</span>
@@ -246,7 +246,7 @@
 <p>No te lances a usar <code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>()</code> si no tienes <strong>muy claro</strong> qué significan los términos <strong>configurable</strong>, <strong>enumerable</strong> y <strong>writable</strong>.</p>
 <h1 id="usando-funciones-como-si-fueran-métodos">Usando funciones como si fueran métodos</h1>
 <p>Hemos visto que cualquier función puede usarse como un método si se referencia como una propiedad de un objeto y entonces se llama. Pero lo cierto es que también podemos hacer que una función cualquiera, sin estar referenciada desde una propiedad, pueda ser usada como el método de un objeto si indicamos explícitamente cual es el objeto destinatario. Esto puede hacerse con <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code></a> y con <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">call</span>()</code></a>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="kw">var</span> ship <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Death Star&#39;</span> }<span class="op">;</span></span>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="kw">const</span> ship <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Death Star&#39;</span> }<span class="op">;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">fire</span>(shot) {</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="kw">this</span><span class="op">.</span><span class="at">name</span> <span class="op">+</span> <span class="st">&#39; is firing: &#39;</span> <span class="op">+</span> shot<span class="op">.</span><span class="fu">toUpperCase</span>() <span class="op">+</span> <span class="st">&#39;!!!&#39;</span>)<span class="op">;</span></span>
@@ -258,13 +258,13 @@
 <p>¿Cuál es la diferencia entre <code class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code> y <code class="sourceCode javascript"><span class="op">.</span><span class="fu">call</span>()</code>?</p>
 <h1 id="propiedades-dinámicas">Propiedades dinámicas</h1>
 <p>La notación corchete para acceder a las propiedades de un objeto es especialmente útil para acceder a propiedades de manera genérica. Por ejemplo, imagina el siguiente código:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">var</span> hero <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">const</span> hero <span class="op">=</span> {</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span><span class="op">,</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a>  <span class="dt">hp</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a>  <span class="dt">stamina</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>  <span class="dt">weapon</span><span class="op">:</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;sword&#39;</span><span class="op">,</span> <span class="dt">effect</span><span class="op">:</span> { <span class="dt">hp</span><span class="op">:</span> <span class="dv">-2</span> } }</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a>}<span class="op">;</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a><span class="kw">var</span> enemy <span class="op">=</span> {</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a><span class="kw">const</span> enemy <span class="op">=</span> {</span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true"></a>  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Ganondorf&#39;</span><span class="op">,</span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true"></a>  <span class="dt">hp</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true"></a>  <span class="dt">stamina</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
@@ -283,9 +283,9 @@
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true"></a></span>
 <span id="cb12-24"><a href="#cb12-24" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">applyEffect</span>(effect<span class="op">,</span> target) {</span>
 <span id="cb12-25"><a href="#cb12-25" aria-hidden="true"></a>  <span class="co">// Obtiene los nombres de las propiedades del objeto. Búscalo en la MDN.</span></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true"></a>  <span class="kw">var</span> propertyNames <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(effect)<span class="op">;</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true"></a>  <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> propertyNames<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true"></a>    <span class="kw">var</span> name <span class="op">=</span> propertyNames[i]<span class="op">;</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true"></a>  <span class="kw">const</span> propertyNames <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(effect)<span class="op">;</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> propertyNames<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true"></a>    <span class="kw">const</span> name <span class="op">=</span> propertyNames[i]<span class="op">;</span></span>
 <span id="cb12-29"><a href="#cb12-29" aria-hidden="true"></a>    target[name] <span class="op">+=</span> effect[name]<span class="op">;</span></span>
 <span id="cb12-30"><a href="#cb12-30" aria-hidden="true"></a>  }</span>
 <span id="cb12-31"><a href="#cb12-31" aria-hidden="true"></a>}</span>
@@ -299,10 +299,10 @@
 <h1 id="objetos-como-algo-más-que-objetos">Objetos como algo más que objetos</h1>
 <p>Los objetos de JavaScript no solo sirven para modelar los objetos de la programación orientada a objetos sino que permiten realizar clasificaciones por nombre. Un histograma, es decir un conteo de un conjunto con repeticiones, es un ejemplo clásico de la utilidad de un objeto JavaScript:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>  <span class="kw">var</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="st">&#39; &#39;</span>)<span class="op">;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>  <span class="kw">var</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>  <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> wordList<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>    <span class="kw">var</span> word <span class="op">=</span> wordList[i]<span class="op">;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>  <span class="kw">const</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="st">&#39; &#39;</span>)<span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>  <span class="kw">const</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> wordList<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>    <span class="kw">const</span> word <span class="op">=</span> wordList[i]<span class="op">;</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="op">!</span>histogram<span class="op">.</span><span class="fu">hasOwnProperty</span>(word)) {</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a>      histogram[word] <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a>    }</span>
@@ -316,8 +316,8 @@
 <h1 id="funciones-como-parámetros">Funciones como parámetros</h1>
 <p>Las listas de JavaScript tiene algunos métodos que aceptan funciones como parámetros, por ejemplo <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">forEach</span>()</code></a>. De hecho es común encontrar <code class="sourceCode javascript"><span class="op">.</span><span class="fu">forEach</span>()</code> cuando se tiene la certeza de que se van a recorrer <strong>todos</strong> los elementos de una lista.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>  <span class="kw">var</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="st">&#39; &#39;</span>)<span class="op">;</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>  <span class="kw">var</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a>  <span class="kw">const</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="st">&#39; &#39;</span>)<span class="op">;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>  <span class="kw">const</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a>  wordList<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (word) {</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="op">!</span>histogram<span class="op">.</span><span class="fu">hasOwnProperty</span>(word)) {</span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true"></a>      histogram[word] <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
@@ -327,7 +327,7 @@
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true"></a>  <span class="cf">return</span> histogram<span class="op">;</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true"></a>}</span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true"></a></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true"></a><span class="kw">var</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true"></a><span class="kw">const</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true"></a>           <span class="st">&#39;pero lo nuestro es pasar, &#39;</span> <span class="op">+</span></span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true"></a>           <span class="st">&#39;pasar haciendo caminos, &#39;</span> <span class="op">+</span></span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
@@ -335,8 +335,8 @@
 <span id="cb14-18"><a href="#cb14-18" aria-hidden="true"></a><span class="fu">wordHistogram</span>(poem)<span class="op">;</span></span></code></pre></div>
 <p>El resultado no es correcto porque al separar las palabras por los espacios estamos dejando caracteres que no son palabras como parte de ellas. Podemos arreglarlo si en vez de partir el texto por los espacios usamos una <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">expresión regular</a> para partir el texto por los límites de las palabras:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>  <span class="kw">var</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\b</span><span class="ss">/</span>)<span class="op">;</span> <span class="co">// Eso entre / / es una expresión regular.</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>  <span class="kw">var</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>  <span class="kw">const</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\b</span><span class="ss">/</span>)<span class="op">;</span> <span class="co">// Eso entre / / es una expresión regular.</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>  <span class="kw">const</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a>  wordList<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (word) {</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="op">!</span>histogram<span class="op">.</span><span class="fu">hasOwnProperty</span>(word)) {</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true"></a>      histogram[word] <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
@@ -346,7 +346,7 @@
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true"></a>  <span class="cf">return</span> histogram<span class="op">;</span></span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true"></a>}</span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true"></a><span class="kw">var</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true"></a><span class="kw">const</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true"></a>           <span class="st">&#39;pero lo nuestro es pasar, &#39;</span> <span class="op">+</span></span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true"></a>           <span class="st">&#39;pasar haciendo caminos, &#39;</span> <span class="op">+</span></span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
@@ -361,9 +361,9 @@
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a>}</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true"></a></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true"></a>  <span class="kw">var</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\b</span><span class="ss">/</span>)<span class="op">;</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true"></a>  <span class="kw">let</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\b</span><span class="ss">/</span>)<span class="op">;</span></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true"></a>  wordList <span class="op">=</span> wordList<span class="op">.</span><span class="fu">filter</span>(isWord)<span class="op">;</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true"></a>  <span class="kw">var</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true"></a>  <span class="kw">const</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true"></a></span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true"></a>  wordList<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (word) {</span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="op">!</span>histogram<span class="op">.</span><span class="fu">hasOwnProperty</span>(word)) {</span>
@@ -374,7 +374,7 @@
 <span id="cb17-16"><a href="#cb17-16" aria-hidden="true"></a>  <span class="cf">return</span> histogram<span class="op">;</span></span>
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true"></a>}</span>
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true"></a></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true"></a><span class="kw">var</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true"></a><span class="kw">const</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
 <span id="cb17-20"><a href="#cb17-20" aria-hidden="true"></a>           <span class="st">&#39;pero lo nuestro es pasar, &#39;</span> <span class="op">+</span></span>
 <span id="cb17-21"><a href="#cb17-21" aria-hidden="true"></a>           <span class="st">&#39;pasar haciendo caminos, &#39;</span> <span class="op">+</span></span>
 <span id="cb17-22"><a href="#cb17-22" aria-hidden="true"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
@@ -390,10 +390,10 @@
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true"></a>}</span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true"></a></span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true"></a>  <span class="kw">var</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\b</span><span class="ss">/</span>)<span class="op">;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true"></a>  <span class="kw">let</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\b</span><span class="ss">/</span>)<span class="op">;</span></span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true"></a>  wordList <span class="op">=</span> wordList<span class="op">.</span><span class="fu">filter</span>(isWord)<span class="op">;</span></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true"></a>  wordList <span class="op">=</span> wordList<span class="op">.</span><span class="fu">map</span>(toLowerCase)<span class="op">;</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true"></a>  <span class="kw">var</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true"></a>  <span class="kw">const</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb18-14"><a href="#cb18-14" aria-hidden="true"></a></span>
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true"></a>  wordList<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (word) {</span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="op">!</span>histogram<span class="op">.</span><span class="fu">hasOwnProperty</span>(word)) {</span>
@@ -404,7 +404,7 @@
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true"></a>  <span class="cf">return</span> histogram<span class="op">;</span></span>
 <span id="cb18-22"><a href="#cb18-22" aria-hidden="true"></a>}</span>
 <span id="cb18-23"><a href="#cb18-23" aria-hidden="true"></a></span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true"></a><span class="kw">var</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true"></a><span class="kw">const</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
 <span id="cb18-25"><a href="#cb18-25" aria-hidden="true"></a>           <span class="st">&#39;pero lo nuestro es pasar, &#39;</span> <span class="op">+</span></span>
 <span id="cb18-26"><a href="#cb18-26" aria-hidden="true"></a>           <span class="st">&#39;pasar haciendo caminos, &#39;</span> <span class="op">+</span></span>
 <span id="cb18-27"><a href="#cb18-27" aria-hidden="true"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
@@ -428,14 +428,14 @@
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true"></a>}</span>
 <span id="cb19-16"><a href="#cb19-16" aria-hidden="true"></a></span>
 <span id="cb19-17"><a href="#cb19-17" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true"></a>  <span class="kw">var</span> emptyHistogram <span class="op">=</span> {}<span class="op">;</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true"></a>  <span class="kw">const</span> emptyHistogram <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb19-19"><a href="#cb19-19" aria-hidden="true"></a>  <span class="cf">return</span> text<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\b</span><span class="ss">/</span>)</span>
 <span id="cb19-20"><a href="#cb19-20" aria-hidden="true"></a>             <span class="op">.</span><span class="fu">filter</span>(isWord)</span>
 <span id="cb19-21"><a href="#cb19-21" aria-hidden="true"></a>             <span class="op">.</span><span class="fu">map</span>(toLowerCase)</span>
 <span id="cb19-22"><a href="#cb19-22" aria-hidden="true"></a>             <span class="op">.</span><span class="fu">reduce</span>(buildHistogram<span class="op">,</span> emptyHistogram)<span class="op">;</span></span>
 <span id="cb19-23"><a href="#cb19-23" aria-hidden="true"></a>}</span>
 <span id="cb19-24"><a href="#cb19-24" aria-hidden="true"></a></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true"></a><span class="kw">var</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true"></a><span class="kw">const</span> poem <span class="op">=</span> <span class="st">&#39;Todo pasa y todo queda, &#39;</span> <span class="op">+</span></span>
 <span id="cb19-26"><a href="#cb19-26" aria-hidden="true"></a>           <span class="st">&#39;pero lo nuestro es pasar, &#39;</span> <span class="op">+</span></span>
 <span id="cb19-27"><a href="#cb19-27" aria-hidden="true"></a>           <span class="st">&#39;pasar haciendo caminos, &#39;</span> <span class="op">+</span></span>
 <span id="cb19-28"><a href="#cb19-28" aria-hidden="true"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
@@ -467,10 +467,10 @@
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true"></a>}</span></code></pre></div>
 <p>Esta función crea funciones que llamarán a <code class="sourceCode javascript"><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>()</code> pero con una etiqueta delante. Podríamos crear métodos <code class="sourceCode javascript"><span class="fu">_log</span>()</code> por clase, cada uno con un prefijo y así distinguir unos logs de otros.</p>
 <p>Sin embargo, advierte el siguiente comportamiento:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a><span class="kw">var</span> log1 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Default&#39;</span>)<span class="op">;</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true"></a><span class="kw">var</span> log2 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Ziltoid&#39;</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a><span class="kw">const</span> log1 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Default&#39;</span>)<span class="op">;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true"></a><span class="kw">const</span> log2 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Ziltoid&#39;</span>)<span class="op">;</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true"></a><span class="kw">var</span> p <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span> }<span class="op">;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true"></a><span class="kw">const</span> p <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span> }<span class="op">;</span></span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true"></a><span class="fu">log1</span>(p)<span class="op">;</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true"></a><span class="fu">log2</span>(p)<span class="op">;</span></span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true"></a><span class="fu">log1</span>(<span class="st">&#39;Greetings&#39;</span><span class="op">,</span> <span class="st">&#39;humans!&#39;</span>)<span class="op">;</span></span></code></pre></div>
@@ -479,16 +479,16 @@
 <div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">newLog</span>(label) {</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true"></a>  <span class="cf">return</span> <span class="kw">function</span>() {</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true"></a>    <span class="co">// ¿Por qué tenemos que hacer esto?</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true"></a>    <span class="kw">var</span> args <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">slice</span><span class="op">.</span><span class="fu">call</span>(<span class="kw">arguments</span>)<span class="op">;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true"></a>    <span class="kw">const</span> args <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">slice</span><span class="op">.</span><span class="fu">call</span>(<span class="kw">arguments</span>)<span class="op">;</span></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true"></a>    args<span class="op">.</span><span class="fu">splice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> label <span class="op">+</span> <span class="st">&#39;:&#39;</span>)<span class="op">;</span></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span><span class="op">.</span><span class="fu">apply</span>(<span class="bu">console</span><span class="op">,</span> args)<span class="op">;</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true"></a>  }</span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true"></a>}</span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true"></a><span class="kw">var</span> log1 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Default&#39;</span>)<span class="op">;</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true"></a><span class="kw">var</span> log2 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Ziltoid&#39;</span>)<span class="op">;</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true"></a><span class="kw">const</span> log1 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Default&#39;</span>)<span class="op">;</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true"></a><span class="kw">const</span> log2 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Ziltoid&#39;</span>)<span class="op">;</span></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true"></a></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true"></a><span class="kw">var</span> p <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span> }<span class="op">;</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true"></a><span class="kw">const</span> p <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span> }<span class="op">;</span></span>
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true"></a><span class="fu">log1</span>(p)<span class="op">;</span></span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true"></a><span class="fu">log2</span>(p)<span class="op">;</span></span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true"></a><span class="fu">log1</span>(<span class="st">&#39;Greetings&#39;</span><span class="op">,</span> <span class="st">&#39;humans!&#39;</span>)<span class="op">;</span></span></code></pre></div>
@@ -496,7 +496,7 @@
 <h1 id="asincronía-y-closures">Asincronía y closures</h1>
 <p>Carga el siguiente código:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">scheduleTasks</span>(count) {</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true"></a>  <span class="cf">for</span>(<span class="kw">var</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> count<span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true"></a>  <span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> count<span class="op">;</span> i<span class="op">++</span>) {</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true"></a>    <span class="pp">setTimeout</span>(<span class="kw">function</span> () {</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true"></a>      <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Executing task&#39;</span><span class="op">,</span> i)<span class="op">;</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true"></a>    }<span class="op">,</span> i <span class="op">*</span> <span class="dv">1000</span>)<span class="op">;</span></span>
@@ -507,7 +507,7 @@
 <p>¿Hace lo que esperabas? Si no es así, ¿por qué? ¿cómo lo arreglarías? Pista: necesitas la función <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">bind</span>()</code></a>.</p>
 <h1 id="eventos-y-métodos">Eventos y métodos</h1>
 <p>Hay veces en las que debemos llamar a un método de un objeto cuando ocurra algo. Por ejemplo, supón que el método avanzar de un supuesto objeto debe llamarse en un intervalo de tiempo. Pongamos cada segundo:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a><span class="kw">var</span> obj <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a><span class="kw">const</span> obj <span class="op">=</span> {</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true"></a>  <span class="dt">x</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true"></a>  <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true"></a>  <span class="dt">advance</span><span class="op">:</span> <span class="kw">function</span> () {</span>
@@ -516,31 +516,31 @@
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true"></a>  }</span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true"></a>}<span class="op">;</span></span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true"></a></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true"></a><span class="kw">var</span> id <span class="op">=</span> <span class="pp">setInterval</span>(obj<span class="op">.</span><span class="at">advance</span><span class="op">,</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">1000</span>)<span class="op">;</span></span></code></pre></div>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true"></a><span class="kw">const</span> id <span class="op">=</span> <span class="pp">setInterval</span>(obj<span class="op">.</span><span class="at">advance</span><span class="op">,</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">1000</span>)<span class="op">;</span></span></code></pre></div>
 <p>Este ejemplo falla porque en la última línea <strong>no estamos llamando</strong> a la función sino sólo pasándola como parámetro. La función <code class="sourceCode javascript"><span class="pp">setInterval</span>()</code> no tiene idea del destinatario del mensaje y por tanto no puede llamar a la función como si fuera un método.</p>
 <p>Podemos arreglarlo con <code class="sourceCode javascript"><span class="fu">bind</span>()</code> pero antes para el intervalo con:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true"></a><span class="pp">clearInterval</span>(id)<span class="op">;</span></span></code></pre></div>
 <p>Ahora podemos solucionarlo con:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true"></a><span class="kw">var</span> id <span class="op">=</span> <span class="pp">setInterval</span>(obj<span class="op">.</span><span class="at">advance</span><span class="op">.</span><span class="fu">bind</span>(obj)<span class="op">,</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">1000</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true"></a><span class="kw">const</span> id <span class="op">=</span> <span class="pp">setInterval</span>(obj<span class="op">.</span><span class="at">advance</span><span class="op">.</span><span class="fu">bind</span>(obj)<span class="op">,</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">1000</span>)<span class="op">;</span></span></code></pre></div>
 <h1 id="la-función-bind">La función <code class="sourceCode javascript"><span class="fu">bind</span>()</code></h1>
 <p>A estas alturas ya deberías saber cómo funciona <code class="sourceCode javascript"><span class="fu">bind</span>()</code> o qué hace. Si aun no lo tienes claro, búscalo en la MDN.</p>
 <p>La tarea es la siguiente: crea una función <code class="sourceCode javascript"><span class="fu">bind</span>()</code> que simule el comportamiento del método de las funciones <code class="sourceCode javascript"><span class="op">.</span><span class="fu">bind</span>()</code>. Como se pide una función y no un método, el primer parámetro será la función. Así pues, en vez de usarse así:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">die</span>(sides) {</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true"></a>  <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true"></a>  <span class="kw">const</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>(result)<span class="op">;</span></span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true"></a>}</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true"></a><span class="kw">var</span> obj <span class="op">=</span> { <span class="dt">history</span><span class="op">:</span> [] }<span class="op">;</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true"></a><span class="kw">var</span> d20 <span class="op">=</span> die<span class="op">.</span><span class="fu">bind</span>(obj<span class="op">,</span> <span class="dv">20</span>)<span class="op">;</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true"></a><span class="kw">const</span> obj <span class="op">=</span> { <span class="dt">history</span><span class="op">:</span> [] }<span class="op">;</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true"></a><span class="kw">const</span> d20 <span class="op">=</span> die<span class="op">.</span><span class="fu">bind</span>(obj<span class="op">,</span> <span class="dv">20</span>)<span class="op">;</span></span>
 <span id="cb30-8"><a href="#cb30-8" aria-hidden="true"></a><span class="fu">d20</span>()<span class="op">;</span></span></code></pre></div>
 <p>La usaremos de esta otra forma:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">die</span>(sides) {</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true"></a>  <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true"></a>  <span class="kw">const</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>(result)<span class="op">;</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true"></a>}</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true"></a><span class="kw">var</span> obj <span class="op">=</span> { <span class="dt">history</span><span class="op">:</span> [] }<span class="op">;</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true"></a><span class="kw">var</span> d20 <span class="op">=</span> <span class="fu">bind</span>(die<span class="op">,</span> obj<span class="op">,</span> <span class="dv">20</span>)<span class="op">;</span> <span class="co">// fíjate en que ahora die es el primer parámetro</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true"></a><span class="kw">const</span> obj <span class="op">=</span> { <span class="dt">history</span><span class="op">:</span> [] }<span class="op">;</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true"></a><span class="kw">const</span> d20 <span class="op">=</span> <span class="fu">bind</span>(die<span class="op">,</span> obj<span class="op">,</span> <span class="dv">20</span>)<span class="op">;</span> <span class="co">// fíjate en que ahora die es el primer parámetro</span></span>
 <span id="cb31-8"><a href="#cb31-8" aria-hidden="true"></a><span class="fu">d20</span>()<span class="op">;</span></span></code></pre></div>
 </body>
 </html>

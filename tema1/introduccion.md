@@ -103,6 +103,12 @@ Se calificarán varios hitos, pero la nota final será la última
 
 Las hitos son obligatorias, y su presentación pública en clase, también
 
+## Contribución
+
+Cada miembro declarará su contribución relativa al proyecto, para ponderar la nota
+
+Recordad que lo importante es la *implementación*
+
 
 ## Copias
 

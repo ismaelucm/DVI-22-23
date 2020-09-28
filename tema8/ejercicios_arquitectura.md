@@ -4,11 +4,11 @@ title: Ejercicios de arquitecturas de componentes con JavaScript
 
 # Ejercicio 1
 
-Basándote en el código del tema 4, añade un tipo de mensaje llamado `Sleep`, que haga que la entidad que lo reciba no haga nada durante su ciclo, pasen los ciclos que pasen, hasta que reciba un mensaje `WakeUp` (también tienes que implementar este mensaje).
+Basándote en el código de ejemplo de componentes, añade un tipo de mensaje llamado `Sleep`, que haga que la entidad que lo reciba no haga nada durante su ciclo, pasen los ciclos que pasen, hasta que reciba un mensaje `WakeUp` (también tienes que implementar este mensaje).
 
 # Ejercicio 2
 
-Basándote en el código del tema 4, crea un tipo de componente que, en cada ciclo, aumente la vida de una entidad. Llámalo `Healer`. Ten en cuenta que en el diseño original del código del tema 4, las entidades no tienen vida. Tendrás que crear, para implementar este componente, otro componente que usen las entidades que tienen vida. 
+Basándote en el código de ejemplo de componentes, crea un tipo de componente que, en cada ciclo, aumente la vida de una entidad. Llámalo `Healer`. Ten en cuenta que en el diseño original del código de ejemplo de componentes, las entidades no tienen vida. Tendrás que crear, para implementar este componente, otro componente que usen las entidades que tienen vida. 
 
 Piensa en cómo deben comunicarse estas entidades. La idea del ejercicio es que el diseño siga siendo orientado a componentes y que sea lo más puro posible.
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Intoducción a Phaser</title>
+  <title>Introducción a Phaser</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -78,6 +78,7 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
@@ -87,7 +88,7 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Intoducción a Phaser</h1>
+  <h1 class="title">Introducción a Phaser</h1>
 </section>
 
 <section>
@@ -346,7 +347,6 @@ Hay que indicar que `cache` es una propiedad del objeto juego. -->
   <script src="../reveal.js/plugin/notes/notes.js"></script>
   <script src="../reveal.js/plugin/search/search.js"></script>
   <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-  <script src="../reveal.js/plugin/math/math.js"></script>
 
   <script>
 
@@ -359,26 +359,9 @@ Hay que indicar que `cache` es una propiedad del objeto juego. -->
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
         // reveal.js plugins
         plugins: [
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
