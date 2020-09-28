@@ -291,7 +291,7 @@ Para los juegos usaremos [Phaser](http://phaser.io/){width=50%}
 
 Las entregas del proyecto estarán disponibles en un repositorio `git`
 
-Para entregar, hay que seguir las [condiciones de entrega](https://clnznr.github.io/projectevaluation1920/entregar.html)
+Para entregar, hay que seguir las tener todo en un repositorio, según las condiciones de entrega (expuestas en el CV)
 
 ## Git
 

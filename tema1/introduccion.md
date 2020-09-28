@@ -115,7 +115,13 @@ Se hará un control de copias **estricto**
 
 ## Fórmula
 
-La evaluación se hará en función de la [fórmula de evaluación](../otros/porcentajes.html)
+La evaluación se hará por pesos:
+
+- Implementación: 60%
+- Diseño: 10%
+- Producción: 10%
+- Arte: 10%
+- Comunicación: 10%
 
 ## Proyecto
 

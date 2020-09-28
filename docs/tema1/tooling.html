@@ -78,6 +78,7 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
@@ -381,7 +382,7 @@
 <section id="gestión-de-entregas" class="slide level2">
 <h2>Gestión de entregas</h2>
 <p>Las entregas del proyecto estarán disponibles en un repositorio <code>git</code></p>
-<p>Para entregar, hay que seguir las <a href="https://clnznr.github.io/projectevaluation1920/entregar.html">condiciones de entrega</a></p>
+<p>Para entregar, hay que seguir las tener todo en un repositorio, según las condiciones de entrega (expuestas en el CV)</p>
 </section>
 <section id="git" class="slide level2">
 <h2>Git</h2>
@@ -417,7 +418,6 @@
   <script src="../reveal.js/plugin/notes/notes.js"></script>
   <script src="../reveal.js/plugin/search/search.js"></script>
   <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-  <script src="../reveal.js/plugin/math/math.js"></script>
 
   <script>
 
@@ -430,26 +430,9 @@
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
         // reveal.js plugins
         plugins: [
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom

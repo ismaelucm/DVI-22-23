@@ -1,5 +1,5 @@
 ---
-title: 'Lenguajes interpretados y ´ámicos'
+title: 'Lenguajes interpretados y dinámicos'
 ...
 
 # Lenguajes interpretados
@@ -35,7 +35,7 @@ Comenzó como un pequeño lenguaje que se interpretaba dentro de [Netscape](http
 
 # Lenguajes dinámicos
 
-## ¿Qué nos los lenguajes dinámicos?
+## ¿Qué son los lenguajes dinámicos?
 
 Son lenguajes *diseñados para* hacer durante la ejecución lo que otros hacen cuando compilan
 
@@ -43,7 +43,7 @@ Aunque no es una clasificación perfectamente formal, se esperan ciertos atribut
 
 ## Evaluación
 
-Los lenguajes dinámicos suelen ser capaces de evaluar código generado dinámicamente, con una función de tipo `eval`
+Los lenguajes dinámicos suelen ser capaces de evaluar código generado dinámicamente, con una función de tipo `eval`{.js}
 
 ## Objetos dinámicos
 
