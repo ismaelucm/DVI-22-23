@@ -7,18 +7,27 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
-  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -28,34 +37,24 @@
   <h1 class="title">Publicar proyecto en la web</h1>
 </section>
 
-<section>
-<section id="cómo-empaquetar" class="title-slide slide level1">
-<h1>Cómo empaquetar</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="cómo-empaquetar" class="title-slide slide level1"><h1>Cómo empaquetar</h1></section><section class="slide level2">
 
 <p>Hay que alojar el proyecto en un sitio web</p>
 <p>Todos, a través del <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/">servicio de páginas públicas en GitHub</a> podéis simplemente hacer un commit del proyecto y servir la URL</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Sólo tenéis que crear una rama <code>master</code> en un repositorio, y tener ahí el archivo <code>index.html</code> apropiado (los servidores web usan <code>index.html</code> por defecto)</p>
 <p>También podéis hacerlo desde la carpeta <code>docs</code> de <code>master</code> (tenéis que configurarlo en “Settings”)</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Una ventaja de hacerlo desde <code>docs</code> es que, si el repositorio es privado, sólo se servirá/será público lo de esa carpeta</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Una ventaja de hacerlo desde <code>master</code> es que no hay que hacer nada más que desarrollar y hacer <code>push</code>, y servimos los mismos archivos de desarrollo</p>
 <p>En general <em>esto no es idóneo</em>, pero acelera y simplifica el proceso</p>
-</section>
-<section id="rutas" class="slide level2">
+</section><section id="rutas" class="slide level2">
 <h2>Rutas</h2>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <!-- Recordemos que Phaser no usa recursos cargados desde local, hace falta hacerlo a través de un servidor web
 
@@ -66,31 +65,22 @@
 <li>Aseguraos de que están cargados antes de iniciar su uso</li>
 <li>Aseguraos de que están siempre disponibles</li>
 </ul>
-</section>
-<section id="página-en-la-que-incluir-el-proyecto" class="slide level2">
+</section><section id="página-en-la-que-incluir-el-proyecto" class="slide level2">
 <h2>Página en la que incluir el proyecto</h2>
 <p>El archivo <code>index.html</code> tiene que ser una página presentable y “bonita”</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Tiene que tener el título del proyecto, un resumen del GDD (una versión en HTML), enlaces pertinentes (como por ejemplo al código en <code>GitHub</code>), instrucciones, y cualquier cosa relevante</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Además, hay que poner la licencia del mismo e información de la asignatura</p>
 </section></section>
-<section>
-<section id="desarrollo-y-despliegue" class="title-slide slide level1">
-<h1>Desarrollo y despliegue</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="desarrollo-y-despliegue" class="title-slide slide level1"><h1>Desarrollo y despliegue</h1></section><section class="slide level2">
 
 <p>No tenéis que desarrollar con la máquina de GitHub, sino en local</p>
 <p>Hacer <code>push</code> para probar es lento y es una carga innecesaria</p>
 <p>Con <code>npx live-server</code> o similar podéis arrancar un servidor, e ir haciendo <code>push</code> cuando funcione</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>O, mejor, publicar sólo <code>docs</code> y copiar a esta carpeta sólo cuando haya material mejorado</p>
 <!-- 
@@ -181,18 +171,12 @@ Esto hace que publicar en la carpeta `docs` sea mucho más sencillo -->
     </div>
   </div>
 
-  <script src="../reveal.js/dist/reveal.js"></script>
-
-  // reveal.js plugins
-  <script src="../reveal.js/plugin/notes/notes.js"></script>
-  <script src="../reveal.js/plugin/search/search.js"></script>
-  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-  <script src="../reveal.js/plugin/math/math.js"></script>
+  <script src="../reveal.js/js/reveal.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://revealjs.com/config/
+      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         // Display a presentation progress bar
         progress: true,
@@ -200,29 +184,12 @@ Esto hace que publicar en la carpeta `docs` sea mucho más sencillo -->
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
-        // reveal.js plugins
-        plugins: [
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

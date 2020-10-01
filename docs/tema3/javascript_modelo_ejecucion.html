@@ -7,80 +7,91 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
-  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <style>
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -90,488 +101,416 @@
   <h1 class="title">El modelo de ejecución de JavaScript</h1>
 </section>
 
-<section>
-<section id="ejecución-asíncrona" class="title-slide slide level1">
-<h1>Ejecución asíncrona</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="ejecución-asíncrona" class="title-slide slide level1"><h1>Ejecución asíncrona</h1></section><section class="slide level2">
 
 <p>JavaScript se caracteriza por facilitar (que no forzar) un modelo de ejecución asíncrono donde los resultados <strong>no se encuentran disponibles inmediatamente</strong>, sino que lo estarán en un futuro</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Esto quiere decir que el lenguaje está diseñado para responder bien a resultados que llegan cuando están preparados, mientras que la ejecución sigue su curso</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Para esto, hay una serie de particularidades del modelo de ejecución que vamos a ver en este tema</p>
 </section></section>
-<section>
-<section id="ámbito-y-hoisting" class="title-slide slide level1">
-<h1>Ámbito y <em>hoisting</em></h1>
-
-</section>
-<section class="slide level2">
+<section><section id="ámbito-y-hoisting" class="title-slide slide level1"><h1>Ámbito y <em>hoisting</em></h1></section><section class="slide level2">
 
 <p>Como en muchos lenguajes, los nombres de las variables <strong>pueden reutilizarse</strong> y guardar valores distintos siempre y cuando se encuentren en <strong>ámbitos distintos</strong></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>El ámbito o <em>scope</em> de una variable es la porción de código donde puede ser utilizada</p>
 <p><strong>Variables con el mismo nombre en ámbitos distintos son variables distintas</strong></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<p>El <strong>ámbito en JavaScript es el cuerpo de la función</strong>, delimitado entre el par de llaves <code class="sourceCode javascript">{</code> y <code class="sourceCode javascript">}</code> que siguen a la lista de parámetros de la función</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">introduction</span>() {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="co">// Esta es la variable text</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  <span class="fu">greetings</span>()<span class="op">;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(text)<span class="op">;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">greetings</span>(list) {</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>  <span class="co">// Y esta es OTRA variable text distinta</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(text)<span class="op">;</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="fu">introduction</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<p>El <strong>ámbito en JavaScript es el cuerpo de la función</strong>, delimitado entre el par de llaves <code class="sourceCode javascript"><span class="op">{</span></code> y <code class="sourceCode javascript">}</code> que siguen a la lista de parámetros de la función</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">function</span> <span class="at">introduction</span>() <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="co">// Esta es la variable text</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="at">greetings</span>()<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="va">console</span>.<span class="at">log</span>(text)<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="op">}</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">function</span> <span class="at">greetings</span>(list) <span class="op">{</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>  <span class="co">// Y esta es OTRA variable text distinta</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>  <span class="va">console</span>.<span class="at">log</span>(text)<span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="op">}</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="at">introduction</span>()<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>En JavaScript, las funciones pueden definirse dentro de otras funciones y de esta forma, anidar ámbitos</p>
 <p>El anidamiento de funciones es útil cuando se quieren usar <strong>pequeñas funciones auxiliares</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">getEven</span>(list) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  <span class="kw">function</span> <span class="fu">isEven</span>(n) {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>  }</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>  <span class="cf">return</span> list<span class="op">.</span><span class="fu">filter</span>(isEven)<span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>}</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="fu">getEven</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>])<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">function</span> <span class="at">getEven</span>(list) <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="kw">function</span> <span class="at">isEven</span>(n) <span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="op">}</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="cf">return</span> <span class="va">list</span>.<span class="at">filter</span>(isEven)<span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="op">}</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="at">getEven</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>])<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Como el ámbito es el de la función, el mismo nombre en una función anidada se puede referir a dos cosas</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p><strong>Si se usa con <code class="sourceCode javascript"><span class="kw">var</span></code></strong>, se estará declarando <strong>otra variable distinta</strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">introduction</span>() {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>  <span class="co">// Esta es una variable text</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>  <span class="kw">function</span> <span class="fu">greetings</span>(list) {</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="co">// Y esta es OTRA variable text distinta</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(text)<span class="op">;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>  }</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>  <span class="fu">greetings</span>()<span class="op">;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(text)<span class="op">;</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>}</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a><span class="fu">introduction</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">function</span> <span class="at">introduction</span>() <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="co">// Esta es una variable text</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="kw">function</span> <span class="at">greetings</span>(list) <span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="co">// Y esta es OTRA variable text distinta</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>    <span class="va">console</span>.<span class="at">log</span>(text)<span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="op">}</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a>  <span class="at">greetings</span>()<span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>  <span class="va">console</span>.<span class="at">log</span>(text)<span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="op">}</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="at">introduction</span>()<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
-<p>En el caso anterior, decimos que la variable <code class="sourceCode javascript">text</code> de la función anidada <code class="sourceCode javascript"><span class="fu">greetings</span>()</code> oculta a la variable <code class="sourceCode javascript">text</code> de la función <code class="sourceCode javascript"><span class="fu">introduction</span>()</code></p>
-</section>
-<section class="slide level2">
+<p>En el caso anterior, decimos que la variable <code class="sourceCode javascript">text</code> de la función anidada <code class="sourceCode javascript"><span class="at">greetings</span>()</code> oculta a la variable <code class="sourceCode javascript">text</code> de la función <code class="sourceCode javascript"><span class="at">introduction</span>()</code></p>
+</section><section class="slide level2">
 
 <p>Recuerda que para introducir una <strong>nueva variable</strong> necesitas declararla con <code class="sourceCode javascript"><span class="kw">var</span></code> antes de usarla (o al mismo tiempo que la asignas)</p>
 <p>Si omites la palabra <code class="sourceCode javascript"><span class="kw">var</span></code>, no estás creando una nueva variable sino <strong>reutilizando</strong> la que ya existía</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">introduction</span>() {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>  <span class="co">// Esta es una variable text</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>  <span class="kw">function</span> <span class="fu">greetings</span>(list) {</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    <span class="co">// Esta es la MISMA variable text que la de afuera</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(text)<span class="op">;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>  }</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>  <span class="fu">greetings</span>()<span class="op">;</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(text)<span class="op">;</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>}</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a><span class="fu">introduction</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section id="hoisting" class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">function</span> <span class="at">introduction</span>() <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="co">// Esta es una variable text</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="kw">function</span> <span class="at">greetings</span>(list) <span class="op">{</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="co">// Esta es la MISMA variable text que la de afuera</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>    text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="va">console</span>.<span class="at">log</span>(text)<span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="op">}</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="at">greetings</span>()<span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>  <span class="va">console</span>.<span class="at">log</span>(text)<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="op">}</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="at">introduction</span>()<span class="op">;</span></span></code></pre></div>
+</section><section id="hoisting" class="slide level2">
 <h2>Hoisting</h2>
 <p>En JavaScript da igual a qué altura de la función declares una variable JavaScript asumirá cualquier declaración como si ocurriese al comienzo de la función</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Es decir que esto:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>  <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    <span class="cf">for</span> (<span class="kw">var</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> j<span class="op">++</span>) {</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>      <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;i: &#39;</span><span class="op">,</span> i<span class="op">,</span> <span class="st">&#39; j: &#39;</span><span class="op">,</span> j)<span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    }</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>  }</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">function</span> <span class="at">f</span>() <span class="op">{</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="cf">for</span> (<span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="cf">for</span> (<span class="kw">var</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> j<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;i: &#39;</span><span class="op">,</span> i<span class="op">,</span> <span class="st">&#39; j: &#39;</span><span class="op">,</span> j)<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="op">}</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="op">}</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Es equivalente a esto:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>  <span class="kw">var</span> i<span class="op">;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>  <span class="kw">var</span> j<span class="op">;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>  <span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    <span class="cf">for</span> (j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> j<span class="op">++</span>) {</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>      <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;i: &#39;</span><span class="op">,</span> i<span class="op">,</span> <span class="st">&#39; j: &#39;</span><span class="op">,</span> j)<span class="op">;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    }</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>  }</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">function</span> <span class="at">f</span>() <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="kw">var</span> i<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="kw">var</span> j<span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="cf">for</span> (i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="cf">for</span> (j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> j<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;i: &#39;</span><span class="op">,</span> i<span class="op">,</span> <span class="st">&#39; j: &#39;</span><span class="op">,</span> j)<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>    <span class="op">}</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="op">}</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Esto quiere decir que todo lo que declaremos dentro de una función, aunque esté en otro ámbito, <em>afectará a toda la función</em>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="cf">for</span>(<span class="kw">var</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> b <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> b<span class="op">++</span>)<span class="op">;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(b)<span class="op">;</span> <span class="co">// 10</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">for</span>(<span class="kw">var</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> b <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> b<span class="op">++</span>)<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="va">console</span>.<span class="at">log</span>(b)<span class="op">;</span> <span class="co">// 10</span></span></code></pre></div>
+</section><section class="slide level2">
 
-<p>Además, <code class="sourceCode javascript"><span class="kw">var</span></code> a nivel global hace que el objeto <code class="sourceCode javascript"><span class="bu">window</span></code> en un navegador almacene el valor:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">&lt;script&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>  <span class="kw">var</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">window</span><span class="op">.</span><span class="at">a</span>)<span class="op">;</span> <span class="co">// imprime &quot;4&quot;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<p>Además, <code class="sourceCode javascript"><span class="kw">var</span></code> a nivel global hace que el objeto <code class="sourceCode javascript">window</code> en un navegador almacene el valor:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="kw">var</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="va">console</span>.<span class="at">log</span>(<span class="va">window</span>.<span class="at">a</span>)<span class="op">;</span> <span class="co">// imprime &quot;4&quot;</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Fíjate que JavaScript <strong><em>alza</em> la declaración de la variable, no la inicialización</strong></p>
 <p>Es por eso que este código no falla pero imprime <code class="sourceCode javascript"><span class="kw">undefined</span></code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>  <span class="kw">var</span> i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>}</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="fu">f</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">function</span> <span class="at">f</span>() <span class="op">{</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="va">console</span>.<span class="at">log</span>(i)<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="kw">var</span> i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="op">}</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="at">f</span>()<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>En modo estricto, usar una variable que no ha sido declarada <strong>es un error</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span> <span class="co">// comenta esto después de probar f</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>  i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>}</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="fu">f</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">function</span> <span class="at">f</span>() <span class="op">{</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="va">console</span>.<span class="at">log</span>(i)<span class="op">;</span> <span class="co">// comenta esto después de probar f</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="op">}</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="at">f</span>()<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Con las declaraciones de funciones esto no pasa, cuando una declaración de función se alza, se alza entera, <strong>definición incluída</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">getEven</span>(list) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>  <span class="cf">return</span> list<span class="op">.</span><span class="fu">filter</span>(isEven)<span class="op">;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>  <span class="kw">function</span> <span class="fu">isEven</span>(n) {</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a>  }</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a>}</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true"></a><span class="fu">getEven</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>])<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">function</span> <span class="at">getEven</span>(list) <span class="op">{</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="cf">return</span> <span class="va">list</span>.<span class="at">filter</span>(isEven)<span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="kw">function</span> <span class="at">isEven</span>(n) <span class="op">{</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>  <span class="op">}</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="op">}</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="at">getEven</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>])<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Esto permite una bonita forma de ordenar el código en el que las funciones auxiliares pueden situarse más abajo en las funciones que las utilicen</p>
 <p>Así, viendo sólo la línea:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="cf">return</span> list<span class="op">.</span><span class="fu">filter</span>(isEven)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="cf">return</span> <span class="va">list</span>.<span class="at">filter</span>(isEven)<span class="op">;</span></span></code></pre></div>
 <p>Ya podemos saber qué significa</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Y si aun tenemos dudas, podemos bajar e investigar qué es esa función</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a>  <span class="kw">function</span> <span class="fu">isEven</span>(n) {</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>  }</span></code></pre></div>
-</section>
-<section id="let" class="slide level2">
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1"></a>  <span class="kw">function</span> <span class="at">isEven</span>(n) <span class="op">{</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="op">}</span></span></code></pre></div>
+</section><section id="let" class="slide level2">
 <h2><code class="sourceCode javascript"><span class="kw">let</span></code></h2>
 <p><code class="sourceCode javascript"><span class="kw">let</span></code> es una forma de declarar variables que se añadió en <a href="https://en.wikipedia.org/wiki/ECMAScript#Versions">ES6</a></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p><code class="sourceCode javascript"><span class="kw">let</span></code> y <code class="sourceCode javascript"><span class="kw">var</span></code> son muy parecidos, y ambas valen para declarar variables en un ámbito</p>
 <p>Pero <code class="sourceCode javascript"><span class="kw">let</span></code> sólo crea variables <em>a partir de su definición</em>, no antes</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<p>Además, <code class="sourceCode javascript"><span class="kw">let</span></code> existe entre las llaves que lo delimitan <code class="sourceCode javascript">{}</code> (por ejemplo, sólo dentro de un <code class="sourceCode javascript"><span class="cf">for</span></code>), y no se extiende a toda la función</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="cf">for</span>(<span class="kw">let</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> b <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> b<span class="op">++</span>)<span class="op">;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(b)<span class="op">;</span> <span class="co">// ReferenceError</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<p>Además, <code class="sourceCode javascript"><span class="kw">let</span></code> existe entre las llaves que lo delimitan <code class="sourceCode javascript"><span class="op">{}</span></code> (por ejemplo, sólo dentro de un <code class="sourceCode javascript"><span class="cf">for</span></code>), y no se extiende a toda la función</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1"></a><span class="cf">for</span>(<span class="kw">let</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> b <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> b<span class="op">++</span>)<span class="op">;</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="va">console</span>.<span class="at">log</span>(b)<span class="op">;</span> <span class="co">// ReferenceError</span></span></code></pre></div>
+</section><section class="slide level2">
 
-<p><code class="sourceCode javascript"><span class="kw">let</span></code> a nivel global, a diferencia de <code class="sourceCode javascript"><span class="kw">var</span></code>, <strong>no</strong> hace que el objeto <code class="sourceCode javascript"><span class="bu">window</span></code> en un navegador almacene el valor:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="kw">&lt;script&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>  <span class="kw">let</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">window</span><span class="op">.</span><span class="at">a</span>)<span class="op">;</span> <span class="co">// imprime &quot;undefined&quot;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<p><code class="sourceCode javascript"><span class="kw">let</span></code> a nivel global, a diferencia de <code class="sourceCode javascript"><span class="kw">var</span></code>, <strong>no</strong> hace que el objeto <code class="sourceCode javascript">window</code> en un navegador almacene el valor:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="kw">let</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="va">console</span>.<span class="at">log</span>(<span class="va">window</span>.<span class="at">a</span>)<span class="op">;</span> <span class="co">// imprime &quot;undefined&quot;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Mucha gente prefiere usar <code class="sourceCode javascript"><span class="kw">let</span></code> por defecto, porque una declaración con <code class="sourceCode javascript"><span class="kw">let</span></code> tiene reglas de hoisting diferentes:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">let_vs_var</span>() {</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(bien)<span class="op">;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(mal)<span class="op">;</span> <span class="co">// como `let` no hace hoisting, falla</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true"></a>  <span class="kw">var</span> bien <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true"></a>  <span class="kw">let</span> mal <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section id="const" class="slide level2">
+<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">function</span> <span class="at">let_vs_var</span>() <span class="op">{</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="va">console</span>.<span class="at">log</span>(bien)<span class="op">;</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="va">console</span>.<span class="at">log</span>(mal)<span class="op">;</span> <span class="co">// como `let` no hace hoisting, falla</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="kw">var</span> bien <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>  <span class="kw">let</span> mal <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="op">}</span></span></code></pre></div>
+</section><section id="const" class="slide level2">
 <h2><code class="sourceCode javascript"><span class="kw">const</span></code></h2>
 <p><code class="sourceCode javascript"><span class="kw">const</span></code> tiene el mismo comportamiento en ámbito que <code class="sourceCode javascript"><span class="kw">let</span></code>, pero impide que la referencia cambie</p>
 <p>Pero lo referenciado <strong>sí</strong> puede cambiar (es “mutable”)</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Aquí, lo declarado con <code class="sourceCode javascript"><span class="kw">const</span></code> se podría cambiar, pero no el objeto al que apunta la variable:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="kw">const</span> objeto <span class="op">=</span> {<span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span>}<span class="op">;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a>objeto<span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">4</span><span class="op">;</span> <span class="co">// ¡correcto!</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a>objeto <span class="op">=</span> {<span class="dt">no</span><span class="op">:</span> <span class="st">&quot;funciona&quot;</span>}<span class="op">;</span> <span class="co">// da error</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">const</span> objeto <span class="op">=</span> <span class="op">{</span><span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span><span class="op">};</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="va">objeto</span>.<span class="at">x</span> <span class="op">=</span> <span class="dv">4</span><span class="op">;</span> <span class="co">// ¡correcto!</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>objeto <span class="op">=</span> <span class="op">{</span><span class="dt">no</span><span class="op">:</span> <span class="st">&quot;funciona&quot;</span><span class="op">};</span> <span class="co">// da error</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>En general, usemos <code class="sourceCode javascript"><span class="kw">let</span></code> y <code class="sourceCode javascript"><span class="kw">const</span></code> siempre que no necesitemos nada sofisticado, son más “razonables” que <code class="sourceCode javascript"><span class="kw">var</span></code></p>
 </section></section>
-<section>
-<section id="closures" class="title-slide slide level1">
-<h1><em>Closures</em></h1>
-
-</section>
-<section class="slide level2">
+<section><section id="closures" class="title-slide slide level1"><h1><em>Closures</em></h1></section><section class="slide level2">
 
 <p>Las funciones son datos y se crean cada vez que se encuentra una instrucción <code class="sourceCode javascript"><span class="kw">function</span></code></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>De esta forma podemos crear una función que devuelva funciones</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">buildFunction</span>() {</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true"></a>  <span class="cf">return</span> <span class="kw">function</span> () { <span class="cf">return</span> <span class="dv">42</span><span class="op">;</span> }<span class="op">;</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true"></a>}</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true"></a><span class="kw">var</span> f <span class="op">=</span> <span class="fu">buildFunction</span>()<span class="op">;</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true"></a><span class="kw">var</span> g <span class="op">=</span> <span class="fu">buildFunction</span>()<span class="op">;</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true"></a><span class="kw">typeof</span> f <span class="op">===</span> <span class="st">&#39;function&#39;</span><span class="op">;</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true"></a><span class="kw">typeof</span> g <span class="op">===</span> <span class="st">&#39;function&#39;</span><span class="op">;</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true"></a></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true"></a><span class="fu">f</span>()<span class="op">;</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true"></a><span class="fu">g</span>()<span class="op">;</span> <span class="co">// Las funciones hacen lo mismo..</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true"></a></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true"></a>f <span class="op">!==</span> g<span class="op">;</span> <span class="co">// ...pero NO son la misma función</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">function</span> <span class="at">buildFunction</span>() <span class="op">{</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="cf">return</span> <span class="kw">function</span> () <span class="op">{</span> <span class="cf">return</span> <span class="dv">42</span><span class="op">;</span> <span class="op">};</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="op">}</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="kw">var</span> f <span class="op">=</span> <span class="at">buildFunction</span>()<span class="op">;</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="kw">var</span> g <span class="op">=</span> <span class="at">buildFunction</span>()<span class="op">;</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a></span>
+<span id="cb18-8"><a href="#cb18-8"></a><span class="kw">typeof</span> f <span class="op">===</span> <span class="st">&#39;function&#39;</span><span class="op">;</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a><span class="kw">typeof</span> g <span class="op">===</span> <span class="st">&#39;function&#39;</span><span class="op">;</span></span>
+<span id="cb18-10"><a href="#cb18-10"></a></span>
+<span id="cb18-11"><a href="#cb18-11"></a><span class="at">f</span>()<span class="op">;</span></span>
+<span id="cb18-12"><a href="#cb18-12"></a><span class="at">g</span>()<span class="op">;</span> <span class="co">// Las funciones hacen lo mismo..</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a></span>
+<span id="cb18-14"><a href="#cb18-14"></a>f <span class="op">!==</span> g<span class="op">;</span> <span class="co">// ...pero NO son la misma función</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Por sí sólo, este no es un mecanismo muy potente pero sabiendo que una función anidada puede acceder a las variables de los ámbitos superiores, podemos hacer algo así:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">newDie</span>(sides) {</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true"></a>  <span class="cf">return</span> <span class="kw">function</span> () {</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true"></a>    <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true"></a>  }<span class="op">;</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true"></a>}</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true"></a><span class="kw">var</span> d100 <span class="op">=</span> <span class="fu">newDie</span>(<span class="dv">100</span>)<span class="op">;</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true"></a><span class="kw">var</span> d20 <span class="op">=</span> <span class="fu">newDie</span>(<span class="dv">20</span>)<span class="op">;</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true"></a></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true"></a>d100 <span class="op">!==</span> d20<span class="op">;</span> <span class="co">// distintas, creadas en dos llamadas distintas a newDie</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true"></a><span class="fu">d100</span>()<span class="op">;</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true"></a><span class="fu">d20</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">function</span> <span class="at">newDie</span>(sides) <span class="op">{</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="cf">return</span> <span class="kw">function</span> () <span class="op">{</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>    <span class="cf">return</span> <span class="va">Math</span>.<span class="at">floor</span>(<span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="op">};</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="op">}</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="kw">var</span> d100 <span class="op">=</span> <span class="at">newDie</span>(<span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="kw">var</span> d20 <span class="op">=</span> <span class="at">newDie</span>(<span class="dv">20</span>)<span class="op">;</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a></span>
+<span id="cb19-9"><a href="#cb19-9"></a>d100 <span class="op">!==</span> d20<span class="op">;</span> <span class="co">// distintas, creadas en dos llamadas distintas a newDie</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a></span>
+<span id="cb19-11"><a href="#cb19-11"></a><span class="at">d100</span>()<span class="op">;</span></span>
+<span id="cb19-12"><a href="#cb19-12"></a><span class="at">d20</span>()<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>En JavaScript, <strong>las funciones retienen el acceso a las variables en ámbitos superiores</strong></p>
 <p>Una <strong>función que se refiere a alguna de las variables en ámbitos superiores se denomina <em>closure</em></strong></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Esto <strong>no afecta al valor de <code class="sourceCode javascript"><span class="kw">this</span></code></strong> que seguirá siendo <strong>el destinatario del mensaje</strong></p>
-</section>
-<section id="métodos-closures-y-this" class="slide level2">
+</section><section id="métodos-closures-y-this" class="slide level2">
 <h2>Métodos, closures y <code class="sourceCode javascript"><span class="kw">this</span></code></h2>
 <p>Considera el siguiente ejemplo:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="kw">var</span> diceUtils <span class="op">=</span> {</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// lleva el histórico de tiradas</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="fu">die</span>() {</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>([<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true"></a>    }</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true"></a>  }</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">var</span> diceUtils <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// lleva el histórico de tiradas</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a></span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) <span class="op">{</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="at">die</span>() <span class="op">{</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="va">Math</span>.<span class="at">floor</span>(<span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb20-7"><a href="#cb20-7"></a>      <span class="kw">this</span>.<span class="va">history</span>.<span class="at">push</span>([<span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb20-9"><a href="#cb20-9"></a>    <span class="op">}</span></span>
+<span id="cb20-10"><a href="#cb20-10"></a>  <span class="op">}</span></span>
+<span id="cb20-11"><a href="#cb20-11"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Nuestra intención es poder crear dados y llevar un registro de todas las tiradas que se hagan con estos dados</p>
 <p>Pero esto no funciona:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a><span class="kw">var</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true"></a><span class="fu">d10</span>()<span class="op">;</span> <span class="co">// ¡error!</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">var</span> d10 <span class="op">=</span> <span class="va">diceUtils</span>.<span class="at">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="at">d10</span>()<span class="op">;</span> <span class="co">// ¡error!</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Y es así porque <strong><code class="sourceCode javascript"><span class="kw">this</span></code> siempre es el destinatario del mensaje</strong> y <code class="sourceCode javascript">d10</code> se está llamando como si fuera una función y no un método</p>
-<p>Recordad que podíamos hacer que cualquier función tomara un valor forzoso como <code class="sourceCode javascript"><span class="kw">this</span></code> con <code class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code> por lo que esto sí funciona pero es un engorro:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true"></a>d10<span class="op">.</span><span class="fu">apply</span>(diceUtils)<span class="op">;</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true"></a>d10<span class="op">.</span><span class="fu">apply</span>(diceUtils)<span class="op">;</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true"></a>diceUtils<span class="op">.</span><span class="at">history</span><span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<p>Recordad que podíamos hacer que cualquier función tomara un valor forzoso como <code class="sourceCode javascript"><span class="kw">this</span></code> con <code class="sourceCode javascript">.<span class="at">apply</span>()</code> por lo que esto sí funciona pero es un engorro:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1"></a><span class="va">d10</span>.<span class="at">apply</span>(diceUtils)<span class="op">;</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="va">d10</span>.<span class="at">apply</span>(diceUtils)<span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="va">diceUtils</span>.<span class="at">history</span><span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Lo que tenemos que hacer es que la función <code class="sourceCode javascript">die</code> dentro de <code class="sourceCode javascript">newDie</code> se refiera al <code class="sourceCode javascript"><span class="kw">this</span></code> del ámbito superior, no al suyo</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Podemos hacer esto de dos maneras. La primera es un mero juego de variables:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true"></a><span class="kw">var</span> diceUtils <span class="op">=</span> {</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true"></a>    <span class="kw">var</span> self <span class="op">=</span> <span class="kw">this</span><span class="op">;</span> <span class="co">// self es ahora el destinatario de newDie</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="fu">die</span>() {</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true"></a>      <span class="co">// Usando self nos referimos al destinatario de newDie</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true"></a>      self<span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>([<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true"></a>    }</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true"></a>  }</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">var</span> diceUtils <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a></span>
+<span id="cb23-4"><a href="#cb23-4"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) <span class="op">{</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="kw">var</span> self <span class="op">=</span> <span class="kw">this</span><span class="op">;</span> <span class="co">// self es ahora el destinatario de newDie</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="at">die</span>() <span class="op">{</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="va">Math</span>.<span class="at">floor</span>(<span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a>      <span class="co">// Usando self nos referimos al destinatario de newDie</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>      <span class="va">self</span>.<span class="va">history</span>.<span class="at">push</span>([<span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a>    <span class="op">}</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a>  <span class="op">}</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Esto sí funciona y es mucho más conveniente:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true"></a><span class="kw">var</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true"></a><span class="kw">var</span> d6 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">6</span>)<span class="op">;</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true"></a><span class="fu">d10</span>()<span class="op">;</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true"></a><span class="fu">d6</span>()<span class="op">;</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true"></a><span class="fu">d10</span>()<span class="op">;</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true"></a>diceUtils<span class="op">.</span><span class="at">history</span><span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">var</span> d10 <span class="op">=</span> <span class="va">diceUtils</span>.<span class="at">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="kw">var</span> d6 <span class="op">=</span> <span class="va">diceUtils</span>.<span class="at">newDie</span>(<span class="dv">6</span>)<span class="op">;</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="at">d10</span>()<span class="op">;</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="at">d6</span>()<span class="op">;</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="at">d10</span>()<span class="op">;</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="va">diceUtils</span>.<span class="at">history</span><span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
-<p>La segunda forma es usando el método <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code class="sourceCode javascript"><span class="fu">bind</span>()</code></a> de las funciones</p>
-</section>
-<section class="slide level2">
+<p>La segunda forma es usando el método <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code class="sourceCode javascript"><span class="at">bind</span>()</code></a> de las funciones</p>
+</section><section class="slide level2">
 
-<p>El método <code class="sourceCode javascript"><span class="fu">bind</span>()</code> de una función <strong>devuelve otra función cuyo <code class="sourceCode javascript"><span class="kw">this</span></code> será el primer parámetro de <code class="sourceCode javascript"><span class="fu">bind</span>()</code></strong>. De este modo:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true"></a><span class="kw">var</span> diceUtils <span class="op">=</span> {</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true"></a>    <span class="cf">return</span> die<span class="op">.</span><span class="fu">bind</span>(<span class="kw">this</span>)<span class="op">;</span> <span class="co">// una nueva función que llamará a die con su</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true"></a>                           <span class="co">// destinatario establecido al primer parámetro</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true"></a></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true"></a>    <span class="kw">function</span> <span class="fu">die</span>() {</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>([<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true"></a>    }</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true"></a>  }</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<p>El método <code class="sourceCode javascript"><span class="at">bind</span>()</code> de una función <strong>devuelve otra función cuyo <code class="sourceCode javascript"><span class="kw">this</span></code> será el primer parámetro de <code class="sourceCode javascript"><span class="at">bind</span>()</code></strong>. De este modo:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">var</span> diceUtils <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a></span>
+<span id="cb25-4"><a href="#cb25-4"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) <span class="op">{</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="cf">return</span> <span class="va">die</span>.<span class="at">bind</span>(<span class="kw">this</span>)<span class="op">;</span> <span class="co">// una nueva función que llamará a die con su</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>                           <span class="co">// destinatario establecido al primer parámetro</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a></span>
+<span id="cb25-8"><a href="#cb25-8"></a>    <span class="kw">function</span> <span class="at">die</span>() <span class="op">{</span></span>
+<span id="cb25-9"><a href="#cb25-9"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="va">Math</span>.<span class="at">floor</span>(<span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a>      <span class="kw">this</span>.<span class="va">history</span>.<span class="at">push</span>([<span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
+<span id="cb25-11"><a href="#cb25-11"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb25-12"><a href="#cb25-12"></a>    <span class="op">}</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a>  <span class="op">}</span></span>
+<span id="cb25-14"><a href="#cb25-14"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Las dos formas son <strong>ampliamente utilizadas</strong> pero la segunda se ve escrita muchas veces de este modo:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true"></a><span class="kw">var</span> diceUtils <span class="op">=</span> {</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="fu">die</span>() {</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>([<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true"></a>    }<span class="op">.</span><span class="fu">bind</span>(<span class="kw">this</span>)<span class="op">;</span> <span class="co">// el bind sigue a la expresión de función</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true"></a>  }</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">var</span> diceUtils <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a></span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) <span class="op">{</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="at">die</span>() <span class="op">{</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="va">Math</span>.<span class="at">floor</span>(<span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>      <span class="kw">this</span>.<span class="va">history</span>.<span class="at">push</span>([<span class="kw">new</span> <span class="at">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
+<span id="cb26-9"><a href="#cb26-9"></a>    <span class="op">}</span>.<span class="at">bind</span>(<span class="kw">this</span>)<span class="op">;</span> <span class="co">// el bind sigue a la expresión de función</span></span>
+<span id="cb26-10"><a href="#cb26-10"></a>  <span class="op">}</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Pero esto sigue siendo un poco pesado, y en ES6 se crearon las funciónes flecha:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true"></a><span class="kw">const</span> miFuncion <span class="op">=</span> (x) <span class="kw">=&gt;</span> x <span class="op">+</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">miFuncion</span>(<span class="dv">4</span>))<span class="op">;</span> <span class="co">// 6</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">const</span> miFuncion <span class="op">=</span> (x) <span class="kw">=&gt;</span> x <span class="op">+</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="va">console</span>.<span class="at">log</span>(<span class="at">miFuncion</span>(<span class="dv">4</span>))<span class="op">;</span> <span class="co">// 6</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Por un lado, son ideales para programación funcional, y necesitan menos texto:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> x <span class="op">*</span> <span class="dv">3</span>)<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>].<span class="at">map</span>(x <span class="kw">=&gt;</span> x <span class="op">*</span> <span class="dv">3</span>)<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Y, por otro lado, <em>no sobreescriben <code class="sourceCode javascript"><span class="kw">this</span></code></em>, con lo que se usa el <code class="sourceCode javascript"><span class="kw">this</span></code> anterior:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">Clase</span>() {</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">v</span> <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true"></a>}</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true"></a></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true"></a>Clase<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">mal</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true"></a>  <span class="cf">return</span> [ <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span> ]<span class="op">.</span><span class="fu">map</span>(<span class="kw">function</span>(x) {<span class="cf">return</span> x <span class="op">*</span> <span class="kw">this</span><span class="op">.</span><span class="at">v</span>})<span class="op">;</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true"></a>}</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true"></a></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true"></a>Clase<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">bien</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true"></a>  <span class="cf">return</span> [ <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span> ]<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> x <span class="op">*</span> <span class="kw">this</span><span class="op">.</span><span class="at">v</span>)<span class="op">;</span></span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true"></a>}</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true"></a></span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true"></a><span class="kw">const</span> c <span class="op">=</span> <span class="kw">new</span> <span class="fu">Clase</span>()<span class="op">;</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(c<span class="op">.</span><span class="fu">mal</span>())<span class="op">;</span> <span class="co">// NaN, NaN, NaN</span></span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(c<span class="op">.</span><span class="fu">bien</span>())<span class="op">;</span> <span class="co">// 5, 10, 15</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">function</span> <span class="at">Clase</span>() <span class="op">{</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="kw">this</span>.<span class="at">v</span> <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="op">}</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a></span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="va">Clase</span>.<span class="va">prototype</span>.<span class="at">mal</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="cf">return</span> [ <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span> ].<span class="at">map</span>(<span class="kw">function</span>(x) <span class="op">{</span><span class="cf">return</span> x <span class="op">*</span> <span class="kw">this</span>.<span class="at">v</span><span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="op">}</span></span>
+<span id="cb29-8"><a href="#cb29-8"></a></span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="va">Clase</span>.<span class="va">prototype</span>.<span class="at">bien</span> <span class="op">=</span> <span class="kw">function</span>() <span class="op">{</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a>  <span class="cf">return</span> [ <span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span> ].<span class="at">map</span>(x <span class="kw">=&gt;</span> x <span class="op">*</span> <span class="kw">this</span>.<span class="at">v</span>)<span class="op">;</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="op">}</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a></span>
+<span id="cb29-13"><a href="#cb29-13"></a><span class="kw">const</span> c <span class="op">=</span> <span class="kw">new</span> <span class="at">Clase</span>()<span class="op">;</span></span>
+<span id="cb29-14"><a href="#cb29-14"></a><span class="va">console</span>.<span class="at">log</span>(<span class="va">c</span>.<span class="at">mal</span>())<span class="op">;</span> <span class="co">// NaN, NaN, NaN</span></span>
+<span id="cb29-15"><a href="#cb29-15"></a><span class="va">console</span>.<span class="at">log</span>(<span class="va">c</span>.<span class="at">bien</span>())<span class="op">;</span> <span class="co">// 5, 10, 15</span></span></code></pre></div>
 </section></section>
-<section>
-<section id="diferencias-entre-ámbitos-en-node-y-el-navegador" class="title-slide slide level1">
-<h1>Diferencias entre ámbitos en node y el navegador</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="diferencias-entre-ámbitos-en-node-y-el-navegador" class="title-slide slide level1"><h1>Diferencias entre ámbitos en node y el navegador</h1></section><section class="slide level2">
 
 <p>Hemos dicho que el ámbito en JavaScript es equivalente a la función pero sabemos que podemos abrir una consola o un fichero y empezar a declarar variables sin necesidad de escribir una función</p>
 <p>Esto es así porque estamos usando el <strong>ámbito global</strong></p>
 <p>El ámbito global está <strong>disponible en el navegador y en node</strong></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true"></a><span class="co">// Esta es una variable text en el ámbito GLOBAL</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true"></a><span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true"></a><span class="co">// Esta es una función en el ámbito GLOBAL</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">greetings</span>(list) {</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true"></a>  <span class="co">// Esta es OTRA variable text en el ámbito de la función</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(text)<span class="op">;</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true"></a>}</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true"></a></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true"></a><span class="fu">greetings</span>()<span class="op">;</span></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(text)<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1"></a><span class="co">// Esta es una variable text en el ámbito GLOBAL</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="co">// Esta es una función en el ámbito GLOBAL</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="kw">function</span> <span class="at">greetings</span>(list) <span class="op">{</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>  <span class="co">// Esta es OTRA variable text en el ámbito de la función</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span>
+<span id="cb30-8"><a href="#cb30-8"></a>  <span class="va">console</span>.<span class="at">log</span>(text)<span class="op">;</span></span>
+<span id="cb30-9"><a href="#cb30-9"></a><span class="op">}</span></span>
+<span id="cb30-10"><a href="#cb30-10"></a></span>
+<span id="cb30-11"><a href="#cb30-11"></a><span class="at">greetings</span>()<span class="op">;</span></span>
+<span id="cb30-12"><a href="#cb30-12"></a><span class="va">console</span>.<span class="at">log</span>(text)<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Sin embargo, existe una peculiaridad en node</p>
 <p>El ámbito global es realmente <strong>local al fichero</strong>. Esto quiere decir que:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true"></a><span class="co">// En a.js, text es visible únicamente dentro del FICHERO</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true"></a><span class="st">&quot;use strict&quot;</span><span class="op">;</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true"></a><span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true"></a></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true"></a><span class="co">// En b.js, text es visible únicamente dentro del FICHERO</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true"></a><span class="st">&quot;use strict&quot;</span><span class="op">;</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true"></a><span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1"></a><span class="co">// En a.js, text es visible únicamente dentro del FICHERO</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="st">&quot;use strict&quot;</span><span class="op">;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a></span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="co">// En b.js, text es visible únicamente dentro del FICHERO</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="st">&quot;use strict&quot;</span><span class="op">;</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;Greetings humans!&#39;</span><span class="op">;</span></span></code></pre></div>
 </section></section>
     </div>
   </div>
 
-  <script src="../reveal.js/dist/reveal.js"></script>
-
-  // reveal.js plugins
-  <script src="../reveal.js/plugin/notes/notes.js"></script>
-  <script src="../reveal.js/plugin/search/search.js"></script>
-  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-  <script src="../reveal.js/plugin/math/math.js"></script>
+  <script src="../reveal.js/js/reveal.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://revealjs.com/config/
+      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         // Display a presentation progress bar
         progress: true,
@@ -579,29 +518,12 @@
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
-        // reveal.js plugins
-        plugins: [
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

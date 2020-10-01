@@ -7,80 +7,91 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
-  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <style>
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -90,54 +101,34 @@
   <h1 class="title">Audio en Phaser</h1>
 </section>
 
-<section>
-<section id="motores-de-audio" class="title-slide slide level1">
-<h1>Motores de audio</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="motores-de-audio" class="title-slide slide level1"><h1>Motores de audio</h1></section><section class="slide level2">
 
 <p>El sonido, a bajo nivel, es un aspecto complejo y requiere de conocimiento amplio de física y procesamiento de señal</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>En general, cuando estamos haciendo videojuegos, queremos una <em>capa de abstracción</em> sobre la gestión de sonido</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Es muy normal asumir que el sonido en un videojuego consiste en un conjunto de archivos (sonidos y música) que queremos reproducir (al lanzarse eventos, o de fondo)</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Aunque, desde luego, esto no sea necesariamente así en todos los juegos, es como vamos a tratarlo en este curso</p>
 </section></section>
-<section>
-<section id="formatos" class="title-slide slide level1">
-<h1>Formatos</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="formatos" class="title-slide slide level1"><h1>Formatos</h1></section><section class="slide level2">
 
 <p>Los sonidos se almacenan en digital de dos formas:</p>
 <ul>
 <li>Guardando la onda (análogo a un mapa de bits)</li>
 <li>Guardando las notas musicales, su duración, etc. (análogo a una imagen vectorial): <a href="https://es.wikipedia.org/wiki/MIDI">MIDI</a></li>
 </ul>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Nosotros trabajaremos sólo con audio de onda (no MIDI)</p>
 </section></section>
-<section>
-<section id="audio-en-phaser" class="title-slide slide level1">
-<h1>Audio en Phaser</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="audio-en-phaser" class="title-slide slide level1"><h1>Audio en Phaser</h1></section><section class="slide level2">
 
 <p>Phaser provee, entre otros módulo, uno de gestión de audio de <em>muy alto nivel</em></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Esto quiere decir que, para gestionar audio, sólo tenemos que preocuparnos de:</p>
 <ol>
@@ -153,140 +144,101 @@
 <li>enterarnos de cuándo han acabado de reproducirse (si queremos)</li>
 </ol>
 </section></section>
-<section>
-<section id="carga-de-sonidos" class="title-slide slide level1">
-<h1>Carga de sonidos</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="carga-de-sonidos" class="title-slide slide level1"><h1>Carga de sonidos</h1></section><section class="slide level2">
 
 <p>Cargar el sonido <code>explosion.mp3</code> y asignarle un nombre:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">audio</span>(<span class="st">&#39;explosion&#39;</span><span class="op">,</span> <span class="st">&#39;assets/audio/SoundEffects/explosion.mp3&#39;</span>)<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="va">scene</span>.<span class="va">load</span>.<span class="at">audio</span>(<span class="st">&#39;explosion&#39;</span><span class="op">,</span> <span class="st">&#39;assets/audio/SoundEffects/explosion.mp3&#39;</span>)<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>También podemos hacer una “lista de prioridad” de carga. El navegador intentará cargar estos archivos (por orden), sólo se quedará con uno</p>
 <p>En <code class="sourceCode javascript">preload</code> de nuestra escena:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">audio</span>(<span class="st">&#39;boden&#39;</span><span class="op">,</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>                [<span class="st">&#39;assets/audio/bodenstaendig_2000_in_rock_4bit.mp3&#39;</span><span class="op">,</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>                <span class="st">&#39;assets/audio/bodenstaendig_2000_in_rock_4bit.ogg&#39;</span>])<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="va">scene</span>.<span class="va">load</span>.<span class="at">audio</span>(<span class="st">&#39;boden&#39;</span><span class="op">,</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>                [<span class="st">&#39;assets/audio/bodenstaendig_2000_in_rock_4bit.mp3&#39;</span><span class="op">,</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>                <span class="st">&#39;assets/audio/bodenstaendig_2000_in_rock_4bit.ogg&#39;</span>])<span class="op">;</span></span></code></pre></div>
 <p>(Por ejemplo, Firefox elegirá el OGG)</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Añadimos el audio al juego:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="dt">mute</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="dt">volume</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="dt">rate</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="dt">detune</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="dt">seek</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="dt">loop</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    <span class="dt">delay</span><span class="op">:</span> <span class="dv">0</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>}<span class="op">;</span> <span class="co">// config es opcional</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="kw">this</span><span class="op">.</span><span class="at">explosion</span> <span class="op">=</span> scene<span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">add</span>(<span class="st">&#39;explosion&#39;</span><span class="op">,</span> config)<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">const</span> config <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="dt">mute</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="dt">volume</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="dt">rate</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="dt">detune</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="dt">seek</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="dt">loop</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>    <span class="dt">delay</span><span class="op">:</span> <span class="dv">0</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="op">};</span> <span class="co">// config es opcional</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="kw">this</span>.<span class="at">explosion</span> <span class="op">=</span> <span class="va">scene</span>.<span class="va">sound</span>.<span class="at">add</span>(<span class="st">&#39;explosion&#39;</span><span class="op">,</span> config)<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Y, finalmente, reproducimos el sonido:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>explosion<span class="op">.</span><span class="fu">play</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="va">explosion</span>.<span class="at">play</span>()<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Si queremos parar la reproducción</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>music<span class="op">.</span><span class="fu">stop</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="va">music</span>.<span class="at">stop</span>()<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
-<p>Si queremos borrarlo en algún momento, destruimos la entidad (con <code class="sourceCode javascript"><span class="fu">destroy</span>()</code>) y el recurso (con <code class="sourceCode javascript">remove</code>)</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>explosion<span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>scene<span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">&#39;explosion&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<p>Si queremos borrarlo en algún momento, destruimos la entidad (con <code class="sourceCode javascript"><span class="at">destroy</span>()</code>) y el recurso (con <code class="sourceCode javascript">remove</code>)</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="va">explosion</span>.<span class="at">destroy</span>()<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="va">scene</span>.<span class="va">sound</span>.<span class="at">remove</span>(<span class="st">&#39;explosion&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section></section>
-<section>
-<section id="comenzar-el-sonido" class="title-slide slide level1">
-<h1>Comenzar el sonido</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="comenzar-el-sonido" class="title-slide slide level1"><h1>Comenzar el sonido</h1></section><section class="slide level2">
 
 <p>Los navegadores no nos permiten empezar a reproducir audio <strong>si no es por un evento lanzado por el usuario</strong></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Así que antes de poder reproducir, tendremos que haber hecho clic (por ejemplo) un un botón de nuestro juego</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Esto se suele conseguir con un botón de <em>Jugar</em>, o algo similar</p>
 <p>¡Sed creativos!</p>
 </section></section>
-<section>
-<section id="eventos-de-sonido-en-phaser" class="title-slide slide level1">
-<h1>Eventos de sonido en Phaser</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="eventos-de-sonido-en-phaser" class="title-slide slide level1"><h1>Eventos de sonido en Phaser</h1></section><section class="slide level2">
 
 <p>No solemos saber (o no es cómodo saber) cuánto dura un sonido</p>
 <p>Así que lo que hacemos es <em>decirle a Phaser que haga algo cuando el sonido termine de reproducirse</em></p>
-</section>
-<section id="evento-cuando-el-sonido-termina-de-reproducirse" class="slide level2">
+</section><section id="evento-cuando-el-sonido-termina-de-reproducirse" class="slide level2">
 <h2>Evento cuando el sonido termina de reproducirse</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">create</span>() {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    explosion<span class="op">.</span><span class="fu">once</span>(<span class="st">&#39;stop&#39;</span><span class="op">,</span> (music) <span class="kw">=&gt;</span> {</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>        <span class="co">// ...</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    })<span class="op">;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section id="callback-de-descodificación" class="slide level2">
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">function</span> <span class="at">create</span>() <span class="op">{</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>    <span class="va">explosion</span>.<span class="at">once</span>(<span class="st">&#39;stop&#39;</span><span class="op">,</span> (music) <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>        <span class="co">// ...</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="op">}</span></span></code></pre></div>
+</section><section id="callback-de-descodificación" class="slide level2">
 <h2>Callback de descodificación</h2>
 <p>Otro tipo de <em>callback</em> es el que se necesita cuando se descomprime un archivo de audio comprimido</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Dado que lleva tiempo descomprimir un MP3 para ser reproducido, podemos esperar:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">create</span>() {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    explosion <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">add</span>(<span class="st">&#39;explosion&#39;</span>)<span class="op">;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="co">// se llama a `start` cuando todos los sonidos de la lista están cargados</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;decoded&#39;</span><span class="op">,</span> <span class="st">&#39;explosion&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>        <span class="co">// ...</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    })<span class="op">;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section id="repetir" class="slide level2">
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">function</span> <span class="at">create</span>() <span class="op">{</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>    explosion <span class="op">=</span> <span class="kw">this</span>.<span class="va">sound</span>.<span class="at">add</span>(<span class="st">&#39;explosion&#39;</span>)<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="co">// se llama a `start` cuando todos los sonidos de la lista están cargados</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="kw">this</span>.<span class="va">sound</span>.<span class="at">on</span>(<span class="st">&#39;decoded&#39;</span><span class="op">,</span> <span class="st">&#39;explosion&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>        <span class="co">// ...</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="op">}</span></span></code></pre></div>
+</section><section id="repetir" class="slide level2">
 <h2>Repetir</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co">// hace que `explosion` se vuelva a reproducir cuando acabe</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="co">// (muy útil para música)</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>explosion<span class="op">.</span><span class="fu">setLoop</span>(<span class="kw">true</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">// hace que `explosion` se vuelva a reproducir cuando acabe</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co">// (muy útil para música)</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="va">explosion</span>.<span class="at">setLoop</span>(<span class="kw">true</span>)<span class="op">;</span></span></code></pre></div>
 </section></section>
-<section>
-<section id="audio-sprites" class="title-slide slide level1">
-<h1>Audio sprites</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="audio-sprites" class="title-slide slide level1"><h1>Audio sprites</h1></section><section class="slide level2">
 
 <p>Antes de las tecnologías de audio HTML modernas, los navegadores tenían muchas restricciones y problemas para cargar varios archivos de audio</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Los <em>audio sprites</em> son un sistema en el que un solo archivo de audio contiene varios sonidos grabados (uno detrás de otro)</p>
 <p>Se acompañan de un archivo con información de dónde empieza y acaba cada uno (JSON)</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Es decir, algo muy similar a un <em>atlas de texturas</em></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>En general, no son necesarios hoy en día (aunque pueden hacer más eficiente la carga)</p>
 </section></section>
-<section>
-<section id="recursos-de-audio" class="title-slide slide level1">
-<h1>Recursos de audio</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="recursos-de-audio" class="title-slide slide level1"><h1>Recursos de audio</h1></section><section class="slide level2">
 
 <ul>
 <li>Podéis usar los recursos de audio de Phaser (los <strong>assets</strong>)</li>
@@ -305,18 +257,12 @@
     </div>
   </div>
 
-  <script src="../reveal.js/dist/reveal.js"></script>
-
-  // reveal.js plugins
-  <script src="../reveal.js/plugin/notes/notes.js"></script>
-  <script src="../reveal.js/plugin/search/search.js"></script>
-  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-  <script src="../reveal.js/plugin/math/math.js"></script>
+  <script src="../reveal.js/js/reveal.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://revealjs.com/config/
+      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         // Display a presentation progress bar
         progress: true,
@@ -324,29 +270,12 @@
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
-        // reveal.js plugins
-        plugins: [
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

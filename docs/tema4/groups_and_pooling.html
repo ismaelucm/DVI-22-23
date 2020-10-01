@@ -7,80 +7,91 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
-  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <style>
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -90,230 +101,184 @@
   <h1 class="title">Pooling con grupos de entidades</h1>
 </section>
 
-<section>
-<section id="rendimiento" class="title-slide slide level1">
-<h1>Rendimiento</h1>
-
-</section>
-<section id="el-efecto-de-los-objetos-sobre-el-rendimiento" class="slide level2">
+<section><section id="rendimiento" class="title-slide slide level1"><h1>Rendimiento</h1></section><section id="el-efecto-de-los-objetos-sobre-el-rendimiento" class="slide level2">
 <h2>El efecto de los objetos sobre el rendimiento</h2>
 <p>En general, cuantas más entidades gestione un juego, más deterioro del rendimiento</p>
 <p>No es difícil degradar el rendimiento de un juego simplemente arrojando nuevas entidades a la escena. No es necesario ni modificarlas</p>
 <p><a href="https://phaser.io/sandbox/dlqdIWMn" class="uri">https://phaser.io/sandbox/dlqdIWMn</a></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>El único factor que afecta al rendimiento es el <strong>tiempo de procesamiento entre frames</strong></p>
 <p>El problema es que el tiempo de procesamiento puede incrementarse de un sinfín de formas</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>La creación de entidades, su destrucción y el pintado de las mismas afecta al rendimiento porque crear, destruir y recorrer la lista de entidades a pintar <strong>toma tiempo</strong></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Si el tiempo entre frame y frame excede los 16.6 ms, el <a href="https://en.wikipedia.org/wiki/Frame_rate"><em>frame rate</em></a> disminuirá por debajo de 60 fps</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>En la pestaña “Rendering”, podemos activar la opción “FPS Meter” en Chrome</p>
 <figure>
-<img data-src="mostrar_rendering.png" style="width:30.0%" alt="Si está oculta la pestaña, la podemos mostrar" /><figcaption aria-hidden="true">Si está oculta la pestaña, la podemos mostrar</figcaption>
+<img data-src="mostrar_rendering.png" style="width:30.0%" alt="" /><figcaption>Si está oculta la pestaña, la podemos mostrar</figcaption>
 </figure>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Además, en la pestaña “Performance”, podemos guardar una ejecución del programa y veremos qué funciones se ejecutan y cuánto tiempo tardan en hacerlo</p>
 <p>Hacer <em>profiling</em> es fundamental para ver cuál es el impacto <strong>real</strong> (y no sólo en teoría) de las partes de nuestro código</p>
-</section>
-<section id="el-recolector-de-basura" class="slide level2">
+</section><section id="el-recolector-de-basura" class="slide level2">
 <h2>El recolector de basura</h2>
 <p>En JavaScript apenas nos preocupamos por la vida de un objeto</p>
 <p>Creamos el objeto con <code class="sourceCode javascript"><span class="kw">new</span></code> y cuando no lo necesitamos más, sencillamente dejamos de usarlo</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>¿Qué pasa con los objetos que ya no se usan? La respuesta es que son recogidos por el <a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">recolector de basura</a> y destruidos de forma que la memoria que ocupan queda disponible de nuevo</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Para ver cómo funciona, activamos las opciones de desarrollo (en este caso, en Chrome), y en la pestaña “Performance” grabamos mientras ejecutamos un juego, activando la opción de “Memory”</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <figure>
-<img data-src="profiling.png" alt="Ventana de resultados de profiling en Chrome" /><figcaption aria-hidden="true">Ventana de resultados de <em>profiling</em> en Chrome</figcaption>
+<img data-src="profiling.png" alt="" /><figcaption>Ventana de resultados de <em>profiling</em> en Chrome</figcaption>
 </figure>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>El recolector de basura es conveniente porque nos evita tener que liberar la memoria manualmente, previniendo que un objeto sea destruido accidentalmente cuando aún tenemos que usarlo</p>
 <p>Sin embargo, introduce un problema de impredecibilidad, dado que no sabemos <strong>ni cuándo sucederá ni cuánto tardará</strong></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Una recolección de basura especialmente larga puede tirar el rendimiento y nada garantiza que la siguiente recolección no haga lo mismo y suceda en menor tiempo del deseado</p>
 </section></section>
-<section>
-<section id="pooling" class="title-slide slide level1">
-<h1>Pooling</h1>
-
-</section>
-<section id="controlar-el-impacto-de-crear-y-destruir-objetos" class="slide level2">
+<section><section id="pooling" class="title-slide slide level1"><h1>Pooling</h1></section><section id="controlar-el-impacto-de-crear-y-destruir-objetos" class="slide level2">
 <h2>Controlar el impacto de crear y destruir objetos</h2>
 <p>Una forma de controlar el efecto de la creación de objetos y evitar la recolección de basura es mediante el uso del <strong><a href="https://en.wikipedia.org/wiki/Object_pool_pattern">patrón <em>Object Pool</em></a></strong> o depósito de objetos</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>La idea es sencilla: primero crearemos un <em>pool</em> (depósito) de objetos estimando los que vayamos a utilizar durante el programa</p>
 <figure>
-<img data-src="pool.svg" style="width:40.0%" alt="Pool de objetos" /><figcaption aria-hidden="true">Pool de objetos</figcaption>
+<img data-src="pool.svg" style="width:40.0%" alt="" /><figcaption>Pool de objetos</figcaption>
 </figure>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Cuando necesitemos un objeto, <strong>en lugar de crearlo, se lo pediremos al <em>pool</em></strong> y luego lo usaremos normalmente</p>
 <figure>
-<img data-src="takepool.svg" style="width:40.0%" alt="Coger un objeto del pool" /><figcaption aria-hidden="true">Coger un objeto del pool</figcaption>
+<img data-src="takepool.svg" style="width:40.0%" alt="" /><figcaption>Coger un objeto del pool</figcaption>
 </figure>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Una vez terminemos de usar el objeto, <strong>cuando ya no lo necesitemos, lo devolveremos al <em>pool</em></strong></p>
 <figure>
-<img data-src="storepool.svg" style="width:40.0%" alt="Devolver el objeto al pool" /><figcaption aria-hidden="true">Devolver el objeto al pool</figcaption>
+<img data-src="storepool.svg" style="width:40.0%" alt="" /><figcaption>Devolver el objeto al pool</figcaption>
 </figure>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Cuando necesitemos otro, volveremos a pedirlo al <em>pool</em> de objetos</p>
 <p>A lo largo de la ejecución del programa, los depósitos de objetos pueden permanecer fijos o redimensionarse de acuerdo a las necesidades del mismo</p>
 </section></section>
-<section>
-<section id="el-ciclo-de-vida-de-las-entidades" class="title-slide slide level1">
-<h1>El ciclo de vida de las entidades</h1>
-
-</section>
-<section id="reemplazar-el-montículo-con-un-pool" class="slide level2">
+<section><section id="el-ciclo-de-vida-de-las-entidades" class="title-slide slide level1"><h1>El ciclo de vida de las entidades</h1></section><section id="reemplazar-el-montículo-con-un-pool" class="slide level2">
 <h2>Reemplazar el montículo con un <em>pool</em></h2>
 <p>Si creamos una entidad con <code class="sourceCode javascript"><span class="kw">new</span></code>, como hacíamos con los <em>sprites</em>, el objeto morirá cuando lo hacen todas los objetos de JavaScript, es decir, cuando nada hace referencia a él</p>
 <p>En general, al salir del <em>scope</em></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Pero si añadimos la entidad al juego, bien explícitamente o a través de los métodos factoría de <code>add</code>, esta se mantendrá viva mientras dure el juego</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<p>La manera en que podemos destruir una entidad, es decir, eliminar todas sus referencias de forma que el recolector de basura pueda llevársela es mediante el método <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html#destroy"><code class="sourceCode javascript"><span class="fu">destroy</span>()</code></a> de la entidad</p>
-</section>
-<section class="slide level2">
+<p>La manera en que podemos destruir una entidad, es decir, eliminar todas sus referencias de forma que el recolector de basura pueda llevársela es mediante el método <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html#destroy"><code class="sourceCode javascript"><span class="at">destroy</span>()</code></a> de la entidad</p>
+</section><section class="slide level2">
 
 <p>Por ejemplo, el siguiente ejemplo muestra un máximo de 10 sprites en pantalla destruyendo la entidad más vieja cuando excedemos el máximo</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="fu">preload</span>() { </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="at">baseURL</span> <span class="op">=</span> <span class="st">&#39;http://examples.phaser.io/assets/&#39;</span><span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;phaser&#39;</span><span class="op">,</span> <span class="st">&#39;sprites/phaser-dude.png&#39;</span>)<span class="op">;</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>}</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="fu">update</span>(time<span class="op">,</span> delta) {    </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="kw">var</span> x <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">300</span><span class="op">;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="kw">var</span> y <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">300</span><span class="op">;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(x<span class="op">,</span> y<span class="op">,</span> <span class="st">&#39;phaser&#39;</span>)<span class="op">;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">children</span><span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">10</span>) {</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">children</span><span class="op">.</span><span class="fu">getChildren</span>()[<span class="dv">0</span>]<span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;World children count:&#39;</span><span class="op">,</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>           <span class="kw">this</span><span class="op">.</span><span class="at">children</span><span class="op">.</span><span class="at">length</span>)<span class="op">;</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>    }</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="at">preload</span>() <span class="op">{</span> </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="kw">this</span>.<span class="va">load</span>.<span class="at">baseURL</span> <span class="op">=</span> <span class="st">&#39;http://examples.phaser.io/assets/&#39;</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="kw">this</span>.<span class="va">load</span>.<span class="at">image</span>(<span class="st">&#39;phaser&#39;</span><span class="op">,</span> <span class="st">&#39;sprites/phaser-dude.png&#39;</span>)<span class="op">;</span> </span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="op">}</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="at">update</span>(time<span class="op">,</span> delta) <span class="op">{</span>    </span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="kw">var</span> x <span class="op">=</span> <span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> <span class="dv">300</span><span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="kw">var</span> y <span class="op">=</span> <span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> <span class="dv">300</span><span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>    <span class="kw">this</span>.<span class="va">add</span>.<span class="at">sprite</span>(x<span class="op">,</span> y<span class="op">,</span> <span class="st">&#39;phaser&#39;</span>)<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>    <span class="cf">if</span> (<span class="kw">this</span>.<span class="va">children</span>.<span class="at">length</span> <span class="op">&gt;</span> <span class="dv">10</span>) <span class="op">{</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>        <span class="kw">this</span>.<span class="va">children</span>.<span class="at">getChildren</span>()[<span class="dv">0</span>].<span class="at">destroy</span>()<span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>        <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;World children count:&#39;</span><span class="op">,</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>           <span class="kw">this</span>.<span class="va">children</span>.<span class="at">length</span>)<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>    <span class="op">}</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Como veremos en breve, a veces nos interesará no destruir la entidad pero sí <strong>dejarla inerte</strong> de forma que no se actualice, ni se pinte, ni interactúe con nada hasta que vuelva a interesarnos</p>
-<p>Para ello podemos <em>matar</em> la entidad usando el método <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html"><code class="sourceCode javascript"><span class="fu">kill</span>(gameObject)</code> o <code class="sourceCode javascript"><span class="fu">killAndHide</span>(gameObject)</code></a></p>
-</section>
-<section class="slide level2">
+<p>Para ello podemos <em>matar</em> la entidad usando el método <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html"><code class="sourceCode javascript"><span class="at">kill</span>(gameObject)</code> o <code class="sourceCode javascript"><span class="at">killAndHide</span>(gameObject)</code></a></p>
+</section><section class="slide level2">
 
 <p>Phaser considera que una entidad “asesinada”/“killed” ha dejado de existir y pone su atributo <code class="sourceCode javascript">active</code> a <code class="sourceCode javascript"><span class="kw">false</span></code></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Aunque la nomenclatura resulte confusa, que una entidad “no esté activa” no significa que haya sido destruida</p>
 <p>Significa que para Phaser, esta entidad no participará en las fases de actualización y pintado</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Este ejemplo mata los sprites más viejos pero no los destruye</p>
 <p>El efecto es parecido pero no igual puesto que los objetos siguen existiendo y la cantidad de memoria consumida se mantiene en aumento</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">create</span>() {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">group</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">group</span>()<span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>}</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="fu">update</span>(time<span class="op">,</span> delta) {    </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>  <span class="kw">let</span> x <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">400</span><span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>  <span class="kw">let</span> y <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="dv">400</span><span class="op">;</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">group</span><span class="op">.</span><span class="fu">add</span>(<span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(x<span class="op">,</span> y<span class="op">,</span> <span class="st">&#39;phaser&#39;</span>))<span class="op">;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>  </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>  <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">children</span><span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">10</span>) {</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>      <span class="kw">let</span> ch <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">group</span><span class="op">.</span><span class="fu">getFirstAlive</span>()<span class="op">;</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">group</span><span class="op">.</span><span class="fu">killAndHide</span>(ch)<span class="op">;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>      <span class="co">// también con: ch.setActive(false); ch.setVisible(false);</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>      <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;World children count:&#39;</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">children</span><span class="op">.</span><span class="at">length</span>)<span class="op">;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>  }</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="at">create</span>() <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="kw">this</span>.<span class="at">group</span> <span class="op">=</span> <span class="kw">this</span>.<span class="va">add</span>.<span class="at">group</span>()<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="op">}</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="at">update</span>(time<span class="op">,</span> delta) <span class="op">{</span>    </span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="kw">let</span> x <span class="op">=</span> <span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="kw">let</span> y <span class="op">=</span> <span class="va">Math</span>.<span class="at">random</span>() <span class="op">*</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="kw">this</span>.<span class="va">group</span>.<span class="at">add</span>(<span class="kw">this</span>.<span class="va">add</span>.<span class="at">sprite</span>(x<span class="op">,</span> y<span class="op">,</span> <span class="st">&#39;phaser&#39;</span>))<span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>  </span>
+<span id="cb2-9"><a href="#cb2-9"></a>  <span class="cf">if</span> (<span class="kw">this</span>.<span class="va">children</span>.<span class="at">length</span> <span class="op">&gt;</span> <span class="dv">10</span>) <span class="op">{</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>      <span class="kw">let</span> ch <span class="op">=</span> <span class="kw">this</span>.<span class="va">group</span>.<span class="at">getFirstAlive</span>()<span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>      <span class="kw">this</span>.<span class="va">group</span>.<span class="at">killAndHide</span>(ch)<span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>      <span class="co">// también con: ch.setActive(false); ch.setVisible(false);</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;World children count:&#39;</span><span class="op">,</span> <span class="kw">this</span>.<span class="va">children</span>.<span class="at">length</span>)<span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>  <span class="op">}</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Aquí, el conteo de entidades en la escena <strong>se mantiene constante</strong></p>
 <p>Esto no ocurre en el segundo ejemplo donde el número de entidades <strong>no para de crecer</strong></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<p>Para devolver una entidad a la existencia, según Phaser, usamos <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html#setActive"><code class="sourceCode javascript"><span class="fu">setActive</span>(<span class="kw">true</span>)</code> y <code class="sourceCode javascript"><span class="fu">setVisible</span>(<span class="kw">true</span>)</code></a></p>
-</section>
-<section id="grupos-en-phaser" class="slide level2">
+<p>Para devolver una entidad a la existencia, según Phaser, usamos <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html#setActive"><code class="sourceCode javascript"><span class="at">setActive</span>(<span class="kw">true</span>)</code> y <code class="sourceCode javascript"><span class="at">setVisible</span>(<span class="kw">true</span>)</code></a></p>
+</section><section id="grupos-en-phaser" class="slide level2">
 <h2>Grupos en Phaser</h2>
 <p>Como ocurre con todas las entidades de Phaser, un <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html">grupo</a> <strong>puede albergar otras entidades</strong> pero además, los grupos exponen una API especialmente diseñada para la <strong>búsqueda, ordenamiento y manipulación en grupo</strong> de las entidades que contiene</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<p>Como creamos un grupo, pudimos utilizar el método <code class="sourceCode javascript"><span class="fu">getFirstAlive</span>()</code> que es propio de los grupos y devuelve la primera entidad cuya propiedad <code class="sourceCode javascript">alive</code> sea <code class="sourceCode javascript"><span class="kw">true</span></code></p>
-</section>
-<section id="api-de-búsqueda" class="slide level2">
+<p>Como creamos un grupo, pudimos utilizar el método <code class="sourceCode javascript"><span class="at">getFirstAlive</span>()</code> que es propio de los grupos y devuelve la primera entidad cuya propiedad <code class="sourceCode javascript">alive</code> sea <code class="sourceCode javascript"><span class="kw">true</span></code></p>
+</section><section id="api-de-búsqueda" class="slide level2">
 <h2>API de búsqueda</h2>
 <p>Un grupo es un contenedor. Creamos entidades y las añadimos al grupo</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">let</span> martian <span class="op">=</span> <span class="kw">new</span> <span class="fu">Martian</span>()<span class="op">;</span> <span class="co">// &#39;Martian&#39; es un &#39;Sprite&#39;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">let</span> enemies <span class="op">=</span> scene<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">group</span>()<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>enemies<span class="op">.</span><span class="fu">add</span>(martian)<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">let</span> martian <span class="op">=</span> <span class="kw">new</span> <span class="at">Martian</span>()<span class="op">;</span> <span class="co">// &#39;Martian&#39; es un &#39;Sprite&#39;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">let</span> enemies <span class="op">=</span> <span class="va">scene</span>.<span class="va">add</span>.<span class="at">group</span>()<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="va">enemies</span>.<span class="at">add</span>(martian)<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <blockquote>
 <p>Aquí comentamos algunas funciones ilustrativas. Podéis usar, del API, las que más sentido tengan, sean éstas o no</p>
 </blockquote>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Phaser nos da acceso a todas las entidades de un grupo:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="fu">update</span>() {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">// Recorremos un grupo (en este caso, World)</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">group</span><span class="op">.</span><span class="at">children</span><span class="op">.</span><span class="fu">iterate</span>(item <span class="kw">=&gt;</span> {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>      item<span class="op">.</span><span class="at">x</span> <span class="op">++;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    })<span class="op">;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="at">update</span>() <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="co">// Recorremos un grupo (en este caso, World)</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="kw">this</span>.<span class="va">group</span>.<span class="va">children</span>.<span class="at">iterate</span>(item <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>      <span class="va">item</span>.<span class="at">x</span> <span class="op">++;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Además, nos permite preguntar al grupo ciertas cosas:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">var</span> e <span class="op">=</span> <span class="kw">new</span> <span class="fu">Martian</span>(<span class="st">&quot;m&quot;</span>)<span class="op">;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="kw">var</span> g <span class="op">=</span> scene<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">group</span>()<span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>g<span class="op">.</span><span class="fu">add</span>(e)<span class="op">;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="kw">var</span> yesNo <span class="op">=</span> g<span class="op">.</span><span class="fu">contains</span>(e)<span class="op">;</span> <span class="co">// si el grupo contiene una entidad</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a><span class="kw">var</span> d <span class="op">=</span> g<span class="op">.</span><span class="fu">countActive</span>(<span class="kw">false</span>)<span class="op">;</span> <span class="co">// el número de &quot;muertos&quot;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>g<span class="op">.</span><span class="fu">remove</span>(e2)<span class="op">;</span> <span class="co">// quitamos un elemento del grupo</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">var</span> e <span class="op">=</span> <span class="kw">new</span> <span class="at">Martian</span>(<span class="st">&quot;m&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">var</span> g <span class="op">=</span> <span class="va">scene</span>.<span class="va">add</span>.<span class="at">group</span>()<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="va">g</span>.<span class="at">add</span>(e)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="kw">var</span> yesNo <span class="op">=</span> <span class="va">g</span>.<span class="at">contains</span>(e)<span class="op">;</span> <span class="co">// si el grupo contiene una entidad</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="kw">var</span> d <span class="op">=</span> <span class="va">g</span>.<span class="at">countActive</span>(<span class="kw">false</span>)<span class="op">;</span> <span class="co">// el número de &quot;muertos&quot;</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="va">g</span>.<span class="at">remove</span>(e2)<span class="op">;</span> <span class="co">// quitamos un elemento del grupo</span></span></code></pre></div>
 <!-- 
 ## API de ordenamiento
 
@@ -361,54 +326,45 @@ g.callAll('kill'); // llama a 'kill' en todas las entidades del grupo
 g.callAllExists('kill'); // lo mismo, pero sólo las que existen (exists -> es actualizado)
 ``` -->
 </section></section>
-<section>
-<section id="implementación-de-pooling-con-grupos-de-phaser" class="title-slide slide level1">
-<h1>Implementación de pooling con grupos de Phaser</h1>
-
-</section>
-<section class="slide level2">
+<section><section id="implementación-de-pooling-con-grupos-de-phaser" class="title-slide slide level1"><h1>Implementación de pooling con grupos de Phaser</h1></section><section class="slide level2">
 
 <p>Phaser no incluye pools directamente pero podemos utilizar nuestra propia clase <code class="sourceCode javascript">Pool</code> que utilice grupos internamente para ello</p>
-</section>
-<section id="creación-del-pool" class="slide level2">
+</section><section id="creación-del-pool" class="slide level2">
 <h2>Creación del pool</h2>
-<p>El constructor de <em>Pool</em> recibe el juego en <code class="sourceCode javascript">scene</code>, <strong>añade un grupo al juego</strong> con <code class="sourceCode javascript">add<span class="op">.</span><span class="fu">group</span>()</code> y guarda ese grupo internamente</p>
+<p>El constructor de <em>Pool</em> recibe el juego en <code class="sourceCode javascript">scene</code>, <strong>añade un grupo al juego</strong> con <code class="sourceCode javascript"><span class="va">add</span>.<span class="at">group</span>()</code> y guarda ese grupo internamente</p>
 <p>También recibe la lista de entidades que se van a reciclar:</p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">// En la pestaña create, antes de la función create()</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="kw">function</span> <span class="fu">Pool</span>(scene<span class="op">,</span> entities) {</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>   <span class="kw">this</span><span class="op">.</span><span class="at">_group</span> <span class="op">=</span> scene<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">group</span>()<span class="op">;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>   <span class="kw">this</span><span class="op">.</span><span class="at">_group</span><span class="op">.</span><span class="fu">addMultiple</span>(entities)<span class="op">;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>   <span class="kw">this</span><span class="op">.</span><span class="at">_group</span><span class="op">.</span><span class="at">children</span><span class="op">.</span><span class="fu">iterate</span>(c <span class="kw">=&gt;</span> {</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>       c<span class="op">.</span><span class="fu">setAlive</span>(<span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>       c<span class="op">.</span><span class="fu">setVisible</span>(<span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    })<span class="op">;</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section id="recuperación-de-una-entidad" class="slide level2">
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">// En la pestaña create, antes de la función create()</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">function</span> <span class="at">Pool</span>(scene<span class="op">,</span> entities) <span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>   <span class="kw">this</span>.<span class="at">_group</span> <span class="op">=</span> <span class="va">scene</span>.<span class="va">add</span>.<span class="at">group</span>()<span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>   <span class="kw">this</span>.<span class="va">_group</span>.<span class="at">addMultiple</span>(entities)<span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>   <span class="kw">this</span>.<span class="va">_group</span>.<span class="va">children</span>.<span class="at">iterate</span>(c <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>       <span class="va">c</span>.<span class="at">setAlive</span>(<span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>       <span class="va">c</span>.<span class="at">setVisible</span>(<span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="op">}</span></span></code></pre></div>
+</section><section id="recuperación-de-una-entidad" class="slide level2">
 <h2>Recuperación de una entidad</h2>
-<p>Recuperamos una entidad del <em>pool</em> utilizando el método <code class="sourceCode javascript"><span class="fu">spawn</span>()</code> que recibe las nuevas coordenadas del sprite <code class="sourceCode javascript">x</code> e <code class="sourceCode javascript">y</code>,</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">// A continuación de la función Pool</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>Pool<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">spawn</span> <span class="op">=</span> <span class="kw">function</span> (x<span class="op">,</span> y) {</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="kw">var</span> entity <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">_group</span><span class="op">.</span><span class="fu">getFirstDead</span>()<span class="op">;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="cf">if</span> (entity) {</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>      entity<span class="op">.</span><span class="at">x</span> <span class="op">=</span> x<span class="op">;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>      entity<span class="op">.</span><span class="at">y</span> <span class="op">=</span> y<span class="op">;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>      entity<span class="op">.</span><span class="fu">setAlive</span>(<span class="kw">true</span>)<span class="op">;</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>      entity<span class="op">.</span><span class="fu">setVisible</span>(<span class="kw">true</span>)<span class="op">;</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    }</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    <span class="cf">return</span> entity<span class="op">;</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<p>Recuperamos una entidad del <em>pool</em> utilizando el método <code class="sourceCode javascript"><span class="at">spawn</span>()</code> que recibe las nuevas coordenadas del sprite <code class="sourceCode javascript">x</code> e <code class="sourceCode javascript">y</code>,</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">// A continuación de la función Pool</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="va">Pool</span>.<span class="va">prototype</span>.<span class="at">spawn</span> <span class="op">=</span> <span class="kw">function</span> (x<span class="op">,</span> y) <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="kw">var</span> entity <span class="op">=</span> <span class="kw">this</span>.<span class="va">_group</span>.<span class="at">getFirstDead</span>()<span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="cf">if</span> (entity) <span class="op">{</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>      <span class="va">entity</span>.<span class="at">x</span> <span class="op">=</span> x<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>      <span class="va">entity</span>.<span class="at">y</span> <span class="op">=</span> y<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>      <span class="va">entity</span>.<span class="at">setAlive</span>(<span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>      <span class="va">entity</span>.<span class="at">setVisible</span>(<span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="op">}</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>    <span class="cf">return</span> entity<span class="op">;</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <h3 id="devolución-de-una-entidad">Devolución de una entidad</h3>
-<p>Devolver una entidad requiere llamar a los método <code class="sourceCode javascript"><span class="fu">setAlive</span>(<span class="kw">false</span>)</code> y <code class="sourceCode javascript"><span class="fu">setVisible</span>(<span class="kw">false</span>)</code> sobre esa entidad</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">// Supón que no necesitamos más entity</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>c<span class="op">.</span><span class="fu">setActive</span>(<span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>c<span class="op">.</span><span class="fu">setVisible</span>(<span class="kw">false</span>)<span class="op">;</span></span></code></pre></div>
+<p>Devolver una entidad requiere llamar a los método <code class="sourceCode javascript"><span class="at">setAlive</span>(<span class="kw">false</span>)</code> y <code class="sourceCode javascript"><span class="at">setVisible</span>(<span class="kw">false</span>)</code> sobre esa entidad</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">// Supón que no necesitamos más entity</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="va">c</span>.<span class="at">setActive</span>(<span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="va">c</span>.<span class="at">setVisible</span>(<span class="kw">false</span>)<span class="op">;</span></span></code></pre></div>
 <!-- 
 ---
 
@@ -424,18 +380,12 @@ https://github.com/belen-albeza/ldjam-32/blob/master/app/js/utils.js#L23 -->
     </div>
   </div>
 
-  <script src="../reveal.js/dist/reveal.js"></script>
-
-  // reveal.js plugins
-  <script src="../reveal.js/plugin/notes/notes.js"></script>
-  <script src="../reveal.js/plugin/search/search.js"></script>
-  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-  <script src="../reveal.js/plugin/math/math.js"></script>
+  <script src="../reveal.js/js/reveal.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://revealjs.com/config/
+      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         // Display a presentation progress bar
         progress: true,
@@ -443,29 +393,12 @@ https://github.com/belen-albeza/ldjam-32/blob/master/app/js/utils.js#L23 -->
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
-        // reveal.js plugins
-        plugins: [
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>

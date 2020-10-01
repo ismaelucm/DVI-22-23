@@ -7,80 +7,91 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
-  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <style>
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -90,39 +101,31 @@
   <h1 class="title">HTML y JS: Document Object Model</h1>
 </section>
 
-<section>
-<section id="javascript-puede-interactuar-con-la-página-web" class="title-slide slide level1">
-<h1>JavaScript puede interactuar con la página web</h1>
-
-</section>
-<section id="document-object-model" class="slide level2">
+<section><section id="javascript-puede-interactuar-con-la-página-web" class="title-slide slide level1"><h1>JavaScript puede interactuar con la página web</h1></section><section id="document-object-model" class="slide level2">
 <h2>Document Object Model</h2>
 <ul>
 <li>Los documentos HTML presentan una estructura de árbol</li>
 <li>Los navegadores nos dan una <strong>interfaz para interactuar</strong> con esta estructura: el <strong>DOM</strong></li>
-<li>El punto de entrada para acceder al DOM es el objeto <strong>global <code class="sourceCode javascript"><span class="bu">document</span></code></strong></li>
+<li>El punto de entrada para acceder al DOM es el objeto <strong>global <code class="sourceCode javascript">document</code></strong></li>
 </ul>
-</section>
-<section id="ejemplo-de-una-sección-del-dom" class="slide level2">
+</section><section id="ejemplo-de-una-sección-del-dom" class="slide level2">
 <h2>Ejemplo de una sección del DOM</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">&lt;article&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>  <span class="kw">&lt;header&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="kw">&lt;h1&gt;</span>Un título molón&lt;/h1&gt;</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>  <span class="kw">&lt;/header&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>  <span class="kw">&lt;p&gt;</span>Bla bla bla.<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>  <span class="kw">&lt;p&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    Más bla, bla, bla y</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://wikipedia.org&quot;</span><span class="kw">&gt;</span>aquí un enlace<span class="kw">&lt;/a&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>  <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="kw">&lt;/article&gt;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;article&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="kw">&lt;header&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="kw">&lt;h1&gt;</span>Un título molón&lt;/h1&gt;</span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="kw">&lt;/header&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="kw">&lt;p&gt;</span>Bla bla bla.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="kw">&lt;p&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    Más bla, bla, bla y</span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;http://wikipedia.org&quot;</span><span class="kw">&gt;</span>aquí un enlace<span class="kw">&lt;/a&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>  <span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="kw">&lt;/article&gt;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <figure>
-<img data-src="dom_section.png" alt="Sección del DOM" /><figcaption aria-hidden="true">Sección del DOM</figcaption>
+<img data-src="dom_section.png" alt="" /><figcaption>Sección del DOM</figcaption>
 </figure>
-</section>
-<section id="qué-podemos-hacer-con-el-dom" class="slide level2">
+</section><section id="qué-podemos-hacer-con-el-dom" class="slide level2">
 <h2>¿Qué podemos hacer con el DOM?</h2>
 <ul>
 <li>Leer/escribir las propiedades de los elementos, y usar sus métodos</li>
@@ -130,51 +133,42 @@
 <li>Insertar nuevos elementos en el DOM</li>
 </ul>
 </section></section>
-<section>
-<section id="acceder-a-elementos-del-dom" class="title-slide slide level1">
-<h1>Acceder a elementos del DOM</h1>
-
-</section>
-<section id="acceder-a-elementos-por-id" class="slide level2">
+<section><section id="acceder-a-elementos-del-dom" class="title-slide slide level1"><h1>Acceder a elementos del DOM</h1></section><section id="acceder-a-elementos-por-id" class="slide level2">
 <h2>Acceder a elementos por ID</h2>
 <p>Sólo selecciona un elemento (las ID’s deben ser únicas)</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;show-fullscreen&quot;</span><span class="kw">&gt;</span>Fullscreen<span class="kw">&lt;/button&gt;</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">const</span> button <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;show-fullscreen&#39;</span>)<span class="op">;</span></span></code></pre></div>
-</section>
-<section id="acceder-a-elementos-por-selector" class="slide level2">
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;button</span><span class="ot"> id=</span><span class="st">&quot;show-fullscreen&quot;</span><span class="kw">&gt;</span>Fullscreen<span class="kw">&lt;/button&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">const</span> button <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;show-fullscreen&#39;</span>)<span class="op">;</span></span></code></pre></div>
+</section><section id="acceder-a-elementos-por-selector" class="slide level2">
 <h2>Acceder a elementos por selector</h2>
 <p>Esto usa la sintaxis de los selectores CSS para localizar uno (o varios) elementos</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">// selecciona el primer párrafo que encuentra</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="kw">const</span> paragraph <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&#39;p&#39;</span>)<span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="co">// selecciona el primer elemento con clase .warning</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="kw">const</span> label <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&#39;.warning&#39;</span>)<span class="op">;</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="co">// selecciona TODOS los párrafos</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="kw">const</span> allPars <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelectorAll</span>(<span class="st">&#39;p&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">// selecciona el primer párrafo que encuentra</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">const</span> paragraph <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;p&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">// selecciona el primer elemento con clase .warning</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="kw">const</span> label <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;.warning&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">// selecciona TODOS los párrafos</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="kw">const</span> allPars <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelectorAll</span>(<span class="st">&#39;p&#39;</span>)<span class="op">;</span></span></code></pre></div>
 <p><small>Más info sobre selectores para usar con <code>querySelector</code> en <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors">la MDN</a></small></p>
-</section>
-<section id="iterar-sobre-una-lista-de-elementos" class="slide level2">
+</section><section id="iterar-sobre-una-lista-de-elementos" class="slide level2">
 <h2>Iterar sobre una lista de elementos</h2>
 <ul>
 <li><code class="sourceCode javascript">querySelectorAll</code> <em>no</em> devuelve un array, sino una <a href="https://developer.mozilla.org/en/docs/Web/API/NodeList">NodeList</a></li>
-<li>No podemos utilizar métodos de <code class="sourceCode javascript"><span class="bu">Array</span></code> sobre ella. Pero tiene la propiedad <code class="sourceCode javascript">length</code> y el operador <code class="sourceCode javascript">[]</code>, así que podemos acceder en un bucle:</li>
+<li>No podemos utilizar métodos de <code class="sourceCode javascript">Array</code> sobre ella. Pero tiene la propiedad <code class="sourceCode javascript">length</code> y el operador <code class="sourceCode javascript">[]</code>, así que podemos acceder en un bucle:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">const</span> buttons <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelectorAll</span>(<span class="st">&#39;button&#39;</span>)<span class="op">;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="cf">for</span> (<span class="kw">const</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> buttons<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    buttons[i]<span class="op">.</span><span class="at">style</span> <span class="op">=</span> <span class="st">&quot;display: none&quot;</span><span class="op">;</span> <span class="co">// hide buttons</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">const</span> buttons <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelectorAll</span>(<span class="st">&#39;button&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="cf">for</span> (<span class="kw">const</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="va">buttons</span>.<span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) <span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>    buttons[i].<span class="at">style</span> <span class="op">=</span> <span class="st">&quot;display: none&quot;</span><span class="op">;</span> <span class="co">// hide buttons</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="op">}</span></span></code></pre></div>
+</section><section class="slide level2">
 
-<p>También podemos iterar con <code class="sourceCode javascript"><span class="bu">Array</span><span class="op">.</span><span class="at">forEach</span></code> o con <code class="sourceCode javascript"><span class="cf">for</span></code>/<code class="sourceCode javascript"><span class="kw">of</span></code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="cf">for</span> (<span class="kw">const</span> b <span class="kw">of</span> buttons) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    b<span class="op">.</span><span class="at">style</span> <span class="op">=</span> <span class="st">&quot;display: none&quot;</span><span class="op">;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>}</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>buttons<span class="op">.</span><span class="fu">forEach</span>(b <span class="kw">=&gt;</span> {</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    b<span class="op">.</span><span class="at">style</span> <span class="op">=</span> <span class="st">&quot;display: none&quot;</span><span class="op">;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>})</span></code></pre></div>
-</section>
-<section id="navegar-en-el-dom" class="slide level2">
+<p>También podemos iterar con <code class="sourceCode javascript"><span class="va">Array</span>.<span class="at">forEach</span></code> o con <code class="sourceCode javascript"><span class="cf">for</span></code>/<code class="sourceCode javascript"><span class="kw">of</span></code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="cf">for</span> (<span class="kw">const</span> b <span class="kw">of</span> buttons) <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="va">b</span>.<span class="at">style</span> <span class="op">=</span> <span class="st">&quot;display: none&quot;</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="op">}</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="va">buttons</span>.<span class="at">forEach</span>(b <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="va">b</span>.<span class="at">style</span> <span class="op">=</span> <span class="st">&quot;display: none&quot;</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="op">}</span>)</span></code></pre></div>
+</section><section id="navegar-en-el-dom" class="slide level2">
 <h2>Navegar en el DOM</h2>
 <ul>
 <li>Se accede al <strong>padre</strong> de un elemento con la propiedad <code class="sourceCode javascript">parentNode</code></li>
@@ -183,201 +177,166 @@
 </ul>
 <p>Con esto podemos recorrer todo el DOM en cualquier dirección</p>
 </section></section>
-<section>
-<section id="propiedades-interesantes-de-elementos-del-dom" class="title-slide slide level1">
-<h1>Propiedades interesantes de elementos del DOM</h1>
-
-</section>
-<section id="innerhtml" class="slide level2">
+<section><section id="propiedades-interesantes-de-elementos-del-dom" class="title-slide slide level1"><h1>Propiedades interesantes de elementos del DOM</h1></section><section id="innerhtml" class="slide level2">
 <h2><code class="sourceCode javascript">innerHTML</code></h2>
 <ul>
 <li>El <em>interior</em> (o contenido) del elemento</li>
 <li>Podemos escribir HTML dentro, creando al vuelo nuevos elementos del DOM</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>button<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&#39;Aceptar&#39;</span><span class="op">;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>p<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&#39;Párrafo con &lt;b&gt;negrita&lt;/b&gt;&#39;</span><span class="op">;</span></span></code></pre></div>
-</section>
-<section id="style" class="slide level2">
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="va">button</span>.<span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&#39;Aceptar&#39;</span><span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="va">p</span>.<span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&#39;Párrafo con &lt;b&gt;negrita&lt;/b&gt;&#39;</span><span class="op">;</span></span></code></pre></div>
+</section><section id="style" class="slide level2">
 <h2><code>style</code></h2>
 <ul>
 <li>Nos permite aplicar <strong>estilos CSS inline</strong> (tienen la máxima prioridad)</li>
 <li>Muy útiles para ocultar/mostrar elementos</li>
 <li>También podemos <em>leer</em> la propiedad CSS</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">const</span> previousDisplay <span class="op">=</span> button<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span><span class="op">;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>button<span class="op">.</span><span class="at">style</span><span class="op">=</span><span class="st">&quot;display:none&quot;</span><span class="op">;</span> <span class="co">// oculta cualquier elemento</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>button<span class="op">.</span><span class="at">style</span><span class="op">=</span><span class="st">&quot;display:inline-block;&quot;</span> <span class="co">// muestra el botón</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">const</span> previousDisplay <span class="op">=</span> <span class="va">button</span>.<span class="va">style</span>.<span class="at">display</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="va">button</span>.<span class="at">style</span><span class="op">=</span><span class="st">&quot;display:none&quot;</span><span class="op">;</span> <span class="co">// oculta cualquier elemento</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="va">button</span>.<span class="at">style</span><span class="op">=</span><span class="st">&quot;display:inline-block;&quot;</span> <span class="co">// muestra el botón</span></span></code></pre></div>
 <p><small>Nota: <code>display:none</code> es universal, pero para mostrar un elemento debéis elegir entre varios valores, los más comunes son <code>inline</code>, <code>inline-block</code> y <code>block</code>, pero hay muchos otros.</small></p>
-</section>
-<section id="classlist" class="slide level2">
+</section><section id="classlist" class="slide level2">
 <h2><code>classList</code></h2>
 <ul>
 <li>Nos permite acceder a las <strong>clases CSS</strong> de un elemento</li>
 <li>Útil para cambiar el aspecto de la UI en función de las interacciones</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>button<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">add</span>(<span class="st">&#39;loading&#39;</span>)<span class="op">;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>button<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">&#39;loading&#39;</span>)<span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>button<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">contains</span>(<span class="st">&#39;loading&#39;</span>)<span class="op">;</span> <span class="co">// query</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>button<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">toggle</span>(<span class="st">&#39;loading&#39;</span>)<span class="op">;</span> <span class="co">// doesn&#39;t work on IE</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="va">button</span>.<span class="va">classList</span>.<span class="at">add</span>(<span class="st">&#39;loading&#39;</span>)<span class="op">;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="va">button</span>.<span class="va">classList</span>.<span class="at">remove</span>(<span class="st">&#39;loading&#39;</span>)<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="va">button</span>.<span class="va">classList</span>.<span class="at">contains</span>(<span class="st">&#39;loading&#39;</span>)<span class="op">;</span> <span class="co">// query</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="va">button</span>.<span class="va">classList</span>.<span class="at">toggle</span>(<span class="st">&#39;loading&#39;</span>)<span class="op">;</span> <span class="co">// doesn&#39;t work on IE</span></span></code></pre></div>
 <p><small><a href="https://developer.mozilla.org/en/docs/Web/API/Element/classList">Snippet de código</a> online</small></p>
 </section></section>
-<section>
-<section id="manipular-el-dom" class="title-slide slide level1">
-<h1>Manipular el DOM</h1>
-
-</section>
-<section id="insertar-elementos" class="slide level2">
+<section><section id="manipular-el-dom" class="title-slide slide level1"><h1>Manipular el DOM</h1></section><section id="insertar-elementos" class="slide level2">
 <h2>Insertar elementos</h2>
 <ul>
 <li>Podemos insertar elementos nuevos con <code class="sourceCode javascript">innerHTML</code></li>
 <li>También se pueden crear desde cero</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">const</span> button <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">&#39;button&#39;</span>)<span class="op">;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>button<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&#39;Start&#39;</span><span class="op">;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>button<span class="op">.</span><span class="fu">setAttribute</span>(<span class="st">&#39;type&#39;</span><span class="op">,</span> <span class="st">&#39;button&#39;</span>)<span class="op">;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="co">// &lt;button type=&quot;button&quot;&gt;Start&lt;/button&gt;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb10"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">const</span> button <span class="op">=</span> <span class="va">document</span>.<span class="at">createElement</span>(<span class="st">&#39;button&#39;</span>)<span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="va">button</span>.<span class="at">innerHTML</span> <span class="op">=</span> <span class="st">&#39;Start&#39;</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="va">button</span>.<span class="at">setAttribute</span>(<span class="st">&#39;type&#39;</span><span class="op">,</span> <span class="st">&#39;button&#39;</span>)<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="co">// &lt;button type=&quot;button&quot;&gt;Start&lt;/button&gt;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <ul>
 <li>Cuando creamos un elemento con <code class="sourceCode javascript">createElement</code> está <strong>huérfano</strong> y no lo veremos renderizado en la página</li>
 <li>Hay que añadirlo como “familiar” de algún otro elemento con <code class="sourceCode javascript">appendChild</code>, <code class="sourceCode javascript">insertBefore</code>…</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="bu">document</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">appendChild</span>(button)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="va">document</span>.<span class="va">body</span>.<span class="at">appendChild</span>(button)<span class="op">;</span></span></code></pre></div>
 <p><small><a href="https://jsfiddle.net/mpsjmz11/1/">Snippet de código</a> online</small></p>
-</section>
-<section id="eliminar-elementos" class="slide level2">
+</section><section id="eliminar-elementos" class="slide level2">
 <h2>Eliminar elementos</h2>
 <ul>
 <li>Podemos reemplazar un elemento por otro con <code class="sourceCode javascript">replaceChild</code></li>
 <li>Podemos <strong>eliminar</strong> un elemento con <code class="sourceCode javascript">removeChild</code></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">const</span> button <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;start&#39;</span>)<span class="op">;</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>button<span class="op">.</span><span class="at">parentNode</span><span class="op">.</span><span class="fu">removeChild</span>(button)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">const</span> button <span class="op">=</span> <span class="va">document</span>.<span class="at">getElementById</span>(<span class="st">&#39;start&#39;</span>)<span class="op">;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="va">button</span>.<span class="va">parentNode</span>.<span class="at">removeChild</span>(button)<span class="op">;</span></span></code></pre></div>
 </section></section>
-<section>
-<section id="eventos" class="title-slide slide level1">
-<h1>Eventos</h1>
-
-</section>
-<section id="eventos-en-el-dom" class="slide level2">
+<section><section id="eventos" class="title-slide slide level1"><h1>Eventos</h1></section><section id="eventos-en-el-dom" class="slide level2">
 <h2>Eventos en el DOM</h2>
 <ul>
 <li>Los elementos del DOM disparan eventos a los que podemos subscribirnos (click en un botón, cambio del texto de un <code class="sourceCode html"><span class="kw">&lt;input&gt;</span></code>, cuando seleccionamos una checkbox, etcétera)</li>
-<li><code class="sourceCode javascript"><span class="bu">window</span></code> también dispara eventos: <code class="sourceCode javascript">load</code>, <code class="sourceCode javascript">resize</code>…</li>
+<li><code class="sourceCode javascript">window</code> también dispara eventos: <code class="sourceCode javascript">load</code>, <code class="sourceCode javascript">resize</code>…</li>
 </ul>
-</section>
-<section id="escuchar-eventos" class="slide level2">
+</section><section id="escuchar-eventos" class="slide level2">
 <h2>Escuchar eventos</h2>
 <ul>
 <li>Hay dos maneras de escuchar eventos disparados por un elemento:
 <ul>
-<li>Usando el método <code class="sourceCode javascript"><span class="bu">Event</span><span class="op">.</span><span class="at">addEventListener</span></code></li>
+<li>Usando el método <code class="sourceCode javascript"><span class="va">Event</span>.<span class="at">addEventListener</span></code></li>
 <li>Usando los <em>on-event handlers</em> (p.ej <code class="sourceCode javascript">onclick</code>, <code class="sourceCode javascript">onfocus</code>…)</li>
 </ul></li>
 </ul>
-</section>
-<section id="on-event-handlers" class="slide level2">
+</section><section id="on-event-handlers" class="slide level2">
 <h2>On-event handlers</h2>
 <ul>
 <li>¡*Sólo hay un handler** por evento!</li>
 <li>Registramos y desregistramos el handler con una <strong>asignación</strong></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="co">// subscripción</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) { <span class="co">/* ... */</span> }<span class="op">;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="co">// cancelar la subscripción</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">// subscripción</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="va">button</span>.<span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) <span class="op">{</span> <span class="co">/* ... */</span> <span class="op">};</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="co">// cancelar la subscripción</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="va">button</span>.<span class="at">onclick</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span></code></pre></div>
 <p><small>Documentación <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers">en la MDN</a></small></p>
-</section>
-<section id="event-listeners" class="slide level2">
+</section><section id="event-listeners" class="slide level2">
 <h2>Event listeners</h2>
 <ul>
 <li>Podemos subscribirnos <strong>múltiples veces</strong> al mismo evento</li>
 <li>Es la manera recomendada y más segura</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="kw">const</span> sayHi <span class="op">=</span> <span class="kw">function</span> () { <span class="co">/* */</span> }<span class="op">;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a><span class="co">// subscripción</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a>button<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> sayHi)<span class="op">;</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a><span class="co">// cancelar la subscripción</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a>button<span class="op">.</span><span class="fu">removeEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> sayHi)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">const</span> sayHi <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span> <span class="co">/* */</span> <span class="op">};</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="co">// subscripción</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="va">button</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> sayHi)<span class="op">;</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="co">// cancelar la subscripción</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a><span class="va">button</span>.<span class="at">removeEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> sayHi)<span class="op">;</span></span></code></pre></div>
 <p><small>Documentación <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">en la MDN</a></small></p>
-</section>
-<section id="bubbling" class="slide level2">
+</section><section id="bubbling" class="slide level2">
 <h2>Bubbling</h2>
 <ul>
 <li>El <strong>bubbling</strong> es la metáfora con la que explicamos cómo se comportan los eventos del DOM</li>
 <li>Cuando un elemento dispara un evento, <strong>se propaga</strong> hacia arriba en el árbol del DOM</li>
 </ul>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="kw">&lt;section&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>    <span class="kw">&lt;button&gt;</span>Click me<span class="kw">&lt;/button&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true"></a><span class="kw">&lt;/section&gt;</span></span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="kw">const</span> section <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&#39;section&#39;</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true"></a>section<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span> () {</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Clicked…&#39;</span>)<span class="op">;</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true"></a>})<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">&lt;section&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>    <span class="kw">&lt;button&gt;</span>Click me<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="kw">&lt;/section&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">const</span> section <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;section&#39;</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="va">section</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Clicked…&#39;</span>)<span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
 <p><small><a href="https://jsfiddle.net/mcx0hkou/1/">Snippet de código</a> online</small></p>
-</section>
-<section id="interrumpir-el-bubbling" class="slide level2">
+</section><section id="interrumpir-el-bubbling" class="slide level2">
 <h2>Interrumpir el bubbling</h2>
 <ul>
 <li>Los callbacks de los eventos pueden recibir <strong>un argumento</strong> con información sobre el evento</li>
-<li>El argumento es un objeto de tipo <code class="sourceCode javascript"><span class="bu">Event</span></code> y tiene métodos para interrumpir el bubbling</li>
+<li>El argumento es un objeto de tipo <code class="sourceCode javascript">Event</code> y tiene métodos para interrumpir el bubbling</li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a>button<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span> (evt) {</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(evt)<span class="op">;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true"></a>})<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
+<div class="sourceCode" id="cb17"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a><span class="va">button</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span> (evt) <span class="op">{</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>    <span class="va">console</span>.<span class="at">log</span>(evt)<span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
+</section><section class="slide level2">
 
 <p>Podemos evitar el bubbling con <strong><code>Event.stopPropagation</code></strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a>button<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span> (e) {</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true"></a>    e<span class="op">.</span><span class="fu">stopPropagation</span>()<span class="op">;</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true"></a>})<span class="op">;</span></span></code></pre></div>
-</section>
-<section id="cancelar-el-evento" class="slide level2">
+<div class="sourceCode" id="cb18"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="va">button</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span> (e) <span class="op">{</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>    <span class="va">e</span>.<span class="at">stopPropagation</span>()<span class="op">;</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
+</section><section id="cancelar-el-evento" class="slide level2">
 <h2>Cancelar el evento</h2>
 <ul>
 <li>¡Esto <strong><em>no</em> es interrumpir el bubbling</strong>!</li>
 <li>Es cancelar el evento y evitar <em>acciones por defecto</em> asociadas a él. Es útil para interceptar formularios, o cambiar el comportamiento de un menú</li>
-<li>Usamos <strong><code class="sourceCode javascript"><span class="bu">Event</span><span class="op">.</span><span class="at">preventDefault</span></code></strong></li>
+<li>Usamos <strong><code class="sourceCode javascript"><span class="va">Event</span>.<span class="at">preventDefault</span></code></strong></li>
 </ul>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
-<div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;file.zip&quot;</span><span class="ot"> download</span><span class="kw">&gt;</span>Download zip<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a><span class="kw">const</span> link <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&#39;a&#39;</span>)<span class="op">;</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true"></a>link<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span> (evt) {</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true"></a>    <span class="co">// the browser won&#39;t detect the link has been clicked</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true"></a>    evt<span class="op">.</span><span class="fu">preventDefault</span>()<span class="op">;</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true"></a>})<span class="op">;</span></span></code></pre></div>
-</section>
-<section id="toda-la-documentación-de-esto-está-en-la-mdn" class="slide level2">
+<div class="sourceCode" id="cb19"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;file.zip&quot;</span><span class="ot"> download</span><span class="kw">&gt;</span>Download zip<span class="kw">&lt;/a&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">const</span> link <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="st">&#39;a&#39;</span>)<span class="op">;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="va">link</span>.<span class="at">addEventListener</span>(<span class="st">&#39;click&#39;</span><span class="op">,</span> <span class="kw">function</span> (evt) <span class="op">{</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>    <span class="co">// the browser won&#39;t detect the link has been clicked</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>    <span class="va">evt</span>.<span class="at">preventDefault</span>()<span class="op">;</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
+</section><section id="toda-la-documentación-de-esto-está-en-la-mdn" class="slide level2">
 <h2>Toda la documentación de esto está en la MDN</h2>
 <p><a href="http://developer.mozilla.org">http://developer.mozilla.org</a></p>
 <p>Truco: añadir <code>mdn</code> a cualquier búsqueda</p>
 <figure>
-<img data-src="search.png" alt="Buscador" /><figcaption aria-hidden="true">Buscador</figcaption>
+<img data-src="search.png" alt="" /><figcaption>Buscador</figcaption>
 </figure>
 </section></section>
     </div>
   </div>
 
-  <script src="../reveal.js/dist/reveal.js"></script>
-
-  // reveal.js plugins
-  <script src="../reveal.js/plugin/notes/notes.js"></script>
-  <script src="../reveal.js/plugin/search/search.js"></script>
-  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-  <script src="../reveal.js/plugin/math/math.js"></script>
+  <script src="../reveal.js/js/reveal.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://revealjs.com/config/
+      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         // Display a presentation progress bar
         progress: true,
@@ -385,29 +344,12 @@
         slideNumber: true,
         // Push each slide change to the browser history
         history: true,
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
 
-        // reveal.js plugins
-        plugins: [
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
