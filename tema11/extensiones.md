@@ -92,13 +92,13 @@ Conseguir que el código JavaScript ejecutado pueda manejar objetos de C++ o que
 
 A partir de la versión 1.3, Tiled permite crear scripts con JavaScript
 
+<!-- ---
+
+Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta desde la [página de Tiled](https://thorbjorn.itch.io/tiled) -->
+
 ---
 
-Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta desde la [página de Tiled](https://thorbjorn.itch.io/tiled)
-
----
-
-![Lo primero es abrir la consola ](abrir_consola_tiled.png)
+![Lo primero es abrir la consola](abrir_consola_tiled.png)
 
 ---
 
