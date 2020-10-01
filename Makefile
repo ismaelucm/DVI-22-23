@@ -29,7 +29,7 @@ define makedir
 	@mkdir -p $(dir $@)
 endef
 
-basepandoc=pandoc -s -M secPrefix= -M figPrefix= -M eqnPrefix= -M tblPrefix=  --filter pandoc-crossref $< -o $@
+basepandoc=pandoc -s -M secPrefix= -M figPrefix= -M eqnPrefix= -M tblPrefix= $< -o $@
 
 
 define slide
