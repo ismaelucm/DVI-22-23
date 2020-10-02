@@ -138,7 +138,8 @@ Además, tienen un API llamado DOM (*Document Object Model*) que permite acceder
 
 JavaScript hoy en día se usa para:
 
-- Videojuegos
+- Videojuegos (Phaser)
+- IDEs (Construct, VSCode)
 - Gmail
 - Google Calendar
 - Facebook

@@ -311,8 +311,3 @@ Cualquier herramienta vale, pero usaremos alguna variante de Scrum, y habrá que
 - *Costes* de cada tarea/historia de usuario
 - *Responsable* de cada tarea
 - *Estado* de cada tarea
-
-
-## Demostración
-
-Ahora, un ejemplo de una manera de desarrollar
