@@ -156,3 +156,18 @@ Un sistema simple (como los que vamos a usar), tendría un protocolo como:
 #. El servidor acepta, y añade al cliente a su lista
 #. El cliente y el servidor se intercambian mensajes
 #. El cliente se desconecta, y el servidor lo saca de su lista
+
+
+# Más opciones
+
+---
+
+Lo que haremos aquí es una versión muy sencilla y funcional (y *didáctica*) de juegos en red
+
+---
+
+## Alternativas (entre otras)
+
+- [gekos.io](https://geckosio.github.io/)
+- [Colyseus](https://docs.colyseus.io/)
+- Usar [WebRTC](https://webrtc.org/), con alguna librería como [PeerJS](https://peerjs.com/)
