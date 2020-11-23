@@ -7,27 +7,19 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/css/reset.css">
-  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="../reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -37,107 +29,155 @@
   <h1 class="title">Conceptos básicos de diagramas de clase en UML</h1>
 </section>
 
-<section><section id="sistemas-complejos" class="title-slide slide level1"><h1>Sistemas complejos</h1></section><section class="slide level2">
+<section>
+<section id="sistemas-complejos" class="title-slide slide level1">
+<h1>Sistemas complejos</h1>
+
+</section>
+<section class="slide level2">
 
 <p>Un sistema software puede tener muchos, muchos módulos</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Trabajar con todas las piezas a la vez puede ser inviable</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Dividir, encapsular y ordenar las piezas es fundamental</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Además, es importante <strong>recordar</strong> y <strong>comunicar</strong> la estructura software que estamos utilizando</p>
 </section></section>
-<section><section id="uml" class="title-slide slide level1"><h1>UML</h1></section><section class="slide level2">
+<section>
+<section id="uml" class="title-slide slide level1">
+<h1>UML</h1>
+
+</section>
+<section class="slide level2">
 
 <p>UML (<em>Unified Modeling Languge</em>) es un lenguaje <strong>visual</strong> que sirve para representar un diseño software</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>UML se usa como el “plano” software</p>
 <p>Todos los miembros del equipo deberían seguir este plano</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Se usa para dar una visión abstracta de una arquitectura software, en particular, de arquitecturas <em>orientadas a objetos</em></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <blockquote>
 <p>UML no es un lenguaje de programación, es un lenguaje de modelado</p>
 </blockquote>
 </section></section>
-<section><section id="tipos-de-diagramas-uml" class="title-slide slide level1"><h1>Tipos de diagramas UML</h1></section><section class="slide level2">
+<section>
+<section id="tipos-de-diagramas-uml" class="title-slide slide level1">
+<h1>Tipos de diagramas UML</h1>
+
+</section>
+<section class="slide level2">
 
 <p>No hay un diagrama UML, hay muchos (secuencia, casos de uso, de actividades…)</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Nosotros vamos a centrarnos en uno de los tipos más comunes: <em>el diagrama de clases UML</em></p>
 </section></section>
-<section><section id="diagramas-de-clase-uml" class="title-slide slide level1"><h1>Diagramas de clase UML</h1></section><section class="slide level2">
+<section>
+<section id="diagramas-de-clase-uml" class="title-slide slide level1">
+<h1>Diagramas de clase UML</h1>
+
+</section>
+<section class="slide level2">
 
 <p>Una clase se representa con una caja, con su nombre en la primera sección:</p>
 <figure>
-<img data-src="frutas.pu.svg" alt="" /><figcaption>Ejemplo de clases</figcaption>
+<img data-src="frutas.pu.svg" alt="Ejemplo de clases" /><figcaption aria-hidden="true">Ejemplo de clases</figcaption>
 </figure>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Las clases pueden tener atributos, que se representan en la segunda sección:</p>
 <figure>
-<img data-src="atributos.pu.svg" alt="" /><figcaption>Atributos</figcaption>
+<img data-src="atributos.pu.svg" alt="Atributos" /><figcaption aria-hidden="true">Atributos</figcaption>
 </figure>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>También pueden representarse los métodos, en la tercera sección:</p>
 <figure>
-<img data-src="metodos.pu.svg" alt="" /><figcaption>Métodos</figcaption>
+<img data-src="metodos.pu.svg" alt="Métodos" /><figcaption aria-hidden="true">Métodos</figcaption>
 </figure>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>La idea, en un diagrama, es que se vean representadas todas las clases relevantes:</p>
 <figure>
-<img data-src="muchos.pu.svg" alt="" /><figcaption>Varias clases UML</figcaption>
+<img data-src="muchos.pu.svg" alt="Varias clases UML" /><figcaption aria-hidden="true">Varias clases UML</figcaption>
 </figure>
 </section></section>
-<section><section id="relaciones" class="title-slide slide level1"><h1>Relaciones</h1></section><section id="herencia" class="slide level2">
+<section>
+<section id="relaciones" class="title-slide slide level1">
+<h1>Relaciones</h1>
+
+</section>
+<section id="herencia" class="slide level2">
 <h2>Herencia</h2>
 <p>Una de las relaciones más usadas en la programación orientada a objetos es la herencia</p>
 <p>En UML, la herencia se representa con una flecha <em>hueca</em>, <strong>desde el hijo hasta el padre</strong></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<img data-src="herenciafrutas.pu.svg" alt="" /><figcaption>Herencia</figcaption>
+<img data-src="herenciafrutas.pu.svg" alt="Herencia" /><figcaption aria-hidden="true">Herencia</figcaption>
 </figure>
-</section><section id="implementación" class="slide level2">
+</section>
+<section id="implementación" class="slide level2">
 <h2>Implementación</h2>
 <p>Se puede reflejar la idea de implementación de una interfaz</p>
 <p>In interfaz es un conjunto de funciones no implementadas que representan un comportamiento que puede ser especificado en cada clase</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<img data-src="interface.pu.svg" alt="" /><figcaption>Interfaces</figcaption>
+<img data-src="interface.pu.svg" alt="Interfaces" /><figcaption aria-hidden="true">Interfaces</figcaption>
 </figure>
-</section><section id="agregación" class="slide level2">
+</section>
+<section id="agregación" class="slide level2">
 <h2>Agregación</h2>
 <p>La agregación es un tipo de relación en la que hay un contenedor y un contenido</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<img data-src="agregacionuml.pu.svg" alt="" /><figcaption>Agregación</figcaption>
+<img data-src="agregacionuml.pu.svg" alt="Agregación" /><figcaption aria-hidden="true">Agregación</figcaption>
 </figure>
-</section><section id="composición" class="slide level2">
+</section>
+<section id="composición" class="slide level2">
 <h2>Composición</h2>
 <p>La composición es más “fuerte” que la agregación</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>En la composición, el todo y las partes tienen el mismo ciclo de vida</p>
 <p>Es decir, no hay todo sin las partes</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<img data-src="composicionuml.pu.svg" alt="" /><figcaption>Composición</figcaption>
+<img data-src="composicionuml.pu.svg" alt="Composición" /><figcaption aria-hidden="true">Composición</figcaption>
 </figure>
 </section></section>
-<section><section id="más" class="title-slide slide level1"><h1>Más…</h1></section><section class="slide level2">
+<section>
+<section id="más" class="title-slide slide level1">
+<h1>Más…</h1>
+
+</section>
+<section class="slide level2">
 
 <p>UML es mucho, mucho más complejo, y se puede usar para representar mucho más que una estructura de clases</p>
 <p>Hay <a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/">muchos recursos en Internet</a> a través de los cuales podéis aprender más detalles</p>
@@ -145,12 +185,17 @@
     </div>
   </div>
 
-  <script src="../reveal.js/js/reveal.js"></script>
+  <script src="../reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/search/search.js"></script>
+  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display a presentation progress bar
         progress: true,
@@ -159,11 +204,11 @@
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: '../reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

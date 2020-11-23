@@ -7,91 +7,81 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/css/reset.css">
-  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="../reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -105,13 +95,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>¿Por qué?</h2>
 <p>Si queréis publicar juegos en la web, <em>necesitáis</em> saber cómo funciona un navegador, y cómo funciona la web</p>
 </section>
-<section><section id="navegadores" class="title-slide slide level1"><h1>Navegadores</h1></section><section id="muchos-y-con-particularidades" class="slide level2">
+<section>
+<section id="navegadores" class="title-slide slide level1">
+<h1>Navegadores</h1>
+
+</section>
+<section id="muchos-y-con-particularidades" class="slide level2">
 <h2>Muchos, y con particularidades</h2>
 <ul>
 <li>Hay consideraciones técnicas a tener en cuenta, tanto a nivel de interfaz como de seguridad</li>
 <li>¡Herramientas de desarrollo! depurador, profiler, network requests, etc</li>
 </ul>
-</section><section id="por-qué-conocer-tecnologías-web" class="slide level2">
+</section>
+<section id="por-qué-conocer-tecnologías-web" class="slide level2">
 <h2>¿Por qué conocer tecnologías web?</h2>
 <ul>
 <li>Como poco, vuestro juego deberá estar contenido en una página web (HTML), que tendrá cierta apariencia (CSS)</li>
@@ -119,7 +115,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Si tenéis un bug, necesitáis conocimientos de APIs Web para poder depurar con éxito (la API de Gamepad, o WebGL)</li>
 <li>Si queréis modificar el engine o framework para añadir features o arreglar un bug..</li>
 </ul>
-</section><section id="navegadores-1" class="slide level2">
+</section>
+<section id="navegadores-1" class="slide level2">
 <h2>Navegadores</h2>
 <ul>
 <li>Son programas que permiten acceder a la Web</li>
@@ -129,90 +126,115 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>No todos incluyen la misma VM de JavaScript: SpiderMonkey (Firefox), V8 (Chrome)</li>
 </ul></li>
 </ul>
-</section><section id="cómo-detectar-qué-soporta-cada-navegador" class="slide level2">
+</section>
+<section id="cómo-detectar-qué-soporta-cada-navegador" class="slide level2">
 <h2>¿Cómo detectar qué soporta cada navegador?</h2>
 <ul>
 <li><a href="http://caniuse.com">caniuse.com</a>, rápida e intuitiva</li>
 <li><a href="http://developer.mozilla.org">MDN</a>, tiene detalles concretos sobre la implementación y diferencias entre navegadores</li>
 </ul>
 </section></section>
-<section><section id="html" class="title-slide slide level1"><h1>HTML</h1></section><section id="hypertext-markup-language" class="slide level2">
+<section>
+<section id="html" class="title-slide slide level1">
+<h1>HTML</h1>
+
+</section>
+<section id="hypertext-markup-language" class="slide level2">
 <h2>Hypertext Markup Language</h2>
 <ul>
 <li><p>Representa el <strong>contenido</strong> de una página: párrafos, títulos, imágenes, vídeos, elementos de canvas, etc</p></li>
 <li><p>Es un lenguaje de <strong>marcado (no de programación)</strong> basado en etiquetas:</p></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;h1&gt;</span>Esto es un título<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
-</section><section id="html-es-un-lenguaje-de-marcado" class="slide level2">
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;</span>Esto es un título<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
+</section>
+<section id="html-es-un-lenguaje-de-marcado" class="slide level2">
 <h2>HTML es un lenguaje de <em>marcado</em></h2>
 <p>Es decir, <em>no se puede programar sólo con HTML</em></p>
-</section><section id="documentos-html" class="slide level2">
+</section>
+<section id="documentos-html" class="slide level2">
 <h2>Documentos HTML</h2>
 <p>Una página HTML es un archivo de <em>texto plano</em> que contiene la descripción de un documento</p>
-</section><section id="ejemplo-de-página-web" class="slide level2">
+</section>
+<section id="ejemplo-de-página-web" class="slide level2">
 <h2>Ejemplo de página web</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span> <span class="co">&lt;!-- establece el tipo de HTML --&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;es&quot;</span><span class="kw">&gt;</span> <span class="co">&lt;!-- abre la página --&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">&lt;head&gt;</span> <span class="co">&lt;!-- `head` son los datos del documento --&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>  <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="kw">&lt;title&gt;</span>Título<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="kw">&lt;/head&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="kw">&lt;body&gt;</span> <span class="co">&lt;!-- cuerpo del documento, lo que se ve --&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>  Contenido</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="kw">&lt;/body&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="kw">&lt;/html&gt;</span> <span class="co">&lt;!-- cierra la página --&gt;</span></span></code></pre></div>
-</section><section id="la-estructura-se-hace-con-etiquetas" class="slide level2">
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span> <span class="co">&lt;!-- establece el tipo de HTML --&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;es&quot;</span><span class="kw">&gt;</span> <span class="co">&lt;!-- abre la página --&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span> <span class="co">&lt;!-- `head` son los datos del documento --&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;title&gt;</span>Título<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;body&gt;</span> <span class="co">&lt;!-- cuerpo del documento, lo que se ve --&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  Contenido</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span> <span class="co">&lt;!-- cierra la página --&gt;</span></span></code></pre></div>
+</section>
+<section id="la-estructura-se-hace-con-etiquetas" class="slide level2">
 <h2>La estructura se hace con <em>etiquetas</em></h2>
 <p>Las etiquetas se definen entre ángulos: <code class="sourceCode html"><span class="kw">&lt;etiqueta&gt;</span></code></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>(Casi) todas las etiquetas se abren y cierran, y afectan al contenido encerrado:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;strong&gt;</span>texto con fuerza<span class="kw">&lt;/strong&gt;</span></span></code></pre></div>
-</section><section class="slide level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;strong&gt;</span>texto con fuerza<span class="kw">&lt;/strong&gt;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
 
 <p>Se pueden anidar:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;strong&gt;</span>texto con fuerza y <span class="kw">&lt;em&gt;</span>énfasis<span class="kw">&lt;/em&gt;</span>, hay de todo<span class="kw">&lt;/strong&gt;</span></span></code></pre></div>
-</section><section id="comentarios" class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;strong&gt;</span>texto con fuerza y <span class="kw">&lt;em&gt;</span>énfasis<span class="kw">&lt;/em&gt;</span>, hay de todo<span class="kw">&lt;/strong&gt;</span></span></code></pre></div>
+</section>
+<section id="comentarios" class="slide level2">
 <h2>Comentarios</h2>
 <p>Se encierran en <code class="sourceCode html"><span class="co">&lt;!-- ... --&gt;</span></code></p>
 </section></section>
-<section><section id="css" class="title-slide slide level1"><h1>CSS</h1></section><section id="al-principio-no-había-separación" class="slide level2">
+<section>
+<section id="css" class="title-slide slide level1">
+<h1>CSS</h1>
+
+</section>
+<section id="al-principio-no-había-separación" class="slide level2">
 <h2>Al principio, no había separación</h2>
 <p>HTML permite establecer las propiedades de apariencia de los elementos</p>
 <p>Pero esto significaba tener que cambiar los colores a todos los botones, párrafos, títulos…</p>
 <p>Era difícil mantener una estética correcta</p>
 <p><a href="http://www.pennyjuice.com">Los años 90 fueron duros</a></p>
-</section><section id="cascade-style-sheets" class="slide level2">
+</section>
+<section id="cascade-style-sheets" class="slide level2">
 <h2>Cascade Style Sheets</h2>
 <p>CSS se creó para establecer la apariencia de los elementos de forma unificada, en un sólo conjunto de archivos</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Una hoja de estilos es un archivo de texto que contiene, para cada tipo de elemento, la apariencia apropiada:</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <ul>
 <li><p>Nos permite personalizar la <strong>apariencia</strong> de los elementos HTML: colores, fondos, bordes, posición, columnas, tamaños..</p></li>
 <li><p>Es un lenguage <strong>declarativo</strong> basado en reglas:</p></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1"></a>h1 {</span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>}</span></code></pre></div>
-</section><section id="javascript" class="slide level2">
+<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</section>
+<section id="javascript" class="slide level2">
 <h2>JavaScript</h2>
 <p>Sirve para dotar de lógica a un documento</p>
 <p>Un archivo HTML es un documento, <em>no un programa</em></p>
 <p>Como un PDF o un archivo de Word</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>En un momento concreto de la historia de los navegadores, se incluyó la posibilidad de crear lógica con JavaScript</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <ul>
 <li><p>Nos permite implementar <strong>comportamiento</strong> y <strong>lógica</strong></p></li>
 <li><p>Es un <strong>lenguaje dinámico</strong> orientado a prototipos, con características funcionales</p></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span></code></pre></div>
-</section><section id="los-3-lenguajes-de-la-web" class="slide level2">
+<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="los-3-lenguajes-de-la-web" class="slide level2">
 <h2>Los 3 lenguajes de la web</h2>
 <ul>
 <li>Documento y estructura: <em>HTML</em></li>
@@ -220,38 +242,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Lógica: <em>JavaScript</em></li>
 </ul>
 </section></section>
-<section><section id="documentos-web-e-internet" class="title-slide slide level1"><h1>Documentos web e Internet</h1></section><section id="una-página-web-no-tiene-por-qué-estar-en-internet" class="slide level2">
+<section>
+<section id="documentos-web-e-internet" class="title-slide slide level1">
+<h1>Documentos web e Internet</h1>
+
+</section>
+<section id="una-página-web-no-tiene-por-qué-estar-en-internet" class="slide level2">
 <h2>Una página web no tiene por qué estar en Internet</h2>
 <p>El navegador entiende HTML, CSS y JS</p>
 <p>Es decir, es como un visor de PDF</p>
 <p>Se pueden crear y abrir en local documentos HTML</p>
-</section><section id="el-navegador-es-un-visor-que-se-conecta" class="slide level2">
+</section>
+<section id="el-navegador-es-un-visor-que-se-conecta" class="slide level2">
 <h2>El navegador es un visor que se conecta</h2>
 <p><strong>Además</strong> de mostrar documentos web y ejecutar JS, es capaz de que le pidamos HTMLs, JSs y CSSs que están en Internet</p>
 <p>Se conecta con otro ordenador, le pide archivos, se los descarga, y los muestra</p>
 <p>De hecho, se los puede descargar a un directorio local</p>
-</section><section id="ejemplo-html-css-y-js" class="slide level2">
+</section>
+<section id="ejemplo-html-css-y-js" class="slide level2">
 <h2>Ejemplo HTML, CSS y JS</h2>
 <p>(<a href="ejemplo.html">En</a> <a href="ejemplo.css">archivos</a> <a href="ejemplo.js">externos</a>)</p>
 </section></section>
-<section><section id="redes-y-protocolos" class="title-slide slide level1"><h1>Redes y protocolos</h1></section><section id="una-red-son-ordenadores-conectados-entre-sí" class="slide level2">
+<section>
+<section id="redes-y-protocolos" class="title-slide slide level1">
+<h1>Redes y protocolos</h1>
+
+</section>
+<section id="una-red-son-ordenadores-conectados-entre-sí" class="slide level2">
 <h2>Una red son ordenadores conectados entre sí</h2>
 <p>Y nada más. Internet es una red más, en la que much todos los ordenadores en todo el mundo están conectados</p>
-</section><section id="internet-no-es-la-web" class="slide level2">
+</section>
+<section id="internet-no-es-la-web" class="slide level2">
 <h2>Internet no es la web</h2>
 <p>Internet en la gran conexión mundial de ordenadores</p>
 <p>La web es el conjunto de páginas</p>
 <p>VoIP, servicios de streaming, juegos online… Todo eso también es Internet, pero no es <em>la web</em></p>
-</section><section id="servidores" class="slide level2">
+</section>
+<section id="servidores" class="slide level2">
 <h2>Servidores</h2>
 <p>Un servidor es sólo un ordenador conectado a la red que tiene un programa que escucha y da algún servicio</p>
 <p>También se llama servidor al programa que da dicho servicio en la red</p>
 <p>No tienen necesariamente un hardware especial</p>
-</section><section id="un-protocolo-es-una-manera-de-comunicar-dos-ordenadores" class="slide level2">
+</section>
+<section id="un-protocolo-es-una-manera-de-comunicar-dos-ordenadores" class="slide level2">
 <h2>Un protocolo es una manera de comunicar dos ordenadores</h2>
 <p>Es decir, un lenguaje común que ambos extremos conocen</p>
 <p>La información (archivos, vídeos…) se distribuye usando <em>protocolos</em></p>
-</section><section id="hypertext-transfer-protocol" class="slide level2">
+</section>
+<section id="hypertext-transfer-protocol" class="slide level2">
 <h2>Hypertext Transfer Protocol</h2>
 <p>Más conocido como HTTP</p>
 <p>Es el protocolo que se usa en la web</p>
@@ -260,7 +298,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>CLIENTE: “quiero ver que tienes”</li>
 <li>SERVIDOR: “toma estos <strong>archivos</strong>”</li>
 </ul>
-</section><section id="servidor-web" class="slide level2">
+</section>
+<section id="servidor-web" class="slide level2">
 <h2>Servidor web</h2>
 <p>Es sólo un programa:</p>
 <ul>
@@ -269,7 +308,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Que, cuando se le pide una página, devuelve archivos de la web</li>
 </ul>
 <p><span class="fragment">Por extensión, llamamos servidor tanto a la máquina como al programa</span></p>
-</section><section id="servidor-local" class="slide level2">
+</section>
+<section id="servidor-local" class="slide level2">
 <h2>Servidor local</h2>
 <p>Como un servidor web es sólo un programa, puedo <strong>ejecutarlo en mi ordenador</strong> y <strong>conectarme a él en local</strong></p>
 <p>Porque TCP (el “sistema” que usa Internet) permite conectarme a mi propia máquina con la <em>dirección local</em>:</p>
@@ -279,47 +319,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>(En realidad es más complejo que esto)</p>
 </section></section>
-<section><section id="qué-pasa-cuando-accedéis-a-una-web-en-un-navegador" class="title-slide slide level1"><h1>¿Qué pasa cuando accedéis a una web en un navegador?</h1></section><section id="petición-http-get-a-un-servidor" class="slide level2">
+<section>
+<section id="qué-pasa-cuando-accedéis-a-una-web-en-un-navegador" class="title-slide slide level1">
+<h1>¿Qué pasa cuando accedéis a una web en un navegador?</h1>
+
+</section>
+<section id="petición-http-get-a-un-servidor" class="slide level2">
 <h2>1. Petición HTTP GET a un servidor</h2>
 <figure>
-<img data-src="request_dance_step1.png" alt="" /><figcaption>Petición HTTP GET</figcaption>
+<img data-src="request_dance_step1.png" alt="Petición HTTP GET" /><figcaption aria-hidden="true">Petición HTTP GET</figcaption>
 </figure>
 <p>Se hace un HTTP GET a una URL, y si el recurso existe (y no está cacheado), el servidor lo retorna</p>
-</section><section id="descarga-de-archivos" class="slide level2">
+</section>
+<section id="descarga-de-archivos" class="slide level2">
 <h2>2. Descarga de archivos</h2>
 <figure>
-<img data-src="request_dance_step2.png" alt="" /><figcaption>Descarga de archivos</figcaption>
+<img data-src="request_dance_step2.png" alt="Descarga de archivos" /><figcaption aria-hidden="true">Descarga de archivos</figcaption>
 </figure>
 <p>Los archivos HTML pueden hacer referencia a otros recursos… que el navegador deberá pedir al servidor</p>
 <p>Mientras tanto, se va renderizando el HTML descargado</p>
-</section><section id="un-js-salvaje-apareció" class="slide level2">
+</section>
+<section id="un-js-salvaje-apareció" class="slide level2">
 <h2>¡Un JS salvaje apareció!</h2>
 <p>Cuando un archivo JS se acaba de descargar, su código se parsea y se <strong>ejecuta</strong></p>
 <p>Mientras se ejecuta, el navegador queda <em>bloqueado</em></p>
-</section><section id="carga-finalizada" class="slide level2">
+</section>
+<section id="carga-finalizada" class="slide level2">
 <h2>3. Carga finalizada</h2>
 <p>Cuando todas las imágenes, scripts, CSS, etc. se han cargado, se dispara el <strong>evento <code>load</code></strong> de <code>window</code></p>
 <p>Es muy común incluir el código que inicializa la ejecución del programa en el <em>handler</em> de ese evento</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="va">window</span>.<span class="at">onload</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="co">// hello world</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="op">};</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">onload</span> <span class="op">=</span> <span class="kw">function</span> () {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// hello world</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div>
 </section></section>
-<section><section id="cómo-incluir-javascript-en-una-web" class="title-slide slide level1"><h1>Cómo incluir JavaScript en una web</h1></section><section id="estructura-básica-de-un-documento-html" class="slide level2">
+<section>
+<section id="cómo-incluir-javascript-en-una-web" class="title-slide slide level1">
+<h1>Cómo incluir JavaScript en una web</h1>
+
+</section>
+<section id="estructura-básica-de-un-documento-html" class="slide level2">
 <h2>Estructura básica de un documento HTML</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>  <span class="co">&lt;!-- el head es metadata --&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a>  <span class="kw">&lt;head&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>    <span class="kw">&lt;title&gt;</span>Cancamusa<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a>  <span class="co">&lt;!-- el body es contenido --&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a>  <span class="kw">&lt;body&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a>    <span class="kw">&lt;h1&gt;</span>Monkey Island<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb8-11"><a href="#cb8-11"></a>    <span class="kw">&lt;p&gt;</span>Mira detrás de ti, ¡un mono de tres cabezas!<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a>  <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-</section><section id="dónde-va-el-código-javascript" class="slide level2">
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el head es metadata --&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Cancamusa<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el body es contenido --&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>Monkey Island<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>Mira detrás de ti, ¡un mono de tres cabezas!<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</section>
+<section id="dónde-va-el-código-javascript" class="slide level2">
 <h2>¿Dónde va el código JavaScript?</h2>
 <ul>
 <li>Podemos incluir JavaScript tanto en el <code>&lt;head&gt;</code> como en el <code>&lt;body&gt;</code></li>
@@ -330,53 +384,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p><small>Esto es una simplificación, info más completa en <a href="https://www.html5rocks.com/en/tutorials/speed/script-loading/">este artículo de Jake Archibald</a></small></p>
-</section><section id="scripts-inline" class="slide level2">
+</section>
+<section id="scripts-inline" class="slide level2">
 <h2>Scripts inline</h2>
 <p>Podemos incluir código JavaScript inline en el HTML con la etiqueta <code>&lt;script&gt;</code></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;script&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
-</section><section id="scripts-externos" class="slide level2">
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+</section>
+<section id="scripts-externos" class="slide level2">
 <h2>Scripts externos</h2>
 <p>Podemos incluir archivos JavaScript con la etiqueta <code>&lt;script&gt;</code> también:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/game.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;js/game.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
 </section></section>
-<section><section id="cómo-se-ejecuta-javascript" class="title-slide slide level1"><h1>Cómo se ejecuta JavaScript</h1></section><section id="modelo-asíncrono" class="slide level2">
+<section>
+<section id="cómo-se-ejecuta-javascript" class="title-slide slide level1">
+<h1>Cómo se ejecuta JavaScript</h1>
+
+</section>
+<section id="modelo-asíncrono" class="slide level2">
 <h2>Modelo asíncrono</h2>
 <ul>
 <li>Mientras JavaScript se está ejecutando, <strong>bloquea todo lo demás</strong> (incluida la UI)</li>
 <li>La manera de programar JavaScript en la Web es <strong>subscribiéndonos a eventos</strong> (o usando <strong>callbacks</strong>) y ejecutando código sólo cuando esos eventos se disparan</li>
 <li>Si los eventos no se disparan, o los callbacks no se llaman, no se ejecuta código</li>
 </ul>
-</section><section id="un-solo-hilo" class="slide level2">
+</section>
+<section id="un-solo-hilo" class="slide level2">
 <h2>Un solo hilo</h2>
 <ul>
 <li>Los callbacks de los eventos se ejecutan <strong>de uno en uno</strong></li>
 <li>Los callbacks se ejecutan inmediatamente cuando el evento se dispara (el resto del código espera su finalización)</li>
 </ul>
-</section><section id="ejemplo" class="slide level2">
+</section>
+<section id="ejemplo" class="slide level2">
 <h2>Ejemplo</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="va">button</span>.<span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) <span class="op">{</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>    <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Click&quot;</span>)<span class="op">;</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="op">}</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="co">// ..</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a></span>
-<span id="cb11-7"><a href="#cb11-7"></a><span class="va">button</span>.<span class="at">trigger</span>(<span class="st">&#39;click&#39;</span>)<span class="op">;</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a><span class="co">// el botón no se desactiva hasta que el handler de &quot;click&quot;</span></span>
-<span id="cb11-9"><a href="#cb11-9"></a><span class="co">// haya acabado de ejecutarse</span></span>
-<span id="cb11-10"><a href="#cb11-10"></a><span class="va">button</span>.<span class="at">disabled</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Click&quot;</span>)<span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">// ..</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="fu">trigger</span>(<span class="st">&#39;click&#39;</span>)<span class="op">;</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">// el botón no se desactiva hasta que el handler de &quot;click&quot;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">// haya acabado de ejecutarse</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">disabled</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div>
 <p><small><a href="https://jsfiddle.net/1wqevdob/">Snippet de código</a></small></p>
 </section></section>
     </div>
   </div>
 
-  <script src="../reveal.js/js/reveal.js"></script>
+  <script src="../reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/search/search.js"></script>
+  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display a presentation progress bar
         progress: true,
@@ -385,11 +453,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: '../reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>

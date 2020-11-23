@@ -1,5 +1,7 @@
 ---
 title: Introducción a la arquitectura de videojuegos
+tableTitle: |
+  Tabla #
 ---
 
 # Qué es la arquitectura de un juego

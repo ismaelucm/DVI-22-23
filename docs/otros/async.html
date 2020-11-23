@@ -7,91 +7,81 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/css/reset.css">
-  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="../reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -101,163 +91,195 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <h1 class="title">Programación asíncrona y eventos</h1>
 </section>
 
-<section><section id="programación-asíncrona-y-eventos" class="title-slide slide level1"><h1>Programación asíncrona y eventos</h1></section><section class="slide level2">
+<section>
+<section id="programación-asíncrona-y-eventos" class="title-slide slide level1">
+<h1>Programación asíncrona y eventos</h1>
+
+</section>
+<section class="slide level2">
 
 <p>Prueba el siguiente ejemplo (copia, pega y espera 5 segundos):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">var</span> fiveSeconds <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">1000</span><span class="op">;</span> <span class="co">// en milisegundos</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">// Esto ocurre ahora</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;T: &#39;</span><span class="op">,</span> <span class="kw">new</span> <span class="at">Date</span>())<span class="op">;</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="at">setTimeout</span>(<span class="kw">function</span> () <span class="op">{</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>  <span class="co">// Esto ocurre pasados 5 segundos</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a>  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;T + 5 segundos: &#39;</span><span class="op">,</span> <span class="kw">new</span> <span class="at">Date</span>())<span class="op">;</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="op">},</span> fiveSeconds)<span class="op">;</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="co">// Esto ocurre inmediatamente después</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;T + delta: &#39;</span><span class="op">,</span> <span class="kw">new</span> <span class="at">Date</span>())<span class="op">;</span></span></code></pre></div>
-</section><section class="slide level2">
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> fiveSeconds <span class="op">=</span> <span class="dv">5</span> <span class="op">*</span> <span class="dv">1000</span><span class="op">;</span> <span class="co">// en milisegundos</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Esto ocurre ahora</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;T: &#39;</span><span class="op">,</span> <span class="kw">new</span> <span class="bu">Date</span>())<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="pp">setTimeout</span>(<span class="kw">function</span> () {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Esto ocurre pasados 5 segundos</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;T + 5 segundos: &#39;</span><span class="op">,</span> <span class="kw">new</span> <span class="bu">Date</span>())<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">,</span> fiveSeconds)<span class="op">;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Esto ocurre inmediatamente después</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;T + delta: &#39;</span><span class="op">,</span> <span class="kw">new</span> <span class="bu">Date</span>())<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
 
 <p>Como puedes comprobar, el mensaje se completa pasados 5 segundos porque lo que hace <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout"><code class="sourceCode javascript">setTimeout</code></a> es llamar a la función tan pronto como pasen el número de milisegundos indicados</p>
 <p>Decimos que una función es una <strong><em>callback</em></strong> si se llama en algún momento futuro, es decir, <strong>asíncronamente</strong>, para informar de algún resultado</p>
 <p>En el ejemplo de <code class="sourceCode javascript">setTimeout</code> el resultado es que ha pasado la cantidad de tiempo especificada</p>
-</section><section id="eventos" class="slide level2">
+</section>
+<section id="eventos" class="slide level2">
 <h2>Eventos</h2>
 <p>Esta sección presenta el módulo <code class="sourceCode javascript">readline</code> que es específico de node</p>
 <p>La programación asíncrona en JavaScript y otros lenguajes se usa para <strong>modelar eventos</strong>, principalmente <strong>esperas por entrada y salida</strong></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>En otras palabras: hitos que ocurren pero que <strong>no sabemos cuándo ocurren</strong></p>
 <p>La entrada y salida, a partir de ahora IO (del inglés <em>input / output</em>), no solo supone lectura de ficheros o peticiones a la red, también incluye esperar por una acción del usuario</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Vamos a implementar una consola de diálogo por líneas. Usaremos el módulo <a href="https://nodejs.org/api/readline.html"><code class="sourceCode javascript">readline</code></a> que es parte de la funcionalidad que vienen con node:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">// En conversational.js</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="st">&quot;use strict&quot;</span><span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="kw">var</span> readline <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;readline&#39;</span>)<span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="kw">var</span> cmd <span class="op">=</span> <span class="va">readline</span>.<span class="at">createInterface</span>(<span class="op">{</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="dt">input</span><span class="op">:</span> <span class="va">process</span>.<span class="at">stdin</span><span class="op">,</span>  <span class="co">// así referenciamos la consola como entrada</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="dt">output</span><span class="op">:</span> <span class="va">process</span>.<span class="at">stdout</span><span class="op">,</span> <span class="co">// y así, como salida</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a>  <span class="dt">prompt</span><span class="op">:</span> <span class="st">&#39;(╯°□°）╯ &#39;</span> <span class="co">// lo que aparece para esperar la entrada del usuario</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
-</section><section class="slide level2">
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En conversational.js</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;use strict&quot;</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> readline <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;readline&#39;</span>)<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> cmd <span class="op">=</span> readline<span class="op">.</span><span class="fu">createInterface</span>({</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">input</span><span class="op">:</span> <span class="bu">process</span><span class="op">.</span><span class="at">stdin</span><span class="op">,</span>  <span class="co">// así referenciamos la consola como entrada</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">output</span><span class="op">:</span> <span class="bu">process</span><span class="op">.</span><span class="at">stdout</span><span class="op">,</span> <span class="co">// y así, como salida</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">prompt</span><span class="op">:</span> <span class="st">&#39;(╯°□°）╯ &#39;</span> <span class="co">// lo que aparece para esperar la entrada del usuario</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
 
 <p>Lanza ese programa con node y verás que no hace nada <strong>pero tampoco termina</strong> Esto es típico de los programas asíncronos. El programa queda esperando a que pase algo</p>
 <p>Pulsa <code>ctrl+c</code> para terminar el programa</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Ahora prueba:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">// Añade al final de conversational.js</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Escribe algo y pulsa enter&#39;</span>)<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="va">cmd</span>.<span class="at">prompt</span>()<span class="op">;</span> <span class="co">// pide que el usuario escriba algo</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="va">cmd</span>.<span class="at">on</span>(<span class="st">&#39;line&#39;</span><span class="op">,</span> <span class="kw">function</span> (input) <span class="op">{</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;Has dicho &quot;&#39;</span> <span class="op">+</span> input  <span class="op">+</span> <span class="st">&#39;&quot;&#39;</span>)<span class="op">;</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>  <span class="va">cmd</span>.<span class="at">prompt</span>()<span class="op">;</span> <span class="co">// pide que el usuario escriba algo</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
-</section><section class="slide level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Añade al final de conversational.js</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Escribe algo y pulsa enter&#39;</span>)<span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cmd<span class="op">.</span><span class="fu">prompt</span>()<span class="op">;</span> <span class="co">// pide que el usuario escriba algo</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>cmd<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;line&#39;</span><span class="op">,</span> <span class="kw">function</span> (input) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Has dicho &quot;&#39;</span> <span class="op">+</span> input  <span class="op">+</span> <span class="st">&#39;&quot;&#39;</span>)<span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  cmd<span class="op">.</span><span class="fu">prompt</span>()<span class="op">;</span> <span class="co">// pide que el usuario escriba algo</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
 
 <p>Lo que has conseguido es <strong>escuchar por el evento <code class="sourceCode javascript">line</code></strong> que se produce <a href="https://nodejs.org/api/readline.html#readline_event_line">cada vez que en la entrada se recibe un caracter de cambio de línea</a></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Hablando de eventos, la función que se ejecuta asíncronamente recibe el nombre de <strong><em>listener</em></strong> pero tampoco es raro que se la llame <strong><em>callback</em></strong></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Se habla de <strong>registrar un listener para un evento</strong> o <strong>escuchar por ese evento</strong> a utilizar el mecanismo que permite asociar la ejecución de una función con dicho evento</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Con todo, aun no puedes salir del programa. Necesitas algunos cambios más:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">// Añade a conversational.js</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="va">cmd</span>.<span class="at">on</span>(<span class="st">&#39;line&#39;</span><span class="op">,</span> <span class="kw">function</span> (input) <span class="op">{</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="cf">if</span> (input <span class="op">===</span> <span class="st">&#39;salir&#39;</span>) <span class="op">{</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>    <span class="va">cmd</span>.<span class="at">close</span>()<span class="op">;</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="op">}</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="op">}</span>)<span class="op">;</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="va">cmd</span>.<span class="at">on</span>(<span class="st">&#39;close&#39;</span><span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a>  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;¡Nos vemos!&#39;</span>)<span class="op">;</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>  <span class="va">process</span>.<span class="at">exit</span>(<span class="dv">0</span>)<span class="op">;</span> <span class="co">// sale de node</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
-</section><section class="slide level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Añade a conversational.js</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cmd<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;line&#39;</span><span class="op">,</span> <span class="kw">function</span> (input) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (input <span class="op">===</span> <span class="st">&#39;salir&#39;</span>) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    cmd<span class="op">.</span><span class="fu">close</span>()<span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>cmd<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;close&#39;</span><span class="op">,</span> <span class="kw">function</span> () {</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;¡Nos vemos!&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">process</span><span class="op">.</span><span class="fu">exit</span>(<span class="dv">0</span>)<span class="op">;</span> <span class="co">// sale de node</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
 
 <p>Has añadido un segundo lístener al evento <code class="sourceCode javascript">line</code> y <strong>ambos se ejecutarán</strong></p>
 <p>El primero gestiona el funcionamiento por defecto (que es repetir lo que has puesto) y el segundo trata específicamente el comando <code class="sourceCode javascript">salir</code></p>
 <p>Si la línea es exactamente <code class="sourceCode javascript">salir</code>, cerraremos la interfaz de línea de comandos</p>
 <p>Esto produce un evento <code class="sourceCode javascript">close</code> y cuando lo recibamos, utilizaremos el <em>listener</em> de ese evento para terminar el programa</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
-<p>El método <code class="sourceCode javascript"><span class="at">on</span>()</code> es un segundo nombre para <a href="https://nodejs.org/api/events.html#events_emitter_addlistener_eventname_listener"><code class="sourceCode javascript"><span class="at">addListener</span>()</code></a></p>
-</section><section class="slide level2">
+<p>El método <code class="sourceCode javascript"><span class="fu">on</span>()</code> es un segundo nombre para <a href="https://nodejs.org/api/events.html#events_emitter_addlistener_eventname_listener"><code class="sourceCode javascript"><span class="fu">addListener</span>()</code></a></p>
+</section>
+<section class="slide level2">
 
-<p>Igual que puedes añadir un lístener, también puedes eliminarlo con <a href="https://nodejs.org/api/events.html#events_emitter_removelistener_eventname_listener"><code class="sourceCode javascript"><span class="at">removeListener</span>()</code></a> y quitarlos todos con <a href="https://nodejs.org/api/events.html#events_emitter_removealllisteners_eventname"><code class="sourceCode javascript"><span class="at">removeAllListeners</span>()</code></a></p>
-</section><section class="slide level2">
+<p>Igual que puedes añadir un lístener, también puedes eliminarlo con <a href="https://nodejs.org/api/events.html#events_emitter_removelistener_eventname_listener"><code class="sourceCode javascript"><span class="fu">removeListener</span>()</code></a> y quitarlos todos con <a href="https://nodejs.org/api/events.html#events_emitter_removealllisteners_eventname"><code class="sourceCode javascript"><span class="fu">removeAllListeners</span>()</code></a></p>
+</section>
+<section class="slide level2">
 
-<p>Puedes escuchar por un evento <strong>sólo una vez</strong> con <a href="https://nodejs.org/api/events.html#events_emitter_once_eventname_listener"><code class="sourceCode javascript"><span class="at">once</span>()</code></a></p>
-</section><section id="emisores-de-eventos" class="slide level2">
+<p>Puedes escuchar por un evento <strong>sólo una vez</strong> con <a href="https://nodejs.org/api/events.html#events_emitter_once_eventname_listener"><code class="sourceCode javascript"><span class="fu">once</span>()</code></a></p>
+</section>
+<section id="emisores-de-eventos" class="slide level2">
 <h2>Emisores de eventos</h2>
-<p>Esta sección presenta la clase <code class="sourceCode javascript">EventEmitter</code> que es específica de node</p>
+<p>Esta sección presenta la clase <code class="sourceCode javascript"><span class="bu">EventEmitter</span></code> que es específica de node</p>
 <p>Los eventos <strong>no son un mecanismo estándar</strong> de JavaScript. Son una forma conveniente de modelar determinados tipos de problema pero un objeto JavaScript, por sí solo, <strong>no tiene API para emitir eventos</strong></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p><strong>En <code>node</code></strong>, para que nuestros objetos emitan eventos, tenemos varias alternativas:</p>
 <ul>
 <li>Implementar nuestra propia API de eventos</li>
-<li>Hacer que nuestros objetos <strong>usen</strong> una instancia de <code class="sourceCode javascript">EventEmitter</code></li>
-<li>Hacer que nuestros objetos <strong>sean instancias</strong> de <code class="sourceCode javascript">EventEmitter</code></li>
+<li>Hacer que nuestros objetos <strong>usen</strong> una instancia de <code class="sourceCode javascript"><span class="bu">EventEmitter</span></code></li>
+<li>Hacer que nuestros objetos <strong>sean instancias</strong> de <code class="sourceCode javascript"><span class="bu">EventEmitter</span></code></li>
 </ul>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
-<p>La primera supone crear nuestro propio método <code class="sourceCode javascript"><span class="at">on</span>()</code> y los mecanismos para emitir eventos. El segundo y el tercero usan la clase <a href="https://nodejs.org/api/events.html#events_class_eventemitter"><code class="sourceCode javascript">EventEmitter</code></a> que ya implementa esta API</p>
-</section><section class="slide level2">
+<p>La primera supone crear nuestro propio método <code class="sourceCode javascript"><span class="fu">on</span>()</code> y los mecanismos para emitir eventos. El segundo y el tercero usan la clase <a href="https://nodejs.org/api/events.html#events_class_eventemitter"><code class="sourceCode javascript"><span class="bu">EventEmitter</span></code></a> que ya implementa esta API</p>
+</section>
+<section class="slide level2">
 
 <p>Implementaremos la opción 3 para practicar la herencia:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">var</span> events <span class="op">=</span> <span class="at">require</span>(<span class="st">&#39;events&#39;</span>)<span class="op">;</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">var</span> EventEmitter <span class="op">=</span> <span class="va">events</span>.<span class="at">EventEmitter</span><span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">function</span> <span class="at">Nave</span>() <span class="op">{</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="va">EventEmitter</span>.<span class="at">apply</span>(<span class="kw">this</span>)<span class="op">;</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="kw">this</span>.<span class="at">_ammunition</span> <span class="op">=</span> <span class="st">&#39;laser charges&#39;</span><span class="op">;</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="op">}</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="va">Nave</span>.<span class="at">prototype</span> <span class="op">=</span> <span class="va">Object</span>.<span class="at">create</span>(<span class="va">EventEmitter</span>.<span class="at">prototype</span>)<span class="op">;</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="va">Nave</span>.<span class="va">prototype</span>.<span class="at">constructor</span> <span class="op">=</span> Nave<span class="op">;</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="kw">var</span> nave <span class="op">=</span> <span class="kw">new</span> <span class="at">Nave</span>()<span class="op">;</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="va">nave</span>.<span class="at">on</span><span class="op">;</span> <span class="co">// ¡existe!</span></span></code></pre></div>
-</section><section class="slide level2">
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> events <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;events&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> <span class="bu">EventEmitter</span> <span class="op">=</span> events<span class="op">.</span><span class="at">EventEmitter</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Nave</span>() {</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">EventEmitter</span><span class="op">.</span><span class="fu">apply</span>(<span class="kw">this</span>)<span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_ammunition</span> <span class="op">=</span> <span class="st">&#39;laser charges&#39;</span><span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>Nave<span class="op">.</span><span class="at">prototype</span> <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>(<span class="bu">EventEmitter</span><span class="op">.</span><span class="at">prototype</span>)<span class="op">;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>Nave<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">constructor</span> <span class="op">=</span> Nave<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> nave <span class="op">=</span> <span class="kw">new</span> <span class="fu">Nave</span>()<span class="op">;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>nave<span class="op">.</span><span class="at">on</span><span class="op">;</span> <span class="co">// ¡existe!</span></span></code></pre></div>
+</section>
+<section class="slide level2">
 
 <p>Ahora que nuestra nave puede emitir eventos, vamos a hacer que dispare y que emita un evento:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="va">Nave</span>.<span class="va">prototype</span>.<span class="at">shoot</span> <span class="op">=</span> <span class="kw">function</span> () <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;PICHIUM!&#39;</span>)<span class="op">;</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="kw">this</span>.<span class="at">emit</span>(<span class="st">&#39;shoot&#39;</span><span class="op">,</span> <span class="kw">this</span>.<span class="at">_ammunition</span>)<span class="op">;</span> <span class="co">// parte de la API de EventEmitter</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="op">};</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="va">nave</span>.<span class="at">on</span>(<span class="st">&#39;shoot&#39;</span><span class="op">,</span> <span class="kw">function</span> (ammunition) <span class="op">{</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>  <span class="va">console</span>.<span class="at">log</span>(<span class="st">&#39;CENTRO DE MANDO. La nave ha disparado:&#39;</span><span class="op">,</span> ammunition)<span class="op">;</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="op">}</span>)<span class="op">;</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="va">nave</span>.<span class="at">shoot</span>()<span class="op">;</span></span></code></pre></div>
-</section><section class="slide level2">
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Nave<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">shoot</span> <span class="op">=</span> <span class="kw">function</span> () {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;PICHIUM!&#39;</span>)<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="fu">emit</span>(<span class="st">&#39;shoot&#39;</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">_ammunition</span>)<span class="op">;</span> <span class="co">// parte de la API de EventEmitter</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>nave<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;shoot&#39;</span><span class="op">,</span> <span class="kw">function</span> (ammunition) {</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;CENTRO DE MANDO. La nave ha disparado:&#39;</span><span class="op">,</span> ammunition)<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>nave<span class="op">.</span><span class="fu">shoot</span>()<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
 
-<p>Emitir un evento consiste en llamar al método <a href="https://nodejs.org/api/events.html#events_emitter_emit_eventname_arg1_arg2"><code class="sourceCode javascript"><span class="at">emit</span>()</code></a> que hará que se ejecuten los <em>listeners</em> escuchando por tal evento</p>
+<p>Emitir un evento consiste en llamar al método <a href="https://nodejs.org/api/events.html#events_emitter_emit_eventname_arg1_arg2"><code class="sourceCode javascript"><span class="fu">emit</span>()</code></a> que hará que se ejecuten los <em>listeners</em> escuchando por tal evento</p>
 <p>Los eventos son increíblemente útiles para modelar interfaces de usuario de forma genérica</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Para ello, los <strong>modelos deben publicar qué les ocurre</strong>: cómo cambian, qué hacen… Todo <strong>a base de eventos</strong>. Las <strong>interfaces de usuario se suscribirán</strong> a estos eventos y proporcionarán la información visual adecuada</p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <p>Este modelo permite además que varias interfaces de usuario funcionen al mismo tiempo, todas escuchando por los mismos eventos aunque también permite partir la interfaz en otras especializadas, cada una escuchando por un determinado conjunto de eventos</p>
 </section></section>
     </div>
   </div>
 
-  <script src="../reveal.js/js/reveal.js"></script>
+  <script src="../reveal.js/dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="../reveal.js/plugin/notes/notes.js"></script>
+  <script src="../reveal.js/plugin/search/search.js"></script>
+  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
         // Display a presentation progress bar
         progress: true,
@@ -266,11 +288,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         // Push each slide change to the browser history
         history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: '../reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
