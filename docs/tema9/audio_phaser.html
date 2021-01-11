@@ -145,12 +145,7 @@
 <li>tener los archivos</li>
 <li>cargarlos</li>
 <li>(asegurarnos de que están bien cargados)</li>
-<li>reproducirlos
-<ul>
-<li>de fondo</li>
-<li>con eventos</li>
-<li>en loop</li>
-</ul></li>
+<li>reproducirlos - de fondo - con eventos - en loop</li>
 <li>enterarnos de cuándo han acabado de reproducirse (si queremos)</li>
 </ol>
 </section></section>
@@ -162,30 +157,31 @@
 <section class="slide level2">
 
 <p>Cargar el sonido <code>explosion.mp3</code> y asignarle un nombre:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">audio</span>(<span class="st">&#39;explosion&#39;</span><span class="op">,</span> <span class="st">&#39;assets/audio/SoundEffects/explosion.mp3&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">audio</span>(<span class="st">&quot;explosion&quot;</span><span class="op">,</span> <span class="st">&quot;assets/audio/SoundEffects/explosion.mp3&quot;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>También podemos hacer una “lista de prioridad” de carga. El navegador intentará cargar estos archivos (por orden), sólo se quedará con uno</p>
 <p>En <code class="sourceCode javascript">preload</code> de nuestra escena:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">audio</span>(<span class="st">&#39;boden&#39;</span><span class="op">,</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                [<span class="st">&#39;assets/audio/bodenstaendig_2000_in_rock_4bit.mp3&#39;</span><span class="op">,</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="st">&#39;assets/audio/bodenstaendig_2000_in_rock_4bit.ogg&#39;</span>])<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">audio</span>(<span class="st">&quot;boden&quot;</span><span class="op">,</span> [</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;assets/audio/bodenstaendig_2000_in_rock_4bit.mp3&quot;</span><span class="op">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;assets/audio/bodenstaendig_2000_in_rock_4bit.ogg&quot;</span><span class="op">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>])<span class="op">;</span></span></code></pre></div>
 <p>(Por ejemplo, Firefox elegirá el OGG)</p>
 </section>
 <section class="slide level2">
 
 <p>Añadimos el audio al juego:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">mute</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">volume</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">rate</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">detune</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">seek</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">loop</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">delay</span><span class="op">:</span> <span class="dv">0</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">mute</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">volume</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rate</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">detune</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">seek</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">loop</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">delay</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span> <span class="co">// config es opcional</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">explosion</span> <span class="op">=</span> scene<span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">add</span>(<span class="st">&#39;explosion&#39;</span><span class="op">,</span> config)<span class="op">;</span></span></code></pre></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">explosion</span> <span class="op">=</span> scene<span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">add</span>(<span class="st">&quot;explosion&quot;</span><span class="op">,</span> config)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -201,7 +197,7 @@
 
 <p>Si queremos borrarlo en algún momento, destruimos la entidad (con <code class="sourceCode javascript"><span class="fu">destroy</span>()</code>) y el recurso (con <code class="sourceCode javascript">remove</code>)</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>explosion<span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">&#39;explosion&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">remove</span>(<span class="st">&quot;explosion&quot;</span>)<span class="op">;</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="comenzar-el-sonido" class="title-slide slide level1">
@@ -234,9 +230,9 @@
 <section id="evento-cuando-el-sonido-termina-de-reproducirse" class="slide level2">
 <h2>Evento cuando el sonido termina de reproducirse</h2>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">create</span>() {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    explosion<span class="op">.</span><span class="fu">once</span>(<span class="st">&#39;stop&#39;</span><span class="op">,</span> (music) <span class="kw">=&gt;</span> {</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">// ...</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  explosion<span class="op">.</span><span class="fu">once</span>(<span class="st">&quot;stop&quot;</span><span class="op">,</span> (music) <span class="kw">=&gt;</span> {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="callback-de-descodificación" class="slide level2">
@@ -247,11 +243,11 @@
 
 <p>Dado que lleva tiempo descomprimir un MP3 para ser reproducido, podemos esperar:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">create</span>() {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    explosion <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">add</span>(<span class="st">&#39;explosion&#39;</span>)<span class="op">;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// se llama a `start` cuando todos los sonidos de la lista están cargados</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;decoded&#39;</span><span class="op">,</span> <span class="st">&#39;explosion&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">// ...</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  explosion <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">add</span>(<span class="st">&quot;explosion&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// se llama a `start` cuando todos los sonidos de la lista están cargados</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&quot;decoded&quot;</span><span class="op">,</span> <span class="st">&quot;explosion&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="repetir" class="slide level2">
@@ -295,6 +291,7 @@
 <li><a href="http://www.freesfx.co.uk/">Free SFX</a></li>
 <li>Generadores
 <ul>
+<li><a href="https://sfxr.me/">jsfxr</a></li>
 <li><a href="http://www.bfxr.net/">Bfxr</a></li>
 <li><a href="http://sfbgames.com/chiptone/">Chiptone</a></li>
 <li><a href="http://www.superflashbros.net/as3sfxr/">as3sfxr</a></li>

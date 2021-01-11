@@ -339,6 +339,14 @@ Para usar el mapa que hemos creado, *lo tenemos que exportar a JSON* (`.json`)
 
 ---
 
+## Phaser 3.50
+
+En Phaser 3.50.0 cambia la API de los mapas, y se hace algo mejor (y más potente)
+
+Tened cuidado con las versiones en la documentación disponible
+
+---
+
 ## Cargar el tile map
 
 Para cargar el fichero de descripción del tile map, usamos `tilemapTiledJSON()`{.js} en `preload()`{.js}
@@ -424,14 +432,14 @@ Si hay capas creadas en el editor, podemos asignar estas capas (*layers*) en Pha
 ```js
 // tileset1, tileset2 han sido creados con `addTilesetImage`
 this.backgroundLayer = 
-  this.map.createStaticLayer('BackgroundLayer', 
+  this.map.createLayer('BackgroundLayer', 
                              [tileset1, tileset2]);
 // funciona con y sin array
 this.groundLayer = 
-  this.map.createStaticLayer('GroundLayer'
+  this.map.createLayer('GroundLayer'
                              , tileset1);
 this.foreground = 
-  this.map.createStaticLayer('Foreground'
+  this.map.createLayer('Foreground'
                              , [tileset1, tileset2]);
 ```
 
@@ -455,23 +463,35 @@ Lo haremos con [`createFromObjects`{.js}](https://photonstorm.github.io/phaser3-
 
 ```js
 // con el ID de objeto
-player = map.createFromObjects('nombreDeCapaObjotesEnTiled', 1)
+conId1 = map.createFromObjects('nombreDeCapaObjotesEnTiled', {gid: 1})
 
 // o con el nombre del objeto (`name` en Tiled)
-player = map.createFromObjects('nombreDeCapaObjotesEnTiled', 'player')
+players = map.createFromObjects('nombreDeCapaObjotesEnTiled', {name: 'player'})
 
 // cambiar las propiedades de player después
-player.vida = 10
+players.map(p => p.vida = 10)
 ```
 
 Phaser colocará estos `Sprite`{.js}s en el lugar apropiado
 
+---
+
+Si no quiero `Sprite`{.js}s, puedo decirle el tipo (que tiene que heredar de `GameObject`{.js}):
+
+```js
+createFromObjects(layerName, {
+  name: 'heart-container',
+  classType: HeartContainer
+})
+```
 
 ---
 
 ## Crear los objetos analizando el mapa
 
 Para no usar `createFromObjects()`{.js}, también podemos examinar la capa a mano y crear los objetos directamente
+
+**Este código se creó para Phaser < 3.50, no suele ser necesario con las últimas versiones**
 
 ---
 
