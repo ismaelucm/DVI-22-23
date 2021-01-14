@@ -1,5 +1,6 @@
 ---
 title: Audio en Phaser
+vim: spelllang=en
 ---
 
 # Motores de audio
@@ -156,23 +157,18 @@ function create() {
 
 ## Callback de descodificación
 
-Otro tipo de _callback_ es el que se necesita cuando se descomprime un archivo de audio comprimido
-
----
-
-Dado que lleva tiempo descomprimir un MP3 para ser reproducido, podemos esperar:
+Otro tipo de _callback_ es el que se necesita cuando se descomprime un *buffer* de audio comprimido
 
 ```js
-function create() {
-  explosion = this.sound.add("explosion");
-  // se llama a `start` cuando todos los sonidos de la lista están cargados
-  this.sound.on("decoded", "explosion", () => {
-    // ...
-  });
-}
+scene.sound.decodeAudio('musica', bufferDatos);
 ```
 
 ---
+
+En versiones actualizadas (Phaser 3), esto no es necesario *para archivos cargados por URL*
+
+---
+
 
 ## Repetir
 

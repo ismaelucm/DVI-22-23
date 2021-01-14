@@ -237,18 +237,12 @@
 </section>
 <section id="callback-de-descodificación" class="slide level2">
 <h2>Callback de descodificación</h2>
-<p>Otro tipo de <em>callback</em> es el que se necesita cuando se descomprime un archivo de audio comprimido</p>
+<p>Otro tipo de <em>callback</em> es el que se necesita cuando se descomprime un <em>buffer</em> de audio comprimido</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">decodeAudio</span>(<span class="st">&#39;musica&#39;</span><span class="op">,</span> bufferDatos)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Dado que lleva tiempo descomprimir un MP3 para ser reproducido, podemos esperar:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">create</span>() {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  explosion <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">add</span>(<span class="st">&quot;explosion&quot;</span>)<span class="op">;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// se llama a `start` cuando todos los sonidos de la lista están cargados</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">sound</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&quot;decoded&quot;</span><span class="op">,</span> <span class="st">&quot;explosion&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>En versiones actualizadas (Phaser 3), esto no es necesario <em>para archivos cargados por URL</em></p>
 </section>
 <section id="repetir" class="slide level2">
 <h2>Repetir</h2>
