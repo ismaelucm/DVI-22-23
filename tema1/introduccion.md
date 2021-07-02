@@ -22,16 +22,16 @@ Ventajas e inconvenientes sobre los compilados a código máquina
 
 Cómo funciona un navegador por dentro
 
-A gestionar el desarrollo con un *toolset* real
+Cómo gestionar el desarrollo con un *toolset* real
 
-A hacer proyectos de forma profesional, presentarlos y entregarlos
+Cómo hacer proyectos de forma profesional, presentarlos y entregarlos
 
 
 ## Cómo enfocar la asignatura
 
 No ser pasivos
 
-Buscar recursos en Internet: [GIYF](https://es.wikipedia.org/wiki/GIYF)
+Buscar recursos en Internet: [RTFM o GIYF](https://es.wikipedia.org/wiki/GIYF)
 
 Tener ganas de **aprender**, no de aprobar
 
@@ -50,7 +50,7 @@ Proponer cosas, intentar cosas nuevas
 
 El objetivo es que lo que hagáis en la asignatura valga más allá de la asignatura
 
-- Portafolio
+- Portfolio
 - Expresión
 - Comunicación
 
@@ -60,20 +60,19 @@ El objetivo es que lo que hagáis en la asignatura valga más allá de la asigna
 
 ---
 
-**Carlos León**
-
-Despacho 444 (4ª planta), tlf. 7643 \
-<cleon@ucm.es>
-
-**Guillermo Jiménez**
+**Guillermo Jiménez Díaz**
 
 Despacho 436 (4ª planta), tlf. 7560 \
-<guille@ucm.es>
+<gjimenez@ucm.es>
+
+**Alejandro Villar Rubio**
+
+<alvill04@ucm.es>
 
 
 ## Desarrollo de la asignatura
 
-El material de la asignatura se ha creado en colaboración con **Mozilla**
+El material de la asignatura ha sido creado por Carlos León, en colaboración con **Mozilla**
 
 ![Mozilla](mozilla.png){width=20%}\
 
@@ -107,7 +106,7 @@ Las hitos son obligatorias, y su presentación pública en clase, también
 
 Cada miembro declarará su contribución relativa al proyecto, para ponderar la nota
 
-Recordad que lo importante es la *implementación*
+Recordad que **lo importante es la implementación**
 
 
 ## Copias

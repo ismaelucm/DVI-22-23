@@ -7,25 +7,27 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
-  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../reveal.js/css/theme/beige.css" id="theme">
   <link rel="stylesheet" href="../juegosweb.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide">
+<section>
   <h1 class="title">Introducción</h1>
 </section>
 
@@ -45,13 +47,13 @@
 <p>Qué es un lenguaje interpretado</p>
 <p>Ventajas e inconvenientes sobre los compilados a código máquina</p>
 <p>Cómo funciona un navegador por dentro</p>
-<p>A gestionar el desarrollo con un <em>toolset</em> real</p>
-<p>A hacer proyectos de forma profesional, presentarlos y entregarlos</p>
+<p>Cómo gestionar el desarrollo con un <em>toolset</em> real</p>
+<p>Cómo hacer proyectos de forma profesional, presentarlos y entregarlos</p>
 </section>
 <section id="cómo-enfocar-la-asignatura" class="slide level2">
 <h2>Cómo enfocar la asignatura</h2>
 <p>No ser pasivos</p>
-<p>Buscar recursos en Internet: <a href="https://es.wikipedia.org/wiki/GIYF">GIYF</a></p>
+<p>Buscar recursos en Internet: <a href="https://es.wikipedia.org/wiki/GIYF">RTFM o GIYF</a></p>
 <p>Tener ganas de <strong>aprender</strong>, no de aprobar</p>
 <p>Proponer cosas, intentar cosas nuevas</p>
 <!-- [Soltar sermón motivador]{.fragment} -->
@@ -65,7 +67,7 @@
 <h2>El proyecto más allá de la asignatura</h2>
 <p>El objetivo es que lo que hagáis en la asignatura valga más allá de la asignatura</p>
 <ul>
-<li>Portafolio</li>
+<li>Portfolio</li>
 <li>Expresión</li>
 <li>Comunicación</li>
 </ul>
@@ -77,16 +79,15 @@
 </section>
 <section class="slide level2">
 
-<p><strong>Carlos León</strong></p>
-<p>Despacho 444 (4ª planta), tlf. 7643<br />
-<a href="mailto:cleon@ucm.es" class="email">cleon@ucm.es</a></p>
-<p><strong>Guillermo Jiménez</strong></p>
+<p><strong>Guillermo Jiménez Díaz</strong></p>
 <p>Despacho 436 (4ª planta), tlf. 7560<br />
-<a href="mailto:guille@ucm.es" class="email">guille@ucm.es</a></p>
+<a href="mailto:gjimenez@ucm.es" class="email">gjimenez@ucm.es</a></p>
+<p><strong>Alejandro Villar Rubio</strong></p>
+<p><a href="mailto:alvill04@ucm.es" class="email">alvill04@ucm.es</a></p>
 </section>
 <section id="desarrollo-de-la-asignatura" class="slide level2">
 <h2>Desarrollo de la asignatura</h2>
-<p>El material de la asignatura se ha creado en colaboración con <strong>Mozilla</strong></p>
+<p>El material de la asignatura ha sido creado por Carlos León, en colaboración con <strong>Mozilla</strong></p>
 <p><img data-src="mozilla.png" style="width:20.0%" alt="Mozilla" /><br />
 </p>
 <p>¡Gracias a <a href="https://es.linkedin.com/in/delapuente">Salvador de la Puente</a>, <a href="https://es.linkedin.com/in/belenalbeza">Belén Albeza</a> e <a href="https://es.linkedin.com/in/ismael-sagredo-olivenza-b16b6937">Ismael Sagredo</a>!</p>
@@ -115,7 +116,7 @@
 <section id="contribución" class="slide level2">
 <h2>Contribución</h2>
 <p>Cada miembro declarará su contribución relativa al proyecto, para ponderar la nota</p>
-<p>Recordad que lo importante es la <em>implementación</em></p>
+<p>Recordad que <strong>lo importante es la implementación</strong></p>
 </section>
 <section id="copias" class="slide level2">
 <h2>Copias</h2>
@@ -168,30 +169,68 @@
     </div>
   </div>
 
-  <script src="../reveal.js/dist/reveal.js"></script>
-
-  // reveal.js plugins
-  <script src="../reveal.js/plugin/notes/notes.js"></script>
-  <script src="../reveal.js/plugin/search/search.js"></script>
-  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="../reveal.js/lib/js/head.min.js"></script>
+  <script src="../reveal.js/js/reveal.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://revealjs.com/config/
+      // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
         // Display a presentation progress bar
         progress: true,
         // Display the page number of the current slide
         slideNumber: true,
         // Push each slide change to the browser history
-        history: true,
+        history: false,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: true,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Loop the presentation
+        loop: false,
+        // Change the presentation direction to be RTL
+        rtl: false,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
 
-        // reveal.js plugins
-        plugins: [
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: '../reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
