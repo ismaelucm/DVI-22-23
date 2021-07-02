@@ -140,22 +140,22 @@ Vamos a seguir estas ideas, usando herramientas profesionales
 
 Es importante (al menos muy útil) usar un editor profesional:
 
--   [VSCode](https://code.visualstudio.com)
--   [Atom](https://atom.io/)
--   [Sublime](https://www.sublimetext.com/)
--   [Vim](http://www.vim.org/)
--   [Emacs](https://www.gnu.org/software/emacs/)
+- [VSCode](https://code.visualstudio.com)
+- [Atom](https://atom.io/)
+- [Sublime](https://www.sublimetext.com/)
+- [Vim](http://www.vim.org/)
+- [Emacs](https://www.gnu.org/software/emacs/)
 
 ---
 
-Características deseables:
+## Características deseables
 
--   Coloreado de sintaxis
--   Indentación apropiada
--   Ayudas a la edición:
-    -   Completado de paréntesis
-    -   Autocompletado de código
--   Autocompletado semántico
+- Coloreado de sintaxis
+- Indentación apropiada
+- Ayudas a la edición:
+    - Completado de paréntesis
+    - Autocompletado de código
+- Autocompletado semántico
 
 ## Consola/Shell
 
@@ -218,9 +218,13 @@ Usaremos Chrome/Chromium, con la versión **que haya instalada en los laboratori
 
 ## Servidores web
 
-Aunque, en general, no hará falta instalarlo explícitamente, usaremos cualquier servidor `http`
+**Es imprescindible que usemos un servidor para esta asignatura**
 
-Para probar, podéis instalar `http-server`, es un "one-liner":
+Usaremos cualquier servidor `http` 
+
+Pero podemos no "instalar" ninguno y usar paquetes de Node para lanzar el servidor.
+
+Para probar, podéis instalar `http-server`:
 
 ---
 
@@ -268,10 +272,10 @@ $ npm install -g npx
 
 ---
 
-También odemos arrancar un servidor web por defecto en Python:
+También podemos arrancar un servidor web por defecto en Python:
 
 ```bash
-➜ python -m SimpleHTTPServer
+➜ python -m http.server
 Serving HTTP on 0.0.0.0 port 8000 ...
 ```
 
@@ -291,7 +295,7 @@ Para los juegos usaremos [Phaser](http://phaser.io/){width=50%}
 
 Las entregas del proyecto estarán disponibles en un repositorio `git`
 
-Para entregar, hay que seguir las tener todo en un repositorio, según las condiciones de entrega (expuestas en el CV)
+Para entregar, hay que tener todo en un repositorio, según las condiciones de entrega (expuestas en el CV)
 
 ## Git
 
