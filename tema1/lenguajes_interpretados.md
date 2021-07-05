@@ -4,15 +4,24 @@ title: 'Lenguajes interpretados y dinámicos'
 
 # Lenguajes interpretados
 
+
+## Lenguajes compilados a código máquina
+
+![Funcionamiento (Ej. C++)](compilar.dot.svg)
+
+## Lenguajes compilados a código intermedio (bytecode)
+
+![Funcionamiento (Ej. C#, Java)](compilado-bytecode.dot.svg)
+
 ## Qué son lenguajes interpretados
 
 ---
 
-Los [lenguajes interpretados](https://en.wikipedia.org/wiki/Interpreted_language) son lenguajes diseñados para describir programas que **no** se ejecutan en el procesador, sino en otro programa
-
-Es decir, hay un programa que emula a un procesador: el **intérprete**
+Los [lenguajes interpretados](https://en.wikipedia.org/wiki/Interpreted_language) son lenguajes diseñados para describir programas que **no** se ejecutan en el procesador, sino en otro programa que emula a un procesador, llamado **intérprete**
 
 ![Esquema de lenguaje interpretado](interpretes.dot.svg){height=30%}
+
+
 
 
 ## Cómo funcionan
@@ -185,7 +194,7 @@ Esta máquina se llama [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)
 ```bash
 node script.js
 
-# Pues no, vale 6. 
+# Ejecuta el contenido de script.js
 ```
 
 ---

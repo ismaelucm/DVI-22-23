@@ -3,12 +3,30 @@ title: Creación de páginas web
 ---
 
 
-## ¿Por qué?
+# ¿Por qué?
 
+---
 
 Si queréis publicar juegos en la web, _necesitáis_ saber cómo funciona un navegador, y cómo funciona la web
 
+---
+
+## ¿Por qué conocer tecnologías web?
+
+- Como poco, vuestro juego deberá estar contenido en una página web (HTML), que tendrá cierta apariencia (CSS)
+- Es útil para implementar cosas como un botón de fullscreen, o una splash screen, o usar fuentes custom en vuestros juegos
+- Si tenéis un bug, necesitáis conocimientos de APIs Web para poder depurar con éxito (la API de Gamepad, o WebGL)
+- Si queréis modificar el engine o framework para añadir features o arreglar un bug
+
 # Navegadores
+
+## Navegadores
+
+
+- Son programas que permiten acceder a la Web
+- ¡No todos los navegadores son iguales!
+    - No todos incluyen el mismo motor de renderizado: Gecko (Firefox), Blink (Chrome, Opera), WebKit (Apple Safari)
+    - No todos incluyen la misma VM de JavaScript: SpiderMonkey (Firefox), V8 (Chrome), JavascriptCore (Apple Safari)
 
 ## Muchos, y con particularidades
 
@@ -16,23 +34,12 @@ Si queréis publicar juegos en la web, _necesitáis_ saber cómo funciona un nav
 - ¡Herramientas de desarrollo! depurador, profiler, network requests, etc
 
 
-## ¿Por qué conocer tecnologías web?
-
-- Como poco, vuestro juego deberá estar contenido en una página web (HTML), que tendrá cierta apariencia (CSS)
-- Es útil para implementar cosas como un botón de fullscreen, o una splash screen, o usar fuentes custom en vuestros juegos
-- Si tenéis un bug, necesitáis conocimientos de APIs Web para poder depurar con éxito (la API de Gamepad, o WebGL)
-- Si queréis modificar el engine o framework para añadir features o arreglar un bug..
 
 
 
 
-## Navegadores
 
 
-- Son programas que permiten acceder a la Web
-- ¡No todos los navegadores son iguales!
-    - No todos incluyen el mismo motor de renderizado: Gecko (Firefox), Blink (Chrome, Opera)
-    - No todos incluyen la misma VM de JavaScript: SpiderMonkey (Firefox), V8 (Chrome)
 
 
 ## ¿Cómo detectar qué soporta cada navegador?
