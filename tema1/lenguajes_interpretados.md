@@ -133,6 +133,9 @@ Casi todos los navegadores "modernos" tienen dentro una máquina virtual que eje
 
 Además, tienen un API llamado DOM (*Document Object Model*) que permite acceder a las partes del documento (por ejemplo, acceder a un párrafo o imagen de una página web)
 
+<!-- Prueba con el navegador para ver el acceso al DOM:
+document.getElementsByTagName("h2").forEach((item) => item.style.color = "red")
+ -->
 
 ## JavaScript en el mundo real
 
@@ -142,7 +145,7 @@ JavaScript hoy en día se usa para:
 - IDEs (Construct, VSCode)
 - Gmail
 - Google Calendar
-- Facebook
+- Facebook, Instagram
 - Scripting
 - *Servidores*
 
@@ -154,7 +157,7 @@ A lo largo del curso, escribiremos JavaScript que se ejecutará dentro del naveg
 
 Porque **el navegador tiene incluido un intérprete de Javascript**
 
-Pero hay muchos intérpretes que sea capaz de entender JavaScript, y **algunos no son parte de un navegador**
+Pero hay otros intérpretes que son capaces de interpretar JavaScript y **algunos no son parte de un navegador**
 
 ## Node.js
 

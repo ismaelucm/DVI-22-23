@@ -25,7 +25,7 @@ title: Videojuegos en Internet
 ## WebAudio
 
 - Control total sobre la reproducción: panning, volumen, seek, loop, etc.
-- Formato dependiente del navegador: MP3, OGG, WAV…
+- Formato dependiente del navegador: MP3, OGG, WAV...
 - Audio posicional
 - Síntesis de audio
   - Osciladores, filtros. etc.
@@ -50,7 +50,7 @@ title: Videojuegos en Internet
 
 ## ¡Pero yo quiero vender mi juego en un marketplace!
 
-- Hay wrappers para poder distribuir tu juego en Steam, App Store, Google Play…
+- Hay wrappers para poder distribuir tu juego en Steam, App Store, Google Play...
 - Permiten que tu juego HTML5 se distribuya como una aplicación nativa
 - Ejemplos: NW.js, Electron, CocoonJS...
 
@@ -65,7 +65,6 @@ title: Videojuegos en Internet
 # Showcase
 
 # Videojuegos comerciales
-
 
 ## Gods will be watching
 
