@@ -262,6 +262,12 @@
 <p>Se conecta con otro ordenador, le pide archivos, se los descarga, y los muestra</p>
 <p>De hecho, se los puede descargar a un directorio local</p>
 </section>
+<section class="slide level2">
+
+<figure>
+<img data-src="./navegador-servidor.png" alt="Chrome y Firefox, al conectarse a un servidor" /><figcaption aria-hidden="true">Chrome y Firefox, al conectarse a un servidor</figcaption>
+</figure>
+</section>
 <section id="ejemplo-html-css-y-js" class="slide level2">
 <h2>Ejemplo HTML, CSS y JS</h2>
 <p>(<a href="ejemplo.html">En</a> <a href="ejemplo.css">archivos</a> <a href="ejemplo.js">externos</a>)</p>
@@ -273,7 +279,7 @@
 </section>
 <section id="una-red-son-ordenadores-conectados-entre-sí" class="slide level2">
 <h2>Una red son ordenadores conectados entre sí</h2>
-<p>Y nada más. Internet es una red más, en la que much todos los ordenadores en todo el mundo están conectados</p>
+<p>Y nada más. Internet es una red más, en la que muchos ordenadores de todo el mundo están conectados</p>
 </section>
 <section id="internet-no-es-la-web" class="slide level2">
 <h2>Internet no es la web</h2>
@@ -422,16 +428,19 @@
 </section>
 <section id="ejemplo" class="slide level2">
 <h2>Ejemplo</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Click&quot;</span>)<span class="op">;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">// ..</span></span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Handler o función que se ejecutará </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">// en respuesta a un evento</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) {</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Click&quot;</span>)<span class="op">;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="fu">trigger</span>(<span class="st">&#39;click&#39;</span>)<span class="op">;</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">// el botón no se desactiva hasta que el handler de &quot;click&quot;</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">// haya acabado de ejecutarse</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">disabled</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">// ..</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Disparo el evento (similar a que el usuario</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">// hubiese pulsado el botón)</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="fu">click</span>()<span class="op">;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">// el botón no se desactiva hasta que el handler de &quot;click&quot;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">// haya acabado de ejecutarse</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">disabled</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div>
 <p><small><a href="https://jsfiddle.net/1wqevdob/">Snippet de código</a></small></p>
 </section></section>
     </div>

@@ -180,6 +180,10 @@ Se conecta con otro ordenador, le pide archivos, se los descarga, y los muestra
 
 De hecho, se los puede descargar a un directorio local
 
+---
+
+![Chrome y Firefox, al conectarse a un servidor](./navegador-servidor.png)
+
 ## Ejemplo HTML, CSS y JS
 
 ([En](ejemplo.html) [archivos](ejemplo.css) [externos](ejemplo.js))
@@ -189,7 +193,7 @@ De hecho, se los puede descargar a un directorio local
 
 ## Una red son ordenadores conectados entre sí
 
-Y nada más. Internet es una red más, en la que much todos los ordenadores en todo el mundo están conectados
+Y nada más. Internet es una red más, en la que muchos ordenadores de todo el mundo están conectados
 
 ## Internet no es la web
 
@@ -358,13 +362,16 @@ Podemos incluir archivos JavaScript con la etiqueta `<script>` también:
 ## Ejemplo
 
 ```javascript
+// Handler o función que se ejecutará 
+// en respuesta a un evento
 button.onclick = function (evt) {
     console.log("Click");
 }
 
 // ..
-
-button.trigger('click');
+// Disparo el evento (similar a que el usuario
+// hubiese pulsado el botón)
+button.click();
 // el botón no se desactiva hasta que el handler de "click"
 // haya acabado de ejecutarse
 button.disabled = true;
