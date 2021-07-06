@@ -65,16 +65,27 @@ No tenéis que desarrollar con la máquina de GitHub, sino en local
 Hacer `push` para probar es lento y es una carga innecesaria
 
 ---
+
 Siempre:
 
-- Abrir vuestro editor favorito
+- Abrir vuestro editor favorito con los archivos html y js
 - Arrancar un servidor con `npx live-server` o similar
-- Abrir el navegador con herramientas de depuración
-- Ir haciendo `push` cuando funcione
+- Abrir el navegador con la URL del servidor local
+- Abrir las herramientas de desarrollo del navegador
 
 ---
 
-O, mejor, publicar sólo `docs` y copiar a esta carpeta sólo cuando haya material mejorado
+> Revisad los recursos del Campus:
+> 
+> - Depurar con Google Chrome
+> - Depurar JavaScript en el navegador
+
+---
+
+Cuando funcione:
+
+- Hacer `push` y publicar `master`
+- Publicar sólo `docs` y copiar a esta carpeta sólo cuando haya material mejorado
 
 <!-- 
 # Makefiles
