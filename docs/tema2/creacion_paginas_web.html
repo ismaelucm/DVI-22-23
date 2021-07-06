@@ -200,17 +200,16 @@
 <section id="al-principio-no-había-separación" class="slide level2">
 <h2>Al principio, no había separación</h2>
 <p>HTML permite establecer las propiedades de apariencia de los elementos</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color: red;&quot;</span><span class="kw">&gt;</span>Título en color rojo<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;color: red;&quot;</span><span class="kw">&gt;</span>Otro título en color rojo<span class="kw">&lt;/h1&gt;</span></span></code></pre></div>
 <p>Pero esto significaba tener que cambiar los colores a todos los botones, párrafos, títulos…</p>
 <p>Era difícil mantener una estética correcta</p>
-<p><a href="http://www.pennyjuice.com">Los años 90 fueron duros</a></p>
 </section>
 <section id="cascade-style-sheets" class="slide level2">
 <h2>Cascade Style Sheets</h2>
 <p>CSS se creó para establecer la apariencia de los elementos de forma unificada, en un sólo conjunto de archivos</p>
-</section>
-<section class="slide level2">
-
-<p>Una hoja de estilos es un archivo de texto que contiene, para cada tipo de elemento, la apariencia apropiada:</p>
+<p>Una hoja de estilos es un archivo de texto que contiene, para cada tipo de elemento, la apariencia apropiada</p>
 </section>
 <section class="slide level2">
 
@@ -218,18 +217,14 @@
 <li><p>Nos permite personalizar la <strong>apariencia</strong> de los elementos HTML: colores, fondos, bordes, posición, columnas, tamaños..</p></li>
 <li><p>Es un lenguage <strong>declarativo</strong> basado en reglas:</p></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>h1 {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="javascript" class="slide level2">
 <h2>JavaScript</h2>
 <p>Sirve para dotar de lógica a un documento</p>
-<p>Un archivo HTML es un documento, <em>no un programa</em></p>
-<p>Como un PDF o un archivo de Word</p>
-</section>
-<section class="slide level2">
-
+<p>Un archivo HTML es un documento, <em>no un programa</em> (como un PDF o un archivo de Word)</p>
 <p>En un momento concreto de la historia de los navegadores, se incluyó la posibilidad de crear lógica con JavaScript</p>
 </section>
 <section class="slide level2">
@@ -238,7 +233,7 @@
 <li><p>Nos permite implementar <strong>comportamiento</strong> y <strong>lógica</strong></p></li>
 <li><p>Es un <strong>lenguaje dinámico</strong> orientado a prototipos, con características funcionales</p></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="los-3-lenguajes-de-la-web" class="slide level2">
 <h2>Los 3 lenguajes de la web</h2>
@@ -255,9 +250,11 @@
 </section>
 <section id="una-página-web-no-tiene-por-qué-estar-en-internet" class="slide level2">
 <h2>Una página web no tiene por qué estar en Internet</h2>
-<p>El navegador entiende HTML, CSS y JS</p>
-<p>Es decir, es como un visor de PDF</p>
+<p>El navegador entiende HTML, CSS y JS, es decir, es como un visor de PDF</p>
 <p>Se pueden crear y abrir en local documentos HTML</p>
+<figure>
+<img data-src="./navegador-fichero.png" alt="Chrome y Firefox, al abrir un documento local" /><figcaption aria-hidden="true">Chrome y Firefox, al abrir un documento local</figcaption>
+</figure>
 </section>
 <section id="el-navegador-es-un-visor-que-se-conecta" class="slide level2">
 <h2>El navegador es un visor que se conecta</h2>
@@ -354,9 +351,9 @@
 <h2>3. Carga finalizada</h2>
 <p>Cuando todas las imágenes, scripts, CSS, etc. se han cargado, se dispara el <strong>evento <code>load</code></strong> de <code>window</code></p>
 <p>Es muy común incluir el código que inicializa la ejecución del programa en el <em>handler</em> de ese evento</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">onload</span> <span class="op">=</span> <span class="kw">function</span> () {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// hello world</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">onload</span> <span class="op">=</span> <span class="kw">function</span> () {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// hello world</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="cómo-incluir-javascript-en-una-web" class="title-slide slide level1">
@@ -365,19 +362,19 @@
 </section>
 <section id="estructura-básica-de-un-documento-html" class="slide level2">
 <h2>Estructura básica de un documento HTML</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el head es metadata --&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Cancamusa<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el body es contenido --&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>Monkey Island<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>Mira detrás de ti, ¡un mono de tres cabezas!<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el head es metadata --&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Cancamusa<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el body es contenido --&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>Monkey Island<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>Mira detrás de ti, ¡un mono de tres cabezas!<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 </section>
 <section id="dónde-va-el-código-javascript" class="slide level2">
 <h2>¿Dónde va el código JavaScript?</h2>
@@ -394,14 +391,14 @@
 <section id="scripts-inline" class="slide level2">
 <h2>Scripts inline</h2>
 <p>Podemos incluir código JavaScript inline en el HTML con la etiqueta <code>&lt;script&gt;</code></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
 </section>
 <section id="scripts-externos" class="slide level2">
 <h2>Scripts externos</h2>
 <p>Podemos incluir archivos JavaScript con la etiqueta <code>&lt;script&gt;</code> también:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;js/game.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;js/game.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="cómo-se-ejecuta-javascript" class="title-slide slide level1">
@@ -425,16 +422,16 @@
 </section>
 <section id="ejemplo" class="slide level2">
 <h2>Ejemplo</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Click&quot;</span>)<span class="op">;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">// ..</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="fu">trigger</span>(<span class="st">&#39;click&#39;</span>)<span class="op">;</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">// el botón no se desactiva hasta que el handler de &quot;click&quot;</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">// haya acabado de ejecutarse</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">disabled</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Click&quot;</span>)<span class="op">;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">// ..</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="fu">trigger</span>(<span class="st">&#39;click&#39;</span>)<span class="op">;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">// el botón no se desactiva hasta que el handler de &quot;click&quot;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">// haya acabado de ejecutarse</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">disabled</span> <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span></code></pre></div>
 <p><small><a href="https://jsfiddle.net/1wqevdob/">Snippet de código</a></small></p>
 </section></section>
     </div>

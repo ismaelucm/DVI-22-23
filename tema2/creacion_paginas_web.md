@@ -33,21 +33,10 @@ Si queréis publicar juegos en la web, _necesitáis_ saber cómo funciona un nav
 - Hay consideraciones técnicas a tener en cuenta, tanto a nivel de interfaz como de seguridad
 - ¡Herramientas de desarrollo! depurador, profiler, network requests, etc
 
-
-
-
-
-
-
-
-
-
 ## ¿Cómo detectar qué soporta cada navegador?
 
 - [caniuse.com](http://caniuse.com), rápida e intuitiva
 - [MDN](http://developer.mozilla.org), tiene detalles concretos sobre la implementación y diferencias entre navegadores
-
-
 
 # HTML
 
@@ -116,19 +105,21 @@ Se encierran en `<!-- ... -->`{.html}
 
 HTML permite establecer las propiedades de apariencia de los elementos
 
+```html
+<h1 style="color: red;">Título en color rojo</h1>
+...
+<h1 style="color: red;">Otro título en color rojo</h1>
+```
+
 Pero esto significaba tener que cambiar los colores a todos los botones, párrafos, títulos...
 
 Era difícil mantener una estética correcta
-
-[Los años 90 fueron duros](http://www.pennyjuice.com)
 
 ## Cascade Style Sheets
 
 CSS se creó para establecer la apariencia de los elementos de forma unificada, en un sólo conjunto de archivos
 
----
-
-Una hoja de estilos es un archivo de texto que contiene, para cada tipo de elemento, la apariencia apropiada:
+Una hoja de estilos es un archivo de texto que contiene, para cada tipo de elemento, la apariencia apropiada
 
 ---
 
@@ -143,16 +134,11 @@ h1 {
 }
 ```
 
-
 ## JavaScript
 
 Sirve para dotar de lógica a un documento
 
-Un archivo HTML es un documento, *no un programa*
-
-Como un PDF o un archivo de Word
-
----
+Un archivo HTML es un documento, *no un programa* (como un PDF o un archivo de Word)
 
 En un momento concreto de la historia de los navegadores, se incluyó la posibilidad de crear lógica con JavaScript
 
@@ -178,11 +164,11 @@ console.log("Hello, world!");
 
 ## Una página web no tiene por qué estar en Internet
 
-El navegador entiende HTML, CSS y JS
-
-Es decir, es como un visor de PDF
+El navegador entiende HTML, CSS y JS, es decir, es como un visor de PDF
 
 Se pueden crear y abrir en local documentos HTML
+
+![Chrome y Firefox, al abrir un documento local](./navegador-fichero.png)
 
 ---
 
