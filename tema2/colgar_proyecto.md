@@ -12,7 +12,7 @@ Todos, a través del [servicio de páginas públicas en GitHub](https://help.git
 
 ---
 
-Sólo tenéis que crear una rama `master` en un repositorio, y tener ahí el archivo `index.html` apropiado (los servidores web usan `index.html` por defecto)
+Sólo tenéis que crear una rama `master` en un repositorio, y tener ahí el archivo `index.html` apropiado (los servidores web usan el documento `index.html` como el servido por defecto)
 
 También podéis hacerlo desde la carpeta `docs` de `master` (tenéis que configurarlo en "Settings")
 
@@ -38,7 +38,7 @@ En general *esto no es idóneo*, pero acelera y simplifica el proceso
 
 Tened cuidado con los recursos:
 
-- Referenciadlos con rutas relativas a vuestros `.html` y `.js`: (`imgs/imagen.png`) en vez de `http://mi.ruta.cambiante/imgs/imagen.png`
+- Referenciadlos con **rutas relativas** a vuestros `.html` y `.js` (`imgs/imagen.png`), en vez de **rutas absolutas** (`http://mi.ruta.cambiante/imgs/imagen.png`)
 - Aseguraos de que están cargados antes de iniciar su uso
 - Aseguraos de que están siempre disponibles
 
@@ -50,7 +50,7 @@ El archivo `index.html` tiene que ser una página presentable y "bonita"
 
 ---
 
-Tiene que tener el título del proyecto, un resumen del GDD (una versión en HTML), enlaces pertinentes (como por ejemplo al código en `GitHub`), instrucciones, y cualquier cosa relevante
+Tiene que tener el título del proyecto, un resumen del GDD (una versión en HTML), enlaces pertinentes (como, por ejemplo, al código en `GitHub`), instrucciones y cualquier información adicional relevante
 
 ---
 
@@ -64,7 +64,13 @@ No tenéis que desarrollar con la máquina de GitHub, sino en local
 
 Hacer `push` para probar es lento y es una carga innecesaria
 
-Con `npx live-server` o similar podéis arrancar un servidor, e ir haciendo `push` cuando funcione
+---
+Siempre:
+
+- Abrir vuestro editor favorito
+- Arrancar un servidor con `npx live-server` o similar
+- Abrir el navegador con herramientas de depuración
+- Ir haciendo `push` cuando funcione
 
 ---
 

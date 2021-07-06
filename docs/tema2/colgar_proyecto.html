@@ -41,7 +41,7 @@
 </section>
 <section class="slide level2">
 
-<p>Sólo tenéis que crear una rama <code>master</code> en un repositorio, y tener ahí el archivo <code>index.html</code> apropiado (los servidores web usan <code>index.html</code> por defecto)</p>
+<p>Sólo tenéis que crear una rama <code>master</code> en un repositorio, y tener ahí el archivo <code>index.html</code> apropiado (los servidores web usan el documento <code>index.html</code> como el servido por defecto)</p>
 <p>También podéis hacerlo desde la carpeta <code>docs</code> de <code>master</code> (tenéis que configurarlo en “Settings”)</p>
 </section>
 <section class="slide level2">
@@ -63,7 +63,7 @@
 --- -->
 <p>Tened cuidado con los recursos:</p>
 <ul>
-<li>Referenciadlos con rutas relativas a vuestros <code>.html</code> y <code>.js</code>: (<code>imgs/imagen.png</code>) en vez de <code>http://mi.ruta.cambiante/imgs/imagen.png</code></li>
+<li>Referenciadlos con <strong>rutas relativas</strong> a vuestros <code>.html</code> y <code>.js</code> (<code>imgs/imagen.png</code>), en vez de <strong>rutas absolutas</strong> (<code>http://mi.ruta.cambiante/imgs/imagen.png</code>)</li>
 <li>Aseguraos de que están cargados antes de iniciar su uso</li>
 <li>Aseguraos de que están siempre disponibles</li>
 </ul>
@@ -74,7 +74,7 @@
 </section>
 <section class="slide level2">
 
-<p>Tiene que tener el título del proyecto, un resumen del GDD (una versión en HTML), enlaces pertinentes (como por ejemplo al código en <code>GitHub</code>), instrucciones, y cualquier cosa relevante</p>
+<p>Tiene que tener el título del proyecto, un resumen del GDD (una versión en HTML), enlaces pertinentes (como, por ejemplo, al código en <code>GitHub</code>), instrucciones y cualquier información adicional relevante</p>
 </section>
 <section class="slide level2">
 
@@ -89,10 +89,6 @@
 
 <p>No tenéis que desarrollar con la máquina de GitHub, sino en local</p>
 <p>Hacer <code>push</code> para probar es lento y es una carga innecesaria</p>
-<p>Con <code>npx live-server</code> o similar podéis arrancar un servidor, e ir haciendo <code>push</code> cuando funcione</p>
-</section>
-<section class="slide level2">
-
 <p>O, mejor, publicar sólo <code>docs</code> y copiar a esta carpeta sólo cuando haya material mejorado</p>
 <!-- 
 # Makefiles

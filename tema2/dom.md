@@ -220,7 +220,7 @@ button.parentNode.removeChild(button);
 
 ## On-event handlers
 
-- ¡*Sólo hay un handler** por evento!
+- ¡**Sólo hay un handler** por evento!
 - Registramos y desregistramos el handler con una **asignación**
 
 ```javascript
