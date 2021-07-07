@@ -704,7 +704,9 @@ function factorial(number) {
 ---
 
 
-En este caso el nombre de la función (antes de los paréntesis) es obligatorio Esto tiene dos implicaciones:
+En este caso el nombre de la función (antes de los paréntesis) es obligatorio
+
+Esto tiene dos implicaciones:
 
 
 - Permite implementar **llamadas recursivas** como la del ejemplo
@@ -733,7 +735,7 @@ En este último caso, hay dos nombres:
 
 ---
 
-Ambos referencian a la misma función (con dos nombres diferentes), y ambos podrían usarse para hacer la llamada recursiva
+Ambos referencian a la misma función (con dos nombres diferentes) y ambos podrían usarse para hacer la llamada recursiva
 
 ---
 
@@ -768,23 +770,41 @@ Con la segunda estamos **pidiendo a la función que se ejecute** y por tanto ten
 
 ---
 
+En realidad, existe una tercera forma de definir una función: la función _anónima_:
 
-## En JavaScript todo es un objeto
-
-
-Si como definición alternativa, consideramos como objeto aquello que puede responder a un mensaje, resulta que en JavaScript **todo es un objeto**
+```js
+let f = function( a ) {
+  console.log(a);
+};
+f; 
+f(5);
+```
 
 ---
 
-Considera los siguiente ejemplos:
+Se suelen usar cuando es necesario pasar una función como parámetro:
 
 ```js
-true.toString();
-3.1415.toFixed(2);
-'I want to be a pirate!'.split(' ');
-({}).hasOwnProperty('x');
-(function (parameter) { return parameter; }).length;
+menu.forEach( 
+  function (item) {
+    console.log(item);
+  }
+);
 ```
+
+---
+
+Las [_arrow functions_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) (`=>`{.js}) son una forma más compacta para definir este tipo de funciones:
+
+```js
+let f = ( a ) => console.log(a);
+
+menu.forEach( (item) => console.log(item) );
+```
+
+<small>Tienen una propiedad muy interesante con respecto al `this` que veremos más adelante</small>
+
+
 
 
 

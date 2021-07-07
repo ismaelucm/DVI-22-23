@@ -617,9 +617,6 @@
 <div class="sourceCode" id="cb39"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">.</span><span class="fu">map</span>(parseInt)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>[ <span class="dv">10</span><span class="op">,</span> <span class="kw">NaN</span><span class="op">,</span> <span class="dv">2</span> ]</span></code></pre></div>
 <p>(<a href="https://stackoverflow.com/a/14528430">Hay una explicación</a>)</p>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="funciones-referencias-a-funciones-y-llamadas-a-funciones" class="title-slide slide level1">
@@ -639,7 +636,8 @@
 </section>
 <section class="slide level2">
 
-<p>En este caso el nombre de la función (antes de los paréntesis) es obligatorio Esto tiene dos implicaciones:</p>
+<p>En este caso el nombre de la función (antes de los paréntesis) es obligatorio</p>
+<p>Esto tiene dos implicaciones:</p>
 <ul>
 <li>Permite implementar <strong>llamadas recursivas</strong> como la del ejemplo</li>
 <li><strong>Crea un nombre</strong> <code>factorial</code> para referirnos a esa función</li>
@@ -666,7 +664,7 @@
 </section>
 <section class="slide level2">
 
-<p>Ambos referencian a la misma función (con dos nombres diferentes), y ambos podrían usarse para hacer la llamada recursiva</p>
+<p>Ambos referencian a la misma función (con dos nombres diferentes) y ambos podrían usarse para hacer la llamada recursiva</p>
 </section>
 <section class="slide level2">
 
@@ -691,18 +689,31 @@
 
 <p>Con la segunda estamos <strong>pidiendo a la función que se ejecute</strong> y por tanto tenemos que aportar todos los parámetros necesarios</p>
 </section>
-<section id="en-javascript-todo-es-un-objeto" class="slide level2">
-<h2>En JavaScript todo es un objeto</h2>
-<p>Si como definición alternativa, consideramos como objeto aquello que puede responder a un mensaje, resulta que en JavaScript <strong>todo es un objeto</strong></p>
+<section class="slide level2">
+
+<p>En realidad, existe una tercera forma de definir una función: la función <em>anónima</em>:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> f <span class="op">=</span> <span class="kw">function</span>( a ) {</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>f<span class="op">;</span> </span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="dv">5</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Considera los siguiente ejemplos:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">true</span><span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="op">.</span><span class="fl">1415.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)<span class="op">;</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;I want to be a pirate!&#39;</span><span class="op">.</span><span class="fu">split</span>(<span class="st">&#39; &#39;</span>)<span class="op">;</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>({})<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;x&#39;</span>)<span class="op">;</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>(<span class="kw">function</span> (parameter) { <span class="cf">return</span> parameter<span class="op">;</span> })<span class="op">.</span><span class="at">length</span><span class="op">;</span></span></code></pre></div>
+<p>Se suelen usar cuando es necesario pasar una función como parámetro:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">forEach</span>( </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> (item) {</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(item)<span class="op">;</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Las <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"><em>arrow functions</em></a> (<code class="sourceCode javascript"><span class="kw">=&gt;</span></code>) son una forma más compacta para definir este tipo de funciones:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> f <span class="op">=</span> ( a ) <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">forEach</span>( (item) <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(item) )<span class="op">;</span></span></code></pre></div>
+<p><small>Tienen una propiedad muy interesante con respecto al <code>this</code> que veremos más adelante</small></p>
 </section></section>
     </div>
   </div>
