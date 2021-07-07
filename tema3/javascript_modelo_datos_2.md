@@ -58,7 +58,7 @@ Ahora puedes probar a introducir algunas expresiones:
 ```js
 > 40 + 2
 42
-> var point = { x: 1, y: 1 };
+> let point = { x: 1, y: 1 };
 undefined
 > point
 { x: 1, y: 1 }
@@ -80,7 +80,7 @@ Si no quieres lidiar con la consola de _node_, siempre puedes escribir un progra
 ```js
 // en prueba.js
 console.log(40 + 2);
-var point = { x: 1, y: 1 };
+let point = { x: 1, y: 1 };
 console.log(point);
 console.log('Coordenada X:', point.x);
 ```
@@ -111,7 +111,77 @@ Para reiniciar la consola tienes que **salir y volver a entrar**
 
 Lo mejor es que se tenga la presentación abierta a un lado y la consola _node_ en el otro
 
+# Peculiaridades de la sintaxis
 
+---
+
+Las instrucciones acaban en `;`... pero puedes no usarlo
+
+```js
+return     // intérprete añade ; y devuelve undefined
+a + b      // Se hace la suma pero se pierde en el limbo
+
+return     // intérprete añade ; y devuelve undefined
+{ a: 5 }   // Se crea el objeto pero se pierde en el limbo
+
+return {
+  a : 5
+}          // Devuelve el objeto creado
+```
+
+---
+
+Vamos a declarar las variables con `let` o `const`:
+
+- `let`: Declara una variable de bloque
+- `const`: Declara una variable cuyo _valor_ no puede ser cambiado
+
+```js
+let b = 5;
+b = "Hola";             // Permitido
+const a = {};
+a.nombre = "mi nombre"; // Permitido
+a = {};                 // ERROR: No permitido
+```
+
+---
+
+Veréis que también se pueden difinir variables con:
+
+- `var`: Variables globales o de función. Su creación se lleva al principio del código mediante _hoisting_
+- Sin ninguna palabra clave delante: variables globales
+
+>> **No las podremos usar en este curso (salvo que nos lo justifiquéis adecuadamente)**
+
+
+---
+
+## Operadores de comparación
+
+- `==` y `!=`: Operadores de comparación ([conversiones de tipos](https://262.ecma-international.org/5.1/#sec-11.9.3))
+- `===` y `!==`: Operadores *estrictos* de comparación. **Usaremos siempre estos operadores**
+
+```js
+5 == "5"   // True
+5 === "5"  // False
+```
+
+<small>Detalles más adelante</small>
+
+## Cadenas de caracteres (string)
+
+- Cadenas simples entre `" "` ó `' '`
+- [Cadenas de plantilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals%3E) entre \` \`
+
+```js
+let s1 = 5;
+let s2 = 10;
+console.log(`La suma de ${s1} y ${s2} es ${s1 + s2}.`);
+
+// La suma de 5 y 10 es 15.
+```
+
+<small>En C# se conoce como cadenas interpoladas</small>
 
 # Tipos primitivos
 
@@ -154,11 +224,11 @@ Tienen la propiedad de ser "llamables"
 
 ```js
 // En los comentarios hay más valores posibles para cada uno de los tipos
-var bool = true; // false
-var number = 1234.5; // 42, -Infinity, +Infinity
-var text = 'I want to be a pirate!'; // "I want to be a pirate"
-var object = {}; // [], null
-var code = function () { return 42; };
+let bool = true; // false
+let number = 1234.5; // 42, -Infinity, +Infinity
+let text = 'I want to be a pirate!'; // "I want to be a pirate"
+let object = {}; // [], null
+let code = function () { return 42; };
 ```
 
 ---
@@ -176,10 +246,10 @@ typeof function () { return 42; };
 ---
 
 
-En JavaScript podemos declarar una variable y no asignarle ningún valor. En este caso el tipo de la variable será `undefined`
+En JavaScript podemos declarar una letiable y no asignarle ningún valor. En este caso el tipo de la letiable será `undefined`
 
 ```js
-var x;
+let x;
 typeof x;
 x = 5; // tan pronto como le demos un valor, el tipo dejará de ser undefined
 typeof x;
@@ -201,7 +271,7 @@ Por ejemplo, si queremos representar el punto `(10, 15)` del plano XY podemos et
 
 
 ```js
-var point = { 'x': 10, 'y': 15 };
+let point = { 'x': 10, 'y': 15 };
 ```
 
 ---
@@ -216,7 +286,7 @@ Si los nombres de las propiedades se escriben siguiendo las [reglas de formació
 
 
 ```js
-var point = { x: 10, y: 10 }; // mucho más conveniente
+let point = { x: 10, y: 10 }; // mucho más conveniente
 ```
 
 ---
@@ -257,7 +327,7 @@ point['y'] = 0;
 Si accedemos a una **propiedad que no existe**, obtendremos `undefined`:
 
 ```js
-var label = point.label; // será undefined. Compruébalo con typeof
+let label = point.label; // será undefined. Compruébalo con typeof
 ```
 
 ---
@@ -291,7 +361,7 @@ Para representar datos de manera eficiente, usamos [vectores tipados](https://de
 Por ejemplo, la lista de comandos de un menú:
 
 ```js
-var menu = ['Attack', 'Defense', 'Inventory'];
+let menu = ['Attack', 'Defense', 'Inventory'];
 ```
 
 ---
@@ -356,7 +426,7 @@ También como en el caso de los objetos, podemos acceder a un valor que no exist
 ```js
 menu;
 menu.length;
-var item = menu[10];
+let item = menu[10];
 typeof item; // será undefined
 menu[10] = 'Secret';
 menu;
@@ -374,8 +444,8 @@ Si asignamos a un índice **por encima de la longitud actual, extendemos el arra
 Arrays y objetos tienen tipo `object` así que usaremos el método [`Array.isArray()`{.js}](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray) para distinguirlos
 
 ```js
-var obj = {}; // el objeto vacío es tan válido como cualquier otro
-var arr = []; // una lista sin elementos, como te puedes imaginar
+let obj = {}; // el objeto vacío es tan válido como cualquier otro
+let arr = []; // una lista sin elementos, como te puedes imaginar
 typeof obj; // será object
 typeof arr; // será object
 Array.isArray(obj); // será false
@@ -410,7 +480,7 @@ Por ejemplo, en un RPG, preguntamos por el siguiente enemigo vivo para comprobar
 
 ```js
 function getNextAliveEnemy() {
-  var nextEnemy;
+  let nextEnemy;
   if (aliveEnemies.length > 0) {
     nextEnemy = aliveEnemies[0];
   }
@@ -427,7 +497,7 @@ function getNextAliveEnemy() {
 O bien, supón la ficha de personaje de un héroe:
 
 ```js
-var hero = { sword: null, shield: null };
+let hero = { sword: null, shield: null };
 hero.sword = { attack: 20, magic: 5 }; // coge una espada
 hero.sword = null; // suelta la espada
 ```
@@ -444,7 +514,7 @@ Objetos y arrays permiten cualquier composición de objetos. Es decir, sus valor
 Ficha de personaje:
 
 ```js
-var hero = {
+let hero = {
   name: 'Link',
   life: 100,
   weapon: { kind: 'sword', power: 20, magicPower: 5 },
@@ -507,9 +577,9 @@ Para `object` y `symbol`, dos objetos son iguales sólo si se refieren al mismo 
 [] !== []; // igual que antes
 [1, 2, 3] !== [1, 2, 3]; // la forma da igual, los objetos son distintos
 null === null; // pero con null funciona porque sólo hay un valor null
-var obj = {};
-var sameObj = obj;
-var another = {};
+let obj = {};
+let sameObj = obj;
+let another = {};
 sameObj === obj; // funciona porque ambos nombres se refieren al mismo objeto
 sameObj !== another; // insisto, distintos, pese a la forma
 Symbol() === Symbol(); // false
@@ -577,7 +647,7 @@ En el ejemplo de Space Invaders, el estado de los enemigos formado por:
 
 Se puede codificar mediante:
 ```js
-var enemy = {
+let enemy = {
   graphic: 'specie01.png',
   currentDirection: 'right',
   position: { x: 10, y: 10 },
@@ -588,7 +658,7 @@ var enemy = {
 ---
 
 
-La primera limitación en JavsaScript es que **no se puede restringir el acceso a las propiedades de un objeto**
+La primera limitación en JavaScript es que **no se puede restringir el acceso a las propiedades de un objeto**
 
 Así, nada nos impide poder modificar la posición directamente
 
@@ -605,7 +675,7 @@ Lo único que podemos hacer es desaconsejar al usuario que utilice las propiedad
 Una práctica muy común es añadir un guíon bajo `_`{.js} a los atributos como indicando que son **privados**
 
 ```js
-var enemy = {
+let enemy = {
   _graphic: 'specie01.png',
   _currentDirection: 'right',
   _position: { x: 10, y: 10 },
@@ -634,7 +704,7 @@ Los **métodos** pueden implementarse como **funciones** en propiedades de un ob
 ---
 
 ```js
-var enemy = {
+let enemy = {
   _graphic: 'specie01.png',
   _currentDirection: 'right',
   _position: { x: 10, y: 10 },
@@ -691,7 +761,7 @@ Obviamente, echando un vistazo a lo que hace `moveLeft()`{.js} no podríamos dec
 
 Como cualquier función puede actuar como método, necesitamos una forma de **referirnos al destinatario del mensaje**, si existe
 
-Este se guarda en la variable **`this`{.js}**
+Este se guarda en la letiable **`this`{.js}**
 
 
 [Ojo con `this`{.js}... =)]{.fragment}
@@ -751,8 +821,8 @@ Y prueba lo siguiente:
 
 ```js
 // Piensa qué puede valer this antes de probar cada ejemplo
-var ship1 = { name: 'T-Fighter', method: inspect };
-var ship2 = { name: 'X-Wing', method: inspect };
+let ship1 = { name: 'T-Fighter', method: inspect };
+let ship2 = { name: 'X-Wing', method: inspect };
 ship1.method();
 ship2.method();
 inspect();
@@ -771,7 +841,7 @@ Para ello usaremos
 [`apply()`{.js}](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/apply) en una función:
 
 ```js
-var onlyNameShip = { name: 'Death Star' };
+let onlyNameShip = { name: 'Death Star' };
 inspect.apply(onlyNameShip); // hace que this valga onlyNameShip en inspect
 ```
 
@@ -783,7 +853,7 @@ A [`this`{.js}](http://dmitrysoshnikov.com/ecmascript/javascript-the-core/#this-
 # Consideraciones adicionales
 
 
-## Una **variable es un nombre**
+## Una **letiable es un nombre**
 
 Para el programa, quitando algunas excepciones, los nombres no tienen significado
 
@@ -800,7 +870,7 @@ Así que no es lo mismo el nombre `uno`{.js} que el valor `1`{.js}, y por supues
 
 
 ```js
-var uno = 2; // para el programa tiene sentido. Puede que para el programador no
+let uno = 2; // para el programa tiene sentido. Puede que para el programador no
 ```
 
 ---
@@ -817,7 +887,7 @@ Si hablamos de objetos y funciones decimos que los **nombres apuntan a objetos o
 Hay dos formas de definir una función. Una es usando la **declaración de función**:
 
 ```js
-// Introduce una variable factorial que apunta a la función factorial
+// Introduce una letiable factorial que apunta a la función factorial
 function factorial(number) {
   if (number === 0) {
     return 1;
@@ -840,8 +910,8 @@ En este caso el nombre de la función (antes de los paréntesis) es obligatorio 
 La otra forma es usa una **expresión de función**. Esta se parece más a como creamos un número o una cadena:
 
 ```js
-// Introduce una variable recursiveFunction que apunta a OTRA funcion factorial
-var recursiveFunction = function factorial(number) {
+// Introduce una letiable recursiveFunction que apunta a OTRA funcion factorial
+let recursiveFunction = function factorial(number) {
   if (number === 0) {
     return 1;
   }
@@ -854,7 +924,7 @@ var recursiveFunction = function factorial(number) {
 En este último caso, hay dos nombres:
 
 - Uno es el nombre de la función `factorial`{.js} que existe para poder referirnos a ella dentro del cuerpo de la función
-- El otro es la variable `recursiveFunction`{.js} que referencia a la función
+- El otro es la letiable `recursiveFunction`{.js} que referencia a la función
 
 ---
 
@@ -863,13 +933,13 @@ Ambos referencian a la misma función (con dos nombres diferentes), y ambos podr
 ---
 
 
-La misma función puede referirse desde múltiples variables o, dicho de otra manera, tener muchos nombres:
+La misma función puede referirse desde múltiples letiables o, dicho de otra manera, tener muchos nombres:
 
 ```js
-var a = recursiveFunction;
-var b = recursiveFunction;
+let a = recursiveFunction;
+let b = recursiveFunction;
 a === b; // es cierto, se refieren a la misma función
-a.name; // el nombre de la función no tiene que ver con el de la variable
+a.name; // el nombre de la función no tiene que ver con el de la letiable
 b.name; // tres cuartos de lo mismo
 recursiveFunction !== factorial; // ¡factorial no está definido!
 ```
@@ -929,14 +999,14 @@ Vamos a crear dos funciones constructoras, una para puntos y otra para disparos:
 
 ```js
 function newPoint(x, y) {
-  var obj = {};
+  let obj = {};
   obj.x = x;
   obj.y = y;
   return obj;
 }
 
 function newShot(position, velocity) {
-  var obj = {};
+  let obj = {};
   obj._position = position;
   obj._velocity = velocity;
   obj.advance = function () {
@@ -958,10 +1028,10 @@ Ahora podemos crear un nuevo disparo con algo así:
 
 ```js
 // Velocidad positiva para que se mueva hacia abajo
-var enemyShot = newShot(newPoint(15, 15), 2);
+let enemyShot = newShot(newPoint(15, 15), 2);
 
 // Velocidad negativa para que se mueva hacia arriba
-var allyShot = newShot(newPoint(15, 585), -2);
+let allyShot = newShot(newPoint(15, 585), -2);
 
 enemyShot !== allyShot;
 ```
@@ -975,9 +1045,9 @@ para comportamientos idénticos. Una función por objeto
 
 
 ```js
-var s1 = newShot(newPoint(15, 15), 2);
-var s2 = newShot(newPoint(15, 15), 2);
-var s3 = newShot(newPoint(15, 15), 2);
+let s1 = newShot(newPoint(15, 15), 2);
+let s2 = newShot(newPoint(15, 15), 2);
+let s3 = newShot(newPoint(15, 15), 2);
 s1.advance !== s2.advance;
 s2.advance !== s3.advance;
 s3.advance !== s1.advance;
@@ -996,7 +1066,7 @@ No necesitamos distintas funciones sino una solamente actuando sobre distintos o
 Así que vamos a **crear un objeto que contenga sólamente la API**:
 
 ```js
-var shotAPI = {
+let shotAPI = {
   advance: function () {
     this._position.y += this._velocity;
   }
@@ -1009,7 +1079,7 @@ Y a usarlo en la creación del objeto para referenciar la API:
 
 ```js
 function newShot(position, velocity) {
-  var obj = {};
+  let obj = {};
   obj._position = position;
   obj._velocity = velocity;
   obj.advance = shotAPI.advance;
@@ -1023,9 +1093,9 @@ function newShot(position, velocity) {
 Ahora todas las instancias comparten la misma función pero cada función actúa sobre el objeto correspondiente gracias al uso de `this`{.js}:
 
 ```js
-var s1 = newShot(newPoint(15, 15), 2);
-var s2 = newShot(newPoint(15, 15), 2);
-var s3 = newShot(newPoint(15, 15), 2);
+let s1 = newShot(newPoint(15, 15), 2);
+let s2 = newShot(newPoint(15, 15), 2);
+let s3 = newShot(newPoint(15, 15), 2);
 s1.advance === s2.advance; // ahora SÍ son iguales
 s2.advance === s3.advance;
 s3.advance === s1.advance;
@@ -1038,7 +1108,7 @@ Para hacer todavía más fuerte la asociación entre el constructor y la API, mo
 
 ```js
 function newShot(position, velocity) {
-  var obj = {};
+  let obj = {};
   obj._position = position;
   obj._velocity = velocity;
   obj.advance = newShot.api.advance;
@@ -1098,13 +1168,13 @@ Crear esta jerarquía en JavaScript requiere el uso de [`Object.create()`{.js}](
 
 ```js
 // La cadena se monta de atrás hacia adelante
-var obj3 = { f: 6 };
+let obj3 = { f: 6 };
 // Encadenamos obj2 a obj3
-var obj2 = Object.create(obj3);
+let obj2 = Object.create(obj3);
 obj2.d = 4;
 obj2.e = 5;
 // Encadenamos obj1 a obj2
-var obj1 = Object.create(obj2);
+let obj1 = Object.create(obj2);
 obj1.a = 1;
 obj1.b = 2;
 obj1.c = 3;
@@ -1164,7 +1234,7 @@ Los prototipos se prestan a ser el lugar ideal para contener la API que es el co
 
 
 ```
-var obj = newShot()                   newShot.api
+let obj = newShot()                   newShot.api
 {_position: {x: 10...}...} --> {advance: function...};
 
 obj._position.y ----↑                       ↑
@@ -1179,7 +1249,7 @@ Para crear este enlace modificaremos el constructor:
 ```js
 function newShot(position, velocity) {
   // Con esto la API es el prototipo del objeto
-  var obj = Object.create(newShot.api);
+  let obj = Object.create(newShot.api);
   obj._position = position;
   obj._velocity = velocity;
   return obj;
@@ -1198,7 +1268,7 @@ newShot.api = {
 Y ahora probamos a crear un nuevo disparo:
 
 ```js
-var shot = newShot(newPoint(0,0), 2);
+let shot = newShot(newPoint(0,0), 2);
 shot; // al inspeccionar shot sólo se muestran las propiedades del objeto
 shot.advance; // pero advance existe en su prototipo
 shot.hasOwnProperty('advance');
@@ -1252,8 +1322,8 @@ Ahora, al llamar a la función con el operador `new`{.js} delante, se crea un **
 
 
 ```js
-var obj = new anyFunction();
-var anotherObj = new anyFunction();
+let obj = new anyFunction();
+let anotherObj = new anyFunction();
 
 // Los objetos son distintos
 obj !== anotherObj;
@@ -1282,7 +1352,7 @@ function Hero(name) {
   this.shield = null;
 }
 
-var hero = new Hero('Link');
+let hero = new Hero('Link');
 hero;
 ```
 
@@ -1323,8 +1393,8 @@ Shot.prototype.advance = function () {
 Ahora crear los objetos será cuestión de usar `new`{.js}:
 
 ```js
-var enemyShot = new Shot(new Point(15, 15), 2);
-var allyShot = new Shot(new Point(15, 585), -2);
+let enemyShot = new Shot(new Point(15, 15), 2);
+let allyShot = new Shot(new Point(15, 585), -2);
 enemyShot !== allyShot;
 ```
 
@@ -1382,8 +1452,8 @@ Enemy.prototype.moveLeft = function () { this._position.x -= 2; };
 Enemy.prototype.moveRight = function () { this._position.x += 2; };
 Enemy.prototype.advance = function () { this._position.y += 2; };
 Enemy.prototype.shoot = function () {
-  var firePosition = new Position(this._position.x, this._position.y + 10);
-  var shot = new Shot(firePosition, 2);
+  let firePosition = new Position(this._position.x, this._position.y + 10);
+  let shot = new Shot(firePosition, 2);
   return shot;
 };
 ```
@@ -1401,8 +1471,8 @@ function Ally(position) {
 Ally.prototype.moveLeft = function () { this._position.x -= 2; };
 Ally.prototype.moveRight = function () { this._position.x += 2; };
 Ally.prototype.shoot = function () {
-  var firePosition = new Position(this._position.x, this._position.y - 10);
-  var shot = new Shot(firePosition, -2);
+  let firePosition = new Position(this._position.x, this._position.y - 10);
+  let shot = new Shot(firePosition, -2);
   return shot;
 };
 ```
@@ -1505,8 +1575,8 @@ Enemy.prototype.advance = function () {
 
 // Otro método específico
 Enemy.prototype.shoot = function () {
-  var firePosition = new Point(this._position.x, this._position.y + 10);
-  var shot = new Shot(firePosition, 2);
+  let firePosition = new Point(this._position.x, this._position.y + 10);
+  let shot = new Shot(firePosition, 2);
   return shot;
 };
 ```
@@ -1521,8 +1591,8 @@ Ally.prototype = Object.create(Ship.prototype);
 Ally.prototype.constructor = Ally
 
 Ally.prototype.shoot = function () {
-  var firePosition = new Point(this._position.x, this._position.y - 10);
-  var shot = new Shot(firePosition, -2);
+  let firePosition = new Point(this._position.x, this._position.y - 10);
+  let shot = new Shot(firePosition, -2);
   return shot;
 };
 ```
@@ -1532,8 +1602,8 @@ Ally.prototype.shoot = function () {
 Ahora sí, podemos crear un enemigo y un aliado usando sus constructores:
 
 ```js
-var enemy = new Enemy('enemy1.png', new Point(10, 10), 40);
-var ally = new Ally(new Point(10, 590));
+let enemy = new Enemy('enemy1.png', new Point(10, 10), 40);
+let ally = new Ally(new Point(10, 590));
 
 Object.getPrototypeOf(ally) === Ally.prototype;
 Object.getPrototypeOf(enemy) === Enemy.prototype;
