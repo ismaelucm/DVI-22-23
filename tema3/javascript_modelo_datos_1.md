@@ -1,5 +1,5 @@
 ---
-title:  El modelo de datos de JavaScript
+title:  El modelo de datos de JavaScript (1)
 ---
 
 # Fundamentos de los lenguajes
@@ -140,10 +140,12 @@ a = {};                 // ERROR: No permitido
 
 Veréis que también se pueden difinir variables con:
 
-- `var`: Variables globales o de función. Su creación se lleva al principio del código mediante _hoisting_
+- `var`: Variables globales o de función. Realizan _hoisting_
 - Sin ninguna palabra clave delante: variables globales
 
->> **No las podremos usar en este curso (salvo que nos lo justifiquéis adecuadamente)**
+>> **No las usaremos en este curso (salvo que nos lo justifiquéis adecuadamente)**
+
+<small>Cuando veamos el modelo de ejecución, veremos por qué</small>
 
 ## Una **letiable es un nombre**
 
@@ -170,22 +172,6 @@ let uno = 2; // para el programa tiene sentido. Puede que para el programador no
 En general, hablando de booleanos, cadenas y números, decimos que los **nombres guardan valores**
 
 Si hablamos de objetos y funciones decimos que los **nombres apuntan a objetos o funciones** o **son referencias a objetos o funciones**
-
----
-
-## Operadores de comparación
-
-- `==` y `!=`: Operadores de comparación ([conversiones de tipos](https://262.ecma-international.org/5.1/#sec-11.9.3))
-- `===` y `!==`: Operadores *estrictos* de comparación. **Usaremos siempre estos operadores**
-
-```js
-5 == "5"   // True
-5 === "5"  // False
-```
-
-<small>Detalles más adelante (identidad de objetos)</small>
-
----
 
 ## Cadenas de caracteres (string)
 

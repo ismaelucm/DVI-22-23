@@ -222,7 +222,7 @@ f();
 ---
 
 
-Con las declaraciones de funciones esto no pasa, cuando una declaración de función se alza, se alza entera, **definición incluída**
+Con las declaraciones de funciones esto no pasa: cuando una declaración de función se alza, se alza entera, **definición incluida**
 
 ```js
 function getEven(list) {
@@ -327,6 +327,50 @@ objeto = {no: "funciona"}; // da error
 
 En general, usemos `let`{.js} y `const`{.js} siempre que no necesitemos nada sofisticado, son más "razonables" que `var`{.js}
 
+# Diferencias entre ámbitos en node y el navegador
+
+---
+
+
+Hemos dicho que el ámbito en JavaScript es equivalente a la función pero sabemos que podemos abrir una consola o un fichero y empezar a declarar variables sin necesidad de escribir una función
+
+
+Esto es así porque estamos usando el **ámbito global**
+
+El ámbito global está **disponible en el navegador y en node**
+
+---
+
+```js
+// Esta es una variable text en el ámbito GLOBAL
+var text = 'I\'m Ziltoid, the Omniscient.';
+
+// Esta es una función en el ámbito GLOBAL
+function greetings(list) {
+  // Esta es OTRA variable text en el ámbito de la función
+  var text = 'Greetings humans!';
+  console.log(text);
+}
+
+greetings();
+console.log(text);
+```
+
+---
+
+Sin embargo, existe una peculiaridad en node
+
+El ámbito global es realmente **local al fichero**. Esto quiere decir que:
+
+```js
+// En a.js, text es visible únicamente dentro del FICHERO
+"use strict";
+var text = 'I\'m Ziltoid, the Omniscient.';
+
+// En b.js, text es visible únicamente dentro del FICHERO
+"use strict";
+var text = 'Greetings humans!';
+```
 
 # _Closures_
 
@@ -564,47 +608,4 @@ console.log(c.bien()); // 5, 10, 15
 
 
 
-# Diferencias entre ámbitos en node y el navegador
 
----
-
-
-Hemos dicho que el ámbito en JavaScript es equivalente a la función pero sabemos que podemos abrir una consola o un fichero y empezar a declarar variables sin necesidad de escribir una función
-
-
-Esto es así porque estamos usando el **ámbito global**
-
-El ámbito global está **disponible en el navegador y en node**
-
----
-
-```js
-// Esta es una variable text en el ámbito GLOBAL
-var text = 'I\'m Ziltoid, the Omniscient.';
-
-// Esta es una función en el ámbito GLOBAL
-function greetings(list) {
-  // Esta es OTRA variable text en el ámbito de la función
-  var text = 'Greetings humans!';
-  console.log(text);
-}
-
-greetings();
-console.log(text);
-```
-
----
-
-Sin embargo, existe una peculiaridad en node
-
-El ámbito global es realmente **local al fichero**. Esto quiere decir que:
-
-```js
-// En a.js, text es visible únicamente dentro del FICHERO
-"use strict";
-var text = 'I\'m Ziltoid, the Omniscient.';
-
-// En b.js, text es visible únicamente dentro del FICHERO
-"use strict";
-var text = 'Greetings humans!';
-```
