@@ -2,7 +2,11 @@
 title: Módulos
 ---
 
+# ¿Qué son los módulos?
 
+---
+
+Un mecanismo para dividir un programa grande en elementos más pequeños que podamos ir importando solo cuando lo necesitemos.
 
 # ¿Por qué usar módulos?
 
@@ -248,6 +252,12 @@ Cuando se usan módulos ES6 en HTML, hace falta añadir el atributo `type="modul
   document.game = new Game();
 </script>
 ```
+ó 
+
+```html
+<script type="module" src="myGame.js"></script> 
+<!--  Si myGame.js hace uso de los import y export-->
+```
 
 
 ---
@@ -255,6 +265,8 @@ Cuando se usan módulos ES6 en HTML, hace falta añadir el atributo `type="modul
 Los módulos se diferencian de un "script" normal, además (y entre otras cosas), en:
 
 
-- Las variables son locales a módulo
+- Las variables son locales al módulo
 - Usan `"strict"`{.js} por defecto
 - Se cargan de forma *asíncrona* (¡más velocidad!)
+
+

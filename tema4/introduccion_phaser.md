@@ -15,7 +15,7 @@ Tiene una apasionada comunidad en el proceso de desarrollo, por lo que crece rá
 
 El objeto principal de Phaser es un objeto JavaScript llamado `Game`{.js}
 
-Dentro de un *juego* hay *escenas*, y dentro de *escenas*, *objetos* (que son los que darán lógica y representación al juego)
+Dentro de un *juego* (`Game`{.js}) hay *escenas* (`Scene`{.js}), y dentro de *escenas*, *objetos* (que son los que darán lógica y representación al juego) (`GameObject`{.js})
 
 
 ## Escenas en Phaser
@@ -46,6 +46,7 @@ El orden de las escenas es importante, ya que el *scene manager* las actualiza y
 
 El motor llama a estos métodos automáticamente:
 
+- `init`{.js}: se ejecuta cuando se carga la escena. Aquí se pueden pasar datos entre escenas.
 - `preload`{.js}: aquí hay que cargar los recursos antes de que sean usados.
 - `create`{.js}: una vez que la clase está instanciada y el motor está a punto, se llama a este método para inicializar.
 - `update(time, delta)`{.js}: se llama cada ciclo de juego, para modificar el estado.

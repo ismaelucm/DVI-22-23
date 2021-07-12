@@ -93,6 +93,15 @@
 </section>
 
 <section>
+<section id="qué-son-los-módulos" class="title-slide slide level1">
+<h1>¿Qué son los módulos?</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Un mecanismo para dividir un programa grande en elementos más pequeños que podamos ir importando solo cuando lo necesitemos.</p>
+</section></section>
+<section>
 <section id="por-qué-usar-módulos" class="title-slide slide level1">
 <h1>¿Por qué usar módulos?</h1>
 
@@ -261,12 +270,15 @@
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">import</span> Game <span class="im">from</span> <span class="st">&#39;./game.js&#39;</span><span class="op">;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="at">game</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Game</span>()<span class="op">;</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>ó</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;module&quot;</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;myGame.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--  Si myGame.js hace uso de los import y export--&gt;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Los módulos se diferencian de un “script” normal, además (y entre otras cosas), en:</p>
 <ul>
-<li>Las variables son locales a módulo</li>
+<li>Las variables son locales al módulo</li>
 <li>Usan <code class="sourceCode javascript"><span class="st">&quot;strict&quot;</span></code> por defecto</li>
 <li>Se cargan de forma <em>asíncrona</em> (¡más velocidad!)</li>
 </ul>

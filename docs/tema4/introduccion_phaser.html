@@ -105,7 +105,7 @@
 <section id="game" class="slide level2">
 <h2>Game</h2>
 <p>El objeto principal de Phaser es un objeto JavaScript llamado <code class="sourceCode javascript">Game</code></p>
-<p>Dentro de un <em>juego</em> hay <em>escenas</em>, y dentro de <em>escenas</em>, <em>objetos</em> (que son los que darán lógica y representación al juego)</p>
+<p>Dentro de un <em>juego</em> (<code class="sourceCode javascript">Game</code>) hay <em>escenas</em> (<code class="sourceCode javascript">Scene</code>), y dentro de <em>escenas</em>, <em>objetos</em> (que son los que darán lógica y representación al juego) (<code class="sourceCode javascript">GameObject</code>)</p>
 </section>
 <section id="escenas-en-phaser" class="slide level2">
 <h2>Escenas en Phaser</h2>
@@ -132,6 +132,7 @@
 <h2>Métodos básicos de una escena</h2>
 <p>El motor llama a estos métodos automáticamente:</p>
 <ul>
+<li><code class="sourceCode javascript">init</code>: se ejecuta cuando se carga la escena. Aquí se pueden pasar datos entre escenas.</li>
 <li><code class="sourceCode javascript">preload</code>: aquí hay que cargar los recursos antes de que sean usados.</li>
 <li><code class="sourceCode javascript">create</code>: una vez que la clase está instanciada y el motor está a punto, se llama a este método para inicializar.</li>
 <li><code class="sourceCode javascript"><span class="fu">update</span>(time<span class="op">,</span> delta)</code>: se llama cada ciclo de juego, para modificar el estado.</li>
