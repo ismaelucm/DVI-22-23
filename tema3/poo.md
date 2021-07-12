@@ -119,7 +119,7 @@ Conviene recordar que también se los llama **clases**
 ---
 
 
-Los tipos **especifican propiedades y comportamientos comunes** a todos ellos aunque individualmente sean distintos
+Los tipos de objetos **especifican propiedades y comportamientos comunes** a todos ellos aunque individualmente sean distintos
 
 ---
 
@@ -148,7 +148,7 @@ En los modelos de objetos es más conveniente trabajar con tipos de objetos
 ![Diagrama de objetos con los cinco clases identificadas: marcador, defensa, enemigo, protagonista y disparo](space-invaders-object-diagram.svg)
 
 
-## Interfaces y métodos
+## Interfaces (API) y métodos
 
 
 Vamos a tratar de determinar la API de nuestros tipos de objetos. Para eso nos
