@@ -6,7 +6,7 @@ title: Clases ES6
 
 ---
 
-JavaScript es un lenguaje relativamente antiguo, y ha sufrido muchas modificaciones
+JavaScript es un lenguaje relativamente antiguo  y ha sufrido muchas modificaciones
 
 Cada modificación oficial establece un nuevo estándar [ECMAScript](https://es.wikipedia.org/wiki/ECMAScript)
 
@@ -24,16 +24,26 @@ Uno de las cambios más notables es la nueva sintaxis para **clases**
 ```js
 class Enemigo {
   constructor(nombre) { // `constructor` es una palabra reservada para el constructor
-    this.nombre = nombre;
+    this._nombre = nombre;
   }  
+
+  mostrarNombre() {
+    console.log (`Mi nombre es ${this._nombre}`);
+  }
 }
 ```
+
+---
 
 Equivale a:
 
 ```js
 function Enemigo(nombre) {
-    this.nombre = nombre;
+    this._nombre = nombre;
+}
+
+Enemigo.prototype.mostrarNombre() {
+  console.log (`Mi nombre es ${this._nombre}`);
 }
 ```
 
@@ -101,14 +111,27 @@ También podemos hacer, igual que con la sintaxis ES6, *getters* y *setters*
 
 ```js
 class Personaje {
+  constructor() {
+    this._fuerza = 0;
+  }
+
   get fuerza() {
-    return this.arma.fuerza;
+    return this._fuerza;
   }
 
   set fuerza(f) {
-    this.arma.fuerza = f;
+    this._fuerza = f;
   }
 }
+```
+
+---
+
+```js
+let hero = new Personaje();
+hero.fuerza;
+hero.fuerza = 5;
+hero.fuerza;
 ```
 
 
