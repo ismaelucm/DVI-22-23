@@ -39,14 +39,14 @@ this.w.on('up', event => { ... });
 
 ---
 
-Una tecla que esté pulsándose siempre (es decir, que no se suelte), dira que `isDown`{.js} es `true`{.js} en cada ciclo
+Una tecla que esté pulsándose siempre (es decir, que no se suelte), dirá que `isDown`{.js} es `true`{.js} en cada ciclo
 
 ---
 
 Para evitar esto, si sólo queremos reaccionar ante un clic:
 
 ```js
-if (Phaser.Input.Keyboard.JustDown(this.fullscreenKey)) {}
+if (Phaser.Input.Keyboard.JustDown(this.w)) {}
 ```
 
 ---
@@ -83,7 +83,7 @@ this.cursors = this.input.keyboard.createCursorKeys();
 
 ---
 
-Con esto, se nos define un objeto con las 4 direcciones:
+Con esto, se nos define un objeto con las 4 direcciones (más `space` y `shift`):
 
 ```js
 if (this.cursors.up.isDown && this.body.onFloor()) {
@@ -97,8 +97,11 @@ else if (this.cursors.right.isDown) {
 }
 else {
   this.body.setVelocityX(0);
-
 }
+if (Phaser.Input.Keyboard.JustDown(this.cursors.space)) {
+  // Shoot once on keydown
+} 
+
 ```
 
 ---
@@ -106,12 +109,13 @@ else {
 Si quiero usar otros cursores, es cuestión de devolver un objeto con las mismas propiedades:
 
 ```js
-this.cursorsDvorak = this.scene.input.keyboard.addKeys({
-      up: Phaser.Input.Keyboard.KeyCodes.C,
-      down: Phaser.Input.Keyboard.KeyCodes.T,
-      left: Phaser.Input.Keyboard.KeyCodes.R,
-      right: Phaser.Input.Keyboard.KeyCodes.N
-    });
+this.cursorsZXSpectrum = this.scene.input.keyboard.addKeys({
+    up: Phaser.Input.Keyboard.KeyCodes.Q,
+    down: Phaser.Input.Keyboard.KeyCodes.A,
+    left: Phaser.Input.Keyboard.KeyCodes.O,
+    right: Phaser.Input.Keyboard.KeyCodes.P,
+    fire: Phaser.Input.Keyboard.KeyCodes.SPACE,
+  });
 ```
 
 ---
@@ -138,7 +142,7 @@ Y, como habréis imaginado, los identificadores de las teclas están en [`Phaser
 
 Usar gamepads es igual de fácil que usar el teclado, pero ya hay muchas dependencias y diferencias
 
-**No todo va a funcionar tan bien, y es posible que haya errores de detección**
+**No todo va a funcionar tan bien y es posible que haya errores de detección**
 
 
 ---
@@ -208,7 +212,7 @@ let leftPad = padExiste && (pad.leftStick.x < 0 || pad.left);
 // esta variable es `true` si alguna opción es `true`
 let goLeft = leftPad 
            || this.cursors.left.isDown 
-           || this.cursorsDvorak.left.isDown
+           || this.cursorsZXSpectrum.left.isDown
            || this.cursorsArrows.left.isDown;
 
 if (goLeft) { this.goLeft(); }

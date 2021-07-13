@@ -123,12 +123,12 @@
 </section>
 <section class="slide level2">
 
-<p>Una tecla que esté pulsándose siempre (es decir, que no se suelte), dira que <code class="sourceCode javascript">isDown</code> es <code class="sourceCode javascript"><span class="kw">true</span></code> en cada ciclo</p>
+<p>Una tecla que esté pulsándose siempre (es decir, que no se suelte), dirá que <code class="sourceCode javascript">isDown</code> es <code class="sourceCode javascript"><span class="kw">true</span></code> en cada ciclo</p>
 </section>
 <section class="slide level2">
 
 <p>Para evitar esto, si sólo queremos reaccionar ante un clic:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="fu">JustDown</span>(<span class="kw">this</span><span class="op">.</span><span class="at">fullscreenKey</span>)) {}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="fu">JustDown</span>(<span class="kw">this</span><span class="op">.</span><span class="at">w</span>)) {}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -146,7 +146,7 @@
 </section>
 <section class="slide level2">
 
-<p>Con esto, se nos define un objeto con las 4 direcciones:</p>
+<p>Con esto, se nos define un objeto con las 4 direcciones (más <code>space</code> y <code>shift</code>):</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">cursors</span><span class="op">.</span><span class="at">up</span><span class="op">.</span><span class="at">isDown</span> <span class="op">&amp;&amp;</span> <span class="kw">this</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">onFloor</span>()) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">setVelocityY</span>(<span class="kw">this</span><span class="op">.</span><span class="at">jumpSpeed</span>)<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -158,18 +158,21 @@
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> {</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">setVelocityX</span>(<span class="dv">0</span>)<span class="op">;</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="fu">JustDown</span>(<span class="kw">this</span><span class="op">.</span><span class="at">cursors</span><span class="op">.</span><span class="at">space</span>)) {</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Shoot once on keydown</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>} </span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Si quiero usar otros cursores, es cuestión de devolver un objeto con las mismas propiedades:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">cursorsDvorak</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">keyboard</span><span class="op">.</span><span class="fu">addKeys</span>({</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>      <span class="dt">up</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">C</span><span class="op">,</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">down</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">T</span><span class="op">,</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">left</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">R</span><span class="op">,</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">right</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">N</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">cursorsZXSpectrum</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">keyboard</span><span class="op">.</span><span class="fu">addKeys</span>({</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">up</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">Q</span><span class="op">,</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">down</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">A</span><span class="op">,</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">left</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">O</span><span class="op">,</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">right</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">P</span><span class="op">,</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">fire</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">SPACE</span><span class="op">,</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -183,7 +186,7 @@
 <section class="slide level2">
 
 <p>Usar gamepads es igual de fácil que usar el teclado, pero ya hay muchas dependencias y diferencias</p>
-<p><strong>No todo va a funcionar tan bien, y es posible que haya errores de detección</strong></p>
+<p><strong>No todo va a funcionar tan bien y es posible que haya errores de detección</strong></p>
 </section>
 <section class="slide level2">
 
@@ -233,7 +236,7 @@
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">// esta variable es `true` si alguna opción es `true`</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> goLeft <span class="op">=</span> leftPad </span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>           <span class="op">||</span> <span class="kw">this</span><span class="op">.</span><span class="at">cursors</span><span class="op">.</span><span class="at">left</span><span class="op">.</span><span class="at">isDown</span> </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>           <span class="op">||</span> <span class="kw">this</span><span class="op">.</span><span class="at">cursorsDvorak</span><span class="op">.</span><span class="at">left</span><span class="op">.</span><span class="at">isDown</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>           <span class="op">||</span> <span class="kw">this</span><span class="op">.</span><span class="at">cursorsZXSpectrum</span><span class="op">.</span><span class="at">left</span><span class="op">.</span><span class="at">isDown</span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>           <span class="op">||</span> <span class="kw">this</span><span class="op">.</span><span class="at">cursorsArrows</span><span class="op">.</span><span class="at">left</span><span class="op">.</span><span class="at">isDown</span><span class="op">;</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (goLeft) { <span class="kw">this</span><span class="op">.</span><span class="fu">goLeft</span>()<span class="op">;</span> }</span></code></pre></div>
