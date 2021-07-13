@@ -99,7 +99,7 @@
 </section>
 <section class="slide level2">
 
-<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html"><code class="sourceCode javascript">GameObject</code></a> es la entidad básica de Phaser.</p>
+<p><a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject"><code class="sourceCode javascript">GameObject</code></a> es la entidad básica de Phaser.</p>
 </section>
 <section class="slide level2">
 
@@ -309,7 +309,7 @@
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">preUpdate</span> (t<span class="op">,</span> dt) {</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span><span class="op">.</span><span class="fu">preUpdate</span>(t<span class="op">,</span> dt)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// la lógica particular de `FallingMartian`, aquí</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">y</span> <span class="op">+=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">y</span> <span class="op">+=</span> <span class="dv">2</span> <span class="op">*</span> dt <span class="op">/</span> <span class="dv">1000</span><span class="op">;</span> <span class="co">// 2 unidades por segundo</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
@@ -356,31 +356,33 @@
 
 <p>En el caso de <code class="sourceCode javascript">Sprite</code>, es conveniente mover al elemento habiendo creado una clase que herede de <code class="sourceCode javascript">Sprite</code> y modificar <code class="sourceCode javascript">x</code> e <code class="sourceCode javascript">y</code> dentro de su <code class="sourceCode javascript">preUpdate</code>:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Martian <span class="kw">extends</span> Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Sprite</span> {</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(scene<span class="op">,</span> x<span class="op">,</span> y) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(scene<span class="op">,</span> x<span class="op">,</span> y<span class="op">,</span> speed) {</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span>(<span class="kw">this</span><span class="op">,</span> x<span class="op">,</span> y<span class="op">,</span> <span class="st">&#39;martian&#39;</span>)<span class="op">;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    scene<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">existing</span>(<span class="kw">this</span>)<span class="op">;</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">preUpdate</span>() {</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">x</span> <span class="op">+=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">y</span> <span class="op">+=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">speed</span> <span class="op">=</span> speed<span class="op">;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    scene<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">existing</span>(<span class="kw">this</span>)<span class="op">;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">preUpdate</span>(t<span class="op">,</span> dt) {</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">x</span> <span class="op">+=</span> <span class="kw">this</span><span class="op">.</span><span class="at">speed</span><span class="op">*</span>dt <span class="op">/</span> <span class="dv">1000</span><span class="op">;</span> </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">y</span> <span class="op">+=</span> <span class="kw">this</span><span class="op">.</span><span class="at">speed</span><span class="op">*</span>dt <span class="op">/</span> <span class="dv">1000</span><span class="op">;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="rotación" class="slide level2">
 <h2>Rotación</h2>
-<p><code class="sourceCode javascript">angle</code> controla la rotación de un <code class="sourceCode javascript">Sprite</code>, en grados (<span class="math inline">[−180...180]</span>, donde 0 es derecha, 90 es abajo…)</p>
+<p><code class="sourceCode javascript">angle</code> controla la rotación de un <code class="sourceCode javascript">Sprite</code>, en grados (<span class="math inline">[−180...180]</span>)</p>
 <p>También existe <code class="sourceCode javascript">rotation</code>, para hacer la rotación de radianes y es ligeramente más rápido</p>
 </section>
 <section class="slide level2">
 
+<p>0º es derecha, 90º es abajo…</p>
 <p>Valores negativos del ángulo son rotación antihoraria, y valores positivos, horaria</p>
 </section>
 <section class="slide level2">
 
 <p>Cualquier valor <span class="math inline"> &gt; 360</span> equivale a restar <span class="math inline">360</span> al ángulo (<code class="sourceCode javascript">angle <span class="op">=</span> <span class="dv">450</span></code> es igual que <code class="sourceCode javascript">angle <span class="op">=</span> <span class="dv">90</span></code>)</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preUpdate</span> () {</span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preUpdate</span> (t<span class="op">,</span> dt) {</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// El marciano da vueltas sin parar</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">angle</span><span class="op">++;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">angle</span><span class="op">+=</span><span class="kw">this</span><span class="op">.</span><span class="at">angularVelocity</span><span class="op">*</span>dt <span class="op">/</span> <span class="dv">1000</span><span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="escalado" class="slide level2">
@@ -487,7 +489,7 @@
 </section>
 <section class="slide level2">
 
-<p>Podéis ver un <a href="https://phaser.io/sandbox/edit/lWlACykr">ejemplo en Phaser 2</a> en el que las entidades se agrupan según una jerarquía</p>
+<p>Podéis ver un <a href="https://codepen.io/gjimenezucm/pen/jOmybNe">ejemplo en Phaser 3</a> en el que las entidades se agrupan según una jerarquía</p>
 </section></section>
     </div>
   </div>

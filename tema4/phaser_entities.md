@@ -7,7 +7,7 @@ title: Entidades en Phaser
 
 ---
 
-[`GameObject`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html) es la entidad básica de Phaser. 
+[`GameObject`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject) es la entidad básica de Phaser. 
 
 ---
 
@@ -292,7 +292,7 @@ class FallingMartian extends Phaser.GameObjects.Sprite {
   preUpdate (t, dt) {
     super.preUpdate(t, dt)
     // la lógica particular de `FallingMartian`, aquí
-    this.y += 2;
+    this.y += 2 * dt / 1000; // 2 unidades por segundo
   }
 }
 
@@ -368,13 +368,14 @@ En el caso de `Sprite`{.js}, es conveniente mover al elemento habiendo creado un
 
 ```js
 class Martian extends Phaser.GameObjects.Sprite {
-  constructor(scene, x, y) {
+  constructor(scene, x, y, speed) {
     super(this, x, y, 'martian');
+    this.speed = speed;
     scene.add.existing(this);
   }
-  preUpdate() {
-    this.x += 1;
-    this.y += 1;
+  preUpdate(t, dt) {
+    this.x += this.speed*dt / 1000; 
+    this.y += this.speed*dt / 1000;
   }
 }
 ```
@@ -384,12 +385,13 @@ class Martian extends Phaser.GameObjects.Sprite {
 ## Rotación
 
 
-`angle`{.js} controla la rotación de un `Sprite`{.js}, en grados ($[-180...180]$, donde 0 es derecha, 90 es abajo...)
+`angle`{.js} controla la rotación de un `Sprite`{.js}, en grados ($[-180...180]$)
 
 También existe `rotation`{.js}, para hacer la rotación de radianes y es ligeramente más rápido
 
 ---
 
+0º es derecha, 90º es abajo...
 
 Valores negativos del ángulo son rotación antihoraria, y valores positivos, horaria
 
@@ -399,9 +401,9 @@ Cualquier valor $>360$ equivale a restar $360$ al ángulo (`angle = 450`{.js} es
 
 
 ```js
-preUpdate () {
+preUpdate (t, dt) {
     // El marciano da vueltas sin parar
-    this.angle++;
+    this.angle+=this.angularVelocity*dt / 1000;
 };
 ```
 
@@ -548,4 +550,4 @@ También significa que si transformaremos `Moon`{.js}, lo haremos respecto del s
 
 ---
 
-Podéis ver un [ejemplo en Phaser 2](https://phaser.io/sandbox/edit/lWlACykr) en el que las entidades se agrupan según una jerarquía
+Podéis ver un [ejemplo en Phaser 3](https://codepen.io/gjimenezucm/pen/jOmybNe) en el que las entidades se agrupan según una jerarquía
