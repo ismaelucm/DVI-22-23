@@ -138,6 +138,12 @@ Si queremos que el `<canvas>`{.html} tenga el foco, lo hacemos con [`focus()`{.j
 
 <small>Código en <https://github.com/cleongh/simplephasergame></small>
 
+---
+
+## Documentación
+
+- [Documentación de Phaser 3](https://photonstorm.github.io/phaser3-docs/index.html): Acceder desde la barra de menú en la parte superior
+- [Notes of Phaser 3](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/index.html)
 
 
 
@@ -174,9 +180,13 @@ La parte de antes de `:` es el *protocolo* (`http`, `ftp`...)
 
 ## URLs relativas
 
-El directorio especial `../` indica el directorio padre del que se lanzó la aplicación. El directorio `./` indica el directorio de lanzamiento de la aplicación
-
 En una web, `/` es la raíz del sitio
+
+El directorio especial `../` indica el directorio padre al del fichero actual.
+
+El directorio `./` indica el directorio del fichero actual
+
+
 
 - `./ejemplo/ruta`
 - `../otro_hijo/ruta/musica.ogg`

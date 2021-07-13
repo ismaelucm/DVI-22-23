@@ -31,7 +31,7 @@ A continuación veremos algunas de las entidades más importantes de Phaser
 
 
 
-# Entidades `Image`{.js}
+# Entidades [`Image`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html)
 
 ---
 
