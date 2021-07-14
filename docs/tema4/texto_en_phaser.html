@@ -99,7 +99,7 @@
 </section>
 <section class="slide level2">
 
-<p>Para crear texto simplemente podemos usar la clase <code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Text</span></code> con la factoría de Phaser <code class="sourceCode javascript">add<span class="op">.</span><span class="at">text</span></code> de <code class="sourceCode javascript">Scene</code></p>
+<p>Para crear texto simplemente podemos usar la clase <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Text"><code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Text</span></code></a> con la factoría de Phaser <code class="sourceCode javascript">add<span class="op">.</span><span class="at">text</span></code> de <code class="sourceCode javascript">Scene</code></p>
 </section>
 <section class="slide level2">
 
@@ -114,7 +114,7 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es una `Scene`</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es una Scene</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> text <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="kw">this</span><span class="op">.</span><span class="at">cameras</span><span class="op">.</span><span class="at">main</span><span class="op">.</span><span class="at">centerX</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">cameras</span><span class="op">.</span><span class="at">main</span><span class="op">.</span><span class="at">centerY</span><span class="op">,</span> <span class="st">&#39;- phaser text stroke -&#39;</span>)<span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">// alineación del texto</span></span>
@@ -137,18 +137,18 @@
 <section class="slide level2">
 
 <p>Una fuente de nuestra máquina puede no estar disponible en la máquina del usuario</p>
-<p>¿Solución? Usar fuentes estándar, crear nuestras propias fuentes de mapa de bits (bitmaps) o usar fuentes Web (<strong>webfonts</strong>) como <a href="https://fonts.google.com/">Google Fonts</a></p>
+<p>¿Solución? Usar <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">fuentes estándar</a>, crear nuestras propias fuentes de mapa de bits (bitmaps) o usar fuentes Web (<strong>webfonts</strong>) como <a href="https://fonts.google.com/">Google Fonts</a></p>
 </section>
 <section id="texto-con-fuentes-de-mapa-de-bits" class="slide level2">
 <h2>Texto con fuentes de mapa de bits</h2>
-<p>Para cargar un fuente de mapa de bits hay que usar <code class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>()</code> en el <code class="sourceCode javascript">preload</code></p>
+<p>Para cargar una fuente de mapa de bits hay que usar <code class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>()</code> en el <code class="sourceCode javascript">preload</code></p>
 <p>Hay que pasarle el bitmap (en <a href="https://es.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>, por ejemplo) con las fuentes y el XML que las describe</p>
 </section>
 <section class="slide level2">
 
 <p>Para generar el XML y el mapa de bits podemos usar:</p>
 <ul>
-<li><a href="http://kvazars.com/littera/">Littera</a></li>
+<li><a href="https://snowb.org/">SnowB BMF</a> (online)</li>
 <li><a href="http://www.angelcode.com/products/bmfont/">Bmfont</a> (Windows)</li>
 </ul>
 </section>
@@ -170,7 +170,7 @@
 </section>
 <section class="slide level2">
 
-<p>Podemos cargar fuentes desde la web, por ejemplo desde Google Fonts</p>
+<p>Podemos cargar fuentes desde la web, por ejemplo desde <a href="https://fonts.google.com/">Google Fonts</a></p>
 <p>Hay que cargar la fuente previamente antes de usarla</p>
 </section>
 <section class="slide level2">
@@ -183,25 +183,59 @@
 <section class="slide level2">
 
 <p>Después, llamamos a <code class="sourceCode javascript">WebFont<span class="op">.</span><span class="fu">load</span>()</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    WebFont<span class="op">.</span><span class="fu">load</span>({</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">google</span><span class="op">:</span> {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="dt">families</span><span class="op">:</span> [ <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="st">&#39;Finger Paint&#39;</span><span class="op">,</span> <span class="st">&#39;Nosifer&#39;</span> ]</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">active</span><span class="op">:</span> <span class="kw">function</span> () <span class="co">// se llama a esta función cuando está cargada</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        {</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="dv">16</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                    { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            nuevoTexto<span class="op">.</span><span class="fu">setShadow</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="st">&quot;#333333&quot;</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// El this es Scene</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> self <span class="op">=</span> <span class="kw">this</span><span class="op">;</span> <span class="co">// Para usarlo en active</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    WebFont<span class="op">.</span><span class="fu">load</span>({</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">google</span><span class="op">:</span> {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            <span class="dt">families</span><span class="op">:</span> [ <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="st">&#39;Finger Paint&#39;</span><span class="op">,</span> <span class="st">&#39;Nosifer&#39;</span> ]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">active</span><span class="op">:</span> <span class="kw">function</span> () <span class="co">// se llama a esta función cuando está cargada</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                self<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="dv">16</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                    { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            nuevoTexto<span class="op">.</span><span class="fu">setShadow</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="st">&quot;#333333&quot;</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="problemas-de-las-google-fonts-u-otras-fuentes-web" class="slide level2">
 <h2>¿Problemas de las Google Fonts u otras fuentes Web?</h2>
 <p>Que dependemos de ellas para que el juego funcione y no tenemos control sobre ellas</p>
+</section>
+<section id="solución" class="slide level2">
+<h2>Solución</h2>
+<p>Almacenar las fuentes de nuestro juego en el servidor y cargarlas.</p>
+<p>Las podemos guardar en <code>/assets/fonts</code></p>
+</section>
+<section class="slide level2">
+
+<p>Creamos una función auxiliar y cargamos la fuente:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">loadFont</span>(name<span class="op">,</span> url) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> newFont <span class="op">=</span> <span class="kw">new</span> <span class="bu">FontFace</span>(name<span class="op">,</span> <span class="vs">`url(</span><span class="sc">${</span>url<span class="sc">}</span><span class="vs">)`</span>)<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    newFont<span class="op">.</span><span class="fu">load</span>()<span class="op">.</span><span class="fu">then</span>(<span class="kw">function</span> (loaded) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">document</span><span class="op">.</span><span class="at">fonts</span><span class="op">.</span><span class="fu">add</span>(loaded)<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    })<span class="op">.</span><span class="fu">catch</span>(<span class="kw">function</span> (error) {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> error<span class="op">;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>() {</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Descargar fuente de https://www.dafont.com/es/happy-donuts.font</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">loadFont</span>(<span class="st">&quot;Donuts&quot;</span><span class="op">,</span> <span class="st">&quot;/assets/fonts/HAPPY_DONUTS.ttf&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// El this es Scene</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="dv">16</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Donuts&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section></section>
     </div>
   </div>
