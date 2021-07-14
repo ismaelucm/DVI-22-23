@@ -6,7 +6,7 @@ export default class playGame extends Phaser.Scene {
     }
     preload () {
         this.load.setBaseURL('https://labs.phaser.io/assets/');
-        this.load.image('phaser', 'sprites/phaser-dude.png');
+        this.load.image('phaser', 'sprites/ufo.png');
     }
     
     create ()
