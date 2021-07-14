@@ -73,9 +73,10 @@ nave.applyForce({15, 24}); // un vector
 
 La **velocidad** es una magnitud física vectorial que expresa la distancia recorrida de un objeto por unidad de tiempo
 
-Se puede modificar en el `Sprite`{.js}, si ha sido creado con *Matter.js*
+Se puede modificar en el `GameObject`{.js} que haya sido creado con *Matter.js*
 
 ```js
+sprite = this.matter.add.sprite(100, 100, 'nave');
 sprite.setVelocity(x, y);
 ```
 
@@ -102,7 +103,7 @@ $$F = m \times a$$
 sprite.applyForce({x: 100, y: 0});
 ```
 
-O con funciones más cómodas, que tienen en cuenta la orientación del `Sprite`{.js}:
+O con funciones más cómodas, que tienen en cuenta la orientación del `GameObject`{.js}:
 
 ```js
 sprite.thrust(19);
@@ -141,7 +142,7 @@ new Phaser.Game({
 
 ---
 
-Los objetos pueden tener *bounding boxes* más elaboradas, y podemos cambiarla:
+Los objetos pueden tener *bounding boxes* más elaboradas y podemos cambiarla:
 
 ```js
 let rect = this.matter.add.image(200, 50, 'blue');
@@ -253,7 +254,7 @@ scene.matter.add.constraint(obj1,
 <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.19.0/phaser.min.js" integrity="sha256-kF1kZP3VeVryJL2hSRtuAu34Fva0NKx/7IfxsD+Hl2Q=" crossorigin="anonymous"></script>
 
 
-<small>Haciendo clic, se aplica impulso a una de las bolas</small>
+<small>[En este ejemplo](https://codepen.io/gjimenezucm/pen/jOmBPqm), haciendo clic, se aplica impulso a una de las bolas</small>
 
 <canvas id="ejemplo1" />
 

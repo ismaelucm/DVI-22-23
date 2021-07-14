@@ -143,8 +143,9 @@
 <section id="velocidad" class="slide level2">
 <h2>Velocidad</h2>
 <p>La <strong>velocidad</strong> es una magnitud física vectorial que expresa la distancia recorrida de un objeto por unidad de tiempo</p>
-<p>Se puede modificar en el <code class="sourceCode javascript">Sprite</code>, si ha sido creado con <em>Matter.js</em></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="fu">setVelocity</span>(x<span class="op">,</span> y)<span class="op">;</span></span></code></pre></div>
+<p>Se puede modificar en el <code class="sourceCode javascript">GameObject</code> que haya sido creado con <em>Matter.js</em></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sprite <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">matter</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(<span class="dv">100</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="st">&#39;nave&#39;</span>)<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="fu">setVelocity</span>(x<span class="op">,</span> y)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -162,7 +163,7 @@
 <section class="slide level2">
 
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="fu">applyForce</span>({<span class="dt">x</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">0</span>})<span class="op">;</span></span></code></pre></div>
-<p>O con funciones más cómodas, que tienen en cuenta la orientación del <code class="sourceCode javascript">Sprite</code>:</p>
+<p>O con funciones más cómodas, que tienen en cuenta la orientación del <code class="sourceCode javascript">GameObject</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="fu">thrust</span>(<span class="dv">19</span>)<span class="op">;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="fu">thrustLeft</span>(<span class="dv">14</span>)<span class="op">;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="fu">thrustBack</span>(<span class="dv">5</span>)<span class="op">;</span></span></code></pre></div>
@@ -188,7 +189,7 @@
 </section>
 <section class="slide level2">
 
-<p>Los objetos pueden tener <em>bounding boxes</em> más elaboradas, y podemos cambiarla:</p>
+<p>Los objetos pueden tener <em>bounding boxes</em> más elaboradas y podemos cambiarla:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> rect <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">matter</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">image</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">50</span><span class="op">,</span> <span class="st">&#39;blue&#39;</span>)<span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rect<span class="op">.</span><span class="fu">setBody</span>({</span>
@@ -266,7 +267,7 @@
 <section class="slide level2">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.19.0/phaser.min.js" integrity="sha256-kF1kZP3VeVryJL2hSRtuAu34Fva0NKx/7IfxsD+Hl2Q=" crossorigin="anonymous"></script>
-<p><small>Haciendo clic, se aplica impulso a una de las bolas</small></p>
+<p><small><a href="https://codepen.io/gjimenezucm/pen/jOmBPqm">En este ejemplo</a>, haciendo clic, se aplica impulso a una de las bolas</small></p>
 <canvas id="ejemplo1" />
 <script>
 new Phaser.Game({
