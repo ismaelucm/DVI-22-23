@@ -66,11 +66,10 @@ O mejor dicho: **los motores físicos de Phaser**
 
 ---
 
-En Phaser hay tres motores físicos disponibles:
+En Phaser hay dos motores físicos disponibles:
 
 - **Arcade**
 - **Matter.js**
-- **Impact**
 
 ---
 
@@ -89,22 +88,13 @@ Está pensado para juegos sencillos
 
 ## Matter.js
 
-Admite [rotaciones](http://brm.io/matter-js/), y formas más complejas (cuestas)
+[Matter.js](http://brm.io/matter-js/) admite rotaciones y formas más complejas (cuestas)
 
 Tiene más precisión, pero es más lento
 
 Tiene un modelo de física mucho más avanzado, *springs* (muelles), polígonos, fuerzas, restricciones...
 
 Angry Birds usaría este motor
-
----
-
-## Impact
-
-Es el motor física de [Impact](https://impactjs.com), otro motor de juegos
-
-No lo veremos en esta asignatura
-
 
 
 
@@ -240,12 +230,12 @@ this.physics.add.existing(this);
 o
 
 ```js
-this.physics.add.sprite(100, 450, 'dude');
+this.player = this.physics.add.sprite(100, 450, 'dude');
 ```
 
 ---
 
-Esto hace que el `Sprite`{.js} **tenga la propiedad `body`{.js}**
+Esto hace que el `Sprite`{.js} **tenga la propiedad [`body`{.js}](https://newdocs.phaser.io/docs/3.52.0/Phaser.Physics.Arcade.Body) de Arcade**
 
 ---
 
@@ -253,7 +243,7 @@ Esto hace que el `Sprite`{.js} **tenga la propiedad `body`{.js}**
 
 
 ```js
-// `this` en un `Sprite` con físicas
+// `this` es un `Sprite` con físicas
 this.body.setCollideWorldBounds();
 ```
 
@@ -267,7 +257,7 @@ Para saber si colisionamos con cualquier suelo:
 this.body.onFloor()
 ```
 
-<small>Muy útil para no saltan infinitamente</small>
+<small>Muy útil para no saltar infinitamente</small>
 
 
 ---
@@ -292,7 +282,7 @@ this.platforms = this.physics.add.group();
 Los grupos creados con `physics.add.group()`{.js} son dinámicos
 
 
-Los grupos creados con `physics.add.staticGroup()`{.js} son dinámicos (entidades que no se mueven, pero que tienen *colisión*)
+Los grupos creados con `physics.add.staticGroup()`{.js} son estáticos (entidades que no se mueven, pero que tienen *colisión*)
 
 ---
 
@@ -300,7 +290,7 @@ Los grupos creados con `physics.add.staticGroup()`{.js} son dinámicos (entidade
 ## Crear elementos en un grupo
 
 
-Se utiliza `group()`{.js} o `staticGroup()`{.js}:
+Creamos sprites usando el método [`create()`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Group#create):
 
 
 ```js
@@ -318,6 +308,10 @@ this.platforms.create(400, 450, 'platform');
 
 ---
 
+O podemos añadir nuestros propios GameObjects con `add()`{.js} y `addMultiple()`{.js} (como en los grupos)
+
+---
+
 Podemos hacer que las colisiones *no muevan un objeto* con:
 
 ```js
@@ -329,7 +323,7 @@ platform.setImmovable(true);
 ---
 
 
-Para crear un `collider`{.js} (activar colisión):
+Para activar la detección de colisiones hay que crear un `collider`{.js}:
 
 ```js
 this.physics.add.collider(player, group);
@@ -337,7 +331,7 @@ this.physics.add.collider(player, group);
 
 ---
 
-Si queremos que nos avisen si hay colisión hay que cargar un evento:
+Si queremos que nos avisen si se produce una colisión hay que incluir un _callback_:
 
 ```js
 // create
@@ -351,7 +345,7 @@ function onCollision(obj1, obj2) {
 
 ---
 
-O, más chulo, con una función anónima:
+O con una función anónima (recordad el comportamiento del `this`{.js}):
 
 ```js
 // create
@@ -366,7 +360,7 @@ this.physics.add.collider(player, group, (o1, o2) => {
 `collide()`{.js} (¡no `add.collider()`{.js}!) devuelve un booleano que indica si ha habido colisión:
 
 ```js
-// en update/preUpdate
+// en update, donde this es una Scene
 if(this.physics.collide(this.player, this.platform)) {
     textInfo.text = "Hay colisión";
 }
@@ -414,7 +408,7 @@ this.physics.add.overlap(player, group, (o1, o2) => {
 
 
 ```js
-// en update/preUpdate
+// en update donde this es una Scene
 if(this.physics.overlap(this.player, this.platform)) {
     textInfo.text = "Hay solape";
 }
@@ -427,8 +421,8 @@ if(this.physics.overlap(this.player, this.platform)) {
 Se hacen con `add.zone()`{.js}, de la escena, y luego lo añadimos a las físicas:
 
 ```js
-trigger = this.add.zone(300, 200);
-trigger.setSize(200, 200);
+// x, y, width, height
+trigger = this.add.zone(300, 200, 200, 200);
 this.physics.world.enable(trigger);
 trigger.body.setAllowGravity(false);
 trigger.body.moves = false;
