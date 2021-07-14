@@ -35,7 +35,7 @@ Si el tiempo entre frame y frame excede los 16.6 ms, el [_frame rate_](https://e
 ---
 
 
-En la pestaña "Rendering", podemos activar la opción "FPS Meter" en Chrome
+En la pestaña "Rendering", podemos activar la opción "Frame Rendering Stats" en Chrome
 
 ![Si está oculta la pestaña, la podemos mostrar](mostrar_rendering.png){width=30%}
 
@@ -137,10 +137,10 @@ A lo largo de la ejecución del programa, los depósitos de objetos pueden perma
 
 ---
 
-## Reemplazar el montículo con un *pool*
+## Reemplazar la creación constante con un *pool*
 
 
-Si creamos una entidad con `new`{.js}, como hacíamos con los _sprites_, el objeto morirá cuando lo hacen todas los objetos de JavaScript, es decir, cuando nada hace referencia a él
+Si creamos una entidad con `new`{.js}, como hacíamos con los _sprites_, el objeto morirá cuando lo hace cualquier otro objeto de JavaScript, es decir, cuando nada hace referencia a él
 
 En general, al salir del _scope_
 
@@ -157,18 +157,19 @@ La manera en que podemos destruir una entidad, es decir, eliminar todas sus refe
 ---
 
 
-Por ejemplo, el siguiente ejemplo muestra un máximo de 10 sprites en pantalla destruyendo la entidad más vieja cuando excedemos el máximo
+Por ejemplo, [el siguiente ejemplo](https://codepen.io/gjimenezucm/pen/MWmJder) muestra un máximo de 10 sprites en pantalla destruyendo la entidad más vieja cuando excedemos el máximo
 
 
 ```js
-preload() { 
-  this.load.baseURL = 'http://examples.phaser.io/assets/';
-  this.load.image('phaser', 'sprites/phaser-dude.png'); 
+function preload ()
+{
+    this.load.setBaseURL('https://labs.phaser.io/assets/');
+    this.load.image('phaser', 'sprites/phaser-dude.png');
 }
 
 update(time, delta) {    
-    var x = Math.random() * 300;
-    var y = Math.random() * 300;
+    let x = Math.random() * 300;
+    let y = Math.random() * 300;
     this.add.sprite(x, y, 'phaser');
 
     if (this.children.length > 10) {
@@ -183,27 +184,27 @@ update(time, delta) {
 
 
 
-Como veremos en breve, a veces nos interesará no destruir la entidad pero sí **dejarla inerte** de forma que no se actualice, ni se pinte, ni interactúe con nada hasta que vuelva a interesarnos
+Como veremos en breve, a veces nos interesará no destruir la entidad pero sí **dejarla inerte**, de forma que no se actualice, ni se pinte, ni interactúe con nada hasta que vuelva a interesarnos
 
 
-Para ello podemos _matar_ la entidad usando el método [`kill(gameObject)`{.js} o `killAndHide(gameObject)`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html)
+Para ello podemos usar [_Grupos_ (Group)](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group) y _matar_ una entidad usando el método `kill(gameObject)`{.js} o `killAndHide(gameObject)`{.js}
 
 ---
 
 
-Phaser considera que una entidad "asesinada"/"killed" ha dejado de existir y pone su atributo `active`{.js} a `false`{.js}
+Phaser considera que una entidad "muerta"/"killed" ha dejado de existir y pone su atributo `active`{.js} a `false`{.js}
 
 ---
 
 
 Aunque la nomenclatura resulte confusa, que una entidad "no esté activa" no significa que haya sido destruida
 
-Significa que para Phaser, esta entidad no participará en las fases de actualización y pintado
+Significa que, para Phaser, esta entidad no participará en las fases de actualización y pintado
 
 ---
 
 
-Este ejemplo mata los sprites más viejos pero no los destruye
+[Este otro ejemplo](https://codepen.io/gjimenezucm/pen/jOmyomL) mata los sprites más viejos pero no los destruye
 
 El efecto es parecido pero no igual puesto que los objetos siguen existiendo y la cantidad de memoria consumida se mantiene en aumento
 
@@ -233,26 +234,27 @@ update(time, delta) {
 ---
 
 
-Aquí, el conteo de entidades en la escena **se mantiene constante**
+Si observamos la consola:
 
-Esto no ocurre en el segundo ejemplo donde el número de entidades **no para de crecer**
+- En el primer ejemplo, el conteo de entidades en la escena **se mantiene constante**
+- En el segundo ejemplo, el número de entidades **no para de crecer**
 
 ---
 
 
-Para devolver una entidad a la existencia, según Phaser, usamos [`setActive(true)`{.js} y `setVisible(true)`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html#setActive)
+Para devolver una entidad a la existencia, según Phaser, usamos [`setActive(true)`{.js} y `setVisible(true)`{.js}](https://newdocs.phaser.io/docs/3.54.0/Phaser.GameObjects.GameObject#setActive)
 
 ---
 
 ## Grupos en Phaser
 
 
-Como ocurre con todas las entidades de Phaser, un [grupo](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html) **puede albergar otras entidades** pero además, los grupos exponen una API especialmente diseñada para la **búsqueda, ordenamiento y manipulación en grupo** de las entidades que contiene
+Como ocurre con todas las entidades de Phaser, un [grupo](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group) **puede albergar otras entidades** pero además, los grupos exponen una API especialmente diseñada para la **búsqueda, ordenamiento y manipulación en grupo** de las entidades que contiene
 
 ---
 
 
-Como creamos un grupo, pudimos utilizar el método `getFirstAlive()`{.js} que es propio de los grupos y devuelve la primera entidad cuya propiedad `alive`{.js} sea `true`{.js}
+Como pudimos ver en el ejemplo anterior, al crear un grupo pudimos utilizar el método `getFirstAlive()`{.js} que es propio de los grupos y devuelve la primera entidad cuya propiedad `active`{.js} sea `true`{.js}
 
 ---
 
@@ -260,7 +262,7 @@ Como creamos un grupo, pudimos utilizar el método `getFirstAlive()`{.js} que es
 ## API de búsqueda
 
 
-Un grupo es un contenedor. Creamos entidades y las añadimos al grupo
+Un grupo es parecido a un contenedor: creamos entidades y las añadimos al grupo
 
 
 ```js
@@ -281,8 +283,8 @@ Phaser nos da acceso a todas las entidades de un grupo:
 
 ```js
 update() {
-    // Recorremos un grupo (en este caso, World)
-    this.group.children.iterate(item => {
+    // Recorremos un grupo 
+    this.enemies.children.iterate(item => {
       item.x ++;
     });
 }
@@ -294,13 +296,13 @@ update() {
 Además, nos permite preguntar al grupo ciertas cosas:
 
 ```js
-var e = new Martian("m");
-var g = scene.add.group();
-g.add(e);
+let e = new Martian("m");
+let enemies = scene.add.group();
+enemies.add(e);
 
-var yesNo = g.contains(e); // si el grupo contiene una entidad
-var d = g.countActive(false); // el número de "muertos"
-g.remove(e2); // quitamos un elemento del grupo
+let yesNo = enemies.contains(e); // si el grupo contiene una entidad
+let d = enemies.countActive(false); // el número de "muertos"
+enemies.remove(e); // quitamos un elemento del grupo
 ```
 
 <!-- 
@@ -340,7 +342,7 @@ Por ejemplo, podríamos querer eliminar todos los bloques de hielo en un nivel, 
 
 ```js
 
-var g = scene.add.group();
+let g = scene.add.group();
 
 // También existe 'forAllAlive', que sólo itera sobre los que están vivos
 g.iterate(function(item) {
@@ -373,13 +375,14 @@ También recibe la lista de entidades que se van a reciclar:
 
 ```js
 // En la pestaña create, antes de la función create()
-function Pool(scene, entities) {
-   this._group = scene.add.group();
-   this._group.addMultiple(entities);
-   this._group.children.iterate(c => {
-       c.setAlive(false);
-       c.setVisible(false);
-    });
+class Pool {
+    constructor (scene, entities) {
+       this._group = scene.add.group();
+       this._group.addMultiple(entities);
+       this._group.children.iterate(c => {
+            c.setActive(false);
+            c.setVisible(false);
+        });
 }
 ```
 
@@ -393,13 +396,13 @@ Recuperamos una entidad del _pool_ utilizando el método `spawn()`{.js} que reci
 
 
 ```js
-// A continuación de la función Pool
-Pool.prototype.spawn = function (x, y) {
-    var entity = this._group.getFirstDead();
+// A continuación del constructor
+spawn (x, y) {
+    let entity = this._group.getFirstDead();
     if (entity) {
       entity.x = x;
       entity.y = y;
-      entity.setAlive(true);
+      entity.setActive(true);
       entity.setVisible(true);
     }
     return entity;
@@ -411,15 +414,35 @@ Pool.prototype.spawn = function (x, y) {
 
 ### Devolución de una entidad
 
-Devolver una entidad requiere llamar a los método `setAlive(false)`{.js} y `setVisible(false)`{.js} sobre esa entidad
+Devolver una entidad requiere llamar a los método `setActive(false)`{.js} y `setVisible(false)`{.js} sobre esa entidad
 
 
 ```js
-// Supón que no necesitamos más entity
+// Estamos en la escena
+let c = this.pool.spawn(x,y);
+// ...
+// Supón que no necesitamos más c
 c.setActive(false);
 c.setVisible(false);
 
 ```
+
+---
+
+O podemos añadir un método para pedir al pool que libere una entidad
+
+```js
+// A continuación del spawn
+release (entity) {
+    this._group.killAndHide(entity);
+}
+```
+
+---
+
+Podéis encontrar un ejemplo completo que usa _pooling_ en el siguiente enlace:
+
+<https://codepen.io/gjimenezucm/pen/OJmWYGg>
 <!-- 
 ---
 

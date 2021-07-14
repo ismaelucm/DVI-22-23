@@ -151,7 +151,7 @@ Al iniciar, se crea una cámara, a la que podemos acceder a través del atributo
 
 ```js
 // en el método create, donde this es una Scene
-var card = this.add.sprite(200, 200, 'card');
+let card = this.add.sprite(200, 200, 'card');
 this.cameras.main.startFollow(card...);
 ```
 

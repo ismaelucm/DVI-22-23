@@ -161,7 +161,7 @@ Creamos una función auxiliar y cargamos la fuente:
 
 ```js
 loadFont(name, url) {
-    var newFont = new FontFace(name, `url(${url})`);
+    let newFont = new FontFace(name, `url(${url})`);
     newFont.load().then(function (loaded) {
         document.fonts.add(loaded);
     }).catch(function (error) {
@@ -170,7 +170,8 @@ loadFont(name, url) {
 }
 
 preload() {
-    // Descargar fuente de https://www.dafont.com/es/happy-donuts.font
+    // Archivo .ttf descargable desde
+    // https://www.dafont.com/es/happy-donuts.font
     this.loadFont("Donuts", "/assets/fonts/HAPPY_DONUTS.ttf");
 }
 ```

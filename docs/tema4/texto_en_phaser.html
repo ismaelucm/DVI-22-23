@@ -214,7 +214,7 @@
 
 <p>Creamos una función auxiliar y cargamos la fuente:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">loadFont</span>(name<span class="op">,</span> url) {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> newFont <span class="op">=</span> <span class="kw">new</span> <span class="bu">FontFace</span>(name<span class="op">,</span> <span class="vs">`url(</span><span class="sc">${</span>url<span class="sc">}</span><span class="vs">)`</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> newFont <span class="op">=</span> <span class="kw">new</span> <span class="bu">FontFace</span>(name<span class="op">,</span> <span class="vs">`url(</span><span class="sc">${</span>url<span class="sc">}</span><span class="vs">)`</span>)<span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    newFont<span class="op">.</span><span class="fu">load</span>()<span class="op">.</span><span class="fu">then</span>(<span class="kw">function</span> (loaded) {</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">document</span><span class="op">.</span><span class="at">fonts</span><span class="op">.</span><span class="fu">add</span>(loaded)<span class="op">;</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    })<span class="op">.</span><span class="fu">catch</span>(<span class="kw">function</span> (error) {</span>
@@ -223,9 +223,10 @@
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>() {</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Descargar fuente de https://www.dafont.com/es/happy-donuts.font</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">loadFont</span>(<span class="st">&quot;Donuts&quot;</span><span class="op">,</span> <span class="st">&quot;/assets/fonts/HAPPY_DONUTS.ttf&quot;</span>)<span class="op">;</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Archivo .ttf descargable desde</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// https://www.dafont.com/es/happy-donuts.font</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">loadFont</span>(<span class="st">&quot;Donuts&quot;</span><span class="op">,</span> <span class="st">&quot;/assets/fonts/HAPPY_DONUTS.ttf&quot;</span>)<span class="op">;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
