@@ -99,7 +99,7 @@
 </section>
 <section id="qué-es-un-tile" class="slide level2">
 <h2>Qué es un tile</h2>
-<p>Un <em>tile</em> (o baldosa) es un imagen, generalmente cuadrada, y generalmente de tamaño fijo, que se usa para dibujar un elemento en un videojuego</p>
+<p>Un <em>tile</em> (o baldosa) es un imagen, generalmente cuadrada y, generalmente, de tamaño fijo, que se usa para dibujar un elemento en un videojuego</p>
 </section>
 <section class="slide level2">
 
@@ -107,7 +107,7 @@
 </section>
 <section class="slide level2">
 
-<p>Los tiles pueden ser usados para dibujar (por ejemplo, el mapa o el fondo), y también <em>para la lógica del juego</em> (como en los <a href="https://es.wikipedia.org/wiki/Roguelike">roguelikes</a>)</p>
+<p>Los tiles pueden ser usados para dibujar (por ejemplo, el mapa o el fondo) y también <em>para la lógica del juego</em> (como en los <a href="https://es.wikipedia.org/wiki/Roguelike">roguelikes</a>)</p>
 </section>
 <section class="slide level2">
 
@@ -142,7 +142,7 @@
 <ul>
 <li>su tamaño (ancho y alto)</li>
 <li>el tamaño de las casillas (tiles)</li>
-<li>qué imagen va en cada casilla</li>
+<li>qué tile o imagen va en cada casilla</li>
 </ul></li>
 <li>una hoja de sprites con todos los tiles disponibles juntos</li>
 </ul>
@@ -420,7 +420,7 @@
 <section id="crear-las-diferentes-capas" class="slide level2">
 <h2>Crear las diferentes capas</h2>
 <p>Como hemos visto, en el editor de tiles podemos crear diferentes capas o <em>layers</em></p>
-<p>Las capas tienen entidad única, y se pueden manejar independientemente (por ejemplo, para colisiones)</p>
+<p>Las capas tienen entidad única y se pueden manejar independientemente (por ejemplo, para colisiones)</p>
 </section>
 <section class="slide level2">
 
@@ -459,10 +459,10 @@
 
 <p>Lo haremos con <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tilemaps.Tilemap.html#createFromObjects__anchor"><code class="sourceCode javascript">createFromObjects</code></a>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// con el ID de objeto</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>conId1 <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjotesEnTiled&#39;</span><span class="op">,</span> {<span class="dt">gid</span><span class="op">:</span> <span class="dv">1</span>})</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>conId1 <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjetosEnTiled&#39;</span><span class="op">,</span> {<span class="dt">gid</span><span class="op">:</span> <span class="dv">1</span>})</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">// o con el nombre del objeto (`name` en Tiled)</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>players <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjotesEnTiled&#39;</span><span class="op">,</span> {<span class="dt">name</span><span class="op">:</span> <span class="st">&#39;player&#39;</span>})</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>players <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjetosEnTiled&#39;</span><span class="op">,</span> {<span class="dt">name</span><span class="op">:</span> <span class="st">&#39;player&#39;</span>})</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">// cambiar las propiedades de player después</span></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>players<span class="op">.</span><span class="fu">map</span>(p <span class="kw">=&gt;</span> p<span class="op">.</span><span class="at">vida</span> <span class="op">=</span> <span class="dv">10</span>)</span></code></pre></div>
@@ -513,7 +513,7 @@
 <section class="slide level2">
 
 <p>Una función para cargar:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cargar</span>(mapa<span class="op">,</span> capa<span class="op">,</span> tipo<span class="op">,</span> cb) {</span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cargar</span>(mapa<span class="op">,</span> capa<span class="op">,</span> tipo<span class="op">,</span> callback) {</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> objetos <span class="op">=</span> mapa<span class="op">.</span><span class="fu">getObjectLayer</span>(capa)<span class="op">.</span><span class="at">objects</span><span class="op">.</span><span class="fu">filter</span>(x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="at">type</span> <span class="op">===</span> tipo)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> objetos) {</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> props <span class="op">=</span> {}</span>
@@ -522,7 +522,7 @@
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        props[name] <span class="op">=</span> value</span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>      }</span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cb</span>({ <span class="dt">x</span><span class="op">:</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> objeto<span class="op">.</span><span class="at">y</span><span class="op">,</span> props })</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">callback</span>({ <span class="dt">x</span><span class="op">:</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> objeto<span class="op">.</span><span class="at">y</span><span class="op">,</span> props })</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
@@ -563,7 +563,7 @@
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">autoCenter</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Scale</span><span class="op">.</span><span class="at">CENTER_BOTH</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p><small>Cambiando <code class="sourceCode javascript">width</code> y <code class="sourceCode javascript">height</code>, y el tamaño del canvas, se ajusta el tamaño del juego</small></p>
+<p><small>Cambiando <code class="sourceCode javascript">width</code> y <code class="sourceCode javascript">height</code> y el tamaño del canvas, se ajusta el tamaño del juego</small></p>
 </section>
 <section class="slide level2">
 
@@ -577,7 +577,7 @@
 </section>
 <section class="slide level2">
 
-<p>Afortunadamente, Phaser sabe que adoramos el arte píxel:</p>
+<p>Afortunadamente, Phaser sabe que adoramos el pixelart:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pixelArt</span><span class="op">:</span> <span class="kw">true</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
@@ -585,7 +585,7 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="pixel.png" style="width:40.0%" alt="Filtro de escalado para arte píxel" /><figcaption aria-hidden="true">Filtro de escalado para arte píxel</figcaption>
+<img data-src="pixel.png" style="width:40.0%" alt="Filtro de escalado para pixelart" /><figcaption aria-hidden="true">Filtro de escalado para pixelart</figcaption>
 </figure>
 </section></section>
 <section>
@@ -599,7 +599,7 @@
 </section>
 <section id="colisión-por-propiedades" class="slide level2">
 <h2>Colisión por propiedades</h2>
-<p>Por ejemplo, dada una capa (<code class="sourceCode javascript">layer</code>), podemos hacer que todos aquellos tiles que tengas cierta propiedad, colisionen:</p>
+<p>Por ejemplo, dada una capa (<code class="sourceCode javascript">layer</code>), podemos hacer que todos aquellos tiles que tengan cierta propiedad, colisionen:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>suelo<span class="op">.</span><span class="fu">setCollisionByProperty</span>({ <span class="dt">colisiona</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="colisión-por-inclusión" class="slide level2">

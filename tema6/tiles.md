@@ -9,7 +9,7 @@ title: Mapas en Phaser con Tiled
 
 ## Qué es un tile
 
-Un *tile* (o baldosa) es un imagen, generalmente cuadrada, y generalmente de tamaño fijo, que se usa para dibujar un elemento en un videojuego
+Un *tile* (o baldosa) es un imagen, generalmente cuadrada y, generalmente, de tamaño fijo, que se usa para dibujar un elemento en un videojuego
 
 ---
 
@@ -18,7 +18,7 @@ Los tiles simplifican el desarrollo, ya que hacen que el mundo se considere **un
 
 ---
 
-Los tiles pueden ser usados para dibujar (por ejemplo, el mapa o el fondo), y también *para la lógica del juego* (como en los [roguelikes](https://es.wikipedia.org/wiki/Roguelike))
+Los tiles pueden ser usados para dibujar (por ejemplo, el mapa o el fondo) y también *para la lógica del juego* (como en los [roguelikes](https://es.wikipedia.org/wiki/Roguelike))
 
 ---
 
@@ -66,7 +66,7 @@ Normalmente necesitamos está compuesto por:
 - un fichero de datos con la definición del tile map
     - su tamaño (ancho y alto)
     - el tamaño de las casillas (tiles)
-    - qué imagen va en cada casilla
+    - qué tile o imagen va en cada casilla
 - una hoja de sprites con todos los tiles disponibles juntos 
 
 
@@ -419,7 +419,7 @@ const tileset2 = this.map.addTilesetImage('patronesFondo', 'idImagen2');
 
 Como hemos visto, en el editor de tiles podemos crear diferentes capas o *layers*
 
-Las capas tienen entidad única, y se pueden manejar independientemente (por ejemplo, para colisiones)
+Las capas tienen entidad única y se pueden manejar independientemente (por ejemplo, para colisiones)
 
 ---
 
@@ -463,10 +463,10 @@ Lo haremos con [`createFromObjects`{.js}](https://photonstorm.github.io/phaser3-
 
 ```js
 // con el ID de objeto
-conId1 = map.createFromObjects('nombreDeCapaObjotesEnTiled', {gid: 1})
+conId1 = map.createFromObjects('nombreDeCapaObjetosEnTiled', {gid: 1})
 
 // o con el nombre del objeto (`name` en Tiled)
-players = map.createFromObjects('nombreDeCapaObjotesEnTiled', {name: 'player'})
+players = map.createFromObjects('nombreDeCapaObjetosEnTiled', {name: 'player'})
 
 // cambiar las propiedades de player después
 players.map(p => p.vida = 10)
@@ -536,7 +536,7 @@ for (const objeto of scene.mapa.getObjectLayer('capaObjetos').objects) {
 Una función para cargar:
 
 ```js
-function cargar(mapa, capa, tipo, cb) {
+function cargar(mapa, capa, tipo, callback) {
   const objetos = mapa.getObjectLayer(capa).objects.filter(x => x.type === tipo)
   for (const objeto of objetos) {
     const props = {}
@@ -545,7 +545,7 @@ function cargar(mapa, capa, tipo, cb) {
         props[name] = value
       }
     }
-    cb({ x: objeto.x, y: objeto.y, props })
+    callback({ x: objeto.x, y: objeto.y, props })
   }
 }
 ```
@@ -605,7 +605,7 @@ const config = {
 }
 ```
 
-<small>Cambiando `width`{.js} y `height`{.js}, y el tamaño del canvas, se ajusta el tamaño del juego</small>
+<small>Cambiando `width`{.js} y `height`{.js} y el tamaño del canvas, se ajusta el tamaño del juego</small>
 
 ---
 
@@ -620,7 +620,7 @@ Pero este escalado hará que los bordes de los píxeles pequeños, al agrandar, 
 
 ---
 
-Afortunadamente, Phaser sabe que adoramos el arte píxel:
+Afortunadamente, Phaser sabe que adoramos el pixelart:
 
 ```js
 const config = {
@@ -630,7 +630,7 @@ const config = {
 
 ---
 
-![Filtro de escalado para arte píxel](pixel.png){width=40%}
+![Filtro de escalado para pixelart](pixel.png){width=40%}
 
 
 
@@ -651,7 +651,7 @@ Una parte importante, una vez que tenemos el mapa, es que los tiles tengan *prop
 
 ## Colisión por propiedades
 
-Por ejemplo, dada una capa (`layer`{.js}), podemos hacer que todos aquellos tiles que tengas cierta propiedad, colisionen:
+Por ejemplo, dada una capa (`layer`{.js}), podemos hacer que todos aquellos tiles que tengan cierta propiedad, colisionen:
 
 ```js
 suelo.setCollisionByProperty({ colisiona: true });
