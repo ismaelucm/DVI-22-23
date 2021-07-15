@@ -363,7 +363,7 @@ let compuesto = Phaser.Physics.Matter.Matter.Body.create({
 Una vez que tenemos un cuerpo físico, se lo podemos asignar a una imagen:
 
 ```js
-this.jugador = this.matter.add.image(0, 0, 'imagen');
+this.player = this.matter.add.image(0, 0, 'imagen');
 // hemos creado `compuesto` antes
 this.player.setExistingBody(compuesto);
 ```
