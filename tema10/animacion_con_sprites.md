@@ -35,9 +35,7 @@ Alma en latín se dice `anima`
 
 ---
 
-[Eadweard Muybridge](https://en.wikipedia.org/wiki/Eadweard_Muybridge) diseñó un sistema de fotografía en el que, haciendo muchas fotos seguidas con una cámara fija, conseguía que el ojo human no pudiera distinguir los fotogramas como imágenes separadas
-
-Sino como *movimiento*
+[Eadweard Muybridge](https://en.wikipedia.org/wiki/Eadweard_Muybridge) diseñó un sistema de fotografía en el que, haciendo muchas fotos seguidas con una cámara fija, conseguía que el ojo human no pudiera distinguir los fotogramas como imágenes separadas *sino como movimiento*
 
 ---
 
@@ -385,14 +383,18 @@ Phaser permite animar mediante secuencias de frames y ciclos
 
 ## Cargar un spritesheet
 
-Con [`spritesheet`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html):
-
+Con [`spritesheet`{.js}](https://newdocs.phaser.io/docs/3.54.0/Phaser.Loader.LoaderPlugin#spritesheet):
 
 
 ```js
+// En el preload
 this.load.spritesheet('mummy',
                       'mummy.animated.png',
                       { frameWidth: 64, frameHeight: 64 });
+```
+
+```js
+// En el create
 this.add.sprite(200, 360, 'mummy'); 
 ```
 
@@ -400,15 +402,16 @@ this.add.sprite(200, 360, 'mummy');
 
 ## Establecer un ciclo de animación
 
-Se pueden modificar las propiedades de la animación con [`AnimationManager`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.AnimationManager.html)
+Se pueden crear ciclos de animación con el [`AnimationManager`{.js}](https://newdocs.phaser.io/docs/3.54.0/Phaser.Animations.AnimationManager)
 
 ```js
-// Como 'mummy' es un `spritesheet`, puede identificar los frames
+// Como 'mummy' es un spritesheet, puede identificar los frames
+// this es Scene
 this.anims.create({
       key: 'standing_mummy',
       frames: this.anims.generateFrameNumbers('mummy', { start: 0, end: 5 }),
-      frameRate: 2,
-      repeat: -1
+      frameRate: 2, // Velocidad de la animación
+      repeat: -1    // Animación en bucle
     });
 ```
 
@@ -421,7 +424,7 @@ this.anims.create({
 Con `play()`{.js} se ejecuta una animación:
 
 ```js
-// `this` es un `Sprite`en la misma escena
+// `this` es un `Sprite` en la misma escena
 // que se ha creado la animación
 this.play('standing_mummy');
 ```
@@ -443,7 +446,7 @@ this.stop();
 
 ---
 
-Es posible hacer "callbacks" para ser informados de cuándo una animación se pone en marcha o se detiene:
+Es posible hacer "callbacks" para ser informados de cuándo una animación se pone en marcha o se detiene [usando los eventos de animación](https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.Events.ANIMATION_REPEAT):
 
 
 ```js
@@ -508,10 +511,14 @@ Los atlas pueden ser de imágenes del mismo tamaño, o de tamaños diferentes
 
 Si son de tamaños diferentes, hay que adjuntar información sobre qué área de la textura corresponde a cada imagen
 
+<https://labs.phaser.io/assets/animations/seacreatures_json.png>
+
+<https://labs.phaser.io/assets/animations/seacreatures_json.json>
+
 
 ---
 
-Para cargar un atlas en Phaser, le damos un *identificador*, un *archivo* con la textura, y un *JSON* con la información de cómo está dividida la textura:
+Para cargar un atlas en Phaser, le damos un *identificador*, un *archivo* con la textura, y un *JSON* con la información de cómo está dividida la textura. 
 
 ```js
 this.load.atlas('cosas', 'cosas.png', 'cosas.json');
@@ -542,5 +549,5 @@ Hay una aplicación web que permite la creación de atlas para Phaser:
 Es importante, al exportar el JSON, añadir el prefijo `prefijo_en_json`{.js}, que se puede sacar del JSON generado (en `filename`, y quitando los números):
 
 ```js
-this.anims.generateFrameNames('cosas', {prefix:'prefijo_en_json'}),
+this.anims.generateFrameNames('cosas', {prefix:'prefijo_en_json'})
 ```
