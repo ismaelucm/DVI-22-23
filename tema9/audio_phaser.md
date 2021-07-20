@@ -125,7 +125,7 @@ Los navegadores no nos permiten empezar a reproducir audio **si no es por un eve
 
 ---
 
-Así que antes de poder reproducir, tendremos que haber hecho clic (por ejemplo) un un botón de nuestro juego
+Así que antes de poder reproducir, tendremos que haber hecho clic (por ejemplo) en un botón de nuestro juego
 
 ---
 
@@ -202,13 +202,15 @@ En general, no son necesarios hoy en día (aunque pueden hacer más eficiente la
 
 ---
 
-- Podéis usar los recursos de audio de Phaser (los **assets**)
+- Recursos de audio de Phaser (los **assets**)
 - [Free sound](https://www.freesound.org/)
-- [Free SFX](http://www.freesfx.co.uk/)
+- [SoundBible](https://soundbible.com/)
+- [Newgrounds Audio](https://www.newgrounds.com/audio)
+- [Free Music Archive](https://freemusicarchive.org/home)
 - Generadores
   - [jsfxr](https://sfxr.me/)
-  - [Bfxr](http://www.bfxr.net/)
-  - [Chiptone](http://sfbgames.com/chiptone/)
-  - [as3sfxr](http://www.superflashbros.net/as3sfxr/)
+  - [Chiptone](https://sfbgames.itch.io/chiptone)
   - [sfxr](http://www.drpetter.se/project_sfxr.html)
+  - [ZzFXM](https://keithclark.github.io/ZzFXM/)
+  - [Abundant-music](https://pernyblom.github.io/abundant-music/index.html)
 - _Cualquier DAW (Digital Audio Workstation) con un buen sinte_

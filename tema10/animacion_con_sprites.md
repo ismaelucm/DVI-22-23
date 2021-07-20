@@ -540,9 +540,11 @@ this.add.sprite(400, 300, 'cosas');
 
 ---
 
-Hay una aplicación web que permite la creación de atlas para Phaser:
+Hay aplicaciones web que permiten la creación de atlas para Phaser:
 
 <https://gammafp.github.io/atlas-packer-phaser/>
+
+<https://free-tex-packer.com/app/>
 
 ---
 

@@ -107,8 +107,9 @@ Es decir, más **números**
 
 ---
 
-Cuando la precisión es muy grande, el archivo de audio puede tener un tamaño de
-varias decenas de megas para una canción de 2 o 3 minutos
+Cuando la precisión es muy grande, el archivo de audio puede tener un tamaño de varias decenas de megas para una canción de 2 o 3 minutos
+
+Esto ocurre con formatos como **WAV o AIFF* (sin compresión)
 
 Por tanto, usamos **compresión**
 
@@ -116,10 +117,8 @@ Por tanto, usamos **compresión**
 
 Cuando usamos compresión, tenemos dos familias de formatos:
 
-- formatos sin pérdida: el audio, al comprimir y descomprimir, no pierde datos
-- formatos con pérdida: el audio, al ser comprimido, pierde fidelidad. Pero,
-  generalmente, esta pérdida no se nota por el oyente, y la compresión es mucho
-  mayor (MP3)
+- formatos sin pérdida: el audio, al comprimir y descomprimir, no pierde datos (FLAC)
+- formatos con pérdida: el audio, al ser comprimido, pierde fidelidad. Pero, generalmente, esta pérdida no se nota por el oyente, y la compresión es mucho mayor (MP3)
 
 ---
 
@@ -183,11 +182,11 @@ Los sonidos se lanzan y se espera que estén perfectamente **sincronizados** con
 
 ---
 
-Es muy normal que, como recursos, los archivos de audio estén en formatos sin compresión y sean cortos
+Es muy normal que, como recursos, los sonidos estén en archivos de audio  en formatos sin compresión y sean cortos
 
 ---
 
-La música, normalmente, está codificada como pistas. De la misma forma que solemos escucharla en reproductores modernos ([MP3](https://es.wikipedia.org/wiki/MP3), [OGG](https://es.wikipedia.org/wiki/Ogg))
+La música, normalmente, está codificada como pistas, de la misma forma que solemos escucharla en reproductores modernos ([MP3](https://es.wikipedia.org/wiki/MP3), [OGG](https://es.wikipedia.org/wiki/Ogg))
 
 
 

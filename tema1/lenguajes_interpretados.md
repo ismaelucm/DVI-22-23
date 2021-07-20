@@ -152,8 +152,8 @@ JavaScript hoy en día se usa para:
 
 - Videojuegos (Phaser)
 - IDEs (Construct, VSCode)
-- Gmail
-- Google Calendar
+- Gmail, Calendar...
+- Herramientas online: [Bitsy](https://ledoux.itch.io/bitsy), [Piskel](https://www.piskelapp.com/p/create/sprite), [Chiptone](https://sfbgames.itch.io/chiptone), [Spritesheet Packer](https://www.codeandweb.com/free-sprite-sheet-packer)...
 - Facebook, Instagram
 - Scripting
 - *Servidores*
