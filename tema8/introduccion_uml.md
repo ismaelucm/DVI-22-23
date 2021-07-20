@@ -101,7 +101,7 @@ En UML, la herencia se representa con una flecha *hueca*, **desde el hijo hasta 
 
 Se puede reflejar la idea de implementación de una interfaz 
 
-In interfaz es un conjunto de funciones no implementadas que representan un comportamiento que puede ser especificado en cada clase
+Una interfaz es un conjunto de funciones no implementadas que representan un comportamiento que puede ser especificado en cada clase
 
 ---
 

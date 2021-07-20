@@ -376,7 +376,7 @@ Usar *mixins* no representa *especialización* (*es-un*)
 
 ---
 
-En como una *interfaz* (generalmente una clase puede incluir varios *mixins*), pero sí que tiene código
+Es como una *interfaz* (generalmente una clase puede incluir varios *mixins*), pero sí que tiene código
 
 
 --- 
