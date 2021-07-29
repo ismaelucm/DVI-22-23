@@ -84,9 +84,8 @@ Y crear las estructuras necesarias para cargar el script a ejecutar desde C++ y 
 Conseguir que el código JavaScript ejecutado pueda manejar objetos de C++ o que C++ pueda manejar objetos de JavaScript es algo más complicado, pero posible
 
 
----
 
-## Scripting con JavaScript en Tiled
+# Scripting con JavaScript en Tiled
 
 ---
 
@@ -186,7 +185,7 @@ Necesita un interprete que debemos instalar en el sistema para poder usarlo (sim
 
 Actualmente el uso de Python se ha extendido enormemente, no sólo como lenguaje de propósito general, si no como lenguaje de *scripting de propósito general*
 
-Es relativamente fácil usar Phyton en de una aplicación en otro lenguaje (típicamente C/C++) por lo que se ha usado como lenguaje de scripting en muchas aplicaciones
+Es relativamente fácil usar Python en de una aplicación en otro lenguaje (típicamente C/C++) por lo que se ha usado como lenguaje de scripting en muchas aplicaciones
 
 [Python en una aplicación](https://docs.python.org/3/extending/embedding.html)
 
@@ -196,15 +195,15 @@ Es relativamente fácil usar Phyton en de una aplicación en otro lenguaje (típ
 
 Blender es una herramienta de código libre para crear y renderizar objetos 3D
 
-Blender utiliza Phyton como lenguaje de extensión de su herramienta. Con Python se pueden crear macros y extender la funcionalidad de Blender
+Blender utiliza Python como lenguaje de extensión de su herramienta. Con Python se pueden crear macros y extender la funcionalidad de Blender
 
-[Phyton en Blender](https://docs.blender.org/manual/en/latest/advanced/scripting/introduction.html)
+[Python en Blender](https://docs.blender.org/manual/en/latest/advanced/scripting/introduction.html)
 
 ---
 
-Internamente Blender utiliza Phyton para crear su interfaz y algunas de sus herramientas internas
+Internamente Blender utiliza Python para crear su interfaz y algunas de sus herramientas internas
 
-Aunque Blender está escrito en C/C++ usa Phyton como lenguaje de scripting para facilitar la creación de macros y add-ons por parte de los usuarios
+Aunque Blender está escrito en C/C++ usa Python como lenguaje de scripting para facilitar la creación de macros y add-ons por parte de los usuarios
 
 ## Lua
 
@@ -216,7 +215,7 @@ Es relativamente rápido, y es muy fácil conectarlo con en motor en C/C++
 
 Lua fue expresamente diseñado para ser usado como lenguaje de scripting en otros lenguajes
 
-Hay una gran [lista de juegos que han utilizado Lua como lenguaje de scripting](https://en.wikipedia.org/wiki/Category:Lua-scripted_video_games)
+Hay una gran [lista de juegos que han utilizado Lua como lenguaje de scripting](https://en.wikipedia.org/wiki/Category:Lua_%28programming_language%29-scripted_video_games)
 
 ---
 

@@ -417,6 +417,8 @@ const tileset2 = this.map.addTilesetImage('patronesFondo', 'idImagen2');
 
 ## Crear las diferentes capas
 
+Por último, es necesario crear las capas para que el mapa se visualice.
+
 Como hemos visto, en el editor de tiles podemos crear diferentes capas o *layers*
 
 Las capas tienen entidad única y se pueden manejar independientemente (por ejemplo, para colisiones)
@@ -446,6 +448,8 @@ this.foreground =
 ---
 
 ## Capas de objetos
+
+---
 
 Además de los tiles que forman el escenario, también podemos poner a nuestros personajes en Tiled
 

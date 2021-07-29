@@ -38,6 +38,18 @@ text.setFill('#43d637');
 text.setShadow(5, 5, 'rgba(0,0,0,0.5)', 5);
 ```
 
+---
+
+## Texto en UI
+
+Muchas veces, el texto se utiliza como parte de la UI del juego (puntuación, vidas...)
+
+Pero el texto creado tal cual lo hemos hecho tiene una posición en la escena y, por tanto, se queda fijo al mover la cámara.
+
+---
+
+**Solución**: Recordad que algunos GameObject tienen un método [`SetScrollFactor`](https://newdocs.phaser.io/docs/3.52.0/Phaser.GameObjects.Sprite#setScrollFactor) que controla el movimiento de un objeto con respecto al de la cámara
+
 
 
 
