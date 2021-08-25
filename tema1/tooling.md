@@ -275,7 +275,7 @@ $ npm install -g npx
 También podemos arrancar un servidor web por defecto en Python:
 
 ```bash
-➜ python -m http.server
+$ python -m http.server
 Serving HTTP on 0.0.0.0 port 8000 ...
 ```
 

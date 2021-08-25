@@ -23,7 +23,7 @@ Pueden convertirse en objetos interactuables (`setInteractive(value)`{.js})
 
 ---
 
-No crearemos objetos de este tipo pero muchas de las entidades de Phaser heredan de [`GameObject`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html)
+No crearemos objetos de este tipo pero muchas de las entidades de Phaser heredan de [`GameObject`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject)
 
 A continuación veremos algunas de las entidades más importantes de Phaser
 
@@ -31,7 +31,7 @@ A continuación veremos algunas de las entidades más importantes de Phaser
 
 
 
-# Entidades [`Image`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html)
+# Entidades [`Image`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Image)
 
 ---
 
@@ -53,7 +53,7 @@ Esto las hace ideales para, por ejemplo, logos, imágenes de fondo, barras de ca
 
 ---
 
-Una imagen se crea a través del método factoría [`add.image`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html) del objeto `Scene`{.js}
+Una imagen se crea a través del método factoría [`add.image`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObjectFactory) del objeto `Scene`{.js}
 
 Por ejemplo, como parte de la creación de una escena en el método `create`{.js}
 
@@ -77,9 +77,9 @@ Las imágenes tienen por defecto el punto de origen (o pivote) en el centro de l
 
 Las imágenes renderizan texturas de acuerdo a su posición (x,y)  y pivote.
 
-Podemos cambiar su posición con [`setPosition`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html#setOrigin__anchor)
+Podemos cambiar su posición con [`setPosition`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Image#setPosition)
 
-Podemos cambiar el pivote de la imagen con [`setOrigin`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html#setOrigin__anchor) (en [0,1])
+Podemos cambiar el pivote de la imagen con [`setOrigin`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Image#setOrigin) (en [0,1])
 
 ---
 
@@ -121,14 +121,14 @@ function update() {
 ```
 
 
-# La escena ([`Scene`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html))
+# La escena ([`Scene`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene))
 
 ---
 
 En Phaser, la factoría de objetos se llama añadir (`add`{.js}) por una razón: **porque añadimos las nuevas entidades a la escena**
 
 
-Para Phaser, la escena, representado por la clase [`Scene`](https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html), es la **abstracción del lugar (un plano bidimensional) donde habitan las entidades**
+Para Phaser, la escena, representado por la clase [`Scene`](https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene), es la **abstracción del lugar (un plano bidimensional) donde habitan las entidades**
 
 ---
 
@@ -137,7 +137,7 @@ Para Phaser, la escena, representado por la clase [`Scene`](https://photonstorm.
 ---
 
 
-Miramos al mundo a través de [cámaras](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html)
+Miramos al mundo a través de [cámaras](https://newdocs.phaser.io/docs/3.55.2/Phaser.Cameras.Scene2D.Camera)
 
 ---
 
@@ -147,7 +147,7 @@ Miramos al mundo a través de [cámaras](https://photonstorm.github.io/phaser3-d
 ---
 
 
-Al iniciar, se crea una cámara, a la que podemos acceder a través del atributo [`cameras.main`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html) de la escena:
+Al iniciar, se crea una cámara, a la que podemos acceder a través del atributo [`cameras.main`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene#cameras) de la escena:
 
 ```js
 // en el método create, donde this es una Scene
@@ -180,7 +180,7 @@ this.scene.start('siguiente_escena', { monedas: 9 })
 
 ---
 
-Este objeto le llegará a la siguiente escena a través del método `init`{.js}, al que Phaser llama automáticamente:
+Este objeto le llegará a la siguiente escena a través del método `init`{.js}, al que Phaser llama automáticamente antes de los métodos `preload`{.js} y `create`{.js}:
 
 ```js
 class SiguienteEscena extends Phaser.Scene {
@@ -209,19 +209,19 @@ class SiguienteEscena extends Phaser.Scene {
 
 
 
-# Entidades [`Sprite`](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html)
+# Entidades [`Sprite`](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite)
 
 ---
 
 La mayoría de las entidades visibles de un juego incorporan alguna animación y comportamiento
 
-La clase [`Sprite`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html) representa estas "entidades animadas" y es el componente principal de los juegos con Phaser
+La clase [`Sprite`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite) representa estas "entidades animadas" y es el componente principal de los juegos con Phaser
 
 
 ---
 
 
-Aunque podamos añadir _sprites_ al mundo utilizando el método factoría [`add.sprite`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html), el sprite por defecto es tan simple que no se suele utilizar salvo en ocasiones donde no se requiere un comportamiento complejo
+Aunque podamos añadir _sprites_ al mundo utilizando el método factoría `add.sprite`{.js}, el sprite por defecto es tan simple que no se suele utilizar salvo en ocasiones donde no se requiere un comportamiento complejo
 
 ```js
 // En el método create, this es una Scene
@@ -252,7 +252,7 @@ Por ello, en lugar de usar instancias de las clase `Sprite`{.js}, es mejor que c
 ---
 
 
-Para ello, nuestras clases _sprite_ deben heredar de [`Phaser.GameObjects.Sprite`](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html)
+Para ello, nuestras clases _sprite_ deben heredar de [`Phaser.GameObjects.Sprite`](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite)
 
 ---
 
@@ -358,7 +358,7 @@ Recuerda que las transformaciones se ven afectadas por la posición del pivote.
 ## Posicionamiento
 
 
-Para alterar la posición de una entidad, recurrimos a los atributos [`x`{.js} e `y`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html)
+Para alterar la posición de una entidad, recurrimos a los atributos [`x`{.js} e `y`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite)
 
 ---
 
@@ -385,9 +385,9 @@ class Martian extends Phaser.GameObjects.Sprite {
 ## Rotación
 
 
-`angle`{.js} controla la rotación de un `Sprite`{.js}, en grados ($[-180...180]$)
+[`angle`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite#angle) controla la rotación de un `Sprite`{.js}, en grados ($[-180...180]$)
 
-También existe `rotation`{.js}, para hacer la rotación de radianes y es ligeramente más rápido
+También existe [`rotation`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite#rotation), para hacer la rotación de radianes y es ligeramente más rápido
 
 ---
 
@@ -471,7 +471,7 @@ Un "hijo" es otra entidad cuyas propiedades van unidas y son relativas a las del
 
 ---
 
-En Phaser 3 vamos a usar los [`Container`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html), que son `GameObjects`{.js} que pueden contener otros objetos
+En Phaser 3 vamos a usar los [`Container`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Container), que son `GameObjects`{.js} que pueden contener otros objetos
 
 ---
 

@@ -152,7 +152,7 @@ Pero si añadimos la entidad al juego, bien explícitamente o a través de los m
 ---
 
 
-La manera en que podemos destruir una entidad, es decir, eliminar todas sus referencias de forma que el recolector de basura pueda llevársela es mediante el método [`destroy()`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html#destroy) de la entidad
+La manera en que podemos destruir una entidad, es decir, eliminar todas sus referencias de forma que el recolector de basura pueda llevársela es mediante el método [`destroy()`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject#destroy) de la entidad
 
 ---
 
@@ -242,7 +242,7 @@ Si observamos la consola:
 ---
 
 
-Para devolver una entidad a la existencia, según Phaser, usamos [`setActive(true)`{.js} y `setVisible(true)`{.js}](https://newdocs.phaser.io/docs/3.54.0/Phaser.GameObjects.GameObject#setActive)
+Para devolver una entidad a la existencia, según Phaser, usamos [`setActive(true)`{.js} y `setVisible(true)`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject#setActive)
 
 ---
 

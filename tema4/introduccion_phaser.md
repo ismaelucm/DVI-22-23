@@ -143,7 +143,7 @@ Si queremos que el `<canvas>`{.html} tenga el foco, lo hacemos con [`focus()`{.j
 ## Documentación
 
 - [Documentación de Phaser 3](https://photonstorm.github.io/phaser3-docs/index.html): Acceder desde la barra de menú en la parte superior
-- [Nuevo sistema de documentación de Phaser](https://newdocs.phaser.io/docs/3.55.0/): Similar al anterior (en Beta)
+- [Nuevo sistema de documentación de Phaser](https://newdocs.phaser.io/docs/3.55.2/): Similar al anterior (en Beta)
 - [Notes of Phaser 3](https://rexrainbow.github.io/phaser3-rex-notes/docs/site/index.html)
 
 

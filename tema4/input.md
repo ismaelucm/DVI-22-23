@@ -6,7 +6,7 @@ title: Entrada en Phaser
 
 ---
 
-La gestión del teclado se hace a través de `scene.input`{.js}
+La gestión del teclado se hace a través de [`scene.input`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.InputPlugin)
 
 ---
 
@@ -51,7 +51,7 @@ if (Phaser.Input.Keyboard.JustDown(this.w)) {}
 
 ---
 
- Hay más maneras de usar las teclas, [mirad la API](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.html)
+Hay más maneras de usar las teclas, [mirad la API](https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.Keyboard)
 
 
 

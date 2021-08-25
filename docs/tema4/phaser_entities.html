@@ -111,12 +111,12 @@
 </section>
 <section class="slide level2">
 
-<p>No crearemos objetos de este tipo pero muchas de las entidades de Phaser heredan de <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html"><code class="sourceCode javascript">GameObject</code></a></p>
+<p>No crearemos objetos de este tipo pero muchas de las entidades de Phaser heredan de <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject"><code class="sourceCode javascript">GameObject</code></a></p>
 <p>A continuación veremos algunas de las entidades más importantes de Phaser</p>
 </section></section>
 <section>
 <section id="entidades-image" class="title-slide slide level1">
-<h1>Entidades <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html"><code class="sourceCode javascript">Image</code></a></h1>
+<h1>Entidades <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Image"><code class="sourceCode javascript">Image</code></a></h1>
 
 </section>
 <section class="slide level2">
@@ -135,7 +135,7 @@
 </section>
 <section class="slide level2">
 
-<p>Una imagen se crea a través del método factoría <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html"><code class="sourceCode javascript">add<span class="op">.</span><span class="at">image</span></code></a> del objeto <code class="sourceCode javascript">Scene</code></p>
+<p>Una imagen se crea a través del método factoría <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObjectFactory"><code class="sourceCode javascript">add<span class="op">.</span><span class="at">image</span></code></a> del objeto <code class="sourceCode javascript">Scene</code></p>
 <p>Por ejemplo, como parte de la creación de una escena en el método <code class="sourceCode javascript">create</code></p>
 </section>
 <section id="atributos-relevantes-de-las-imágenes" class="slide level2">
@@ -155,8 +155,8 @@
 <section class="slide level2">
 
 <p>Las imágenes renderizan texturas de acuerdo a su posición (x,y) y pivote.</p>
-<p>Podemos cambiar su posición con <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html#setOrigin__anchor"><code class="sourceCode javascript">setPosition</code></a></p>
-<p>Podemos cambiar el pivote de la imagen con <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html#setOrigin__anchor"><code class="sourceCode javascript">setOrigin</code></a> (en [0,1])</p>
+<p>Podemos cambiar su posición con <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Image#setPosition"><code class="sourceCode javascript">setPosition</code></a></p>
+<p>Podemos cambiar el pivote de la imagen con <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Image#setOrigin"><code class="sourceCode javascript">setOrigin</code></a> (en [0,1])</p>
 </section>
 <section class="slide level2">
 
@@ -186,13 +186,13 @@
 </section></section>
 <section>
 <section id="la-escena-scene" class="title-slide slide level1">
-<h1>La escena (<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html"><code class="sourceCode javascript">Scene</code></a>)</h1>
+<h1>La escena (<a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene"><code class="sourceCode javascript">Scene</code></a>)</h1>
 
 </section>
 <section class="slide level2">
 
 <p>En Phaser, la factoría de objetos se llama añadir (<code class="sourceCode javascript">add</code>) por una razón: <strong>porque añadimos las nuevas entidades a la escena</strong></p>
-<p>Para Phaser, la escena, representado por la clase <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html"><code>Scene</code></a>, es la <strong>abstracción del lugar (un plano bidimensional) donde habitan las entidades</strong></p>
+<p>Para Phaser, la escena, representado por la clase <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene"><code>Scene</code></a>, es la <strong>abstracción del lugar (un plano bidimensional) donde habitan las entidades</strong></p>
 </section>
 <section class="slide level2">
 
@@ -202,7 +202,7 @@
 </section>
 <section class="slide level2">
 
-<p>Miramos al mundo a través de <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html">cámaras</a></p>
+<p>Miramos al mundo a través de <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Cameras.Scene2D.Camera">cámaras</a></p>
 </section>
 <section class="slide level2">
 
@@ -212,7 +212,7 @@
 </section>
 <section class="slide level2">
 
-<p>Al iniciar, se crea una cámara, a la que podemos acceder a través del atributo <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html"><code class="sourceCode javascript">cameras<span class="op">.</span><span class="at">main</span></code></a> de la escena:</p>
+<p>Al iniciar, se crea una cámara, a la que podemos acceder a través del atributo <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene#cameras"><code class="sourceCode javascript">cameras<span class="op">.</span><span class="at">main</span></code></a> de la escena:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en el método create, donde this es una Scene</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> card <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="st">&#39;card&#39;</span>)<span class="op">;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">cameras</span><span class="op">.</span><span class="at">main</span><span class="op">.</span><span class="fu">startFollow</span>(card<span class="op">...</span>)<span class="op">;</span></span></code></pre></div>
@@ -234,7 +234,7 @@
 </section>
 <section class="slide level2">
 
-<p>Este objeto le llegará a la siguiente escena a través del método <code class="sourceCode javascript">init</code>, al que Phaser llama automáticamente:</p>
+<p>Este objeto le llegará a la siguiente escena a través del método <code class="sourceCode javascript">init</code>, al que Phaser llama automáticamente antes de los métodos <code class="sourceCode javascript">preload</code> y <code class="sourceCode javascript">create</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SiguienteEscena <span class="kw">extends</span> Phaser<span class="op">.</span><span class="at">Scene</span> {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">init</span>(datos) {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">monedas</span> <span class="op">=</span> datos<span class="op">.</span><span class="at">monedas</span></span>
@@ -247,17 +247,17 @@
 </section></section>
 <section>
 <section id="entidades-sprite" class="title-slide slide level1">
-<h1>Entidades <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html"><code>Sprite</code></a></h1>
+<h1>Entidades <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite"><code>Sprite</code></a></h1>
 
 </section>
 <section class="slide level2">
 
 <p>La mayoría de las entidades visibles de un juego incorporan alguna animación y comportamiento</p>
-<p>La clase <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html"><code class="sourceCode javascript">Sprite</code></a> representa estas “entidades animadas” y es el componente principal de los juegos con Phaser</p>
+<p>La clase <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite"><code class="sourceCode javascript">Sprite</code></a> representa estas “entidades animadas” y es el componente principal de los juegos con Phaser</p>
 </section>
 <section class="slide level2">
 
-<p>Aunque podamos añadir <em>sprites</em> al mundo utilizando el método factoría <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html"><code class="sourceCode javascript">add<span class="op">.</span><span class="at">sprite</span></code></a>, el sprite por defecto es tan simple que no se suele utilizar salvo en ocasiones donde no se requiere un comportamiento complejo</p>
+<p>Aunque podamos añadir <em>sprites</em> al mundo utilizando el método factoría <code class="sourceCode javascript">add<span class="op">.</span><span class="at">sprite</span></code>, el sprite por defecto es tan simple que no se suele utilizar salvo en ocasiones donde no se requiere un comportamiento complejo</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En el método create, this es una Scene</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> sprite <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">&#39;phaser&#39;</span>)<span class="op">;</span></span>
@@ -279,7 +279,7 @@
 </section>
 <section class="slide level2">
 
-<p>Para ello, nuestras clases <em>sprite</em> deben heredar de <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html"><code>Phaser.GameObjects.Sprite</code></a></p>
+<p>Para ello, nuestras clases <em>sprite</em> deben heredar de <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite"><code>Phaser.GameObjects.Sprite</code></a></p>
 </section>
 <section class="slide level2">
 
@@ -350,7 +350,7 @@
 </section>
 <section id="posicionamiento" class="slide level2">
 <h2>Posicionamiento</h2>
-<p>Para alterar la posición de una entidad, recurrimos a los atributos <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html"><code class="sourceCode javascript">x</code> e <code class="sourceCode javascript">y</code></a></p>
+<p>Para alterar la posición de una entidad, recurrimos a los atributos <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite"><code class="sourceCode javascript">x</code> e <code class="sourceCode javascript">y</code></a></p>
 </section>
 <section class="slide level2">
 
@@ -369,8 +369,8 @@
 </section>
 <section id="rotación" class="slide level2">
 <h2>Rotación</h2>
-<p><code class="sourceCode javascript">angle</code> controla la rotación de un <code class="sourceCode javascript">Sprite</code>, en grados (<span class="math inline">[−180...180]</span>)</p>
-<p>También existe <code class="sourceCode javascript">rotation</code>, para hacer la rotación de radianes y es ligeramente más rápido</p>
+<p><a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite#angle"><code class="sourceCode javascript">angle</code></a> controla la rotación de un <code class="sourceCode javascript">Sprite</code>, en grados (<span class="math inline">[−180...180]</span>)</p>
+<p>También existe <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Sprite#rotation"><code class="sourceCode javascript">rotation</code></a>, para hacer la rotación de radianes y es ligeramente más rápido</p>
 </section>
 <section class="slide level2">
 
@@ -427,7 +427,7 @@
 </section>
 <section class="slide level2">
 
-<p>En Phaser 3 vamos a usar los <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html"><code class="sourceCode javascript">Container</code></a>, que son <code class="sourceCode javascript">GameObjects</code> que pueden contener otros objetos</p>
+<p>En Phaser 3 vamos a usar los <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Container"><code class="sourceCode javascript">Container</code></a>, que son <code class="sourceCode javascript">GameObjects</code> que pueden contener otros objetos</p>
 </section>
 <section class="slide level2">
 
