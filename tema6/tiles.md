@@ -341,7 +341,7 @@ Para usar el mapa que hemos creado, *lo tenemos que exportar a JSON* (`.json`)
 
 ## Phaser 3.50
 
-En Phaser 3.50.0 cambia la API de los mapas, y se hace algo mejor (y más potente)
+A partir de Phaser 3.50.0 [cambia la API de los mapas](https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap), y se hace algo mejor (y más potente)
 
 Tened cuidado con las versiones en la documentación disponible
 
@@ -480,7 +480,7 @@ Phaser colocará estos `Sprite`{.js}s en el lugar apropiado
 
 ---
 
-Si no quiero `Sprite`{.js}s, puedo decirle el tipo (que tiene que heredar de `GameObject`{.js}):
+Si no quiero `Sprite`{.js}s, podemos decirle el tipo (que tiene que heredar de `GameObject`{.js}):
 
 ```js
 createFromObjects(layerName, {

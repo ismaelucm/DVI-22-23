@@ -235,7 +235,7 @@ this.player = this.physics.add.sprite(100, 450, 'dude');
 
 ---
 
-Esto hace que el `Sprite`{.js} **tenga la propiedad [`body`{.js}](https://newdocs.phaser.io/docs/3.52.0/Phaser.Physics.Arcade.Body) de Arcade**
+Esto hace que el `Sprite`{.js} **tenga la propiedad [`body`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Body) de Arcade**
 
 ---
 
@@ -264,7 +264,7 @@ this.body.onFloor()
 
 ## Grupos físicos
 
-Son grupos como los de Phaser (los "normales"), pero se usan para manejar grupos de colisiones (entre otras cosas)
+Los [Group](https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Group) son grupos como los de Phaser (los "normales"), pero se usan para manejar grupos de colisiones (entre otras cosas)
 
 Una entidad creada por un grupo físico *tendrá física*
 
@@ -323,7 +323,7 @@ platform.setImmovable(true);
 ---
 
 
-Para activar la detección de colisiones hay que crear un `collider`{.js}:
+Para activar la detección de colisiones hay que crear un [`collider`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Factory#collider):
 
 ```js
 this.physics.add.collider(player, group);
@@ -395,7 +395,7 @@ Muchas veces queremos saber si hay *solapamiento*, pero sin que haya efectos fí
 
 ---
 
-Para estos casos, usamos `overlap`{.js} donde usábamos `collide`{.js}
+Para estos casos, usamos [`overlap`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Factory#overlap) donde usábamos `collider`{.js}
 
 ```js
 // create
@@ -418,11 +418,11 @@ if(this.physics.overlap(this.player, this.platform)) {
 
 ## Objetos "invisibles" o triggers
 
-Se hacen con `add.zone()`{.js}, de la escena, y luego lo añadimos a las físicas:
+Se pueden crear con `add.zone()`{.js}, de la escena, y luego lo añadimos a las físicas:
 
 ```js
 // x, y, width, height
-trigger = this.add.zone(300, 200, 200, 200);
+let trigger = this.add.zone(300, 200, 200, 200);
 this.physics.world.enable(trigger);
 trigger.body.setAllowGravity(false);
 trigger.body.moves = false;

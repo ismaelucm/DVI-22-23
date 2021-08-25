@@ -383,7 +383,7 @@ Phaser permite animar mediante secuencias de frames y ciclos
 
 ## Cargar un spritesheet
 
-Con [`spritesheet`{.js}](https://newdocs.phaser.io/docs/3.54.0/Phaser.Loader.LoaderPlugin#spritesheet):
+Con [`spritesheet`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Loader.LoaderPlugin#spritesheet):
 
 
 ```js
@@ -402,7 +402,7 @@ this.add.sprite(200, 360, 'mummy');
 
 ## Establecer un ciclo de animación
 
-Se pueden crear ciclos de animación con el [`AnimationManager`{.js}](https://newdocs.phaser.io/docs/3.54.0/Phaser.Animations.AnimationManager)
+Se pueden crear ciclos de animación con el [`AnimationManager`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.AnimationManager)
 
 ```js
 // Como 'mummy' es un spritesheet, puede identificar los frames
