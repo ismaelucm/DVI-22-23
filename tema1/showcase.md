@@ -72,6 +72,12 @@ title: Videojuegos en Internet
 
 <small><http://www.deconstructeam.com/games/gods-will-be-watching-es/></small>
 
+## Dicey Dungeons (Terry Cavanagh){width=70%}
+
+![Dicey Dungeons](dicey-dungeons.png)
+
+<small><https://terrycavanaghgames.com/dice/9/html5/></small>
+
 
 ## Heroes of Paragon
 

@@ -108,7 +108,7 @@ La calidad es un requisito fundamental, pero no lo es todo
 
 Los ciclos tan rápidos, la necesidad de ofrecer algo novedoso y las características abiertas invitan a publicar pronto y muy a menudo
 
-El código no va a ser escondido, lo que cobra valor es la idea
+El código no va a estar escondido, lo que cobra valor es la idea
 
 Por tanto, la idea tiene que estar muy pronto fuera, y constantemente depurada
 
@@ -268,12 +268,19 @@ La monetización es uno de los temas más críticos de los videojuegos
 
 ---
 
-No es difícil (más o menos) crear un juego aceptable al que mucha gente juege, lo complicado es vivir de ello
+No es difícil (más o menos) crear un juego aceptable al que mucha gente juegue, lo complicado es vivir de ello
 
 - Vender el juego (la licencia) a un *publisher*
 - Publicidad
 - Vender capacidad de hacer juegos (no juegos)
 - Fundraising (de muchos tipos)
+
+---
+
+Se pueden terminar vendiendo en un marketplace (Steam, App Store, Google Play...)
+
+- Wrappers ([NW.js](https://nwjs.io/), [Apache Cordova](https://cordova.apache.org/)... ) para distribuir tu juego en estos marketplace
+- Tu juego en HTML5 se distribuye y ejecuta como una aplicación nativa
 
 ---
 
