@@ -125,7 +125,7 @@ title: Videojuegos en Internet
 
 ## Agar.io y Slither.io
 
-![Agar.io y Slither.io](slither-agar.png)
+![Agar.io y Slither.io](slither-agar.png){width=70%}
 
 <small><https://www.agar.io/></small>
 
