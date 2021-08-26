@@ -123,6 +123,15 @@ title: Videojuegos en Internet
 
 <http://js13kgames.com/games/evil-glitch/index.html>
 
+## Agar.io y Slither.io
+
+![Agar.io y Slither.io](slither-agar.png)
+
+<small><https://www.agar.io/></small>
+
+<small><http://slither.io/></small>
+
+
 
 ## Helloenjoy's HelloRun
 
