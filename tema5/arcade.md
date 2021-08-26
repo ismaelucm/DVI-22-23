@@ -239,7 +239,7 @@ Esto hace que el `Sprite`{.js} **tenga la propiedad [`body`{.js}](https://newdoc
 
 ---
 
-## Colisionar con los límites del del mundo
+## Colisionar con los límites del mundo
 
 
 ```js
@@ -264,7 +264,7 @@ this.body.onFloor()
 
 ## Grupos físicos
 
-Los [Group](https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Group) son grupos como los de Phaser (los "normales"), pero se usan para manejar grupos de colisiones (entre otras cosas)
+Los [Group](https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Group) se usan para manejar grupos de colisiones (entre otras cosas)
 
 Una entidad creada por un grupo físico *tendrá física*
 

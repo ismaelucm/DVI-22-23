@@ -15,7 +15,7 @@ Tienen una referencia a la escena a la que pertenece (`scene`{.js})
 
 Tienen un método para activar/desactivar los gameobject (`setActive(value)`{.js})
 
-Tienen métodos para suscribirnos (`on()`{.js}) y desengancharnos de eventos (`on()`{.js})
+Tienen métodos para suscribirnos (`on()`{.js}) y desengancharnos de eventos (`off()`{.js})
 
 Pueden convertirse en objetos interactuables (`setInteractive(value)`{.js})
 
