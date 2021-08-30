@@ -120,7 +120,7 @@ Si queremos que el `<canvas>`{.html} tenga el foco, lo hacemos con [`focus()`{.j
 ---
   
 
-## Ejemplo básico de un juego con Phaser
+<!-- ## Ejemplo básico de un juego con Phaser
 
 
 <https://cleongh.github.io/phasertemplate/>
@@ -128,15 +128,15 @@ Si queremos que el `<canvas>`{.html} tenga el foco, lo hacemos con [`focus()`{.j
 <small>Código en <https://github.com/cleongh/phasertemplate></small>
 
 
----
+--- -->
 
 
 ## Un juego sencillo (y explicado) con Phaser
 
 
-<https://cleongh.github.io/simplephasergame/>
+<https://gjimenezucm.github.io/simplephasergame/>
 
-<small>Código en <https://github.com/cleongh/simplephasergame></small>
+<small>Código en <https://github.com/gjimenezUCM/simplephasergame></small>
 
 ---
 
