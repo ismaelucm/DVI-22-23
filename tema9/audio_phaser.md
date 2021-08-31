@@ -210,7 +210,6 @@ En general, no son necesarios hoy en día (aunque pueden hacer más eficiente la
 - Generadores
   - [jsfxr](https://sfxr.me/)
   - [Chiptone](https://sfbgames.itch.io/chiptone)
-  - [sfxr](http://www.drpetter.se/project_sfxr.html)
   - [ZzFXM](https://keithclark.github.io/ZzFXM/)
   - [Abundant-music](https://pernyblom.github.io/abundant-music/index.html)
 - _Cualquier DAW (Digital Audio Workstation) con un buen sinte_
