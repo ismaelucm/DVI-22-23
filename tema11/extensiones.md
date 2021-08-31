@@ -196,10 +196,89 @@ particles.createEmitter({
 
 
 
+---
+
+## Editor de efectos y partículas
+
+![Editor de partículas [para Pixi](https://editor.revoltfx.electronauts.net/)](revoltfx.png){width=50%}
+
+<small>Desarrollado en JavaScript. Código disponible [en este repositorio](https://github.com/bma73/revolt-fx)</small>
+
+---
+
+## Editores de mapas específicos
+
+![[Editor de mapas para RPG](https://deepnight.net/tools/rpg-map/), con desarrollo para HTML5 y JS](rpg.jpg)
+
+
+# Creación de contenidos de gameplay
+
+---
+
+Los programadores no somos creativos (en general)
+
+La mayoría de los contenidos de gameplay no son desarrollados por los programadores
+
+Los programadores crean "piezas" que los diseñadores de niveles y otros usan para componer el videojuego
+
+---
+
+Para crear los contenidos se usan:
+
+- Lenguajes de scripting conocidos
+- Creamos lenguajes propios más expresivos (incluso visuales)
+
+---
+
+## Ink
+
+- Lenguaje y herramientas para la creación de videojuegos narrativos
+- Usado en [80 days](https://www.youtube.com/channel/UCvnHxTnr-J3xYg0RaVJVMUQ) o [Sorcery!](https://www.youtube.com/channel/UCUhIQUAgCHdZtfD-pz1nGPQ)
+- [Ink es de acceso libre](https://www.inklestudios.com/ink/) y tiene un editor llamado [Inky, desarrollado en Javascript](https://github.com/inkle/inky)
+
+---
+
+![Ejemplo del lenguaje Ink](ink.png)
+
+<small>Más detalles sobre el lenguaje [en esta charla de la GDC](https://www.youtube.com/watch?v=KYBf6Ko1I2k)</small>
+
+---
+
+## Squirrel
+
+- Lenguaje imperativo similar a Lua
+- Desarrollado por [Alberto Demichelis](http://squirrel-lang.org/)
+- Usado en [Left 4 Dead 2](https://www.youtube.com/channel/UCE8i1bve9eHEc_yn63NIX7A) y [Portal 2](https://www.youtube.com/channel/UCn0PHntRGo_-S700MrnY-bg)
+
+---
+
+En [L4D2](https://developer.valvesoftware.com/wiki/L4D2_Vscripts) se usa para:
+
+- Añadir "inteligencia" e interacción a entidades del mundo
+- Para crear mods de mapas y spawnear entidades
+- Para modificar el comportamiento del [AI director, responsable de controlar la generación de hordas de infectados](https://steamcdn-a.akamaihd.net/apps/valve/2009/ai_systems_of_l4d_mike_booth.pdf)
+
+---
+
+## Lua en CryEngine
+
+El motor CryEngine de Crytek utiliza Lua como lenguaje de scripting
+
+Los programadores del engine pueden exponer funciones de sus clases creadas en C++ para que los programadores de scripting en Lua puedan usarlas
+
+[Lua en CryEngine](http://docs.cryengine.com/display/SDKDOC4/Lua+Scripting)
+
+## Luabind
+
+[Luabind](http://www.rasterbar.com/products/luabind.html) es una librería que ayuda a usar Lua desde C++. Simplifica la tarea y permite hacer entre otras cosas:
+
+- Tener clases de C++ en Lua
+- Tener funciones y clases de Lua en C++
+- Polimorfismo de los métodos de una clase base en C++ desde una clase derivada en Lua
 
 
 
-
+ 
 
 
 

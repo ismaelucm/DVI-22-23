@@ -263,6 +263,85 @@
 <img data-src="https://raw.githubusercontent.com/koreezgames/phaser3-particle-editor/master/showcase.gif" alt="Editor de partículas para Phaser3" /><figcaption aria-hidden="true">Editor de partículas <a href="https://koreezgames.github.io/phaser3-particle-editor/">para Phaser3</a></figcaption>
 </figure>
 <p><small>Desarrollado en TypeScript. Código disponible <a href="https://github.com/koreezgames/phaser3-particle-editor">en este repositorio</a></small></p>
+</section>
+<section id="editor-de-efectos-y-partículas-1" class="slide level2">
+<h2>Editor de efectos y partículas</h2>
+<figure>
+<img data-src="revoltfx.png" style="width:50.0%" alt="Editor de partículas para Pixi" /><figcaption aria-hidden="true">Editor de partículas <a href="https://editor.revoltfx.electronauts.net/">para Pixi</a></figcaption>
+</figure>
+<p><small>Desarrollado en JavaScript. Código disponible <a href="https://github.com/bma73/revolt-fx">en este repositorio</a></small></p>
+</section>
+<section id="editores-de-mapas-específicos" class="slide level2">
+<h2>Editores de mapas específicos</h2>
+<figure>
+<img data-src="rpg.jpg" alt="Editor de mapas para RPG, con desarrollo para HTML5 y JS" /><figcaption aria-hidden="true"><a href="https://deepnight.net/tools/rpg-map/">Editor de mapas para RPG</a>, con desarrollo para HTML5 y JS</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="creación-de-contenidos-de-gameplay" class="title-slide slide level1">
+<h1>Creación de contenidos de gameplay</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Los programadores no somos creativos (en general)</p>
+<p>La mayoría de los contenidos de gameplay no son desarrollados por los programadores</p>
+<p>Los programadores crean “piezas” que los diseñadores de niveles y otros usan para componer el videojuego</p>
+</section>
+<section class="slide level2">
+
+<p>Para crear los contenidos se usan:</p>
+<ul>
+<li>Lenguajes de scripting conocidos</li>
+<li>Creamos lenguajes propios más expresivos (incluso visuales)</li>
+</ul>
+</section>
+<section id="ink" class="slide level2">
+<h2>Ink</h2>
+<ul>
+<li>Lenguaje y herramientas para la creación de videojuegos narrativos</li>
+<li>Usado en <a href="https://www.youtube.com/channel/UCvnHxTnr-J3xYg0RaVJVMUQ">80 days</a> o <a href="https://www.youtube.com/channel/UCUhIQUAgCHdZtfD-pz1nGPQ">Sorcery!</a></li>
+<li><a href="https://www.inklestudios.com/ink/">Ink es de acceso libre</a> y tiene un editor llamado <a href="https://github.com/inkle/inky">Inky, desarrollado en Javascript</a></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="ink.png" alt="Ejemplo del lenguaje Ink" /><figcaption aria-hidden="true">Ejemplo del lenguaje Ink</figcaption>
+</figure>
+<p><small>Más detalles sobre el lenguaje <a href="https://www.youtube.com/watch?v=KYBf6Ko1I2k">en esta charla de la GDC</a></small></p>
+</section>
+<section id="squirrel" class="slide level2">
+<h2>Squirrel</h2>
+<ul>
+<li>Lenguaje imperativo similar a Lua</li>
+<li>Desarrollado por <a href="http://squirrel-lang.org/">Alberto Demichelis</a></li>
+<li>Usado en <a href="https://www.youtube.com/channel/UCE8i1bve9eHEc_yn63NIX7A">Left 4 Dead 2</a> y <a href="https://www.youtube.com/channel/UCn0PHntRGo_-S700MrnY-bg">Portal 2</a></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>En <a href="https://developer.valvesoftware.com/wiki/L4D2_Vscripts">L4D2</a> se usa para:</p>
+<ul>
+<li>Añadir “inteligencia” e interacción a entidades del mundo</li>
+<li>Para crear mods de mapas y spawnear entidades</li>
+<li>Para modificar el comportamiento del <a href="https://steamcdn-a.akamaihd.net/apps/valve/2009/ai_systems_of_l4d_mike_booth.pdf">AI director, responsable de controlar la generación de hordas de infectados</a></li>
+</ul>
+</section>
+<section id="lua-en-cryengine" class="slide level2">
+<h2>Lua en CryEngine</h2>
+<p>El motor CryEngine de Crytek utiliza Lua como lenguaje de scripting</p>
+<p>Los programadores del engine pueden exponer funciones de sus clases creadas en C++ para que los programadores de scripting en Lua puedan usarlas</p>
+<p><a href="http://docs.cryengine.com/display/SDKDOC4/Lua+Scripting">Lua en CryEngine</a></p>
+</section>
+<section id="luabind" class="slide level2">
+<h2>Luabind</h2>
+<p><a href="http://www.rasterbar.com/products/luabind.html">Luabind</a> es una librería que ayuda a usar Lua desde C++. Simplifica la tarea y permite hacer entre otras cosas:</p>
+<ul>
+<li>Tener clases de C++ en Lua</li>
+<li>Tener funciones y clases de Lua en C++</li>
+<li>Polimorfismo de los métodos de una clase base en C++ desde una clase derivada en Lua</li>
+</ul>
 <!-- ---
 
 ## Python en Blender
