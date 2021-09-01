@@ -132,11 +132,19 @@
 <section id="texto-en-ui" class="slide level2">
 <h2>Texto en UI</h2>
 <p>Muchas veces, el texto se utiliza como parte de la UI del juego (puntuación, vidas…)</p>
-<p>Pero el texto creado tal cual lo hemos hecho tiene una posición en la escena y, por tanto, se queda fijo al mover la cámara.</p>
+<p>Pero el texto creado tal cual lo hemos hecho tiene una posición en la escena y, por tanto, se queda fijo al mover la cámara y puede desaparecer de la escena.</p>
 </section>
 <section class="slide level2">
 
 <p><strong>Solución</strong>: Recordad que algunos GameObject tienen un método <a href="https://newdocs.phaser.io/docs/3.52.0/Phaser.GameObjects.Sprite#setScrollFactor"><code>SetScrollFactor</code></a> que controla el movimiento de un objeto con respecto al de la cámara</p>
+</section>
+<section id="botones-con-texto" class="slide level2">
+<h2>Botones con texto</h2>
+<p>Se puede crear un botón fácilmente usando un texto interactivo y añadiendo un evento de <code>onpointerdown</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> text <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="op">...</span>)<span class="op">.</span><span class="fu">setInteractive</span>()<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>text<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerdown&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// hacer algo</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="problema-de-las-fuentes-del-sistema" class="title-slide slide level1">
@@ -163,14 +171,14 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>(){</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;bitmapFont&#39;</span><span class="op">,</span> <span class="st">&#39;assets/fonts/bitmapFonts/bitmapFont.png&#39;</span><span class="op">,</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;assets/fonts/bitmapFonts/bitmapFont.xml&#39;</span>)<span class="op">;</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>(){</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">greeting</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">bitmapText</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="st">&#39;bitmapFont&#39;</span><span class="op">,</span><span class="st">&#39;Bitmap Fonts!&#39;</span><span class="op">,</span> <span class="dv">64</span>)<span class="op">;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>(){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;bitmapFont&#39;</span><span class="op">,</span> <span class="st">&#39;assets/fonts/bitmapFonts/bitmapFont.png&#39;</span><span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;assets/fonts/bitmapFonts/bitmapFont.xml&#39;</span>)<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>(){</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">greeting</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">bitmapText</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="st">&#39;bitmapFont&#39;</span><span class="op">,</span><span class="st">&#39;Bitmap Fonts!&#39;</span><span class="op">,</span> <span class="dv">64</span>)<span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section></section>
 <section>
 <section id="texto-con-fuentes-web" class="title-slide slide level1">
@@ -185,30 +193,30 @@
 <section class="slide level2">
 
 <p>Cargamos el código para usar webfonts:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>() {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">script</span>(<span class="st">&#39;webfont&#39;</span><span class="op">,</span> <span class="st">&#39;https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js&#39;</span>)<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>() {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">script</span>(<span class="st">&#39;webfont&#39;</span><span class="op">,</span> <span class="st">&#39;https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Después, llamamos a <code class="sourceCode javascript">WebFont<span class="op">.</span><span class="fu">load</span>()</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// El this es Scene</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> self <span class="op">=</span> <span class="kw">this</span><span class="op">;</span> <span class="co">// Para usarlo en active</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    WebFont<span class="op">.</span><span class="fu">load</span>({</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">google</span><span class="op">:</span> {</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            <span class="dt">families</span><span class="op">:</span> [ <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="st">&#39;Finger Paint&#39;</span><span class="op">,</span> <span class="st">&#39;Nosifer&#39;</span> ]</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">active</span><span class="op">:</span> <span class="kw">function</span> () <span class="co">// se llama a esta función cuando está cargada</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        {</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                self<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="dv">16</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> </span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                    { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            nuevoTexto<span class="op">.</span><span class="fu">setShadow</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="st">&quot;#333333&quot;</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// El this es Scene</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> self <span class="op">=</span> <span class="kw">this</span><span class="op">;</span> <span class="co">// Para usarlo en active</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    WebFont<span class="op">.</span><span class="fu">load</span>({</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">google</span><span class="op">:</span> {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>            <span class="dt">families</span><span class="op">:</span> [ <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="st">&#39;Finger Paint&#39;</span><span class="op">,</span> <span class="st">&#39;Nosifer&#39;</span> ]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">active</span><span class="op">:</span> <span class="kw">function</span> () <span class="co">// se llama a esta función cuando está cargada</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                self<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="dv">16</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                    { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Freckle Face&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            nuevoTexto<span class="op">.</span><span class="fu">setShadow</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="st">&quot;#333333&quot;</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="kw">false</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="problemas-de-las-google-fonts-u-otras-fuentes-web" class="slide level2">
 <h2>¿Problemas de las Google Fonts u otras fuentes Web?</h2>
@@ -222,30 +230,30 @@
 <section class="slide level2">
 
 <p>Creamos una función auxiliar y cargamos la fuente:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">loadFont</span>(name<span class="op">,</span> url) {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> newFont <span class="op">=</span> <span class="kw">new</span> <span class="bu">FontFace</span>(name<span class="op">,</span> <span class="vs">`url(</span><span class="sc">${</span>url<span class="sc">}</span><span class="vs">)`</span>)<span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    newFont<span class="op">.</span><span class="fu">load</span>()<span class="op">.</span><span class="fu">then</span>(<span class="kw">function</span> (loaded) {</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">document</span><span class="op">.</span><span class="at">fonts</span><span class="op">.</span><span class="fu">add</span>(loaded)<span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    })<span class="op">.</span><span class="fu">catch</span>(<span class="kw">function</span> (error) {</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> error<span class="op">;</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>() {</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Archivo .ttf descargable desde</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// https://www.dafont.com/es/happy-donuts.font</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">loadFont</span>(<span class="st">&quot;Donuts&quot;</span><span class="op">,</span> <span class="st">&quot;/assets/fonts/HAPPY_DONUTS.ttf&quot;</span>)<span class="op">;</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">loadFont</span>(name<span class="op">,</span> url) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> newFont <span class="op">=</span> <span class="kw">new</span> <span class="bu">FontFace</span>(name<span class="op">,</span> <span class="vs">`url(</span><span class="sc">${</span>url<span class="sc">}</span><span class="vs">)`</span>)<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    newFont<span class="op">.</span><span class="fu">load</span>()<span class="op">.</span><span class="fu">then</span>(<span class="kw">function</span> (loaded) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">document</span><span class="op">.</span><span class="at">fonts</span><span class="op">.</span><span class="fu">add</span>(loaded)<span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    })<span class="op">.</span><span class="fu">catch</span>(<span class="kw">function</span> (error) {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> error<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>() {</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Archivo .ttf descargable desde</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// https://www.dafont.com/es/happy-donuts.font</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">loadFont</span>(<span class="st">&quot;Donuts&quot;</span><span class="op">,</span> <span class="st">&quot;/assets/fonts/HAPPY_DONUTS.ttf&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// El this es Scene</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="dv">16</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Donuts&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// El this es Scene</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="dv">16</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Donuts&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section></section>
     </div>
   </div>

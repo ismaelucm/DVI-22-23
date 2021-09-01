@@ -500,10 +500,10 @@
 </section>
 <section class="slide level2">
 
-<p>Cuando animamos una clase que hereda de <code class="sourceCode javascript">Sprite</code>, hay que llamar al <code class="sourceCode javascript"><span class="fu">preUpdate</span>(t<span class="op">,</span> d)</code> del padre (de <code class="sourceCode javascript">Sprite</code>) para que se produzca la animación:</p>
+<p>Cuando animamos una clase que hereda de <code class="sourceCode javascript">Sprite</code>, hay que llamar al <code class="sourceCode javascript"><span class="fu">preUpdate</span>(t<span class="op">,</span> dt)</code> del padre (de <code class="sourceCode javascript">Sprite</code>) para que se produzca la animación:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player <span class="kw">extends</span> Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Sprite</span> {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">preUpdate</span>(t<span class="op">,</span> d) {</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span><span class="op">.</span><span class="fu">preUpdate</span>(t<span class="op">,</span> d)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">preUpdate</span>(t<span class="op">,</span> dt) {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span><span class="op">.</span><span class="fu">preUpdate</span>(t<span class="op">,</span> dt)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ... resto de cosas</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>

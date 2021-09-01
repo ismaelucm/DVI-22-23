@@ -72,6 +72,16 @@ Accesibles desde el objeto `Scene`{.js} con `scene.add`{.js}, `scene.load`{.js}.
 - `time`{.js}: el manager de tiempo
 - `physics`{.js}: el sistema de físicas
 
+---
+
+## Utilidades matemáticas
+
+[`Phaser.Math`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Math) contiene métodos que ayudan a realizar ciertas operaciones matemáticas típicas de un motor de videojuegos
+
+Además, tiene un [generador de números aleatorios](https://newdocs.phaser.io/docs/3.55.2/Phaser.Math.RandomDataGenerator) muy útil, accesible a través de `Phaser.Math.RND`{.js}
+
+
+
 
 
 # Crear un juego en Phaser
@@ -237,9 +247,9 @@ function preload() {
 
 Podemos cargar diferentes recursos como: imágenes, archivos JSON, atlas de texturas, video, sonido, tilemaps...
 
+---
 
-
-# Liberación de recursos
+## Liberación de recursos
 
 ---
 

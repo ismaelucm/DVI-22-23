@@ -276,55 +276,123 @@ Los programadores del engine pueden exponer funciones de sus clases creadas en C
 - Tener funciones y clases de Lua en C++
 - Polimorfismo de los métodos de una clase base en C++ desde una clase derivada en Lua
 
+---
 
+## C# en Unity
 
- 
-
-
-
-
-
-
-
-
-
-<!-- ---
-
-## Python en Blender
-
-Blender es una herramienta de código libre para crear y renderizar objetos 3D
-
-Blender utiliza Python como lenguaje de extensión de su herramienta. Con Python se pueden crear macros y extender la funcionalidad de Blender
-
-[Python en Blender](https://docs.blender.org/manual/en/latest/advanced/scripting/introduction.html)
+- El núcleo de Unity está implementado en C/C++
+- Los GameObjects y algunos componentes están implementados en ese mismo lenguaje
+- Si queremos crear nuevos componentes (y, por tanto, nuevo contenido) entonces usamos C# como lenguaje de scripting
 
 ---
 
-Internamente Blender utiliza Python para crear su interfaz y algunas de sus herramientas internas
+- Unity tiene un _wrapper_ que permite la interconexión entre los scripts en C# y el núcleo en C++
+- Los scripts son compilados usando los _scripting backends_ Mono, .NET o IL2CPP e integrados en el ejecutable
+
+---
+
+![Infraestructura de IL2CPP](il2cpp.png)
+
+<small>Podéis conocer más sobre el scripting de Unity [a través de su manual](https://docs.unity3d.com/Manual/ScriptingSection.html)</small>
+ 
+---
+
+## Scripting Visual
+
+Algunos motores usan lenguajes de scripting visual para la creación de contenidos
+
+Los lenguajes visuales se suelen componer de bloques con parámetros y flechas que indican el flujo de ejecución
+
+La programación por bloques es más sencilla para no programadores
+
+---
+
+## Bolt en Unity
+
+![Bolt es el lenguaje de scripting visual para Unity](bolt.png)
+
+---
+
+## Blueprints en Unreal   
+
+![En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual](blueprint.png)
+
+---
+
+# Creación de extensiones para herramientas existentes
+
+---
+
+Por último, vamos a ver que algunas de las herramientas usadas en el desarrollo de videojuegos pueden ser ampliadas y mejoradas para la realización de tareas específicas de nuestro equipo de desarrollo
+
+---
+
+Como hemos visto anteriormente con la creación de contenidos, estas herramientas han de estar diseñadas para proporcionar una API que permita extender la herramienta con un lenguaje de scripting
+
+---
+
+## Extender Blender con Python
+
+[Blender](https://www.blender.org/) es una herramienta de código libre para crear y renderizar objetos 3D
 
 Aunque Blender está escrito en C/C++ usa Python como lenguaje de scripting para facilitar la creación de macros y add-ons por parte de los usuarios
 
+---
+
+Blender dispone de una [API de scripting en Python](https://docs.blender.org/manual/en/latest/advanced/scripting/introduction.html) 
+
+Podéis ver un ejemplo para la [creación de una herramienta de texto en este vídeo](https://www.youtube.com/watch?v=4KwPhQX63SQ)
+
+---
+
+## Extender Audacity con Nyquist
+
+[Audacity](https://audacity.es/) es una herramienta de edición de audio [de código abierto](https://github.com/audacity/audacity) implementada en C++
+
+Soporta distintos tipos de extensiones, muchas de ellas implementadas en C/C++, como LV2 o VST
+
+---
+
+Pero también permite [crear extensiones usando Nyquist](https://wiki.audacityteam.org/wiki/Nyquist_Documentation), un lenguaje similar a LISP para la síntesis de audio 
+
+Esto nos permite crear nuestros propios efectos para aplicarlos automáticamente al audio de nuestro videojuego
+
+---
+
+Añadir ecos a una pista de audio
+
+```
+;nyquist plug-in
+;version 4
+;type process
+;name "Delay..."
+;control decay "Decay amount" int "dB" 6 0 24
+;control delay "Delay time" float "seconds" 0.5 0.0 5.0
+;control count "Number of echos" int "times" 5 1 30
+
+(defun delays (sig decay delay count)
+(if (= count 0)
+    (cue sig)
+    (sim (cue sig)
+         (loud decay (at delay (delays sig decay delay (- count 1)))))))
+
+(stretch-abs 1 (delays *track* (- 0 decay) delay count))
+```
 
 
 ---
 
-## Luabind
+## Extender el editor de Unity con C#
 
-[Luabind](http://www.rasterbar.com/products/luabind.html) es una librería que ayuda a usar Lua desde C++. Simplifica la tarea y permite hacer entre otras cosas:
-
-- Tener clases de C++ en Lua
-- Tener funciones y clases de Lua en C++
-- Polimorfismo de los métodos de una clase base en C++ desde una clase derivada en Lua
+Lo veremos en un tema aparte
 
 ---
 
-## Lua en CryEngine
+## Extender Tiled con JS
 
-El motor CryEngine de Crytek utiliza Lua como lenguaje de scripting
+Lo veremos en un tema aparte
 
-Los programadores del engine pueden exponer funciones de sus clases creadas en C++ para que los programadores de scripting en Lua puedan usarlas
 
-[Lua en CryEngine](http://docs.cryengine.com/display/SDKDOC4/Lua+Scripting) -->
 
 
 

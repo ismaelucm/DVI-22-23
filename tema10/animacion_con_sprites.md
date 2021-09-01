@@ -476,12 +476,12 @@ sprite.play('walk', false); // no repite
 
 ---
 
-Cuando animamos una clase que hereda de `Sprite`{.js}, hay que llamar al `preUpdate(t, d)`{.js} del padre (de `Sprite`{.js}) para que se produzca la animación:
+Cuando animamos una clase que hereda de `Sprite`{.js}, hay que llamar al `preUpdate(t, dt)`{.js} del padre (de `Sprite`{.js}) para que se produzca la animación:
 
 ```js
 class Player extends Phaser.GameObjects.Sprite {
-  preUpdate(t, d) {
-    super.preUpdate(t, d)
+  preUpdate(t, dt) {
+    super.preUpdate(t, dt)
     // ... resto de cosas
   }
 }
