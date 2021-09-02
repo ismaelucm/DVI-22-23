@@ -99,7 +99,7 @@
 </section>
 <section id="qué-es-un-lenguaje-de-scripting" class="slide level2">
 <h2>¿Qué es un lenguaje de scripting?</h2>
-<p>Los lenguajes de scripting, normalmente interpretados, son lenguajes que son concebidos para ser usados como parte de una herramienta</p>
+<p>Los lenguajes de scripting, normalmente interpretados, son lenguajes que son concebidos para ser usados para ampliar la funcionalidad de una herramienta</p>
 </section>
 <section class="slide level2">
 
@@ -135,7 +135,41 @@
 
 <ul>
 <li>Hay que crear una API en C/C++ a la que invocar desde JavaScript</li>
-<li>Hay que crear las llamadas en JavaScript que invocan el API en C/C++</li>
+<li>Hay que conectar el código en JavaScript con la invocación de las funciones nativas de la API en C/C++</li>
+</ul>
+</section></section>
+<section>
+<section id="por-qué-se-usan-los-lenguajes-de-scripting" class="title-slide slide level1">
+<h1>¿Por qué se usan los lenguajes de scripting?</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Si aislamos el núcleo de la aplicación/motor y creamos una API de scripting conseguimos desarrollos más ágiles y en el que se pueden separar mejor los roles del equipo de desarrollo</p>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>El tiempo de iteración se reduce (no hay que recompilar ni enlazar con la aplicación/motor)</li>
+<li>No se necesita tener el código de la aplicación/motor para ampliarla</li>
+<li>Bien implementado, se pueden recargar los scripts nuevos sin parar la ejecución del programa (lo veremos con Tiled)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Además:</p>
+<ul>
+<li>Solo necesitamos un editor de texto y no un compilador, por lo que, en algunos casos, reducimos costes de licencias.</li>
+<li>Los scripts se ejecutan en un sandbox que evita que un error de programación produzca un error catastrófico</li>
+<li>Añaden características que algunos lenguajes de alto nivel no tienen (como serialización)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Pero no todo son ventajas:</p>
+<ul>
+<li>El uso de los lenguajes de scripting hace que el juego/aplicación pueda tener un rendimiento menor (más lentos)</li>
+<li>Es complicado tener que diseñar la API que permita la integración del lenguaje de scripting en la aplicación/motor</li>
 </ul>
 </section></section>
 <section>
@@ -146,6 +180,24 @@
 <section class="slide level2">
 
 <p>Además de Javascript, existen</p>
+</section>
+<section id="lua" class="slide level2">
+<h2>Lua</h2>
+<p><a href="https://www.lua.org/">Lua</a> es uno de los lenguajes de scripting más usado en motores de juegos</p>
+<p>Es relativamente rápido, y es muy fácil conectarlo con en motor en C/C++</p>
+</section>
+<section class="slide level2">
+
+<p>Lua fue expresamente diseñado para ser usado como lenguaje de scripting en otros lenguajes</p>
+<p>Hay una gran <a href="https://en.wikipedia.org/wiki/Category:Lua_%28programming_language%29-scripted_video_games">lista de juegos que han utilizado Lua como lenguaje de scripting</a></p>
+</section>
+<section class="slide level2">
+
+<p>Pero también se usa en aplicaciones</p>
+<ul>
+<li>El reproductor multimedia VLC <a href="ttps://forum.videolan.org/viewforum.php?f=29">utiliza Lua</a> para que los usuarios puedan crear sus propias extensiones</li>
+<li>OBS Studio permite ampliar la funcionalidad herramienta <a href="https://obsproject.com/docs/scripting.html">usando Lua y Python</a></li>
+</ul>
 </section>
 <section id="php" class="slide level2">
 <h2>PHP</h2>
@@ -171,22 +223,6 @@
 <p>Actualmente el uso de Python se ha extendido enormemente, no sólo como lenguaje de propósito general, si no como lenguaje de <em>scripting de propósito general</em></p>
 <p>Python es relativamente fácil de usar desde una aplicación escrita en otro lenguaje (típicamente C/C++) por lo que se ha usado como lenguaje de scripting en muchas aplicaciones</p>
 <p><a href="https://docs.python.org/3/extending/embedding.html">Python en una aplicación</a></p>
-</section>
-<section id="lua" class="slide level2">
-<h2>Lua</h2>
-<p><a href="https://www.lua.org/">Lua</a> es uno de los lenguajes de scripting más usado en motores de juegos</p>
-<p>Es relativamente rápido, y es muy fácil conectarlo con en motor en C/C++</p>
-</section>
-<section class="slide level2">
-
-<p>Lua fue expresamente diseñado para ser usado como lenguaje de scripting en otros lenguajes</p>
-<p>Hay una gran <a href="https://en.wikipedia.org/wiki/Category:Lua_%28programming_language%29-scripted_video_games">lista de juegos que han utilizado Lua como lenguaje de scripting</a></p>
-</section>
-<section class="slide level2">
-
-<p>Pero también se usa en aplicaciones</p>
-<p>Por ejemplo, el reproductor multimedia VLC utiliza LUA para que los usuarios puedan crear sus propias extensiones</p>
-<p><a href="https://forum.videolan.org/viewforum.php?f=29">Scripts para VLC en Lua</a></p>
 </section></section>
 <section>
 <section id="uso-de-los-lenguajes-de-scripting-en-videojuegos" class="title-slide slide level1">
@@ -196,10 +232,102 @@
 <section id="usos-principales" class="slide level2">
 <h2>Usos principales</h2>
 <ul>
-<li>Creación de herramientas para el desarrollo de recursos</li>
 <li>Creación de contenidos de gameplay</li>
-<li>Creación de extensiones para herramientas existentes (y que lo permitan)</li>
+<li>Creación de herramientas para el desarrollo de recursos</li>
+<li>Extender la funcionalidad de herramientas (que lo permitan)</li>
 <li>Automatización (lo veréis en los últimos cursos)</li>
+</ul>
+</section></section>
+<section>
+<section id="creación-de-contenidos-de-gameplay" class="title-slide slide level1">
+<h1>Creación de contenidos de gameplay</h1>
+
+</section>
+<section id="lua-en-cryengine" class="slide level2">
+<h2>Lua en CryEngine</h2>
+<p>El motor CryEngine de Crytek utiliza Lua como lenguaje de scripting</p>
+<p>Los programadores del engine pueden exponer funciones de sus clases creadas en C++ para que los programadores de scripting en Lua puedan usarlas</p>
+<p><a href="http://docs.cryengine.com/display/SDKDOC4/Lua+Scripting">Lua en CryEngine</a></p>
+</section>
+<section id="luabind" class="slide level2">
+<h2>Luabind</h2>
+<p><a href="http://www.rasterbar.com/products/luabind.html">Luabind</a> es una librería que ayuda a usar Lua desde C++. Simplifica la tarea y permite hacer entre otras cosas:</p>
+<ul>
+<li>Tener clases de C++ en Lua</li>
+<li>Tener funciones y clases de Lua en C++</li>
+<li>Polimorfismo de los métodos de una clase base en C++ desde una clase derivada en Lua</li>
+</ul>
+</section>
+<section id="c-en-unity" class="slide level2">
+<h2>C# en Unity</h2>
+<ul>
+<li>El núcleo de Unity está implementado en C/C++</li>
+<li>Los GameObjects y algunos componentes están implementados en ese mismo lenguaje</li>
+<li>Si queremos crear nuevos componentes (y, por tanto, nuevo contenido) entonces usamos C# como lenguaje de scripting</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Unity tiene un <em>wrapper</em> que permite la interconexión entre los scripts en C# y el núcleo en C++</li>
+<li>Los scripts son compilados usando los <em>scripting backends</em> Mono, .NET o IL2CPP e integrados en el ejecutable</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="il2cpp.png" alt="Infraestructura de IL2CPP" /><figcaption aria-hidden="true">Infraestructura de IL2CPP</figcaption>
+</figure>
+<p><small>Podéis conocer más sobre el scripting de Unity <a href="https://docs.unity3d.com/Manual/ScriptingSection.html">a través de su manual</a></small></p>
+</section>
+<section id="scripting-visual" class="slide level2">
+<h2>Scripting Visual</h2>
+<p>Algunos motores usan lenguajes de scripting visual para la creación de contenidos</p>
+<p>Los lenguajes visuales se suelen componer de bloques con parámetros y flechas que indican el flujo de ejecución</p>
+<p>La programación por bloques es más sencilla para no programadores</p>
+</section>
+<section id="bolt-en-unity" class="slide level2">
+<h2>Bolt en Unity</h2>
+<figure>
+<img data-src="bolt.png" alt="Bolt es el lenguaje de scripting visual para Unity" /><figcaption aria-hidden="true">Bolt es el lenguaje de scripting visual para Unity</figcaption>
+</figure>
+</section>
+<section id="blueprints-en-unreal" class="slide level2">
+<h2>Blueprints en Unreal</h2>
+<figure>
+<img data-src="blueprint.png" alt="En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual" /><figcaption aria-hidden="true">En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual</figcaption>
+</figure>
+</section>
+<section id="ink" class="slide level2">
+<h2>Ink</h2>
+<ul>
+<li>Lenguaje y herramientas para la creación de videojuegos narrativos</li>
+<li>Usado en <a href="https://www.youtube.com/channel/UCvnHxTnr-J3xYg0RaVJVMUQ">80 days</a> o <a href="https://www.youtube.com/channel/UCUhIQUAgCHdZtfD-pz1nGPQ">Sorcery!</a></li>
+<li><a href="https://www.inklestudios.com/ink/">Ink es de acceso libre</a> y tiene un editor llamado <a href="https://github.com/inkle/inky">Inky, desarrollado en Javascript</a></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="ink.png" alt="Ejemplo del lenguaje Ink" /><figcaption aria-hidden="true">Ejemplo del lenguaje Ink</figcaption>
+</figure>
+<p><small>Más detalles sobre el lenguaje <a href="https://www.youtube.com/watch?v=KYBf6Ko1I2k">en esta charla de la GDC</a></small></p>
+</section>
+<section id="squirrel" class="slide level2">
+<h2>Squirrel</h2>
+<ul>
+<li>Lenguaje imperativo similar a Lua</li>
+<li>Desarrollado por <a href="http://squirrel-lang.org/">Alberto Demichelis</a></li>
+<li>Usado en <a href="https://www.youtube.com/channel/UCE8i1bve9eHEc_yn63NIX7A">Left 4 Dead 2</a> y <a href="https://www.youtube.com/channel/UCn0PHntRGo_-S700MrnY-bg">Portal 2</a></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>En <a href="https://developer.valvesoftware.com/wiki/L4D2_Vscripts">L4D2</a> se usa para:</p>
+<ul>
+<li>Añadir “inteligencia” e interacción a entidades del mundo</li>
+<li>Para crear mods de mapas y spawnear entidades</li>
+<li>Para modificar el comportamiento del <a href="https://steamcdn-a.akamaihd.net/apps/valve/2009/ai_systems_of_l4d_mike_booth.pdf">AI director, responsable de controlar la generación de hordas de infectados</a></li>
 </ul>
 </section></section>
 <section>
@@ -278,117 +406,8 @@
 </figure>
 </section></section>
 <section>
-<section id="creación-de-contenidos-de-gameplay" class="title-slide slide level1">
-<h1>Creación de contenidos de gameplay</h1>
-
-</section>
-<section class="slide level2">
-
-<p>Los programadores no somos creativos (en general)</p>
-<p>La mayoría de los contenidos de gameplay no son desarrollados por los programadores</p>
-<p>Los programadores crean “piezas” que los diseñadores de niveles y otros usan para componer el videojuego</p>
-</section>
-<section class="slide level2">
-
-<p>Para crear los contenidos se usan:</p>
-<ul>
-<li>Lenguajes de scripting conocidos</li>
-<li>Creamos lenguajes propios más expresivos (incluso visuales)</li>
-</ul>
-</section>
-<section id="ink" class="slide level2">
-<h2>Ink</h2>
-<ul>
-<li>Lenguaje y herramientas para la creación de videojuegos narrativos</li>
-<li>Usado en <a href="https://www.youtube.com/channel/UCvnHxTnr-J3xYg0RaVJVMUQ">80 days</a> o <a href="https://www.youtube.com/channel/UCUhIQUAgCHdZtfD-pz1nGPQ">Sorcery!</a></li>
-<li><a href="https://www.inklestudios.com/ink/">Ink es de acceso libre</a> y tiene un editor llamado <a href="https://github.com/inkle/inky">Inky, desarrollado en Javascript</a></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<figure>
-<img data-src="ink.png" alt="Ejemplo del lenguaje Ink" /><figcaption aria-hidden="true">Ejemplo del lenguaje Ink</figcaption>
-</figure>
-<p><small>Más detalles sobre el lenguaje <a href="https://www.youtube.com/watch?v=KYBf6Ko1I2k">en esta charla de la GDC</a></small></p>
-</section>
-<section id="squirrel" class="slide level2">
-<h2>Squirrel</h2>
-<ul>
-<li>Lenguaje imperativo similar a Lua</li>
-<li>Desarrollado por <a href="http://squirrel-lang.org/">Alberto Demichelis</a></li>
-<li>Usado en <a href="https://www.youtube.com/channel/UCE8i1bve9eHEc_yn63NIX7A">Left 4 Dead 2</a> y <a href="https://www.youtube.com/channel/UCn0PHntRGo_-S700MrnY-bg">Portal 2</a></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p>En <a href="https://developer.valvesoftware.com/wiki/L4D2_Vscripts">L4D2</a> se usa para:</p>
-<ul>
-<li>Añadir “inteligencia” e interacción a entidades del mundo</li>
-<li>Para crear mods de mapas y spawnear entidades</li>
-<li>Para modificar el comportamiento del <a href="https://steamcdn-a.akamaihd.net/apps/valve/2009/ai_systems_of_l4d_mike_booth.pdf">AI director, responsable de controlar la generación de hordas de infectados</a></li>
-</ul>
-</section>
-<section id="lua-en-cryengine" class="slide level2">
-<h2>Lua en CryEngine</h2>
-<p>El motor CryEngine de Crytek utiliza Lua como lenguaje de scripting</p>
-<p>Los programadores del engine pueden exponer funciones de sus clases creadas en C++ para que los programadores de scripting en Lua puedan usarlas</p>
-<p><a href="http://docs.cryengine.com/display/SDKDOC4/Lua+Scripting">Lua en CryEngine</a></p>
-</section>
-<section id="luabind" class="slide level2">
-<h2>Luabind</h2>
-<p><a href="http://www.rasterbar.com/products/luabind.html">Luabind</a> es una librería que ayuda a usar Lua desde C++. Simplifica la tarea y permite hacer entre otras cosas:</p>
-<ul>
-<li>Tener clases de C++ en Lua</li>
-<li>Tener funciones y clases de Lua en C++</li>
-<li>Polimorfismo de los métodos de una clase base en C++ desde una clase derivada en Lua</li>
-</ul>
-</section>
-<section id="c-en-unity" class="slide level2">
-<h2>C# en Unity</h2>
-<ul>
-<li>El núcleo de Unity está implementado en C/C++</li>
-<li>Los GameObjects y algunos componentes están implementados en ese mismo lenguaje</li>
-<li>Si queremos crear nuevos componentes (y, por tanto, nuevo contenido) entonces usamos C# como lenguaje de scripting</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>Unity tiene un <em>wrapper</em> que permite la interconexión entre los scripts en C# y el núcleo en C++</li>
-<li>Los scripts son compilados usando los <em>scripting backends</em> Mono, .NET o IL2CPP e integrados en el ejecutable</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<figure>
-<img data-src="il2cpp.png" alt="Infraestructura de IL2CPP" /><figcaption aria-hidden="true">Infraestructura de IL2CPP</figcaption>
-</figure>
-<p><small>Podéis conocer más sobre el scripting de Unity <a href="https://docs.unity3d.com/Manual/ScriptingSection.html">a través de su manual</a></small></p>
-</section>
-<section id="scripting-visual" class="slide level2">
-<h2>Scripting Visual</h2>
-<p>Algunos motores usan lenguajes de scripting visual para la creación de contenidos</p>
-<p>Los lenguajes visuales se suelen componer de bloques con parámetros y flechas que indican el flujo de ejecución</p>
-<p>La programación por bloques es más sencilla para no programadores</p>
-</section>
-<section id="bolt-en-unity" class="slide level2">
-<h2>Bolt en Unity</h2>
-<figure>
-<img data-src="bolt.png" alt="Bolt es el lenguaje de scripting visual para Unity" /><figcaption aria-hidden="true">Bolt es el lenguaje de scripting visual para Unity</figcaption>
-</figure>
-</section>
-<section id="blueprints-en-unreal" class="slide level2">
-<h2>Blueprints en Unreal</h2>
-<figure>
-<img data-src="blueprint.png" alt="En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual" /><figcaption aria-hidden="true">En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual</figcaption>
-</figure>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="creación-de-extensiones-para-herramientas-existentes" class="title-slide slide level1">
-<h1>Creación de extensiones para herramientas existentes</h1>
+<section id="extender-la-funcionalidad-de-herramientas" class="title-slide slide level1">
+<h1>Extender la funcionalidad de herramientas</h1>
 
 </section>
 <section class="slide level2">
@@ -397,7 +416,7 @@
 </section>
 <section class="slide level2">
 
-<p>Como hemos visto anteriormente con la creación de contenidos, estas herramientas han de estar diseñadas para proporcionar una API que permita extender la herramienta con un lenguaje de scripting</p>
+<p>Como hemos visto anteriormente, estas herramientas han de estar diseñadas para proporcionar una API que permita extender la herramienta con un lenguaje de scripting</p>
 </section>
 <section id="extender-blender-con-python" class="slide level2">
 <h2>Extender Blender con Python</h2>
@@ -439,7 +458,7 @@
 (stretch-abs 1 (delays *track* (- 0 decay) delay count))</code></pre>
 </section>
 <section id="extender-el-editor-de-unity-con-c" class="slide level2">
-<h2>Extender el editor de Unity con C</h2>
+<h2>Extender el editor de Unity con C#</h2>
 <p>Lo veremos en un tema aparte</p>
 </section>
 <section id="extender-tiled-con-js" class="slide level2">
