@@ -70,6 +70,8 @@ Pero no todo son ventajas:
 
 - El uso de los lenguajes de scripting hace que el juego/aplicación pueda tener un rendimiento menor (más lentos)
 - Es complicado tener que diseñar la API que permita la integración del lenguaje de scripting en la aplicación/motor
+- Ausencia de herramientas de soporte (resaltado de sintaxis, depurador...)
+- Ausencia de detección de errores (se detectan en ejecución)
 
 
 # Otros lenguajes de scripting
@@ -97,7 +99,7 @@ Hay una gran [lista de juegos que han utilizado Lua como lenguaje de scripting](
 Pero también se usa en aplicaciones
 
 - El reproductor multimedia VLC [utiliza Lua](ttps://forum.videolan.org/viewforum.php?f=29) para que los usuarios puedan crear sus propias extensiones
-- OBS Studio permite ampliar la funcionalidad herramienta [usando Lua y Python](https://obsproject.com/docs/scripting.html)
+- OBS Studio permite ampliar la funcionalidad de la herramienta [usando Lua y Python](https://obsproject.com/docs/scripting.html)
 
 
 
