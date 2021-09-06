@@ -62,12 +62,12 @@ El objetivo es que lo que hagáis en la asignatura valga más allá de la asigna
 
 **Guillermo Jiménez Díaz**
 
-Despacho 436 (4ª planta), tlf. 7560 \
+Despacho 436 (4ª planta) \
+L: 11-13h; V: 15-17h \
 <gjimenez@ucm.es>
 
-**Alejandro Villar Rubio**
+**(Desdoble por designar)**
 
-<alvill04@ucm.es>
 
 
 ## Desarrollo de la asignatura
@@ -100,7 +100,7 @@ Todo lo aprobado se guarda para la convocatoria extraordinaria
 
 Se calificarán varios hitos, pero la nota final será la última
 
-Las hitos son obligatorias, y su presentación pública en clase, también
+Los hitos son obligatorios, y su presentación pública en clase, también
 
 ## Contribución
 
