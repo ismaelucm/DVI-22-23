@@ -48,11 +48,11 @@ title: Videojuegos en Internet
 - ¡Scripting gratis!
 
 
-## ¡Pero yo quiero vender mi juego en un marketplace!
+<!-- ## ¡Pero yo quiero vender mi juego en un marketplace!
 
 - Hay wrappers para poder distribuir tu juego en Steam, App Store, Google Play...
 - Permiten que tu juego HTML5 se distribuya como una aplicación nativa
-- Ejemplos: NW.js, Electron, CocoonJS...
+- Ejemplos: NW.js, Electron, CocoonJS... -->
 
 
 ## El futuro es WebAssembly
