@@ -272,7 +272,7 @@ No es difícil (más o menos) crear un juego aceptable al que mucha gente juegue
 
 - Vender el juego (la licencia) a un *publisher*
 - Publicidad
-- Vender capacidad de hacer juegos (no juegos)
+- Vender capacidad de hacer juegos
 - Fundraising (de muchos tipos)
 
 ---
