@@ -103,9 +103,9 @@ Los lenguajes de tipado dinámico, por el contrario, no tienen compiladores que 
 Así que la corrección será comprobado más tarde, *durante la ejecución*
 
 ```javascript
-function suma(x, y) { return x + y; } 
+function resta(x, y) { return x - y; } 
 
-suma(4, "juan"); // el intérprete no da error hasta que esto no se ejecuta
+resta(4, "juan"); // el intérprete no da error hasta que esto no se ejecuta
 ```
 
 

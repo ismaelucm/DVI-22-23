@@ -17,7 +17,7 @@
 <g id="node2" class="node">
 <title>vm</title>
 <polygon fill="none" stroke="black" points="351.89,-108 246.89,-108 246.89,-72 351.89,-72 351.89,-108"/>
-<text text-anchor="middle" x="299.39" y="-86.3" font-family="Times,serif" font-size="14.00">máquina virtual</text>
+<text text-anchor="middle" x="299.39" y="-86.3" font-family="Times,serif" font-size="14.00">intérprete</text>
 </g>
 <!-- vm&#45;&gt;processor -->
 <g id="edge2" class="edge">

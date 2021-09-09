@@ -7,7 +7,7 @@ digraph {
   {processor vm rank=same}
   processor [label="procesador" shape=box]
   //compile [label="código objeto" shape=ellipse]
-  vm [label="máquina virtual" shape=box]
+  vm [label="intérprete" shape=box]
   source [label="código fuente"]
   //source -> compile [label="compilado en"]
   //compile -> processor [label="ejecutado en"]
