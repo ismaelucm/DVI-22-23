@@ -22,7 +22,6 @@ Si queréis publicar juegos en la web, _necesitáis_ saber cómo funciona un nav
 
 ## Navegadores
 
-
 - Son programas que permiten acceder a la Web
 - ¡No todos los navegadores son iguales!
     - No todos incluyen el mismo motor de renderizado: Gecko (Firefox), Blink (Chrome, Opera), WebKit (Apple Safari)
@@ -37,6 +36,117 @@ Si queréis publicar juegos en la web, _necesitáis_ saber cómo funciona un nav
 
 - [caniuse.com](http://caniuse.com), rápida e intuitiva
 - [MDN](http://developer.mozilla.org), tiene detalles concretos sobre la implementación y diferencias entre navegadores
+
+# Documentos web e Internet
+
+## Una página web no tiene por qué estar en Internet
+
+El navegador entiende HTML, CSS y JS, es decir, es como un visor de PDF
+
+Se pueden crear y abrir en local documentos HTML
+
+![Chrome y Firefox, al abrir un documento local](./navegador-fichero.png)
+
+---
+
+## El navegador es un visor que se conecta
+
+**Además** de mostrar documentos web y ejecutar JS, es capaz de que le pidamos HTMLs, JSs y CSSs que están en Internet
+
+Se conecta con otro ordenador, le pide archivos, se los descarga, y los muestra
+
+De hecho, se los puede descargar a un directorio local
+
+---
+
+![Chrome y Firefox, al conectarse a un servidor](./navegador-servidor.png)
+
+# Redes y protocolos
+
+## Una red son ordenadores conectados entre sí
+
+Y nada más. Internet es una red más, en la que muchos ordenadores de todo el mundo están conectados
+
+## Internet no es la web
+
+Internet en la gran conexión mundial de ordenadores
+
+La web es el conjunto de páginas
+
+VoIP, servicios de streaming, juegos online... Todo eso también es Internet, pero no es *la web*
+
+## Servidores
+
+Un servidor es sólo un ordenador conectado a la red que tiene un programa que escucha y da algún servicio
+
+También se llama servidor al programa que da dicho servicio en la red
+
+No tienen necesariamente un hardware especial
+
+## Un protocolo es una manera de comunicar dos ordenadores
+
+Es decir, un lenguaje común que ambos extremos conocen
+
+La información (archivos, vídeos...) se distribuye usando *protocolos*
+
+## Hypertext Transfer Protocol
+
+Más conocido como HTTP
+
+Es el protocolo que se usa en la web
+
+Muy simple, sin estado:
+
+- CLIENTE: "quiero ver que tienes"
+- SERVIDOR: "toma estos **archivos**"
+
+## Servidor web
+
+Es sólo un programa:
+
+- Conectado a una red
+- Que entiende y habla HTTP
+- Que, cuando se le pide una página, devuelve archivos de la web
+
+[Por extensión, llamamos servidor tanto a la máquina como al programa]{.fragment}
+
+## Servidor local
+
+Como un servidor web es sólo un programa, puedo **ejecutarlo en mi ordenador** y **conectarme a él en local**
+
+Porque TCP (el "sistema" que usa Internet) permite conectarme a mi propia máquina con la *dirección local*:
+
+- `localhost`
+- `127.0.0.1`
+
+(En realidad es más complejo que esto)
+
+# ¿Qué pasa cuando accedéis a una web en un navegador?
+
+## 1. Petición HTTP GET a un servidor
+
+![Petición HTTP GET](request_dance_step1.png)
+
+Se hace un HTTP GET a una URL, y si el recurso existe (y no está cacheado), el servidor lo retorna
+
+## 2. Descarga de archivos
+
+![Descarga de archivos](request_dance_step2.png)
+
+Los archivos HTML pueden hacer referencia a otros recursos... que el navegador deberá pedir al servidor
+
+Mientras tanto, se va renderizando el HTML descargado
+
+## 3. Carga finalizada
+
+Cuando todas las imágenes, scripts, CSS, etc. se han cargado, se dispara el **evento `load`** de `window` (lo veremos más tarde)
+
+
+## Los 3 lenguajes de la web
+
+- Documento y estructura: *HTML*
+- Apariencia: *CSS*
+- Lógica: *JavaScript*
 
 # HTML
 
@@ -134,7 +244,9 @@ h1 {
 }
 ```
 
-## JavaScript
+# JavaScript
+
+---
 
 Sirve para dotar de lógica a un documento
 
@@ -152,142 +264,11 @@ En un momento concreto de la historia de los navegadores, se incluyó la posibil
 console.log("Hello, world!");
 ```
 
-
-## Los 3 lenguajes de la web
-
-- Documento y estructura: *HTML*
-- Apariencia: *CSS*
-- Lógica: *JavaScript*
-  
-
-# Documentos web e Internet
-
-## Una página web no tiene por qué estar en Internet
-
-El navegador entiende HTML, CSS y JS, es decir, es como un visor de PDF
-
-Se pueden crear y abrir en local documentos HTML
-
-![Chrome y Firefox, al abrir un documento local](./navegador-fichero.png)
-
 ---
-
-## El navegador es un visor que se conecta
-
-**Además** de mostrar documentos web y ejecutar JS, es capaz de que le pidamos HTMLs, JSs y CSSs que están en Internet
-
-Se conecta con otro ordenador, le pide archivos, se los descarga, y los muestra
-
-De hecho, se los puede descargar a un directorio local
-
----
-
-![Chrome y Firefox, al conectarse a un servidor](./navegador-servidor.png)
 
 ## Ejemplo HTML, CSS y JS
 
 ([En](ejemplo.html) [archivos](ejemplo.css) [externos](ejemplo.js))
-
-
-# Redes y protocolos
-
-## Una red son ordenadores conectados entre sí
-
-Y nada más. Internet es una red más, en la que muchos ordenadores de todo el mundo están conectados
-
-## Internet no es la web
-
-Internet en la gran conexión mundial de ordenadores
-
-La web es el conjunto de páginas
-
-VoIP, servicios de streaming, juegos online... Todo eso también es Internet, pero no es *la web*
-
-## Servidores
-
-Un servidor es sólo un ordenador conectado a la red que tiene un programa que escucha y da algún servicio
-
-También se llama servidor al programa que da dicho servicio en la red
-
-No tienen necesariamente un hardware especial
-
-## Un protocolo es una manera de comunicar dos ordenadores
-
-Es decir, un lenguaje común que ambos extremos conocen
-
-La información (archivos, vídeos...) se distribuye usando *protocolos*
-
-## Hypertext Transfer Protocol
-
-Más conocido como HTTP
-
-Es el protocolo que se usa en la web
-
-Muy simple, sin estado:
-
-- CLIENTE: "quiero ver que tienes"
-- SERVIDOR: "toma estos **archivos**"
-
-## Servidor web
-
-Es sólo un programa:
-
-- Conectado a una red
-- Que entiende y habla HTTP
-- Que, cuando se le pide una página, devuelve archivos de la web
-
-[Por extensión, llamamos servidor tanto a la máquina como al programa]{.fragment}
-
-## Servidor local
-
-Como un servidor web es sólo un programa, puedo **ejecutarlo en mi ordenador** y **conectarme a él en local**
-
-Porque TCP (el "sistema" que usa Internet) permite conectarme a mi propia máquina con la *dirección local*:
-
-- `localhost`
-- `127.0.0.1`
-
-(En realidad es más complejo que esto)
-
-# ¿Qué pasa cuando accedéis a una web en un navegador?
-
-
-
-## 1. Petición HTTP GET a un servidor
-
-![Petición HTTP GET](request_dance_step1.png)
-
-Se hace un HTTP GET a una URL, y si el recurso existe (y no está cacheado), el servidor lo retorna
-
-
-## 2. Descarga de archivos
-
-![Descarga de archivos](request_dance_step2.png)
-
-Los archivos HTML pueden hacer referencia a otros recursos... que el navegador deberá pedir al servidor
-
-Mientras tanto, se va renderizando el HTML descargado
-
-
-## ¡Un JS salvaje apareció!
-
-Cuando un archivo JS se acaba de descargar, su código se parsea y se **ejecuta**
-
-Mientras se ejecuta, el navegador queda _bloqueado_
-
-
-## 3. Carga finalizada
-
-Cuando todas las imágenes, scripts, CSS, etc. se han cargado, se dispara el **evento `load`** de `window`
-
-Es muy común incluir el código que inicializa la ejecución del programa en el _handler_ de ese evento
-
-```javascript
-window.onload = function () {
-  // hello world
-};
-```
-
 
 
 # Cómo incluir JavaScript en una web
@@ -358,8 +339,19 @@ Podemos incluir archivos JavaScript con la etiqueta `<script>` también:
 - Los callbacks de los eventos se ejecutan **de uno en uno**
 - Los callbacks se ejecutan inmediatamente cuando el evento se dispara (el resto del código espera su finalización)
 
+## Ejemplo: Final de carga de una página
 
-## Ejemplo
+Cuando todas las imágenes, scripts, CSS, etc. se han cargado, se dispara el **evento `load`** de `window`
+
+Es muy común incluir el código que inicializa la ejecución del programa en el _handler_ de ese evento
+
+```javascript
+window.onload = function () {
+  // hello world
+};
+```
+
+## Ejemplo: Callback para un botón
 
 ```javascript
 // Handler o función que se ejecutará 

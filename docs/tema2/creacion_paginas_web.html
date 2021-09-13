@@ -141,6 +141,119 @@
 </ul>
 </section></section>
 <section>
+<section id="documentos-web-e-internet" class="title-slide slide level1">
+<h1>Documentos web e Internet</h1>
+
+</section>
+<section id="una-página-web-no-tiene-por-qué-estar-en-internet" class="slide level2">
+<h2>Una página web no tiene por qué estar en Internet</h2>
+<p>El navegador entiende HTML, CSS y JS, es decir, es como un visor de PDF</p>
+<p>Se pueden crear y abrir en local documentos HTML</p>
+<figure>
+<img data-src="./navegador-fichero.png" alt="Chrome y Firefox, al abrir un documento local" /><figcaption aria-hidden="true">Chrome y Firefox, al abrir un documento local</figcaption>
+</figure>
+</section>
+<section id="el-navegador-es-un-visor-que-se-conecta" class="slide level2">
+<h2>El navegador es un visor que se conecta</h2>
+<p><strong>Además</strong> de mostrar documentos web y ejecutar JS, es capaz de que le pidamos HTMLs, JSs y CSSs que están en Internet</p>
+<p>Se conecta con otro ordenador, le pide archivos, se los descarga, y los muestra</p>
+<p>De hecho, se los puede descargar a un directorio local</p>
+</section>
+<section class="slide level2">
+
+<figure>
+<img data-src="./navegador-servidor.png" alt="Chrome y Firefox, al conectarse a un servidor" /><figcaption aria-hidden="true">Chrome y Firefox, al conectarse a un servidor</figcaption>
+</figure>
+</section></section>
+<section>
+<section id="redes-y-protocolos" class="title-slide slide level1">
+<h1>Redes y protocolos</h1>
+
+</section>
+<section id="una-red-son-ordenadores-conectados-entre-sí" class="slide level2">
+<h2>Una red son ordenadores conectados entre sí</h2>
+<p>Y nada más. Internet es una red más, en la que muchos ordenadores de todo el mundo están conectados</p>
+</section>
+<section id="internet-no-es-la-web" class="slide level2">
+<h2>Internet no es la web</h2>
+<p>Internet en la gran conexión mundial de ordenadores</p>
+<p>La web es el conjunto de páginas</p>
+<p>VoIP, servicios de streaming, juegos online… Todo eso también es Internet, pero no es <em>la web</em></p>
+</section>
+<section id="servidores" class="slide level2">
+<h2>Servidores</h2>
+<p>Un servidor es sólo un ordenador conectado a la red que tiene un programa que escucha y da algún servicio</p>
+<p>También se llama servidor al programa que da dicho servicio en la red</p>
+<p>No tienen necesariamente un hardware especial</p>
+</section>
+<section id="un-protocolo-es-una-manera-de-comunicar-dos-ordenadores" class="slide level2">
+<h2>Un protocolo es una manera de comunicar dos ordenadores</h2>
+<p>Es decir, un lenguaje común que ambos extremos conocen</p>
+<p>La información (archivos, vídeos…) se distribuye usando <em>protocolos</em></p>
+</section>
+<section id="hypertext-transfer-protocol" class="slide level2">
+<h2>Hypertext Transfer Protocol</h2>
+<p>Más conocido como HTTP</p>
+<p>Es el protocolo que se usa en la web</p>
+<p>Muy simple, sin estado:</p>
+<ul>
+<li>CLIENTE: “quiero ver que tienes”</li>
+<li>SERVIDOR: “toma estos <strong>archivos</strong>”</li>
+</ul>
+</section>
+<section id="servidor-web" class="slide level2">
+<h2>Servidor web</h2>
+<p>Es sólo un programa:</p>
+<ul>
+<li>Conectado a una red</li>
+<li>Que entiende y habla HTTP</li>
+<li>Que, cuando se le pide una página, devuelve archivos de la web</li>
+</ul>
+<p><span class="fragment">Por extensión, llamamos servidor tanto a la máquina como al programa</span></p>
+</section>
+<section id="servidor-local" class="slide level2">
+<h2>Servidor local</h2>
+<p>Como un servidor web es sólo un programa, puedo <strong>ejecutarlo en mi ordenador</strong> y <strong>conectarme a él en local</strong></p>
+<p>Porque TCP (el “sistema” que usa Internet) permite conectarme a mi propia máquina con la <em>dirección local</em>:</p>
+<ul>
+<li><code>localhost</code></li>
+<li><code>127.0.0.1</code></li>
+</ul>
+<p>(En realidad es más complejo que esto)</p>
+</section></section>
+<section>
+<section id="qué-pasa-cuando-accedéis-a-una-web-en-un-navegador" class="title-slide slide level1">
+<h1>¿Qué pasa cuando accedéis a una web en un navegador?</h1>
+
+</section>
+<section id="petición-http-get-a-un-servidor" class="slide level2">
+<h2>1. Petición HTTP GET a un servidor</h2>
+<figure>
+<img data-src="request_dance_step1.png" alt="Petición HTTP GET" /><figcaption aria-hidden="true">Petición HTTP GET</figcaption>
+</figure>
+<p>Se hace un HTTP GET a una URL, y si el recurso existe (y no está cacheado), el servidor lo retorna</p>
+</section>
+<section id="descarga-de-archivos" class="slide level2">
+<h2>2. Descarga de archivos</h2>
+<figure>
+<img data-src="request_dance_step2.png" alt="Descarga de archivos" /><figcaption aria-hidden="true">Descarga de archivos</figcaption>
+</figure>
+<p>Los archivos HTML pueden hacer referencia a otros recursos… que el navegador deberá pedir al servidor</p>
+<p>Mientras tanto, se va renderizando el HTML descargado</p>
+</section>
+<section id="carga-finalizada" class="slide level2">
+<h2>3. Carga finalizada</h2>
+<p>Cuando todas las imágenes, scripts, CSS, etc. se han cargado, se dispara el <strong>evento <code>load</code></strong> de <code>window</code> (lo veremos más tarde)</p>
+</section>
+<section id="los-3-lenguajes-de-la-web" class="slide level2">
+<h2>Los 3 lenguajes de la web</h2>
+<ul>
+<li>Documento y estructura: <em>HTML</em></li>
+<li>Apariencia: <em>CSS</em></li>
+<li>Lógica: <em>JavaScript</em></li>
+</ul>
+</section></section>
+<section>
 <section id="html" class="title-slide slide level1">
 <h1>HTML</h1>
 
@@ -220,9 +333,14 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>h1 {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">red</span><span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</section></section>
+<section>
+<section id="javascript" class="title-slide slide level1">
+<h1>JavaScript</h1>
+
 </section>
-<section id="javascript" class="slide level2">
-<h2>JavaScript</h2>
+<section class="slide level2">
+
 <p>Sirve para dotar de lógica a un documento</p>
 <p>Un archivo HTML es un documento, <em>no un programa</em> (como un PDF o un archivo de Word)</p>
 <p>En un momento concreto de la historia de los navegadores, se incluyó la posibilidad de crear lógica con JavaScript</p>
@@ -235,131 +353,9 @@
 </ul>
 <div class="sourceCode" id="cb7"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
-<section id="los-3-lenguajes-de-la-web" class="slide level2">
-<h2>Los 3 lenguajes de la web</h2>
-<ul>
-<li>Documento y estructura: <em>HTML</em></li>
-<li>Apariencia: <em>CSS</em></li>
-<li>Lógica: <em>JavaScript</em></li>
-</ul>
-</section></section>
-<section>
-<section id="documentos-web-e-internet" class="title-slide slide level1">
-<h1>Documentos web e Internet</h1>
-
-</section>
-<section id="una-página-web-no-tiene-por-qué-estar-en-internet" class="slide level2">
-<h2>Una página web no tiene por qué estar en Internet</h2>
-<p>El navegador entiende HTML, CSS y JS, es decir, es como un visor de PDF</p>
-<p>Se pueden crear y abrir en local documentos HTML</p>
-<figure>
-<img data-src="./navegador-fichero.png" alt="Chrome y Firefox, al abrir un documento local" /><figcaption aria-hidden="true">Chrome y Firefox, al abrir un documento local</figcaption>
-</figure>
-</section>
-<section id="el-navegador-es-un-visor-que-se-conecta" class="slide level2">
-<h2>El navegador es un visor que se conecta</h2>
-<p><strong>Además</strong> de mostrar documentos web y ejecutar JS, es capaz de que le pidamos HTMLs, JSs y CSSs que están en Internet</p>
-<p>Se conecta con otro ordenador, le pide archivos, se los descarga, y los muestra</p>
-<p>De hecho, se los puede descargar a un directorio local</p>
-</section>
-<section class="slide level2">
-
-<figure>
-<img data-src="./navegador-servidor.png" alt="Chrome y Firefox, al conectarse a un servidor" /><figcaption aria-hidden="true">Chrome y Firefox, al conectarse a un servidor</figcaption>
-</figure>
-</section>
 <section id="ejemplo-html-css-y-js" class="slide level2">
 <h2>Ejemplo HTML, CSS y JS</h2>
 <p>(<a href="ejemplo.html">En</a> <a href="ejemplo.css">archivos</a> <a href="ejemplo.js">externos</a>)</p>
-</section></section>
-<section>
-<section id="redes-y-protocolos" class="title-slide slide level1">
-<h1>Redes y protocolos</h1>
-
-</section>
-<section id="una-red-son-ordenadores-conectados-entre-sí" class="slide level2">
-<h2>Una red son ordenadores conectados entre sí</h2>
-<p>Y nada más. Internet es una red más, en la que muchos ordenadores de todo el mundo están conectados</p>
-</section>
-<section id="internet-no-es-la-web" class="slide level2">
-<h2>Internet no es la web</h2>
-<p>Internet en la gran conexión mundial de ordenadores</p>
-<p>La web es el conjunto de páginas</p>
-<p>VoIP, servicios de streaming, juegos online… Todo eso también es Internet, pero no es <em>la web</em></p>
-</section>
-<section id="servidores" class="slide level2">
-<h2>Servidores</h2>
-<p>Un servidor es sólo un ordenador conectado a la red que tiene un programa que escucha y da algún servicio</p>
-<p>También se llama servidor al programa que da dicho servicio en la red</p>
-<p>No tienen necesariamente un hardware especial</p>
-</section>
-<section id="un-protocolo-es-una-manera-de-comunicar-dos-ordenadores" class="slide level2">
-<h2>Un protocolo es una manera de comunicar dos ordenadores</h2>
-<p>Es decir, un lenguaje común que ambos extremos conocen</p>
-<p>La información (archivos, vídeos…) se distribuye usando <em>protocolos</em></p>
-</section>
-<section id="hypertext-transfer-protocol" class="slide level2">
-<h2>Hypertext Transfer Protocol</h2>
-<p>Más conocido como HTTP</p>
-<p>Es el protocolo que se usa en la web</p>
-<p>Muy simple, sin estado:</p>
-<ul>
-<li>CLIENTE: “quiero ver que tienes”</li>
-<li>SERVIDOR: “toma estos <strong>archivos</strong>”</li>
-</ul>
-</section>
-<section id="servidor-web" class="slide level2">
-<h2>Servidor web</h2>
-<p>Es sólo un programa:</p>
-<ul>
-<li>Conectado a una red</li>
-<li>Que entiende y habla HTTP</li>
-<li>Que, cuando se le pide una página, devuelve archivos de la web</li>
-</ul>
-<p><span class="fragment">Por extensión, llamamos servidor tanto a la máquina como al programa</span></p>
-</section>
-<section id="servidor-local" class="slide level2">
-<h2>Servidor local</h2>
-<p>Como un servidor web es sólo un programa, puedo <strong>ejecutarlo en mi ordenador</strong> y <strong>conectarme a él en local</strong></p>
-<p>Porque TCP (el “sistema” que usa Internet) permite conectarme a mi propia máquina con la <em>dirección local</em>:</p>
-<ul>
-<li><code>localhost</code></li>
-<li><code>127.0.0.1</code></li>
-</ul>
-<p>(En realidad es más complejo que esto)</p>
-</section></section>
-<section>
-<section id="qué-pasa-cuando-accedéis-a-una-web-en-un-navegador" class="title-slide slide level1">
-<h1>¿Qué pasa cuando accedéis a una web en un navegador?</h1>
-
-</section>
-<section id="petición-http-get-a-un-servidor" class="slide level2">
-<h2>1. Petición HTTP GET a un servidor</h2>
-<figure>
-<img data-src="request_dance_step1.png" alt="Petición HTTP GET" /><figcaption aria-hidden="true">Petición HTTP GET</figcaption>
-</figure>
-<p>Se hace un HTTP GET a una URL, y si el recurso existe (y no está cacheado), el servidor lo retorna</p>
-</section>
-<section id="descarga-de-archivos" class="slide level2">
-<h2>2. Descarga de archivos</h2>
-<figure>
-<img data-src="request_dance_step2.png" alt="Descarga de archivos" /><figcaption aria-hidden="true">Descarga de archivos</figcaption>
-</figure>
-<p>Los archivos HTML pueden hacer referencia a otros recursos… que el navegador deberá pedir al servidor</p>
-<p>Mientras tanto, se va renderizando el HTML descargado</p>
-</section>
-<section id="un-js-salvaje-apareció" class="slide level2">
-<h2>¡Un JS salvaje apareció!</h2>
-<p>Cuando un archivo JS se acaba de descargar, su código se parsea y se <strong>ejecuta</strong></p>
-<p>Mientras se ejecuta, el navegador queda <em>bloqueado</em></p>
-</section>
-<section id="carga-finalizada" class="slide level2">
-<h2>3. Carga finalizada</h2>
-<p>Cuando todas las imágenes, scripts, CSS, etc. se han cargado, se dispara el <strong>evento <code>load</code></strong> de <code>window</code></p>
-<p>Es muy común incluir el código que inicializa la ejecución del programa en el <em>handler</em> de ese evento</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">onload</span> <span class="op">=</span> <span class="kw">function</span> () {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// hello world</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="cómo-incluir-javascript-en-una-web" class="title-slide slide level1">
@@ -368,19 +364,19 @@
 </section>
 <section id="estructura-básica-de-un-documento-html" class="slide level2">
 <h2>Estructura básica de un documento HTML</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el head es metadata --&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Cancamusa<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el body es contenido --&gt;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>Monkey Island<span class="kw">&lt;/h1&gt;</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>Mira detrás de ti, ¡un mono de tres cabezas!<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype </span>html<span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el head es metadata --&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>Cancamusa<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- el body es contenido --&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1&gt;</span>Monkey Island<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>Mira detrás de ti, ¡un mono de tres cabezas!<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
 </section>
 <section id="dónde-va-el-código-javascript" class="slide level2">
 <h2>¿Dónde va el código JavaScript?</h2>
@@ -397,14 +393,14 @@
 <section id="scripts-inline" class="slide level2">
 <h2>Scripts inline</h2>
 <p>Podemos incluir código JavaScript inline en el HTML con la etiqueta <code>&lt;script&gt;</code></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, world!&quot;</span>)<span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
 </section>
 <section id="scripts-externos" class="slide level2">
 <h2>Scripts externos</h2>
 <p>Podemos incluir archivos JavaScript con la etiqueta <code>&lt;script&gt;</code> también:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;js/game.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;js/game.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="cómo-se-ejecuta-javascript" class="title-slide slide level1">
@@ -426,8 +422,16 @@
 <li>Los callbacks se ejecutan inmediatamente cuando el evento se dispara (el resto del código espera su finalización)</li>
 </ul>
 </section>
-<section id="ejemplo" class="slide level2">
-<h2>Ejemplo</h2>
+<section id="ejemplo-final-de-carga-de-una-página" class="slide level2">
+<h2>Ejemplo: Final de carga de una página</h2>
+<p>Cuando todas las imágenes, scripts, CSS, etc. se han cargado, se dispara el <strong>evento <code>load</code></strong> de <code>window</code></p>
+<p>Es muy común incluir el código que inicializa la ejecución del programa en el <em>handler</em> de ese evento</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="at">onload</span> <span class="op">=</span> <span class="kw">function</span> () {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// hello world</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="ejemplo-callback-para-un-botón" class="slide level2">
+<h2>Ejemplo: Callback para un botón</h2>
 <div class="sourceCode" id="cb12"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Handler o función que se ejecutará </span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">// en respuesta a un evento</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> <span class="kw">function</span> (evt) {</span>
