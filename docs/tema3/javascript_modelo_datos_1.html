@@ -212,9 +212,7 @@
 <li>Sin ninguna palabra clave delante: variables globales</li>
 </ul>
 <blockquote>
-<blockquote>
 <p><strong>No las usaremos en este curso (salvo que nos lo justifiquéis adecuadamente)</strong></p>
-</blockquote>
 </blockquote>
 <p><small>Cuando veamos el modelo de ejecución, veremos por qué</small></p>
 </section>
@@ -273,12 +271,12 @@
 <h2>Objetos y <code class="sourceCode javascript"><span class="kw">null</span></code></h2>
 <p>Los objetos en JS son “no primitivos”</p>
 <p>Tienen <em>datos</em> y <em>métodos</em></p>
-<p><code class="sourceCode javascript"><span class="kw">null</span></code> es un tipo, aunque <code class="sourceCode javascript"><span class="kw">typeof</span> instance <span class="op">===</span> <span class="st">&quot;object&quot;</span></code></p>
+<p><code class="sourceCode javascript"><span class="kw">null</span></code> es un tipo, aunque <code class="sourceCode javascript"><span class="kw">typeof</span> <span class="kw">null</span> <span class="op">===</span> <span class="st">&quot;object&quot;</span></code></p>
 </section>
 <section id="funciones" class="slide level2">
 <h2>Funciones</h2>
 <p>Las funciones se representan por su propio tipo, aunque también son <code class="sourceCode javascript">object</code></p>
-<p><code class="sourceCode javascript"><span class="kw">typeof</span> instance <span class="op">===</span> <span class="st">&quot;function&quot;</span></code></p>
+<p><code class="sourceCode javascript"><span class="kw">typeof</span> f <span class="op">===</span> <span class="st">&quot;function&quot;</span></code></p>
 <p>Tienen la propiedad de ser “llamables” (<em>callable</em>)</p>
 </section>
 <section class="slide level2">
@@ -378,6 +376,12 @@
 <li>En funciones en las que se pregunta por un objeto, indicar que no se ha encontrado</li>
 <li>En relaciones de composición, indicar que el objeto compuesto ya no necesita al objeto componente</li>
 </ul>
+</section>
+<section class="slide level2">
+
+<p>Cuidado con:</p>
+<p><code class="sourceCode javascript"><span class="kw">null</span> <span class="op">==</span> <span class="kw">undefined</span></code></p>
+<p><code class="sourceCode javascript"><span class="kw">null</span> <span class="op">===</span> <span class="kw">undefined</span></code></p>
 </section>
 <section class="slide level2">
 
@@ -551,7 +555,7 @@
 </section>
 <section class="slide level2">
 
-<p>En JavaScript, el operador de igualdad es <code class="sourceCode javascript"><span class="op">===</span></code> (el triple igual)</p>
+<p>En JavaScript, el operador de igualdad estricta o identidad es <code class="sourceCode javascript"><span class="op">===</span></code> (el triple igual)</p>
 <p>Esto permite comparar dos objetos y decidir si <strong>son iguales</strong></p>
 <p>También existe el operador de desigualdad <code class="sourceCode javascript"><span class="op">!==</span></code> que compara dos objetos y decide si <strong>no son iguales</strong></p>
 </section>
@@ -583,7 +587,7 @@
 </section>
 <section class="slide level2">
 
-<p>El operador <code class="sourceCode javascript"><span class="op">==</span></code> es parecido, pero hace <strong>peligrosas</strong> conversiones de tipo:</p>
+<p>El operador <code class="sourceCode javascript"><span class="op">==</span></code> es el operador de igualdad abstracta o débil. Es parecido, pero hace <strong>peligrosas</strong> conversiones de tipo:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">===</span> <span class="st">&#39;3&#39;</span><span class="op">;</span> <span class="co">// false</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">==</span> <span class="st">&#39;3&#39;</span><span class="op">;</span>  <span class="co">// true</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>

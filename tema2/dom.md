@@ -1,4 +1,3 @@
-
 ---
 title: "HTML y JS: Document Object Model"
 ---

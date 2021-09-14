@@ -143,7 +143,7 @@ Veréis que también se pueden difinir variables con:
 - `var`: Variables globales o de función. Realizan _hoisting_
 - Sin ninguna palabra clave delante: variables globales
 
->> **No las usaremos en este curso (salvo que nos lo justifiquéis adecuadamente)**
+> **No las usaremos en este curso (salvo que nos lo justifiquéis adecuadamente)**
 
 <small>Cuando veamos el modelo de ejecución, veremos por qué</small>
 
@@ -213,7 +213,7 @@ Los objetos en JS son "no primitivos"
 
 Tienen *datos* y *métodos*
 
-`null`{.js} es un tipo, aunque `typeof instance === "object"`{.js}
+`null`{.js} es un tipo, aunque `typeof null === "object"`{.js}
 
 ---
 
@@ -221,7 +221,7 @@ Tienen *datos* y *métodos*
 
 Las funciones se representan por su propio tipo, aunque también son `object`{.js}
 
-`typeof instance === "function"`{.js}
+`typeof f === "function"`{.js}
 
 Tienen la propiedad de ser "llamables" (_callable_)
 
@@ -365,6 +365,14 @@ Este valor representa la **ausencia de objeto** y se suele utilizar para:
 
 - En funciones en las que se pregunta por un objeto, indicar que no se ha encontrado
 - En relaciones de composición, indicar que el objeto compuesto ya no necesita al objeto componente
+
+---
+
+Cuidado con:
+
+`null == undefined`{.js}
+
+`null === undefined`{.js}
 
 ---
 
@@ -595,7 +603,7 @@ hero.inventory[2].item.power; // el poder del item del tercer slot del inventari
 
 ---
 
-En JavaScript, el operador de igualdad es `===`{.js} (el triple igual)
+En JavaScript, el operador de igualdad estricta o identidad es `===`{.js} (el triple igual)
 
 Esto permite comparar dos objetos y decidir si **son iguales**
 
@@ -636,7 +644,7 @@ Symbol() === Symbol(); // false
 
 ---
 
-El operador `==`{.js} es parecido, pero hace **peligrosas** conversiones de tipo:
+El operador `==`{.js} es el operador de igualdad abstracta o débil. Es parecido, pero hace **peligrosas** conversiones de tipo:
 
 ```js
 3 === '3'; // false
