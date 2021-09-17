@@ -169,7 +169,7 @@
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Enemigo<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">constructor</span> <span class="op">=</span> Enemigo<span class="op">;</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>Enemigo<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">atacar</span> <span class="op">=</span> <span class="kw">function</span> (enemigo) {</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  Entidad<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">atacar</span><span class="op">.</span><span class="fu">call</span>(<span class="kw">this</span><span class="op">,</span> enemigo)<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  Entidad<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">atacar</span><span class="op">.</span><span class="fu">apply</span>(<span class="kw">this</span><span class="op">,</span> [enemigo])<span class="op">;</span></span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">

@@ -578,7 +578,7 @@ let hero = {
   life: 100,
   weapon: { kind: 'sword', power: 20, magicPower: 5 },
   defense: { kind: 'shield', power: 5, magicPower: 0 },
-  // Inventario por slots. Dos slots vacion y una último con 5 pociones
+  // Inventario por slots. Dos slots vacios y uno con 5 pociones
   inventory: [
     { item: null, count: 0},
     { item: null, count: 0},

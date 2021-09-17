@@ -94,7 +94,7 @@ Enemigo.prototype = Object.create(Entidad.prototype);
 Enemigo.prototype.constructor = Enemigo;
 
 Enemigo.prototype.atacar = function (enemigo) {
-  Entidad.prototype.atacar.call(this, enemigo);
+  Entidad.prototype.atacar.apply(this, [enemigo]);
 }
 
 ```
