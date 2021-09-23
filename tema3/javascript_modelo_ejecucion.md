@@ -440,12 +440,12 @@ Esto **no afecta al valor de `this`{.js}** que seguirá siendo **el destinatario
 Considera el siguiente ejemplo:
 
 ```js
-var diceUtils = {
+let diceUtils = {
   history: [], // lleva el histórico de tiradas
 
   newDie: function (sides) {
     return function die() {
-      var result = Math.floor(Math.random() * sides) + 1;
+      let result = Math.floor(Math.random() * sides) + 1;
       this.history.push([new Date(), sides, result]);
       return result;
     }
@@ -461,7 +461,7 @@ Nuestra intención es poder crear dados y llevar un registro de todas las tirada
 Pero esto no funciona:
 
 ```js
-var d10 = diceUtils.newDie(10);
+const d10 = diceUtils.newDie(10);
 d10(); // ¡error!
 ```
 
@@ -488,13 +488,13 @@ Podemos hacer esto de dos maneras. La primera es un mero juego de variables:
 
 
 ```js
-var diceUtils = {
+let diceUtils = {
   history: [], // Lleva el histórico de dados
 
   newDie: function (sides) {
-    var self = this; // self es ahora el destinatario de newDie
+    let self = this; // self es ahora el destinatario de newDie
     return function die() {
-      var result = Math.floor(Math.random() * sides) + 1;
+      let result = Math.floor(Math.random() * sides) + 1;
       // Usando self nos referimos al destinatario de newDie
       self.history.push([new Date(), sides, result]);
       return result;
@@ -509,8 +509,8 @@ var diceUtils = {
 Esto sí funciona y es mucho más conveniente:
 
 ```js
-var d10 = diceUtils.newDie(10);
-var d6 = diceUtils.newDie(6);
+let d10 = diceUtils.newDie(10);
+let d6 = diceUtils.newDie(6);
 d10();
 d6();
 d10();
@@ -528,7 +528,7 @@ el primer parámetro de `bind()`{.js}**. De este modo:
 
 
 ```js
-var diceUtils = {
+let diceUtils = {
   history: [], // Lleva el histórico de dados
 
   newDie: function (sides) {
@@ -536,7 +536,7 @@ var diceUtils = {
                            // destinatario establecido al primer parámetro
 
     function die() {
-      var result = Math.floor(Math.random() * sides) + 1;
+      let result = Math.floor(Math.random() * sides) + 1;
       this.history.push([new Date(), sides, result]);
       return result;
     }
@@ -551,12 +551,12 @@ Las dos formas son **ampliamente utilizadas** pero la segunda se ve escrita much
 
 
 ```js
-var diceUtils = {
+let diceUtils = {
   history: [], // Lleva el histórico de dados
 
   newDie: function (sides) {
     return function die() {
-      var result = Math.floor(Math.random() * sides) + 1;
+      let result = Math.floor(Math.random() * sides) + 1;
       this.history.push([new Date(), sides, result]);
       return result;
     }.bind(this); // el bind sigue a la expresión de función

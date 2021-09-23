@@ -434,12 +434,12 @@
 <section id="métodos-closures-y-this" class="slide level2">
 <h2>Métodos, closures y <code class="sourceCode javascript"><span class="kw">this</span></code></h2>
 <p>Considera el siguiente ejemplo:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> diceUtils <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// lleva el histórico de tiradas</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="fu">die</span>() {</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>([<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
 <span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    }</span>
@@ -450,7 +450,7 @@
 
 <p>Nuestra intención es poder crear dados y llevar un registro de todas las tiradas que se hagan con estos dados</p>
 <p>Pero esto no funciona:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">d10</span>()<span class="op">;</span> <span class="co">// ¡error!</span></span></code></pre></div>
 </section>
 <section class="slide level2">
@@ -468,13 +468,13 @@
 <section class="slide level2">
 
 <p>Podemos hacer esto de dos maneras. La primera es un mero juego de variables:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> diceUtils <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> self <span class="op">=</span> <span class="kw">this</span><span class="op">;</span> <span class="co">// self es ahora el destinatario de newDie</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> self <span class="op">=</span> <span class="kw">this</span><span class="op">;</span> <span class="co">// self es ahora el destinatario de newDie</span></span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="fu">die</span>() {</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Usando self nos referimos al destinatario de newDie</span></span>
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>      self<span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>([<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
@@ -485,8 +485,8 @@
 <section class="slide level2">
 
 <p>Esto sí funciona y es mucho más conveniente:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> d6 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">6</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> d6 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">6</span>)<span class="op">;</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">d10</span>()<span class="op">;</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">d6</span>()<span class="op">;</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">d10</span>()<span class="op">;</span></span>
@@ -499,7 +499,7 @@
 <section class="slide level2">
 
 <p>El método <code class="sourceCode javascript"><span class="fu">bind</span>()</code> de una función <strong>devuelve otra función cuyo <code class="sourceCode javascript"><span class="kw">this</span></code> será el primer parámetro de <code class="sourceCode javascript"><span class="fu">bind</span>()</code></strong>. De este modo:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> diceUtils <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
@@ -507,7 +507,7 @@
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>                           <span class="co">// destinatario establecido al primer parámetro</span></span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">function</span> <span class="fu">die</span>() {</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>([<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
 <span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    }</span>
@@ -517,12 +517,12 @@
 <section class="slide level2">
 
 <p>Las dos formas son <strong>ampliamente utilizadas</strong> pero la segunda se ve escrita muchas veces de este modo:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> diceUtils <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="fu">die</span>() {</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>([<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">,</span> sides<span class="op">,</span> result])<span class="op">;</span></span>
 <span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> result<span class="op">;</span></span>
 <span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    }<span class="op">.</span><span class="fu">bind</span>(<span class="kw">this</span>)<span class="op">;</span> <span class="co">// el bind sigue a la expresión de función</span></span>
