@@ -41,17 +41,21 @@
 </section>
 <section class="slide level2">
 
-<p>Sólo tenéis que crear una rama <code>master</code> en un repositorio, y tener ahí el archivo <code>index.html</code> apropiado (los servidores web usan el documento <code>index.html</code> como el servido por defecto)</p>
-<p>También podéis hacerlo desde la carpeta <code>docs</code> de <code>master</code> (tenéis que configurarlo en “Settings”)</p>
+<p>Alternativas:</p>
+<ol type="1">
+<li>Sólo tenéis que crear una rama <code>main</code> en un repositorio, y tener ahí el archivo <code>index.html</code> apropiado (los servidores web usan el documento <code>index.html</code> como el servido por defecto)</li>
+<li>Tener nuestra versión “jugable” en una carpeta <code>docs</code> de <code>main</code> (tenéis que configurarlo en “Settings”)</li>
+<li>Tener nuestra versión “jugable” en una rama <code>gh-pages</code> (que podéis/deberíais crear como <a href="https://dev.to/mcaci/how-to-create-an-orphan-branch-in-git-35ac">orphan branch</a>)</li>
+</ol>
 </section>
 <section class="slide level2">
 
-<p>Una ventaja de hacerlo desde <code>docs</code> es que, si el repositorio es privado, sólo se servirá/será público lo de esa carpeta</p>
-</section>
-<section class="slide level2">
-
-<p>Una ventaja de hacerlo desde <code>master</code> es que no hay que hacer nada más que desarrollar y hacer <code>push</code>, y servimos los mismos archivos de desarrollo</p>
+<p>Una ventaja de hacerlo desde <code>main</code> es que no hay que hacer nada más que desarrollar y hacer <code>push</code>, y servimos los mismos archivos de desarrollo</p>
 <p>En general <em>esto no es idóneo</em>, pero acelera y simplifica el proceso</p>
+</section>
+<section class="slide level2">
+
+<p>Una ventaja de hacerlo desde <code>docs</code> o desde <code>gh-pages</code> es que, si el repositorio es privado, sólo se servirá/será público lo de esa carpeta</p>
 </section>
 <section id="rutas" class="slide level2">
 <h2>Rutas</h2>
@@ -114,8 +118,8 @@
 
 <p>Cuando funcione:</p>
 <ul>
-<li>Hacer <code>push</code> y publicar <code>master</code></li>
-<li>Publicar sólo <code>docs</code> y copiar a esta carpeta sólo cuando haya material mejorado</li>
+<li>Hacer <code>push</code> y publicar <code>main</code></li>
+<li>Publicar sólo carpeta <code>docs</code> o rama <code>gh-pages</code> y copiar a esta carpeta/rama sólo cuando haya material mejorado</li>
 </ul>
 <!-- 
 # Makefiles
@@ -251,7 +255,7 @@ Esto hace que publicar en la carpeta `docs` sea mucho más sencillo -->
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,
