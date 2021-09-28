@@ -12,17 +12,20 @@ Todos, a través del [servicio de páginas públicas en GitHub](https://help.git
 
 ---
 
-Sólo tenéis que crear una rama `master` en un repositorio, y tener ahí el archivo `index.html` apropiado (los servidores web usan el documento `index.html` como el servido por defecto)
+Sólo tenéis que crear una rama `main` en un repositorio, y tener ahí el archivo `index.html` apropiado (los servidores web usan el documento `index.html` como el servido por defecto)
 
-También podéis hacerlo desde la carpeta `docs` de `master` (tenéis que configurarlo en "Settings")
+También podéis hacerlo desde la carpeta `docs` de `main` (tenéis que configurarlo en "Settings")
+
+Finalmente, también podéis subirlo a una rama `docs` (que podéis crear como [orphan branch](https://dev.to/mcaci/how-to-create-an-orphan-branch-in-git-35ac))
 
 ---
 
 Una ventaja de hacerlo desde `docs` es que, si el repositorio es privado, sólo se servirá/será público lo de esa carpeta
 
+
 ---
 
-Una ventaja de hacerlo desde `master` es que no hay que hacer nada más que desarrollar y hacer `push`, y servimos los mismos archivos de desarrollo
+Una ventaja de hacerlo desde `main` es que no hay que hacer nada más que desarrollar y hacer `push`, y servimos los mismos archivos de desarrollo
 
 En general *esto no es idóneo*, pero acelera y simplifica el proceso
 
