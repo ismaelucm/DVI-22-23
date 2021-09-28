@@ -34,7 +34,7 @@ basepandoc=pandoc -s --filter pandoc-crossref -M secPrefix= -M figPrefix= -M eqn
 
 define slide
 	$(makedir)
-	$(basepandoc) --css=../$(css) --variable progress=true --variable slideNumber=true --variable revealjs-url=../$(reveal) -Vtheme=beige -t revealjs
+	$(basepandoc) --css=../$(css) --variable progress=true --variable slideNumber=true --variable revealjs-url=../$(reveal) -Vtheme=beige -t revealjs -V history=true
 endef
 
 define doc

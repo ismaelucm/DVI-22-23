@@ -58,7 +58,7 @@ Como en la herencia:
 ```js
 class Enemigo extends Entidad{
   constructor(nombre) {
-    this.nombre = nombre;
+    this.nombre = nombre; // este código da un error
   }  
 }
 ```

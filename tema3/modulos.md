@@ -54,6 +54,33 @@ Era necesario usar `node.js` para transformar archivos con módulos **en un solo
 
 ---
 
+## [Patrón Módulo](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
+
+Era la forma en la que se implementaban inicialmente los módulos
+
+Hacen uso de los cierres (_closures_) para decidir qué publica el módulo
+
+---
+
+Observa que la función se ejecuta inmediatamente ([IIFE](https://developer.mozilla.org/es/docs/Glossary/IIFE))
+
+```js
+var testModule = (function () {
+  var counter = 0; 
+  return { 
+    incrementCounter: function () {
+      return counter++;
+    }, 
+    resetCounter: function () {
+      console.log( "counter value prior to reset: " + counter );
+      counter = 0;
+    }
+  }; 
+})();
+
+testModule.incrementCounter();
+``` 
+
 ## CommonJS
 
 ```js
