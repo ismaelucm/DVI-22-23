@@ -8,7 +8,7 @@ title: Publicar proyecto en la web
 
 Hay que alojar el proyecto en un sitio web
 
-Todos, a través del [servicio de páginas públicas en GitHub](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/) podéis simplemente hacer un commit del proyecto y servir la URL
+Todos, a través del [servicio de páginas públicas en GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages) podéis simplemente hacer un commit del proyecto y servir la URL
 
 ---
 
@@ -16,7 +16,7 @@ Alternativas:
 
 1. Sólo tenéis que crear una rama `main` en un repositorio, y tener ahí el archivo `index.html` apropiado (los servidores web usan el documento `index.html` como el servido por defecto)
 2. Tener nuestra versión "jugable" en una carpeta `docs` de `main` (tenéis que configurarlo en "Settings")
-3. Tener nuestra versión "jugable" en una rama `gh-pages` (que podéis/deberíais crear como [orphan branch](https://dev.to/mcaci/how-to-create-an-orphan-branch-in-git-35ac))
+3. Tener nuestra versión "jugable" en una rama `gh-pages` (que podéis/deberíais crear como [orphan branch](https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/))
 
 ---
 
