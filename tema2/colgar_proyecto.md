@@ -16,7 +16,7 @@ Alternativas:
 
 1. Sólo tenéis que crear una rama `main` en un repositorio, y tener ahí el archivo `index.html` apropiado (los servidores web usan el documento `index.html` como el servido por defecto)
 2. Tener nuestra versión de producción en una carpeta `docs` de `main` (tenéis que configurarlo en "Settings")
-3. Tener nuestra versión de producción en una rama `gh-pages` (que podéis/deberíais crear como [orphan branch](https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo+/))
+3. Tener nuestra versión de producción en una rama `gh-pages` (que podéis/deberíais crear como [orphan branch](https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/))
 
 ---
 
