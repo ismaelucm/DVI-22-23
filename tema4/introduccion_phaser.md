@@ -15,7 +15,7 @@ Tiene una apasionada comunidad en el proceso de desarrollo, por lo que crece rá
 
 El objeto principal de Phaser es un objeto JavaScript llamado `Game`{.js}
 
-Dentro de un *juego* (`Game`{.js}) hay *escenas* (`Scene`{.js}), y dentro de *escenas*, *objetos* (que son los que darán lógica y representación al juego) (`GameObject`{.js})
+Dentro de un *juego* (`Game`{.js}) hay *escenas* (`Scene`{.js}), y dentro de *escenas*, *objetos* (`GameObject`{.js}), que son los que darán lógica y representación al juego 
 
 
 ## Escenas en Phaser
@@ -55,7 +55,7 @@ El motor llama a estos métodos automáticamente:
 ---
 
 
-Además, Phaser proporciona una serie de propiedades que podemos utilizar en nuestro juego, mayoritariamente, estas propiedades son formas de acceder a los subsistemas de Phaser
+Además, Phaser proporciona una serie de propiedades que podemos utilizar en nuestro juego. Mayoritariamente, estas propiedades son formas de acceder a los subsistemas de Phaser
 
 ---
 
@@ -236,6 +236,7 @@ En el caso anterior, no puedo ir a una URL `'../anterior.png'`{.js} que esté en
 Se le añade una _key_ (clave o nombre) al recurso para poder identificarlo
 
 ```js
+// this es un objeto Scene
 function preload() {
     this.load.image('phaser', 'sprites/phaser-dude.png');
     this.load.image('platform', 'sprites/platform.png');
@@ -300,6 +301,7 @@ Sirve también para crear animaciones por frames
 
 
 ```js
+// this es un objeto scene
 function preload() {
     this.load.spritesheet(
       'keyspritesheet', 'keyspritesheet.png', { frameWidth: 64, frameHeight: 64 });

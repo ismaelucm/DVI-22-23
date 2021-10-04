@@ -105,7 +105,7 @@
 <section id="game" class="slide level2">
 <h2>Game</h2>
 <p>El objeto principal de Phaser es un objeto JavaScript llamado <code class="sourceCode javascript">Game</code></p>
-<p>Dentro de un <em>juego</em> (<code class="sourceCode javascript">Game</code>) hay <em>escenas</em> (<code class="sourceCode javascript">Scene</code>), y dentro de <em>escenas</em>, <em>objetos</em> (que son los que darán lógica y representación al juego) (<code class="sourceCode javascript">GameObject</code>)</p>
+<p>Dentro de un <em>juego</em> (<code class="sourceCode javascript">Game</code>) hay <em>escenas</em> (<code class="sourceCode javascript">Scene</code>), y dentro de <em>escenas</em>, <em>objetos</em> (<code class="sourceCode javascript">GameObject</code>), que son los que darán lógica y representación al juego</p>
 </section>
 <section id="escenas-en-phaser" class="slide level2">
 <h2>Escenas en Phaser</h2>
@@ -140,7 +140,7 @@
 </section>
 <section class="slide level2">
 
-<p>Además, Phaser proporciona una serie de propiedades que podemos utilizar en nuestro juego, mayoritariamente, estas propiedades son formas de acceder a los subsistemas de Phaser</p>
+<p>Además, Phaser proporciona una serie de propiedades que podemos utilizar en nuestro juego. Mayoritariamente, estas propiedades son formas de acceder a los subsistemas de Phaser</p>
 </section>
 <section id="algunos-subsistemas" class="slide level2">
 <h2>Algunos subsistemas</h2>
@@ -277,10 +277,11 @@
 <section id="cargar" class="slide level2">
 <h2>Cargar</h2>
 <p>Se le añade una <em>key</em> (clave o nombre) al recurso para poder identificarlo</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">preload</span>() {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;phaser&#39;</span><span class="op">,</span> <span class="st">&#39;sprites/phaser-dude.png&#39;</span>)<span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;platform&#39;</span><span class="op">,</span> <span class="st">&#39;sprites/platform.png&#39;</span>)<span class="op">;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es un objeto Scene</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">preload</span>() {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;phaser&#39;</span><span class="op">,</span> <span class="st">&#39;sprites/phaser-dude.png&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;platform&#39;</span><span class="op">,</span> <span class="st">&#39;sprites/platform.png&#39;</span>)<span class="op">;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -337,21 +338,22 @@ Hay que indicar que `cache` es una propiedad del objeto juego. -->
 <section class="slide level2">
 
 <p>Sirve también para crear animaciones por frames</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">preload</span>() {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">spritesheet</span>(</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;keyspritesheet&#39;</span><span class="op">,</span> <span class="st">&#39;keyspritesheet.png&#39;</span><span class="op">,</span> { <span class="dt">frameWidth</span><span class="op">:</span> <span class="dv">64</span><span class="op">,</span> <span class="dt">frameHeight</span><span class="op">:</span> <span class="dv">64</span> })<span class="op">;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">create</span>() {</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(<span class="dv">300</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="st">&#39;keyspritesheet&#39;</span>)<span class="op">;</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">create</span>({</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">key</span><span class="op">:</span> <span class="st">&#39;standing_sprite&#39;</span><span class="op">,</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">frames</span><span class="op">:</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">generateFrameNumbers</span>(<span class="st">&#39;keyspritesheet&#39;</span><span class="op">,</span> { <span class="dt">start</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">end</span><span class="op">:</span> <span class="dv">4</span> })<span class="op">,</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">frameRate</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">repeat</span><span class="op">:</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es un objeto scene</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">preload</span>() {</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">spritesheet</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;keyspritesheet&#39;</span><span class="op">,</span> <span class="st">&#39;keyspritesheet.png&#39;</span><span class="op">,</span> { <span class="dt">frameWidth</span><span class="op">:</span> <span class="dv">64</span><span class="op">,</span> <span class="dt">frameHeight</span><span class="op">:</span> <span class="dv">64</span> })<span class="op">;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">create</span>() {</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(<span class="dv">300</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="st">&#39;keyspritesheet&#39;</span>)<span class="op">;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">create</span>({</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">key</span><span class="op">:</span> <span class="st">&#39;standing_sprite&#39;</span><span class="op">,</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">frames</span><span class="op">:</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">generateFrameNumbers</span>(<span class="st">&#39;keyspritesheet&#39;</span><span class="op">,</span> { <span class="dt">start</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">end</span><span class="op">:</span> <span class="dv">4</span> })<span class="op">,</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">frameRate</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">repeat</span><span class="op">:</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -408,7 +410,7 @@ Hay que indicar que `cache` es una propiedad del objeto juego. -->
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,
