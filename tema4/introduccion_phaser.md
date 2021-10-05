@@ -101,6 +101,8 @@ new Phaser.Game({
 
 Esto crea un `<canvas>`{.html} al final de la página
 
+<small>En realidad, podemos crearlo [de una manera más sencilla](https://codepen.io/gjimenezucm/pen/bGRPRYz)</small>
+
 ---
 
 Si queremos usar nuestro propio `<canvas>`{.html}:

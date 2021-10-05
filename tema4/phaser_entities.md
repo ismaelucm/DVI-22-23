@@ -36,7 +36,7 @@ A continuación veremos algunas de las entidades más importantes de Phaser
 ---
 
 Las imágenes son las entidades visibles más simples de Phaser. Las entidades
-son instancias de la clase [`Image`](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html)
+son instancias de la clase [`Image`](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Image)
 
 ---
 
@@ -102,8 +102,9 @@ Se puede cambiar su profundidad o _z-index_ con `depth`
 Una imagen puede ser "recortada" con `setCrop`, de forma que sólo se vea un trozo de la misma
 
 ```js
-image = scene.add.image(0, 0, 'phaser');
-image.setCrop(0, 0, 10, 10);
+// this es una Scene
+this.image = this.add.image(0, 0, 'phaser');
+this.image.setCrop(0, 0, 10, 10);
 ```
 
 ---
@@ -120,10 +121,38 @@ function update() {
 }
 ```
 
+---
+
+- Podemos invertir las imágenes con los métodos `setFlip`, `setFlipX`, `Set FlipY`
+- Podemos cambiar el orden de dibujado con `setDepth`
+- ...
+
+(Nuevamente, mirad la API)
+
+
 
 # La escena ([`Scene`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene))
 
 ---
+
+Podemos crear nuestras propias escenas heredando de la clase  [`Scene`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene):
+
+```js
+export default class Menu extends Phaser.Scene {
+
+  constructor() {
+    // Nombre de la escena para el SceneManager
+    super({ key: 'menu-principal' }); 
+  }
+
+  // Métodos init, preload, create, update
+
+}  
+```
+
+---
+
+## Añadir entidades a la escena
 
 En Phaser, la factoría de objetos se llama añadir (`add`{.js}) por una razón: **porque añadimos las nuevas entidades a la escena**
 
@@ -131,6 +160,8 @@ En Phaser, la factoría de objetos se llama añadir (`add`{.js}) por una razón:
 Para Phaser, la escena, representado por la clase [`Scene`](https://newdocs.phaser.io/docs/3.55.2/Phaser.Scene), es la **abstracción del lugar (un plano bidimensional) donde habitan las entidades**
 
 ---
+
+## Cámara
 
 ![La escena, la cámara y entidades más allá de los límites de la cámara](world.svg){width=50%}
 
@@ -152,7 +183,7 @@ Al iniciar, se crea una cámara, a la que podemos acceder a través del atributo
 ```js
 // en el método create, donde this es una Scene
 let card = this.add.sprite(200, 200, 'card');
-this.cameras.main.startFollow(card...);
+this.cameras.main.startFollow(card);
 ```
 
 ---
@@ -165,6 +196,20 @@ this.cameras.main.setViewport(200, 150, 400, 300);
 ```
 
 ---
+
+Las cámaras tienen otros muchos métodos y funciones [que se pueden consultar en su API](https://newdocs.phaser.io/docs/3.55.2/Phaser.Cameras.Scene2D.Camera).
+
+
+---
+
+## Cambio de escenas
+
+Para cambiar entre escenas utilizamos el [`SceneManager`](https://newdocs.phaser.io/docs/3.55.2/Phaser.Scenes.ScenePlugin), accesible desde el atributo `scene`:
+
+- Con `this.scene.start('siguiente_escena')` cambiamos de escena.
+- `sleep` pone en pausa (y no renderiza) una escena
+- `restart` reinicia una escena
+- ...
 
 ## Pasar contenido entre escenas
 
@@ -303,7 +348,7 @@ class FallingMartian extends Phaser.GameObjects.Sprite {
 Usando el ejemplo anterior para añadir un _sprite_, podemos añadir el personaje que cae:
 
 ```js
-class Scene extends Phaser.Scene {
+class MiEscena extends Phaser.Scene {
   create() {
     for (let i = 0; i < 10; i++) {
       let sprite = new FallingMartian(this, 0, 0);
@@ -313,7 +358,6 @@ class Scene extends Phaser.Scene {
 }
 ```
 
-<small>Fijémonos en que también extendemos de la clase `Phaser.Scene`{.js} para hacer nuestra propia escena</small>
 
 ---
 
@@ -325,7 +369,6 @@ Todos los `Sprite`{.js} son también `Image`{.js}. Por tanto, tienen todos los a
 
 Más adelante veremos más atributos de los `Sprite`{.js}, como `anims`{.js} o `body`{.js} (para físicas)
 
----
 
 
 
@@ -440,6 +483,10 @@ preUpdate() {
 };
 ```
 
+---
+
+... pero generalmente será más útil hacer mirroring con los métodos `setFlip`
+
 
 
 
@@ -475,7 +522,7 @@ En Phaser 3 vamos a usar los [`Container`{.js}](https://newdocs.phaser.io/docs/3
 
 ---
 
-Por ejemplo, si el `Container`{.js} `A`{.js} tiene un hijo `B`{.js} y movemos `A`{.js}, `B`{.js} se moverá junto a `A`{.js} automáticamente:
+Por ejemplo, si el `Container`{.js} `A`{.js} tiene un hijo `B`{.js} y movemos `A`{.js}, entonces `B`{.js} se moverá junto a `A`{.js} automáticamente:
 
 
 ```js
@@ -485,7 +532,7 @@ create() {
     let b = new Martian('phaser');
     a.add(b); // hacemos que `b` sea hijo de `a`
     b.y = 10; // relativo a `a`
-    this.add.existing(a);
+    this.add.existing(a); // lo metemos en la escena
 }
 ```
 
