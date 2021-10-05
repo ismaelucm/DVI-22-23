@@ -13,26 +13,26 @@ La gestión del teclado se hace a través de [`scene.input`{.js}](https://newdoc
 Para "registrar" una tecla, y poder usarla después:
 
 ```js
-// create
-this.w = scene.input.keyboard.addKey('W');
+// Si this es un sprite...
+this.w = this.scene.input.keyboard.addKey('W');
 ```
 
 ---
 
-Una vez que existe la tecla (`this.w`{.js}), podemos hacerle preguntas:
+Una vez que existe la tecla (`this.w`{.js}), podemos hacerle preguntas activamente en el `update`{.js}:
 
 ```js
-// update
+// En el preUpdate...
 if(this.w.isDown) {};
 if(this.w.isUp) {};
 ```
 
 ---
 
-O, en vez de preguntar activamente nosotros en `update`{.js}, registramos un *callback*:
+O, en vez de preguntar, registramos un *callback*:
 
 ```js
-// create
+// Solo una vez (no en el update)
 this.w.on('down', event => { ... });
 this.w.on('up', event => { ... });
 ```
@@ -78,6 +78,7 @@ Hay más maneras de usar las teclas, [mirad la API](https://newdocs.phaser.io/do
  Usar los *arriba*, *abajo*, *izquierda* y *derecha* es tan común, que existe:
 
 ```js
+// this es una scene
 this.cursors = this.input.keyboard.createCursorKeys();
 ```
 
@@ -86,6 +87,7 @@ this.cursors = this.input.keyboard.createCursorKeys();
 Con esto, se nos define un objeto con las 4 direcciones (más `space` y `shift`):
 
 ```js
+// En el update de scene
 if (this.cursors.up.isDown && this.body.onFloor()) {
   this.body.setVelocityY(this.jumpSpeed);
 }
@@ -164,6 +166,7 @@ const game = new Phaser.Game(config);
 Después, sólo tenemos que leer los datos, como en el teclado:
 
 ```js
+// this es un GameObject
 let pad = this.scene.input.gamepad.getPad(0);
 let ejexIzda = pad.leftStick.x; // ¡número real!
 let cruzDerecha = pad.right;
@@ -244,6 +247,7 @@ Podemos saber la posición `x`{.js} es `y`{.js} del puntero en todo momento:
 
 
 ```js
+// this es una scene
 let pointer = this.input.activePointer;
 
 console.log("Coordenada X", pointer.worldX);
@@ -256,22 +260,25 @@ console.log("Está pulsado:", pointer.isDown);
 Para reacciones ante un evento del ratón:
 
 ```js
-scene.input.on('pointerup', pointer => {
+this.input.on('pointerup', pointer => {
   if (pointer.leftButtonReleased()) {
     // se ha soltado el botón izquierdo
   }
 );
 ```
 
-También hay `'pointerdown'`{.js}, `'wheel'`{.js}, `'gameobjectover'`{.js}...
+También hay `'pointerdown'`{.js}, `'wheel'`{.js}, `'gameobjectover'`{.js} y [otros muchos eventos a los que suscribirnos](https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.Events)
 
 ---
 
 Los `Sprite`{.js}s que se marcan con `setInteractive()`{.js} pueden recibir eventos del ratón:
 
 ```js
+// en el preload
 this.load.image('rock', 'rock.png');
-this.sprite = this.add.sprite(400, 300, 'eye').setInteractive();
+
+// en el create
+this.sprite = this.add.sprite(400, 300, 'rock').setInteractive();
 ```
 
 ---
