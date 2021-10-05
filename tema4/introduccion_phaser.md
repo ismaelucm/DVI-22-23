@@ -248,6 +248,8 @@ function preload() {
 
 Podemos cargar diferentes recursos como: imágenes, archivos JSON, atlas de texturas, video, sonido, tilemaps...
 
+Las rutas son _relativas_ al `index.html` (aunque se pueden modificar con los métodos [`setPath`](https://newdocs.phaser.io/docs/3.55.1/Phaser.Loader.LoaderPlugin#setPath) y [`setBaseUrl`](https://newdocs.phaser.io/docs/3.55.1/Phaser.Loader.LoaderPlugin#setBaseURL) del subsistema de carga de recursos)
+
 ---
 
 ## Liberación de recursos
