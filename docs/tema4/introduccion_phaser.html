@@ -294,7 +294,7 @@
 <section class="slide level2">
 
 <p>Si cambiamos de escena y la desactivamos, es muy probable que haya recursos que ya no utilizaremos nunca</p>
-<p>En este caso podemos eliminarlos de la caché</p>
+<p>En este caso podemos eliminarlos de la <a href="https://newdocs.phaser.io/docs/3.55.1/Phaser.Game#cache">caché de <code>Game</code></a></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>image1<span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sound4<span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span></code></pre></div>
 <!-- Aqué el contexto es muy relevante puesto que no hemos explicado la caché
@@ -341,20 +341,22 @@ Hay que indicar que `cache` es una propiedad del objeto juego. -->
 <p>Sirve también para crear animaciones por frames</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es un objeto scene</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">preload</span>() {</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">spritesheet</span>(</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;keyspritesheet&#39;</span><span class="op">,</span> <span class="st">&#39;keyspritesheet.png&#39;</span><span class="op">,</span> { <span class="dt">frameWidth</span><span class="op">:</span> <span class="dv">64</span><span class="op">,</span> <span class="dt">frameHeight</span><span class="op">:</span> <span class="dv">64</span> })<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">setBaseURL</span>(<span class="st">&quot;https://examples.phaser.io/&quot;</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">spritesheet</span>(<span class="st">&#39;mummy_spritesheet&#39;</span><span class="op">,</span> <span class="st">&#39;assets/sprites/metalslug_mummy37x45.png&#39;</span><span class="op">,</span> { <span class="dt">frameWidth</span><span class="op">:</span> <span class="dv">37</span><span class="op">,</span> <span class="dt">frameHeight</span><span class="op">:</span> <span class="dv">45</span><span class="op">,</span> <span class="dt">endFrame</span><span class="op">:</span> <span class="dv">17</span> })<span class="op">;</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">create</span>() {</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(<span class="dv">300</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="st">&#39;keyspritesheet&#39;</span>)<span class="op">;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> mummy <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(<span class="dv">300</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="st">&#39;mummy_spritesheet&#39;</span>)<span class="op">;</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">create</span>({</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">key</span><span class="op">:</span> <span class="st">&#39;standing_sprite&#39;</span><span class="op">,</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">frames</span><span class="op">:</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">generateFrameNumbers</span>(<span class="st">&#39;keyspritesheet&#39;</span><span class="op">,</span> { <span class="dt">start</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">end</span><span class="op">:</span> <span class="dv">4</span> })<span class="op">,</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">create</span>({</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">key</span><span class="op">:</span> <span class="st">&#39;walking&#39;</span><span class="op">,</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">frames</span><span class="op">:</span> <span class="kw">this</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">generateFrameNumbers</span>(<span class="st">&#39;mummy_spritesheet&#39;</span><span class="op">,</span> { <span class="dt">start</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">end</span><span class="op">:</span> <span class="dv">16</span> })<span class="op">,</span></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">frameRate</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">repeat</span><span class="op">:</span> <span class="op">-</span><span class="dv">1</span></span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    mummy<span class="op">.</span><span class="fu">play</span>(<span class="st">&#39;walking&#39;</span>)<span class="op">;</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 

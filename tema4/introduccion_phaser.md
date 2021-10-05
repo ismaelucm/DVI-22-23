@@ -258,7 +258,7 @@ Las rutas son _relativas_ al `index.html` (aunque se pueden modificar con los m�
 
 Si cambiamos de escena y la desactivamos, es muy probable que haya recursos que ya no utilizaremos nunca
 
-En este caso podemos eliminarlos de la caché
+En este caso podemos eliminarlos de la [caché de `Game`](https://newdocs.phaser.io/docs/3.55.1/Phaser.Game#cache)
 
 ```js
 image1.destroy();
@@ -305,19 +305,21 @@ Sirve también para crear animaciones por frames
 ```js
 // this es un objeto scene
 function preload() {
-    this.load.spritesheet(
-      'keyspritesheet', 'keyspritesheet.png', { frameWidth: 64, frameHeight: 64 });
+    this.load.setBaseURL("https://examples.phaser.io/")
+    this.load.spritesheet('mummy_spritesheet', 'assets/sprites/metalslug_mummy37x45.png', { frameWidth: 37, frameHeight: 45, endFrame: 17 });
 }
 
 function create() {
-    this.add.sprite(300, 200, 'keyspritesheet');
+    let mummy = this.add.sprite(300, 200, 'mummy_spritesheet');
 
-    this.scene.anims.create({
-      key: 'standing_sprite',
-      frames: this.scene.anims.generateFrameNumbers('keyspritesheet', { start: 0, end: 4 }),
+    this.anims.create({
+      key: 'walking',
+      frames: this.anims.generateFrameNumbers('mummy_spritesheet', { start: 0, end: 16 }),
       frameRate: 2,
       repeat: -1
     });
+
+    mummy.play('walking');
 }
 ```
 
