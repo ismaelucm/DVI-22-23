@@ -238,8 +238,10 @@ Se le añade una _key_ (clave o nombre) al recurso para poder identificarlo
 ```js
 // this es un objeto Scene
 function preload() {
-    this.load.image('phaser', 'sprites/phaser-dude.png');
-    this.load.image('platform', 'sprites/platform.png');
+    // Para cargar desde el sitio de Phaser
+    this.load.setBaseURL("https://examples.phaser.io/");
+    this.load.image('player', 'assets/sprites/phaser-dude.png');
+    this.load.image('platform', 'assets/sprites/platform.png');
 }
 ```
 
@@ -275,12 +277,13 @@ Hay que indicar que `cache` es una propiedad del objeto juego. -->
 Son las imágenes 2D que sirven para visualizar los objetos en un juego 2D.  En Phaser se instancian así:
 
 ```js
-player = scene.add.sprite(100, 200, 'player');
+// this es una Scene
+player = this.add.sprite(100, 200, 'player');
 ```
 
 ---
 
-![`player`{.js}](mariosprite.jpg){height=75%}
+![`player`{.js}](https://examples.phaser.io/assets/sprites/phaser-dude.png){width=10%}
 
 Hay que usar la clave que se le puso en la carga. El objeto, obviamente, *debe estar cargado memoria* con `scene.load`{.js}
 
@@ -305,8 +308,11 @@ Sirve también para crear animaciones por frames
 ```js
 // this es un objeto scene
 function preload() {
-    this.load.setBaseURL("https://examples.phaser.io/")
-    this.load.spritesheet('mummy_spritesheet', 'assets/sprites/metalslug_mummy37x45.png', { frameWidth: 37, frameHeight: 45, endFrame: 17 });
+    // Recordad: solo para cargar desde el sitio de Phaser
+    this.load.setBaseURL("https://examples.phaser.io/");
+    this.load.spritesheet('mummy_spritesheet', 
+                          'assets/sprites/metalslug_mummy37x45.png',
+                          { frameWidth: 37, frameHeight: 45, endFrame: 17 });
 }
 
 function create() {
@@ -315,7 +321,7 @@ function create() {
     this.anims.create({
       key: 'walking',
       frames: this.anims.generateFrameNumbers('mummy_spritesheet', { start: 0, end: 16 }),
-      frameRate: 2,
+      frameRate: 10,
       repeat: -1
     });
 
