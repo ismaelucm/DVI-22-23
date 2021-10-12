@@ -393,7 +393,7 @@ Los objetos del juegos pueden alterar su posición, rotación y factor de escala
 
 Se llama transformación a la **alteración de los atributos que controlan la posición, la rotación o el factor de escala de una entidad**
 
-Recuerda que las transformaciones se ven afectadas por la posición del pivote.
+Recuerda que las transformaciones se ven afectadas por la posición del pivote [como puedes ver en este ejemplo](https://codepen.io/gjimenezucm/pen/zYwZpqK).
 
 ---
 
