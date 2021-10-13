@@ -116,7 +116,7 @@
 </section>
 <section class="slide level2">
 
-<p><a href="https://en.wikipedia.org/wiki/Eadweard_Muybridge">Eadweard Muybridge</a> diseñó un sistema de fotografía en el que, haciendo muchas fotos seguidas con una cámara fija, conseguía que el ojo human no pudiera distinguir los fotogramas como imágenes separadas <em>sino como movimiento</em></p>
+<p><a href="https://en.wikipedia.org/wiki/Eadweard_Muybridge">Eadweard Muybridge</a> diseñó un sistema de fotografía en el que, haciendo muchas fotos seguidas con una cámara fija, conseguía que el ojo humano no pudiera distinguir los fotogramas como imágenes separadas <em>sino como movimiento</em></p>
 </section>
 <section class="slide level2">
 
@@ -155,12 +155,12 @@
 </section>
 <section class="slide level2">
 
-<p>Su origen es parte de las historia del videojuego</p>
-<p>Algunas de las primeras máquinas dedicadas a correr juegos tenían hardware <em>dedicado</em> para sprites</p>
+<p>Su origen es parte de la historia del videojuego</p>
+<p>Algunas de las primeras máquinas dedicadas a ejecutar juegos tenían hardware <em>dedicado</em> para sprites (aunque no es exactamente el mismo concepto que conocemos ahora)</p>
 </section>
 <section class="slide level2">
 
-<p>Por tanto, esta tecnología de sprite no realizaba cambios en RAM que se volcaban al dispositivo gráfico</p>
+<p>Esta tecnología de sprite no realizaba cambios en RAM que se volcaban al dispositivo gráfico</p>
 </section>
 <section class="slide level2">
 
@@ -478,7 +478,7 @@
 </section>
 <section class="slide level2">
 
-<p>Es posible hacer “callbacks” para ser informados de cuándo una animación se pone en marcha o se detiene <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.Events.ANIMATION_REPEAT">usando los eventos de animación</a>:</p>
+<p>Es posible hacer “callbacks” para ser informados de cuándo una animación se pone en marcha o se detiene <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.Events">usando los eventos de animación</a>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `this` es un `Sprite`en la misma escena</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">// que se ha creado la animación</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;animationrepeat-standing_mummy&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
@@ -608,7 +608,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

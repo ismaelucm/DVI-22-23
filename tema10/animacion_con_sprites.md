@@ -35,7 +35,7 @@ Alma en latín se dice `anima`
 
 ---
 
-[Eadweard Muybridge](https://en.wikipedia.org/wiki/Eadweard_Muybridge) diseñó un sistema de fotografía en el que, haciendo muchas fotos seguidas con una cámara fija, conseguía que el ojo human no pudiera distinguir los fotogramas como imágenes separadas *sino como movimiento*
+[Eadweard Muybridge](https://en.wikipedia.org/wiki/Eadweard_Muybridge) diseñó un sistema de fotografía en el que, haciendo muchas fotos seguidas con una cámara fija, conseguía que el ojo humano no pudiera distinguir los fotogramas como imágenes separadas *sino como movimiento*
 
 ---
 
@@ -82,13 +82,13 @@ Un [*sprite*](https://en.wikipedia.org/wiki/Sprite_(computer_graphics)) es una i
 
 ---
 
-Su origen es parte de las historia del videojuego
+Su origen es parte de la historia del videojuego
 
-Algunas de las primeras máquinas dedicadas a correr juegos tenían hardware *dedicado* para sprites
+Algunas de las primeras máquinas dedicadas a ejecutar juegos tenían hardware *dedicado* para sprites (aunque no es exactamente el mismo concepto que conocemos ahora)
 
 ---
 
-Por tanto, esta tecnología de sprite no realizaba cambios en RAM que se volcaban al dispositivo gráfico
+Esta tecnología de sprite no realizaba cambios en RAM que se volcaban al dispositivo gráfico
 
 ---
 
@@ -446,7 +446,7 @@ this.stop();
 
 ---
 
-Es posible hacer "callbacks" para ser informados de cuándo una animación se pone en marcha o se detiene [usando los eventos de animación](https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.Events.ANIMATION_REPEAT):
+Es posible hacer "callbacks" para ser informados de cuándo una animación se pone en marcha o se detiene [usando los eventos de animación](https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.Events):
 
 
 ```js
