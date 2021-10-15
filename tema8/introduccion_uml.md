@@ -133,6 +133,19 @@ Es decir, no hay todo sin las partes
 
 ![Composición](composicionuml.pu.svg)
 
+## Asociación
+
+Es una relación estructural que describe una conexión entre objetos de esas clases
+
+---
+
+- Pueden ser bidireccionales o unidireccionales
+- En este último caso, una flecha indica qué clase hace uso de la otra
+
+---
+
+![Asociación](asociacion.pu.svg)
+
 
 # Más...
 
@@ -141,3 +154,11 @@ Es decir, no hay todo sin las partes
 UML es mucho, mucho más complejo, y se puede usar para representar mucho más que una estructura de clases
 
 Hay [muchos recursos en Internet](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/) a través de los cuales podéis aprender más detalles
+
+---
+
+También os recomendamos que useis aplicaciones que facilitan el desarrollo de los diagramas UML:
+
+- [draw.io](https://app.diagrams.net/)
+- [Visual Paradigm online](https://online.visual-paradigm.com/diagrams.jsp)
+- [Yuml](https://yuml.me/diagram/scruffy/class/draw)
