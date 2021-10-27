@@ -11,7 +11,7 @@ title: Físicas avanzadas y Matter.js
 
 ---
 
-Para usarlo, simplemente lo habilitamos en la configuración del juego:
+Para usarlo, simplemente lo habilitamos en la configuración del juego añadiendo [la configuración de Matter](https://newdocs.phaser.io/docs/3.55.1/Phaser.Types.Physics.Matter.MatterWorldConfig) la propiedad `physics`:
 
 ```js
 var config = {
@@ -29,7 +29,7 @@ const game = new Phaser.Game(config);
 
 ---
 
-A partir de ese momento, todas las `Scene`{.js} tendrán una propiedad `matter`{.js} a través de la cual podemos acceder al motor físico:
+A partir de ese momento, todas las `Scene`{.js} tendrán [una propiedad `matter`{.js}](https://newdocs.phaser.io/docs/3.52.0/Phaser.Physics.Matter.MatterPhysics) a través de la cual podemos acceder al motor físico:
 
 
 ```js
@@ -47,13 +47,28 @@ this.matter.add.image(100, -100, 'roca');
 *Matter.js* es mucho más complejo y potente que *Arcade*, pero también tiene bastantes más requisitos de procesador
 
 
+# Entidades físicas en Matter
+
 ---
 
-Podemos establecer propiedades físicas más complejas:
+Podemos agregar entidades a la física de Matter con:
 
 ```js
+// No solo se pueden crear imágenes (revisar doc)
 nave = this.matter.add.image(100, 100, 'nave');
 ```
+
+o
+
+```js
+// nave ha sido creado aparte, como una imagen, un sprite...
+this.matter.add.gameObject(nave);
+```
+
+
+---
+
+En este caso, Matter inyecta [propiedades y métodos físicos complejos](https://newdocs.phaser.io/docs/3.52.0/Phaser.Physics.Matter.Sprite) al objeto creado:
 
 ```js
 nave.setFrictionAir(0.1); //  fricción
@@ -66,23 +81,7 @@ nave.applyForce({15, 24}); // un vector
 
 ```
 
----
 
-## Velocidad
-
-
-La **velocidad** es una magnitud física vectorial que expresa la distancia recorrida de un objeto por unidad de tiempo
-
-Se puede modificar en el `GameObject`{.js} que haya sido creado con *Matter.js*
-
-```js
-sprite = this.matter.add.sprite(100, 100, 'nave');
-sprite.setVelocity(x, y);
-```
-
----
-
-Si aplicamos una velocidad a un objeto físico este se moverá hacia la dirección indicada con la magnitud indicada
 
 ---
 
@@ -158,7 +157,7 @@ rect.setBody({
 
 ## Formas
 
-Cada forma tiene sus propiedades particulares (por ejemplo, `'fromVertices'`{.js} tiene un array de `points=[{x, y}, {x, y}, ..., {x, y}]`{.js})
+Cada forma tiene [sus propiedades particulares](https://newdocs.phaser.io/docs/3.54.0/Phaser.Types.Physics.Matter.MatterSetBodyConfig) (por ejemplo, `'fromVertices'`{.js} tiene una cadena `verts="x y x y ... x y"`{.js} o un array)
 
 - `'rectangle'`{.js}
 - `'circle'`{.js}
@@ -185,7 +184,7 @@ Cada forma tiene sus propiedades particulares (por ejemplo, `'fromVertices'`{.js
 
 ---
 
-Para detectar colisiones o solapamientos, tenemos eventos:
+Para detectar colisiones o solapamientos, [tenemos eventos](https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Matter.Events):
 
 ```js
 // cuando se inicia la colisión
@@ -238,7 +237,7 @@ Cuanto más estirado esté el muelle, más fuerza de amortiguación se genera
 
 ---
 
-Para crear una unión o muelle en *Matter.js*:
+Para crear [una unión o muelle](https://newdocs.phaser.io/docs/3.55.1/Phaser.Physics.Matter.Factory#constraint) en *Matter.js*:
 
 ```js
 scene.matter.add.constraint(obj1,
@@ -328,9 +327,10 @@ Son cuerpos que no colisionan, pero que tienen área y forma y que desencadenan 
 
 ---
 
-Se activan creando formas (`circle`{.js}), y poniendo su propiedad `isSensor`{.js} a `true`{.js}:
+Se activan [creando formas](https://brm.io/matter-js/docs/classes/Bodies.html) (por ejemplo, `circle`{.js}), y poniendo su propiedad `isSensor`{.js} a `true`{.js}:
 
 ```js
+let Bodies = Phaser.Physics.Matter.Matter.Bodies;
 let sensor = Bodies.circle(100, 100, 24, {isSensor: true});
 ```
 
@@ -345,9 +345,8 @@ let sensor = Bodies.circle(100, 100, 24, {isSensor: true});
 
 ---
 
-*Matter.js* ofrece soporte para cuerpos compuestos, que están formados por varias formas físicas (**con o sin colisión**)
+*Matter.js* ofrece soporte para [cuerpos compuestos](https://brm.io/matter-js/docs/classes/Body.html#method_create), que están formados por varias formas físicas (**con o sin colisión**)
 
----
 
 ```js
 // `circle` y `rect` son cuerpos con coordenadas relativas
@@ -367,6 +366,8 @@ this.player = this.matter.add.image(0, 0, 'imagen');
 // hemos creado `compuesto` antes
 this.player.setExistingBody(compuesto);
 ```
+
+<small>Aquí puedes ver [un ejemplo de uso de cuerpos compuestos y sensores](https://phaser.io/examples/v3/view/physics/matterjs/compound-sensors#)</small>
 
 
 

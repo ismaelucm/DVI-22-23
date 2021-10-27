@@ -34,6 +34,7 @@ Por tanto se busca hacer aproximaciones
 ## Algunos motores físicos 2D
 
 - [Box2D](https://box2d.org/): Cocos, Unity, Construct 2 (Angry Birds, Limbo)
+- [Matter](https://brm.io/matter-js/)
 - [Chipmunk](https://chipmunk-physics.net/): Cocos, Wii
 
 
@@ -119,6 +120,14 @@ Angry Birds usaría este motor
 
 
 # Colisiones
+
+
+## Velocidad
+
+
+La **velocidad** es una magnitud física vectorial que expresa la distancia recorrida de un objeto por unidad de tiempo
+
+Si aplicamos una velocidad a un objeto físico este se moverá hacia la dirección indicada con la magnitud indicada
 
 
 ## ¿Qué es una colisión?
@@ -277,6 +286,16 @@ this.body.setImmovable(true);
 ```
 
 <small>El objeto se puede mover, pero las colisiones no lo "empujarán"</small>
+
+---
+
+Para hacer que un objeto se mueva en una determinada dirección:
+
+```js
+this.body.setVelocity(1,0);
+```
+
+<small>Se verá afectado por otras fuerzas, en particular, por la gravedad</small>
 
 ---
 
