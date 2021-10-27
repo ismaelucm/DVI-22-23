@@ -111,15 +111,15 @@
 <section id="algunos-motores-físicos-3d" class="slide level2">
 <h2>Algunos motores físicos 3D</h2>
 <ul>
-<li><code>PhysX</code>: propiedad de Nvidia y disponible en Unreal Engine y Unity</li>
-<li><code>Hawok</code>: antes propiedad de Intel, ahora adquirido por Microsoft</li>
+<li><a href="https://developer.nvidia.com/physx-sdk">PhysX</a>: propiedad de Nvidia y disponible en Unreal Engine y Unity</li>
+<li><a href="https://www.havok.com">Havok</a>: antes propiedad de Intel, ahora adquirido por Microsoft</li>
 </ul>
 </section>
 <section id="algunos-motores-físicos-2d" class="slide level2">
 <h2>Algunos motores físicos 2D</h2>
 <ul>
-<li><code>Box2D</code>: Cocos, Unity, Construct 2 (Angry Birds, Limbo)</li>
-<li><code>Chipmunk:</code> Cocos, Wii</li>
+<li><a href="https://box2d.org/">Box2D</a>: Cocos, Unity, Construct 2 (Angry Birds, Limbo)</li>
+<li><a href="https://chipmunk-physics.net/">Chipmunk</a>: Cocos, Wii</li>
 </ul>
 </section></section>
 <section>
@@ -148,7 +148,7 @@
 </section>
 <section id="matter.js" class="slide level2">
 <h2>Matter.js</h2>
-<p><a href="http://brm.io/matter-js/">Matter.js</a> admite rotaciones y formas más complejas (cuestas)</p>
+<p><a href="http://brm.io/matter-js/">Matter.js</a> admite rotaciones y formas más complejas (rampas)</p>
 <p>Tiene más precisión, pero es más lento</p>
 <p>Tiene un modelo de física mucho más avanzado, <em>springs</em> (muelles), polígonos, fuerzas, restricciones…</p>
 <p>Angry Birds usaría este motor</p>
@@ -199,7 +199,7 @@
 <section id="inicialización-del-motor-arcade" class="slide level2">
 <h2>Inicialización del motor Arcade</h2>
 <!-- [Ejemplo del uso del motor arcade](https://phaser.io/sandbox/edit/rGYAfFoJ) -->
-<p>Para iniciar el motor de fisica:</p>
+<p>Para iniciar el motor de fisica añadimos una propiedad <code>physics</code> con la <a href="https://newdocs.phaser.io/docs/3.52.0/Phaser.Types.Physics.Arcade.ArcadeWorldConfig">configuración del motor en Arcade</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">physics</span><span class="op">:</span> {</span>
@@ -237,6 +237,21 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">onFloor</span>()</span></code></pre></div>
 <p><small>Muy útil para no saltar infinitamente</small></p>
 </section>
+<section class="slide level2">
+
+<p>Podemos rebotar al colisionar con elementos del mundo:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">setBounce</span>(<span class="dv">1</span><span class="op">,</span><span class="dv">1</span>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Podemos hacer que las colisiones <em>no muevan un objeto</em> con:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">setImmovable</span>(<span class="kw">true</span>)<span class="op">;</span></span></code></pre></div>
+<p><small>El objeto se puede mover, pero las colisiones no lo “empujarán”</small></p>
+</section>
+<section class="slide level2">
+
+<p><a href="https://codepen.io/gjimenezucm/pen/MWvmPoa">Un pequeño ejemplo de la física básica con Matter</a></p>
+</section>
 <section id="grupos-físicos" class="slide level2">
 <h2>Grupos físicos</h2>
 <p>Los <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Group">Group</a> se usan para manejar grupos de colisiones (entre otras cosas)</p>
@@ -244,8 +259,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `this` es una escena</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">group</span>()<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `this` es una escena</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">group</span>()<span class="op">;</span></span></code></pre></div>
 <p><small>Atención a la propiedad <code class="sourceCode javascript">physics</code> aquí</small></p>
 </section>
 <section class="slide level2">
@@ -256,55 +271,54 @@
 <section id="crear-elementos-en-un-grupo" class="slide level2">
 <h2>Crear elementos en un grupo</h2>
 <p>Creamos sprites usando el método <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Group#create"><code class="sourceCode javascript"><span class="fu">create</span>()</code></a>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// preload</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;platform&#39;</span><span class="op">,</span> <span class="st">&#39;platform.png&#39;</span>)<span class="op">;</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">staticGroup</span>()<span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span><span class="op">.</span><span class="fu">create</span>(<span class="dv">500</span><span class="op">,</span> <span class="dv">150</span><span class="op">,</span> <span class="st">&#39;platform&#39;</span>)<span class="op">;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span><span class="op">.</span><span class="fu">create</span>(<span class="op">-</span><span class="dv">200</span><span class="op">,</span> <span class="dv">300</span><span class="op">,</span> <span class="st">&#39;platform&#39;</span>)<span class="op">;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span><span class="op">.</span><span class="fu">create</span>(<span class="dv">400</span><span class="op">,</span> <span class="dv">450</span><span class="op">,</span> <span class="st">&#39;platform&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// preload</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;platform&#39;</span><span class="op">,</span> <span class="st">&#39;platform.png&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">staticGroup</span>()<span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span><span class="op">.</span><span class="fu">create</span>(<span class="dv">500</span><span class="op">,</span> <span class="dv">150</span><span class="op">,</span> <span class="st">&#39;platform&#39;</span>)<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span><span class="op">.</span><span class="fu">create</span>(<span class="op">-</span><span class="dv">200</span><span class="op">,</span> <span class="dv">300</span><span class="op">,</span> <span class="st">&#39;platform&#39;</span>)<span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">platforms</span><span class="op">.</span><span class="fu">create</span>(<span class="dv">400</span><span class="op">,</span> <span class="dv">450</span><span class="op">,</span> <span class="st">&#39;platform&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>O podemos añadir nuestros propios GameObjects con <code class="sourceCode javascript"><span class="fu">add</span>()</code> y <code class="sourceCode javascript"><span class="fu">addMultiple</span>()</code> (como en los grupos)</p>
-</section>
-<section class="slide level2">
+<p>O podemos añadir nuestros propios GameObjects con <code class="sourceCode javascript"><span class="fu">add</span>()</code> y <code class="sourceCode javascript"><span class="fu">addMultiple</span>()</code></p>
+</section></section>
+<section>
+<section id="colisiones-1" class="title-slide slide level1">
+<h1>Colisiones</h1>
 
-<p>Podemos hacer que las colisiones <em>no muevan un objeto</em> con:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>platform<span class="op">.</span><span class="fu">setImmovable</span>(<span class="kw">true</span>)<span class="op">;</span></span></code></pre></div>
-<p><small>El objeto se puede mover, pero las colisiones no lo “empujarán”</small></p>
 </section>
 <section class="slide level2">
 
 <p>Para activar la detección de colisiones hay que crear un <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Factory#collider"><code class="sourceCode javascript">collider</code></a>:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> group)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> group)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Si queremos que nos avisen si se produce una colisión hay que incluir un <em>callback</em>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> group<span class="op">,</span> onCollision)<span class="op">;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">// el método recibe dos parámetros, son los objetos que han colisionado</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">onCollision</span>(obj1<span class="op">,</span> obj2) {</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// hacer algo</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> group<span class="op">,</span> onCollision)<span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">// el método recibe dos parámetros, son los objetos que han colisionado</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">onCollision</span>(obj1<span class="op">,</span> obj2) {</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// hacer algo</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>O con una función anónima (recordad el comportamiento del <code class="sourceCode javascript"><span class="kw">this</span></code>):</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> group<span class="op">,</span> (o1<span class="op">,</span> o2) <span class="kw">=&gt;</span> {</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// hacer algo</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> group<span class="op">,</span> (o1<span class="op">,</span> o2) <span class="kw">=&gt;</span> {</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// hacer algo</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p><code class="sourceCode javascript"><span class="fu">collide</span>()</code> (¡no <code class="sourceCode javascript">add<span class="op">.</span><span class="fu">collider</span>()</code>!) devuelve un booleano que indica si ha habido colisión:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en update, donde this es una Scene</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="fu">collide</span>(<span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">platform</span>)) {</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    textInfo<span class="op">.</span><span class="at">text</span> <span class="op">=</span> <span class="st">&quot;Hay colisión&quot;</span><span class="op">;</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en update, donde this es una Scene</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="fu">collide</span>(<span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">platform</span>)) {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hay colisión&quot;</span>)<span class="op">;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section></section>
 <section>
 <section id="solapamiento" class="title-slide slide level1">
@@ -318,26 +332,27 @@
 <section class="slide level2">
 
 <p>Para estos casos, usamos <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Factory#overlap"><code class="sourceCode javascript">overlap</code></a> donde usábamos <code class="sourceCode javascript">collider</code></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">overlap</span>(player<span class="op">,</span> group<span class="op">,</span> (o1<span class="op">,</span> o2) <span class="kw">=&gt;</span> {</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// o1 y o2 se están tocando</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">// create</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">overlap</span>(player<span class="op">,</span> group<span class="op">,</span> (o1<span class="op">,</span> o2) <span class="kw">=&gt;</span> {</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// o1 y o2 se están tocando</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en update donde this es una Scene</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="fu">overlap</span>(<span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">platform</span>)) {</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    textInfo<span class="op">.</span><span class="at">text</span> <span class="op">=</span> <span class="st">&quot;Hay solape&quot;</span><span class="op">;</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en update donde this es una Scene</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="fu">overlap</span>(<span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">platform</span>)) {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    textInfo<span class="op">.</span><span class="at">text</span> <span class="op">=</span> <span class="st">&quot;Hay solape&quot;</span><span class="op">;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="objetos-invisibles-o-triggers" class="slide level2">
 <h2>Objetos “invisibles” o triggers</h2>
 <p>Se pueden crear con <code class="sourceCode javascript">add<span class="op">.</span><span class="fu">zone</span>()</code>, de la escena, y luego lo añadimos a las físicas:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">// x, y, width, height</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> trigger <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">zone</span>(<span class="dv">300</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="dv">200</span>)<span class="op">;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">world</span><span class="op">.</span><span class="fu">enable</span>(trigger)<span class="op">;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>trigger<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">setAllowGravity</span>(<span class="kw">false</span>)<span class="op">;</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>trigger<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="at">moves</span> <span class="op">=</span> <span class="kw">false</span><span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// x, y, width, height</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> trigger <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">zone</span>(<span class="dv">300</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="dv">200</span>)<span class="op">;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Añade un body</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">world</span><span class="op">.</span><span class="fu">enable</span>(trigger)<span class="op">;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>trigger<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">setAllowGravity</span>(<span class="kw">false</span>)<span class="op">;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>trigger<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">setImmovable</span>(<span class="kw">false</span>)<span class="op">;</span></span></code></pre></div>
 </section></section>
     </div>
   </div>
@@ -388,7 +403,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

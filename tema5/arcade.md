@@ -25,16 +25,16 @@ Por tanto se busca hacer aproximaciones
 
 ## Algunos motores físicos 3D
 
-- `PhysX`: propiedad de Nvidia y disponible en Unreal Engine y Unity
-- `Hawok`: antes propiedad de Intel, ahora adquirido por Microsoft
+- [PhysX](https://developer.nvidia.com/physx-sdk): propiedad de Nvidia y disponible en Unreal Engine y Unity
+- [Havok](https://www.havok.com): antes propiedad de Intel, ahora adquirido por Microsoft
 
 ---
 
 
 ## Algunos motores físicos 2D
 
-- `Box2D`: Cocos, Unity, Construct 2 (Angry Birds, Limbo)
-- `Chipmunk:` Cocos, Wii
+- [Box2D](https://box2d.org/): Cocos, Unity, Construct 2 (Angry Birds, Limbo)
+- [Chipmunk](https://chipmunk-physics.net/): Cocos, Wii
 
 
 
@@ -88,7 +88,7 @@ Está pensado para juegos sencillos
 
 ## Matter.js
 
-[Matter.js](http://brm.io/matter-js/) admite rotaciones y formas más complejas (cuestas)
+[Matter.js](http://brm.io/matter-js/) admite rotaciones y formas más complejas (rampas)
 
 Tiene más precisión, pero es más lento
 
@@ -199,7 +199,7 @@ Phaser hace este cálculo por nosotros
 <!-- [Ejemplo del uso del motor arcade](https://phaser.io/sandbox/edit/rGYAfFoJ) -->
 
 
-Para iniciar el motor de fisica:
+Para iniciar el motor de fisica añadimos una propiedad `physics` con la [configuración del motor en Arcade](https://newdocs.phaser.io/docs/3.52.0/Phaser.Types.Physics.Arcade.ArcadeWorldConfig):
 
 ```js
 const config = {
@@ -259,6 +259,28 @@ this.body.onFloor()
 
 <small>Muy útil para no saltar infinitamente</small>
 
+---
+
+Podemos rebotar al colisionar con elementos del mundo:
+
+```js
+this.body.setBounce(1,1);
+```
+
+---
+
+Podemos hacer que las colisiones *no muevan un objeto* con:
+
+```js
+this.body.setImmovable(true);
+
+```
+
+<small>El objeto se puede mover, pero las colisiones no lo "empujarán"</small>
+
+---
+
+[Un pequeño ejemplo de la física básica con Matter](https://codepen.io/gjimenezucm/pen/MWvmPoa)
 
 ---
 
@@ -308,17 +330,11 @@ this.platforms.create(400, 450, 'platform');
 
 ---
 
-O podemos añadir nuestros propios GameObjects con `add()`{.js} y `addMultiple()`{.js} (como en los grupos)
+O podemos añadir nuestros propios GameObjects con `add()`{.js} y `addMultiple()`{.js}
 
----
 
-Podemos hacer que las colisiones *no muevan un objeto* con:
 
-```js
-platform.setImmovable(true);
-```
-
-<small>El objeto se puede mover, pero las colisiones no lo "empujarán"</small>
+# Colisiones
 
 ---
 
@@ -362,7 +378,7 @@ this.physics.add.collider(player, group, (o1, o2) => {
 ```js
 // en update, donde this es una Scene
 if(this.physics.collide(this.player, this.platform)) {
-    textInfo.text = "Hay colisión";
+    console.log("Hay colisión");
 }
 ```
 
@@ -423,7 +439,8 @@ Se pueden crear con `add.zone()`{.js}, de la escena, y luego lo añadimos a las 
 ```js
 // x, y, width, height
 let trigger = this.add.zone(300, 200, 200, 200);
+// Añade un body
 this.physics.world.enable(trigger);
 trigger.body.setAllowGravity(false);
-trigger.body.moves = false;
+trigger.body.setImmovable(false);
 ```
