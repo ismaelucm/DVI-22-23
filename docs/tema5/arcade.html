@@ -155,14 +155,21 @@
 <p>Angry Birds usaría este motor</p>
 </section></section>
 <section>
-<section id="colisiones" class="title-slide slide level1">
-<h1>Colisiones</h1>
+<section id="conceptos-generales-de-un-motor-físico" class="title-slide slide level1">
+<h1>Conceptos generales de un motor físico</h1>
 
 </section>
 <section id="velocidad" class="slide level2">
 <h2>Velocidad</h2>
 <p>La <strong>velocidad</strong> es una magnitud física vectorial que expresa la distancia recorrida de un objeto por unidad de tiempo</p>
 <p>Si aplicamos una velocidad a un objeto físico este se moverá hacia la dirección indicada con la magnitud indicada</p>
+</section>
+<section id="fuerza" class="slide level2">
+<h2>Fuerza</h2>
+<p>Una <strong>fuerza</strong> es todo agente capaz de modificar la cantidad de movimiento de un objeto</p>
+<p>Se aplica la segunda Ley de Newton:</p>
+<p><span class="math display"><em>F</em> = <em>m</em> × <em>a</em></span></p>
+<p>Una fuerza aplicada de manera puntual (en un instante de tiempo) se la suele conocer como impulso.</p>
 </section>
 <section id="qué-es-una-colisión" class="slide level2">
 <h2>¿Qué es una colisión?</h2>
@@ -193,9 +200,13 @@
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">true</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
+<section id="triggers-o-sensores" class="slide level2">
+<h2>Triggers o sensores</h2>
+<p>Son objetos invisibles que detectan colisiones. Dependiendo del motor, solo detectan la colisión inicial o pueden detectar mientras estamos colisionando o al salir de la colisión.</p>
+</section>
 <section class="slide level2">
 
-<p>Phaser hace este cálculo por nosotros</p>
+<p>Phaser hace todos estos cálculos por nosotros</p>
 </section></section>
 <section>
 <section id="el-motor-físico-arcade" class="title-slide slide level1">
@@ -296,7 +307,7 @@
 <p>O podemos añadir nuestros propios GameObjects con <code class="sourceCode javascript"><span class="fu">add</span>()</code> y <code class="sourceCode javascript"><span class="fu">addMultiple</span>()</code></p>
 </section></section>
 <section>
-<section id="colisiones-1" class="title-slide slide level1">
+<section id="colisiones" class="title-slide slide level1">
 <h1>Colisiones</h1>
 
 </section>

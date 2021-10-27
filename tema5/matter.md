@@ -89,15 +89,6 @@ nave.applyForce({15, 24}); // un vector
 
 ---
 
-Una **fuerza** es todo agente capaz de modificar la cantidad de movimiento de un objeto
-
-Se aplica la segunda Ley de Newton:
-
-$$F = m \times a$$
-
-
----
-
 ```js
 sprite.applyForce({x: 100, y: 0});
 ```

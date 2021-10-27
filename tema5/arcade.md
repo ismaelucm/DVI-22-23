@@ -119,7 +119,7 @@ Angry Birds usaría este motor
 
 
 
-# Colisiones
+# Conceptos generales de un motor físico
 
 
 ## Velocidad
@@ -128,6 +128,16 @@ Angry Birds usaría este motor
 La **velocidad** es una magnitud física vectorial que expresa la distancia recorrida de un objeto por unidad de tiempo
 
 Si aplicamos una velocidad a un objeto físico este se moverá hacia la dirección indicada con la magnitud indicada
+
+## Fuerza
+
+Una **fuerza** es todo agente capaz de modificar la cantidad de movimiento de un objeto
+
+Se aplica la segunda Ley de Newton:
+
+$$F = m \times a$$
+
+Una fuerza aplicada de manera puntual (en un instante de tiempo) se la suele conocer como impulso.
 
 
 ## ¿Qué es una colisión?
@@ -163,9 +173,14 @@ function AABBvsAABB(a, b) {
 }
 ```
 
+## Triggers o sensores
+
+Son objetos invisibles que detectan colisiones. Dependiendo del motor, solo detectan la colisión inicial o pueden detectar mientras estamos colisionando o al salir de la colisión.
+
+
 ---
 
-Phaser hace este cálculo por nosotros
+Phaser hace todos estos  cálculos por nosotros
 
 
 
