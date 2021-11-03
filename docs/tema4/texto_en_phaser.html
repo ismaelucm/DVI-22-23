@@ -3,106 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Texto en Phaser</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../reveal.js/dist/reset.css">
-  <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../reveal.js/dist/theme/beige.css" id="theme">
-  <link rel="stylesheet" href="../juegosweb.css"/>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-  <div class="reveal">
-    <div class="slides">
-
-<section id="title-slide">
-  <h1 class="title">Texto en Phaser</h1>
-</section>
-
-<section>
-<section id="crear-texto-usando-fuentes-del-sistema" class="title-slide slide level1">
-<h1>Crear texto usando fuentes del sistema</h1>
-
-</section>
-<section class="slide level2">
-
+<header>
+<h1 class="title">Texto en Phaser</h1>
+</header>
+<h1 id="crear-texto-usando-fuentes-del-sistema">Crear texto usando fuentes del sistema</h1>
+<hr />
 <p>Para crear texto simplemente podemos usar la clase <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Text"><code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Text</span></code></a> con la factoría de Phaser <code class="sourceCode javascript">add<span class="op">.</span><span class="at">text</span></code> de <code class="sourceCode javascript">Scene</code></p>
-</section>
-<section class="slide level2">
-
+<hr />
 <p>Pero podemos modificar los atributos de <code class="sourceCode javascript">text</code> para cambiar su aspecto como:</p>
 <ul>
 <li><code class="sourceCode javascript">setAlign</code>: alineación del texto</li>
@@ -111,9 +91,7 @@
 <li><code class="sourceCode javascript">setStroke</code>: color del borde y grosor</li>
 <li><code class="sourceCode javascript">setFill</code>: color de relleno</li>
 </ul>
-</section>
-<section class="slide level2">
-
+<hr />
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es una Scene</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> text <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="kw">this</span><span class="op">.</span><span class="at">cameras</span><span class="op">.</span><span class="at">main</span><span class="op">.</span><span class="at">centerX</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">cameras</span><span class="op">.</span><span class="at">main</span><span class="op">.</span><span class="at">centerY</span><span class="op">,</span> <span class="st">&#39;- phaser text stroke -&#39;</span>)<span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>text<span class="op">.</span><span class="fu">setOrigin</span>(<span class="fl">0.5</span><span class="op">,</span><span class="fl">0.5</span>)<span class="op">;</span></span>
@@ -129,47 +107,32 @@
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>text<span class="op">.</span><span class="fu">setStroke</span>(<span class="st">&#39;#000000&#39;</span><span class="op">,</span> <span class="dv">6</span>)</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>text<span class="op">.</span><span class="fu">setFill</span>(<span class="st">&#39;#43d637&#39;</span>)<span class="op">;</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>text<span class="op">.</span><span class="fu">setShadow</span>(<span class="dv">5</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="st">&#39;rgba(0,0,0,0.5)&#39;</span><span class="op">,</span> <span class="dv">5</span>)<span class="op">;</span></span></code></pre></div>
-</section>
-<section id="texto-en-ui" class="slide level2">
-<h2>Texto en UI</h2>
+<hr />
+<h2 id="texto-en-ui">Texto en UI</h2>
 <p>Muchas veces, el texto se utiliza como parte de la UI del juego (puntuación, vidas…)</p>
 <p>Pero el texto creado tal cual lo hemos hecho tiene una posición en la escena y, por tanto, se queda fijo al mover la cámara y puede desaparecer de la escena.</p>
-</section>
-<section class="slide level2">
-
+<hr />
 <p><strong>Solución</strong>: Recordad que algunos GameObject tienen un método <a href="https://newdocs.phaser.io/docs/3.52.0/Phaser.GameObjects.Sprite#setScrollFactor"><code>SetScrollFactor</code></a> que controla el movimiento de un objeto con respecto al de la cámara</p>
-</section>
-<section id="botones-con-texto" class="slide level2">
-<h2>Botones con texto</h2>
+<hr />
+<h2 id="botones-con-texto">Botones con texto</h2>
 <p>Se puede crear un botón fácilmente usando un texto interactivo y añadiendo un evento de <code>onpointerdown</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> button <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="op">...</span>)<span class="op">.</span><span class="fu">setInteractive</span>()<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerdown&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// hacer algo</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
-</section></section>
-<section>
-<section id="problema-de-las-fuentes-del-sistema" class="title-slide slide level1">
-<h1>Problema de las fuentes del sistema</h1>
-
-</section>
-<section class="slide level2">
-
+<h1 id="problema-de-las-fuentes-del-sistema">Problema de las fuentes del sistema</h1>
+<hr />
 <p>Una fuente de nuestra máquina puede no estar disponible en la máquina del usuario.</p>
 <p>¿Solución? Usar <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">fuentes estándar</a>, crear nuestras propias fuentes de mapa de bits (bitmap fonts) o usar fuentes Web (<strong>webfonts</strong>) como <a href="https://fonts.google.com/">Google Fonts</a></p>
-</section>
-<section class="slide level2">
-
+<hr />
 <figure>
-<img data-src="bitmapfont.png" alt="Bitmap Fonts" /><figcaption aria-hidden="true">Bitmap Fonts</figcaption>
+<img src="bitmapfont.png" alt="Bitmap Fonts" /><figcaption aria-hidden="true">Bitmap Fonts</figcaption>
 </figure>
-</section>
-<section id="texto-con-fuentes-de-mapa-de-bits" class="slide level2">
-<h2>Texto con fuentes de mapa de bits</h2>
+<hr />
+<h2 id="texto-con-fuentes-de-mapa-de-bits">Texto con fuentes de mapa de bits</h2>
 <p>Para cargar una fuente de mapa de bits hay que usar <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Loader.LoaderPlugin#bitmapFont"><code class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>()</code></a> en el <code class="sourceCode javascript">preload</code></p>
 <p>Hay que pasarle el bitmap (en <a href="https://es.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>, por ejemplo) con las fuentes y el XML que las describe</p>
-</section>
-<section class="slide level2">
-
+<hr />
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es scene</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>(){</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>(</span>
@@ -179,35 +142,23 @@
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>(){</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">greeting</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">bitmapText</span>(<span class="dv">200</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="st">&#39;bitmapFont&#39;</span><span class="op">,</span><span class="st">&#39;Bitmap Fonts!&#39;</span><span class="op">,</span> <span class="dv">64</span>)<span class="op">;</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
-
+<hr />
 <p>Para generar el XML y el mapa de bits podemos usar:</p>
 <ul>
 <li><a href="https://snowb.org/">SnowB BMF</a> (online)</li>
 <li><a href="http://www.angelcode.com/products/bmfont/">Bmfont</a> (Windows)</li>
 <li><a href="https://www.71squared.com/glyphdesigner">Glyph Designer</a></li>
 </ul>
-</section></section>
-<section>
-<section id="texto-con-fuentes-web" class="title-slide slide level1">
-<h1>Texto con fuentes Web</h1>
-
-</section>
-<section class="slide level2">
-
+<h1 id="texto-con-fuentes-web">Texto con fuentes Web</h1>
+<hr />
 <p>Podemos cargar fuentes desde la web, por ejemplo desde <a href="https://fonts.google.com/">Google Fonts</a></p>
 <p>Hay que cargar la fuente previamente antes de usarla</p>
-</section>
-<section class="slide level2">
-
+<hr />
 <p>Cargamos el código para usar webfonts:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">preload</span>() {</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">script</span>(<span class="st">&#39;webfont&#39;</span><span class="op">,</span> <span class="st">&#39;https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js&#39;</span>)<span class="op">;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
-
+<hr />
 <p>Después, llamamos a <code class="sourceCode javascript">WebFont<span class="op">.</span><span class="fu">load</span>()</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es Scene</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
@@ -226,18 +177,13 @@
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        }</span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</section>
-<section id="problemas-de-las-google-fonts-u-otras-fuentes-web" class="slide level2">
-<h2>¿Problemas de las Google Fonts u otras fuentes Web?</h2>
+<hr />
+<h2 id="problemas-de-las-google-fonts-u-otras-fuentes-web">¿Problemas de las Google Fonts u otras fuentes Web?</h2>
 <p>Que dependemos de ellas para que el juego funcione y no tenemos control sobre ellas</p>
-</section>
-<section id="solución" class="slide level2">
-<h2>Solución</h2>
+<h2 id="solución">Solución</h2>
 <p>Almacenar las fuentes de nuestro juego en el servidor y cargarlas.</p>
 <p>Las podemos guardar en <code>/assets/fonts</code></p>
-</section>
-<section class="slide level2">
-
+<hr />
 <p>Creamos una función auxiliar y cargamos la fuente:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">loadFont</span>(name<span class="op">,</span> url) {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> newFont <span class="op">=</span> <span class="kw">new</span> <span class="bu">FontFace</span>(name<span class="op">,</span> <span class="vs">`url(</span><span class="sc">${</span>url<span class="sc">}</span><span class="vs">)`</span>)<span class="op">;</span></span>
@@ -253,9 +199,7 @@
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// https://www.dafont.com/es/happy-donuts.font</span></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">loadFont</span>(<span class="st">&quot;Donuts&quot;</span><span class="op">,</span> <span class="st">&quot;/assets/fonts/HAPPY_DONUTS.ttf&quot;</span>)<span class="op">;</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</section>
-<section class="slide level2">
-
+<hr />
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es Scene</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>() {</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> nuevoTexto <span class="op">=</span> </span>
@@ -263,169 +207,5 @@
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;The face of the</span><span class="sc">\n</span><span class="st">moon was in</span><span class="sc">\n</span><span class="st">shadow.&#39;</span><span class="op">,</span> </span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            { <span class="dt">fontFamily</span><span class="op">:</span> <span class="st">&#39;Donuts&#39;</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span> <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;#ffffff&#39;</span> })</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-</section></section>
-    </div>
-  </div>
-
-  <script src="../reveal.js/dist/reveal.js"></script>
-
-  <!-- reveal.js plugins -->
-  <script src="../reveal.js/plugin/notes/notes.js"></script>
-  <script src="../reveal.js/plugin/search/search.js"></script>
-  <script src="../reveal.js/plugin/zoom/zoom.js"></script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-        // Display controls in the bottom right corner
-        controls: true,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: true,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'bottom-right',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: true,
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: true,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: true,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'fade',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // reveal.js plugins
-        plugins: [
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
-      });
-    </script>
-    </body>
+</body>
 </html>

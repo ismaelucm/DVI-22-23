@@ -187,8 +187,6 @@ update(time, delta) {
 Como veremos en breve, a veces nos interesará no destruir la entidad pero sí **dejarla inerte**, de forma que no se actualice, ni se pinte, ni interactúe con nada hasta que vuelva a interesarnos
 
 
-Para ello podemos usar [_Grupos_ (Group)](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group) y _matar_ una entidad usando el método `kill(gameObject)`{.js} o `killAndHide(gameObject)`{.js}
-
 ---
 
 
@@ -204,57 +202,15 @@ Significa que, para Phaser, esta entidad no participará en las fases de actuali
 ---
 
 
-[Este otro ejemplo](https://codepen.io/gjimenezucm/pen/jOmyomL) mata los sprites más viejos pero no los destruye
-
-El efecto es parecido pero no igual puesto que los objetos siguen existiendo y la cantidad de memoria consumida se mantiene en aumento
-
----
-
-
-```js
-create() {
-  this.group = this.add.group();
-}
-update(time, delta) {    
-  let x = Math.random() * 400;
-  let y = Math.random() * 400;
-  this.group.add(this.add.sprite(x, y, 'phaser'));
-  
-  if (this.children.length > 10) {
-      let ch = this.group.getFirstAlive();
-      this.group.killAndHide(ch);
-      // también con: ch.setActive(false); ch.setVisible(false);
-      console.log('World children count:', this.children.length);
-  }
-}
-
-```
-
-
----
-
-
-Si observamos la consola:
-
-- En el primer ejemplo, el conteo de entidades en la escena **se mantiene constante**
-- En el segundo ejemplo, el número de entidades **no para de crecer**
-
----
-
-
 Para devolver una entidad a la existencia, según Phaser, usamos [`setActive(true)`{.js} y `setVisible(true)`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject#setActive)
 
----
 
-## Grupos en Phaser
+# Grupos en Phaser
+
+---
 
 
 Como ocurre con todas las entidades de Phaser, un [grupo](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group) **puede albergar otras entidades** pero además, los grupos exponen una API especialmente diseñada para la **búsqueda, ordenamiento y manipulación en grupo** de las entidades que contiene
-
----
-
-
-Como pudimos ver en el ejemplo anterior, al crear un grupo pudimos utilizar el método `getFirstAlive()`{.js} que es propio de los grupos y devuelve la primera entidad cuya propiedad `active`{.js} sea `true`{.js}
 
 ---
 
@@ -304,6 +260,53 @@ let yesNo = enemies.contains(e); // si el grupo contiene una entidad
 let d = enemies.countActive(false); // el número de "muertos"
 enemies.remove(e); // quitamos un elemento del grupo
 ```
+
+---
+
+
+
+En los [_grupos_ (Group)](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group) podemos _matar_ una entidad usando el método `kill(gameObject)`{.js} o `killAndHide(gameObject)`{.js}
+
+
+Al crear un grupo podemos utilizar el método `getFirstAlive()`{.js} que es propio de los grupos y devuelve la primera entidad cuya propiedad `active`{.js} sea `true`{.js}
+
+---
+
+[Este otro ejemplo](https://codepen.io/gjimenezucm/pen/jOmyomL) mata los sprites más viejos pero no los destruye
+
+
+El efecto es parecido, pero no igual, puesto que los objetos siguen existiendo y la cantidad de memoria consumida se mantiene en aumento
+
+---
+
+
+```js
+create() {
+  this.group = this.add.group();
+}
+update(time, delta) {    
+  let x = Math.random() * 400;
+  let y = Math.random() * 400;
+  this.group.add(this.add.sprite(x, y, 'phaser'));
+  
+  if (this.children.length > 10) {
+      let ch = this.group.getFirstAlive();
+      this.group.killAndHide(ch);
+      // también con: ch.setActive(false); ch.setVisible(false);
+      console.log('World children count:', this.children.length);
+  }
+}
+
+```
+
+
+---
+
+
+Si observamos la consola:
+
+- En el primer ejemplo visto anteriormente, el conteo de entidades en la escena **se mantiene constante**
+- En el segundo ejemplo, el número de entidades **no para de crecer**
 
 <!-- 
 ## API de ordenamiento
