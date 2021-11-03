@@ -155,7 +155,7 @@ Después, llamamos a `WebFont.load()`{.js}:
 
 ```js
 // this es Scene
-create() {
+create(){
     let self = this; // Para usarlo en active
     WebFont.load({
         google: {
