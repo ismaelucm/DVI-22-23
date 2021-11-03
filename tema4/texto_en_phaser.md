@@ -24,6 +24,7 @@ Pero podemos modificar los atributos de `text`{.js} para cambiar su aspecto como
 ```js
 // this es una Scene
 let text = this.add.text(this.cameras.main.centerX, this.cameras.main.centerY, '- phaser text stroke -');
+text.setOrigin(0.5,0.5);
 
 // alineación del texto
 text.setAlign('center');
@@ -57,8 +58,8 @@ Pero el texto creado tal cual lo hemos hecho tiene una posición en la escena y,
 Se puede crear un botón fácilmente usando un texto interactivo y añadiendo un evento de `onpointerdown`:
 
 ```js
-let text = this.add.text(...).setInteractive();
-text.on('pointerdown', pointer => {
+let button = this.add.text(...).setInteractive();
+button.on('pointerdown', pointer => {
     // hacer algo
 });
 ```
@@ -80,29 +81,27 @@ text.on('pointerdown', pointer => {
 
 ---
 
-Una fuente de nuestra máquina puede no estar disponible en la máquina del usuario
+Una fuente de nuestra máquina puede no estar disponible en la máquina del usuario.
 
-¿Solución? Usar [fuentes estándar](https://www.w3schools.com/cssref/css_websafe_fonts.asp), crear nuestras propias fuentes de mapa de bits (bitmaps) o usar fuentes Web (**webfonts**) como [Google Fonts](https://fonts.google.com/)
+¿Solución? Usar [fuentes estándar](https://www.w3schools.com/cssref/css_websafe_fonts.asp), crear nuestras propias fuentes de mapa de bits (bitmap fonts) o usar fuentes Web (**webfonts**) como [Google Fonts](https://fonts.google.com/)
 
 ---
 
 
+![Bitmap Fonts](bitmapfont.png)
+
+---
+
 ## Texto con fuentes de mapa de bits
 
-Para cargar una fuente de mapa de bits hay que usar `scene.load.bitmapFont()`{.js} en el `preload`{.js}
+Para cargar una fuente de mapa de bits hay que usar [`scene.load.bitmapFont()`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Loader.LoaderPlugin#bitmapFont) en el `preload`{.js}
 
 Hay que pasarle el bitmap (en [PNG](https://es.wikipedia.org/wiki/Portable_Network_Graphics), por ejemplo) con las fuentes y el XML que las describe
 
 ---
 
-Para generar el XML y el mapa de bits podemos usar:
-
-- [SnowB BMF](https://snowb.org/) (online)
-- [Bmfont](http://www.angelcode.com/products/bmfont/) (Windows) 
-
----
-
 ```js
+// this es scene
 preload(){
     this.load.bitmapFont(
         'bitmapFont', 'assets/fonts/bitmapFonts/bitmapFont.png',
@@ -112,7 +111,13 @@ create(){
     this.greeting = this.add.bitmapText(200, 100, 'bitmapFont','Bitmap Fonts!', 64);
 }
 ```
+---
 
+Para generar el XML y el mapa de bits podemos usar:
+
+- [SnowB BMF](https://snowb.org/) (online)
+- [Bmfont](http://www.angelcode.com/products/bmfont/) (Windows) 
+- [Glyph Designer](https://www.71squared.com/glyphdesigner)
 
 
 
@@ -149,7 +154,7 @@ Después, llamamos a `WebFont.load()`{.js}:
 
 
 ```js
-// El this es Scene
+// this es Scene
 create() {
     let self = this; // Para usarlo en active
     WebFont.load({
@@ -204,7 +209,7 @@ preload() {
 ---
 
 ```js
-// El this es Scene
+// this es Scene
 create() {
     let nuevoTexto = 
         this.add.text(16, 0, 
