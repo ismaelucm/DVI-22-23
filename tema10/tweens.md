@@ -4,7 +4,7 @@ title: Tweens
 
 # Más sobre animación
 
----
+--- 
 
 Las animaciones que hemos utilizado hasta ahora son _animaciones por frames_, es decir, dibujamos **todas** las imágenes o frames que componen la animación
 

@@ -16,7 +16,7 @@ Creamos **callbacks** o funciones que se ejecutarán en respuesta a estos evento
 
 ---
 
-## Algunos eventos en Phaser 
+## Algunos eventos en Phaser
 
 - Input: Teclado (`'down'`{.js}, `'up'`{.js}...), ratón (`'pointerdown'`{.js}, `'wheel'`{.js}...)
 - Física en Arcade: `'collider'`{.js}, `'overlap'`{.js}...
