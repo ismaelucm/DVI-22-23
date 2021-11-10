@@ -124,21 +124,21 @@
 <h2>Caracteristicas de una onda</h2>
 <p>La longitud de onda (simbolizada por <strong>λ</strong>) es la distancia entre dos crestas o valles seguidos.</p>
 <p>El periodo <strong>T</strong> es el tiempo requerido para que el movimiento de oscilación de la onda describa un ciclo completo</p>
-<p><span class="math display">$$f = \frac{1}{T}$$</span></p>
-</section>
-<section class="slide level2">
-
-<p>La frecuencia <strong>f</strong> es el número de ciclos completos transcurridos en una unidad de tiempo</p>
-<p>Hercio (Hz) es el número de veces que se repite una onda por segundo</p>
-<blockquote>
-<p>100 kHzs = 100.000 veces por segundo</p>
-</blockquote>
 </section>
 <section class="slide level2">
 
 <figure>
 <img data-src="nonsinusoidal_wavelength.jpg" alt="La amplitud de la onda es la altura de la cresta" /><figcaption aria-hidden="true">La amplitud de la onda es la altura de la cresta</figcaption>
 </figure>
+</section>
+<section class="slide level2">
+
+<p>La frecuencia <strong>f</strong> es el número de ciclos completos transcurridos en una unidad de tiempo</p>
+<p>f = 1 / T</p>
+<p>Hercio (Hz) es el número de veces que se repite una onda por segundo</p>
+<blockquote>
+<p>100 kHzs = 100.000 veces por segundo</p>
+</blockquote>
 </section>
 <section id="cómo-producir-sonido" class="slide level2">
 <h2>¿Cómo producir sonido?</h2>
@@ -186,7 +186,7 @@
 <section class="slide level2">
 
 <p>Cuando la precisión es muy grande, el archivo de audio puede tener un tamaño de varias decenas de megas para una canción de 2 o 3 minutos</p>
-<p>Esto ocurre con formatos como **WAV o AIFF* (sin compresión)</p>
+<p>Esto ocurre con formatos como <strong>WAV o AIFF</strong> (sin compresión)</p>
 <p>Por tanto, usamos <strong>compresión</strong></p>
 </section>
 <section class="slide level2">
@@ -274,7 +274,7 @@
 </section>
 <section class="slide level2">
 
-<p>Web Audio es una forma de reproducir audio en el navegador a bajo nivel</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">Web Audio</a> es una forma de reproducir audio en el navegador a bajo nivel</p>
 </section>
 <section class="slide level2">
 
@@ -410,7 +410,7 @@ Ejemplo de oscilador con nodos
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -419,7 +419,7 @@ Ejemplo de oscilador con nodos
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

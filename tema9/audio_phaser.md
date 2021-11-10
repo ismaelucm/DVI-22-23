@@ -47,7 +47,7 @@ Esto quiere decir que, para gestionar audio, sólo tenemos que preocuparnos de:
 #. tener los archivos
 #. cargarlos
 #. (asegurarnos de que están bien cargados)
-#. reproducirlos - de fondo - con eventos - en loop
+#. reproducirlos --de fondo, como eventos, en loop...
 #. enterarnos de cuándo han acabado de reproducirse (si queremos)
 
 # Carga de sonidos
@@ -77,7 +77,7 @@ scene.load.audio("boden", [
 
 ---
 
-Añadimos el audio al juego:
+Añadimos el audio al juego [con una configuración inicial](https://newdocs.phaser.io/docs/3.55.1/Phaser.Types.Sound.SoundConfig) (opcional):
 
 ```js
 const config = {
@@ -106,6 +106,17 @@ Si queremos parar la reproducción
 
 ```js
 music.stop();
+```
+
+---
+
+
+Hacer que un sonido se repita
+
+```js
+// hace que `explosion` se vuelva a reproducir cuando acabe
+// (muy útil para música)
+explosion.setLoop(true);
 ```
 
 ---
@@ -155,28 +166,10 @@ function create() {
 
 ---
 
-## Callback de descodificación
+No es el único evento pero sí suele ser el más comúnmente usado
 
-Otro tipo de _callback_ es el que se necesita cuando se descomprime un *buffer* de audio comprimido
+Phaser proporciona otros muchos [eventos relacionados con la reproducción de sonido](https://newdocs.phaser.io/docs/3.55.1/Phaser.Sound.Events)
 
-```js
-scene.sound.decodeAudio('musica', bufferDatos);
-```
-
----
-
-En versiones actualizadas (Phaser 3), esto no es necesario *para archivos cargados por URL*
-
----
-
-
-## Repetir
-
-```js
-// hace que `explosion` se vuelva a reproducir cuando acabe
-// (muy útil para música)
-explosion.setLoop(true);
-```
 
 # Audio sprites
 
@@ -186,7 +179,7 @@ Antes de las tecnologías de audio HTML modernas, los navegadores tenían muchas
 
 ---
 
-Los _audio sprites_ son un sistema en el que un solo archivo de audio contiene varios sonidos grabados (uno detrás de otro)
+Los [_audio sprites_](https://newdocs.phaser.io/docs/3.55.1/Phaser.Sound.BaseSoundManager#addAudioSprite) son un sistema en el que un solo archivo de audio contiene varios sonidos grabados (uno detrás de otro)
 
 Se acompañan de un archivo con información de dónde empieza y acaba cada uno (JSON)
 
@@ -197,6 +190,8 @@ Es decir, algo muy similar a un _atlas de texturas_
 ---
 
 En general, no son necesarios hoy en día (aunque pueden hacer más eficiente la carga)
+
+[Aquí hay un ejemplo de este tipo de audio](https://phaser.io/examples/v3/view/audio/html5-audio/audiosprite#)
 
 # Recursos de audio
 

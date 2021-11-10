@@ -35,19 +35,19 @@ La longitud de onda (simbolizada por **λ**)  es la distancia entre dos crestas 
 
 El periodo **T** es el tiempo requerido para que el movimiento de oscilación de la onda describa un ciclo completo
 
-$$f = \frac{1}{T}$$
+---
+
+![La amplitud de la onda es la altura de la cresta](nonsinusoidal_wavelength.jpg)
 
 ---
 
 La frecuencia **f** es el número de ciclos completos transcurridos en una unidad de tiempo
 
+f = 1 / T
+
 Hercio (Hz) es el número de veces que se repite una onda por segundo
 
 > 100 kHzs = 100.000 veces por segundo
-
----
-
-![La amplitud de la onda es la altura de la cresta](nonsinusoidal_wavelength.jpg)
 
 ---
 
@@ -109,7 +109,7 @@ Es decir, más **números**
 
 Cuando la precisión es muy grande, el archivo de audio puede tener un tamaño de varias decenas de megas para una canción de 2 o 3 minutos
 
-Esto ocurre con formatos como **WAV o AIFF* (sin compresión)
+Esto ocurre con formatos como **WAV o AIFF** (sin compresión)
 
 Por tanto, usamos **compresión**
 
@@ -255,7 +255,7 @@ Hoy en día las tecnologías web permiten reproducir audio desde el navegador
 
 ---
 
-Web Audio es una forma de reproducir audio en el navegador a bajo nivel
+[Web Audio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) es una forma de reproducir audio en el navegador a bajo nivel
 
 ---
 
