@@ -400,6 +400,12 @@ this.map = this.make.tilemap({
 
 ---
 
+[Este objeto](https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap) tiene propiedades importantes como el ancho y el alto (en tiles y en píxels) que son útiles para establecer los límites (_bounds_) del mundo y de la cámara
+
+Así mismo, tiene métodos para convertir coordenadas del mundo en tiles y viceversa o para acceder a información de los tiles o de las capas.
+
+---
+
 ## 3. Texturas de los tilesets
 
 Posteriormente creamos los tilesets, asignando las imágenes cargadas a los tileset usados en el tilemap:
@@ -418,7 +424,7 @@ Un mapa de tiles puede tener más de una textura asociada, por lo que hay que as
 
 ---
 
-Por ejemplo, `'patrones'`{.js} y `'patronesFondo'`{.js} son nombres de atlas en Tiled---los que están en las pestañas:
+Por ejemplo, `'patrones'`{.js} y `'patronesFondo'`{.js} son nombres de tilesets en Tiled---los que están en las pestañas:
 
 ```js
 const tileset1 = this.map.addTilesetImage('patrones', 'idImagen');
@@ -433,9 +439,9 @@ Por último, es necesario crear las capas para que el mapa se visualice.
 
 Como hemos visto, en el editor de tiles podemos crear diferentes capas o *layers*
 
-Las capas tienen entidad única y se pueden manejar independientemente (por ejemplo, para colisiones)
-
 ---
+
+Las capas tienen entidad única y se pueden manejar independientemente (por ejemplo, para colisiones)
 
 Una capa permite diferenciar los objetos del fondo con los objetos de frente o tener diferentes fondos
 
@@ -457,9 +463,82 @@ this.foreground =
                              , [tileset1, tileset2]);
 ```
 
+# Colisiones con mapas
+
 ---
 
-## Capas de objetos
+Una parte importante, una vez que tenemos el mapa, es que los tiles tengan *propiedades físicas*
+
+---
+
+## Colisión por propiedades
+
+Por ejemplo, dada una capa (`layer`{.js}), podemos hacer que todos aquellos tiles que tengan cierta propiedad, colisionen:
+
+```js
+layer.setCollisionByProperty({ colisiona: true });
+```
+
+---
+
+## Colisión por inclusión
+
+O podemos hacer que los tiles con *id* en un rango concreto, colisionen:
+
+```js
+// así colisionarán todos los tiles de la capa 
+// asumiendo que no hay id > 999
+layer.setCollisionBetween(0, 999);
+```
+
+<small>En efecto, cada tipo de tile tiene un *id*</small>
+
+---
+
+## Colisión por exclusión
+
+```js
+// `true` es que activa la colisión
+layer.setCollisionByExclusion([93, 94, 95, 96], true);
+```
+
+---
+
+## Colisiones de Sprites con capas
+
+Aunque hayamos activado las colisiones para los tiles, *tenemos que activar `colliders` para cada entidad que lo necesite*:
+
+
+```js
+this.physics.add.collider(player, layer);
+```
+
+---
+
+También podemos eliminar un `collider` antes creado
+
+Por ejemplo, para hacer que se puedan cruzar zonas que antes no se podía:
+
+```js
+this.collider = this.physics.add.collider(
+                  this.player,
+                  room.foreground);
+// y, después
+this.collider.destroy();
+```
+
+---
+
+Los ejemplos anteriores son para *Arcade*
+
+Para que funcione la colisión con *Matter.js*, hay que poner **también**:
+
+```js
+this.matter.world.convertTilemapLayer(suelo);
+```
+
+
+# Capas de objetos
 
 ---
 
@@ -471,24 +550,23 @@ Además de los tiles que forman el escenario, también podemos poner a nuestros 
 
 ---
 
-Después, desde Phaser, **no** crearemos capas Phaser desde las capas de objetos de Tiled, sino que crearemos `Sprite`{.js}s a partir de los objetos de la capa
+Después, desde Phaser, **no** crearemos layers de Phaser desde las capas de objetos de Tiled, sino que crearemos `Sprite`{.js}s a partir de los objetos de la capa
 
 ---
 
-Lo haremos con [`createFromObjects`{.js}](https://photonstorm.github.io/phaser3-docs/Phaser.Tilemaps.Tilemap.html#createFromObjects__anchor):
+Lo haremos con [`createFromObjects`{.js}](https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap#createFromObjects):
 
 ```js
-// con el ID de objeto
+// con el GID de objeto
 conId1 = map.createFromObjects('nombreDeCapaObjetosEnTiled', {gid: 1})
 
 // o con el nombre del objeto (`name` en Tiled)
 players = map.createFromObjects('nombreDeCapaObjetosEnTiled', {name: 'player'})
 
-// cambiar las propiedades de player después
+// players es un array por lo que podemos aplicar funciones sobre sus elementos
+// como esta que cambia la vida
 players.map(p => p.vida = 10)
 ```
-
-Phaser colocará estos `Sprite`{.js}s en el lugar apropiado
 
 ---
 
@@ -500,6 +578,14 @@ createFromObjects(layerName, {
   classType: HeartContainer
 })
 ```
+
+---
+
+Phaser colocará estos `Sprite`{.js}s en el lugar apropiado
+
+Cualquier propiedad de GameObject añadida en Tiled será copiada en el GameObject creado (por ejemplo, `alpha`)
+
+Cualquier otra propiedad será añadida al [`data`](https://newdocs.phaser.io/docs/3.55.2/Phaser.Data.DataManager) del GameObject (acceso a propiedades con `getData(key)` y `setData(key, value)`)
 
 ---
 
@@ -607,7 +693,7 @@ Sin embargo, el tamaño de página, dispositivo y pantalla en el que se ejecutar
 
 ---
 
-Phaser 3 lo pone muy fácil:
+Phaser 3 lo pone muy fácil con la [propiedad `scale`](https://newdocs.phaser.io/docs/3.55.2/Phaser.Types.Core.ScaleConfig) de la configuración:
 
 ```js
 const config = {
@@ -657,81 +743,7 @@ const config = {
 
 
 
-# Colisiones con mapas
 
----
-
-Una parte importante, una vez que tenemos el mapa, es que los tiles tengan *propiedades físicas*
-
----
-
-## Colisión por propiedades
-
-Por ejemplo, dada una capa (`layer`{.js}), podemos hacer que todos aquellos tiles que tengan cierta propiedad, colisionen:
-
-```js
-suelo.setCollisionByProperty({ colisiona: true });
-```
-
----
-
-## Colisión por inclusión
-
-O podemos hacer que los tiles con *id* en un rango concreto, colisionen:
-
-```js
-// así colisionarán todos los tiles de la capa 
-// asumiendo que no hay id > 99
-suelo.foreground.setCollisionBetween(0, 999);
-```
-
-<small>En efecto, cada tipo de tile tiene un *id*</small>
-
----
-
-## Colisión por exclusión
-
-```js
-// `true` es que activa la colisión
-layer.setCollisionByExclusion([93, 94, 95, 96], true);
-```
-
----
-
-## Colisiones de `Sprites`{.js} con capas
-
-Aunque hayamos activado las colisiones para los tiles, *tenemos que activar `colliders` para cada entidad que lo necesite*:
-
-
-```js
-this.physics.add.collider(player, layer);
-```
-
----
-
-También podemos eliminar un `collider` antes creado
-
-Por ejemplo, para hacer que se puedan cruzar zonas que antes no se podía:
-
-```js
-this.collider = this.physics.add.collider(
-                  this.player,
-                  room.foreground);
-// y, después
-this.collider.destroy();
-```
-
----
-
-Los ejemplos anteriores son para *Arcade*
-
-Para que funcione la colisión con *Matter.js*, hay que poner **también**:
-
-```js
-this.matter.world.convertTilemapLayer(suelo);
-```
-
----
 
 
 ## Tiles que no son cuadrados

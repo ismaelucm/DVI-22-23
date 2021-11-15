@@ -373,8 +373,8 @@
 <ol type="1">
 <li>Carga de archivos de datos e imágenes</li>
 <li>Creación del tilemap</li>
-<li>Creación de los tilesets</li>
-<li>Creación de los mapas</li>
+<li>Asignamos las texturas a los tilesets</li>
+<li>Creación de las capas</li>
 </ol>
 </section>
 <section id="carga-de-archivos-de-datos-e-imágenes" class="slide level2">
@@ -407,10 +407,15 @@
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">tileHeight</span><span class="op">:</span> <span class="dv">64</span> </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 </section>
-<section id="creación-de-los-tilesets" class="slide level2">
-<h2>3. Creación de los tilesets</h2>
+<section class="slide level2">
+
+<p><a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap">Este objeto</a> tiene propiedades importantes como el ancho y el alto (en tiles y en píxels) que son útiles para establecer los límites (<em>bounds</em>) del mundo y de la cámara</p>
+<p>Así mismo, tiene métodos para convertir coordenadas del mundo en tiles y viceversa o para acceder a información de los tiles o de las capas.</p>
+</section>
+<section id="texturas-de-los-tilesets" class="slide level2">
+<h2>3. Texturas de los tilesets</h2>
 <p>Posteriormente creamos los tilesets, asignando las imágenes cargadas a los tileset usados en el tilemap:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset1 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;nombreTilemap&#39;</span><span class="op">,</span> <span class="st">&#39;nombreTextura&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset1 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;nombreTilemap&#39;</span><span class="op">,</span> <span class="st">&#39;claveTextura&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -418,22 +423,22 @@
 </section>
 <section class="slide level2">
 
-<p>Un mapa de tiles puede tener más de una textura asociada, por lo que hay que asignar el nombre usado en el editor al asignar al tileset al nombre de la textura cargada en la cache</p>
+<p>Un mapa de tiles puede tener más de una textura asociada, por lo que hay que asignar el nombre usado en el editor al asignar al tileset al nombre de la textura cargada en la cache (está en el JSON exportado desde Tiled)</p>
 </section>
 <section class="slide level2">
 
-<p>Es decir, <code class="sourceCode javascript"><span class="st">&#39;patrones&#39;</span></code> y <code class="sourceCode javascript"><span class="st">&#39;patronesFondo&#39;</span></code> son nombres de atlas en Tiled—los que están en las pestañas:</p>
+<p>Por ejemplo, <code class="sourceCode javascript"><span class="st">&#39;patrones&#39;</span></code> y <code class="sourceCode javascript"><span class="st">&#39;patronesFondo&#39;</span></code> son nombres de tilesets en Tiled—los que están en las pestañas:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset1 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;patrones&#39;</span><span class="op">,</span> <span class="st">&#39;idImagen&#39;</span>)<span class="op">;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset2 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;patronesFondo&#39;</span><span class="op">,</span> <span class="st">&#39;idImagen2&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
-<section id="crear-las-diferentes-capas" class="slide level2">
-<h2>Crear las diferentes capas</h2>
+<section id="creación-de-las-capas" class="slide level2">
+<h2>4. Creación de las capas</h2>
 <p>Por último, es necesario crear las capas para que el mapa se visualice.</p>
 <p>Como hemos visto, en el editor de tiles podemos crear diferentes capas o <em>layers</em></p>
-<p>Las capas tienen entidad única y se pueden manejar independientemente (por ejemplo, para colisiones)</p>
 </section>
 <section class="slide level2">
 
+<p>Las capas tienen entidad única y se pueden manejar independientemente (por ejemplo, para colisiones)</p>
 <p>Una capa permite diferenciar los objetos del fondo con los objetos de frente o tener diferentes fondos</p>
 </section>
 <section class="slide level2">
@@ -450,9 +455,59 @@
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">foreground</span> <span class="op">=</span> </span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">createLayer</span>(<span class="st">&#39;Foreground&#39;</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                             <span class="op">,</span> [tileset1<span class="op">,</span> tileset2])<span class="op">;</span></span></code></pre></div>
+</section></section>
+<section>
+<section id="colisiones-con-mapas" class="title-slide slide level1">
+<h1>Colisiones con mapas</h1>
+
 </section>
-<section id="capas-de-objetos" class="slide level2">
-<h2>Capas de objetos</h2>
+<section class="slide level2">
+
+<p>Una parte importante, una vez que tenemos el mapa, es que los tiles tengan <em>propiedades físicas</em></p>
+</section>
+<section id="colisión-por-propiedades" class="slide level2">
+<h2>Colisión por propiedades</h2>
+<p>Por ejemplo, dada una capa (<code class="sourceCode javascript">layer</code>), podemos hacer que todos aquellos tiles que tengan cierta propiedad, colisionen:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>layer<span class="op">.</span><span class="fu">setCollisionByProperty</span>({ <span class="dt">colisiona</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="colisión-por-inclusión" class="slide level2">
+<h2>Colisión por inclusión</h2>
+<p>O podemos hacer que los tiles con <em>id</em> en un rango concreto, colisionen:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// así colisionarán todos los tiles de la capa </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">// asumiendo que no hay id &gt; 999</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>layer<span class="op">.</span><span class="fu">setCollisionBetween</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">999</span>)<span class="op">;</span></span></code></pre></div>
+<p><small>En efecto, cada tipo de tile tiene un <em>id</em></small></p>
+</section>
+<section id="colisión-por-exclusión" class="slide level2">
+<h2>Colisión por exclusión</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `true` es que activa la colisión</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>layer<span class="op">.</span><span class="fu">setCollisionByExclusion</span>([<span class="dv">93</span><span class="op">,</span> <span class="dv">94</span><span class="op">,</span> <span class="dv">95</span><span class="op">,</span> <span class="dv">96</span>]<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="colisiones-de-sprites-con-capas" class="slide level2">
+<h2>Colisiones de Sprites con capas</h2>
+<p>Aunque hayamos activado las colisiones para los tiles, <em>tenemos que activar <code>colliders</code> para cada entidad que lo necesite</em>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> layer)<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>También podemos eliminar un <code>collider</code> antes creado</p>
+<p>Por ejemplo, para hacer que se puedan cruzar zonas que antes no se podía:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">collider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">,</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                  room<span class="op">.</span><span class="at">foreground</span>)<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">// y, después</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">collider</span><span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Los ejemplos anteriores son para <em>Arcade</em></p>
+<p>Para que funcione la colisión con <em>Matter.js</em>, hay que poner <strong>también</strong>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">matter</span><span class="op">.</span><span class="at">world</span><span class="op">.</span><span class="fu">convertTilemapLayer</span>(suelo)<span class="op">;</span></span></code></pre></div>
+</section></section>
+<section>
+<section id="capas-de-objetos" class="title-slide slide level1">
+<h1>Capas de objetos</h1>
+
 </section>
 <section class="slide level2">
 
@@ -466,28 +521,34 @@
 </section>
 <section class="slide level2">
 
-<p>Después, desde Phaser, <strong>no</strong> crearemos capas Phaser desde las capas de objetos de Tiled, sino que crearemos <code class="sourceCode javascript">Sprite</code>s a partir de los objetos de la capa</p>
+<p>Después, desde Phaser, <strong>no</strong> crearemos layers de Phaser desde las capas de objetos de Tiled, sino que crearemos <code class="sourceCode javascript">Sprite</code>s a partir de los objetos de la capa</p>
 </section>
 <section class="slide level2">
 
-<p>Lo haremos con <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tilemaps.Tilemap.html#createFromObjects__anchor"><code class="sourceCode javascript">createFromObjects</code></a>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// con el ID de objeto</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>conId1 <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjetosEnTiled&#39;</span><span class="op">,</span> {<span class="dt">gid</span><span class="op">:</span> <span class="dv">1</span>})</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">// o con el nombre del objeto (`name` en Tiled)</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>players <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjetosEnTiled&#39;</span><span class="op">,</span> {<span class="dt">name</span><span class="op">:</span> <span class="st">&#39;player&#39;</span>})</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">// cambiar las propiedades de player después</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>players<span class="op">.</span><span class="fu">map</span>(p <span class="kw">=&gt;</span> p<span class="op">.</span><span class="at">vida</span> <span class="op">=</span> <span class="dv">10</span>)</span></code></pre></div>
-<p>Phaser colocará estos <code class="sourceCode javascript">Sprite</code>s en el lugar apropiado</p>
+<p>Lo haremos con <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap#createFromObjects"><code class="sourceCode javascript">createFromObjects</code></a>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// con el GID de objeto</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>conId1 <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjetosEnTiled&#39;</span><span class="op">,</span> {<span class="dt">gid</span><span class="op">:</span> <span class="dv">1</span>})</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">// o con el nombre del objeto (`name` en Tiled)</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>players <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjetosEnTiled&#39;</span><span class="op">,</span> {<span class="dt">name</span><span class="op">:</span> <span class="st">&#39;player&#39;</span>})</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">// players es un array por lo que podemos aplicar funciones sobre sus elementos</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">// como esta que cambia la vida</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>players<span class="op">.</span><span class="fu">map</span>(p <span class="kw">=&gt;</span> p<span class="op">.</span><span class="at">vida</span> <span class="op">=</span> <span class="dv">10</span>)</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Si no quiero <code class="sourceCode javascript">Sprite</code>s, podemos decirle el tipo (que tiene que heredar de <code class="sourceCode javascript">GameObject</code>):</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">createFromObjects</span>(layerName<span class="op">,</span> {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;heart-container&#39;</span><span class="op">,</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">classType</span><span class="op">:</span> HeartContainer</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">createFromObjects</span>(layerName<span class="op">,</span> {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;heart-container&#39;</span><span class="op">,</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">classType</span><span class="op">:</span> HeartContainer</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<p>Phaser colocará estos <code class="sourceCode javascript">Sprite</code>s en el lugar apropiado</p>
+<p>Cualquier propiedad de GameObject añadida en Tiled será copiada en el GameObject creado (por ejemplo, <code>alpha</code>)</p>
+<p>Cualquier otra propiedad será añadida al <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Data.DataManager"><code>data</code></a> del GameObject (acceso a propiedades con <code>getData(key)</code> y <code>setData(key, value)</code>)</p>
 </section>
 <section id="crear-los-objetos-analizando-el-mapa" class="slide level2">
 <h2>Crear los objetos analizando el mapa</h2>
@@ -497,55 +558,55 @@
 <section class="slide level2">
 
 <p>Los objetos de una capa de <em>objetos</em> los podemos encontrar en:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Así, podemos iterar sobre ellos:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En Tiled tiene que haber una capa de objetos llamada `capaObjetos`</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> scene<span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span>) {</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// `objeto.name` u `objeto.type` nos llegan de las propiedades del</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// objeto en Tiled</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (objeto<span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">&#39;player&#39;</span>) {</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">new</span> <span class="fu">Player</span>(scene<span class="op">,</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> objeto<span class="op">.</span><span class="at">y</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En Tiled tiene que haber una capa de objetos llamada `capaObjetos`</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> scene<span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span>) {</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// `objeto.name` u `objeto.type` nos llegan de las propiedades del</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// objeto en Tiled</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (objeto<span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">&#39;player&#39;</span>) {</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>      <span class="kw">new</span> <span class="fu">Player</span>(scene<span class="op">,</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> objeto<span class="op">.</span><span class="at">y</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Además, podemos examinar las propiedades que hayamos añadido al objeto en Tiled:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> scene<span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span>) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (objeto<span class="op">.</span><span class="at">name</span> <span class="op">===</span> <span class="st">&#39;player&#39;</span>) {</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> jugador <span class="op">=</span> <span class="kw">new</span> <span class="fu">Player</span>(scene<span class="op">,</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> objeto<span class="op">.</span><span class="at">y</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">const</span> { name<span class="op">,</span> value } <span class="kw">of</span> objeto<span class="op">.</span><span class="at">properties</span>) {</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        jugador[name] <span class="op">=</span> value </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> scene<span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span>) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (objeto<span class="op">.</span><span class="at">name</span> <span class="op">===</span> <span class="st">&#39;player&#39;</span>) {</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> jugador <span class="op">=</span> <span class="kw">new</span> <span class="fu">Player</span>(scene<span class="op">,</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> objeto<span class="op">.</span><span class="at">y</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">const</span> { name<span class="op">,</span> value } <span class="kw">of</span> objeto<span class="op">.</span><span class="at">properties</span>) {</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        jugador[name] <span class="op">=</span> value </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Una función para cargar:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cargar</span>(mapa<span class="op">,</span> capa<span class="op">,</span> tipo<span class="op">,</span> callback) {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> objetos <span class="op">=</span> mapa<span class="op">.</span><span class="fu">getObjectLayer</span>(capa)<span class="op">.</span><span class="at">objects</span><span class="op">.</span><span class="fu">filter</span>(x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="at">type</span> <span class="op">===</span> tipo)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> objetos) {</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> props <span class="op">=</span> {}</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (objeto<span class="op">.</span><span class="at">properties</span>) {</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">const</span> { name<span class="op">,</span> value } <span class="kw">of</span> objeto<span class="op">.</span><span class="at">properties</span>) {</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        props[name] <span class="op">=</span> value</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">callback</span>({ <span class="dt">x</span><span class="op">:</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> objeto<span class="op">.</span><span class="at">y</span><span class="op">,</span> props })</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cargar</span>(mapa<span class="op">,</span> capa<span class="op">,</span> tipo<span class="op">,</span> callback) {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> objetos <span class="op">=</span> mapa<span class="op">.</span><span class="fu">getObjectLayer</span>(capa)<span class="op">.</span><span class="at">objects</span><span class="op">.</span><span class="fu">filter</span>(x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="at">type</span> <span class="op">===</span> tipo)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> objetos) {</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> props <span class="op">=</span> {}</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (objeto<span class="op">.</span><span class="at">properties</span>) {</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">const</span> { name<span class="op">,</span> value } <span class="kw">of</span> objeto<span class="op">.</span><span class="at">properties</span>) {</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        props[name] <span class="op">=</span> value</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">callback</span>({ <span class="dt">x</span><span class="op">:</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> objeto<span class="op">.</span><span class="at">y</span><span class="op">,</span> props })</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Y, para usarla:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cargar</span>(<span class="kw">this</span><span class="op">.</span><span class="at">mapa</span><span class="op">,</span> <span class="st">&#39;objetos&#39;</span><span class="op">,</span> <span class="st">&#39;player&#39;</span><span class="op">,</span> ({ x<span class="op">,</span> y<span class="op">,</span> props }) <span class="kw">=&gt;</span> {</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">player</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Player</span>(<span class="kw">this</span><span class="op">,</span> x<span class="op">,</span> y)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">.</span><span class="at">vida</span> <span class="op">=</span> props<span class="op">.</span><span class="at">vida</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cargar</span>(<span class="kw">this</span><span class="op">.</span><span class="at">mapa</span><span class="op">,</span> <span class="st">&#39;objetos&#39;</span><span class="op">,</span> <span class="st">&#39;player&#39;</span><span class="op">,</span> ({ x<span class="op">,</span> y<span class="op">,</span> props }) <span class="kw">=&gt;</span> {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">player</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Player</span>(<span class="kw">this</span><span class="op">,</span> x<span class="op">,</span> y)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">.</span><span class="at">vida</span> <span class="op">=</span> props<span class="op">.</span><span class="at">vida</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 </section></section>
 <section>
 <section id="escala" class="title-slide slide level1">
@@ -566,16 +627,16 @@
 </section>
 <section class="slide level2">
 
-<p>Phaser 3 lo pone muy fácil:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">width</span><span class="op">:</span> <span class="dv">1024</span><span class="op">,</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">height</span><span class="op">:</span> <span class="dv">768</span><span class="op">,</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scale</span><span class="op">:</span> {</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Scale</span><span class="op">.</span><span class="at">FIT</span><span class="op">,</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>      <span class="co">// mode: Phaser.Scale.SMOOTH,</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">autoCenter</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Scale</span><span class="op">.</span><span class="at">CENTER_BOTH</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Phaser 3 lo pone muy fácil con la <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Types.Core.ScaleConfig">propiedad <code>scale</code></a> de la configuración:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">width</span><span class="op">:</span> <span class="dv">1024</span><span class="op">,</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">height</span><span class="op">:</span> <span class="dv">768</span><span class="op">,</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scale</span><span class="op">:</span> {</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Scale</span><span class="op">.</span><span class="at">FIT</span><span class="op">,</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      <span class="co">// mode: Phaser.Scale.SMOOTH,</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">autoCenter</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Scale</span><span class="op">.</span><span class="at">CENTER_BOTH</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p><small>Cambiando <code class="sourceCode javascript">width</code> y <code class="sourceCode javascript">height</code> y el tamaño del canvas, se ajusta el tamaño del juego</small></p>
 </section>
 <section class="slide level2">
@@ -591,63 +652,15 @@
 <section class="slide level2">
 
 <p>Afortunadamente, Phaser sabe que adoramos el pixelart:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pixelArt</span><span class="op">:</span> <span class="kw">true</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pixelArt</span><span class="op">:</span> <span class="kw">true</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <figure>
 <img data-src="pixel.png" style="width:40.0%" alt="Filtro de escalado para pixelart" /><figcaption aria-hidden="true">Filtro de escalado para pixelart</figcaption>
 </figure>
-</section></section>
-<section>
-<section id="colisiones-con-mapas" class="title-slide slide level1">
-<h1>Colisiones con mapas</h1>
-
-</section>
-<section class="slide level2">
-
-<p>Una parte importante, una vez que tenemos el mapa, es que los tiles tengan <em>propiedades físicas</em></p>
-</section>
-<section id="colisión-por-propiedades" class="slide level2">
-<h2>Colisión por propiedades</h2>
-<p>Por ejemplo, dada una capa (<code class="sourceCode javascript">layer</code>), podemos hacer que todos aquellos tiles que tengan cierta propiedad, colisionen:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>suelo<span class="op">.</span><span class="fu">setCollisionByProperty</span>({ <span class="dt">colisiona</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span></code></pre></div>
-</section>
-<section id="colisión-por-inclusión" class="slide level2">
-<h2>Colisión por inclusión</h2>
-<p>O podemos hacer que los tiles con <em>id</em> en un rango concreto, colisionen:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">// así colisionarán todos los tiles de la capa </span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">// asumiendo que no hay id &gt; 99</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>suelo<span class="op">.</span><span class="at">foreground</span><span class="op">.</span><span class="fu">setCollisionBetween</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">999</span>)<span class="op">;</span></span></code></pre></div>
-<p><small>En efecto, cada tipo de tile tiene un <em>id</em></small></p>
-</section>
-<section id="colisión-por-exclusión" class="slide level2">
-<h2>Colisión por exclusión</h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `true` es que activa la colisión</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>layer<span class="op">.</span><span class="fu">setCollisionByExclusion</span>([<span class="dv">93</span><span class="op">,</span> <span class="dv">94</span><span class="op">,</span> <span class="dv">95</span><span class="op">,</span> <span class="dv">96</span>]<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span></code></pre></div>
-</section>
-<section id="colisiones-de-sprites-con-capas" class="slide level2">
-<h2>Colisiones de <code class="sourceCode javascript">Sprites</code> con capas</h2>
-<p>Aunque hayamos activado las colisiones para los tiles, <em>tenemos que activar <code>colliders</code> para cada entidad que lo necesite</em>:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> layer)<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
-
-<p>También podemos eliminar un <code>collider</code> antes creado</p>
-<p>Por ejemplo, para hacer que se puedan cruzar zonas que antes no se podía:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">collider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">,</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                  room<span class="op">.</span><span class="at">foreground</span>)<span class="op">;</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">// y, después</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">collider</span><span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span></code></pre></div>
-</section>
-<section class="slide level2">
-
-<p>Los ejemplos anteriores son para <em>Arcade</em></p>
-<p>Para que funcione la colisión con <em>Matter.js</em>, hay que poner <strong>también</strong>:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">matter</span><span class="op">.</span><span class="at">world</span><span class="op">.</span><span class="fu">convertTilemapLayer</span>(suelo)<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="tiles-que-no-son-cuadrados" class="slide level2">
 <h2>Tiles que no son cuadrados</h2>
