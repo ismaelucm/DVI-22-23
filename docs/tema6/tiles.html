@@ -136,7 +136,7 @@
 </section>
 <section id="partes-de-un-mapa-de-tiles" class="slide level2">
 <h2>Partes de un mapa de tiles</h2>
-<p>Normalmente necesitamos está compuesto por:</p>
+<p>Normalmente está compuesto por:</p>
 <ul>
 <li>un fichero de datos con la definición del tile map
 <ul>
@@ -194,13 +194,13 @@
 <section id="por-qué-es-más-eficiente" class="slide level2">
 <h2>¿Por qué es más eficiente?</h2>
 <ul>
-<li>Escena de 4096 <span class="math inline">×</span> 1024, tiles de 64 <span class="math inline">×</span> 64
+<li>Mapa de 4096 <span class="math inline">×</span> 1024 con tiles de 64 <span class="math inline">×</span> 64:
 <ul>
-<li>Sin tile map: 4096 <span class="math inline">×</span> 1024 <span class="math inline">×</span> 4B de color = <strong>16.7 MB</strong></li>
-<li>Con tile map: tile map de 64 <span class="math inline">×</span> 16, tile set de 1024 <span class="math inline">×</span> 1024 con 16 <span class="math inline">×</span> 16 tiles = 256 tiles
+<li><p>Sin tile map: 4096 <span class="math inline">×</span> 1024 <span class="math inline">×</span> 4B de color = <strong>16.7 MB</strong></p></li>
+<li><p>Con tile map: tile map de 64 <span class="math inline">×</span> 16 tiles y tile set de 1024 <span class="math inline">×</span> 1024 con 256 tiles (16 <span class="math inline">×</span> 16)</p>
 <ul>
-<li>Tamaño del tile map = 1024 B</li>
-<li>Tamaño del tile set = 1024 <span class="math inline">×</span> 1024 <span class="math inline">×</span> 4 = 4 MB</li>
+<li>Tamaño del tile map = 1024 <span class="math inline">×</span> 1B</li>
+<li>Tamaño del tile set = 1024 <span class="math inline">×</span> 1024 <span class="math inline">×</span> 4B de color = 4 MB</li>
 <li>Tamaño total = <strong>4.01 MB</strong></li>
 </ul></li>
 </ul></li>
@@ -209,7 +209,7 @@
 <section id="otras-ventajas" class="slide level2">
 <h2>Otras ventajas:</h2>
 <ul>
-<li>Al tener todos los tiles en la misma hoja de scripts sólo necesitamos una llamada a pintado para pintar todo el escenario</li>
+<li>Al tener todos los tiles en la misma hoja de sprites sólo necesitamos una llamada a pintado para pintar todo el escenario</li>
 <li>Cuando cargamos desde Internet, es fundamental reducir los tiempos de carga</li>
 <li>Dibujar la escena es más sencillo, sobre todo con un editor de tiles</li>
 <li>Podemos reutilizar tiles en diferentes escenarios.</li>
@@ -280,7 +280,7 @@
 <ul>
 <li>El tamaño del patrón (tile) y el número de patrones que tendrá el nivel</li>
 <li>Si queremos vista ortogonal o isométrica</li>
-<li>Marcamos como <em>Base64 (uncompressed)</em> sin comprimir el formato de la capa de patrones</li>
+<li>El formato de la capa de patrones para Phaser ha de ser <em>Base64 (uncompressed)</em> sin comprimir</li>
 <li><em>No</em> creamos un mapa infinito</li>
 </ul>
 </section>
@@ -290,7 +290,7 @@
 <section class="slide level2">
 
 <ul>
-<li>Base ortogonal es la tradicional en los juegos 2D (visto “desde arriba”)</li>
+<li>Base ortogonal es la tradicional en los juegos 2D (visto “desde arriba” o “lateral”)</li>
 <li>Base isométrica es una vista ortogonal especial que simula el 3D sin corrección de perspectiva
 <ul>
 <li>Todos los ejes forman un ángulo de 120º. El dibujo se gira 45º para poner la esquina del escenario frente al espectador</li>
@@ -368,8 +368,17 @@
 <p>A partir de Phaser 3.50.0 <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap">cambia la API de los mapas</a>, y se hace algo mejor (y más potente)</p>
 <p>Tened cuidado con las versiones en la documentación disponible</p>
 </section>
-<section id="cargar-el-tile-map" class="slide level2">
-<h2>Cargar el tile map</h2>
+<section id="tilemaps-en-phaser" class="slide level2">
+<h2>TileMaps en Phaser</h2>
+<ol type="1">
+<li>Carga de archivos de datos e imágenes</li>
+<li>Creación del tilemap</li>
+<li>Creación de los tilesets</li>
+<li>Creación de los mapas</li>
+</ol>
+</section>
+<section id="carga-de-archivos-de-datos-e-imágenes" class="slide level2">
+<h2>1. Carga de archivos de datos e imágenes</h2>
 <p>Para cargar el fichero de descripción del tile map, usamos <code class="sourceCode javascript"><span class="fu">tilemapTiledJSON</span>()</code> en <code class="sourceCode javascript"><span class="fu">preload</span>()</code></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">tilemapTiledJSON</span>(<span class="st">&#39;tilemap&#39;</span><span class="op">,</span> <span class="st">&#39;tilemap.json&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
@@ -389,23 +398,23 @@
 <p>Para cargar el atlas de patrones usaremos la carga de imagenes normal: <code class="sourceCode javascript">load<span class="op">.</span><span class="at">image</span></code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;patronesTilemap&#39;</span><span class="op">,</span> <span class="st">&#39;images/patrones.png&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
-<section id="crear-el-tile-map" class="slide level2">
-<h2>Crear el tile map</h2>
-<p>Para crear un tilemap usamos el recurso cargado en la cache como <em>tilemap</em>, en el método <code class="sourceCode javascript"><span class="fu">create</span>()</code> (<strong>no en <code class="sourceCode javascript"><span class="fu">preload</span>()</code></strong>)</p>
+<section id="creación-del-tilemap" class="slide level2">
+<h2>2. Creación del tilemap</h2>
+<p>Para crear un tilemap usamos <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObjectCreator#tilemap">el subsistema <code>make.tilemap</code></a> y el recurso cargado en la cache como <em>tilemap</em>, en el método <code class="sourceCode javascript"><span class="fu">create</span>()</code> (<strong>no en <code class="sourceCode javascript"><span class="fu">preload</span>()</code></strong>)</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">map</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">make</span><span class="op">.</span><span class="fu">tilemap</span>({ </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">key</span><span class="op">:</span> <span class="st">&#39;tilemap&#39;</span><span class="op">,</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">tileWidth</span><span class="op">:</span> <span class="dv">64</span><span class="op">,</span> </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">tileHeight</span><span class="op">:</span> <span class="dv">64</span> </span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 </section>
-<section class="slide level2">
-
-<p>Una vez creado le asignamos la textura donde tenemos los tiles</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset1 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;patrones&#39;</span><span class="op">,</span> <span class="st">&#39;patronesTilemap&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<section id="creación-de-los-tilesets" class="slide level2">
+<h2>3. Creación de los tilesets</h2>
+<p>Posteriormente creamos los tilesets, asignando las imágenes cargadas a los tileset usados en el tilemap:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset1 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;nombreTilemap&#39;</span><span class="op">,</span> <span class="st">&#39;nombreTextura&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>La textura debe estar previamente cargada y el nombre de la textura en el mapa de tiles debe ser conocido</p>
+<p>La textura debe estar previamente cargada y el nombre de la textura en el mapa de tiles es conocido (está en el JSON exportado desde Tiled)</p>
 </section>
 <section class="slide level2">
 
@@ -718,7 +727,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -727,7 +736,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

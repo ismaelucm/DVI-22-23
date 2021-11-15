@@ -61,7 +61,7 @@ En cada "celda" se pinta un tile, generalmente extraído de un *tile set*
 
 ## Partes de un mapa de tiles
 
-Normalmente necesitamos está compuesto por:
+Normalmente está compuesto por:
 
 - un fichero de datos con la definición del tile map
     - su tamaño (ancho y alto)
@@ -141,19 +141,20 @@ escena en una imagen (se carga una, se usa muchas veces)
 
 ## ¿Por qué es más eficiente?
 
-- Escena de 4096 $\times$ 1024, tiles de 64 $\times$ 64
+- Mapa de 4096 $\times$ 1024 con tiles de 64 $\times$ 64:
     - Sin tile map: 4096 $\times$ 1024 $\times$ 4B de color = **16.7 MB**
-    - Con tile map: tile map de 64 $\times$ 16, tile set de 1024 $\times$ 1024 con 16 $\times$ 16 tiles = 256 tiles
-        - Tamaño del tile map = 1024 B
-        - Tamaño del tile set = 1024 $\times$ 1024 $\times$ 4 = 4 MB
-        - Tamaño total = **4.01 MB**
+    
+    - Con tile map: tile map de 64 $\times$ 16 tiles y tile set de 1024 $\times$ 1024 con 256 tiles (16 $\times$ 16)
+      * Tamaño del tile map = 1024 $\times$ 1B
+      * Tamaño del tile set = 1024 $\times$ 1024 $\times$ 4B de color = 4 MB
+      * Tamaño total = **4.01 MB**
 
 
 ---
 
 ## Otras ventajas:
 
-- Al tener todos los tiles en la misma hoja de scripts sólo necesitamos una llamada a pintado para pintar todo el escenario
+- Al tener todos los tiles en la misma hoja de sprites sólo necesitamos una llamada a pintado para pintar todo el escenario
 - Cuando cargamos desde Internet, es fundamental reducir los tiempos de carga
 - Dibujar la escena es más sencillo, sobre todo con un editor de tiles
 - Podemos reutilizar tiles en diferentes escenarios.
@@ -244,7 +245,7 @@ Aquí establecemos:
 
 - El tamaño del patrón (tile) y el número de patrones que tendrá el nivel
 - Si queremos vista ortogonal o isométrica
-- Marcamos como *Base64 (uncompressed)* sin comprimir el formato de la capa de patrones
+- El formato de la capa de patrones para Phaser ha de ser *Base64 (uncompressed)* sin comprimir
 - *No* creamos un mapa infinito
 
 
@@ -255,7 +256,7 @@ Aquí establecemos:
 
 ---
 
-- Base ortogonal es la tradicional en los juegos 2D (visto "desde arriba")
+- Base ortogonal es la tradicional en los juegos 2D (visto "desde arriba" o "lateral")
 - Base isométrica es una vista ortogonal especial que simula el 3D sin corrección de perspectiva
     - Todos los ejes forman un ángulo de 120º. El dibujo se gira 45º para poner la esquina del escenario frente al espectador
     - La cámara se situaría en la esquina superior 
@@ -347,7 +348,16 @@ Tened cuidado con las versiones en la documentación disponible
 
 ---
 
-## Cargar el tile map
+## TileMaps en Phaser
+
+1. Carga de archivos de datos e imágenes
+2. Creación del tilemap
+3. Asignamos las texturas a los tilesets
+4. Creación de las capas
+
+---
+
+## 1. Carga de archivos de datos e imágenes
 
 Para cargar el fichero de descripción del tile map, usamos `tilemapTiledJSON()`{.js} en `preload()`{.js}
 
@@ -376,9 +386,9 @@ this.load.image('patronesTilemap', 'images/patrones.png');
 
 ---
 
-## Crear el tile map
+## 2. Creación del tilemap
 
-Para crear un tilemap usamos el recurso cargado en la cache como *tilemap*, en el método `create()`{.js} (**no en `preload()`{.js}**)
+Para crear un tilemap usamos [el subsistema `make.tilemap`](https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObjectCreator#tilemap) y el recurso cargado en la cache como *tilemap*, en el método `create()`{.js} (**no en `preload()`{.js}**)
 
 ```js
 this.map = this.make.tilemap({ 
@@ -390,23 +400,25 @@ this.map = this.make.tilemap({
 
 ---
 
-Una vez creado le asignamos la textura donde tenemos los tiles
+## 3. Texturas de los tilesets
+
+Posteriormente creamos los tilesets, asignando las imágenes cargadas a los tileset usados en el tilemap:
 
 ```js
-const tileset1 = this.map.addTilesetImage('patrones', 'patronesTilemap');
+const tileset1 = this.map.addTilesetImage('nombreTilemap', 'claveTextura');
 ```
 
 ---
 
-La textura debe estar previamente cargada y el nombre de la textura en el mapa de tiles debe ser conocido
+La textura debe estar previamente cargada y el nombre de la textura en el mapa de tiles es conocido (está en el JSON exportado desde Tiled)
 
 ---
 
-Un mapa de tiles puede tener más de una textura asociada, por lo que hay que asignar el nombre usado en el editor al asignar al tileset al nombre de la textura cargada en la cache
+Un mapa de tiles puede tener más de una textura asociada, por lo que hay que asignar el nombre usado en el editor al asignar al tileset al nombre de la textura cargada en la cache (está en el JSON exportado desde Tiled)
 
 ---
 
-Es decir, `'patrones'`{.js} y `'patronesFondo'`{.js} son nombres de atlas en Tiled---los que están en las pestañas:
+Por ejemplo, `'patrones'`{.js} y `'patronesFondo'`{.js} son nombres de atlas en Tiled---los que están en las pestañas:
 
 ```js
 const tileset1 = this.map.addTilesetImage('patrones', 'idImagen');
@@ -415,7 +427,7 @@ const tileset2 = this.map.addTilesetImage('patronesFondo', 'idImagen2');
 
 ---
 
-## Crear las diferentes capas
+## 4. Creación de las capas
 
 Por último, es necesario crear las capas para que el mapa se visualice.
 
