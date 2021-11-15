@@ -746,7 +746,7 @@ const config = {
 
 
 
-## Tiles que no son cuadrados
+# Tiles que no son cuadrados
 
 ---
 
@@ -777,3 +777,7 @@ Vamos a las propiedades del tileset ![icono de propiedades](iconopropiedades.png
 Cuando hagáis esto, es recomendable que se lo pongáis fácil a *Matter.js* haciendo los polígonos **convexos**
 
 Si el polígono es cóncavo, tendrá que subdividir el polígono en varios convexos, o usar una malla que tenga más coste (casco convexo)
+
+---
+
+Tenéis [varios ejemplos](https://phaser.io/examples/v3/view/tilemap/collision/matter#) del uso de [Tilemaps con Matter](https://phaser.io/examples/v3/view/tilemap/collision/matter-detect-collision-with-tile) en [la página de Phaser](https://phaser.io/examples/v3/view/tilemap/collision/matter-platformer-modify-map)
