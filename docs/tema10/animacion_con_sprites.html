@@ -465,6 +465,7 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `this` es un `Sprite` en la misma escena</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">// que se ha creado la animación</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="fu">play</span>(<span class="st">&#39;standing_mummy&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<p><small><code>play</code> puede usar un segundo parámetro para indicar si queremos que se ignore si la animación ya estaba activada</small></p>
 </section>
 <section class="slide level2">
 
@@ -599,7 +600,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

@@ -429,6 +429,8 @@ Con `play()`{.js} se ejecuta una animación:
 this.play('standing_mummy');
 ```
 
+<small>`play` puede usar un segundo parámetro para indicar si queremos que se ignore si la animación ya estaba activada</small>
+
 
 ---
 
