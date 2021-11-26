@@ -86,11 +86,11 @@ Además de Javascript, existen
 
 [Lua](https://www.lua.org/) es uno de los lenguajes de scripting más usado en motores de juegos
 
-Es relativamente rápido, y es muy fácil conectarlo con en motor en C/C++
+Es relativamente rápido y es muy fácil conectarlo con en motor en C/C++
 
 ---
 
-Lua fue expresamente diseñado para ser usado como lenguaje de scripting en otros lenguajes
+Lua fue expresamente diseñado para ser usado como lenguaje de scripting sobre otros lenguajes
 
 Hay una gran [lista de juegos que han utilizado Lua como lenguaje de scripting](https://en.wikipedia.org/wiki/Category:Lua_%28programming_language%29-scripted_video_games)
 
@@ -133,7 +133,7 @@ Necesita un interprete que debemos instalar en el sistema para poder usarlo (sim
 
 ---
 
-Actualmente el uso de Python se ha extendido enormemente, no sólo como lenguaje de propósito general, si no como lenguaje de *scripting de propósito general*
+Actualmente el uso de Python se ha extendido enormemente, no sólo como lenguaje de propósito general, sino como lenguaje de *scripting de propósito general*
 
 Python es relativamente fácil de usar desde una aplicación escrita en otro lenguaje (típicamente C/C++) por lo que se ha usado como lenguaje de scripting en muchas aplicaciones
 
@@ -159,7 +159,7 @@ Python es relativamente fácil de usar desde una aplicación escrita en otro len
 
 ## Lua en CryEngine
 
-El motor CryEngine de Crytek utiliza Lua como lenguaje de scripting
+El motor [CryEngine de Crytek](https://en.wikipedia.org/wiki/List_of_CryEngine_games) utiliza Lua como lenguaje de scripting
 
 Los programadores del engine pueden exponer funciones de sus clases creadas en C++ para que los programadores de scripting en Lua puedan usarlas
 
@@ -210,7 +210,7 @@ La programación por bloques es más sencilla para no programadores
 
 ---
 
-## Blueprints en Unreal   
+## Blueprints en Unreal
 
 ![En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual](blueprint.png)
 
