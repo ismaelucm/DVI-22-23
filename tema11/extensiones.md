@@ -366,6 +366,20 @@ Podéis ver un ejemplo para la [creación de una herramienta de texto en este v�
 
 ---
 
+![Serpens](serpens.jpg)
+
+---
+
+## Extender Krita con Python
+
+![Krita](Krita.png)
+
+---
+
+Krita [está implementada en C++](https://invent.kde.org/graphics/krita)...
+
+...pero dispone de una [API de scripting en Python](https://docs.krita.org/en/user_manual/python_scripting/introduction_to_python_scripting.html)
+
 ## Extender Audacity con Nyquist
 
 [Audacity](https://audacity.es/) es una herramienta de edición de audio [de código abierto](https://github.com/audacity/audacity) implementada en C++
