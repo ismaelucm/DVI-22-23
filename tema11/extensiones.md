@@ -380,6 +380,10 @@ Krita [está implementada en C++](https://invent.kde.org/graphics/krita)...
 
 ...pero dispone de una [API de scripting en Python](https://docs.krita.org/en/user_manual/python_scripting/introduction_to_python_scripting.html)
 
+---
+
+Por ejemplo, un [exportador de animaciones a spritesheets para Phaser](https://github.com/EugenDueck/kritaSpritesheetManager/tree/master/spritesheetExporter)
+
 ## Extender Audacity con Nyquist
 
 [Audacity](https://audacity.es/) es una herramienta de edición de audio [de código abierto](https://github.com/audacity/audacity) implementada en C++
