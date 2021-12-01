@@ -27,7 +27,7 @@ Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta
 
 ---
 
-Se puede pegar un script pequeño de JavaScript en la línea de comandos, o se pueden ejecutar aquellos que está en [la carpeta `extensions`](https://doc.mapeditor.org/en/latest/reference/scripting/#script-extensions)
+Se puede pegar un script pequeño de JavaScript en la línea de comandos, o se pueden ejecutar aquellos que está en [la carpeta `extensions`](https://doc.mapeditor.org/en/stable/reference/scripting/#script-extensions)
 
 ---
 
@@ -45,7 +45,7 @@ Recorrer todo el mapa y cambiar una propiedad:
 
 ```js
 for(let x = 0; x < tiled.activeAsset.width; x++) {
-	for(let y = 0; y < tiled.activeAsset.width; y++) {
+	for(let y = 0; y < tiled.activeAsset.height; y++) {
 		tiled.activeAsset.currentLayer.tileAt(x, y).propiedad = valor;
 	}
 }
@@ -53,7 +53,7 @@ for(let x = 0; x < tiled.activeAsset.width; x++) {
 
 ---
 
-La [API](https://doc.mapeditor.org/en/latest/reference/scripting/) del motor de JavaScript tiene detalles de cómo se puede hacer extensiones a Tiled con JavaScript
+La [API](https://www.mapeditor.org/docs/scripting/) del motor de JavaScript tiene detalles de cómo se puede hacer extensiones a Tiled con JavaScript
 
 # Ejemplo: Flip aleatorio de objetos
 
@@ -118,6 +118,12 @@ tiled.extendMenu("Layer", [
 	{ action: "FlipObject" },
 ]);
 ```
+
+## Más ejemplos...
+
+<https://github.com/mapeditor/tiled-extensions>
+
+<small>Y en el readme hay enlaces a otros repositorios de ejemplos.</small>
 
 
 

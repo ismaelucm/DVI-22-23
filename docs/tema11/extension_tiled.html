@@ -97,71 +97,71 @@
 <h1>Scripting con JavaScript en Tiled</h1>
 
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <p>A partir de la versión 1.3, Tiled permite crear scripts con JavaScript</p>
 <!-- ---
 
 Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta desde la [página de Tiled](https://thorbjorn.itch.io/tiled) -->
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <figure>
 <img data-src="abrir_consola_tiled.png" alt="Lo primero es abrir la consola" /><figcaption aria-hidden="true">Lo primero es abrir la consola</figcaption>
 </figure>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <figure>
 <img data-src="consola_tiled.png" alt="Se abrirá la consola, en cuyo cuadro de texto de abajo podemos ejecutar JavaScript" /><figcaption aria-hidden="true">Se abrirá la consola, en cuyo cuadro de texto de abajo podemos ejecutar JavaScript</figcaption>
 </figure>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <figure>
 <img data-src="js_tiled.png" alt="Cualquier expresión de JavaScript funciona" /><figcaption aria-hidden="true">Cualquier expresión de JavaScript funciona</figcaption>
 </figure>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
-<p>Se puede pegar un script pequeño de JavaScript en la línea de comandos, o se pueden ejecutar aquellos que está en <a href="https://doc.mapeditor.org/en/latest/reference/scripting/#script-extensions">la carpeta <code>extensions</code></a></p>
+<p>Se puede pegar un script pequeño de JavaScript en la línea de comandos, o se pueden ejecutar aquellos que está en <a href="https://doc.mapeditor.org/en/stable/reference/scripting/#script-extensions">la carpeta <code>extensions</code></a></p>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <p>Preguntar algo al usuario:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(tiled<span class="op">.</span><span class="fu">confirm</span>(<span class="st">&quot;¿Quieres borrar todo el mapa?&quot;</span><span class="op">,</span> <span class="st">&quot;Borrado total&quot;</span>)) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    tiled<span class="op">.</span><span class="fu">alert</span>(<span class="st">&quot;¡Borrado!&quot;</span>)<span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <p>Recorrer todo el mapa y cambiar una propiedad:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(<span class="kw">let</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> tiled<span class="op">.</span><span class="at">activeAsset</span><span class="op">.</span><span class="at">width</span><span class="op">;</span> x<span class="op">++</span>) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(<span class="kw">let</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> tiled<span class="op">.</span><span class="at">activeAsset</span><span class="op">.</span><span class="at">width</span><span class="op">;</span> y<span class="op">++</span>) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(<span class="kw">let</span> y <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> y <span class="op">&lt;</span> tiled<span class="op">.</span><span class="at">activeAsset</span><span class="op">.</span><span class="at">height</span><span class="op">;</span> y<span class="op">++</span>) {</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        tiled<span class="op">.</span><span class="at">activeAsset</span><span class="op">.</span><span class="at">currentLayer</span><span class="op">.</span><span class="fu">tileAt</span>(x<span class="op">,</span> y)<span class="op">.</span><span class="at">propiedad</span> <span class="op">=</span> valor<span class="op">;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
-<p>La <a href="https://doc.mapeditor.org/en/latest/reference/scripting/">API</a> del motor de JavaScript tiene detalles de cómo se puede hacer extensiones a Tiled con JavaScript</p>
+<p>La <a href="https://www.mapeditor.org/docs/scripting/">API</a> del motor de JavaScript tiene detalles de cómo se puede hacer extensiones a Tiled con JavaScript</p>
 </section></section>
 <section>
 <section id="ejemplo-flip-aleatorio-de-objetos" class="title-slide slide level1">
 <h1>Ejemplo: Flip aleatorio de objetos</h1>
 
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <p>Queremos que en una capa de objetos, algunos de los objetos cambien su orientación vertical (así, no tenemos que andar cambiando la propiedad manualmente)</p>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <figure>
 <img data-src="ejemploFlip.png" alt="Ejemplo de ejecución" /><figcaption aria-hidden="true">Ejemplo de ejecución</figcaption>
 </figure>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <p>Recorremos un mapa y hacemos flip aleatoriamente a los objetos</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">flipObjects</span>(map) {</span>
@@ -181,7 +181,7 @@ Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <p>Creamos una acción para ejecutar la función anterior</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> flipObject <span class="op">=</span> tiled<span class="op">.</span><span class="fu">registerAction</span>(<span class="st">&quot;FlipObject&quot;</span><span class="op">,</span> <span class="kw">function</span>(<span class="co">/* action */</span>) {</span>
@@ -198,13 +198,18 @@ Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>flipObject<span class="op">.</span><span class="at">text</span> <span class="op">=</span> <span class="st">&quot;Flip objects in layer&quot;</span><span class="op">;</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>flipObject<span class="op">.</span><span class="at">shortcut</span> <span class="op">=</span> <span class="st">&quot;Ctrl+Shift+F&quot;</span><span class="op">;</span></span></code></pre></div>
 </section>
-<section class="slide level6">
+<section class="slide level2">
 
 <p>Añadimos la acción al menú de Layer</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tiled<span class="op">.</span><span class="fu">extendMenu</span>(<span class="st">&quot;Layer&quot;</span><span class="op">,</span> [</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">separator</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    { <span class="dt">action</span><span class="op">:</span> <span class="st">&quot;FlipObject&quot;</span> }<span class="op">,</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>])<span class="op">;</span></span></code></pre></div>
+</section>
+<section id="más-ejemplos" class="slide level2">
+<h2>Más ejemplos…</h2>
+<p><a href="https://github.com/mapeditor/tiled-extensions" class="uri">https://github.com/mapeditor/tiled-extensions</a></p>
+<p><small>Y en el readme hay enlaces a otros repositorios de ejemplos.</small></p>
 </section></section>
     </div>
   </div>
@@ -246,7 +251,7 @@ Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -255,7 +260,7 @@ Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,
