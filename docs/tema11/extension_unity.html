@@ -125,7 +125,7 @@
 <ul>
 <li>La creación y el comportamiento de la interfaz se implementan a la vez</li>
 <li>Para crear interfaces de juego y modificar el editor</li>
-<li>Usaremos las factorías de <a href="https://docs.unity3d.com/ScriptReference/GUI.html"><code>GUI</code></a> y de <a href="https://docs.unity3d.com/ScriptReference/GUILayout.html"><code>GUILayout</code></a></li>
+<li>Usaremos las factorías de <a href="https://docs.unity3d.com/ScriptReference/GUI.html"><code>GUI</code></a> y de <a href="https://docs.unity3d.com/ScriptReference/GUILayout.html"><code>GUILayout</code></a> (y <a href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>, en algunos casos)</li>
 </ul>
 </section></section>
 <section>
@@ -137,6 +137,13 @@
 
 <p>Sirve para crear nuevas ventanas para incorporarlas al editor de Unity.</p>
 <p>Estas nuevas ventanas nos permitirán hacer funciones adicionales que no están definidas en el editor de Unity.</p>
+</section>
+<section id="en-breve" class="slide level2">
+<h2>En breve…</h2>
+<ul>
+<li>Extender la clase <a href="https://docs.unity3d.com/ScriptReference/EditorWindow.html"><code>EditorWindow</code></a></li>
+<li>Implementar la interfaz y el comportamiento en <a href="https://docs.unity3d.com/ScriptReference/EditorWindow.OnGUI.html"><code>OnGUI</code></a> con IMGUI.</li>
+</ul>
 </section>
 <section id="ejemplo-herramienta-para-colorear-objetos-seleccionados" class="slide level2">
 <h2>Ejemplo: Herramienta para colorear objetos seleccionados</h2>
@@ -169,7 +176,8 @@
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    GUILayout<span class="op">.</span><span class="fu">Label</span><span class="op">(</span><span class="st">&quot;Cambia el color de los objetos seleccionados&quot;</span><span class="op">,</span> EditorStyles<span class="op">.</span><span class="fu">boldLabel</span><span class="op">);</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Selector de color</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    selectedColor <span class="op">=</span> EditorGUILayout<span class="op">.</span><span class="fu">ColorField</span><span class="op">(</span><span class="st">&quot;Color&quot;</span><span class="op">,</span> selectedColor<span class="op">);</span></span></code></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    selectedColor <span class="op">=</span> EditorGUILayout<span class="op">.</span><span class="fu">ColorField</span><span class="op">(</span><span class="st">&quot;Color&quot;</span><span class="op">,</span> selectedColor<span class="op">);</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -188,7 +196,8 @@
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            selectedRenderer<span class="op">.</span><span class="fu">material</span><span class="op">.</span><span class="fu">color</span> <span class="op">=</span> selectedColor<span class="op">;</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -211,13 +220,116 @@
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section></section>
 <section>
+<section id="crear-inspectores-de-componentes-personalizados" class="title-slide slide level1">
+<h1>Crear inspectores de componentes personalizados</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Sirve para crear paneles de edición de componentes (<em>inspectors</em>) personalizados con el fin de facilitar y acelerar el desarrollo de gameplay.</p>
+</section>
+<section id="en-breve-1" class="slide level2">
+<h2>En breve…</h2>
+<ul>
+<li>Añadir el atributo <code>[CustomEditor(typeof(MI_MONOBEHAVIOUR))]</code></li>
+<li>Extender la clase <a href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a></li>
+<li>Implementar la interfaz y el comportamiento en <a href="https://docs.unity3d.com/ScriptReference/Editor.OnInspectorGUI.html"><code>OnInspectorGUI</code></a> con IMGUI (incluyendo elementos del <a href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>)</li>
+<li><a href="https://docs.unity3d.com/ScriptReference/Editor-target.html"><code>target</code></a> da acceso al componente</li>
+<li><a href="https://docs.unity3d.com/ScriptReference/Editor-serializedObject.html"><code>serializedObject</code></a> da acceso al componente <em>serializado</em> de modo que se pueda utilizar las operaciones de Undo y la actualización de los Prefabs</li>
+</ul>
+</section>
+<section id="ejemplo-panel-para-la-creación-de-waypoints" class="slide level2">
+<h2>Ejemplo: Panel para la creación de waypoints</h2>
+<figure>
+<img data-src="./createWaypoints.png" alt="Panel para la creación de Waypoints" /><figcaption aria-hidden="true">Panel para la creación de Waypoints</figcaption>
+</figure>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> FollowWaypoints <span class="op">:</span> MonoBehaviour <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> List<span class="op">&lt;</span>GameObject<span class="op">&gt;</span> waypoints<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> <span class="fu">Awake</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        waypoints <span class="op">=</span> <span class="kw">new</span> List<span class="op">&lt;</span>GameObject<span class="op">&gt;();</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEditor<span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">CustomEditor</span><span class="op">(</span><span class="kw">typeof</span><span class="op">(</span>FollowWaypoints<span class="op">))]</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> FollowWaypointsEditor <span class="op">:</span> Editor</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> FollowWaypoints theTarget<span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">void</span> <span class="fu">OnEnable</span><span class="op">()</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Referencia al componente</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        theTarget <span class="op">=</span> target <span class="kw">as</span> FollowWaypoints<span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnInspectorGUI</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Comenzar con base.OnInspectorGUI() si queremos</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// mantener la info por defecto del inspector</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    EditorGUILayout<span class="op">.</span><span class="fu">HelpBox</span><span class="op">(</span><span class="st">&quot;Use buttons to create waypoints or remove them&quot;</span><span class="op">,</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                                MessageType<span class="op">.</span><span class="fu">Info</span><span class="op">);</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    EditorGUILayout<span class="op">.</span><span class="fu">Space</span><span class="op">();</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Etiqueta </span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    EditorGUILayout<span class="op">.</span><span class="fu">LabelField</span><span class="op">(</span><span class="st">&quot;Number of waypoints: &quot;</span><span class="op">,</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">.</span><span class="fu">Count</span><span class="op">.</span><span class="fu">ToString</span><span class="op">());</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Layout horizontal</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    GUILayout<span class="op">.</span><span class="fu">BeginHorizontal</span><span class="op">();</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Comportamiento del botón para crear waypoints</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span>GUILayout<span class="op">.</span><span class="fu">Button</span><span class="op">(</span><span class="st">&quot;Create Waypoint&quot;</span><span class="op">))</span> <span class="op">{</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        GameObject sphere <span class="op">=</span> GameObject<span class="op">.</span><span class="fu">CreatePrimitive</span><span class="op">(</span>PrimitiveType<span class="op">.</span><span class="fu">Sphere</span><span class="op">);</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>        theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">.</span><span class="fu">Add</span><span class="op">(</span>sphere<span class="op">);</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span></code></pre></div>
+</section>
+<section class="slide level2">
+
+<div class="sourceCode" id="cb9"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Comportamiento del botón de borrado de waypoints</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>GUILayout<span class="op">.</span><span class="fu">Button</span><span class="op">(</span><span class="st">&quot;Clear Waypoints&quot;</span><span class="op">))</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">foreach</span> <span class="op">(</span>GameObject item <span class="kw">in</span> theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">)</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        GameObject<span class="op">.</span><span class="fu">DestroyImmediate</span><span class="op">(</span>item<span class="op">);</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">.</span><span class="fu">Clear</span><span class="op">();</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">// Fin del layout horizontal</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>GUILayout<span class="op">.</span><span class="fu">EndHorizontal</span><span class="op">();</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="co">// OnInspectorGUI</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section></section>
+<section>
 <section id="personalizar-la-inspección-de-componentes" class="title-slide slide level1">
 <h1>Personalizar la inspección de componentes</h1>
 
 </section>
 <section class="slide level2">
 
-<p>No solo podemos modificar los paneles del inspector sino que también podemos mostrar elementos en la escena que nos ayuden a la hora de definir un comportamiento desde el inspector</p>
+<p>Unity permite mostrar elementos en la escena que nos ayuden a la hora de definir un componente desde el inspector.</p>
+</section>
+<section id="en-breve-2" class="slide level2">
+<h2>En breve…</h2>
+<ul>
+<li>Añadir el atributo <code>[CustomEditor(typeof(MI_MONOBEHAVIOUR))]</code></li>
+<li>Extender la clase <a href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a></li>
+<li>Implementar la interfaz y el comportamiento en <a href="https://docs.unity3d.com/ScriptReference/Editor.OnSceneGUI.html"><code>OnSceneGUI</code></a> con IMGUI (incluyendo elementos del <a href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>)</li>
+<li>Usar <a href="https://docs.unity3d.com/ScriptReference/Handles.html"><code>Handles</code></a> para dibujar elementos en la escena</li>
+<li><a href="https://docs.unity3d.com/ScriptReference/Editor-target.html"><code>target</code></a> da acceso al componente</li>
+<li><a href="https://docs.unity3d.com/ScriptReference/Editor-serializedObject.html"><code>serializedObject</code></a> da acceso al componente <em>serializado</em> de modo que se pueda utilizar las operaciones de Undo y la actualización de los Prefabs</li>
+</ul>
 </section>
 <section id="ejemplo-rutas-por-waypoints" class="slide level2">
 <h2>Ejemplo: Rutas por Waypoints</h2>
@@ -227,61 +339,50 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> FollowWaypoints <span class="op">:</span> MonoBehaviour <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> Transform <span class="op">[]</span> waypoints<span class="op">;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> <span class="fu">Update</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Sigue la ruta de waypoints</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
+<p>Igual que en el ejemplo anterior…</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEditor<span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">CustomEditor</span><span class="op">(</span><span class="kw">typeof</span><span class="op">(</span>FollowWaypoints<span class="op">))]</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> FollowWaypointsEditor <span class="op">:</span> Editor <span class="op">{</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEditor<span class="op">;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">CustomEditor</span><span class="op">(</span><span class="kw">typeof</span><span class="op">(</span>FollowWaypoints<span class="op">))]</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> FollowWaypointsEditor <span class="op">:</span> Editor <span class="op">{</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Dibuja una línea entre los puntos de la ruta</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">OnSceneGUI</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Dibujamos si tenemos al menos dos waypoints</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> <span class="op">(</span> theTarget <span class="op">==</span> <span class="kw">null</span>  </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>         <span class="op">||</span>   theTarget<span class="op">.</span><span class="fu">waypoints</span> <span class="op">==</span> <span class="kw">null</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>         <span class="op">||</span>   theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">.</span><span class="fu">Count</span> <span class="op">&lt;=</span><span class="dv">1</span> <span class="op">)</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">return</span><span class="op">;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Seleccionamos el primer punto de ruta</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    Vector3 first <span class="op">=</span> theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">[</span><span class="dv">0</span><span class="op">].</span><span class="fu">transform</span><span class="op">.</span><span class="fu">position</span><span class="op">;</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    Vector3 current <span class="op">=</span> first<span class="op">;</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Dibuja una línea entre los puntos de la ruta</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> <span class="fu">OnSceneGUI</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        FollowWaypoints t <span class="op">=</span> <span class="op">(</span>FollowWaypoints<span class="op">)</span>target<span class="op">;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>t <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> t<span class="op">.</span><span class="fu">waypoints</span> <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> t<span class="op">.</span><span class="fu">waypoints</span><span class="op">.</span><span class="fu">Length</span> <span class="op">&lt;=</span><span class="dv">1</span><span class="op">)</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">return</span><span class="op">;</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Seleccionamos el primer punto de ruta</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        Vector3 first <span class="op">=</span> t<span class="op">.</span><span class="fu">waypoints</span><span class="op">[</span><span class="dv">0</span><span class="op">].</span><span class="fu">position</span><span class="op">;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        Vector3 current <span class="op">=</span> first<span class="op">;</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span></code></pre></div>
-</section>
-<section class="slide level2">
-
-<div class="sourceCode" id="cb9"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Iteramos entre el resto de puntos de ruta...</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> t<span class="op">.</span><span class="fu">waypoints</span><span class="op">.</span><span class="fu">Length</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="co">// ... dibujamos una línea entre ellos</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="kw">if</span> <span class="op">(</span>t<span class="op">.</span><span class="fu">waypoints</span><span class="op">[</span>i<span class="op">]</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                Handles<span class="op">.</span><span class="fu">DrawLine</span><span class="op">(</span>current<span class="op">,</span> t<span class="op">.</span><span class="fu">waypoints</span><span class="op">[</span>i<span class="op">].</span><span class="fu">transform</span><span class="op">.</span><span class="fu">position</span><span class="op">);</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                current <span class="op">=</span> t<span class="op">.</span><span class="fu">waypoints</span><span class="op">[</span>i<span class="op">].</span><span class="fu">transform</span><span class="op">.</span><span class="fu">position</span><span class="op">;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Dibujamos la línea que cierra la ruta</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        Handles<span class="op">.</span><span class="fu">DrawLine</span><span class="op">(</span>current<span class="op">,</span> first<span class="op">);</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="co">// OnSceneGUI</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-</section></section>
-<section>
-<section id="crear-inspectores-de-componentes-personalizados" class="title-slide slide level1">
-<h1>Crear inspectores de componentes personalizados</h1>
-
-</section>
-<section class="slide level2">
-
-<p>Sirve para crear editores de componentes (<em>inspectors</em>) personalizados con el fin de facilitar y acelerar el desarrollo de gameplay.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Iteramos entre el resto de puntos de ruta...</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">.</span><span class="fu">Count</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">// ... y dibujamos una línea entre ellos</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="op">(</span>theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">[</span>i<span class="op">]</span> <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>            Handles<span class="op">.</span><span class="fu">DrawLine</span><span class="op">(</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                current<span class="op">,</span> </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">[</span>i<span class="op">].</span><span class="fu">transform</span><span class="op">.</span><span class="fu">position</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>            <span class="op">);</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>            current <span class="op">=</span> theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">[</span>i<span class="op">].</span><span class="fu">transform</span><span class="op">.</span><span class="fu">position</span><span class="op">;</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Dibujamos la línea que cierra la ruta</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    Handles<span class="op">.</span><span class="fu">DrawLine</span><span class="op">(</span>current<span class="op">,</span> first<span class="op">);</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="co">// OnSceneGUI</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section></section>
     </div>
   </div>
