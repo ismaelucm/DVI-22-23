@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,11 +102,16 @@
 </section>
 <section class="slide level6">
 
-<p>Las animaciones que hemos utilizado hasta ahora son <em>animaciones por frames</em>, es decir, dibujamos <strong>todas</strong> las imágenes o frames que componen la animación</p>
+<p>Las animaciones que hemos utilizado hasta ahora son <em>animaciones
+por frames</em>, es decir, dibujamos <strong>todas</strong> las imágenes
+o frames que componen la animación</p>
 </section>
 <section class="slide level6">
 
-<p>En la animación tradicional existe la figura del <em>in-between artist</em>, el artista encargado de dibujar las animaciones entre dos poses de un personaje para hacer que la transición entre dos animaciones sea lo más suave posible</p>
+<p>En la animación tradicional existe la figura del <em>in-between
+artist</em>, el artista encargado de dibujar las animaciones entre dos
+poses de un personaje para hacer que la transición entre dos animaciones
+sea lo más suave posible</p>
 <blockquote>
 <p>Hayao Miyazaki comenzó como in-between artist en Toei Animation</p>
 </blockquote>
@@ -111,14 +119,18 @@
 <section class="slide level6">
 
 <blockquote>
-<p>Estas animaciones <em>in between</em> también se conocen como <strong>tweens</strong></p>
+<p>Estas animaciones <em>in between</em> también se conocen como
+<strong>tweens</strong></p>
 </blockquote>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sJIeAKwDzSw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </section>
 <section class="slide level6">
 
-<p>En un motor de videojuegos, un <strong>tween</strong> es una animación procedural sencilla, creada en base a modificar el valor de un atributo a partir de un valor inicial, un valor final, un intervalo de tiempo y una función de interpolación:</p>
+<p>En un motor de videojuegos, un <strong>tween</strong> es una
+animación procedural sencilla, creada en base a modificar el valor de un
+atributo a partir de un valor inicial, un valor final, un intervalo de
+tiempo y una función de interpolación:</p>
 <ul>
 <li>Un powerup que se agranda y se contrae</li>
 <li>Una plataforma que oscila arriba y abajo</li>
@@ -150,18 +162,25 @@
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">repeat</span><span class="op">:</span> <span class="op">-</span><span class="dv">1</span><span class="op">,</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">delay</span><span class="op">:</span> <span class="dv">10</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
-<p><small>Revisa todas las <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Types.Tweens.TweenBuilderConfig">propiedades con las que se puede configurar un tween</a></small></p>
+<p><small>Revisa todas las <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Types.Tweens.TweenBuilderConfig">propiedades
+con las que se puede configurar un tween</a></small></p>
 </section>
 <section class="slide level6">
 
-<p>Existen una gran variedad de <a href="https://github.com/photonstorm/phaser/blob/v3.55.2/src/math/easing/EaseMap.js">funciones de interpolación (<code>ease</code>) predefinidas</a>.</p>
+<p>Existen una gran variedad de <a
+href="https://github.com/photonstorm/phaser/blob/v3.55.2/src/math/easing/EaseMap.js">funciones
+de interpolación (<code>ease</code>) predefinidas</a>.</p>
 <blockquote>
-<p>Puedes hacerte una idea del comportamiento de cada función <a href="https://easings.net/">en esta página web</a></p>
+<p>Puedes hacerte una idea del comportamiento de cada función <a
+href="https://easings.net/">en esta página web</a></p>
 </blockquote>
 </section>
 <section class="slide level6">
 
-<p>Podemos suscribirnos a <a href="https://newdocs.phaser.io/docs/3.55.2/events">eventos que generan los Tweens</a>:</p>
+<p>Podemos suscribirnos a <a
+href="https://newdocs.phaser.io/docs/3.55.2/events">eventos que generan
+los Tweens</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> tween <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">tweens</span><span class="op">.</span><span class="fu">add</span>({</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">targets</span><span class="op">:</span> image<span class="op">,</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
@@ -176,7 +195,9 @@
 </section>
 <section class="slide level6">
 
-<p>Podemos encadenar tweens <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Types.Tweens.TimelineBuilderConfig">creando un <code>timeline</code></a>:</p>
+<p>Podemos encadenar tweens <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Types.Tweens.TimelineBuilderConfig">creando
+un <code>timeline</code></a>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es Scene</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> timeline <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">tweens</span><span class="op">.</span><span class="fu">createTimeline</span>()<span class="op">;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Primer tween </span></span>
@@ -196,7 +217,9 @@
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>timeline<span class="op">.</span><span class="fu">play</span>()<span class="op">;</span></span></code></pre></div>
-<p><small>Tienes un ejemplo de uso <a href="https://labs.phaser.io/edit.html?src=src/tweens%5Ctimelines%5Ccreate%20timeline.js">en esta página</a></small></p>
+<p><small>Tienes un ejemplo de uso <a
+href="https://labs.phaser.io/edit.html?src=src/tweens%5Ctimelines%5Ccreate%20timeline.js">en
+esta página</a></small></p>
 </section></section>
     </div>
   </div>

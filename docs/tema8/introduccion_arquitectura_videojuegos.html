@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -93,7 +96,8 @@
 </section>
 
 <section>
-<section id="qué-es-la-arquitectura-de-un-juego" class="title-slide slide level1">
+<section id="qué-es-la-arquitectura-de-un-juego"
+class="title-slide slide level1">
 <h1>Qué es la arquitectura de un juego</h1>
 
 </section>
@@ -103,16 +107,19 @@
 </section>
 <section class="slide level2">
 
-<p>Tienen muchos subsistemas que, además, gestionan aspectos distintos y hasta tecnologías heterogéneas</p>
+<p>Tienen muchos subsistemas que, además, gestionan aspectos distintos y
+hasta tecnologías heterogéneas</p>
 </section>
 <section class="slide level2">
 
-<p>La complejidad puede crecer tanto, que carecer de un diseño global coherente <em>puede hacer inmanejable el desarrollo</em></p>
+<p>La complejidad puede crecer tanto, que carecer de un diseño global
+coherente <em>puede hacer inmanejable el desarrollo</em></p>
 </section>
 <section class="slide level2">
 
 <p>Por eso se usan <em>arquitecturas</em></p>
-<p>Un arquitectura, análoga a la de un edificio, es una manera de organizar el código para hacer el desarrollo más eficiente</p>
+<p>Un arquitectura, análoga a la de un edificio, es una manera de
+organizar el código para hacer el desarrollo más eficiente</p>
 </section>
 <section class="slide level2">
 
@@ -132,41 +139,51 @@
 <li>Ser ampliable</li>
 <li>Ser independiente</li>
 <li>Comunicarse con las demás</li>
-<li>Hacer todo esto de forma que los <em>programadores</em> empleen el mínimo esfuerzo</li>
+<li>Hacer todo esto de forma que los <em>programadores</em> empleen el
+mínimo esfuerzo</li>
 </ul>
 </section></section>
 <section>
-<section id="por-qué-pensar-en-la-arquitectura" class="title-slide slide level1">
+<section id="por-qué-pensar-en-la-arquitectura"
+class="title-slide slide level1">
 <h1>Por qué pensar en la arquitectura</h1>
 
 </section>
 <section class="slide level2">
 
-<p>La arquitectura software de un videojuego no es para la <em>máquina</em>, es para el <em>programador</em></p>
-<p>Pensad en un juego cuyo código comunique los módulos de varias maneras distintas</p>
+<p>La arquitectura software de un videojuego no es para la
+<em>máquina</em>, es para el <em>programador</em></p>
+<p>Pensad en un juego cuyo código comunique los módulos de varias
+maneras distintas</p>
 </section>
 <section class="slide level2">
 
-<p>Cuando se tienen 6 subsistemas distintos, la organización del código es <em>indispensable</em></p>
+<p>Cuando se tienen 6 subsistemas distintos, la organización del código
+es <em>indispensable</em></p>
 <p>Además, puede tener impacto en la eficiencia</p>
 </section></section>
 <section>
-<section id="repaso-de-programación-orientada-a-objetos" class="title-slide slide level1">
+<section id="repaso-de-programación-orientada-a-objetos"
+class="title-slide slide level1">
 <h1>Repaso de programación orientada a objetos</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Un paradigma de programación muy usado para sistemas software que requieren arquitecturas complejas es la <em>programación orientada a objetos</em> basada en clases</p>
+<p>Un paradigma de programación muy usado para sistemas software que
+requieren arquitecturas complejas es la <em>programación orientada a
+objetos</em> basada en clases</p>
 </section>
 <section id="clases" class="slide level2">
 <h2>Clases</h2>
 </section>
 <section class="slide level2">
 
-<p>Las clases son los tipos, las estructuras de las que se crean instancias</p>
+<p>Las clases son los tipos, las estructuras de las que se crean
+instancias</p>
 <figure>
-<img data-src="umlbasico.pu.svg" alt="Ejemplo de clases" /><figcaption aria-hidden="true">Ejemplo de clases</figcaption>
+<img data-src="umlbasico.pu.svg" alt="Ejemplo de clases" />
+<figcaption aria-hidden="true">Ejemplo de clases</figcaption>
 </figure>
 </section>
 <section id="instancias" class="slide level2">
@@ -174,12 +191,17 @@
 </section>
 <section class="slide level2">
 
-<p>Las instancias son cada uno de los elementos/objetos concretos que tienen las propiedades (atributos y métodos) de una clase</p>
+<p>Las instancias son cada uno de los elementos/objetos concretos que
+tienen las propiedades (atributos y métodos) de una clase</p>
 </section>
 <section class="slide level2">
 
-<p>Aquí, <code class="sourceCode cpp">player</code> y <code class="sourceCode cpp">enemy</code> son instancias de <code class="sourceCode cpp">Player</code> y <code class="sourceCode cpp">Enemy</code> respectivamente:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Player player<span class="op">(</span><span class="st">&quot;player&quot;</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">100</span><span class="op">);</span></span>
+<p>Aquí, <code class="sourceCode cpp">player</code> y <code
+class="sourceCode cpp">enemy</code> son instancias de <code
+class="sourceCode cpp">Player</code> y <code
+class="sourceCode cpp">Enemy</code> respectivamente:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Player player<span class="op">(</span><span class="st">&quot;player&quot;</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">100</span><span class="op">);</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Enemy enemy<span class="op">(</span><span class="st">&quot;enemy&quot;</span><span class="op">,</span> <span class="dv">15</span><span class="op">,</span> <span class="dv">15</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="op">&amp;</span>player<span class="op">);</span></span></code></pre></div>
 </section>
 <section id="relaciones" class="slide level2">
@@ -188,16 +210,22 @@
 <section class="slide level2">
 
 <p>Las clases, como módulos, se relacionan en un sistema</p>
-<p>Hay muchos tipos de relaciones y muchas maneras de usarlas, aquí sólo comentamos algunas</p>
+<p>Hay muchos tipos de relaciones y muchas maneras de usarlas, aquí sólo
+comentamos algunas</p>
 </section>
 <section id="herencia" class="slide level2">
 <h2>Herencia</h2>
 </section>
 <section class="slide level2">
 
-<p>Las clases pueden <em>heredarse</em>, de forma que una clase <em>hija</em> <strong>es-una</strong> (<code>is-a</code>) clase padre también</p>
+<p>Las clases pueden <em>heredarse</em>, de forma que una clase
+<em>hija</em> <strong>es-una</strong> (<code>is-a</code>) clase padre
+también</p>
 <figure>
-<img data-src="herencia.pu.svg" alt="Clases para estructurar un juego" /><figcaption aria-hidden="true">Clases para estructurar un juego</figcaption>
+<img data-src="herencia.pu.svg"
+alt="Clases para estructurar un juego" />
+<figcaption aria-hidden="true">Clases para estructurar un
+juego</figcaption>
 </figure>
 </section>
 <section id="uso" class="slide level2">
@@ -205,30 +233,38 @@
 </section>
 <section class="slide level2">
 
-<p>Las clases pueden <em>usarse</em> unas a otras, de forma que se <em>pasen mensajes</em></p>
+<p>Las clases pueden <em>usarse</em> unas a otras, de forma que se
+<em>pasen mensajes</em></p>
 <figure>
-<img data-src="asociacion.pu.svg" alt="Clases que se usan" /><figcaption aria-hidden="true">Clases que se usan</figcaption>
+<img data-src="asociacion.pu.svg" alt="Clases que se usan" />
+<figcaption aria-hidden="true">Clases que se usan</figcaption>
 </figure>
 </section>
 <section id="composición" class="slide level2">
 <h2>Composición</h2>
-<p>Las clases pueden <em>componerse</em>, de forma que la relación es muy fuerte. Así, si desaparece el todo, <em>desaparecen las partes también</em></p>
+<p>Las clases pueden <em>componerse</em>, de forma que la relación es
+muy fuerte. Así, si desaparece el todo, <em>desaparecen las partes
+también</em></p>
 <figure>
-<img data-src="composicion.pu.svg" alt="Composición de clases" /><figcaption aria-hidden="true">Composición de clases</figcaption>
+<img data-src="composicion.pu.svg" alt="Composición de clases" />
+<figcaption aria-hidden="true">Composición de clases</figcaption>
 </figure>
 </section></section>
 <section>
-<section id="arquitecturas-basadas-en-herencia" class="title-slide slide level1">
+<section id="arquitecturas-basadas-en-herencia"
+class="title-slide slide level1">
 <h1>Arquitecturas basadas en herencia</h1>
 
 </section>
 <section class="slide level2">
 
-<p>La programación orientada a objetos clásica permite una manera de modular sistemas</p>
+<p>La programación orientada a objetos clásica permite una manera de
+modular sistemas</p>
 </section>
 <section class="slide level2">
 
-<p>Entre otros, los videojuegos son razonablemente complejos y manejan dos aspectos que hay que gestionar:</p>
+<p>Entre otros, los videojuegos son razonablemente complejos y manejan
+dos aspectos que hay que gestionar:</p>
 <ul>
 <li>Modelo de datos (orco, espada, mundo…)</li>
 <li>Modelo de sistemas (gráficos, sonido, entrada…)</li>
@@ -242,7 +278,8 @@
 <section class="slide level2">
 
 <p>¿Por qué <em>no</em> seguimos haciéndolo?</p>
-<p><span class="fragment">(Hay mucha gente que sigue haciéndolo, y en muchos casos no es un problema)</span></p>
+<p><span class="fragment">(Hay mucha gente que sigue haciéndolo, y en
+muchos casos no es un problema)</span></p>
 </section>
 <section id="el-problema-de-la-herencia" class="slide level2">
 <h2>El problema de la herencia</h2>
@@ -260,12 +297,14 @@
 <section class="slide level2">
 
 <p>Intentémoslo:</p>
-<p><code>entidad</code> → <code>movible</code> → <code>visible</code> → <code>jugador</code></p>
+<p><code>entidad</code> → <code>movible</code> → <code>visible</code> →
+<code>jugador</code></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="herenciacorrecta.pu.svg" alt="Herencia básica" /><figcaption aria-hidden="true">Herencia básica</figcaption>
+<img data-src="herenciacorrecta.pu.svg" alt="Herencia básica" />
+<figcaption aria-hidden="true">Herencia básica</figcaption>
 </figure>
 </section>
 <section class="slide level2">
@@ -281,13 +320,17 @@
 
 <p>Ahora hagamos un jugador que no se puede mover:</p>
 <figure>
-<img data-src="herenciaproblema.pu.svg" alt="Herencia problemática" /><figcaption aria-hidden="true">Herencia problemática</figcaption>
+<img data-src="herenciaproblema.pu.svg" alt="Herencia problemática" />
+<figcaption aria-hidden="true">Herencia problemática</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>A finales de los 90 esto se convirtió en un problema claro, y las arquitecturas por componentes de entidad se generalizaron</p>
-<p>En general (y mucho en diseño de videojuegos) preferimos <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">composición antes que herencia</a></p>
+<p>A finales de los 90 esto se convirtió en un problema claro, y las
+arquitecturas por componentes de entidad se generalizaron</p>
+<p>En general (y mucho en diseño de videojuegos) preferimos <a
+href="https://en.wikipedia.org/wiki/Composition_over_inheritance">composición
+antes que herencia</a></p>
 </section></section>
 <section>
 <section id="sistemas-de-componentes" class="title-slide slide level1">
@@ -296,34 +339,42 @@
 </section>
 <section class="slide level2">
 
-<p>Para aliviar los problemas relativos de la estructura de herencia (con <em>es-un</em>), usamos <a href="https://en.wikipedia.org/wiki/Entity_component_system"><strong>componentes</strong></a></p>
+<p>Para aliviar los problemas relativos de la estructura de herencia
+(con <em>es-un</em>), usamos <a
+href="https://en.wikipedia.org/wiki/Entity_component_system"><strong>componentes</strong></a></p>
 </section>
 <section id="qué-es-un-componente" class="slide level2">
 <h2>Qué es un componente</h2>
 </section>
 <section class="slide level2">
 
-<p>Un componente es un aspecto, una propiedad o característica que tiene una <em>entidad</em></p>
+<p>Un componente es un aspecto, una propiedad o característica que tiene
+una <em>entidad</em></p>
 </section>
 <section class="slide level2">
 
 <p>Por ejemplo, podemos tener un componente que sirva para pintar</p>
-<p>Este componente se usará <em>sólo para pintar</em>, y no sabrá nada del sonido</p>
+<p>Este componente se usará <em>sólo para pintar</em>, y no sabrá nada
+del sonido</p>
 </section>
 <section class="slide level2">
 
 <p>También podríamos añadir un componente para modelar un inventario</p>
-<p>El componente no sabrá nada de la entidad que lo contiene. Sólo tendrá información de cómo guardar objetos</p>
+<p>El componente no sabrá nada de la entidad que lo contiene. Sólo
+tendrá información de cómo guardar objetos</p>
 </section>
 <section class="slide level2">
 
-<p>Puede haber un componente para las entidades que son visibles, y otro componente para las entidades que tienen respuesta física al sistema (tabla  1)</p>
+<p>Puede haber un componente para las entidades que son visibles, y otro
+componente para las entidades que tienen respuesta física al sistema
+(tabla  1)</p>
 </section>
 <section class="slide level2">
 
 <div id="tbl:componentes">
 <table>
-<caption>Tabla # 1: Entidades y sus componentes correspondientes</caption>
+<caption>Tabla # 1: Entidades y sus componentes
+correspondientes</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Entidad</th>
@@ -361,8 +412,10 @@
 </section>
 <section class="slide level2">
 
-<p>Una <em>entidad</em> no es más que un identificador, un elemento vacío que <em>contiene componentes</em></p>
-<p>La entidad no tiene información de cómo pintarse, ni de cómo moverse</p>
+<p>Una <em>entidad</em> no es más que un identificador, un elemento
+vacío que <em>contiene componentes</em></p>
+<p>La entidad no tiene información de cómo pintarse, ni de cómo
+moverse</p>
 </section>
 <section class="slide level2">
 
@@ -375,7 +428,8 @@
 </section>
 <section class="slide level2">
 
-<p>Es decir, una entidad es algo genérico que <em>sólo tiene una lista de componentes</em></p>
+<p>Es decir, una entidad es algo genérico que <em>sólo tiene una lista
+de componentes</em></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> entidad <span class="op">=</span> {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">id</span>          <span class="op">:</span> <span class="dv">4</span><span class="op">,</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">componentes</span> <span class="op">:</span> [</span>
@@ -388,7 +442,8 @@
 </section>
 <section class="slide level2">
 
-<p>La entidad <strong>delega</strong> en sus componentes todo el comportamiento:</p>
+<p>La entidad <strong>delega</strong> en sus componentes todo el
+comportamiento:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en cada ciclo (tick), la entidad simplemente </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">// delega en sus componentes</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Entity<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">tick</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
@@ -421,45 +476,61 @@
 </section>
 <section class="slide level2">
 
-<p>Tiene sentido, por lo tanto, <strong>dividir</strong> el código en partes (hacer módulos) que se encarguen de trabajar los dominios correspondientes</p>
-<p>Cada uno de estos módulos suelen llamarse <em>sistemas</em> o <em>subsistemas</em></p>
+<p>Tiene sentido, por lo tanto, <strong>dividir</strong> el código en
+partes (hacer módulos) que se encarguen de trabajar los dominios
+correspondientes</p>
+<p>Cada uno de estos módulos suelen llamarse <em>sistemas</em> o
+<em>subsistemas</em></p>
 </section>
 <section class="slide level2">
 
-<p>Cada sistema suele manejar y tener acceso a los componentes correspondientes</p>
-<p><small>Sí, en arquitectura no hay teorías generales. Las cosas “suelen” hacerse de una u otra manera</small></p>
+<p>Cada sistema suele manejar y tener acceso a los componentes
+correspondientes</p>
+<p><small>Sí, en arquitectura no hay teorías generales. Las cosas
+“suelen” hacerse de una u otra manera</small></p>
 </section>
 <section class="slide level2">
 
 <p>Por ejemplo, en la parte física no suele influir mucho el sonido:</p>
 <figure>
-<img data-src="sistemascomponentes.pu.svg" alt="Relación entre sistemas y componentes" /><figcaption aria-hidden="true">Relación entre sistemas y componentes</figcaption>
+<img data-src="sistemascomponentes.pu.svg"
+alt="Relación entre sistemas y componentes" />
+<figcaption aria-hidden="true">Relación entre sistemas y
+componentes</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Así pues, <code>AudioComponent</code> sólo se relaciona con <code>AudioManager</code> (y, probablemente, con <code>Entity</code>) pero no sabe nada de <code>PhysicsManager</code></p>
+<p>Así pues, <code>AudioComponent</code> sólo se relaciona con
+<code>AudioManager</code> (y, probablemente, con <code>Entity</code>)
+pero no sabe nada de <code>PhysicsManager</code></p>
 </section></section>
 <section>
-<section id="mixins-una-aproximación-a-los-componentes" class="title-slide slide level1">
+<section id="mixins-una-aproximación-a-los-componentes"
+class="title-slide slide level1">
 <h1><em>Mixins</em>: una aproximación a los componentes</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Un <em>mixin</em> es una clase pensada para contener funcionalidad, pero no ser autónoma</p>
+<p>Un <em>mixin</em> es una clase pensada para contener funcionalidad,
+pero no ser autónoma</p>
 </section>
 <section class="slide level2">
 
-<p>Usar <em>mixins</em> no representa <em>especialización</em> (<em>es-un</em>)</p>
+<p>Usar <em>mixins</em> no representa <em>especialización</em>
+(<em>es-un</em>)</p>
 </section>
 <section class="slide level2">
 
-<p>Es como una <em>interfaz</em> (generalmente una clase puede incluir varios <em>mixins</em>), pero sí que tiene código</p>
+<p>Es como una <em>interfaz</em> (generalmente una clase puede incluir
+varios <em>mixins</em>), pero sí que tiene código</p>
 </section>
 <section class="slide level2">
 
-<p>En JavaScript, una funcionalidad aproximada de <em>mixin</em> se puede conseguir con <code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">assign</span>()</code>:</p>
+<p>En JavaScript, una funcionalidad aproximada de <em>mixin</em> se
+puede conseguir con <code
+class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">assign</span>()</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Sword <span class="kw">extends</span> <span class="bu">Object</span> {}</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Takeable { <span class="fu">putInInventory</span>() {<span class="co">/*...*/</span>} }</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -468,25 +539,32 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="mixin.pu.svg" alt="Ejemplo en UML con un mixin" /><figcaption aria-hidden="true">Ejemplo en UML con un <em>mixin</em></figcaption>
+<img data-src="mixin.pu.svg" alt="Ejemplo en UML con un mixin" />
+<figcaption aria-hidden="true">Ejemplo en UML con un
+<em>mixin</em></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p><code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">assign</span>()</code> sólo copia propiedades entre objetos, no hay <em>herencia</em></p>
+<p><code
+class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">assign</span>()</code>
+sólo copia propiedades entre objetos, no hay <em>herencia</em></p>
 </section></section>
 <section>
-<section id="hay-muchas-maneras-de-hacer-arquitecturas" class="title-slide slide level1">
+<section id="hay-muchas-maneras-de-hacer-arquitecturas"
+class="title-slide slide level1">
 <h1>Hay muchas maneras de hacer arquitecturas</h1>
 
 </section>
 <section class="slide level2">
 
-<p>En este tema hemos visto (y veremos) <em>una manera</em> de hacer arquitecturas por componentes, pero hay muchas</p>
+<p>En este tema hemos visto (y veremos) <em>una manera</em> de hacer
+arquitecturas por componentes, pero hay muchas</p>
 </section>
 <section class="slide level2">
 
-<p>Paso de mensajes, entidades puras, sistemas independientes o acoplados… cada decisión de diseño depende del problema a resolver</p>
+<p>Paso de mensajes, entidades puras, sistemas independientes o
+acoplados… cada decisión de diseño depende del problema a resolver</p>
 </section>
 <section class="slide level2">
 
@@ -534,7 +612,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -543,7 +621,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

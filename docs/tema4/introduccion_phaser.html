@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,18 +102,30 @@
 </section>
 <section class="slide level2">
 
-<p><strong>Phaser</strong> es un framework que nos permite construir juegos en HTML5 para equipos de escritorio y dispositivos móviles</p>
-<p>Tiene una apasionada comunidad en el proceso de desarrollo, por lo que crece rápidamente</p>
+<p><strong>Phaser</strong> es un framework que nos permite construir
+juegos en HTML5 para equipos de escritorio y dispositivos móviles</p>
+<p>Tiene una apasionada comunidad en el proceso de desarrollo, por lo
+que crece rápidamente</p>
 </section>
 <section id="game" class="slide level2">
 <h2>Game</h2>
-<p>El objeto principal de Phaser es un objeto JavaScript llamado <code class="sourceCode javascript">Game</code></p>
-<p>Dentro de un <em>juego</em> (<code class="sourceCode javascript">Game</code>) hay <em>escenas</em> (<code class="sourceCode javascript">Scene</code>), y dentro de <em>escenas</em>, <em>objetos</em> (<code class="sourceCode javascript">GameObject</code>), que son los que darán lógica y representación al juego</p>
+<p>El objeto principal de Phaser es un objeto JavaScript llamado <code
+class="sourceCode javascript">Game</code></p>
+<p>Dentro de un <em>juego</em> (<code
+class="sourceCode javascript">Game</code>) hay <em>escenas</em> (<code
+class="sourceCode javascript">Scene</code>), y dentro de
+<em>escenas</em>, <em>objetos</em> (<code
+class="sourceCode javascript">GameObject</code>), que son los que darán
+lógica y representación al juego</p>
 </section>
 <section id="escenas-en-phaser" class="slide level2">
 <h2>Escenas en Phaser</h2>
-<p>Las <code class="sourceCode javascript">Scene</code>s de Phaser son la unidad mínima que maneja el framework para crear una escena de juego</p>
-<p>Una <code class="sourceCode javascript">Scene</code> es un <em>objeto</em> JavaScript, con métodos y atributos (“propiedades”) para su gestión</p>
+<p>Las <code class="sourceCode javascript">Scene</code>s de Phaser son
+la unidad mínima que maneja el framework para crear una escena de
+juego</p>
+<p>Una <code class="sourceCode javascript">Scene</code> es un
+<em>objeto</em> JavaScript, con métodos y atributos (“propiedades”) para
+su gestión</p>
 <p>Phaser incluye un “scene manager” para gestionarlas</p>
 </section>
 <section class="slide level2">
@@ -121,45 +136,73 @@
 <li>cada uno de los niveles</li>
 <li>el inventario</li>
 </ul>
-<p>En teoría (aunque hay libertad), cada escena representa una lógica de interacción concreta</p>
+<p>En teoría (aunque hay libertad), cada escena representa una lógica de
+interacción concreta</p>
 </section>
 <section id="puede-haber-varias-escenas-activas" class="slide level2">
 <h2>Puede haber varias escenas activas</h2>
 <p>Phaser permite varias escenas <em>activas</em> y superpuestas</p>
-<p>El orden de las escenas es importante, ya que el <em>scene manager</em> las actualiza y pinta en el orden en el que son añadidas</p>
+<p>El orden de las escenas es importante, ya que el <em>scene
+manager</em> las actualiza y pinta en el orden en el que son
+añadidas</p>
 </section>
 <section id="métodos-básicos-de-una-escena" class="slide level2">
 <h2>Métodos básicos de una escena</h2>
 <p>El motor llama a estos métodos automáticamente:</p>
 <ul>
-<li><code class="sourceCode javascript">init</code>: se ejecuta cuando se carga la escena. Aquí se pueden pasar datos entre escenas.</li>
-<li><code class="sourceCode javascript">preload</code>: aquí hay que cargar los recursos antes de que sean usados.</li>
-<li><code class="sourceCode javascript">create</code>: una vez que la clase está instanciada y el motor está a punto, se llama a este método para inicializar.</li>
-<li><code class="sourceCode javascript"><span class="fu">update</span>(time<span class="op">,</span> delta)</code>: se llama cada ciclo de juego, para modificar el estado.</li>
+<li><code class="sourceCode javascript">init</code>: se ejecuta cuando
+se carga la escena. Aquí se pueden pasar datos entre escenas.</li>
+<li><code class="sourceCode javascript">preload</code>: aquí hay que
+cargar los recursos antes de que sean usados.</li>
+<li><code class="sourceCode javascript">create</code>: una vez que la
+clase está instanciada y el motor está a punto, se llama a este método
+para inicializar.</li>
+<li><code
+class="sourceCode javascript"><span class="fu">update</span>(time<span class="op">,</span> delta)</code>:
+se llama cada ciclo de juego, para modificar el estado.</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>Además, Phaser proporciona una serie de propiedades que podemos utilizar en nuestro juego. Mayoritariamente, estas propiedades son formas de acceder a los subsistemas de Phaser</p>
+<p>Además, Phaser proporciona una serie de propiedades que podemos
+utilizar en nuestro juego. Mayoritariamente, estas propiedades son
+formas de acceder a los subsistemas de Phaser</p>
 </section>
 <section id="algunos-subsistemas" class="slide level2">
 <h2>Algunos subsistemas</h2>
-<p>Accesibles desde el objeto <code class="sourceCode javascript">Scene</code> con <code class="sourceCode javascript">scene<span class="op">.</span><span class="at">add</span></code>, <code class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span></code>…:</p>
+<p>Accesibles desde el objeto <code
+class="sourceCode javascript">Scene</code> con <code
+class="sourceCode javascript">scene<span class="op">.</span><span class="at">add</span></code>,
+<code
+class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span></code>…:</p>
 <ul>
-<li><code class="sourceCode javascript">add</code>: La factoría de GameObject</li>
+<li><code class="sourceCode javascript">add</code>: La factoría de
+GameObject</li>
 <li><code class="sourceCode javascript">cameras</code>: La cámara</li>
-<li><code class="sourceCode javascript">input</code>: La entrada de Phaser</li>
-<li><code class="sourceCode javascript">load</code>: el cargador de recursos</li>
-<li><code class="sourceCode javascript">sound</code>: el sistema de sonido</li>
-<li><code class="sourceCode javascript">scene</code>: el SceneManager</li>
-<li><code class="sourceCode javascript">time</code>: el manager de tiempo</li>
-<li><code class="sourceCode javascript">physics</code>: el sistema de físicas</li>
+<li><code class="sourceCode javascript">input</code>: La entrada de
+Phaser</li>
+<li><code class="sourceCode javascript">load</code>: el cargador de
+recursos</li>
+<li><code class="sourceCode javascript">sound</code>: el sistema de
+sonido</li>
+<li><code class="sourceCode javascript">scene</code>: el
+SceneManager</li>
+<li><code class="sourceCode javascript">time</code>: el manager de
+tiempo</li>
+<li><code class="sourceCode javascript">physics</code>: el sistema de
+físicas</li>
 </ul>
 </section>
 <section id="utilidades-matemáticas" class="slide level2">
 <h2>Utilidades matemáticas</h2>
-<p><a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Math"><code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">Math</span></code></a> contiene métodos que ayudan a realizar ciertas operaciones matemáticas típicas de un motor de videojuegos</p>
-<p>Además, tiene un <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Math.RandomDataGenerator">generador de números aleatorios</a> muy útil, accesible a través de <code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">Math</span><span class="op">.</span><span class="at">RND</span></code></p>
+<p><a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Math"><code
+class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">Math</span></code></a>
+contiene métodos que ayudan a realizar ciertas operaciones matemáticas
+típicas de un motor de videojuegos</p>
+<p>Además, tiene un <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Math.RandomDataGenerator">generador
+de números aleatorios</a> muy útil, accesible a través de <code
+class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">Math</span><span class="op">.</span><span class="at">RND</span></code></p>
 </section></section>
 <section>
 <section id="crear-un-juego-en-phaser" class="title-slide slide level1">
@@ -168,20 +211,27 @@
 </section>
 <section class="slide level2">
 
-<p>Para crear un juego, hay que crear una instancia de <code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">Game</span></code>:</p>
+<p>Para crear un juego, hay que crear una instancia de <code
+class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">Game</span></code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> Phaser<span class="op">.</span><span class="fu">Game</span>({</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">type</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">AUTO</span><span class="op">,</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">800</span><span class="op">,</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">scene</span><span class="op">:</span> [ClaseEscenaInicial<span class="op">,</span> ClaseEscenaNivel1]</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
-<p>Esto crea un <code class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code> al final de la página</p>
-<p><small>En realidad, podemos crearlo <a href="https://codepen.io/gjimenezucm/pen/bGRPRYz">de una manera más sencilla</a></small></p>
+<p>Esto crea un <code
+class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code> al
+final de la página</p>
+<p><small>En realidad, podemos crearlo <a
+href="https://codepen.io/gjimenezucm/pen/bGRPRYz">de una manera más
+sencilla</a></small></p>
 </section>
 <section class="slide level2">
 
-<p>Si queremos usar nuestro propio <code class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;juego&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
+<p>Si queremos usar nuestro propio <code
+class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code>:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;canvas</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;juego&quot;</span><span class="kw">&gt;&lt;/canvas&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">new</span> Phaser<span class="op">.</span><span class="fu">Game</span>({</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">type</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">CANVAS</span><span class="op">,</span></span>
@@ -194,8 +244,13 @@
 </section>
 <section class="slide level2">
 
-<p>Si queremos que el <code class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code> tenga el foco, lo hacemos con <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/focus"><code class="sourceCode javascript"><span class="fu">focus</span>()</code></a>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;juego&#39;</span>)<span class="op">.</span><span class="fu">focus</span>()<span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>Si queremos que el <code
+class="sourceCode html"><span class="kw">&lt;canvas&gt;</span></code>
+tenga el foco, lo hacemos con <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/focus"><code
+class="sourceCode javascript"><span class="fu">focus</span>()</code></a>:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;juego&#39;</span>)<span class="op">.</span><span class="fu">focus</span>()<span class="kw">&lt;/script&gt;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
@@ -209,34 +264,49 @@
 
 --- -->
 </section>
-<section id="un-juego-sencillo-y-explicado-con-phaser" class="slide level2">
+<section id="un-juego-sencillo-y-explicado-con-phaser"
+class="slide level2">
 <h2>Un juego sencillo (y explicado) con Phaser</h2>
-<p><a href="https://gjimenezucm.github.io/simplephasergame/" class="uri">https://gjimenezucm.github.io/simplephasergame/</a></p>
-<p><small>Código en <a href="https://github.com/gjimenezUCM/simplephasergame" class="uri">https://github.com/gjimenezUCM/simplephasergame</a></small></p>
+<p><a href="https://gjimenezucm.github.io/simplephasergame/"
+class="uri">https://gjimenezucm.github.io/simplephasergame/</a></p>
+<p><small>Código en <a
+href="https://github.com/gjimenezUCM/simplephasergame"
+class="uri">https://github.com/gjimenezUCM/simplephasergame</a></small></p>
 </section>
 <section id="documentación" class="slide level2">
 <h2>Documentación</h2>
 <ul>
-<li><a href="https://photonstorm.github.io/phaser3-docs/index.html">Documentación de Phaser 3</a>: Acceder desde la barra de menú en la parte superior</li>
-<li><a href="https://newdocs.phaser.io/docs/3.55.2/">Nuevo sistema de documentación de Phaser</a>: Similar al anterior (en Beta)</li>
-<li><a href="https://phaser.io/examples/v3">Ejemplos de Phaser 3</a></li>
-<li><a href="https://rexrainbow.github.io/phaser3-rex-notes/docs/site/index.html">Notes of Phaser 3</a></li>
+<li><a
+href="https://photonstorm.github.io/phaser3-docs/index.html">Documentación
+de Phaser 3</a>: Acceder desde la barra de menú en la parte
+superior</li>
+<li><a href="https://newdocs.phaser.io/docs/3.55.2/">Nuevo sistema de
+documentación de Phaser</a>: Similar al anterior (en Beta)</li>
+<li><a href="https://phaser.io/examples/v3">Ejemplos de Phaser
+3</a></li>
+<li><a
+href="https://rexrainbow.github.io/phaser3-rex-notes/docs/site/index.html">Notes
+of Phaser 3</a></li>
 </ul>
 </section></section>
 <section>
-<section id="localización-de-los-recursos" class="title-slide slide level1">
+<section id="localización-de-los-recursos"
+class="title-slide slide level1">
 <h1>Localización de los recursos</h1>
 
 </section>
 <section id="phaser-y-urls" class="slide level2">
 <h2>Phaser y URLs</h2>
-<p>Por seguridad, los navegadores restringen mucho el acceso al disco</p>
-<p>Por tanto, todos los recursos (imágenes y demás) tienen que ser cargados a través de la red</p>
+<p>Por seguridad, los navegadores restringen mucho el acceso al
+disco</p>
+<p>Por tanto, todos los recursos (imágenes y demás) tienen que ser
+cargados a través de la red</p>
 <p>Para ello, tenemos que referencias los recursos con URLs</p>
 </section>
 <section id="urls" class="slide level2">
 <h2>URLs</h2>
-<p>En Internet (y en más sitios), cada elemento tiene un identificador único</p>
+<p>En Internet (y en más sitios), cada elemento tiene un identificador
+único</p>
 </section>
 <section class="slide level2">
 
@@ -249,13 +319,16 @@
 <li><code>ftp://rediris.com/resourcea</code></li>
 <li><code>http://es.wikipedia.org/wiki</code></li>
 </ul>
-<p>La parte de antes de <code>:</code> es el <em>protocolo</em> (<code>http</code>, <code>ftp</code>…)</p>
+<p>La parte de antes de <code>:</code> es el <em>protocolo</em>
+(<code>http</code>, <code>ftp</code>…)</p>
 </section>
 <section id="urls-relativas" class="slide level2">
 <h2>URLs relativas</h2>
 <p>En una web, <code>/</code> es la raíz del sitio</p>
-<p>El directorio especial <code>../</code> indica el directorio padre al del fichero actual.</p>
-<p>El directorio <code>./</code> indica el directorio del fichero actual</p>
+<p>El directorio especial <code>../</code> indica el directorio padre al
+del fichero actual.</p>
+<p>El directorio <code>./</code> indica el directorio del fichero
+actual</p>
 <ul>
 <li><code>./ejemplo/ruta</code></li>
 <li><code>../otro_hijo/ruta/musica.ogg</code></li>
@@ -264,21 +337,28 @@
 </section>
 <section class="slide level2">
 
-<p>Cuando servimos con <code>npx live-server</code>, se sirve <em>a partir del directorio en el que estamos, <strong>nunca rutas por encima</strong></em></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pwd</span>
+<p>Cuando servimos con <code>npx live-server</code>, se sirve <em>a
+partir del directorio en el que estamos, <strong>nunca rutas por
+encima</strong></em></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pwd</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/usuario/misarchivos</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd docs</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npx live-server <span class="co"># `localhost` equivale a `docs/`</span></span></code></pre></div>
-<p>En el caso anterior, no puedo ir a una URL <code class="sourceCode javascript"><span class="st">&#39;../anterior.png&#39;</span></code> que esté en <code>misarchivos</code></p>
+<p>En el caso anterior, no puedo ir a una URL <code
+class="sourceCode javascript"><span class="st">&#39;../anterior.png&#39;</span></code>
+que esté en <code>misarchivos</code></p>
 </section></section>
 <section>
-<section id="carga-de-recursos-en-memoria" class="title-slide slide level1">
+<section id="carga-de-recursos-en-memoria"
+class="title-slide slide level1">
 <h1>Carga de recursos en memoria</h1>
 
 </section>
 <section id="cargar" class="slide level2">
 <h2>Cargar</h2>
-<p>Se le añade una <em>key</em> (clave o nombre) al recurso para poder identificarlo</p>
+<p>Se le añade una <em>key</em> (clave o nombre) al recurso para poder
+identificarlo</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es un objeto Scene</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">preload</span>() {</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Para cargar desde el sitio de Phaser</span></span>
@@ -289,16 +369,25 @@
 </section>
 <section class="slide level2">
 
-<p>Podemos cargar diferentes recursos como: imágenes, archivos JSON, atlas de texturas, video, sonido, tilemaps…</p>
-<p>Las rutas son <em>relativas</em> al <code>index.html</code> (aunque se pueden modificar con los métodos <a href="https://newdocs.phaser.io/docs/3.55.1/Phaser.Loader.LoaderPlugin#setPath"><code>setPath</code></a> y <a href="https://newdocs.phaser.io/docs/3.55.1/Phaser.Loader.LoaderPlugin#setBaseURL"><code>setBaseUrl</code></a> del subsistema de carga de recursos)</p>
+<p>Podemos cargar diferentes recursos como: imágenes, archivos JSON,
+atlas de texturas, video, sonido, tilemaps…</p>
+<p>Las rutas son <em>relativas</em> al <code>index.html</code> (aunque
+se pueden modificar con los métodos <a
+href="https://newdocs.phaser.io/docs/3.55.1/Phaser.Loader.LoaderPlugin#setPath"><code>setPath</code></a>
+y <a
+href="https://newdocs.phaser.io/docs/3.55.1/Phaser.Loader.LoaderPlugin#setBaseURL"><code>setBaseUrl</code></a>
+del subsistema de carga de recursos)</p>
 </section>
 <section id="liberación-de-recursos" class="slide level2">
 <h2>Liberación de recursos</h2>
 </section>
 <section class="slide level2">
 
-<p>Si cambiamos de escena y la desactivamos, es muy probable que haya recursos que ya no utilizaremos nunca</p>
-<p>En este caso podemos eliminarlos de la <a href="https://newdocs.phaser.io/docs/3.55.1/Phaser.Game#cache">caché de <code>Game</code></a></p>
+<p>Si cambiamos de escena y la desactivamos, es muy probable que haya
+recursos que ya no utilizaremos nunca</p>
+<p>En este caso podemos eliminarlos de la <a
+href="https://newdocs.phaser.io/docs/3.55.1/Phaser.Game#cache">caché de
+<code>Game</code></a></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>image1<span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sound4<span class="op">.</span><span class="fu">destroy</span>()<span class="op">;</span></span></code></pre></div>
 <!-- Aqué el contexto es muy relevante puesto que no hemos explicado la caché
@@ -311,33 +400,46 @@ Hay que indicar que `cache` es una propiedad del objeto juego. -->
 </section>
 <section class="slide level2">
 
-<p>Son las imágenes 2D que sirven para visualizar los objetos en un juego 2D. En Phaser se instancian así:</p>
+<p>Son las imágenes 2D que sirven para visualizar los objetos en un
+juego 2D. En Phaser se instancian así:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es una Scene</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>player <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">sprite</span>(<span class="dv">100</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="st">&#39;player&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="https://examples.phaser.io/assets/sprites/phaser-dude.png" style="width:10.0%" alt="player" /><figcaption aria-hidden="true"><code class="sourceCode javascript">player</code></figcaption>
+<img
+data-src="https://examples.phaser.io/assets/sprites/phaser-dude.png"
+style="width:10.0%" alt="player" />
+<figcaption aria-hidden="true"><code
+class="sourceCode javascript">player</code></figcaption>
 </figure>
-<p>Hay que usar la clave que se le puso en la carga. El objeto, obviamente, <em>debe estar cargado memoria</em> con <code class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span></code></p>
+<p>Hay que usar la clave que se le puso en la carga. El objeto,
+obviamente, <em>debe estar cargado memoria</em> con <code
+class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span></code></p>
 </section></section>
 <section>
-<section id="spritesheet-o-atlas-de-sprites" class="title-slide slide level1">
+<section id="spritesheet-o-atlas-de-sprites"
+class="title-slide slide level1">
 <h1>Spritesheet o atlas de sprites</h1>
 
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="mario_spritesheet.gif" width="400" height="300" alt="Spritesheet o atlas de Sprites" /><figcaption aria-hidden="true">Spritesheet o atlas de Sprites</figcaption>
+<img data-src="mario_spritesheet.gif" width="400" height="300"
+alt="Spritesheet o atlas de Sprites" />
+<figcaption aria-hidden="true">Spritesheet o atlas de
+Sprites</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <p>Sirven para optimizar recursos:</p>
 <ul>
-<li>Reduce el número de accesos al servidor (no es lo mismo traerse una imagen grande con muchas imágenes pequeñas que muchas imágenes pequeñas individuales)</li>
+<li>Reduce el número de accesos al servidor (no es lo mismo traerse una
+imagen grande con muchas imágenes pequeñas que muchas imágenes pequeñas
+individuales)</li>
 <li>Es más eficiente en memoria</li>
 </ul>
 </section>
@@ -369,7 +471,8 @@ Hay que indicar que `cache` es una propiedad del objeto juego. -->
 <section class="slide level2">
 
 <figure>
-<img data-src="mummy.gif" alt="Animation" /><figcaption aria-hidden="true">Animation</figcaption>
+<img data-src="mummy.gif" alt="Animation" />
+<figcaption aria-hidden="true">Animation</figcaption>
 </figure>
 </section></section>
     </div>

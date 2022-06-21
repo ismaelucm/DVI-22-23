@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,12 +102,14 @@
 </section>
 <section class="slide level6">
 
-<p>El cliente estará en una página (un archivo <code>.html</code>), como siempre</p>
+<p>El cliente estará en una página (un archivo <code>.html</code>), como
+siempre</p>
 </section>
 <section class="slide level6">
 
 <p>Iniciamos una página HTML normal:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span> <span class="er">lang</span><span class="ot">=</span><span class="st">&quot;es&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
@@ -114,19 +119,26 @@
 </section>
 <section class="slide level6">
 
-<p>El servidor que hemos creado no sólo nos sirve la página web, sino también la librería</p>
-<p>Esto nos asegura no tener diferentes versiones entre cliente y servidor</p>
+<p>El servidor que hemos creado no sólo nos sirve la página web, sino
+también la librería</p>
+<p>Esto nos asegura no tener diferentes versiones entre cliente y
+servidor</p>
 </section>
 <section class="slide level6">
 
-<p>Añadimos esta línea a nuestro <code class="sourceCode html"><span class="kw">&lt;body&gt;</span></code></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;/socket.io/socket.io.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
-<p><small>La ruta la crea automáticamente el servidor con <code>socket.io</code>, no hay que tener el archivo</small></p>
+<p>Añadimos esta línea a nuestro <code
+class="sourceCode html"><span class="kw">&lt;body&gt;</span></code></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;/socket.io/socket.io.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
+<p><small>La ruta la crea automáticamente el servidor con
+<code>socket.io</code>, no hay que tener el archivo</small></p>
 </section>
 <section class="slide level6">
 
-<p>Creamos dos botones y un párrafo para la interfaz, y cogemos sus referencias para manejarlos desde JavaScript:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;armas&quot;</span><span class="kw">&gt;</span>Pedir precios de armas<span class="kw">&lt;/button&gt;</span></span>
+<p>Creamos dos botones y un párrafo para la interfaz, y cogemos sus
+referencias para manejarlos desde JavaScript:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;armas&quot;</span><span class="kw">&gt;</span>Pedir precios de armas<span class="kw">&lt;/button&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;button</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;comida&quot;</span><span class="kw">&gt;</span>Pedir precios de comida<span class="kw">&lt;/button&gt;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;lista&quot;</span><span class="kw">&gt;&lt;/p&gt;</span></span>
@@ -139,8 +151,10 @@
 </section>
 <section class="slide level6">
 
-<p>Iniciamos la conexión con la dirección y el puerto (que tiene que ser el mismo que el del servidor)</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<p>Iniciamos la conexión con la dirección y el puerto (que tiene que ser
+el mismo que el del servidor)</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> direccion <span class="op">=</span> <span class="st">&#39;localhost&#39;</span><span class="op">;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> puerto <span class="op">=</span> <span class="dv">3000</span><span class="op">;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> socket <span class="op">=</span> <span class="fu">io</span>(<span class="st">&#39;http://&#39;</span> <span class="op">+</span> direccion <span class="op">+</span> <span class="st">&#39;:&#39;</span> <span class="op">+</span> puerto)<span class="op">;</span></span>
@@ -148,20 +162,28 @@
 </section>
 <section class="slide level6">
 
-<p>Es más cómodo definir el puerto <em>sólo en 1 sitio</em> (en vez de poner <code class="sourceCode javascript"><span class="kw">const</span> port<span class="op">=</span><span class="dv">3000</span></code> en cliente y servidor), e importar el módulo</p>
+<p>Es más cómodo definir el puerto <em>sólo en 1 sitio</em> (en vez de
+poner <code
+class="sourceCode javascript"><span class="kw">const</span> port<span class="op">=</span><span class="dv">3000</span></code>
+en cliente y servidor), e importar el módulo</p>
 </section>
 <section class="slide level6">
 
-<p>Cada botón va a enviar un mensaje del mismo tipo (<code class="sourceCode javascript"><span class="st">&#39;precios&#39;</span></code>), con un objeto adicional particular:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<p>Cada botón va a enviar un mensaje del mismo tipo (<code
+class="sourceCode javascript"><span class="st">&#39;precios&#39;</span></code>),
+con un objeto adicional particular:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  armas<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> () <span class="kw">=&gt;</span> socket<span class="op">.</span><span class="fu">emit</span>(<span class="st">&#39;precios&#39;</span><span class="op">,</span> <span class="st">&#39;armas&#39;</span>)<span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  comida<span class="op">.</span><span class="at">onclick</span> <span class="op">=</span> () <span class="kw">=&gt;</span> socket<span class="op">.</span><span class="fu">emit</span>(<span class="st">&#39;precios&#39;</span><span class="op">,</span> <span class="st">&#39;comida&#39;</span>)<span class="op">;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
 </section>
 <section class="slide level6">
 
-<p>Cuando llegue la lista, la mostramos en el párrafo <code class="sourceCode html">muestra</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script&gt;</span></span>
+<p>Cuando llegue la lista, la mostramos en el párrafo <code
+class="sourceCode html">muestra</code>:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    socket<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;respuesta&#39;</span><span class="op">,</span> lista <span class="kw">=&gt;</span> {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>      <span class="co">// `JSON.stringify` convierte un JSON a string para</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      <span class="co">// poder mostrarlo</span></span>
@@ -211,7 +233,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -220,7 +242,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

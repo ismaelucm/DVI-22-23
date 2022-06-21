@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -93,13 +96,15 @@
 </section>
 
 <section>
-<section id="scripting-con-javascript-en-tiled" class="title-slide slide level1">
+<section id="scripting-con-javascript-en-tiled"
+class="title-slide slide level1">
 <h1>Scripting con JavaScript en Tiled</h1>
 
 </section>
 <section class="slide level2">
 
-<p>A partir de la versión 1.3, Tiled permite crear scripts con JavaScript</p>
+<p>A partir de la versión 1.3, Tiled permite crear scripts con
+JavaScript</p>
 <!-- ---
 
 Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta desde la [página de Tiled](https://thorbjorn.itch.io/tiled) -->
@@ -107,24 +112,36 @@ Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta
 <section class="slide level2">
 
 <figure>
-<img data-src="abrir_consola_tiled.png" alt="Lo primero es abrir la consola" /><figcaption aria-hidden="true">Lo primero es abrir la consola</figcaption>
+<img data-src="abrir_consola_tiled.png"
+alt="Lo primero es abrir la consola" />
+<figcaption aria-hidden="true">Lo primero es abrir la
+consola</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="consola_tiled.png" alt="Se abrirá la consola, en cuyo cuadro de texto de abajo podemos ejecutar JavaScript" /><figcaption aria-hidden="true">Se abrirá la consola, en cuyo cuadro de texto de abajo podemos ejecutar JavaScript</figcaption>
+<img data-src="consola_tiled.png"
+alt="Se abrirá la consola, en cuyo cuadro de texto de abajo podemos ejecutar JavaScript" />
+<figcaption aria-hidden="true">Se abrirá la consola, en cuyo cuadro de
+texto de abajo podemos ejecutar JavaScript</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="js_tiled.png" alt="Cualquier expresión de JavaScript funciona" /><figcaption aria-hidden="true">Cualquier expresión de JavaScript funciona</figcaption>
+<img data-src="js_tiled.png"
+alt="Cualquier expresión de JavaScript funciona" />
+<figcaption aria-hidden="true">Cualquier expresión de JavaScript
+funciona</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Se puede pegar un script pequeño de JavaScript en la línea de comandos, o se pueden ejecutar aquellos que está en <a href="https://doc.mapeditor.org/en/stable/reference/scripting/#script-extensions">la carpeta <code>extensions</code></a></p>
+<p>Se puede pegar un script pequeño de JavaScript en la línea de
+comandos, o se pueden ejecutar aquellos que está en <a
+href="https://doc.mapeditor.org/en/stable/reference/scripting/#script-extensions">la
+carpeta <code>extensions</code></a></p>
 </section>
 <section class="slide level2">
 
@@ -144,21 +161,27 @@ Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta
 </section>
 <section class="slide level2">
 
-<p>La <a href="https://www.mapeditor.org/docs/scripting/">API</a> del motor de JavaScript tiene detalles de cómo se puede hacer extensiones a Tiled con JavaScript</p>
+<p>La <a href="https://www.mapeditor.org/docs/scripting/">API</a> del
+motor de JavaScript tiene detalles de cómo se puede hacer extensiones a
+Tiled con JavaScript</p>
 </section></section>
 <section>
-<section id="ejemplo-flip-aleatorio-de-objetos" class="title-slide slide level1">
+<section id="ejemplo-flip-aleatorio-de-objetos"
+class="title-slide slide level1">
 <h1>Ejemplo: Flip aleatorio de objetos</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Queremos que en una capa de objetos, algunos de los objetos cambien su orientación vertical (así, no tenemos que andar cambiando la propiedad manualmente)</p>
+<p>Queremos que en una capa de objetos, algunos de los objetos cambien
+su orientación vertical (así, no tenemos que andar cambiando la
+propiedad manualmente)</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ejemploFlip.png" alt="Ejemplo de ejecución" /><figcaption aria-hidden="true">Ejemplo de ejecución</figcaption>
+<img data-src="ejemploFlip.png" alt="Ejemplo de ejecución" />
+<figcaption aria-hidden="true">Ejemplo de ejecución</figcaption>
 </figure>
 </section>
 <section class="slide level2">
@@ -208,8 +231,10 @@ Para hacer scripting, ahora mismo hay que bajarse un *snapshot* de versión beta
 </section>
 <section id="más-ejemplos" class="slide level2">
 <h2>Más ejemplos…</h2>
-<p><a href="https://github.com/mapeditor/tiled-extensions" class="uri">https://github.com/mapeditor/tiled-extensions</a></p>
-<p><small>Y en el readme hay enlaces a otros repositorios de ejemplos.</small></p>
+<p><a href="https://github.com/mapeditor/tiled-extensions"
+class="uri">https://github.com/mapeditor/tiled-extensions</a></p>
+<p><small>Y en el readme hay enlaces a otros repositorios de
+ejemplos.</small></p>
 </section></section>
     </div>
   </div>

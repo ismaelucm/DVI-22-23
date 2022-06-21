@@ -1,94 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Ejercicios</title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="../docs.css">
+  <link rel="stylesheet" href="../docs.css" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
-<header>
+<header id="title-block-header">
 <h1 class="title">Ejercicios</h1>
 </header>
 <h1 id="objetivos">Objetivos</h1>
-<p>Probad estos ejemplos y tratad de responder a las preguntas. Si os atascáis con lo que hace una función, buscad en Internet la función acompañado de “mdn”.</p>
-<h1 id="valores-booleanos-en-javascript">Valores booleanos en JavaScript</h1>
-<p>En JavaScript cualquier valor puede considerarse verdadero o falso según el contexto. Por ejemplo, el <code class="sourceCode javascript"><span class="dv">0</span></code> es considerado <code class="sourceCode javascript"><span class="kw">false</span></code> y cualquier número distinto de <code class="sourceCode javascript"><span class="dv">0</span></code> es <code class="sourceCode javascript"><span class="kw">true</span></code>:</p>
+<p>Probad estos ejemplos y tratad de responder a las preguntas. Si os
+atascáis con lo que hace una función, buscad en Internet la función
+acompañado de “mdn”.</p>
+<h1 id="valores-booleanos-en-javascript">Valores booleanos en
+JavaScript</h1>
+<p>En JavaScript cualquier valor puede considerarse verdadero o falso
+según el contexto. Por ejemplo, el <code
+class="sourceCode javascript"><span class="dv">0</span></code> es
+considerado <code
+class="sourceCode javascript"><span class="kw">false</span></code> y
+cualquier número distinto de <code
+class="sourceCode javascript"><span class="dv">0</span></code> es <code
+class="sourceCode javascript"><span class="kw">true</span></code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> v <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> <span class="co">// después de esta prueba, cambia el valor de v por otro número.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!!</span>v<span class="op">;</span> <span class="co">// la doble negación al comienzo lo convierte en booleano.</span></span></code></pre></div>
-<p>Descubre qué valores son ciertos y cuales falsos para todos los tipos: números, cadenas, objetos, funciones y undefined.</p>
-<h1 id="expresiones-booleanas-en-javascript">Expresiones booleanas en JavaScript</h1>
-<p>En JavaScript, las expresiones booleanas son <em>vagas</em>, esto significa que en cuanto sabemos lo que va a valer la expresión, dejamos de evaluar. Por ejemplo, ¿qué crees que le pasará a la siguiente expressión?</p>
+<p>Descubre qué valores son ciertos y cuales falsos para todos los
+tipos: números, cadenas, objetos, funciones y undefined.</p>
+<h1 id="expresiones-booleanas-en-javascript">Expresiones booleanas en
+JavaScript</h1>
+<p>En JavaScript, las expresiones booleanas son <em>vagas</em>, esto
+significa que en cuanto sabemos lo que va a valer la expresión, dejamos
+de evaluar. Por ejemplo, ¿qué crees que le pasará a la siguiente
+expressión?</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> hero <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span><span class="op">,</span> <span class="dt">weapon</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Hero weapon power is:&#39;</span><span class="op">,</span> hero<span class="op">.</span><span class="at">weapon</span><span class="op">.</span><span class="at">power</span>)<span class="op">;</span></span></code></pre></div>
 <p>Pero, ¿y ahora?</p>
@@ -98,10 +119,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;The hero has no weapon.&#39;</span>)<span class="op">;</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>En caso de expresiones <code>&amp;&amp;</code> (<em>and</em> o <em>y</em>), la evaluación termina tan pronto como encontramos un término falso.</p>
-<p>En caso de expresiones <code>||</code> (<em>or</em> u <em>o</em>), la evaluación termina tan pronto como encontramos un término verdadero.</p>
-<h1 id="el-resultado-de-las-expresiones-booleanas">El resultado de las expresiones booleanas</h1>
-<p>Contra el sentido común, el resultado de una expresión booleana no es un booleano sino el último término evaluado. Recuerda que la evaluación es <em>vaga</em> y dejamos de evaluar tan pronto como podemos determinar el resultado de la expresión. Con esto en cuenta, trata de predecir el resultado de las siguientes expresiones:</p>
+<p>En caso de expresiones <code>&amp;&amp;</code> (<em>and</em> o
+<em>y</em>), la evaluación termina tan pronto como encontramos un
+término falso.</p>
+<p>En caso de expresiones <code>||</code> (<em>or</em> u <em>o</em>), la
+evaluación termina tan pronto como encontramos un término verdadero.</p>
+<h1 id="el-resultado-de-las-expresiones-booleanas">El resultado de las
+expresiones booleanas</h1>
+<p>Contra el sentido común, el resultado de una expresión booleana no es
+un booleano sino el último término evaluado. Recuerda que la evaluación
+es <em>vaga</em> y dejamos de evaluar tan pronto como podemos determinar
+el resultado de la expresión. Con esto en cuenta, trata de predecir el
+resultado de las siguientes expresiones:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> v<span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">noop</span>() { <span class="cf">return</span><span class="op">;</span> }<span class="op">;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -110,7 +139,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">null</span> <span class="op">||</span> v <span class="op">||</span> noop <span class="op">||</span> <span class="kw">true</span><span class="op">;</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">null</span> <span class="op">||</span> v <span class="op">||</span> <span class="kw">void</span> <span class="st">&quot;Eggs!&quot;</span> <span class="op">||</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div>
 <h1 id="parámetros-por-defecto">Parámetros por defecto</h1>
-<p>Puedes ver una aplicación real de lo anterior en esta función para rellenar números. En JavaScript no hay parámetros por defecto, pero los parámetros omitidos tienen el valor especial <code class="sourceCode javascript"><span class="kw">undefined</span></code> que es falso.</p>
+<p>Puedes ver una aplicación real de lo anterior en esta función para
+rellenar números. En JavaScript no hay parámetros por defecto, pero los
+parámetros omitidos tienen el valor especial <code
+class="sourceCode javascript"><span class="kw">undefined</span></code>
+que es falso.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">pad</span>(target<span class="op">,</span> targetLengthIn<span class="op">,</span> fillIn) {</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> result <span class="op">=</span> target<span class="op">.</span><span class="fu">toString</span>()<span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> targetLength <span class="op">=</span> targetLengthIn <span class="op">||</span> result<span class="op">.</span><span class="at">length</span> <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
@@ -125,8 +158,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">pad</span>(<span class="dv">3</span>)<span class="op">;</span></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">pad</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">5</span>)<span class="op">;</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">pad</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="st">&#39;*&#39;</span>)<span class="op">;</span></span></code></pre></div>
-<h1 id="buenas-prácticas-en-el-diseño-de-apis">Buenas prácticas en el diseño de APIs</h1>
-<p>Hemos dicho muchas veces que el estado no se debería exponer pero siempre acabamos enseñando este tipo de modelado para los puntos:</p>
+<h1 id="buenas-prácticas-en-el-diseño-de-apis">Buenas prácticas en el
+diseño de APIs</h1>
+<p>Hemos dicho muchas veces que el estado no se debería exponer pero
+siempre acabamos enseñando este tipo de modelado para los puntos:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> p <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">5</span> }<span class="op">;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">scale</span>(point<span class="op">,</span> factor) {</span>
@@ -162,8 +197,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">scale</span>(p<span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span></code></pre></div>
 <p>Pero reconozcámoslo, escribir esto es un rollo soberano.</p>
-<h1 id="propiedades-computadas-al-rescate">Propiedades computadas al rescate</h1>
-<p>JavaScript permite definir un tipo especial de propiedades llamadas normalmente <em>propiedades computadas</em> de esta guisa:</p>
+<h1 id="propiedades-computadas-al-rescate">Propiedades computadas al
+rescate</h1>
+<p>JavaScript permite definir un tipo especial de propiedades llamadas
+normalmente <em>propiedades computadas</em> de esta guisa:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> p <span class="op">=</span> {</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">_x</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">_y</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
@@ -188,7 +225,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="fu">scale</span>(p<span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span></code></pre></div>
-<p>Escribirlo sigue siendo un muermo (menos mal que estudiaremos como hacer factorías de objetos) pero utilizarlo es mucho más claro. Así, si ahora decides que sería mejor exponer el nombre de los ejes en mayúscula, puedes hacer:</p>
+<p>Escribirlo sigue siendo un muermo (menos mal que estudiaremos como
+hacer factorías de objetos) pero utilizarlo es mucho más claro. Así, si
+ahora decides que sería mejor exponer el nombre de los ejes en
+mayúscula, puedes hacer:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> p <span class="op">=</span> {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">_x</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">_y</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span></span>
@@ -213,9 +253,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="fu">scale</span>(p<span class="op">,</span> <span class="dv">10</span>)<span class="op">;</span></span></code></pre></div>
-<p>¿Se te ocurre la manera de hacer que una propiedad pueda ser de sólo lectura? Es decir, que su valor no pueda cambiarse (asumiendo que el usuario no accederá a las propiedades que comiencen por ’_’).</p>
-<p>Si quisieras añadir una propiedad a un objeto ya existente tendrías que utilizar <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>()</code></a>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> point <span class="op">=</span> {}<span class="op">;</span></span>
+<p>¿Se te ocurre la manera de hacer que una propiedad pueda ser de sólo
+lectura? Es decir, que su valor no pueda cambiarse (asumiendo que el
+usuario no accederá a las propiedades que comiencen por ’_’).</p>
+<p>Si quisieras añadir una propiedad a un objeto ya existente tendrías
+que utilizar <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><code
+class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>()</code></a>:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> point <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(point<span class="op">,</span> <span class="st">&#39;_x&#39;</span><span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="dv">5</span> })<span class="op">;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(point<span class="op">,</span> <span class="st">&#39;_y&#39;</span><span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="dv">5</span> })<span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(point<span class="op">,</span> <span class="st">&#39;x&#39;</span><span class="op">,</span> {</span>
@@ -237,11 +283,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>point<span class="op">;</span> <span class="co">// no se observan propiedades...</span></span>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">x</span><span class="op">;</span> <span class="co">// ...pero aquí están.</span></span>
 <span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">y</span><span class="op">;</span></span></code></pre></div>
-<p>¿Te atreves a decir por qué cuando inspeccionamos el objeto no aparecen sus propiedades? ¿Cómo podrías arreglarlo? ¿Cómo harías para que sólo se vieran las propiedades que son parte de la API?</p>
-<p>No te lances a usar <code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>()</code> si no tienes <strong>muy claro</strong> qué significan los términos <strong>configurable</strong>, <strong>enumerable</strong> y <strong>writable</strong>.</p>
-<h1 id="usando-funciones-como-si-fueran-métodos">Usando funciones como si fueran métodos</h1>
-<p>Hemos visto que cualquier función puede usarse como un método si se referencia como una propiedad de un objeto y entonces se llama. Pero lo cierto es que también podemos hacer que una función cualquiera, sin estar referenciada desde una propiedad, pueda ser usada como el método de un objeto si indicamos explícitamente cual es el objeto destinatario. Esto puede hacerse con <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code></a> y con <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">call</span>()</code></a>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ship <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Death Star&#39;</span> }<span class="op">;</span></span>
+<p>¿Te atreves a decir por qué cuando inspeccionamos el objeto no
+aparecen sus propiedades? ¿Cómo podrías arreglarlo? ¿Cómo harías para
+que sólo se vieran las propiedades que son parte de la API?</p>
+<p>No te lances a usar <code
+class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>()</code>
+si no tienes <strong>muy claro</strong> qué significan los términos
+<strong>configurable</strong>, <strong>enumerable</strong> y
+<strong>writable</strong>.</p>
+<h1 id="usando-funciones-como-si-fueran-métodos">Usando funciones como
+si fueran métodos</h1>
+<p>Hemos visto que cualquier función puede usarse como un método si se
+referencia como una propiedad de un objeto y entonces se llama. Pero lo
+cierto es que también podemos hacer que una función cualquiera, sin
+estar referenciada desde una propiedad, pueda ser usada como el método
+de un objeto si indicamos explícitamente cual es el objeto destinatario.
+Esto puede hacerse con <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code></a>
+y con <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">call</span>()</code></a>.</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ship <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Death Star&#39;</span> }<span class="op">;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">fire</span>(shot) {</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="kw">this</span><span class="op">.</span><span class="at">name</span> <span class="op">+</span> <span class="st">&#39; is firing: &#39;</span> <span class="op">+</span> shot<span class="op">.</span><span class="fu">toUpperCase</span>() <span class="op">+</span> <span class="st">&#39;!!!&#39;</span>)<span class="op">;</span></span>
@@ -250,10 +314,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>ship<span class="op">.</span><span class="at">fire</span><span class="op">;</span> <span class="co">// ¿qué crees que será esto?</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>fire<span class="op">.</span><span class="fu">apply</span>(ship<span class="op">,</span> [<span class="st">&#39;pichium&#39;</span>])<span class="op">;</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>fire<span class="op">.</span><span class="fu">call</span>(ship<span class="op">,</span> <span class="st">&#39;pañum&#39;</span>)<span class="op">;</span></span></code></pre></div>
-<p>¿Cuál es la diferencia entre <code class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code> y <code class="sourceCode javascript"><span class="op">.</span><span class="fu">call</span>()</code>?</p>
+<p>¿Cuál es la diferencia entre <code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code>
+y <code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">call</span>()</code>?</p>
 <h1 id="propiedades-dinámicas">Propiedades dinámicas</h1>
-<p>La notación corchete para acceder a las propiedades de un objeto es especialmente útil para acceder a propiedades de manera genérica. Por ejemplo, imagina el siguiente código:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> hero <span class="op">=</span> {</span>
+<p>La notación corchete para acceder a las propiedades de un objeto es
+especialmente útil para acceder a propiedades de manera genérica. Por
+ejemplo, imagina el siguiente código:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> hero <span class="op">=</span> {</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span><span class="op">,</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">hp</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">stamina</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
@@ -290,10 +360,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="fu">attack</span>(hero<span class="op">,</span> enemy)<span class="op">;</span></span>
 <span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="fu">attack</span>(enemy<span class="op">,</span> hero)<span class="op">;</span></span>
 <span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="fu">attack</span>(hero<span class="op">,</span> enemy)<span class="op">;</span></span></code></pre></div>
-<p>¿Podrías modificar el efecto del arma del héroe para incapacitar al enemigo pero no matarlo ni dañarlo? Intenta hacerlo sin reescribir el ejemplo entero.</p>
-<h1 id="objetos-como-algo-más-que-objetos">Objetos como algo más que objetos</h1>
-<p>Los objetos de JavaScript no solo sirven para modelar los objetos de la programación orientada a objetos sino que permiten realizar clasificaciones por nombre. Un histograma, es decir un conteo de un conjunto con repeticiones, es un ejemplo clásico de la utilidad de un objeto JavaScript:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
+<p>¿Podrías modificar el efecto del arma del héroe para incapacitar al
+enemigo pero no matarlo ni dañarlo? Intenta hacerlo sin reescribir el
+ejemplo entero.</p>
+<h1 id="objetos-como-algo-más-que-objetos">Objetos como algo más que
+objetos</h1>
+<p>Los objetos de JavaScript no solo sirven para modelar los objetos de
+la programación orientada a objetos sino que permiten realizar
+clasificaciones por nombre. Un histograma, es decir un conteo de un
+conjunto con repeticiones, es un ejemplo clásico de la utilidad de un
+objeto JavaScript:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="st">&#39; &#39;</span>)<span class="op">;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> wordList<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
@@ -306,11 +384,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> histogram<span class="op">;</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Prueba a usar la función por ti mismo.</p>
-<p>Lo que JavaScript llama objetos se conoce en otros lenguajes de programación como mapas o diccionarios y a los nombres de las propiedades se los llama <em>claves</em>.</p>
+<p>Lo que JavaScript llama objetos se conoce en otros lenguajes de
+programación como mapas o diccionarios y a los nombres de las
+propiedades se los llama <em>claves</em>.</p>
 <p>¿Puedes pensar en al menos una aplicacion más?</p>
 <h1 id="funciones-como-parámetros">Funciones como parámetros</h1>
-<p>Las listas de JavaScript tiene algunos métodos que aceptan funciones como parámetros, por ejemplo <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">forEach</span>()</code></a>. De hecho es común encontrar <code class="sourceCode javascript"><span class="op">.</span><span class="fu">forEach</span>()</code> cuando se tiene la certeza de que se van a recorrer <strong>todos</strong> los elementos de una lista.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
+<p>Las listas de JavaScript tiene algunos métodos que aceptan funciones
+como parámetros, por ejemplo <a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach"><code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">forEach</span>()</code></a>.
+De hecho es común encontrar <code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">forEach</span>()</code>
+cuando se tiene la certeza de que se van a recorrer
+<strong>todos</strong> los elementos de una lista.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="st">&#39; &#39;</span>)<span class="op">;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  wordList<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (word) {</span>
@@ -328,8 +416,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="fu">wordHistogram</span>(poem)<span class="op">;</span></span></code></pre></div>
-<p>El resultado no es correcto porque al separar las palabras por los espacios estamos dejando caracteres que no son palabras como parte de ellas. Podemos arreglarlo si en vez de partir el texto por los espacios usamos una <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">expresión regular</a> para partir el texto por los límites de las palabras:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
+<p>El resultado no es correcto porque al separar las palabras por los
+espacios estamos dejando caracteres que no son palabras como parte de
+ellas. Podemos arreglarlo si en vez de partir el texto por los espacios
+usamos una <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">expresión
+regular</a> para partir el texto por los límites de las palabras:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">wordHistogram</span>(text) {</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> wordList <span class="op">=</span> text<span class="op">.</span><span class="fu">split</span>(<span class="ss">/</span><span class="sc">\b</span><span class="ss">/</span>)<span class="op">;</span> <span class="co">// Eso entre / / es una expresión regular.</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> histogram <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  wordList<span class="op">.</span><span class="fu">forEach</span>(<span class="kw">function</span> (word) {</span>
@@ -347,11 +441,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="fu">wordHistogram</span>(poem)<span class="op">;</span></span></code></pre></div>
-<p>Pero ahora tenemos cosas que no son palabras (como espacios y comas). Podemos filtrar una lista con <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">filter</span>()</code></a>:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">isEven</span>(n) { <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span> }</span>
+<p>Pero ahora tenemos cosas que no son palabras (como espacios y comas).
+Podemos filtrar una lista con <a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter"><code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">filter</span>()</code></a>:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">isEven</span>(n) { <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span> }</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span>]<span class="op">.</span><span class="fu">filter</span>(isEven)<span class="op">;</span></span></code></pre></div>
 <p>Y así quitar lo que no sean palabras:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">isWord</span>(candidate) {</span>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">isWord</span>(candidate) {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="ss">/</span><span class="sc">\w+</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(candidate)<span class="op">;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -375,8 +474,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
 <span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="fu">wordHistogram</span>(poem)<span class="op">;</span></span></code></pre></div>
-<p>También deberíamos normalizar las palabras (pasarlas a minúsculas por ejemplo) para no encontrarnos con entradas distintas en el histograma para la misma palabra. Para transformar una lista en otra lista de los mismos elementos, usamos <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">map</span>()</code></a>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">isWord</span>(candidate) {</span>
+<p>También deberíamos normalizar las palabras (pasarlas a minúsculas por
+ejemplo) para no encontrarnos con entradas distintas en el histograma
+para la misma palabra. Para transformar una lista en otra lista de los
+mismos elementos, usamos <a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map"><code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">map</span>()</code></a>.</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">isWord</span>(candidate) {</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="ss">/</span><span class="sc">\w+</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(candidate)<span class="op">;</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -405,8 +510,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
 <span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="fu">wordHistogram</span>(poem)<span class="op">;</span></span></code></pre></div>
-<p>Una última función nos permite transformar una lista en un sólo valor. Esto es precisamente el histograma, una clasificación de todos los valores de la lista. Esta transformación se consigue mediante <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">reduce</span>()</code></a>:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">isWord</span>(candidate) {</span>
+<p>Una última función nos permite transformar una lista en un sólo
+valor. Esto es precisamente el histograma, una clasificación de todos
+los valores de la lista. Esta transformación se consigue mediante <a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reduce"><code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">reduce</span>()</code></a>:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">isWord</span>(candidate) {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="ss">/</span><span class="sc">\w+</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(candidate)<span class="op">;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -436,15 +546,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;caminos sobre la mar&#39;</span><span class="op">;</span></span>
 <span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="fu">wordHistogram</span>(poem)<span class="op">;</span></span></code></pre></div>
-<h1 id="número-variables-de-parámetros">Número variables de parámetros</h1>
+<h1 id="número-variables-de-parámetros">Número variables de
+parámetros</h1>
 <p>Fíjate en esto:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m&#39;</span><span class="op">,</span> <span class="st">&#39;Ziltoid&#39;</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m&#39;</span><span class="op">,</span> <span class="st">&#39;Ziltoid&#39;</span>)<span class="op">;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m&#39;</span><span class="op">,</span> <span class="st">&#39;Ziltoid,&#39;</span><span class="op">,</span> <span class="st">&#39;the&#39;</span><span class="op">,</span> <span class="st">&#39;Omniscient&#39;</span>)<span class="op">;</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1</span>)<span class="op">;</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>)<span class="op">;</span></span></code></pre></div>
-<p>Como puedes ver, la función acepta un número cualquiera de variables. Podemos hacer los mismo gracias a la variable implícita <code class="sourceCode javascript"><span class="kw">arguments</span></code>.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
+<p>Como puedes ver, la función acepta un número cualquiera de variables.
+Podemos hacer los mismo gracias a la variable implícita <code
+class="sourceCode javascript"><span class="kw">arguments</span></code>.</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Número de argumentos pasados:&#39;</span><span class="op">,</span> <span class="kw">arguments</span><span class="op">.</span><span class="at">length</span>)<span class="op">;</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Argumentos:&#39;</span><span class="op">,</span> <span class="kw">arguments</span>)<span class="op">;</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -452,17 +567,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="dv">1</span>)<span class="op">;</span></span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="st">&#39;a&#39;</span><span class="op">,</span> {})<span class="op">;</span></span>
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="kw">function</span> () {}<span class="op">,</span> []<span class="op">,</span> <span class="kw">undefined</span>)<span class="op">;</span></span></code></pre></div>
-<p>Busca la información sobre <code class="sourceCode javascript"><span class="kw">arguments</span></code> en la <a href="http://lmgtfy.com/?q=mdn+arguments">MDN</a>. ¡Te hará falta!</p>
+<p>Busca la información sobre <code
+class="sourceCode javascript"><span class="kw">arguments</span></code>
+en la <a href="http://lmgtfy.com/?q=mdn+arguments">MDN</a>. ¡Te hará
+falta!</p>
 <h1 id="decoradores">Decoradores</h1>
-<p>Aparte de devolverse como parámetros, las funciones pueden ser devueltas desde otras funciones. Considera el siguiente ejemplo:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newLog</span>(label) {</span>
+<p>Aparte de devolverse como parámetros, las funciones pueden ser
+devueltas desde otras funciones. Considera el siguiente ejemplo:</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newLog</span>(label) {</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span>(value) {</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(label <span class="op">+</span> <span class="st">&#39;:&#39;</span><span class="op">,</span> value)<span class="op">;</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>Esta función crea funciones que llamarán a <code class="sourceCode javascript"><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>()</code> pero con una etiqueta delante. Podríamos crear métodos <code class="sourceCode javascript"><span class="fu">_log</span>()</code> por clase, cada uno con un prefijo y así distinguir unos logs de otros.</p>
+<p>Esta función crea funciones que llamarán a <code
+class="sourceCode javascript"><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>()</code>
+pero con una etiqueta delante. Podríamos crear métodos <code
+class="sourceCode javascript"><span class="fu">_log</span>()</code> por
+clase, cada uno con un prefijo y así distinguir unos logs de otros.</p>
 <p>Sin embargo, advierte el siguiente comportamiento:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> log1 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Default&#39;</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> log1 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Default&#39;</span>)<span class="op">;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> log2 <span class="op">=</span> <span class="fu">newLog</span>(<span class="st">&#39;Ziltoid&#39;</span>)<span class="op">;</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> p <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span> }<span class="op">;</span></span>
@@ -470,8 +595,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">log2</span>(p)<span class="op">;</span></span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="fu">log1</span>(<span class="st">&#39;Greetings&#39;</span><span class="op">,</span> <span class="st">&#39;humans!&#39;</span>)<span class="op">;</span></span></code></pre></div>
 <p>¿Cual es el problema? ¿Por qué no funciona el último ejemplo?</p>
-<p>Para hacer que funcione, tendríamos que llamar a <code class="sourceCode javascript"><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>()</code> con un número de parámetros que no sabemos a priori. Podemos usar <code class="sourceCode javascript"><span class="kw">arguments</span></code>, no obstante:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newLog</span>(label) {</span>
+<p>Para hacer que funcione, tendríamos que llamar a <code
+class="sourceCode javascript"><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>()</code>
+con un número de parámetros que no sabemos a priori. Podemos usar <code
+class="sourceCode javascript"><span class="kw">arguments</span></code>,
+no obstante:</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newLog</span>(label) {</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span>() {</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ¿Por qué tenemos que hacer esto?</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> args <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">slice</span><span class="op">.</span><span class="fu">call</span>(<span class="kw">arguments</span>)<span class="op">;</span></span>
@@ -487,10 +617,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="fu">log1</span>(p)<span class="op">;</span></span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="fu">log2</span>(p)<span class="op">;</span></span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="fu">log1</span>(<span class="st">&#39;Greetings&#39;</span><span class="op">,</span> <span class="st">&#39;humans!&#39;</span>)<span class="op">;</span></span></code></pre></div>
-<p>¿Podrías decir qué hace cada línea en la función <code class="sourceCode javascript"><span class="fu">newLog</span>()</code>?</p>
+<p>¿Podrías decir qué hace cada línea en la función <code
+class="sourceCode javascript"><span class="fu">newLog</span>()</code>?</p>
 <h1 id="asincronía-y-closures">Asincronía y closures</h1>
 <p>Carga el siguiente código:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">scheduleTasks</span>(count) {</span>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">scheduleTasks</span>(count) {</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(<span class="kw">let</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;=</span> count<span class="op">;</span> i<span class="op">++</span>) {</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="pp">setTimeout</span>(<span class="kw">function</span> () {</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>      <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Executing task&#39;</span><span class="op">,</span> i)<span class="op">;</span></span>
@@ -498,11 +630,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Trata de predecir qué pasará al ejecutar el siguiente código:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scheduleTasks</span>(<span class="dv">5</span>)<span class="op">;</span></span></code></pre></div>
-<p>¿Hace lo que esperabas? Si no es así, ¿por qué? ¿cómo lo arreglarías? Pista: necesitas la función <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code class="sourceCode javascript"><span class="op">.</span><span class="fu">bind</span>()</code></a>.</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scheduleTasks</span>(<span class="dv">5</span>)<span class="op">;</span></span></code></pre></div>
+<p>¿Hace lo que esperabas? Si no es así, ¿por qué? ¿cómo lo arreglarías?
+Pista: necesitas la función <a
+href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">bind</span>()</code></a>.</p>
 <h1 id="eventos-y-métodos">Eventos y métodos</h1>
-<p>Hay veces en las que debemos llamar a un método de un objeto cuando ocurra algo. Por ejemplo, supón que el método avanzar de un supuesto objeto debe llamarse en un intervalo de tiempo. Pongamos cada segundo:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> obj <span class="op">=</span> {</span>
+<p>Hay veces en las que debemos llamar a un método de un objeto cuando
+ocurra algo. Por ejemplo, supón que el método avanzar de un supuesto
+objeto debe llamarse en un intervalo de tiempo. Pongamos cada
+segundo:</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> obj <span class="op">=</span> {</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">advance</span><span class="op">:</span> <span class="kw">function</span> () {</span>
@@ -512,15 +652,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> id <span class="op">=</span> <span class="pp">setInterval</span>(obj<span class="op">.</span><span class="at">advance</span><span class="op">,</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">1000</span>)<span class="op">;</span></span></code></pre></div>
-<p>Este ejemplo falla porque en la última línea <strong>no estamos llamando</strong> a la función sino sólo pasándola como parámetro. La función <code class="sourceCode javascript"><span class="pp">setInterval</span>()</code> no tiene idea del destinatario del mensaje y por tanto no puede llamar a la función como si fuera un método.</p>
-<p>Podemos arreglarlo con <code class="sourceCode javascript"><span class="fu">bind</span>()</code> pero antes para el intervalo con:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="pp">clearInterval</span>(id)<span class="op">;</span></span></code></pre></div>
+<p>Este ejemplo falla porque en la última línea <strong>no estamos
+llamando</strong> a la función sino sólo pasándola como parámetro. La
+función <code
+class="sourceCode javascript"><span class="pp">setInterval</span>()</code>
+no tiene idea del destinatario del mensaje y por tanto no puede llamar a
+la función como si fuera un método.</p>
+<p>Podemos arreglarlo con <code
+class="sourceCode javascript"><span class="fu">bind</span>()</code> pero
+antes para el intervalo con:</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="pp">clearInterval</span>(id)<span class="op">;</span></span></code></pre></div>
 <p>Ahora podemos solucionarlo con:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> id <span class="op">=</span> <span class="pp">setInterval</span>(obj<span class="op">.</span><span class="at">advance</span><span class="op">.</span><span class="fu">bind</span>(obj)<span class="op">,</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">1000</span>)<span class="op">;</span></span></code></pre></div>
-<h1 id="la-función-bind">La función <code class="sourceCode javascript"><span class="fu">bind</span>()</code></h1>
-<p>A estas alturas ya deberías saber cómo funciona <code class="sourceCode javascript"><span class="fu">bind</span>()</code> o qué hace. Si aun no lo tienes claro, búscalo en la MDN.</p>
-<p>La tarea es la siguiente: crea una función <code class="sourceCode javascript"><span class="fu">bind</span>()</code> que simule el comportamiento del método de las funciones <code class="sourceCode javascript"><span class="op">.</span><span class="fu">bind</span>()</code>. Como se pide una función y no un método, el primer parámetro será la función. Así pues, en vez de usarse así:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">die</span>(sides) {</span>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> id <span class="op">=</span> <span class="pp">setInterval</span>(obj<span class="op">.</span><span class="at">advance</span><span class="op">.</span><span class="fu">bind</span>(obj)<span class="op">,</span> <span class="dv">1</span> <span class="op">*</span> <span class="dv">1000</span>)<span class="op">;</span></span></code></pre></div>
+<h1 id="la-función-bind">La función <code
+class="sourceCode javascript"><span class="fu">bind</span>()</code></h1>
+<p>A estas alturas ya deberías saber cómo funciona <code
+class="sourceCode javascript"><span class="fu">bind</span>()</code> o
+qué hace. Si aun no lo tienes claro, búscalo en la MDN.</p>
+<p>La tarea es la siguiente: crea una función <code
+class="sourceCode javascript"><span class="fu">bind</span>()</code> que
+simule el comportamiento del método de las funciones <code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">bind</span>()</code>.
+Como se pide una función y no un método, el primer parámetro será la
+función. Así pues, en vez de usarse así:</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">die</span>(sides) {</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>(result)<span class="op">;</span></span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>
@@ -529,7 +687,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> d20 <span class="op">=</span> die<span class="op">.</span><span class="fu">bind</span>(obj<span class="op">,</span> <span class="dv">20</span>)<span class="op">;</span></span>
 <span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="fu">d20</span>()<span class="op">;</span></span></code></pre></div>
 <p>La usaremos de esta otra forma:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">die</span>(sides) {</span>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">die</span>(sides) {</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> result <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">history</span><span class="op">.</span><span class="fu">push</span>(result)<span class="op">;</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> result<span class="op">;</span></span>

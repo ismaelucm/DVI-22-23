@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -113,47 +116,71 @@
 <section id="generalidades" class="slide level2">
 <h2>Generalidades</h2>
 <ul>
-<li>Se guardan en una carpeta <code>Editor</code> dentro de la carpeta <code>Assets</code> de Unity</li>
-<li>No heredan de <code>MonoBahaviour</code> sino que usan otras clases de Unity como <code>Editor</code> o <code>EditorWindow</code></li>
-<li>Estas clases (y otras) están en la librería <code>UnityEditor</code></li>
+<li>Se guardan en una carpeta <code>Editor</code> dentro de la carpeta
+<code>Assets</code> de Unity</li>
+<li>No heredan de <code>MonoBahaviour</code> sino que usan otras clases
+de Unity como <code>Editor</code> o <code>EditorWindow</code></li>
+<li>Estas clases (y otras) están en la librería
+<code>UnityEditor</code></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEditor<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEditor<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="imgui" class="slide level2">
 <h2>IMGUI</h2>
-<p><a href="https://docs.unity3d.com/ScriptReference/UnityEngine.IMGUIModule.html"><strong>I</strong>mmediate <strong>M</strong>ode <strong>GUI</strong></a></p>
+<p><a
+href="https://docs.unity3d.com/ScriptReference/UnityEngine.IMGUIModule.html"><strong>I</strong>mmediate
+<strong>M</strong>ode <strong>GUI</strong></a></p>
 <ul>
-<li>La creación y el comportamiento de la interfaz se implementan a la vez</li>
+<li>La creación y el comportamiento de la interfaz se implementan a la
+vez</li>
 <li>Para crear interfaces de juego y modificar el editor</li>
-<li>Usaremos las factorías de <a href="https://docs.unity3d.com/ScriptReference/GUI.html"><code>GUI</code></a> y de <a href="https://docs.unity3d.com/ScriptReference/GUILayout.html"><code>GUILayout</code></a> (y <a href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>, en algunos casos)</li>
+<li>Usaremos las factorías de <a
+href="https://docs.unity3d.com/ScriptReference/GUI.html"><code>GUI</code></a>
+y de <a
+href="https://docs.unity3d.com/ScriptReference/GUILayout.html"><code>GUILayout</code></a>
+(y <a
+href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>,
+en algunos casos)</li>
 </ul>
 </section></section>
 <section>
-<section id="crear-ventanas-del-editor" class="title-slide slide level1">
+<section id="crear-ventanas-del-editor"
+class="title-slide slide level1">
 <h1>Crear ventanas del editor</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Sirve para crear nuevas ventanas para incorporarlas al editor de Unity.</p>
-<p>Estas nuevas ventanas nos permitirán hacer funciones adicionales que no están definidas en el editor de Unity.</p>
+<p>Sirve para crear nuevas ventanas para incorporarlas al editor de
+Unity.</p>
+<p>Estas nuevas ventanas nos permitirán hacer funciones adicionales que
+no están definidas en el editor de Unity.</p>
 </section>
 <section id="en-breve" class="slide level2">
 <h2>En breve…</h2>
 <ul>
-<li>Extender la clase <a href="https://docs.unity3d.com/ScriptReference/EditorWindow.html"><code>EditorWindow</code></a></li>
-<li>Implementar la interfaz y el comportamiento en <a href="https://docs.unity3d.com/ScriptReference/EditorWindow.OnGUI.html"><code>OnGUI</code></a> con IMGUI.</li>
+<li>Extender la clase <a
+href="https://docs.unity3d.com/ScriptReference/EditorWindow.html"><code>EditorWindow</code></a></li>
+<li>Implementar la interfaz y el comportamiento en <a
+href="https://docs.unity3d.com/ScriptReference/EditorWindow.OnGUI.html"><code>OnGUI</code></a>
+con IMGUI.</li>
 </ul>
 </section>
-<section id="ejemplo-herramienta-para-colorear-objetos-seleccionados" class="slide level2">
+<section id="ejemplo-herramienta-para-colorear-objetos-seleccionados"
+class="slide level2">
 <h2>Ejemplo: Herramienta para colorear objetos seleccionados</h2>
 <figure>
-<img data-src="./colorizer.png" alt="Ventana de la herramienta para colorear objetos" /><figcaption aria-hidden="true">Ventana de la herramienta para colorear objetos</figcaption>
+<img data-src="./colorizer.png"
+alt="Ventana de la herramienta para colorear objetos" />
+<figcaption aria-hidden="true">Ventana de la herramienta para colorear
+objetos</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb2"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEditor<span class="op">;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> ColorizerWindow <span class="op">:</span> EditorWindow <span class="op">{</span></span>
@@ -170,7 +197,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">OnGUI</span><span class="op">()</span> <span class="op">{</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Etiqueta de la ventana</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    GUILayout<span class="op">.</span><span class="fu">Label</span><span class="op">(</span><span class="st">&quot;Cambia el color de los objetos seleccionados&quot;</span><span class="op">,</span> EditorStyles<span class="op">.</span><span class="fu">boldLabel</span><span class="op">);</span></span>
@@ -181,7 +209,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Layout horizontal</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>GUILayout<span class="op">.</span><span class="fu">BeginHorizontal</span><span class="op">();</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Primer botón</span></span>
@@ -201,7 +230,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb5"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Creamos el botón de Reset</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>GUILayout<span class="op">.</span><span class="fu">Button</span><span class="op">(</span><span class="st">&quot;Reset&quot;</span><span class="op">))</span> <span class="op">{</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">foreach</span> <span class="op">(</span>GameObject obj <span class="kw">in</span> Selection<span class="op">.</span><span class="fu">gameObjects</span><span class="op">)</span> <span class="op">{</span></span>
@@ -220,33 +250,51 @@
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section></section>
 <section>
-<section id="crear-inspectores-de-componentes-personalizados" class="title-slide slide level1">
+<section id="crear-inspectores-de-componentes-personalizados"
+class="title-slide slide level1">
 <h1>Crear inspectores de componentes personalizados</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Sirve para crear paneles de edición de componentes (<em>inspectors</em>) personalizados con el fin de facilitar y acelerar el desarrollo de gameplay.</p>
+<p>Sirve para crear paneles de edición de componentes
+(<em>inspectors</em>) personalizados con el fin de facilitar y acelerar
+el desarrollo de gameplay.</p>
 </section>
 <section id="en-breve-1" class="slide level2">
 <h2>En breve…</h2>
 <ul>
-<li>Añadir el atributo <code>[CustomEditor(typeof(MI_MONOBEHAVIOUR))]</code></li>
-<li>Extender la clase <a href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a></li>
-<li>Implementar la interfaz y el comportamiento en <a href="https://docs.unity3d.com/ScriptReference/Editor.OnInspectorGUI.html"><code>OnInspectorGUI</code></a> con IMGUI (incluyendo elementos del <a href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>)</li>
-<li><a href="https://docs.unity3d.com/ScriptReference/Editor-target.html"><code>target</code></a> da acceso al componente</li>
-<li><a href="https://docs.unity3d.com/ScriptReference/Editor-serializedObject.html"><code>serializedObject</code></a> da acceso al componente <em>serializado</em> de modo que se pueda utilizar las operaciones de Undo y la actualización de los Prefabs</li>
+<li>Añadir el atributo
+<code>[CustomEditor(typeof(MI_MONOBEHAVIOUR))]</code></li>
+<li>Extender la clase <a
+href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a></li>
+<li>Implementar la interfaz y el comportamiento en <a
+href="https://docs.unity3d.com/ScriptReference/Editor.OnInspectorGUI.html"><code>OnInspectorGUI</code></a>
+con IMGUI (incluyendo elementos del <a
+href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>)</li>
+<li><a
+href="https://docs.unity3d.com/ScriptReference/Editor-target.html"><code>target</code></a>
+da acceso al componente</li>
+<li><a
+href="https://docs.unity3d.com/ScriptReference/Editor-serializedObject.html"><code>serializedObject</code></a>
+da acceso al componente <em>serializado</em> de modo que se pueda
+utilizar las operaciones de Undo y la actualización de los Prefabs</li>
 </ul>
 </section>
-<section id="ejemplo-panel-para-la-creación-de-waypoints" class="slide level2">
+<section id="ejemplo-panel-para-la-creación-de-waypoints"
+class="slide level2">
 <h2>Ejemplo: Panel para la creación de waypoints</h2>
 <figure>
-<img data-src="./createWaypoints.png" alt="Panel para la creación de Waypoints" /><figcaption aria-hidden="true">Panel para la creación de Waypoints</figcaption>
+<img data-src="./createWaypoints.png"
+alt="Panel para la creación de Waypoints" />
+<figcaption aria-hidden="true">Panel para la creación de
+Waypoints</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> FollowWaypoints <span class="op">:</span> MonoBehaviour <span class="op">{</span></span>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> FollowWaypoints <span class="op">:</span> MonoBehaviour <span class="op">{</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> List<span class="op">&lt;</span>GameObject<span class="op">&gt;</span> waypoints<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> <span class="fu">Awake</span><span class="op">()</span> <span class="op">{</span></span>
@@ -256,7 +304,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEditor<span class="op">;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">CustomEditor</span><span class="op">(</span><span class="kw">typeof</span><span class="op">(</span>FollowWaypoints<span class="op">))]</span></span>
@@ -272,7 +321,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb8"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">override</span> <span class="dt">void</span> <span class="fu">OnInspectorGUI</span><span class="op">()</span> <span class="op">{</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Comenzar con base.OnInspectorGUI() si queremos</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// mantener la info por defecto del inspector</span></span>
@@ -296,7 +346,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb9"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Comportamiento del botón de borrado de waypoints</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span>GUILayout<span class="op">.</span><span class="fu">Button</span><span class="op">(</span><span class="st">&quot;Clear Waypoints&quot;</span><span class="op">))</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
@@ -312,35 +363,53 @@
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 </section></section>
 <section>
-<section id="personalizar-la-inspección-de-componentes" class="title-slide slide level1">
+<section id="personalizar-la-inspección-de-componentes"
+class="title-slide slide level1">
 <h1>Personalizar la inspección de componentes</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Unity permite mostrar elementos en la escena que nos ayuden a la hora de definir un componente desde el inspector.</p>
+<p>Unity permite mostrar elementos en la escena que nos ayuden a la hora
+de definir un componente desde el inspector.</p>
 </section>
 <section id="en-breve-2" class="slide level2">
 <h2>En breve…</h2>
 <ul>
-<li>Añadir el atributo <code>[CustomEditor(typeof(MI_MONOBEHAVIOUR))]</code></li>
-<li>Extender la clase <a href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a></li>
-<li>Implementar la interfaz y el comportamiento en <a href="https://docs.unity3d.com/ScriptReference/Editor.OnSceneGUI.html"><code>OnSceneGUI</code></a> con IMGUI (incluyendo elementos del <a href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>)</li>
-<li>Usar <a href="https://docs.unity3d.com/ScriptReference/Handles.html"><code>Handles</code></a> para dibujar elementos en la escena</li>
-<li><a href="https://docs.unity3d.com/ScriptReference/Editor-target.html"><code>target</code></a> da acceso al componente</li>
-<li><a href="https://docs.unity3d.com/ScriptReference/Editor-serializedObject.html"><code>serializedObject</code></a> da acceso al componente <em>serializado</em> de modo que se pueda utilizar las operaciones de Undo y la actualización de los Prefabs</li>
+<li>Añadir el atributo
+<code>[CustomEditor(typeof(MI_MONOBEHAVIOUR))]</code></li>
+<li>Extender la clase <a
+href="https://docs.unity3d.com/ScriptReference/Editor.html"><code>Editor</code></a></li>
+<li>Implementar la interfaz y el comportamiento en <a
+href="https://docs.unity3d.com/ScriptReference/Editor.OnSceneGUI.html"><code>OnSceneGUI</code></a>
+con IMGUI (incluyendo elementos del <a
+href="https://docs.unity3d.com/ScriptReference/EditorGUILayout.html"><code>EditorGUILayout</code></a>)</li>
+<li>Usar <a
+href="https://docs.unity3d.com/ScriptReference/Handles.html"><code>Handles</code></a>
+para dibujar elementos en la escena</li>
+<li><a
+href="https://docs.unity3d.com/ScriptReference/Editor-target.html"><code>target</code></a>
+da acceso al componente</li>
+<li><a
+href="https://docs.unity3d.com/ScriptReference/Editor-serializedObject.html"><code>serializedObject</code></a>
+da acceso al componente <em>serializado</em> de modo que se pueda
+utilizar las operaciones de Undo y la actualización de los Prefabs</li>
 </ul>
 </section>
 <section id="ejemplo-rutas-por-waypoints" class="slide level2">
 <h2>Ejemplo: Rutas por Waypoints</h2>
 <figure>
-<img data-src="./waypoints.png" alt="Ruta al seleccionar el objeto con el componente FollowWaypoints" /><figcaption aria-hidden="true">Ruta al seleccionar el objeto con el componente <code>FollowWaypoints</code></figcaption>
+<img data-src="./waypoints.png"
+alt="Ruta al seleccionar el objeto con el componente FollowWaypoints" />
+<figcaption aria-hidden="true">Ruta al seleccionar el objeto con el
+componente <code>FollowWaypoints</code></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <p>Igual que en el ejemplo anterior…</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEngine<span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> UnityEditor<span class="op">;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span><span class="fu">CustomEditor</span><span class="op">(</span><span class="kw">typeof</span><span class="op">(</span>FollowWaypoints<span class="op">))]</span></span>
@@ -349,7 +418,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb11"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Dibuja una línea entre los puntos de la ruta</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">OnSceneGUI</span><span class="op">()</span> <span class="op">{</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Dibujamos si tenemos al menos dos waypoints</span></span>
@@ -365,7 +435,8 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb12"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode csharp"><code class="sourceCode cs"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">...</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Iteramos entre el resto de puntos de ruta...</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> theTarget<span class="op">.</span><span class="fu">waypoints</span><span class="op">.</span><span class="fu">Count</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">// ... y dibujamos una línea entre ellos</span></span>

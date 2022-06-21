@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,39 +102,70 @@
 </section>
 <section class="slide level2">
 
-<p>Parte de la ejecución de Phaser está dirigida por <strong>eventos</strong></p>
+<p>Parte de la ejecución de Phaser está dirigida por
+<strong>eventos</strong></p>
 <p>Un evento es un aviso de que algo ha ocurrido</p>
-<p>Creamos <strong>callbacks</strong> o funciones que se ejecutarán en respuesta a estos eventos</p>
+<p>Creamos <strong>callbacks</strong> o funciones que se ejecutarán en
+respuesta a estos eventos</p>
 </section>
 <section id="algunos-eventos-en-phaser" class="slide level2">
 <h2>Algunos eventos en Phaser</h2>
 <ul>
-<li>Input: Teclado (<code class="sourceCode javascript"><span class="st">&#39;down&#39;</span></code>, <code class="sourceCode javascript"><span class="st">&#39;up&#39;</span></code>…), ratón (<code class="sourceCode javascript"><span class="st">&#39;pointerdown&#39;</span></code>, <code class="sourceCode javascript"><span class="st">&#39;wheel&#39;</span></code>…)</li>
-<li>Física en Arcade: <code class="sourceCode javascript"><span class="st">&#39;collider&#39;</span></code>, <code class="sourceCode javascript"><span class="st">&#39;overlap&#39;</span></code>…</li>
-<li>Física en Matter: <code class="sourceCode javascript"><span class="st">&#39;collisionstart&#39;</span></code>, <code class="sourceCode javascript"><span class="st">&#39;collisionend&#39;</span></code></li>
-<li>Animaciones de sprites: <code class="sourceCode javascript"><span class="st">&#39;animationrepeat&#39;</span></code>, <code class="sourceCode javascript"><span class="st">&#39;animationcomplete&#39;</span></code>…</li>
-<li>Sonido: <code class="sourceCode javascript"><span class="st">&#39;stop&#39;</span></code>…</li>
+<li>Input: Teclado (<code
+class="sourceCode javascript"><span class="st">&#39;down&#39;</span></code>,
+<code
+class="sourceCode javascript"><span class="st">&#39;up&#39;</span></code>…),
+ratón (<code
+class="sourceCode javascript"><span class="st">&#39;pointerdown&#39;</span></code>,
+<code
+class="sourceCode javascript"><span class="st">&#39;wheel&#39;</span></code>…)</li>
+<li>Física en Arcade: <code
+class="sourceCode javascript"><span class="st">&#39;collider&#39;</span></code>,
+<code
+class="sourceCode javascript"><span class="st">&#39;overlap&#39;</span></code>…</li>
+<li>Física en Matter: <code
+class="sourceCode javascript"><span class="st">&#39;collisionstart&#39;</span></code>,
+<code
+class="sourceCode javascript"><span class="st">&#39;collisionend&#39;</span></code></li>
+<li>Animaciones de sprites: <code
+class="sourceCode javascript"><span class="st">&#39;animationrepeat&#39;</span></code>,
+<code
+class="sourceCode javascript"><span class="st">&#39;animationcomplete&#39;</span></code>…</li>
+<li>Sonido: <code
+class="sourceCode javascript"><span class="st">&#39;stop&#39;</span></code>…</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>Pero hay muchos más eventos en Phaser: <a href="https://newdocs.phaser.io/docs/3.55.2/events">Mirar en Events</a></p>
+<p>Pero hay muchos más eventos en Phaser: <a
+href="https://newdocs.phaser.io/docs/3.55.2/events">Mirar en
+Events</a></p>
 </section>
 <section id="suscripción-a-eventos" class="slide level2">
 <h2>Suscripción a eventos</h2>
-<p>Para responder a estos eventos nos tenemos que <strong>suscribir</strong> a ellos, es decir, debemos indicar qué funciones queremos que se ejecuten cuando se produzcan estos eventos.</p>
+<p>Para responder a estos eventos nos tenemos que
+<strong>suscribir</strong> a ellos, es decir, debemos indicar qué
+funciones queremos que se ejecuten cuando se produzcan estos
+eventos.</p>
 </section>
 <section class="slide level2">
 
 <p>En ocasiones, no somos conscientes de esta suscripción:</p>
 <ul>
-<li><code>init</code>, <code>create</code>, <code>update</code>… son las funciones que se ejecutarán en respuesta a los eventos del mismo nombre en la escena.</li>
-<li><code>add.collider</code> o <code>add.overlap</code> (al usar el motor de física de Arcade) tienen como parámetro el callback que se ejecutará en respuesta a los eventos de <code>collide</code> y <code>overlap</code></li>
+<li><code>init</code>, <code>create</code>, <code>update</code>… son las
+funciones que se ejecutarán en respuesta a los eventos del mismo nombre
+en la escena.</li>
+<li><code>add.collider</code> o <code>add.overlap</code> (al usar el
+motor de física de Arcade) tienen como parámetro el callback que se
+ejecutará en respuesta a los eventos de <code>collide</code> y
+<code>overlap</code></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>En otras ocasiones, nos suscribimos mediante las funciones <code>on</code> (y nos desenganchamos usando <code>off</code>) y <code>once</code> (solo escuchamos una vez el evento):</p>
+<p>En otras ocasiones, nos suscribimos mediante las funciones
+<code>on</code> (y nos desenganchamos usando <code>off</code>) y
+<code>once</code> (solo escuchamos una vez el evento):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// cuando se inicia la colisión</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">matter</span><span class="op">.</span><span class="at">world</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;collisionstart&#39;</span><span class="op">,</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    (evento<span class="op">,</span> cuerpo1<span class="op">,</span> cuerpo2) <span class="kw">=&gt;</span> {</span>
@@ -145,9 +179,12 @@
 </section>
 <section class="slide level2">
 
-<p>En general, la suscripción se hace <strong>una sola vez</strong>, generalmente en el <code>create</code> de las escenas o en el constructor de los Gameobjects.</p>
+<p>En general, la suscripción se hace <strong>una sola vez</strong>,
+generalmente en el <code>create</code> de las escenas o en el
+constructor de los Gameobjects.</p>
 <blockquote>
-<p>¡Cuidado con suscripciones en el <code>update</code> (se añade una función nueva a la que llamar en cada tick)!</p>
+<p>¡Cuidado con suscripciones en el <code>update</code> (se añade una
+función nueva a la que llamar en cada tick)!</p>
 </blockquote>
 </section>
 <section id="eventos-propios" class="slide level2">
@@ -184,10 +221,15 @@
 </section>
 <section class="slide level2">
 
-<p>Para hacer que una acción se produzca pasado un cierto tiempo usamos los <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Time.Clock">temporizadores (o relojes) de Phaser</a></p>
-<p>Crearemos un evento que se ejecute pasado un tiempo y nos suscribiremos a él</p>
+<p>Para hacer que una acción se produzca pasado un cierto tiempo usamos
+los <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Time.Clock">temporizadores
+(o relojes) de Phaser</a></p>
+<p>Crearemos un evento que se ejecute pasado un tiempo y nos
+suscribiremos a él</p>
 <blockquote>
-<p>¡Cuidado, no usar los métodos del navegador <code>setTimeout</code> y <code>setInterval</code>!</p>
+<p>¡Cuidado, no usar los métodos del navegador <code>setTimeout</code> y
+<code>setInterval</code>!</p>
 </blockquote>
 </section>
 <section class="slide level2">
@@ -224,8 +266,11 @@
 </section>
 <section class="slide level2">
 
-<p>Los temporizadores se pueden detener, cambiar la escala de tiempo…</p>
-<p><a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Time.Clock">Estudiad su API</a></p>
+<p>Los temporizadores se pueden detener, cambiar la escala de
+tiempo…</p>
+<p><a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Time.Clock">Estudiad
+su API</a></p>
 </section></section>
     </div>
   </div>

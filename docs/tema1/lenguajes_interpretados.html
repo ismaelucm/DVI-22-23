@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -97,16 +100,22 @@
 <h1>Lenguajes interpretados</h1>
 
 </section>
-<section id="lenguajes-compilados-a-código-máquina" class="slide level2">
+<section id="lenguajes-compilados-a-código-máquina"
+class="slide level2">
 <h2>Lenguajes compilados a código máquina</h2>
 <figure>
-<img data-src="compilar.dot.svg" alt="Funcionamiento (Ej. C++)" /><figcaption aria-hidden="true">Funcionamiento (Ej. C++)</figcaption>
+<img data-src="compilar.dot.svg" alt="Funcionamiento (Ej. C++)" />
+<figcaption aria-hidden="true">Funcionamiento (Ej. C++)</figcaption>
 </figure>
 </section>
-<section id="lenguajes-compilados-a-código-intermedio-bytecode" class="slide level2">
+<section id="lenguajes-compilados-a-código-intermedio-bytecode"
+class="slide level2">
 <h2>Lenguajes compilados a código intermedio (bytecode)</h2>
 <figure>
-<img data-src="compilado-bytecode.dot.svg" alt="Funcionamiento (Ej. C#, Java)" /><figcaption aria-hidden="true">Funcionamiento (Ej. C#, Java)</figcaption>
+<img data-src="compilado-bytecode.dot.svg"
+alt="Funcionamiento (Ej. C#, Java)" />
+<figcaption aria-hidden="true">Funcionamiento (Ej. C#,
+Java)</figcaption>
 </figure>
 </section>
 <section id="qué-son-lenguajes-interpretados" class="slide level2">
@@ -114,28 +123,44 @@
 </section>
 <section class="slide level2">
 
-<p>Los <a href="https://en.wikipedia.org/wiki/Interpreted_language">lenguajes interpretados</a> son lenguajes diseñados para describir programas que <strong>no</strong> se ejecutan en el procesador, sino en otro programa que emula a un procesador, llamado <strong>intérprete</strong></p>
+<p>Los <a
+href="https://en.wikipedia.org/wiki/Interpreted_language">lenguajes
+interpretados</a> son lenguajes diseñados para describir programas que
+<strong>no</strong> se ejecutan en el procesador, sino en otro programa
+que emula a un procesador, llamado <strong>intérprete</strong></p>
 <figure>
-<img data-src="interpretes.dot.svg" style="height:30.0%" alt="Esquema de lenguaje interpretado" /><figcaption aria-hidden="true">Esquema de lenguaje interpretado</figcaption>
+<img data-src="interpretes.dot.svg" style="height:30.0%"
+alt="Esquema de lenguaje interpretado" />
+<figcaption aria-hidden="true">Esquema de lenguaje
+interpretado</figcaption>
 </figure>
 </section>
 <section id="cómo-funcionan" class="slide level2">
 <h2>Cómo funcionan</h2>
 <figure>
-<img data-src="instrucciones.dot.svg" alt="Funcionamiento de un intérprete" /><figcaption aria-hidden="true">Funcionamiento de un intérprete</figcaption>
+<img data-src="instrucciones.dot.svg"
+alt="Funcionamiento de un intérprete" />
+<figcaption aria-hidden="true">Funcionamiento de un
+intérprete</figcaption>
 </figure>
 </section>
 <section id="en-comparación-con-los-compilados" class="slide level2">
 <h2>En comparación con los compilados</h2>
 <figure>
-<img data-src="compilado.dot.svg" alt="Funcionamiento de un programa compilado" /><figcaption aria-hidden="true">Funcionamiento de un programa compilado</figcaption>
+<img data-src="compilado.dot.svg"
+alt="Funcionamiento de un programa compilado" />
+<figcaption aria-hidden="true">Funcionamiento de un programa
+compilado</figcaption>
 </figure>
 </section>
 <section id="ecmascript" class="slide level2">
 <h2>ECMAScript</h2>
 <p>ECMAScript/JavaScript es el lenguaje de los navegadores</p>
-<p>Comenzó como un pequeño lenguaje que se interpretaba dentro de <a href="https://es.wikipedia.org/wiki/Netscape_Navigator">Netscape</a>, principalmente para incluir efectos y operaciones sencillas</p>
-<p><img data-src="netscape_logo.svg" style="width:50.0%" alt="Logo Netscape" /><br />
+<p>Comenzó como un pequeño lenguaje que se interpretaba dentro de <a
+href="https://es.wikipedia.org/wiki/Netscape_Navigator">Netscape</a>,
+principalmente para incluir efectos y operaciones sencillas</p>
+<p><img data-src="netscape_logo.svg" style="width:50.0%"
+alt="Logo Netscape" /><br />
 </p>
 </section></section>
 <section>
@@ -145,47 +170,62 @@
 </section>
 <section id="qué-son-los-lenguajes-dinámicos" class="slide level2">
 <h2>¿Qué son los lenguajes dinámicos?</h2>
-<p>Son lenguajes <em>diseñados para</em> hacer durante la ejecución lo que otros hacen cuando compilan</p>
-<p>Aunque no es una clasificación perfectamente formal, se esperan ciertos atributos en estos lenguajes</p>
+<p>Son lenguajes <em>diseñados para</em> hacer durante la ejecución lo
+que otros hacen cuando compilan</p>
+<p>Aunque no es una clasificación perfectamente formal, se esperan
+ciertos atributos en estos lenguajes</p>
 </section>
 <section id="evaluación" class="slide level2">
 <h2>Evaluación</h2>
-<p>Los lenguajes dinámicos suelen ser capaces de evaluar código generado dinámicamente, con una función de tipo <code class="sourceCode javascript">eval</code></p>
+<p>Los lenguajes dinámicos suelen ser capaces de evaluar código generado
+dinámicamente, con una función de tipo <code
+class="sourceCode javascript">eval</code></p>
 </section>
 <section id="objetos-dinámicos" class="slide level2">
 <h2>Objetos dinámicos</h2>
-<p>Los lenguajes dinámicos pueden cambiar los campos de sus estructuras de datos en tiempo de ejecución:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> a <span class="op">=</span> {}<span class="op">;</span>     <span class="co">// se define el objeto sin campos</span></span>
+<p>Los lenguajes dinámicos pueden cambiar los campos de sus estructuras
+de datos en tiempo de ejecución:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> a <span class="op">=</span> {}<span class="op">;</span>     <span class="co">// se define el objeto sin campos</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a<span class="op">.</span><span class="at">campo</span> <span class="op">=</span> <span class="st">&#39;hola&#39;</span><span class="op">;</span> <span class="co">// se añade un campo nuevo</span></span></code></pre></div>
 </section>
 <section id="introspección" class="slide level2">
 <h2>Introspección</h2>
-<p>Otra característica típica es la <em>introspección</em> (<em>reflection</em>), o conocer y cambiar las propiedades del programa en sí</p>
+<p>Otra característica típica es la <em>introspección</em>
+(<em>reflection</em>), o conocer y cambiar las propiedades del programa
+en sí</p>
 </section></section>
 <section>
-<section id="tipado-dinámico-y-estático" class="title-slide slide level1">
+<section id="tipado-dinámico-y-estático"
+class="title-slide slide level1">
 <h1>Tipado dinámico y estático</h1>
 
 </section>
 <section id="tipado-estático" class="slide level2">
 <h2>Tipado estático</h2>
-<p>Los lenguajes de tipado estático tienen sistemas para declarar y fijar el tipo de las variables, estructuras de datos y funciones</p>
+<p>Los lenguajes de tipado estático tienen sistemas para declarar y
+fijar el tipo de las variables, estructuras de datos y funciones</p>
 <p>Por ejemplo, a través de la declaración de tipos:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> suma<span class="op">(</span><span class="dt">int</span> x<span class="op">,</span> <span class="dt">int</span> y<span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> x <span class="op">+</span> y<span class="op">;</span> <span class="op">}</span></span></code></pre></div>
 </section>
 <section id="compilado-de-tipos-estáticos" class="slide level2">
 <h2>Compilado de tipos estáticos</h2>
-<p>El compilador tiene mecanismos para saber si una expresión tiene el tipo correcto, <em>durante la compilación</em>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> suma<span class="op">(</span><span class="dt">int</span> x<span class="op">,</span> <span class="dt">int</span> y<span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> x <span class="op">+</span> y<span class="op">;</span> <span class="op">}</span> </span>
+<p>El compilador tiene mecanismos para saber si una expresión tiene el
+tipo correcto, <em>durante la compilación</em>:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> suma<span class="op">(</span><span class="dt">int</span> x<span class="op">,</span> <span class="dt">int</span> y<span class="op">)</span> <span class="op">{</span> <span class="cf">return</span> x <span class="op">+</span> y<span class="op">;</span> <span class="op">}</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>suma<span class="op">(</span><span class="dv">4</span><span class="op">,</span> <span class="st">&quot;juan&quot;</span><span class="op">);</span> <span class="co">// el compilador lanza un error</span></span></code></pre></div>
 </section>
 <section id="tipado-dinámico" class="slide level2">
 <h2>Tipado dinámico</h2>
-<p>Los lenguajes de tipado dinámico, por el contrario, no tienen compiladores que comprueben el tipo</p>
-<p>Así que la corrección será comprobado más tarde, <em>durante la ejecución</em></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">resta</span>(x<span class="op">,</span> y) { <span class="cf">return</span> x <span class="op">-</span> y<span class="op">;</span> } </span>
+<p>Los lenguajes de tipado dinámico, por el contrario, no tienen
+compiladores que comprueben el tipo</p>
+<p>Así que la corrección será comprobado más tarde, <em>durante la
+ejecución</em></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">resta</span>(x<span class="op">,</span> y) { <span class="cf">return</span> x <span class="op">-</span> y<span class="op">;</span> } </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">resta</span>(<span class="dv">4</span><span class="op">,</span> <span class="st">&quot;juan&quot;</span>)<span class="op">;</span> <span class="co">// el intérprete no da error hasta que esto no se ejecuta</span></span></code></pre></div>
 </section></section>
@@ -196,8 +236,10 @@
 </section>
 <section id="javascript-1" class="slide level2">
 <h2>JavaScript</h2>
-<p>JavaScript es un dialecto de <a href="https://es.wikipedia.org/wiki/ECMAScript">ECMAScript</a></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> variable <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
+<p>JavaScript es un dialecto de <a
+href="https://es.wikipedia.org/wiki/ECMAScript">ECMAScript</a></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> variable <span class="op">=</span> <span class="dv">6</span><span class="op">;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(variable <span class="op">===</span> <span class="dv">5</span>) {</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Sí, es igual a 5.&quot;</span>)</span>
@@ -209,15 +251,19 @@
 <section id="javascript-2" class="slide level2">
 <h2>JavaScript</h2>
 <p>Su sintaxis es parecida a la de C/C++/Java (intencionadamente)</p>
-<p>Cuando JS fue creado, Java estaba muy de moda. Por eso se eligieron el nombre y la sintaxis</p>
+<p>Cuando JS fue creado, Java estaba muy de moda. Por eso se eligieron
+el nombre y la sintaxis</p>
 <blockquote>
 <p>Pero JavaScript tiene <strong>muy poco que ver con Java</strong></p>
 </blockquote>
 </section>
 <section id="javascript-en-los-navegadores" class="slide level2">
 <h2>JavaScript en los navegadores</h2>
-<p>Casi todos los navegadores “modernos” tienen dentro una máquina virtual que ejecuta JavaScript</p>
-<p>Además, tienen un API llamado DOM (<em>Document Object Model</em>) que permite acceder a las partes del documento (por ejemplo, acceder a un párrafo o imagen de una página web)</p>
+<p>Casi todos los navegadores “modernos” tienen dentro una máquina
+virtual que ejecuta JavaScript</p>
+<p>Además, tienen un API llamado DOM (<em>Document Object Model</em>)
+que permite acceder a las partes del documento (por ejemplo, acceder a
+un párrafo o imagen de una página web)</p>
 <!-- Prueba con el navegador para ver el acceso al DOM:
 document.getElementsByTagName("h2").forEach((item) => item.style.color = "red")
  -->
@@ -229,7 +275,12 @@ document.getElementsByTagName("h2").forEach((item) => item.style.color = "red")
 <li>Videojuegos (Phaser)</li>
 <li>IDEs (Construct, VSCode)</li>
 <li>Gmail, Calendar…</li>
-<li>Herramientas online: <a href="https://ledoux.itch.io/bitsy">Bitsy</a>, <a href="https://www.piskelapp.com/p/create/sprite">Piskel</a>, <a href="https://sfbgames.itch.io/chiptone">Chiptone</a>, <a href="https://www.codeandweb.com/free-sprite-sheet-packer">Spritesheet Packer</a>…</li>
+<li>Herramientas online: <a
+href="https://ledoux.itch.io/bitsy">Bitsy</a>, <a
+href="https://www.piskelapp.com/p/create/sprite">Piskel</a>, <a
+href="https://sfbgames.itch.io/chiptone">Chiptone</a>, <a
+href="https://www.codeandweb.com/free-sprite-sheet-packer">Spritesheet
+Packer</a>…</li>
 <li>Facebook, Instagram</li>
 <li>Scripting</li>
 <li><em>Servidores</em></li>
@@ -242,13 +293,17 @@ document.getElementsByTagName("h2").forEach((item) => item.style.color = "red")
 </section>
 <section id="en-el-navegador" class="slide level2">
 <h2>En el navegador</h2>
-<p>A lo largo del curso, escribiremos JavaScript que se ejecutará dentro del navegador</p>
-<p>Porque <strong>el navegador tiene incluido un intérprete de Javascript</strong></p>
-<p>Pero hay otros intérpretes que son capaces de interpretar JavaScript y <strong>algunos no son parte de un navegador</strong></p>
+<p>A lo largo del curso, escribiremos JavaScript que se ejecutará dentro
+del navegador</p>
+<p>Porque <strong>el navegador tiene incluido un intérprete de
+Javascript</strong></p>
+<p>Pero hay otros intérpretes que son capaces de interpretar JavaScript
+y <strong>algunos no son parte de un navegador</strong></p>
 </section>
 <section id="node.js" class="slide level2">
 <h2>Node.js</h2>
-<p><a href="https://nodejs.org/">Node.js</a> es un <em>intérprete</em> de JavaScript:</p>
+<p><a href="https://nodejs.org/">Node.js</a> es un <em>intérprete</em>
+de JavaScript:</p>
 <ol>
 <li>Recibe código JS como entrada</li>
 <li>Lo analiza (hace <em>parsing</em>)</li>
@@ -258,22 +313,28 @@ document.getElementsByTagName("h2").forEach((item) => item.style.color = "red")
 </section>
 <section id="node.js-como-máquina-virtual" class="slide level2">
 <h2>Node.js como máquina virtual</h2>
-<p>Por lo tanto, <code>Node.js</code> contiene una máquina virtual capaz de leer, entender y ejecutar JS</p>
+<p>Por lo tanto, <code>Node.js</code> contiene una máquina virtual capaz
+de leer, entender y ejecutar JS</p>
 <p>Una MV es sólo código, un programa que “simula” ser un ordenador</p>
-<p>Esta máquina se llama <a href="https://en.wikipedia.org/wiki/V8_(JavaScript_engine)">V8</a></p>
-<p><span class="fragment"><strong>V8</strong> es el motor de <a href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a>.</span></p>
+<p>Esta máquina se llama <a
+href="https://en.wikipedia.org/wiki/V8_(JavaScript_engine)">V8</a></p>
+<p><span class="fragment"><strong>V8</strong> es el motor de <a
+href="https://www.google.com/chrome/browser/desktop/index.html">Chrome</a>.</span></p>
 </section>
 <section id="usando-node.js" class="slide level2">
 <h2>Usando Node.js</h2>
 <p><code>Node.js</code> se puede usar desde línea de comandos:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> script.js</span>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> script.js</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecuta el contenido de script.js</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>También lo podemos usar como un <a href="https://es.wikipedia.org/wiki/REPL">REPL</a>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">➜</span> node</span>
+<p>También lo podemos usar como un <a
+href="https://es.wikipedia.org/wiki/REPL">REPL</a>:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">➜</span> node</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Welcome</span> to Node.js v12.8.1.</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Type</span> <span class="st">&quot;.help&quot;</span> for more information.</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> console.log<span class="kw">(</span><span class="st">&quot;Probando&quot;</span><span class="kw">)</span></span>
@@ -322,7 +383,7 @@ document.getElementsByTagName("h2").forEach((item) => item.style.color = "red")
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -331,7 +392,7 @@ document.getElementsByTagName("h2").forEach((item) => item.style.color = "red")
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

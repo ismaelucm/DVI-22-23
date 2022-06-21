@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -30,20 +33,23 @@
 </section>
 
 <section>
-<section id="el-tema-del-curso-21-22-es" class="title-slide slide level1">
+<section id="el-tema-del-curso-21-22-es"
+class="title-slide slide level1">
 <h1>El tema del curso 21-22 es…</h1>
 
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="hitchcock.jpg" alt="Pista 1" /><figcaption aria-hidden="true">Pista 1</figcaption>
+<img data-src="hitchcock.jpg" alt="Pista 1" />
+<figcaption aria-hidden="true">Pista 1</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="hitchcock2.jpg" alt="Pista 2" /><figcaption aria-hidden="true">Pista 2</figcaption>
+<img data-src="hitchcock2.jpg" alt="Pista 2" />
+<figcaption aria-hidden="true">Pista 2</figcaption>
 </figure>
 </section>
 <section id="alfred-hitchcock" class="slide level2">
@@ -68,8 +74,12 @@
 <h2>Para estudiar</h2>
 <ul>
 <li>Ved alguna de sus películas</li>
-<li><a href="https://www.alianzaeditorial.es/libro/varios/el-cine-segun-hitchcock-francois-truffaut-9788420674278/">El cine según Hitchcock, Francois Truffaut</a></li>
-<li>Podcasts como <a href="https://www.ivoox.com/podcast-todopoderosos_sq_f1147805_1.html">Todopoderosos</a> (5 capítulos de 2 horas)</li>
+<li><a
+href="https://www.alianzaeditorial.es/libro/varios/el-cine-segun-hitchcock-francois-truffaut-9788420674278/">El
+cine según Hitchcock, Francois Truffaut</a></li>
+<li>Podcasts como <a
+href="https://www.ivoox.com/podcast-todopoderosos_sq_f1147805_1.html">Todopoderosos</a>
+(5 capítulos de 2 horas)</li>
 <li>Cualquier material adicional que encontréis (y compartáis)</li>
 </ul>
 </section></section>
@@ -113,7 +123,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -122,7 +132,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

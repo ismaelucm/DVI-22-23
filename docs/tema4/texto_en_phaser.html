@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -93,23 +96,35 @@
 </section>
 
 <section>
-<section id="crear-texto-usando-fuentes-del-sistema" class="title-slide slide level1">
+<section id="crear-texto-usando-fuentes-del-sistema"
+class="title-slide slide level1">
 <h1>Crear texto usando fuentes del sistema</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Para crear texto simplemente podemos usar la clase <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Text"><code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Text</span></code></a> con la factoría de Phaser <code class="sourceCode javascript">add<span class="op">.</span><span class="at">text</span></code> de <code class="sourceCode javascript">Scene</code></p>
+<p>Para crear texto simplemente podemos usar la clase <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Text"><code
+class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Text</span></code></a>
+con la factoría de Phaser <code
+class="sourceCode javascript">add<span class="op">.</span><span class="at">text</span></code>
+de <code class="sourceCode javascript">Scene</code></p>
 </section>
 <section class="slide level2">
 
-<p>Pero podemos modificar los atributos de <code class="sourceCode javascript">text</code> para cambiar su aspecto como:</p>
+<p>Pero podemos modificar los atributos de <code
+class="sourceCode javascript">text</code> para cambiar su aspecto
+como:</p>
 <ul>
-<li><code class="sourceCode javascript">setAlign</code>: alineación del texto</li>
-<li><code class="sourceCode javascript">setFont</code>: tipo de letra</li>
+<li><code class="sourceCode javascript">setAlign</code>: alineación del
+texto</li>
+<li><code class="sourceCode javascript">setFont</code>: tipo de
+letra</li>
 <li><code class="sourceCode javascript">setFontSize</code>: tamaño</li>
-<li><code class="sourceCode javascript">setStroke</code>: color del borde y grosor</li>
-<li><code class="sourceCode javascript">setFill</code>: color de relleno</li>
+<li><code class="sourceCode javascript">setStroke</code>: color del
+borde y grosor</li>
+<li><code class="sourceCode javascript">setFill</code>: color de
+relleno</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -132,41 +147,60 @@
 </section>
 <section id="texto-en-ui" class="slide level2">
 <h2>Texto en UI</h2>
-<p>Muchas veces, el texto se utiliza como parte de la UI del juego (puntuación, vidas…)</p>
-<p>Pero el texto creado tal cual lo hemos hecho tiene una posición en la escena y, por tanto, se queda fijo al mover la cámara y puede desaparecer de la escena.</p>
+<p>Muchas veces, el texto se utiliza como parte de la UI del juego
+(puntuación, vidas…)</p>
+<p>Pero el texto creado tal cual lo hemos hecho tiene una posición en la
+escena y, por tanto, se queda fijo al mover la cámara y puede
+desaparecer de la escena.</p>
 </section>
 <section class="slide level2">
 
-<p><strong>Solución</strong>: Recordad que algunos GameObject tienen un método <a href="https://newdocs.phaser.io/docs/3.52.0/Phaser.GameObjects.Sprite#setScrollFactor"><code>SetScrollFactor</code></a> que controla el movimiento de un objeto con respecto al de la cámara</p>
+<p><strong>Solución</strong>: Recordad que algunos GameObject tienen un
+método <a
+href="https://newdocs.phaser.io/docs/3.52.0/Phaser.GameObjects.Sprite#setScrollFactor"><code>SetScrollFactor</code></a>
+que controla el movimiento de un objeto con respecto al de la cámara</p>
 </section>
 <section id="botones-con-texto" class="slide level2">
 <h2>Botones con texto</h2>
-<p>Se puede crear un botón fácilmente usando un texto interactivo y añadiendo un evento de <code>onpointerdown</code>:</p>
+<p>Se puede crear un botón fácilmente usando un texto interactivo y
+añadiendo un evento de <code>onpointerdown</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> button <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">text</span>(<span class="op">...</span>)<span class="op">.</span><span class="fu">setInteractive</span>()<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>button<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerdown&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// hacer algo</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 </section></section>
 <section>
-<section id="problema-de-las-fuentes-del-sistema" class="title-slide slide level1">
+<section id="problema-de-las-fuentes-del-sistema"
+class="title-slide slide level1">
 <h1>Problema de las fuentes del sistema</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Una fuente de nuestra máquina puede no estar disponible en la máquina del usuario.</p>
-<p>¿Solución? Usar <a href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">fuentes estándar</a>, crear nuestras propias fuentes de mapa de bits (bitmap fonts) o usar fuentes Web (<strong>webfonts</strong>) como <a href="https://fonts.google.com/">Google Fonts</a></p>
+<p>Una fuente de nuestra máquina puede no estar disponible en la máquina
+del usuario.</p>
+<p>¿Solución? Usar <a
+href="https://www.w3schools.com/cssref/css_websafe_fonts.asp">fuentes
+estándar</a>, crear nuestras propias fuentes de mapa de bits (bitmap
+fonts) o usar fuentes Web (<strong>webfonts</strong>) como <a
+href="https://fonts.google.com/">Google Fonts</a></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="bitmapfont.png" alt="Bitmap Fonts" /><figcaption aria-hidden="true">Bitmap Fonts</figcaption>
+<img data-src="bitmapfont.png" alt="Bitmap Fonts" />
+<figcaption aria-hidden="true">Bitmap Fonts</figcaption>
 </figure>
 </section>
 <section id="texto-con-fuentes-de-mapa-de-bits" class="slide level2">
 <h2>Texto con fuentes de mapa de bits</h2>
-<p>Para cargar una fuente de mapa de bits hay que usar <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Loader.LoaderPlugin#bitmapFont"><code class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>()</code></a> en el <code class="sourceCode javascript">preload</code></p>
-<p>Hay que pasarle el bitmap (en <a href="https://es.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>, por ejemplo) con las fuentes y el XML que las describe</p>
+<p>Para cargar una fuente de mapa de bits hay que usar <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Loader.LoaderPlugin#bitmapFont"><code
+class="sourceCode javascript">scene<span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">bitmapFont</span>()</code></a>
+en el <code class="sourceCode javascript">preload</code></p>
+<p>Hay que pasarle el bitmap (en <a
+href="https://es.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>,
+por ejemplo) con las fuentes y el XML que las describe</p>
 </section>
 <section class="slide level2">
 
@@ -185,8 +219,10 @@
 <p>Para generar el XML y el mapa de bits podemos usar:</p>
 <ul>
 <li><a href="https://snowb.org/">SnowB BMF</a> (online)</li>
-<li><a href="http://www.angelcode.com/products/bmfont/">Bmfont</a> (Windows)</li>
-<li><a href="https://www.71squared.com/glyphdesigner">Glyph Designer</a></li>
+<li><a href="http://www.angelcode.com/products/bmfont/">Bmfont</a>
+(Windows)</li>
+<li><a href="https://www.71squared.com/glyphdesigner">Glyph
+Designer</a></li>
 </ul>
 </section></section>
 <section>
@@ -196,7 +232,8 @@
 </section>
 <section class="slide level2">
 
-<p>Podemos cargar fuentes desde la web, por ejemplo desde <a href="https://fonts.google.com/">Google Fonts</a></p>
+<p>Podemos cargar fuentes desde la web, por ejemplo desde <a
+href="https://fonts.google.com/">Google Fonts</a></p>
 <p>Hay que cargar la fuente previamente antes de usarla</p>
 </section>
 <section class="slide level2">
@@ -208,7 +245,8 @@
 </section>
 <section class="slide level2">
 
-<p>Después, llamamos a <code class="sourceCode javascript">WebFont<span class="op">.</span><span class="fu">load</span>()</code>:</p>
+<p>Después, llamamos a <code
+class="sourceCode javascript">WebFont<span class="op">.</span><span class="fu">load</span>()</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es Scene</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create</span>(){</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> self <span class="op">=</span> <span class="kw">this</span><span class="op">;</span> <span class="co">// Para usarlo en active</span></span>
@@ -227,13 +265,16 @@
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
-<section id="problemas-de-las-google-fonts-u-otras-fuentes-web" class="slide level2">
+<section id="problemas-de-las-google-fonts-u-otras-fuentes-web"
+class="slide level2">
 <h2>¿Problemas de las Google Fonts u otras fuentes Web?</h2>
-<p>Que dependemos de ellas para que el juego funcione y no tenemos control sobre ellas</p>
+<p>Que dependemos de ellas para que el juego funcione y no tenemos
+control sobre ellas</p>
 </section>
 <section id="solución" class="slide level2">
 <h2>Solución</h2>
-<p>Almacenar las fuentes de nuestro juego en el servidor y cargarlas.</p>
+<p>Almacenar las fuentes de nuestro juego en el servidor y
+cargarlas.</p>
 <p>Las podemos guardar en <code>/assets/fonts</code></p>
 </section>
 <section class="slide level2">

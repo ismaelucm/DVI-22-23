@@ -23,7 +23,7 @@ io.on('connection', socket => {
         mensaje === 'armas' ?
            {espada: 400, escudo: 200} :
            {naranja: 10, limon: 15};
-
+        
     // para enviar algo, usamos `emit`
     // que tiene un nombre de mensaje,
     // y un objeto

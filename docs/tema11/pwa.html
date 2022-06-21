@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,7 +102,8 @@
 </section>
 <section class="slide level2">
 
-<p>Son aplicaciones web (HTML, JS, CSS), pero con ciertas cosas especiales que permiten:</p>
+<p>Son aplicaciones web (HTML, JS, CSS), pero con ciertas cosas
+especiales que permiten:</p>
 <ul>
 <li>Funcionar sin conexión</li>
 <li>Usar notificaciones nativas</li>
@@ -110,24 +114,32 @@
 </section>
 <section class="slide level2">
 
-<p>Aunque sean, técnicamente, una página web, reemplazan a las aplicaciones nativas</p>
-<p>Además, <em>el mismo código nos vale para una aplicación en escritorio, móvil y web</em></p>
+<p>Aunque sean, técnicamente, una página web, reemplazan a las
+aplicaciones nativas</p>
+<p>Además, <em>el mismo código nos vale para una aplicación en
+escritorio, móvil y web</em></p>
 </section>
 <section id="por-qué-progressive" class="slide level2">
 <h2>¿Por qué “progressive”?</h2>
-<p>Son “progresivas” porque se diseñan con la estrategia de “mejorado progresivo”</p>
+<p>Son “progresivas” porque se diseñan con la estrategia de “mejorado
+progresivo”</p>
 </section>
 <section class="slide level2">
 
-<p>El mejorado progresive consiste en diseñar un núcleo básico fundamental (contenido y estructura básica), e ir añadiendo capas de funcionalidad sobre ese núcleo</p>
+<p>El mejorado progresive consiste en diseñar un núcleo básico
+fundamental (contenido y estructura básica), e ir añadiendo capas de
+funcionalidad sobre ese núcleo</p>
 </section>
 <section class="slide level2">
 
-<p>Por ejemplo, una PWA bien hecha funcionará sin conexión en navegadores nuevos, y sin conexión en los viejos, pero aún así <em>podrá verse su contenido</em></p>
+<p>Por ejemplo, una PWA bien hecha funcionará sin conexión en
+navegadores nuevos, y sin conexión en los viejos, pero aún así <em>podrá
+verse su contenido</em></p>
 </section>
 <section class="slide level2">
 
-<p>Para hacer una PWA sencilla, sólo hay que hacer una página web (aplicación), y añadir ciertas cosas</p>
+<p>Para hacer una PWA sencilla, sólo hay que hacer una página web
+(aplicación), y añadir ciertas cosas</p>
 </section></section>
 <section>
 <section id="manifest" class="title-slide slide level1">
@@ -136,15 +148,20 @@
 </section>
 <section class="slide level2">
 
-<p>El <a href="https://web.dev/add-manifest/">manifiesto</a> es un archivo de texto con datos (JSON) que describe nuestra aplicación progresiva</p>
+<p>El <a href="https://web.dev/add-manifest/">manifiesto</a> es un
+archivo de texto con datos (JSON) que describe nuestra aplicación
+progresiva</p>
 </section>
 <section class="slide level2">
 
-<p>Cuando hay un archivo <code>manifest.json</code> (o como le queramos llamar) apuntado por nuestro <code>index.html</code>, el navegador sabrá que tenemos una PWA</p>
+<p>Cuando hay un archivo <code>manifest.json</code> (o como le queramos
+llamar) apuntado por nuestro <code>index.html</code>, el navegador sabrá
+que tenemos una PWA</p>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;short_name&quot;</span><span class="fu">:</span> <span class="st">&quot;Nombre corto&quot;</span><span class="fu">,</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Nombre largo de mi aplicación chula&quot;</span><span class="fu">,</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;La mejor PWA que existe&quot;</span><span class="fu">,</span></span>
@@ -158,12 +175,16 @@
 <section class="slide level2">
 
 <p>Es importante declarar el “manifest” en <code>index.html</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;manifest&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;manifest.json&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">&quot;manifest&quot;</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;manifest.json&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Para que en el móvil se vea como una aplicación “nativa” en vez de como una pestaña de navegador, añadimos esto a <code>manifest.json</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span>  <span class="dt">&quot;display&quot;</span><span class="fu">:</span> <span class="st">&quot;standalone&quot;</span>  <span class="fu">}</span></span></code></pre></div>
+<p>Para que en el móvil se vea como una aplicación “nativa” en vez de
+como una pestaña de navegador, añadimos esto a
+<code>manifest.json</code>:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span>  <span class="dt">&quot;display&quot;</span><span class="fu">:</span> <span class="st">&quot;standalone&quot;</span>  <span class="fu">}</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="service-workers" class="title-slide slide level1">
@@ -172,7 +193,8 @@
 </section>
 <section class="slide level2">
 
-<p>Son scripts que se ejecutan en navegador, <em>independientemente de una página web</em></p>
+<p>Son scripts que se ejecutan en navegador, <em>independientemente de
+una página web</em></p>
 </section>
 <section class="slide level2">
 
@@ -181,31 +203,41 @@
 <section class="slide level2">
 
 <p>Sólo funcionan con HTTPS</p>
-<p>(Pero nos deja funcionar sin HTTPS cuando el dominio es <code>localhost</code>)</p>
+<p>(Pero nos deja funcionar sin HTTPS cuando el dominio es
+<code>localhost</code>)</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ver_service_workers.png" alt="Se pueden ver los Service Workers que están activos en “Application”" /><figcaption aria-hidden="true">Se pueden ver los Service Workers que están activos en “Application”</figcaption>
+<img data-src="ver_service_workers.png"
+alt="Se pueden ver los Service Workers que están activos en “Application”" />
+<figcaption aria-hidden="true">Se pueden ver los Service Workers que
+están activos en “Application”</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Gracias a la tecnología de service workers, podemos <em>instalar</em> uno desde nuestra página web</p>
-<p>(Para esto, obviamente, necesitamos haber accedido a nuestra página por primera vez)</p>
+<p>Gracias a la tecnología de service workers, podemos <em>instalar</em>
+uno desde nuestra página web</p>
+<p>(Para esto, obviamente, necesitamos haber accedido a nuestra página
+por primera vez)</p>
 </section>
 <section class="slide level2">
 
-<p>Cuando el service worker esté instalado, el navegador recordará que hay uno en nuestro dominio (la raíz de la URL), y lo usará cuando volvamos a intentar acceder a ese dominio</p>
+<p>Cuando el service worker esté instalado, el navegador recordará que
+hay uno en nuestro dominio (la raíz de la URL), y lo usará cuando
+volvamos a intentar acceder a ese dominio</p>
 <p><strong>Aunque estemos sin conexión</strong></p>
 </section>
 <section id="instalar-un-service-worker" class="slide level2">
 <h2>Instalar un service worker</h2>
-<p>Para instalar un service worker, sólo hay que ejecutar algo de código JavaScript en nuestro <code>index.html</code></p>
+<p>Para instalar un service worker, sólo hay que ejecutar algo de código
+JavaScript en nuestro <code>index.html</code></p>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// si nuestro navegador ejecuta service workers</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="st">&#39;serviceWorker&#39;</span> <span class="kw">in</span> <span class="bu">navigator</span>) {</span>
@@ -222,39 +254,58 @@
 </section>
 <section class="slide level2">
 
-<p>En el código anterior, nuestro service worker estará en <code>sw.js</code> (lo veremos un poco más adelante)</p>
+<p>En el código anterior, nuestro service worker estará en
+<code>sw.js</code> (lo veremos un poco más adelante)</p>
 </section>
 <section id="borrar-service" class="slide level2">
 <h2>Borrar service</h2>
 <figure>
-<img data-src="unregister_sw.png" alt="Podemos borrar un service worker instalado por una página con “Unregister”" /><figcaption aria-hidden="true">Podemos borrar un service worker instalado por una página con “Unregister”</figcaption>
+<img data-src="unregister_sw.png"
+alt="Podemos borrar un service worker instalado por una página con “Unregister”" />
+<figcaption aria-hidden="true">Podemos borrar un service worker
+instalado por una página con “Unregister”</figcaption>
 </figure>
 </section>
 <section id="cache-de-archivos" class="slide level2">
 <h2>Cache de archivos</h2>
-<p>A través de un service worker, podemos acceder al almacenamiento de cache del navegador</p>
-<p>Aquí podremos almacenar archivos (<code>index.html</code>, <code>app.js</code>, <code>dude.png</code>, <code>fondo.css</code>), que estarán disponibles para acceso, independientemente del estado de la conexión</p>
+<p>A través de un service worker, podemos acceder al almacenamiento de
+cache del navegador</p>
+<p>Aquí podremos almacenar archivos (<code>index.html</code>,
+<code>app.js</code>, <code>dude.png</code>, <code>fondo.css</code>), que
+estarán disponibles para acceso, independientemente del estado de la
+conexión</p>
 </section>
 <section class="slide level2">
 
-<p>En un <em>almacenamiento local al navegador</em>, lo que quiere decir que si vamos a otro navegador (o a otro ordenador), no estarán los archivos ahí</p>
+<p>En un <em>almacenamiento local al navegador</em>, lo que quiere decir
+que si vamos a otro navegador (o a otro ordenador), no estarán los
+archivos ahí</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="recurso_almacenado_cache.png" alt="Podemos ver qué recursos se han almacenado en la cache" /><figcaption aria-hidden="true">Podemos ver qué recursos se han almacenado en la cache</figcaption>
+<img data-src="recurso_almacenado_cache.png"
+alt="Podemos ver qué recursos se han almacenado en la cache" />
+<figcaption aria-hidden="true">Podemos ver qué recursos se han
+almacenado en la cache</figcaption>
 </figure>
 </section>
 <section id="borrar-datos-de-la-cache" class="slide level2">
 <h2>Borrar datos de la cache</h2>
 <figure>
-<img data-src="borrar_cache_sw.png" alt="Con el botón derecho sobre el ítem de cache, podemos borrarla para forzar una recarga" /><figcaption aria-hidden="true">Con el botón derecho sobre el ítem de cache, podemos borrarla para forzar una recarga</figcaption>
+<img data-src="borrar_cache_sw.png"
+alt="Con el botón derecho sobre el ítem de cache, podemos borrarla para forzar una recarga" />
+<figcaption aria-hidden="true">Con el botón derecho sobre el ítem de
+cache, podemos borrarla para forzar una recarga</figcaption>
 </figure>
 </section>
 <section id="borrar-todo" class="slide level2">
 <h2>¡Borrar todo!</h2>
 <figure>
-<img data-src="clear_site_data.png" alt="También podemos borrar todo lo guardado en el sitio con Clear site data" /><figcaption aria-hidden="true">También podemos borrar todo lo guardado en el sitio con <code>Clear site data</code></figcaption>
+<img data-src="clear_site_data.png"
+alt="También podemos borrar todo lo guardado en el sitio con Clear site data" />
+<figcaption aria-hidden="true">También podemos borrar todo lo guardado
+en el sitio con <code>Clear site data</code></figcaption>
 </figure>
 </section></section>
 <section>
@@ -264,17 +315,24 @@
 </section>
 <section class="slide level2">
 
-<p>Para tener una aplicación web que funcione sin conexión, simplemente guardaremos los archivos en una cache</p>
-<p>Después, tendremos un service worker que almacene los archivos, y los recupere cuando volvamos a una URL</p>
+<p>Para tener una aplicación web que funcione sin conexión, simplemente
+guardaremos los archivos en una cache</p>
+<p>Después, tendremos un service worker que almacene los archivos, y los
+recupere cuando volvamos a una URL</p>
 </section>
 <section class="slide level2">
 
-<p>Y, cuando haya una versión nueva de los archivos (sólo lo sabremos cuando estemos conectados) que actualice la cache</p>
+<p>Y, cuando haya una versión nueva de los archivos (sólo lo sabremos
+cuando estemos conectados) que actualice la cache</p>
 </section>
 <section class="slide level2">
 
-<p>Para hacer el <em>caching</em> de archivos, y luego acceder a ellos, podríamos usar la API de service workers</p>
-<p>Pero vamos a usar <a href="https://developers.google.com/web/tools/workbox/"><code>workbox</code></a>, que es una librería que nos ahorra casi todo el trabajo con los service workers</p>
+<p>Para hacer el <em>caching</em> de archivos, y luego acceder a ellos,
+podríamos usar la API de service workers</p>
+<p>Pero vamos a usar <a
+href="https://developers.google.com/web/tools/workbox/"><code>workbox</code></a>,
+que es una librería que nos ahorra casi todo el trabajo con los service
+workers</p>
 </section>
 <section class="slide level2">
 
@@ -294,12 +352,15 @@
 </section>
 <section id="revisiones" class="slide level2">
 <h2>Revisiones</h2>
-<p>Vemos que hemos puesto <code class="sourceCode javascript">{<span class="dt">revision</span><span class="op">:</span> <span class="kw">null</span>}</code></p>
-<p>Esto quiere decir que no hay información de revisión, y que la cache no se actualizará cuando haya modificaciones</p>
+<p>Vemos que hemos puesto <code
+class="sourceCode javascript">{<span class="dt">revision</span><span class="op">:</span> <span class="kw">null</span>}</code></p>
+<p>Esto quiere decir que no hay información de revisión, y que la cache
+no se actualizará cuando haya modificaciones</p>
 </section>
 <section class="slide level2">
 
-<p>En <code>workbox</code>, esta información de revisiones es necesaria para que el navegador reconozca qué archivos han cambiado</p>
+<p>En <code>workbox</code>, esta información de revisiones es necesaria
+para que el navegador reconozca qué archivos han cambiado</p>
 </section>
 <section class="slide level2">
 
@@ -307,7 +368,9 @@
 </section>
 <section id="workbox-cli" class="slide level2">
 <h2><code>workbox-cli</code></h2>
-<p><code>workbox</code> ofrece una aplicación de línea de comandos que se encargará de gestionar el valor de <code class="sourceCode javascript">revision</code></p>
+<p><code>workbox</code> ofrece una aplicación de línea de comandos que
+se encargará de gestionar el valor de <code
+class="sourceCode javascript">revision</code></p>
 </section>
 <section class="slide level2">
 
@@ -329,29 +392,36 @@
 </section>
 <section class="slide level2">
 
-<p>Con esto, dejando las opciones por defecto, nos creará un archivo <code>sw.js</code> (podemos cambiarle el nombre)</p>
-<p>Este archivo reemplaza al que habíamos hecho a mano (así que no hay que hacerlo)</p>
+<p>Con esto, dejando las opciones por defecto, nos creará un archivo
+<code>sw.js</code> (podemos cambiarle el nombre)</p>
+<p>Este archivo reemplaza al que habíamos hecho a mano (así que no hay
+que hacerlo)</p>
 </section>
 <section class="slide level2">
 
-<p>Este archivo <code>sw.js</code> tiene nuestro nuevo service worker, que gestiona el cache y las revisiones</p>
+<p>Este archivo <code>sw.js</code> tiene nuestro nuevo service worker,
+que gestiona el cache y las revisiones</p>
 </section>
 <section class="slide level2">
 
-<p>Así, cuando hagamos cambios, la revisión cambiará y el navegador recargará el recurso</p>
-<p><em>Hay que llamar a este comando cada vez que hagamos cambios</em></p>
+<p>Así, cuando hagamos cambios, la revisión cambiará y el navegador
+recargará el recurso</p>
+<p><em>Hay que llamar a este comando cada vez que hagamos
+cambios</em></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para regenerar una versión, simplemente usamos la herramienta</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Esto asume que nuestra configuración se llama `workbox-config.js`</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> workbox generateSW</span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Si hacemos un cambio, pero no regeramos el SW, no se recargará en el navegador</p>
+<p>Si hacemos un cambio, pero no regeramos el SW, no se recargará en el
+navegador</p>
 </section>
 <section class="slide level2">
 
 <p>En resumen:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar node.js (que viene con `npm`)</span></span>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar node.js (que viene con `npm`)</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ruta_a_la_carpeta_de_mi_proyecto</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> init <span class="at">--yes</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-D</span> workbox-cli</span>
@@ -367,28 +437,36 @@
 </section>
 <section class="slide level2">
 
-<p>Tener que ejecutar <code>generateSW</code> cada vez que hacemos algo para probar es tedioso</p>
+<p>Tener que ejecutar <code>generateSW</code> cada vez que hacemos algo
+para probar es tedioso</p>
 </section>
 <section class="slide level2">
 
-<p>Una solución es desarrollar nuestra <em>app</em> como una aplicación web sin service workers, y desplegarla cuando sea necesario</p>
+<p>Una solución es desarrollar nuestra <em>app</em> como una aplicación
+web sin service workers, y desplegarla cuando sea necesario</p>
 <p>Así es mucho más rápido</p>
 </section>
 <section class="slide level2">
 
 <p>Para eso, podemos tener:</p>
 <ul>
-<li>un <code>index.html</code> que haga referencia al service worker</li>
-<li>un <code>devel.html</code> que sea igual, pero que no use el service worker</li>
+<li>un <code>index.html</code> que haga referencia al service
+worker</li>
+<li>un <code>devel.html</code> que sea igual, pero que no use el service
+worker</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>Así, usaremos <code>devel.html</code> en desarrollo, pero desplegaremos con <code>index.html</code></p>
+<p>Así, usaremos <code>devel.html</code> en desarrollo, pero
+desplegaremos con <code>index.html</code></p>
 </section>
 <section id="app-shell" class="slide level2">
 <h2>App shell</h2>
-<p>El modelo de desarrollo de “app shell” consiste en hacer caching de todo el <em>núcleo</em> de la aplicación (los HTML, CSS y JS que definen la funcionalidad y la interfaz), y hacer que los datos (que podrían cambiar) se carguen <em>dinámicamente</em></p>
+<p>El modelo de desarrollo de “app shell” consiste en hacer caching de
+todo el <em>núcleo</em> de la aplicación (los HTML, CSS y JS que definen
+la funcionalidad y la interfaz), y hacer que los datos (que podrían
+cambiar) se carguen <em>dinámicamente</em></p>
 </section></section>
 <section>
 <section id="almacenamiento-local" class="title-slide slide level1">
@@ -397,33 +475,46 @@
 </section>
 <section class="slide level2">
 
-<p>Las PWA se pueden beneficiar del <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">API de almacenamiento local</a></p>
+<p>Las PWA se pueden beneficiar del <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">API
+de almacenamiento local</a></p>
 </section>
 <section id="usar-localstorage" class="slide level2">
 <h2>Usar <code>localStorage</code></h2>
 </section>
 <section class="slide level2">
 
-<p>Existe una variable <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"><code class="sourceCode javascript">localStorage</code></a>, que es un objeto que permite guardar y leer valores</p>
-<p>Estos valores se mantienen <em>entre sesiones</em> (a diferencia de <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage"><code class="sourceCode javascript">sessionStorage</code></a>), y cada dominio tiene su propio objeto</p>
+<p>Existe una variable <a
+href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"><code
+class="sourceCode javascript">localStorage</code></a>, que es un objeto
+que permite guardar y leer valores</p>
+<p>Estos valores se mantienen <em>entre sesiones</em> (a diferencia de
+<a
+href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage"><code
+class="sourceCode javascript">sessionStorage</code></a>), y cada dominio
+tiene su propio objeto</p>
 </section>
 <section class="slide level2">
 
 <p>Añadir o modificar una clave:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>localStorage<span class="op">.</span><span class="fu">setItem</span>(<span class="st">&#39;clave&#39;</span><span class="op">,</span> <span class="dv">6</span>)</span>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>localStorage<span class="op">.</span><span class="fu">setItem</span>(<span class="st">&#39;clave&#39;</span><span class="op">,</span> <span class="dv">6</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>localStorage<span class="op">.</span><span class="at">clave</span> <span class="op">=</span> <span class="dv">6</span></span></code></pre></div>
-<p><strong>La clave se guarda siempre como <code class="sourceCode javascript">string</code></strong></p>
+<p><strong>La clave se guarda siempre como <code
+class="sourceCode javascript">string</code></strong></p>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// para acceder al valor</span></span>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// para acceder al valor</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>localStorage<span class="op">.</span><span class="fu">getItem</span>(<span class="st">&#39;clave&#39;</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>localStorage<span class="op">.</span><span class="at">clave</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Borrar:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// borrar una clave</span></span>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// borrar una clave</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>localStorage<span class="op">.</span><span class="fu">removeItem</span>(<span class="st">&#39;clave&#39;</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">// borrar todo</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>localStorage<span class="op">.</span><span class="fu">clear</span>()</span></code></pre></div>
@@ -431,7 +522,10 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="localstorage_chrome.png" alt="Se puede ver la lista de datos guardados, por dominio" /><figcaption aria-hidden="true">Se puede ver la lista de datos guardados, por dominio</figcaption>
+<img data-src="localstorage_chrome.png"
+alt="Se puede ver la lista de datos guardados, por dominio" />
+<figcaption aria-hidden="true">Se puede ver la lista de datos guardados,
+por dominio</figcaption>
 </figure>
 </section></section>
 <section>
@@ -441,17 +535,23 @@
 </section>
 <section class="slide level2">
 
-<p>Chrome incluye un sistema de auditoría de calidad de PWA, <a href="https://developers.google.com/web/tools/lighthouse#devtools">Lighthouse</a></p>
+<p>Chrome incluye un sistema de auditoría de calidad de PWA, <a
+href="https://developers.google.com/web/tools/lighthouse#devtools">Lighthouse</a></p>
 </section>
 <section class="slide level2">
 
-<p>Lighthouse nos emite un informe de la página en la que estamos, dándonos nota a cada apartado</p>
-<p>En particular, nos evalúa si la aplicación cumple los estándares de una PWA</p>
+<p>Lighthouse nos emite un informe de la página en la que estamos,
+dándonos nota a cada apartado</p>
+<p>En particular, nos evalúa si la aplicación cumple los estándares de
+una PWA</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="lighthouse.png" style="width:60.0%" alt="Para arrancar la auditoría, sólo hay que seleccionar las opciones y darle al botón" /><figcaption aria-hidden="true">Para arrancar la auditoría, sólo hay que seleccionar las opciones y darle al botón</figcaption>
+<img data-src="lighthouse.png" style="width:60.0%"
+alt="Para arrancar la auditoría, sólo hay que seleccionar las opciones y darle al botón" />
+<figcaption aria-hidden="true">Para arrancar la auditoría, sólo hay que
+seleccionar las opciones y darle al botón</figcaption>
 </figure>
 </section></section>
 <section>
@@ -461,22 +561,31 @@
 </section>
 <section class="slide level2">
 
-<p>Para probar la aplicación en un móvil, podemos ir a nuestro dispositivo y cargar la URL (en Chrome, por ejemplo)</p>
+<p>Para probar la aplicación en un móvil, podemos ir a nuestro
+dispositivo y cargar la URL (en Chrome, por ejemplo)</p>
 </section>
 <section class="slide level2">
 
-<p>Pero Chrome tiene una manera mucho más cómoda, haciendo que podamos ver, en el navegador, la aplicación con el aspecto de un pantalla de móvil o tableta</p>
+<p>Pero Chrome tiene una manera mucho más cómoda, haciendo que podamos
+ver, en el navegador, la aplicación con el aspecto de un pantalla de
+móvil o tableta</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="toggle_device_toolbar.png" alt="Podemos ver nuestra PWA como se vería en un dispositivo móvil" /><figcaption aria-hidden="true">Podemos ver nuestra PWA como se vería en un dispositivo móvil</figcaption>
+<img data-src="toggle_device_toolbar.png"
+alt="Podemos ver nuestra PWA como se vería en un dispositivo móvil" />
+<figcaption aria-hidden="true">Podemos ver nuestra PWA como se vería en
+un dispositivo móvil</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="cambiar_opciones_device.png" alt="Podemos elegir las opciones del dispositivo que estamos simulando" /><figcaption aria-hidden="true">Podemos elegir las opciones del dispositivo que estamos simulando</figcaption>
+<img data-src="cambiar_opciones_device.png"
+alt="Podemos elegir las opciones del dispositivo que estamos simulando" />
+<figcaption aria-hidden="true">Podemos elegir las opciones del
+dispositivo que estamos simulando</figcaption>
 </figure>
 </section></section>
     </div>
@@ -519,7 +628,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -528,7 +637,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

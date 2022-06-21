@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -93,23 +96,29 @@
 </section>
 
 <section>
-<section id="implementación-de-un-servidor-para-juegos-en-navegador" class="title-slide slide level1">
+<section id="implementación-de-un-servidor-para-juegos-en-navegador"
+class="title-slide slide level1">
 <h1>Implementación de un servidor para juegos en navegador</h1>
 
 </section>
 <section class="slide level2">
 
-<p>El servidor será un programa en <code>node.js</code> que estará ejecutándose siempre</p>
-<p>No podrá estar alojado en GitHub, ya que no es una página web, sino un programa</p>
+<p>El servidor será un programa en <code>node.js</code> que estará
+ejecutándose siempre</p>
+<p>No podrá estar alojado en GitHub, ya que no es una página web, sino
+un programa</p>
 </section>
 <section class="slide level2">
 
-<p>Podemos alojarlo en un ordenador nuestro, o en algún servicio de alojamiento (<a href="https://www.heroku.com/">Heroku</a>, <a href="https://www.openshift.com/">Red Hat OpenShift</a>)</p>
+<p>Podemos alojarlo en un ordenador nuestro, o en algún servicio de
+alojamiento (<a href="https://www.heroku.com/">Heroku</a>, <a
+href="https://www.openshift.com/">Red Hat OpenShift</a>)</p>
 </section>
 <section class="slide level2">
 
 <p>Para probar en local, lo ejecutamos en nuestro ordenador</p>
-<p>Podemos detener el servidor <strong>con <code>Ctrl-C</code></strong></p>
+<p>Podemos detener el servidor <strong>con
+<code>Ctrl-C</code></strong></p>
 </section>
 <section class="slide level2">
 
@@ -124,7 +133,8 @@
 </section>
 <section class="slide level2">
 
-<p><em>WebSockets</em> es un estándar de comunicación sobre <em>TCP</em> para navegadores</p>
+<p><em>WebSockets</em> es un estándar de comunicación sobre <em>TCP</em>
+para navegadores</p>
 <p><small>Aunque puede ser usado por cualquier programa</small></p>
 </section>
 <section class="slide level2">
@@ -133,7 +143,8 @@
 </section>
 <section class="slide level2">
 
-<p>Dejaremos que una librería decida cuál es la mejor manera de comunicarse…</p>
+<p>Dejaremos que una librería decida cuál es la mejor manera de
+comunicarse…</p>
 </section></section>
 <section>
 <section id="socket.io" class="title-slide slide level1">
@@ -142,20 +153,25 @@
 </section>
 <section class="slide level2">
 
-<p>Usaremos <code>socket.io</code>, una librería de JavaScript para red</p>
+<p>Usaremos <code>socket.io</code>, una librería de JavaScript para
+red</p>
 </section>
 <section class="slide level2">
 
-<p>Tanto el servidor como el cliente estarán accesibles a través de <code>socket.io</code>, con lo que no usaremos GitHub para servir la página</p>
+<p>Tanto el servidor como el cliente estarán accesibles a través de
+<code>socket.io</code>, con lo que no usaremos GitHub para servir la
+página</p>
 </section>
 <section id="servidor-http" class="slide level2">
 <h2>Servidor HTTP</h2>
-<p>Lo primero que tendremos es un servidor HTTP que nos habilitará el protocolo básico</p>
+<p>Lo primero que tendremos es un servidor HTTP que nos habilitará el
+protocolo básico</p>
 </section>
 <section id="servidor-de-aplicaciones" class="slide level2">
 <h2>Servidor de aplicaciones</h2>
 <p>También crearemos un servidor de aplicaciones web</p>
-<p>Esto no es más que una capa por encima de HTTP para gestionar mejor las URLs y lo que devuelven</p>
+<p>Esto no es más que una capa por encima de HTTP para gestionar mejor
+las URLs y lo que devuelven</p>
 </section>
 <section id="servidor-de-conexión" class="slide level2">
 <h2>Servidor de conexión</h2>
@@ -172,11 +188,14 @@
 </section>
 <section class="slide level2">
 
-<p>Tenemos que usar <code>node.js</code>, y su gestor de paquetes (<code>npm</code>), que se encargará de instalar todo</p>
+<p>Tenemos que usar <code>node.js</code>, y su gestor de paquetes
+(<code>npm</code>), que se encargará de instalar todo</p>
 </section>
 <section class="slide level2">
 
-<p>Los proyectos (la información de paquetes y versiones) se guarda en <code>package.json</code>, que debería estar en el repositorio de versiones</p>
+<p>Los proyectos (la información de paquetes y versiones) se guarda en
+<code>package.json</code>, que debería estar en el repositorio de
+versiones</p>
 </section>
 <section class="slide level2">
 
@@ -184,21 +203,27 @@
 </section>
 <section id="iniciar-el-proyecto" class="slide level2">
 <h2>Iniciar el proyecto</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> init <span class="co"># Pregunta datos y crea `package.json`</span></span>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> init <span class="co"># Pregunta datos y crea `package.json`</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">--save</span> express socket.io <span class="co"># Instala las librerías necesarias y lo añade a `package.json`</span></span></code></pre></div>
-<p><code>npm install</code> instala el paquete, y <code>--save</code> hace que se guarde la información en <code>package.json</code></p>
+<p><code>npm install</code> instala el paquete, y <code>--save</code>
+hace que se guarde la información en <code>package.json</code></p>
 </section>
 <section class="slide level2">
 
-<p>En <code>node.js</code> importamos los módulos/paquetes con <code class="sourceCode javascript">require</code> en vez de hacerlo con <code class="sourceCode javascript"><span class="im">import</span></code></p>
+<p>En <code>node.js</code> importamos los módulos/paquetes con <code
+class="sourceCode javascript">require</code> en vez de hacerlo con <code
+class="sourceCode javascript"><span class="im">import</span></code></p>
 </section>
 <section class="slide level2">
 
-<p>El código de nuestro servidor estará en un archivo JavaScript para <code>node.js</code> (<strong>no para el navegador</strong>)</p>
+<p>El código de nuestro servidor estará en un archivo JavaScript para
+<code>node.js</code> (<strong>no para el navegador</strong>)</p>
 </section>
 <section class="slide level2">
 
-<p>En ese archivo (<code>server.js</code>, por ejemplo), primero tenemos que usar algunos módulos que hemos instalado con <code>npm</code>:</p>
+<p>En ese archivo (<code>server.js</code>, por ejemplo), primero tenemos
+que usar algunos módulos que hemos instalado con <code>npm</code>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> app <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;express&#39;</span>)()<span class="op">;</span> <span class="co">// servidor de aplicaciones</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> http <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;http&#39;</span>)<span class="op">.</span><span class="fu">createServer</span>(app)<span class="op">;</span> <span class="co">// servidor HTTP</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> io <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;socket.io&#39;</span>)(http)<span class="op">;</span> <span class="co">// Importamos `socket.io`</span></span></code></pre></div>
@@ -211,30 +236,40 @@
 </section>
 <section class="slide level2">
 
-<p>Luego le decimos al servidor que cuando accedan por HTTP, les devuelva la página web del cliente:</p>
+<p>Luego le decimos al servidor que cuando accedan por HTTP, les
+devuelva la página web del cliente:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">get</span>(<span class="st">&#39;/&#39;</span><span class="op">,</span> <span class="kw">function</span>(req<span class="op">,</span> res){</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">sendFile</span>(<span class="bu">__dirname</span> <span class="op">+</span> <span class="st">&#39;/client.html&#39;</span>)<span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
-<p><small>Así, al acceder a la IP/URL, veremos directamente el juego</small></p>
+<p><small>Así, al acceder a la IP/URL, veremos directamente el
+juego</small></p>
 </section>
 <section class="slide level2">
 
-<p>Con sólo este código, ya podemos centrarnos en la lógica del servidor de juego</p>
+<p>Con sólo este código, ya podemos centrarnos en la lógica del servidor
+de juego</p>
 </section>
 <section id="responder-a-mensajes" class="slide level2">
 <h2>Responder a mensajes</h2>
-<p><code>socket.io</code> tiene, en el objeto <code class="sourceCode javascript">io</code>, un método para reaccionar antes solicitudes de conexión de un cliente:</p>
+<p><code>socket.io</code> tiene, en el objeto <code
+class="sourceCode javascript">io</code>, un método para reaccionar antes
+solicitudes de conexión de un cliente:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>io<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;connection&#39;</span><span class="op">,</span> socket <span class="kw">=&gt;</span> {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;a user connected&#39;</span>)<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  clients<span class="op">.</span><span class="fu">push</span>(socket)<span class="op">;</span> <span class="co">// metemos el socket en el array</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p><em>Dentro del callback de <code class="sourceCode javascript"><span class="fu">on</span>()</code></em>, tenemos ahora la variable <code class="sourceCode javascript">socket</code> que nos ha llegado como parámetro</p>
+<p><em>Dentro del callback de <code
+class="sourceCode javascript"><span class="fu">on</span>()</code></em>,
+tenemos ahora la variable <code
+class="sourceCode javascript">socket</code> que nos ha llegado como
+parámetro</p>
 </section>
 <section class="slide level2">
 
-<p>Con la variable <code class="sourceCode javascript">socket</code> vamos a reaccionar a diferentes eventos</p>
+<p>Con la variable <code class="sourceCode javascript">socket</code>
+vamos a reaccionar a diferentes eventos</p>
 </section>
 <section class="slide level2">
 
@@ -246,7 +281,10 @@
 </section>
 <section class="slide level2">
 
-<p>O cuando nos envían el mensaje <code class="sourceCode javascript"><span class="st">&#39;precios&#39;</span></code>, con los datos en el objeto <code class="sourceCode javascript">mensaje</code></p>
+<p>O cuando nos envían el mensaje <code
+class="sourceCode javascript"><span class="st">&#39;precios&#39;</span></code>,
+con los datos en el objeto <code
+class="sourceCode javascript">mensaje</code></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  socket<span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;precios&#39;</span><span class="op">,</span> mensaje <span class="kw">=&gt;</span> {</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> lista <span class="op">=</span> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        mensaje <span class="op">===</span> <span class="st">&#39;armas&#39;</span> <span class="op">?</span></span>
@@ -262,15 +300,20 @@
 </section>
 <section class="slide level2">
 
-<p>Como vemos, para enviar mensajes por un <code class="sourceCode javascript">socket</code> necesitamos el método <code class="sourceCode javascript"><span class="fu">emit</span>()</code>, con 2 parámetros:</p>
+<p>Como vemos, para enviar mensajes por un <code
+class="sourceCode javascript">socket</code> necesitamos el método <code
+class="sourceCode javascript"><span class="fu">emit</span>()</code>, con
+2 parámetros:</p>
 <ul>
-<li>Un <code class="sourceCode javascript">string</code> con el tipo de mensaje</li>
+<li>Un <code class="sourceCode javascript">string</code> con el tipo de
+mensaje</li>
 <li>Un objeto JavaScript con todo lo que queramos mandar</li>
 </ul>
 </section>
 <section id="arrancando-el-servidor-realmente" class="slide level2">
 <h2>Arrancando el servidor realmente</h2>
-<p>Ahora, para cerrar el archivo, creamos el servidor web que estará escuchando en el puerto que hayamos elegido:</p>
+<p>Ahora, para cerrar el archivo, creamos el servidor web que estará
+escuchando en el puerto que hayamos elegido:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Creación del servidor en sí (por HTTP)</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>http<span class="op">.</span><span class="fu">listen</span>(port<span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Servidor escuchando en el puerto&#39;</span><span class="op">,</span> port)<span class="op">;</span></span>
@@ -278,12 +321,16 @@
 </section>
 <section id="ejecutar-el-servidor" class="slide level2">
 <h2>Ejecutar el servidor</h2>
-<p>Y, dentro de la carpeta inicializada con el proyecto y el archivo <code>package.json</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> server.js</span></code></pre></div>
+<p>Y, dentro de la carpeta inicializada con el proyecto y el archivo
+<code>package.json</code>:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> server.js</span></code></pre></div>
 </section>
 <section id="servir-contenido-extra" class="slide level2">
 <h2>Servir contenido extra</h2>
-<p>Para servir archivos que estén en una carpeta (assets, hojas de estilo): <code class="sourceCode javascript">app<span class="op">.</span><span class="fu">use</span>(express<span class="op">.</span><span class="fu">static</span>(<span class="bu">__dirname</span> <span class="op">+</span> <span class="st">&#39;/public&#39;</span>))</code></p>
+<p>Para servir archivos que estén en una carpeta (assets, hojas de
+estilo): <code
+class="sourceCode javascript">app<span class="op">.</span><span class="fu">use</span>(express<span class="op">.</span><span class="fu">static</span>(<span class="bu">__dirname</span> <span class="op">+</span> <span class="st">&#39;/public&#39;</span>))</code></p>
 </section></section>
     </div>
   </div>
@@ -325,7 +372,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -334,7 +381,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

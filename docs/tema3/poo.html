@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -36,227 +39,337 @@
 </section>
 <section class="slide level2">
 
-<p>Programar es expresar un problema en un lenguaje de programación dado. Modelar representa un paso intermedio en el que se capturan y organizan los aspectos importantes de un problema</p>
+<p>Programar es expresar un problema en un lenguaje de programación
+dado. Modelar representa un paso intermedio en el que se capturan y
+organizan los aspectos importantes de un problema</p>
 </section>
 <section class="slide level2">
 
-<p>El modelado de un problema es independiente del lenguaje de programación que se elija pero el lenguaje seleccionado condiciona la facilidad con la que podemos codificar el modelo</p>
+<p>El modelado de un problema es independiente del lenguaje de
+programación que se elija pero el lenguaje seleccionado condiciona la
+facilidad con la que podemos codificar el modelo</p>
 </section>
 <section class="slide level2">
 
-<p>Muchas actividades creativas incluyen modelos intermedios entre la realidad y su expresión en el medio final</p>
+<p>Muchas actividades creativas incluyen modelos intermedios entre la
+realidad y su expresión en el medio final</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="batman-storyboard.jpg" alt="Una página del story board de la serie de animación de Batman" /><figcaption aria-hidden="true">Una página del story board de la serie de animación de Batman</figcaption>
+<img data-src="batman-storyboard.jpg"
+alt="Una página del story board de la serie de animación de Batman" />
+<figcaption aria-hidden="true">Una página del story board de la serie de
+animación de Batman</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Los <em>storyboard</em> se utilizan para planificar las secuencias de acción. Capturan los momentos clave de la secuencia</p>
+<p>Los <em>storyboard</em> se utilizan para planificar las secuencias de
+acción. Capturan los momentos clave de la secuencia</p>
 </section>
 <section class="slide level2">
 
-<p>Este mapa muestra el paso de “Ella-Laraña”, usado para mantener la coherencia del escenario descrito</p>
+<p>Este mapa muestra el paso de “Ella-Laraña”, usado para mantener la
+coherencia del escenario descrito</p>
 <figure>
-<img data-src="lotr-notes.jpg" style="width:40.0%" alt="Notas de Tolkien para la elaboración del Señor de los Anillos" /><figcaption aria-hidden="true">Notas de Tolkien para la elaboración del Señor de los Anillos</figcaption>
+<img data-src="lotr-notes.jpg" style="width:40.0%"
+alt="Notas de Tolkien para la elaboración del Señor de los Anillos" />
+<figcaption aria-hidden="true">Notas de Tolkien para la elaboración del
+Señor de los Anillos</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Un diseño de un mapa del videojuego Mario. Las herramientas digitales han permitido la automatización de modelos en software</p>
+<p>Un diseño de un mapa del videojuego Mario. Las herramientas digitales
+han permitido la automatización de modelos en software</p>
 <figure>
-<img data-src="mario-level-design.png" alt="Mapa del video juego Mario en papel cuadriculado" /><figcaption aria-hidden="true">Mapa del video juego Mario en papel cuadriculado</figcaption>
+<img data-src="mario-level-design.png"
+alt="Mapa del video juego Mario en papel cuadriculado" />
+<figcaption aria-hidden="true">Mapa del video juego Mario en papel
+cuadriculado</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>El diagrama de flujo de cómo se llaman las distintas funciones de un script de Unity</p>
+<p>El diagrama de flujo de cómo se llaman las distintas funciones de un
+script de Unity</p>
 <figure>
-<img data-src="monobehaviour-flowchart.png" style="width:30.0%" alt="Diagrama de flujo del ciclo de vida de un script en Unity" /><figcaption aria-hidden="true">Diagrama de flujo del ciclo de vida de un script en Unity</figcaption>
+<img data-src="monobehaviour-flowchart.png" style="width:30.0%"
+alt="Diagrama de flujo del ciclo de vida de un script en Unity" />
+<figcaption aria-hidden="true">Diagrama de flujo del ciclo de vida de un
+script en Unity</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>La programación orientada a objetos es una técnica de <strong>modelado de problemas</strong> en la que se pone especial énfasis a dos conceptos: <strong>objetos</strong> y <strong>paso de mensajes</strong></p>
+<p>La programación orientada a objetos es una técnica de
+<strong>modelado de problemas</strong> en la que se pone especial
+énfasis a dos conceptos: <strong>objetos</strong> y <strong>paso de
+mensajes</strong></p>
 </section></section>
 <section>
-<section id="programación-orientada-a-objetos" class="title-slide slide level1">
+<section id="programación-orientada-a-objetos"
+class="title-slide slide level1">
 <h1>Programación orientada a objetos</h1>
 
 </section>
 <section id="objetos" class="slide level2">
 <h2>Objetos</h2>
-<p>Los objetos son <strong>representaciones de los aspectos de un problema</strong></p>
+<p>Los objetos son <strong>representaciones de los aspectos de un
+problema</strong></p>
 <ul>
 <li>Desempeñan <strong>un rol solamente</strong></li>
-<li>Exponen un conjunto de <strong>funcionalidad concreta</strong>: la <a href="https://en.wikipedia.org/wiki/Application_programming_interface#Libraries_and_frameworks">API</a></li>
+<li>Exponen un conjunto de <strong>funcionalidad concreta</strong>: la
+<a
+href="https://en.wikipedia.org/wiki/Application_programming_interface#Libraries_and_frameworks">API</a></li>
 <li><strong>Ocultan</strong> cómo realizan esa funcionalidad</li>
 </ul>
 </section>
 <section id="paso-de-mensajes" class="slide level2">
 <h2>Paso de mensajes</h2>
-<p>Los mensajes son <strong>peticiones de acción</strong> de un objeto a otro</p>
+<p>Los mensajes son <strong>peticiones de acción</strong> de un objeto a
+otro</p>
 <ul>
 <li>Parten de un objeto <strong>remitente</strong>…</li>
 <li>… hacia un objeto <strong>destinatario</strong></li>
-<li>Codifican qué <strong>funcionalidad de la API</strong> se precisa</li>
+<li>Codifican qué <strong>funcionalidad de la API</strong> se
+precisa</li>
 </ul>
 </section>
 <section id="modelado-orientado-a-objetos" class="slide level2">
 <h2>Modelado orientado a objetos</h2>
-<p>La definición de objetos y las interacciones entre los mismos modelan el problema</p>
+<p>La definición de objetos y las interacciones entre los mismos modelan
+el problema</p>
 </section>
 <section class="slide level2">
 
-<p>Vamos a modelar informalmente el video juego <a href="https://en.wikipedia.org/wiki/Space_Invaders">Space Invaders</a></p>
+<p>Vamos a modelar informalmente el video juego <a
+href="https://en.wikipedia.org/wiki/Space_Invaders">Space
+Invaders</a></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="space-invaders.jpg" style="width:70.0%" alt="Captura de pantalla del video juego space invaders donde se aprecian naves enemigas, la nave amiga, marcadores de vidas y puntuación, proyectiles amigos y enemigos y las defensas de la nave" /><figcaption aria-hidden="true">Captura de pantalla del video juego space invaders donde se aprecian naves enemigas, la nave amiga, marcadores de vidas y puntuación, proyectiles amigos y enemigos y las defensas de la nave</figcaption>
+<img data-src="space-invaders.jpg" style="width:70.0%"
+alt="Captura de pantalla del video juego space invaders donde se aprecian naves enemigas, la nave amiga, marcadores de vidas y puntuación, proyectiles amigos y enemigos y las defensas de la nave" />
+<figcaption aria-hidden="true">Captura de pantalla del video juego space
+invaders donde se aprecian naves enemigas, la nave amiga, marcadores de
+vidas y puntuación, proyectiles amigos y enemigos y las defensas de la
+nave</figcaption>
 </figure>
 </section>
 <section id="identificando-objetos" class="slide level2">
 <h2>Identificando objetos</h2>
-<p>Una técnica para identificar objetos es pensar en <strong>poner nombres</strong></p>
+<p>Una técnica para identificar objetos es pensar en <strong>poner
+nombres</strong></p>
 <figure>
-<img data-src="space-invaders-objects.svg" style="width:70.0%" alt="Captura de Space Invaders donde se distinguen los objetos" /><figcaption aria-hidden="true">Captura de Space Invaders donde se distinguen los objetos</figcaption>
+<img data-src="space-invaders-objects.svg" style="width:70.0%"
+alt="Captura de Space Invaders donde se distinguen los objetos" />
+<figcaption aria-hidden="true">Captura de Space Invaders donde se
+distinguen los objetos</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Algunos objetos: nave amiga, enemigo 1, enemigo 2, enemigo 3, disparo amigo, disparo enemigo 1, disparo enemigo 2, defensa 1, defensa 2, marcador de vidas, marcador de puntuación</p>
+<p>Algunos objetos: nave amiga, enemigo 1, enemigo 2, enemigo 3, disparo
+amigo, disparo enemigo 1, disparo enemigo 2, defensa 1, defensa 2,
+marcador de vidas, marcador de puntuación</p>
 </section>
 <section id="tipos-de-objetos-e-instancias" class="slide level2">
 <h2>Tipos de objetos e instancias</h2>
-<p>Queda claro de un vistazo que muchos objetos concretos pertenecen a familias o <strong>tipos</strong> de objetos</p>
-<p>Conviene recordar que también se los llama <strong>clases</strong></p>
+<p>Queda claro de un vistazo que muchos objetos concretos pertenecen a
+familias o <strong>tipos</strong> de objetos</p>
+<p>Conviene recordar que también se los llama
+<strong>clases</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Los tipos de objetos <strong>especifican propiedades y comportamientos comunes</strong> a todos ellos aunque individualmente sean distintos</p>
+<p>Los tipos de objetos <strong>especifican propiedades y
+comportamientos comunes</strong> a todos ellos aunque individualmente
+sean distintos</p>
 </section>
 <section class="slide level2">
 
-<p>Algunos <strong>tipos</strong>: marcadores, defensas, nave amiga, enemigos, disparos</p>
+<p>Algunos <strong>tipos</strong>: marcadores, defensas, nave amiga,
+enemigos, disparos</p>
 <figure>
-<img data-src="space-invaders-types.svg" style="width:70.0%" alt="Captura de Space Invaders donde se distinguen los distintos tipos de objetos: marcadores, defensas, enemigos, protagonista y disparos" /><figcaption aria-hidden="true">Captura de Space Invaders donde se distinguen los distintos tipos de objetos: marcadores, defensas, enemigos, protagonista y disparos</figcaption>
+<img data-src="space-invaders-types.svg" style="width:70.0%"
+alt="Captura de Space Invaders donde se distinguen los distintos tipos de objetos: marcadores, defensas, enemigos, protagonista y disparos" />
+<figcaption aria-hidden="true">Captura de Space Invaders donde se
+distinguen los distintos tipos de objetos: marcadores, defensas,
+enemigos, protagonista y disparos</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Los <strong>valores</strong> de un tipo son cada uno de los objetos individuales</p>
-<p>El enemigo especial, así como cada uno de los otros enemigos será un valor distinto del <strong>tipo enemigo</strong></p>
+<p>Los <strong>valores</strong> de un tipo son cada uno de los objetos
+individuales</p>
+<p>El enemigo especial, así como cada uno de los otros enemigos será un
+valor distinto del <strong>tipo enemigo</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Cuando utilizamos la terminología de clases, los valores se convierten en <strong>instancias de la clase</strong></p>
-<p>En los modelos de objetos es más conveniente trabajar con tipos de objetos</p>
+<p>Cuando utilizamos la terminología de clases, los valores se
+convierten en <strong>instancias de la clase</strong></p>
+<p>En los modelos de objetos es más conveniente trabajar con tipos de
+objetos</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="space-invaders-object-diagram.svg" alt="Diagrama de objetos con los cinco clases identificadas: marcador, defensa, enemigo, protagonista y disparo" /><figcaption aria-hidden="true">Diagrama de objetos con los cinco clases identificadas: marcador, defensa, enemigo, protagonista y disparo</figcaption>
+<img data-src="space-invaders-object-diagram.svg"
+alt="Diagrama de objetos con los cinco clases identificadas: marcador, defensa, enemigo, protagonista y disparo" />
+<figcaption aria-hidden="true">Diagrama de objetos con los cinco clases
+identificadas: marcador, defensa, enemigo, protagonista y
+disparo</figcaption>
 </figure>
 </section>
 <section id="interfaces-api-y-métodos" class="slide level2">
 <h2>Interfaces (API) y métodos</h2>
-<p>Vamos a tratar de determinar la API de nuestros tipos de objetos. Para eso nos guiarán las interacciones propias del juego</p>
+<p>Vamos a tratar de determinar la API de nuestros tipos de objetos.
+Para eso nos guiarán las interacciones propias del juego</p>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UZlEXl9xgR8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </section>
 <section class="slide level2">
 
-<p>Un ejemplo: <em>los enemigos se mueven todos juntos hacia un lado, avanzan una línea y se mueven hacia el otro lado mientras disparan aleatoriamente</em></p>
-<p>Vamos a <strong>buscar verbos</strong> esta vez: <strong>mover</strong>, <strong>avanzar</strong> y <strong>disparar</strong></p>
+<p>Un ejemplo: <em>los enemigos se mueven todos juntos hacia un lado,
+avanzan una línea y se mueven hacia el otro lado mientras disparan
+aleatoriamente</em></p>
+<p>Vamos a <strong>buscar verbos</strong> esta vez:
+<strong>mover</strong>, <strong>avanzar</strong> y
+<strong>disparar</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Para poder implementar el comportamiento de los enemigos, estos tienen que poder moverse hacia los lados, avanzar y disparar</p>
-<p>Así, tendrán que permitir que les envíen mensajes pidiendo una de estas operaciones</p>
+<p>Para poder implementar el comportamiento de los enemigos, estos
+tienen que poder moverse hacia los lados, avanzar y disparar</p>
+<p>Así, tendrán que permitir que les envíen mensajes pidiendo una de
+estas operaciones</p>
 </section>
 <section class="slide level2">
 
-<p>A las cosas que puede hacer un objeto se las denomina <strong>métodos</strong></p>
+<p>A las cosas que puede hacer un objeto se las denomina
+<strong>métodos</strong></p>
 <figure>
-<img data-src="space-invaders-enemy-api.svg" style="width:70.0%" alt="API del enemigo mostrando cuatro métodos: moverse a la izquierda, moverse a la derecha, avanzar y disparar." /><figcaption aria-hidden="true">API del enemigo mostrando cuatro métodos: moverse a la izquierda, moverse a la derecha, avanzar y disparar.</figcaption>
+<img data-src="space-invaders-enemy-api.svg" style="width:70.0%"
+alt="API del enemigo mostrando cuatro métodos: moverse a la izquierda, moverse a la derecha, avanzar y disparar." />
+<figcaption aria-hidden="true">API del enemigo mostrando cuatro métodos:
+moverse a la izquierda, moverse a la derecha, avanzar y
+disparar.</figcaption>
 </figure>
 </section>
 <section id="estado-y-atributos" class="slide level2">
 <h2>Estado y atributos</h2>
-<p>Los objetos no sólo pueden hacer cosas sino que además capturan características de las entidades a las que representan</p>
+<p>Los objetos no sólo pueden hacer cosas sino que además capturan
+características de las entidades a las que representan</p>
 </section>
 <section class="slide level2">
 
-<p>Cada enemigo, por ejemplo, tiene un <strong>gráfico distinto</strong>, una <strong>puntuación diferente</strong>, una <strong>posición en pantalla</strong> y además recordará en qué <strong>dirección se estaba moviendo</strong></p>
+<p>Cada enemigo, por ejemplo, tiene un <strong>gráfico
+distinto</strong>, una <strong>puntuación diferente</strong>, una
+<strong>posición en pantalla</strong> y además recordará en qué
+<strong>dirección se estaba moviendo</strong></p>
 </section>
 <section class="slide level2">
 
 <p>El estado no se suele exponer de forma directa en la API</p>
-<p>Piensa en el caso de los enemigos: incluso si estos tienen una posición, es preferible tener métodos específicos con los que manipular la posición (como “mover a la izquierda” o “mover a la derecha”) en lugar de dar libre acceso a la posición</p>
+<p>Piensa en el caso de los enemigos: incluso si estos tienen una
+posición, es preferible tener métodos específicos con los que manipular
+la posición (como “mover a la izquierda” o “mover a la derecha”) en
+lugar de dar libre acceso a la posición</p>
 </section>
 <section class="slide level2">
 
-<p>A las características de un objeto se las denomina <strong>atributos</strong></p>
+<p>A las características de un objeto se las denomina
+<strong>atributos</strong></p>
 <figure>
-<img data-src="space-invaders-enemy-state.svg" style="width:70.0%" alt="Estado del enemigo mostrando: gráfico, dirección actual, posición y puntuación." /><figcaption aria-hidden="true">Estado del enemigo mostrando: gráfico, dirección actual, posición y puntuación.</figcaption>
+<img data-src="space-invaders-enemy-state.svg" style="width:70.0%"
+alt="Estado del enemigo mostrando: gráfico, dirección actual, posición y puntuación." />
+<figcaption aria-hidden="true">Estado del enemigo mostrando: gráfico,
+dirección actual, posición y puntuación.</figcaption>
 </figure>
 </section>
 <section id="el-proceso-de-modelado-es-iterativo" class="slide level2">
 <h2>El proceso de modelado es iterativo</h2>
-<p>Al definir algunas acciones, hemos introducido nuevos nombres como <strong>posición</strong> o <strong>dirección</strong> que se convertirán en tipos de objetos con sus propios constructores</p>
+<p>Al definir algunas acciones, hemos introducido nuevos nombres como
+<strong>posición</strong> o <strong>dirección</strong> que se
+convertirán en tipos de objetos con sus propios constructores</p>
 </section>
 <section id="constructores-y-creación-de-objetos" class="slide level2">
 <h2>Constructores y creación de objetos</h2>
-<p>Pensemos en la interacción de disparo: <em>cuando el jugador pulsa el botón de disparo, aparece un proyectil delante de la nave amiga que avanza hasta alcanzar la parte superior de la pantalla o colisionar con un enemigo</em></p>
-<p>El proyectil no estaba ahí antes y tendrá que ser creado en el momento del disparo</p>
+<p>Pensemos en la interacción de disparo: <em>cuando el jugador pulsa el
+botón de disparo, aparece un proyectil delante de la nave amiga que
+avanza hasta alcanzar la parte superior de la pantalla o colisionar con
+un enemigo</em></p>
+<p>El proyectil no estaba ahí antes y tendrá que ser creado en el
+momento del disparo</p>
 </section>
 <section class="slide level2">
 
-<p>Otro ejemplo, la preparación del nivel antes de jugar: <em>aparecen 55 enemigos en pantalla, 5 filas de 11 enemigos con la siguiente configuración: 1 fila de enemigos de la especie 1, dos filas de la especie 2, 1 de la especie 3 y 1 de la especie 4</em></p>
+<p>Otro ejemplo, la preparación del nivel antes de jugar: <em>aparecen
+55 enemigos en pantalla, 5 filas de 11 enemigos con la siguiente
+configuración: 1 fila de enemigos de la especie 1, dos filas de la
+especie 2, 1 de la especie 3 y 1 de la especie 4</em></p>
 </section>
 <section class="slide level2">
 
-<p>Está claro que no queremos escribir los 55 enemigos individualmente</p>
-<p>Además, dado que todos pertenecen al tipo enemigo, queda claro que serán todos muy parecidos</p>
+<p>Está claro que no queremos escribir los 55 enemigos
+individualmente</p>
+<p>Además, dado que todos pertenecen al tipo enemigo, queda claro que
+serán todos muy parecidos</p>
 </section>
 <section class="slide level2">
 
-<p>Lo que necesitamos es un mecanismo de <strong>generación automática de objetos</strong></p>
+<p>Lo que necesitamos es un mecanismo de <strong>generación automática
+de objetos</strong></p>
 <p>Cada lenguaje ofrece formas distintas de crear objetos</p>
 </section>
 <section class="slide level2">
 
-<p>Nosotros vamos a añadir un nuevo objeto, el <strong>contructor</strong>, cuya tarea es la de generar objetos de un tipo dado</p>
+<p>Nosotros vamos a añadir un nuevo objeto, el
+<strong>contructor</strong>, cuya tarea es la de generar objetos de un
+tipo dado</p>
 <p>Así, encontraremos <strong>un contructor por tipo</strong></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="space-invaders-constructors.svg" alt="Estado del enemigo mostrando: gráfico, dirección actual, posición y puntuación" /><figcaption aria-hidden="true">Estado del enemigo mostrando: gráfico, dirección actual, posición y puntuación</figcaption>
+<img data-src="space-invaders-constructors.svg"
+alt="Estado del enemigo mostrando: gráfico, dirección actual, posición y puntuación" />
+<figcaption aria-hidden="true">Estado del enemigo mostrando: gráfico,
+dirección actual, posición y puntuación</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Los constructores tienen una API muy sencilla: <strong>nuevo objeto</strong></p>
+<p>Los constructores tienen una API muy sencilla: <strong>nuevo
+objeto</strong></p>
 <p>Este método crea un nuevo objeto de un tipo dado</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="space-invaders-constructor-detail.svg" alt="Una factoría para un tipo cualquiera con un sólo método: nuevo objeto." /><figcaption aria-hidden="true">Una factoría para un tipo cualquiera con un sólo método: nuevo objeto.</figcaption>
+<img data-src="space-invaders-constructor-detail.svg"
+alt="Una factoría para un tipo cualquiera con un sólo método: nuevo objeto." />
+<figcaption aria-hidden="true">Una factoría para un tipo cualquiera con
+un sólo método: nuevo objeto.</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Los constructores suelen permitir personalizar partes del objeto que están creando de forma que se le pueda decir algo como “crea un disparo con esta posición, este gráfico y esta dirección de avance”</p>
+<p>Los constructores suelen permitir personalizar partes del objeto que
+están creando de forma que se le pueda decir algo como “crea un disparo
+con esta posición, este gráfico y esta dirección de avance”</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="space-invaders-constructor-example.svg" alt="Una factoría para un tipo cualquiera con un sólo método: nuevo objeto" /><figcaption aria-hidden="true">Una factoría para un tipo cualquiera con un sólo método: nuevo objeto</figcaption>
+<img data-src="space-invaders-constructor-example.svg"
+alt="Una factoría para un tipo cualquiera con un sólo método: nuevo objeto" />
+<figcaption aria-hidden="true">Una factoría para un tipo cualquiera con
+un sólo método: nuevo objeto</figcaption>
 </figure>
 </section>
 <section id="relaciones-entre-tipos" class="slide level2">
@@ -267,53 +380,76 @@
 </section>
 <section class="slide level2">
 
-<p>Nuestro cerebro tiende a establecer jerarquías entre objetos creando tipos más generalistas</p>
-<p>Por ejemplo: en vez de pensar en enemigos y protagonista por separado, es posible pensar en <strong>naves</strong></p>
+<p>Nuestro cerebro tiende a establecer jerarquías entre objetos creando
+tipos más generalistas</p>
+<p>Por ejemplo: en vez de pensar en enemigos y protagonista por
+separado, es posible pensar en <strong>naves</strong></p>
 </section>
 <section class="slide level2">
 
-<p>El <strong>tipo nave</strong> reúne los métodos y atributos comunes de la nave protagonista y enemigos</p>
+<p>El <strong>tipo nave</strong> reúne los métodos y atributos comunes
+de la nave protagonista y enemigos</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="space-invaders-hierarchy.svg" alt="La jerarquía entre los enemigos, la nave protagonista y el super-tipo nave" /><figcaption aria-hidden="true">La jerarquía entre los enemigos, la nave protagonista y el super-tipo nave</figcaption>
+<img data-src="space-invaders-hierarchy.svg"
+alt="La jerarquía entre los enemigos, la nave protagonista y el super-tipo nave" />
+<figcaption aria-hidden="true">La jerarquía entre los enemigos, la nave
+protagonista y el super-tipo nave</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Esta jerarquía establece <strong>relaciones de herencia</strong> también llamadas relaciones “<strong>es un(a)</strong>” dado que <strong>el protagonista es una nave</strong> y <strong>el enemigo es una nave</strong></p>
+<p>Esta jerarquía establece <strong>relaciones de herencia</strong>
+también llamadas relaciones “<strong>es un(a)</strong>” dado que
+<strong>el protagonista es una nave</strong> y <strong>el enemigo es una
+nave</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Se dice que <strong>el tipo enemigo extiende al tipo nave</strong> añadiendo avanzar a la API, y la puntuación y la última dirección de desplazamiento al estado</p>
+<p>Se dice que <strong>el tipo enemigo extiende al tipo nave</strong>
+añadiendo avanzar a la API, y la puntuación y la última dirección de
+desplazamiento al estado</p>
 </section>
 <section class="slide level2">
 
-<p>La nave amiga no añade ningún método nuevo pero <strong>redefine o sobreescribe</strong> el método disparar para que dispare hacia arriba</p>
+<p>La nave amiga no añade ningún método nuevo pero <strong>redefine o
+sobreescribe</strong> el método disparar para que dispare hacia
+arriba</p>
 </section>
 <section class="slide level2">
 
 <p>Como hay nuevos tipos, tendremos nuevos constructores</p>
-<p>Los viejos constructores pueden delegar parte de la creación del objeto (las partes comunes) a los nuevos</p>
+<p>Los viejos constructores pueden delegar parte de la creación del
+objeto (las partes comunes) a los nuevos</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="space-invaders-hierarchy-constructor.svg" alt="Cuando se pide al constructor de enemigos un enemigo, este pide al constructor de naves una nave, la personaliza para que sea un enemigo y devuelve el enemigo" /><figcaption aria-hidden="true">Cuando se pide al constructor de enemigos un enemigo, este pide al constructor de naves una nave, la personaliza para que sea un enemigo y devuelve el enemigo</figcaption>
+<img data-src="space-invaders-hierarchy-constructor.svg"
+alt="Cuando se pide al constructor de enemigos un enemigo, este pide al constructor de naves una nave, la personaliza para que sea un enemigo y devuelve el enemigo" />
+<figcaption aria-hidden="true">Cuando se pide al constructor de enemigos
+un enemigo, este pide al constructor de naves una nave, la personaliza
+para que sea un enemigo y devuelve el enemigo</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>De esta forma al pedir un enemigo, el constructor de enemigos pedirá una nave al constructor de naves</p>
-<p>Tomará esa nave, la modificará para que sea un enemigo y devolverá un enemigo</p>
+<p>De esta forma al pedir un enemigo, el constructor de enemigos pedirá
+una nave al constructor de naves</p>
+<p>Tomará esa nave, la modificará para que sea un enemigo y devolverá un
+enemigo</p>
 </section>
 <section class="slide level2">
 
 <blockquote>
-<p>OOP to me means only messaging, local retention and protection and hiding of state-process, and extreme late-binding of all things</p>
+<p>OOP to me means only messaging, local retention and protection and
+hiding of state-process, and extreme late-binding of all things</p>
 </blockquote>
-<p><a href="http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en">Alan Kays sobre la programación orientada a objetos</a></p>
+<p><a
+href="http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en">Alan
+Kays sobre la programación orientada a objetos</a></p>
 </section></section>
     </div>
   </div>
@@ -355,7 +491,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -364,7 +500,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

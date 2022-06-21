@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -58,21 +61,27 @@
 </section>
 <section class="slide level2">
 
-<p>Para que esto funcione, los nodos de la red tienen conocer <em>el protocolo de comunicación</em></p>
+<p>Para que esto funcione, los nodos de la red tienen conocer <em>el
+protocolo de comunicación</em></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="osi.svg" alt="Las redes y los protocolos ocurren según un modelo de capas" /><figcaption aria-hidden="true">Las redes y los protocolos ocurren según un modelo de capas</figcaption>
+<img data-src="osi.svg"
+alt="Las redes y los protocolos ocurren según un modelo de capas" />
+<figcaption aria-hidden="true">Las redes y los protocolos ocurren según
+un modelo de capas</figcaption>
 </figure>
 </section>
 <section id="tcp-y-upd" class="slide level2">
 <h2>TCP y UPD</h2>
-<p>En la capa de transporte, en uno de los estándares (<em>IP</em>) hay un par de protocolos muy relacionados: <em>TCP</em> y <em>UDP</em></p>
+<p>En la capa de transporte, en uno de los estándares (<em>IP</em>) hay
+un par de protocolos muy relacionados: <em>TCP</em> y <em>UDP</em></p>
 </section>
 <section class="slide level2">
 
-<p>Son alternativas, con ventajas e inconvenientes, para enviar <strong>paquetes</strong> de datos</p>
+<p>Son alternativas, con ventajas e inconvenientes, para enviar
+<strong>paquetes</strong> de datos</p>
 <ul>
 <li>UDP tiene menos sobrecarga</li>
 <li>TCP es más fiable</li>
@@ -80,7 +89,8 @@
 </section>
 <section class="slide level2">
 
-<p>En videojuegos se usan ambos (dependiendo de para qué), pero nosotros <strong>vamos a usar sólo TCP</strong></p>
+<p>En videojuegos se usan ambos (dependiendo de para qué), pero nosotros
+<strong>vamos a usar sólo TCP</strong></p>
 </section></section>
 <section>
 <section id="redes-cliente-servidor" class="title-slide slide level1">
@@ -89,41 +99,56 @@
 </section>
 <section class="slide level2">
 
-<p>Una manera usual y típica de hacer una conexión en red (en nuestro caso, en Internet), es con un modelo <em>cliente</em>-<em>servidor</em></p>
+<p>Una manera usual y típica de hacer una conexión en red (en nuestro
+caso, en Internet), es con un modelo
+<em>cliente</em>-<em>servidor</em></p>
 </section>
 <section id="el-servidor" class="slide level2">
 <h2>El servidor</h2>
-<p>En un <strong>programa</strong> (no una máquina) que está siempre ejecutando, y recibe peticiones de conexión de los clientes</p>
-<p>Si acepta una conexión, se creará un canal de comunicación bidireccional con ese cliente</p>
+<p>En un <strong>programa</strong> (no una máquina) que está siempre
+ejecutando, y recibe peticiones de conexión de los clientes</p>
+<p>Si acepta una conexión, se creará un canal de comunicación
+bidireccional con ese cliente</p>
 </section>
 <section class="slide level2">
 
-<p>El servidor se ejecuta en algún ordenador conectado a una red, y eso le da una dirección única: <strong>su dirección IP</strong></p>
+<p>El servidor se ejecuta en algún ordenador conectado a una red, y eso
+le da una dirección única: <strong>su dirección IP</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Hay varias maneras de asignar la dirección IP a un ordenador (interfaz de red, en realidad)</p>
-<p>Puede ser que te asignen una cada vez que te conectes a un route (IP dinámica, puede cambiar en cada reconexión) o que el sistema operativo tenga configurada la IP que quiere (IP estática)</p>
+<p>Hay varias maneras de asignar la dirección IP a un ordenador
+(interfaz de red, en realidad)</p>
+<p>Puede ser que te asignen una cada vez que te conectes a un route (IP
+dinámica, puede cambiar en cada reconexión) o que el sistema operativo
+tenga configurada la IP que quiere (IP estática)</p>
 </section>
 <section class="slide level2">
 
-<p>Obviamente, queremos que el servidor tenga una IP estática para que los clientes sepan a quién conectarse</p>
+<p>Obviamente, queremos que el servidor tenga una IP estática para que
+los clientes sepan a quién conectarse</p>
 </section>
 <section class="slide level2">
 
-<p>Además, cada programa puede comunicarse, dentro de una misma IP, en un <strong>puerto concreto</strong> (que es sólo un número)</p>
+<p>Además, cada programa puede comunicarse, dentro de una misma IP, en
+un <strong>puerto concreto</strong> (que es sólo un número)</p>
 </section>
 <section class="slide level2">
 
-<p>Es decir, en una misma máquina (IP: 147.96.92.63), podríamos tener:</p>
+<p>Es decir, en una misma máquina (IP: 147.96.92.63), podríamos
+tener:</p>
 <ul>
-<li>Un programa que sirva páginas web en el puerto 80 (147.96.92.63:80)</li>
-<li>Un programa que sirva la lógica de un videojuego en el puerto 3000 (147.96.92.63:3000)</li>
+<li>Un programa que sirva páginas web en el puerto 80
+(147.96.92.63:80)</li>
+<li>Un programa que sirva la lógica de un videojuego en el puerto 3000
+(147.96.92.63:3000)</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>A veces, podemos tener un nombre para ese ordenador (<a href="http://www.ucm.es" class="uri">http://www.ucm.es</a>), pero estos nombres son sólo un “alias” para la dirección IP</p>
+<p>A veces, podemos tener un nombre para ese ordenador (<a
+href="http://www.ucm.es" class="uri">http://www.ucm.es</a>), pero estos
+nombres son sólo un “alias” para la dirección IP</p>
 </section>
 <section id="el-cliente" class="slide level2">
 <h2>El cliente</h2>
@@ -131,27 +156,36 @@
 <ul>
 <li>Conoce la dirección IP de un servidor (para poder “llamar”)</li>
 <li>Le solicita conectarse</li>
-<li>Una vez conectado, puede enviar y recibir mensajes <em>sólo al servidor</em></li>
-<li>En una arquitectura cliente-servidor pura, <em>los clientes no hablan entre sí</em></li>
+<li>Una vez conectado, puede enviar y recibir mensajes <em>sólo al
+servidor</em></li>
+<li>En una arquitectura cliente-servidor pura, <em>los clientes no
+hablan entre sí</em></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="clienteservidor.svg" style="width:60.0%" alt="Arquitectura cliente-servidor" /><figcaption aria-hidden="true">Arquitectura cliente-servidor</figcaption>
+<img data-src="clienteservidor.svg" style="width:60.0%"
+alt="Arquitectura cliente-servidor" />
+<figcaption aria-hidden="true">Arquitectura
+cliente-servidor</figcaption>
 </figure>
 </section></section>
 <section>
-<section id="comunicación-simple-de-nodos" class="title-slide slide level1">
+<section id="comunicación-simple-de-nodos"
+class="title-slide slide level1">
 <h1>Comunicación simple de nodos</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Un sistema simple (como los que vamos a usar), tendría un protocolo como:</p>
+<p>Un sistema simple (como los que vamos a usar), tendría un protocolo
+como:</p>
 <ol>
-<li>El servidor está arrancado y <em>escuchando</em> en un puerto concreto</li>
-<li>El cliente “llama” a la IP del servidor, a través del puerto concreto</li>
+<li>El servidor está arrancado y <em>escuchando</em> en un puerto
+concreto</li>
+<li>El cliente “llama” a la IP del servidor, a través del puerto
+concreto</li>
 <li>El servidor acepta, y añade al cliente a su lista</li>
 <li>El cliente y el servidor se intercambian mensajes</li>
 <li>El cliente se desconecta, y el servidor lo saca de su lista</li>
@@ -164,14 +198,16 @@
 </section>
 <section class="slide level2">
 
-<p>Lo que haremos aquí es una versión muy sencilla y funcional (y <em>didáctica</em>) de juegos en red</p>
+<p>Lo que haremos aquí es una versión muy sencilla y funcional (y
+<em>didáctica</em>) de juegos en red</p>
 </section>
 <section id="alternativas-entre-otras" class="slide level2">
 <h2>Alternativas (entre otras)</h2>
 <ul>
 <li><a href="https://geckosio.github.io/">gekos.io</a></li>
 <li><a href="https://docs.colyseus.io/">Colyseus</a></li>
-<li>Usar <a href="https://webrtc.org/">WebRTC</a>, con alguna librería como <a href="https://peerjs.com/">PeerJS</a></li>
+<li>Usar <a href="https://webrtc.org/">WebRTC</a>, con alguna librería
+como <a href="https://peerjs.com/">PeerJS</a></li>
 </ul>
 </section></section>
     </div>
@@ -214,7 +250,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -223,7 +259,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

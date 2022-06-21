@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,7 +102,8 @@
 </section>
 <section class="slide level2">
 
-<p>El <a href="https://es.wikipedia.org/wiki/Alma">alma</a>, se creía/cree, es eso que tenemos y que nos hace movernos</p>
+<p>El <a href="https://es.wikipedia.org/wiki/Alma">alma</a>, se
+creía/cree, es eso que tenemos y que nos hace movernos</p>
 </section>
 <section class="slide level2">
 
@@ -116,23 +120,37 @@
 </section>
 <section class="slide level2">
 
-<p><a href="https://en.wikipedia.org/wiki/Eadweard_Muybridge">Eadweard Muybridge</a> diseñó un sistema de fotografía en el que, haciendo muchas fotos seguidas con una cámara fija, conseguía que el ojo humano no pudiera distinguir los fotogramas como imágenes separadas <em>sino como movimiento</em></p>
+<p><a href="https://en.wikipedia.org/wiki/Eadweard_Muybridge">Eadweard
+Muybridge</a> diseñó un sistema de fotografía en el que, haciendo muchas
+fotos seguidas con una cámara fija, conseguía que el ojo humano no
+pudiera distinguir los fotogramas como imágenes separadas <em>sino como
+movimiento</em></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg" alt="The Horse in Motion (Wikipedia)" /><figcaption aria-hidden="true">The Horse in Motion (Wikipedia)</figcaption>
+<img
+data-src="https://upload.wikimedia.org/wikipedia/commons/7/73/The_Horse_in_Motion.jpg"
+alt="The Horse in Motion (Wikipedia)" />
+<figcaption aria-hidden="true">The Horse in Motion
+(Wikipedia)</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/0/07/The_Horse_in_Motion-anim.gif" alt="The Horse in Motion animado (Wikipedia)" /><figcaption aria-hidden="true">The Horse in Motion animado (Wikipedia)</figcaption>
+<img
+data-src="https://upload.wikimedia.org/wikipedia/commons/0/07/The_Horse_in_Motion-anim.gif"
+alt="The Horse in Motion animado (Wikipedia)" />
+<figcaption aria-hidden="true">The Horse in Motion animado
+(Wikipedia)</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Con la misma idea, los <a href="https://es.wikipedia.org/wiki/Hermanos_Lumi%C3%A8re">Hermanos Lumière</a> inventaron el cinematógrafo</p>
+<p>Con la misma idea, los <a
+href="https://es.wikipedia.org/wiki/Hermanos_Lumi%C3%A8re">Hermanos
+Lumière</a> inventaron el cinematógrafo</p>
 </section></section>
 <section>
 <section id="hoy" class="title-slide slide level1">
@@ -142,7 +160,8 @@
 <section class="slide level2">
 
 <p>La idea prácticamente no ha variado</p>
-<p>Para crear la <strong>sensación</strong> de movimiento (animación), reproducimos imágenes en orden, suficientemente rápido</p>
+<p>Para crear la <strong>sensación</strong> de movimiento (animación),
+reproducimos imágenes en orden, suficientemente rápido</p>
 </section></section>
 <section>
 <section id="sprites" class="title-slide slide level1">
@@ -151,63 +170,81 @@
 </section>
 <section class="slide level2">
 
-<p>Un <a href="https://en.wikipedia.org/wiki/Sprite_(computer_graphics)"><em>sprite</em></a> es una imagen sencilla, única, en 2D</p>
+<p>Un <a
+href="https://en.wikipedia.org/wiki/Sprite_(computer_graphics)"><em>sprite</em></a>
+es una imagen sencilla, única, en 2D</p>
 </section>
 <section class="slide level2">
 
 <p>Su origen es parte de la historia del videojuego</p>
-<p>Algunas de las primeras máquinas dedicadas a ejecutar juegos tenían hardware <em>dedicado</em> para sprites (aunque no es exactamente el mismo concepto que conocemos ahora)</p>
+<p>Algunas de las primeras máquinas dedicadas a ejecutar juegos tenían
+hardware <em>dedicado</em> para sprites (aunque no es exactamente el
+mismo concepto que conocemos ahora)</p>
 </section>
 <section class="slide level2">
 
-<p>Esta tecnología de sprite no realizaba cambios en RAM que se volcaban al dispositivo gráfico</p>
+<p>Esta tecnología de sprite no realizaba cambios en RAM que se volcaban
+al dispositivo gráfico</p>
 </section>
 <section class="slide level2">
 
-<p>Esta es una de las razones por las que los sprites tenían restricciones físicas</p>
+<p>Esta es una de las razones por las que los sprites tenían
+restricciones físicas</p>
 </section>
 <section class="slide level2">
 
-<p>Hoy en día, generalmente, hacemos la creación de la escena gráfica (<strong>frame</strong>) en la RAM y volcamos (<code class="sourceCode javascript">blit</code>) al contexto gráfico</p>
+<p>Hoy en día, generalmente, hacemos la creación de la escena gráfica
+(<strong>frame</strong>) en la RAM y volcamos (<code
+class="sourceCode javascript">blit</code>) al contexto gráfico</p>
 <p>Esto nos da una flexibilidad enorme, pero es <em>más lento</em></p>
 </section>
 <section class="slide level2">
 
-<p>Obviamente, esto en irrelevante en términos de eficiencia con el hardware moderno</p>
+<p>Obviamente, esto en irrelevante en términos de eficiencia con el
+hardware moderno</p>
 </section>
 <section id="sprites-hoy" class="slide level2">
 <h2>Sprites hoy</h2>
 </section>
 <section class="slide level2">
 
-<p>Hoy en día, los sprites son generalmente mapas de bits de cualquier tamaño</p>
+<p>Hoy en día, los sprites son generalmente mapas de bits de cualquier
+tamaño</p>
 </section>
 <section class="slide level2">
 
-<p>En general, usamos formas rectangulares con formatos (razonablemente) estándar</p>
-<p>Dado cómo usamos los sprites, el tamaño o el número de colores ya no es, generalmente, un problema</p>
+<p>En general, usamos formas rectangulares con formatos (razonablemente)
+estándar</p>
+<p>Dado cómo usamos los sprites, el tamaño o el número de colores ya no
+es, generalmente, un problema</p>
 </section>
 <section class="slide level2">
 
 <p>Solemos usar formatos con transparencia explícita</p>
 <p>Para ello hace falta un formato que lo acepte (como PNG)</p>
 <figure>
-<img data-src="tux.png" alt="Sprite" /><figcaption aria-hidden="true">Sprite</figcaption>
+<img data-src="tux.png" alt="Sprite" />
+<figcaption aria-hidden="true">Sprite</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>También (esto depende del formato de la imagen) podemos usar un color concreto de fondo</p>
+<p>También (esto depende del formato de la imagen) podemos usar un color
+concreto de fondo</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="tux_fondo.png" alt="Esta idea es muy similar a como funciona un croma" /><figcaption aria-hidden="true">Esta idea es muy similar a como funciona un <a href="https://es.wikipedia.org/wiki/Croma">croma</a></figcaption>
+<img data-src="tux_fondo.png"
+alt="Esta idea es muy similar a como funciona un croma" />
+<figcaption aria-hidden="true">Esta idea es muy similar a como funciona
+un <a href="https://es.wikipedia.org/wiki/Croma">croma</a></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Ya hemos cargado y usado sprites, ahora vamos a ver cómo podemos hacer que esos sprites estén animados</p>
+<p>Ya hemos cargado y usado sprites, ahora vamos a ver cómo podemos
+hacer que esos sprites estén animados</p>
 </section></section>
 <section>
 <section id="muchos-sprites" class="title-slide slide level1">
@@ -216,30 +253,42 @@
 </section>
 <section class="slide level2">
 
-<p>Producimos la <em>sensación</em> de animación al reproducir imágenes consecutivas con pequeños cambios secuenciales, <em>suficientemente rápido</em></p>
+<p>Producimos la <em>sensación</em> de animación al reproducir imágenes
+consecutivas con pequeños cambios secuenciales, <em>suficientemente
+rápido</em></p>
 </section>
 <section class="slide level2">
 
-<p>Para conseguir esto en videojuegos, simplemente disponemos de varios sprites que representan secuencias de movimientos seguidos, <strong>diferenciales</strong></p>
+<p>Para conseguir esto en videojuegos, simplemente disponemos de varios
+sprites que representan secuencias de movimientos seguidos,
+<strong>diferenciales</strong></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="https://c1.staticflickr.com/5/4147/4998615136_dc0b7b1e39_b.jpg" style="width:35.0%" alt="Spritesheet" /><figcaption aria-hidden="true"><a href="https://www.flickr.com/photos/goosemouse/4998615136">Spritesheet</a></figcaption>
+<img
+data-src="https://c1.staticflickr.com/5/4147/4998615136_dc0b7b1e39_b.jpg"
+style="width:35.0%" alt="Spritesheet" />
+<figcaption aria-hidden="true"><a
+href="https://www.flickr.com/photos/goosemouse/4998615136">Spritesheet</a></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Una vez que tenemos la información, simplemente tenemos que usarla para dibujar, en un contexto gráfico, los sprites por orden</p>
+<p>Una vez que tenemos la información, simplemente tenemos que usarla
+para dibujar, en un contexto gráfico, los sprites por orden</p>
 <p><em>De la misma manera que el cine</em></p>
 </section>
 <section class="slide level2">
 
-<p>Para hacer esto de forma que el movimiento, la animación, sea convincente, tenemos que asegurarnos de que el reemplazo de una imagen por la siguiente en la secuencia no tenga “fallos”</p>
+<p>Para hacer esto de forma que el movimiento, la animación, sea
+convincente, tenemos que asegurarnos de que el reemplazo de una imagen
+por la siguiente en la secuencia no tenga “fallos”</p>
 </section>
 <section class="slide level2">
 
-<p>Estos requisitos los cumplimos manteniendo propiedades básicas entre las imágenes:</p>
+<p>Estos requisitos los cumplimos manteniendo propiedades básicas entre
+las imágenes:</p>
 <ul>
 <li>Mismo tiempo por fotograma</li>
 <li>Mismo tamaño de fotogramas</li>
@@ -252,7 +301,9 @@
 </section>
 <section class="slide level2">
 
-<p>Si mantenemos esos requisitos (lo cual no es <em>técnicamente</em> necesario), el programa que procese la información para representarla por pantalla podrá ser sencillo</p>
+<p>Si mantenemos esos requisitos (lo cual no es <em>técnicamente</em>
+necesario), el programa que procese la información para representarla
+por pantalla podrá ser sencillo</p>
 </section>
 <section class="slide level2">
 
@@ -280,18 +331,21 @@
 </section>
 <section class="slide level2">
 
-<p>Es generalmente cómodo y fácil tener todos los frames de una animación en un solo recurso</p>
+<p>Es generalmente cómodo y fácil tener todos los frames de una
+animación en un solo recurso</p>
 </section>
 <section class="slide level2">
 
-<p>Podemos usar un atlas de imagen en el que cada imagen sea un frame de la animación</p>
+<p>Podemos usar un atlas de imagen en el que cada imagen sea un frame de
+la animación</p>
 </section>
 <section id="frames" class="slide level2">
 <h2><em>Frames</em></h2>
 </section>
 <section class="slide level2">
 
-<p>Un frame, como hemos visto, es cada una de las imágenes que serán representadas en una animación</p>
+<p>Un frame, como hemos visto, es cada una de las imágenes que serán
+representadas en una animación</p>
 </section>
 <section class="slide level2">
 
@@ -306,8 +360,11 @@
 </section>
 <section class="slide level2">
 
-<p>Un recurso de animación puede contener varios <em>ciclos</em> de animación</p>
-<p>Normalmente, una entidad en un videojuego puede hacer varias cosas, de forma que necesitará una animación para representar cada una de ellas</p>
+<p>Un recurso de animación puede contener varios <em>ciclos</em> de
+animación</p>
+<p>Normalmente, una entidad en un videojuego puede hacer varias cosas,
+de forma que necesitará una animación para representar cada una de
+ellas</p>
 </section>
 <section class="slide level2">
 
@@ -320,15 +377,19 @@
 </section>
 <section class="slide level2">
 
-<p>Cada una de estas acciones se representa en animación con lo que llamamos <em>ciclo</em></p>
-<p>Un ciclo es una secuencia ordenada de frames que representan un movimiento continuo</p>
+<p>Cada una de estas acciones se representa en animación con lo que
+llamamos <em>ciclo</em></p>
+<p>Un ciclo es una secuencia ordenada de frames que representan un
+movimiento continuo</p>
 </section>
 <section class="slide level2">
 
 <p>Los ciclos pueden ser:</p>
 <ul>
-<li>Cíclicos: diseñados para que, cuando se acabe el último frame, empiece el siguiente (andar)</li>
-<li>Simples: diseñados para que se quede en un estado estacionario (morir)</li>
+<li>Cíclicos: diseñados para que, cuando se acabe el último frame,
+empiece el siguiente (andar)</li>
+<li>Simples: diseñados para que se quede en un estado estacionario
+(morir)</li>
 </ul>
 </section>
 <section id="combinando-frames-y-ciclos" class="slide level2">
@@ -336,7 +397,8 @@
 </section>
 <section class="slide level2">
 
-<p>Para combinar frames y ciclos solemos usar una disposición en rejilla</p>
+<p>Para combinar frames y ciclos solemos usar una disposición en
+rejilla</p>
 </section>
 <section class="slide level2">
 
@@ -345,13 +407,19 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="https://c1.staticflickr.com/5/4147/4998615136_dc0b7b1e39_b.jpg" style="width:35.0%" alt="Spritesheet" /><figcaption aria-hidden="true"><a href="https://www.flickr.com/photos/goosemouse/4998615136">Spritesheet</a></figcaption>
+<img
+data-src="https://c1.staticflickr.com/5/4147/4998615136_dc0b7b1e39_b.jpg"
+style="width:35.0%" alt="Spritesheet" />
+<figcaption aria-hidden="true"><a
+href="https://www.flickr.com/photos/goosemouse/4998615136">Spritesheet</a></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Es importante notar que los ciclos no tienen que tener todos los mismos frames</p>
-<p>Desde <em>el código</em>, o exportando datos adicionales, se carga la información de:</p>
+<p>Es importante notar que los ciclos no tienen que tener todos los
+mismos frames</p>
+<p>Desde <em>el código</em>, o exportando datos adicionales, se carga la
+información de:</p>
 <ul>
 <li>El tamaño de cada frame</li>
 <li>Qué ciclos hay</li>
@@ -360,9 +428,15 @@
 </section>
 <section class="slide level2">
 
-<p>Fijémonos en que el tamaño de frame es distinto en esta imagen: no es cómodo, pero es posible: habría que indicarlo desde código u otro recurso (un JSON)</p>
+<p>Fijémonos en que el tamaño de frame es distinto en esta imagen: no es
+cómodo, pero es posible: habría que indicarlo desde código u otro
+recurso (un JSON)</p>
 <figure>
-<img data-src="frameciclo.jpg" style="width:35.0%" alt="Frames (verde) y ciclos (rojo)" /><figcaption aria-hidden="true"><a href="https://www.flickr.com/photos/goosemouse/4998615136">Frames (verde) y ciclos (rojo)</a></figcaption>
+<img data-src="frameciclo.jpg" style="width:35.0%"
+alt="Frames (verde) y ciclos (rojo)" />
+<figcaption aria-hidden="true"><a
+href="https://www.flickr.com/photos/goosemouse/4998615136">Frames
+(verde) y ciclos (rojo)</a></figcaption>
 </figure>
 </section>
 <section id="reusar-ciclos" class="slide level2">
@@ -370,42 +444,55 @@
 </section>
 <section class="slide level2">
 
-<p>Cuando un personaje en 2D se mueve, es muy normal que pueda hacerlo en varias direcciones</p>
+<p>Cuando un personaje en 2D se mueve, es muy normal que pueda hacerlo
+en varias direcciones</p>
 </section>
 <section class="slide level2">
 
-<p>Así, en una vista de arriba a abajo, es de esperar que el personaje pueda ir hacia la izquierda, derecha, arriba y abajo</p>
+<p>Así, en una vista de arriba a abajo, es de esperar que el personaje
+pueda ir hacia la izquierda, derecha, arriba y abajo</p>
 </section>
 <section class="slide level2">
 
-<p>Si tenemos un ciclo de animación en el que el personaje puede ir en una dirección, no tenemos por qué dibujarlo yendo en la contraria, ya que podemos aprovechar la simetría</p>
-<p>Haciendo esto, hacemos la imagen espejada por software y la usamos como el ciclo de animación correspondiente</p>
+<p>Si tenemos un ciclo de animación en el que el personaje puede ir en
+una dirección, no tenemos por qué dibujarlo yendo en la contraria, ya
+que podemos aprovechar la simetría</p>
+<p>Haciendo esto, hacemos la imagen espejada por software y la usamos
+como el ciclo de animación correspondiente</p>
 </section>
 <section id="enlazando-los-ciclos" class="slide level2">
 <h2>Enlazando los ciclos</h2>
 </section>
 <section class="slide level2">
 
-<p>Cuando se crean ciclos, es de esperar que, en el videojuego, se pase de uno a otro de manera “suave”</p>
+<p>Cuando se crean ciclos, es de esperar que, en el videojuego, se pase
+de uno a otro de manera “suave”</p>
 </section>
 <section class="slide level2">
 
-<p>Esto quiere decir (con un ejemplo práctico) que el personaje tiene que pasar del ciclo de <em>salto</em> al ciclo de <em>andar</em> de una manera fluida</p>
+<p>Esto quiere decir (con un ejemplo práctico) que el personaje tiene
+que pasar del ciclo de <em>salto</em> al ciclo de <em>andar</em> de una
+manera fluida</p>
 </section>
 <section class="slide level2">
 
-<p>Para hacer esto, se aplica un poco de artesanía al dibujo del sprite, y se pueden aplicar algunas (o varias) de estas técnicas, entre otras:</p>
+<p>Para hacer esto, se aplica un poco de artesanía al dibujo del sprite,
+y se pueden aplicar algunas (o varias) de estas técnicas, entre
+otras:</p>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>se dibujan los principios y finales de las ciclos de manera que sean “neutros” (el personaje en una postura que dé lugar a otros ciclos),</li>
+<li>se dibujan los principios y finales de las ciclos de manera que sean
+“neutros” (el personaje en una postura que dé lugar a otros
+ciclos),</li>
 </ul>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>o se asume un estilo de sprite animado en el que la transición se muestra muy bruscamente,</li>
+<li>o se asume un estilo de sprite animado en el que la transición se
+muestra muy bruscamente,</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -414,15 +501,18 @@
 <li>o se hacen diferentes ciclos de transición:
 <ul>
 <li>se activa andar,</li>
-<li>cuando se deja de andar, se pasa a un ciclo de “parándose”, que no es cíclico,</li>
-<li>cuando se termina el estado “parándose”, se puede activar la animación de “quieto” de forma natural;</li>
+<li>cuando se deja de andar, se pasa a un ciclo de “parándose”, que no
+es cíclico,</li>
+<li>cuando se termina el estado “parándose”, se puede activar la
+animación de “quieto” de forma natural;</li>
 </ul></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>o se anima por huesos (no lo veremos hoy) y se hace la transición de otra forma</li>
+<li>o se anima por huesos (no lo veremos hoy) y se hace la transición de
+otra forma</li>
 </ul>
 </section></section>
 <section>
@@ -436,7 +526,9 @@
 </section>
 <section id="cargar-un-spritesheet" class="slide level2">
 <h2>Cargar un spritesheet</h2>
-<p>Con <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Loader.LoaderPlugin#spritesheet"><code class="sourceCode javascript">spritesheet</code></a>:</p>
+<p>Con <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Loader.LoaderPlugin#spritesheet"><code
+class="sourceCode javascript">spritesheet</code></a>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En el preload</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">spritesheet</span>(<span class="st">&#39;mummy&#39;</span><span class="op">,</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&#39;mummy.animated.png&#39;</span><span class="op">,</span></span>
@@ -446,7 +538,9 @@
 </section>
 <section id="establecer-un-ciclo-de-animación" class="slide level2">
 <h2>Establecer un ciclo de animación</h2>
-<p>Se pueden crear ciclos de animación con el <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.AnimationManager"><code class="sourceCode javascript">AnimationManager</code></a></p>
+<p>Se pueden crear ciclos de animación con el <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.AnimationManager"><code
+class="sourceCode javascript">AnimationManager</code></a></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Como &#39;mummy&#39; es un spritesheet, puede identificar los frames</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">// this es Scene</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">create</span>({</span>
@@ -461,15 +555,19 @@
 </section>
 <section class="slide level2">
 
-<p>Con <code class="sourceCode javascript"><span class="fu">play</span>()</code> se ejecuta una animación:</p>
+<p>Con <code
+class="sourceCode javascript"><span class="fu">play</span>()</code> se
+ejecuta una animación:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `this` es un `Sprite` en la misma escena</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">// que se ha creado la animación</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="fu">play</span>(<span class="st">&#39;standing_mummy&#39;</span>)<span class="op">;</span></span></code></pre></div>
-<p><small><code>play</code> puede usar un segundo parámetro para indicar si queremos que se ignore si la animación ya estaba activada</small></p>
+<p><small><code>play</code> puede usar un segundo parámetro para indicar
+si queremos que se ignore si la animación ya estaba activada</small></p>
 </section>
 <section class="slide level2">
 
-<p>Para parar una animación, con <code class="sourceCode javascript"><span class="fu">stop</span>()</code>:</p>
+<p>Para parar una animación, con <code
+class="sourceCode javascript"><span class="fu">stop</span>()</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `this` es un `Sprite`en la misma escena</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">// que se ha creado la animación</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="fu">stop</span>()<span class="op">;</span></span></code></pre></div>
@@ -479,7 +577,10 @@
 </section>
 <section class="slide level2">
 
-<p>Es posible hacer “callbacks” para ser informados de cuándo una animación se pone en marcha o se detiene <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.Events">usando los eventos de animación</a>:</p>
+<p>Es posible hacer “callbacks” para ser informados de cuándo una
+animación se pone en marcha o se detiene <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Animations.Events">usando
+los eventos de animación</a>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// `this` es un `Sprite`en la misma escena</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">// que se ha creado la animación</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;animationrepeat-standing_mummy&#39;</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
@@ -491,17 +592,26 @@
 </section>
 <section class="slide level2">
 
-<p>Con <code class="sourceCode javascript"><span class="fu">chain</span>(<span class="st">&#39;clave&#39;</span>)</code> se pueden <em>encadenar animaciones</em>, de forma que al terminar una empiece otra</p>
+<p>Con <code
+class="sourceCode javascript"><span class="fu">chain</span>(<span class="st">&#39;clave&#39;</span>)</code>
+se pueden <em>encadenar animaciones</em>, de forma que al terminar una
+empiece otra</p>
 </section>
 <section class="slide level2">
 
-<p>Para cambiar las opciones de repetición, usamos <code class="sourceCode javascript"><span class="fu">play</span>()</code>, con otro parámetro:</p>
+<p>Para cambiar las opciones de repetición, usamos <code
+class="sourceCode javascript"><span class="fu">play</span>()</code>, con
+otro parámetro:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="fu">play</span>(<span class="st">&#39;walk&#39;</span><span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span> <span class="co">// *sí* repite</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sprite<span class="op">.</span><span class="fu">play</span>(<span class="st">&#39;walk&#39;</span><span class="op">,</span> <span class="kw">false</span>)<span class="op">;</span> <span class="co">// no repite</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Cuando animamos una clase que hereda de <code class="sourceCode javascript">Sprite</code>, hay que llamar al <code class="sourceCode javascript"><span class="fu">preUpdate</span>(t<span class="op">,</span> dt)</code> del padre (de <code class="sourceCode javascript">Sprite</code>) para que se produzca la animación:</p>
+<p>Cuando animamos una clase que hereda de <code
+class="sourceCode javascript">Sprite</code>, hay que llamar al <code
+class="sourceCode javascript"><span class="fu">preUpdate</span>(t<span class="op">,</span> dt)</code>
+del padre (de <code class="sourceCode javascript">Sprite</code>) para
+que se produzca la animación:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Player <span class="kw">extends</span> Phaser<span class="op">.</span><span class="at">GameObjects</span><span class="op">.</span><span class="at">Sprite</span> {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">preUpdate</span>(t<span class="op">,</span> dt) {</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">super</span><span class="op">.</span><span class="fu">preUpdate</span>(t<span class="op">,</span> dt)</span>
@@ -516,11 +626,14 @@
 </section>
 <section class="slide level2">
 
-<p>Un <em>atlas</em> es un archivo de imagen que contiene varias texturas diferentes</p>
+<p>Un <em>atlas</em> es un archivo de imagen que contiene varias
+texturas diferentes</p>
 </section>
 <section class="slide level2">
 
-<p>Una de las ventajas es que una sola textura en memoria es usada para hacer <em>render</em> de varios objetos, y esto mejora mucho el rendimiento</p>
+<p>Una de las ventajas es que una sola textura en memoria es usada para
+hacer <em>render</em> de varios objetos, y esto mejora mucho el
+rendimiento</p>
 </section>
 <section class="slide level2">
 
@@ -528,20 +641,31 @@
 </section>
 <section class="slide level2">
 
-<p>Los atlas pueden ser de imágenes del mismo tamaño, o de tamaños diferentes</p>
-<p>Si son de tamaños diferentes, hay que adjuntar información sobre qué área de la textura corresponde a cada imagen</p>
-<p><a href="https://labs.phaser.io/assets/animations/seacreatures_json.png" class="uri">https://labs.phaser.io/assets/animations/seacreatures_json.png</a></p>
-<p><a href="https://labs.phaser.io/assets/animations/seacreatures_json.json" class="uri">https://labs.phaser.io/assets/animations/seacreatures_json.json</a></p>
+<p>Los atlas pueden ser de imágenes del mismo tamaño, o de tamaños
+diferentes</p>
+<p>Si son de tamaños diferentes, hay que adjuntar información sobre qué
+área de la textura corresponde a cada imagen</p>
+<p><a
+href="https://labs.phaser.io/assets/animations/seacreatures_json.png"
+class="uri">https://labs.phaser.io/assets/animations/seacreatures_json.png</a></p>
+<p><a
+href="https://labs.phaser.io/assets/animations/seacreatures_json.json"
+class="uri">https://labs.phaser.io/assets/animations/seacreatures_json.json</a></p>
 </section>
 <section class="slide level2">
 
-<p>Para cargar un atlas en Phaser, le damos un <em>identificador</em>, un <em>archivo</em> con la textura, y un <em>JSON</em> con la información de cómo está dividida la textura.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">atlas</span>(<span class="st">&#39;cosas&#39;</span><span class="op">,</span> <span class="st">&#39;cosas.png&#39;</span><span class="op">,</span> <span class="st">&#39;cosas.json&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<p>Para cargar un atlas en Phaser, le damos un <em>identificador</em>,
+un <em>archivo</em> con la textura, y un <em>JSON</em> con la
+información de cómo está dividida la textura.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">atlas</span>(<span class="st">&#39;cosas&#39;</span><span class="op">,</span> <span class="st">&#39;cosas.png&#39;</span><span class="op">,</span> <span class="st">&#39;cosas.json&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Y, después, podemos usar ese atlas como cualquier <em>spritesheet</em>:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">create</span>({</span>
+<p>Y, después, podemos usar ese atlas como cualquier
+<em>spritesheet</em>:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">create</span>({</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">key</span><span class="op">:</span> <span class="st">&#39;enemigo_andar&#39;</span><span class="op">,</span> </span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">frames</span><span class="op">:</span> </span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>     <span class="kw">this</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">generateFrameNames</span>(<span class="st">&#39;cosas&#39;</span><span class="op">,</span> {<span class="dt">prefix</span><span class="op">:</span><span class="st">&#39;prefijo_en_json&#39;</span>})<span class="op">,</span></span>
@@ -551,14 +675,21 @@
 </section>
 <section class="slide level2">
 
-<p>Hay aplicaciones web que permiten la creación de atlas para Phaser:</p>
-<p><a href="https://gammafp.github.io/atlas-packer-phaser/" class="uri">https://gammafp.github.io/atlas-packer-phaser/</a></p>
-<p><a href="https://free-tex-packer.com/app/" class="uri">https://free-tex-packer.com/app/</a></p>
+<p>Hay aplicaciones web que permiten la creación de atlas para
+Phaser:</p>
+<p><a href="https://gammafp.github.io/atlas-packer-phaser/"
+class="uri">https://gammafp.github.io/atlas-packer-phaser/</a></p>
+<p><a href="https://free-tex-packer.com/app/"
+class="uri">https://free-tex-packer.com/app/</a></p>
 </section>
 <section class="slide level2">
 
-<p>Es importante, al exportar el JSON, añadir el prefijo <code class="sourceCode javascript">prefijo_en_json</code>, que se puede sacar del JSON generado (en <code>filename</code>, y quitando los números):</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">generateFrameNames</span>(<span class="st">&#39;cosas&#39;</span><span class="op">,</span> {<span class="dt">prefix</span><span class="op">:</span><span class="st">&#39;prefijo_en_json&#39;</span>})</span></code></pre></div>
+<p>Es importante, al exportar el JSON, añadir el prefijo <code
+class="sourceCode javascript">prefijo_en_json</code>, que se puede sacar
+del JSON generado (en <code>filename</code>, y quitando los
+números):</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">anims</span><span class="op">.</span><span class="fu">generateFrameNames</span>(<span class="st">&#39;cosas&#39;</span><span class="op">,</span> {<span class="dt">prefix</span><span class="op">:</span><span class="st">&#39;prefijo_en_json&#39;</span>})</span></code></pre></div>
 </section></section>
     </div>
   </div>

@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,17 +102,22 @@
 </section>
 <section id="gamejam-2020" class="slide level2">
 <h2>GameJam 2020</h2>
-<p>Del 31 de enero al 2 de febrero de 2020, UCM es sede GameJam 2020 en Madrid</p>
+<p>Del 31 de enero al 2 de febrero de 2020, UCM es sede GameJam 2020 en
+Madrid</p>
 </section>
 <section id="medialab-prado" class="slide level2">
 <h2>Medialab Prado</h2>
 <p>La GGJ UCM se organizó en Medialab Prado</p>
-<p><a href="https://www.medialab-prado.es" class="uri">https://www.medialab-prado.es</a></p>
+<p><a href="https://www.medialab-prado.es"
+class="uri">https://www.medialab-prado.es</a></p>
 </section>
 <section id="pantalla" class="slide level2">
 <h2>Pantalla</h2>
-<p>Medialab Prado tiene una pantalla en la fachada exterior que se puede usar</p>
-<p><a href="https://www.medialab-prado.es/noticias/fachada-digital-informacion-tecnica-0" class="uri">https://www.medialab-prado.es/noticias/fachada-digital-informacion-tecnica-0</a></p>
+<p>Medialab Prado tiene una pantalla en la fachada exterior que se puede
+usar</p>
+<p><a
+href="https://www.medialab-prado.es/noticias/fachada-digital-informacion-tecnica-0"
+class="uri">https://www.medialab-prado.es/noticias/fachada-digital-informacion-tecnica-0</a></p>
 </section>
 <section id="dimensiones" class="slide level2">
 <h2>Dimensiones</h2>
@@ -121,16 +129,22 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="https://www.medialab-prado.es/sites/default/files/import/ftp_medialab/5/5770/500_0.png" style="width:50.0%" alt="Diagrama de la pantalla" /><figcaption aria-hidden="true">Diagrama de la pantalla</figcaption>
+<img
+data-src="https://www.medialab-prado.es/sites/default/files/import/ftp_medialab/5/5770/500_0.png"
+style="width:50.0%" alt="Diagrama de la pantalla" />
+<figcaption aria-hidden="true">Diagrama de la pantalla</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>La pantalla sólo se ve bien de noche (está habilitada como de 18:30 a 23:30)</p>
+<p>La pantalla sólo se ve bien de noche (está habilitada como de 18:30 a
+23:30)</p>
 </section>
 <section class="slide level2">
 
-<p>El tamaño de la plaza hace que se vea muy cerca, con lo que los píxeles inferiores se ven <em>bastante mayores</em> que los superiores</p>
+<p>El tamaño de la plaza hace que se vea muy cerca, con lo que los
+píxeles inferiores se ven <em>bastante mayores</em> que los
+superiores</p>
 </section>
 <section id="sonido" class="slide level2">
 <h2>Sonido</h2>
@@ -138,7 +152,8 @@
 </section>
 <section id="cámaras" class="slide level2">
 <h2>Cámaras</h2>
-<p>Hay un sistema CCTV que recoge la interacción de la gente en la plaza</p>
+<p>Hay un sistema CCTV que recoge la interacción de la gente en la
+plaza</p>
 <p><em>Y un API de alto nivel de reconocimiento de personas</em></p>
 </section></section>
 <section>
@@ -148,7 +163,9 @@
 </section>
 <section class="slide level2">
 
-<p>Tienen un PC con salida directa a la fachada, con lo que cualquier trozo imagen que quepa en 192 <span class="math inline">×</span> 157, se puede emitir</p>
+<p>Tienen un PC con salida directa a la fachada, con lo que cualquier
+trozo imagen que quepa en 192 <span class="math inline">×</span> 157, se
+puede emitir</p>
 </section>
 <section class="slide level2">
 
@@ -156,12 +173,14 @@
 </section>
 <section id="processing" class="slide level2">
 <h2>Processing</h2>
-<p>Medialab Prado ofrece un API de alto nivel para programar la fachada y la cámara</p>
+<p>Medialab Prado ofrece un API de alto nivel para programar la fachada
+y la cámara</p>
 <p>Está basado en <a href="https://processing.org">Processing</a></p>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> <span class="dv">100</span><span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> <span class="fu">setup</span><span class="op">()</span> <span class="op">{</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">size</span><span class="op">(</span><span class="dv">640</span><span class="op">,</span> <span class="dv">360</span><span class="op">);</span> </span>
@@ -176,7 +195,9 @@
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span> </span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">line</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> y<span class="op">,</span> width<span class="op">,</span> y<span class="op">);</span>  </span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> </span></code></pre></div>
-<p><small><a href="https://processing.org/examples/setupdraw.html">Enlace al ejemplo</a></small></p>
+<p><small><a
+href="https://processing.org/examples/setupdraw.html">Enlace al
+ejemplo</a></small></p>
 </section></section>
 <section>
 <section id="p5.js-y-javascript" class="title-slide slide level1">
@@ -185,7 +206,9 @@
 </section>
 <section class="slide level2">
 
-<p>Dado que <em>Programa la plaza</em> ofrece una plataforma web, se recomienda usar <a href="https://p5js.org">P5.js</a>, que es <em>Processing</em>, pero con JavaScript</p>
+<p>Dado que <em>Programa la plaza</em> ofrece una plataforma web, se
+recomienda usar <a href="https://p5js.org">P5.js</a>, que es
+<em>Processing</em>, pero con JavaScript</p>
 </section>
 <section class="slide level2">
 
@@ -204,20 +227,26 @@
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">line</span>(<span class="dv">0</span><span class="op">,</span> y<span class="op">,</span> width<span class="op">,</span> y)<span class="op">;</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p><small><a href="https://p5js.org/examples/structure-setup-and-draw.html">Enlace al ejemplo</a></small></p>
+<p><small><a
+href="https://p5js.org/examples/structure-setup-and-draw.html">Enlace al
+ejemplo</a></small></p>
 </section>
 <section class="slide level2">
 
-<p>Hacer con JavaScript y P5.js es mucho más flexible (y está más mantenido)</p>
+<p>Hacer con JavaScript y P5.js es mucho más flexible (y está más
+mantenido)</p>
 </section></section>
 <section>
-<section id="plataforma-programa-la-plaza" class="title-slide slide level1">
+<section id="plataforma-programa-la-plaza"
+class="title-slide slide level1">
 <h1>Plataforma “Programa la plaza”</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Desde <a href="http://programalaplaza.medialab-prado.es" class="uri">http://programalaplaza.medialab-prado.es</a> se puede crear una cuenta y empezar a programam directamente en el navegador</p>
+<p>Desde <a href="http://programalaplaza.medialab-prado.es"
+class="uri">http://programalaplaza.medialab-prado.es</a> se puede crear
+una cuenta y empezar a programam directamente en el navegador</p>
 </section>
 <section class="slide level2">
 
@@ -244,12 +273,16 @@
 </section>
 <section id="imágenes" class="slide level2">
 <h2>Imágenes</h2>
-<p>Para usar imágenes (cualquier tipo soportado por P5.js), se suben a la plataforma y luego se referencian por la URL que nos da el sistema</p>
+<p>Para usar imágenes (cualquier tipo soportado por P5.js), se suben a
+la plataforma y luego se referencian por la URL que nos da el
+sistema</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="subirimagen.png" style="width:50.0%" alt="Subir imágenes" /><figcaption aria-hidden="true">Subir imágenes</figcaption>
+<img data-src="subirimagen.png" style="width:50.0%"
+alt="Subir imágenes" />
+<figcaption aria-hidden="true">Subir imágenes</figcaption>
 </figure>
 </section></section>
 <section>
@@ -259,23 +292,31 @@
 </section>
 <section class="slide level2">
 
-<p>“Programa la Plaza” tiene un <em>API</em> para el reconocimiento de personas:</p>
+<p>“Programa la Plaza” tiene un <em>API</em> para el reconocimiento de
+personas:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>api<span class="op">.</span><span class="at">tracking</span><span class="op">.</span><span class="fu">connect</span>()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>api<span class="op">.</span><span class="at">tracking</span><span class="op">.</span><span class="fu">getBlobs</span>()</span></code></pre></div>
 <p><em>Pero no podemos usarlo mientras desarrollamos</em></p>
 </section>
 <section class="slide level2">
 
-<p>Para el desarrollo se creó un <em>proxy</em> del API que usa el ratón como sustituto de la cámara</p>
+<p>Para el desarrollo se creó un <em>proxy</em> del API que usa el ratón
+como sustituto de la cámara</p>
 </section>
 <section class="slide level2">
 
-<p>Se crea un <em>array</em> (<code class="sourceCode javascript">api<span class="op">.</span><span class="at">tracking</span><span class="op">.</span><span class="at">blobs</span></code>) y, cada vez que se arrastra por pantalla (que simula a la cámara), metemos más elementos en el array</p>
-<p>Este <em>array</em> simula los “blobs” que nos ofrece el <em>API</em></p>
+<p>Se crea un <em>array</em> (<code
+class="sourceCode javascript">api<span class="op">.</span><span class="at">tracking</span><span class="op">.</span><span class="at">blobs</span></code>)
+y, cada vez que se arrastra por pantalla (que simula a la cámara),
+metemos más elementos en el array</p>
+<p>Este <em>array</em> simula los “blobs” que nos ofrece el
+<em>API</em></p>
 </section>
 <section class="slide level2">
 
-<p>Usamos <code class="sourceCode javascript"><span class="fu">mouseDragged</span>()</code> P5.js para recibir la entrada de ratón y cambiar al <em>array</em>:</p>
+<p>Usamos <code
+class="sourceCode javascript"><span class="fu">mouseDragged</span>()</code>
+P5.js para recibir la entrada de ratón y cambiar al <em>array</em>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">mouseDragged</span>() {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (overBox <span class="op">&gt;</span> released) {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> found <span class="op">=</span> api<span class="op">.</span><span class="at">tracking</span><span class="op">.</span><span class="at">blobs</span><span class="op">.</span><span class="fu">find</span>(blob <span class="kw">=&gt;</span></span>
@@ -289,7 +330,8 @@
 </section>
 <section class="slide level2">
 
-<p>Después, exportamos nuestro propio objeto <code class="sourceCode javascript">api</code></p>
+<p>Después, exportamos nuestro propio objeto <code
+class="sourceCode javascript">api</code></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> api <span class="op">=</span> {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ...</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">tracking</span><span class="op">:</span> {</span>
@@ -303,7 +345,8 @@
 </section>
 <section class="slide level2">
 
-<p>Como hemos llamado igual a nuestro <em>API</em>, sólo tenemos que subir el código (sin nuestro <em>API</em> proxy), y funcionará</p>
+<p>Como hemos llamado igual a nuestro <em>API</em>, sólo tenemos que
+subir el código (sin nuestro <em>API</em> proxy), y funcionará</p>
 </section></section>
 <section>
 <section id="el-juego" class="title-slide slide level1">
@@ -313,22 +356,30 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="juego.gif" alt="El juego" /><figcaption aria-hidden="true">El juego</figcaption>
+<img data-src="juego.gif" alt="El juego" />
+<figcaption aria-hidden="true">El juego</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>En el juego, los jugadores sólo se mueven por la plaza (es la única entrada)</p>
-<p>La cámara los reconoce, y nos ofrece posiciones de cada jugador <span class="math inline">(<em>x</em>,<em>y</em>)</span>, a esto le llama <em>blob</em></p>
+<p>En el juego, los jugadores sólo se mueven por la plaza (es la única
+entrada)</p>
+<p>La cámara los reconoce, y nos ofrece posiciones de cada jugador <span
+class="math inline">(<em>x</em>,<em>y</em>)</span>, a esto le llama
+<em>blob</em></p>
 </section>
 <section class="slide level2">
 
-<p>Cuando un <em>blob</em> cambia, primero vemos si es alguno que ya estaba o es nuevo (porque la <em>API</em> sólo nos dice el <code>id</code> del <em>blob</em>)</p>
-<p>Se probó con <code>id</code> y con <code>posicion</code>, y por <code>id</code> funcionaba mejor</p>
+<p>Cuando un <em>blob</em> cambia, primero vemos si es alguno que ya
+estaba o es nuevo (porque la <em>API</em> sólo nos dice el
+<code>id</code> del <em>blob</em>)</p>
+<p>Se probó con <code>id</code> y con <code>posicion</code>, y por
+<code>id</code> funcionaba mejor</p>
 </section>
 <section class="slide level2">
 
-<p>Con la posición, generamos enemigos (fantasmas), puertas y palancas</p>
+<p>Con la posición, generamos enemigos (fantasmas), puertas y
+palancas</p>
 <p>Las puertas se abren según el tipo de habitación:</p>
 <ul>
 <li>Solas (están abiertas)</li>
@@ -343,21 +394,26 @@
 <li>Guerreros (atacan “cuerpo a cuerpo”)</li>
 <li>Magos (disparan bolas de fuego)</li>
 </ul>
-<p>Como no hay más entrada que la posición, disparan solos cada cierto tiempo</p>
+<p>Como no hay más entrada que la posición, disparan solos cada cierto
+tiempo</p>
 </section>
 <section class="slide level2">
 
 <p>Los personajes no mueren, no hay desafío real</p>
-<p>Pero no es necesario, ya que la gente juega porque está en la calle, y por el avance en el juego</p>
+<p>Pero no es necesario, ya que la gente juega porque está en la calle,
+y por el avance en el juego</p>
 </section>
 <section id="generación-de-habitaciones" class="slide level2">
 <h2>Generación de habitaciones</h2>
 <p>La generación de habitaciones es aleatoria</p>
-<p>Para no tener que llevar el control del mapa, evitamos que se vuelva a atrás, <em>no hay puertas ni hacia abajo ni por donde hemos venido</em></p>
+<p>Para no tener que llevar el control del mapa, evitamos que se vuelva
+a atrás, <em>no hay puertas ni hacia abajo ni por donde hemos
+venido</em></p>
 </section>
 <section id="el-dragón" class="slide level2">
 <h2>El dragón</h2>
-<p>A partir de cierto número de habitaciones, hay probabilidad de que aparezca el dragón</p>
+<p>A partir de cierto número de habitaciones, hay probabilidad de que
+aparezca el dragón</p>
 <p>Cuando el dragón muere (necesita varios golpes)</p>
 </section>
 <section id="desafíos-de-programación" class="slide level2">
@@ -404,7 +460,8 @@
 <section class="slide level2">
 
 <h3 id="movimiento-a-un-punto">Movimiento a un punto</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">actualizar</span>() {</span>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">actualizar</span>() {</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">super</span><span class="op">.</span><span class="fu">actualizar</span>()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">vivo</span>) {</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">dist</span>(<span class="kw">this</span><span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">y</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">destino</span><span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">destino</span><span class="op">.</span><span class="at">y</span>) <span class="op">&lt;</span> Fantasma<span class="op">.</span><span class="at">tamano</span>) {</span>
@@ -424,70 +481,85 @@
 </section>
 <section class="slide level2">
 
-<p>Todo el juego se dibujó con arte píxel porque la pantalla tiene muy pocos puntos, y muy grandes</p>
+<p>Todo el juego se dibujó con arte píxel porque la pantalla tiene muy
+pocos puntos, y muy grandes</p>
 <p>Se animó frame a frame</p>
 </section>
 <section class="slide level2">
 
-<p>El arte es original, pero basado en buena medida en otros recursos encontrados en Internet</p>
-<p>Algunas imágenes se calcaron con cierta libertad y luego se pasaron a arte píxel</p>
+<p>El arte es original, pero basado en buena medida en otros recursos
+encontrados en Internet</p>
+<p>Algunas imágenes se calcaron con cierta libertad y luego se pasaron a
+arte píxel</p>
 </section>
 <section class="slide level2">
 
-<p>¡Gracias al prof. Guillermo Jiménez por los logos de la UCM y la Game Jam!</p>
+<p>¡Gracias al prof. Guillermo Jiménez por los logos de la UCM y la Game
+Jam!</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ggj_ucm.png" style="width:50.0%" alt="Logo UCM" /><figcaption aria-hidden="true">Logo UCM</figcaption>
+<img data-src="ggj_ucm.png" style="width:50.0%" alt="Logo UCM" />
+<figcaption aria-hidden="true">Logo UCM</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ggj_dragon.png" style="width:50.0%" alt="Dragón" /><figcaption aria-hidden="true">Dragón</figcaption>
+<img data-src="ggj_dragon.png" style="width:50.0%" alt="Dragón" />
+<figcaption aria-hidden="true">Dragón</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ggj_ggj.png" style="width:50.0%" alt="Logo GGJ" /><figcaption aria-hidden="true">Logo GGJ</figcaption>
+<img data-src="ggj_ggj.png" style="width:50.0%" alt="Logo GGJ" />
+<figcaption aria-hidden="true">Logo GGJ</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ggj_guerrero.png" style="width:50.0%" alt="Guerrero" /><figcaption aria-hidden="true">Guerrero</figcaption>
+<img data-src="ggj_guerrero.png" style="width:50.0%" alt="Guerrero" />
+<figcaption aria-hidden="true">Guerrero</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ggj_magia.png" style="width:50.0%" alt="Magia" /><figcaption aria-hidden="true">Magia</figcaption>
+<img data-src="ggj_magia.png" style="width:50.0%" alt="Magia" />
+<figcaption aria-hidden="true">Magia</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ggj_mago.png" style="width:50.0%" alt="Mago" /><figcaption aria-hidden="true">Mago</figcaption>
+<img data-src="ggj_mago.png" style="width:50.0%" alt="Mago" />
+<figcaption aria-hidden="true">Mago</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ggj_palanca.png" style="width:50.0%" alt="Palanca" /><figcaption aria-hidden="true">Palanca</figcaption>
+<img data-src="ggj_palanca.png" style="width:50.0%" alt="Palanca" />
+<figcaption aria-hidden="true">Palanca</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ggj_puerta.png" style="width:50.0%" alt="Puerta" /><figcaption aria-hidden="true">Puerta</figcaption>
+<img data-src="ggj_puerta.png" style="width:50.0%" alt="Puerta" />
+<figcaption aria-hidden="true">Puerta</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="fantasma.gif" style="width:50.0%" alt="Los enemigos mueren “desvaneciéndose”, para informar al jugador" /><figcaption aria-hidden="true">Los enemigos mueren “desvaneciéndose”, para informar al jugador</figcaption>
+<img data-src="fantasma.gif" style="width:50.0%"
+alt="Los enemigos mueren “desvaneciéndose”, para informar al jugador" />
+<figcaption aria-hidden="true">Los enemigos mueren “desvaneciéndose”,
+para informar al jugador</figcaption>
 </figure>
 </section></section>
 <section>
@@ -497,12 +569,15 @@
 </section>
 <section class="slide level2">
 
-<p>Todo está <a href="https://github.com/cleongh/majemag">accesible en GitHub</a></p>
+<p>Todo está <a href="https://github.com/cleongh/majemag">accesible en
+GitHub</a></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="pantalla_mlp.jpg" style="width:60.0%" alt="Pantalla MLP con el juego" /><figcaption aria-hidden="true">Pantalla MLP con el juego</figcaption>
+<img data-src="pantalla_mlp.jpg" style="width:60.0%"
+alt="Pantalla MLP con el juego" />
+<figcaption aria-hidden="true">Pantalla MLP con el juego</figcaption>
 </figure>
 </section></section>
     </div>
@@ -545,7 +620,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -554,7 +629,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

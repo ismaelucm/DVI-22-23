@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -97,121 +100,186 @@
 <h1>Rendimiento</h1>
 
 </section>
-<section id="el-efecto-de-los-objetos-sobre-el-rendimiento" class="slide level2">
+<section id="el-efecto-de-los-objetos-sobre-el-rendimiento"
+class="slide level2">
 <h2>El efecto de los objetos sobre el rendimiento</h2>
-<p>En general, cuantas más entidades gestione un juego, más deterioro del rendimiento</p>
-<p>No es difícil degradar el rendimiento de un juego simplemente arrojando nuevas entidades a la escena. No es necesario ni modificarlas</p>
-<p><a href="https://phaser.io/sandbox/dlqdIWMn" class="uri">https://phaser.io/sandbox/dlqdIWMn</a></p>
+<p>En general, cuantas más entidades gestione un juego, más deterioro
+del rendimiento</p>
+<p>No es difícil degradar el rendimiento de un juego simplemente
+arrojando nuevas entidades a la escena. No es necesario ni
+modificarlas</p>
+<p><a href="https://phaser.io/sandbox/dlqdIWMn"
+class="uri">https://phaser.io/sandbox/dlqdIWMn</a></p>
 </section>
 <section class="slide level2">
 
-<p>El único factor que afecta al rendimiento es el <strong>tiempo de procesamiento entre frames</strong></p>
-<p>El problema es que el tiempo de procesamiento puede incrementarse de un sinfín de formas</p>
+<p>El único factor que afecta al rendimiento es el <strong>tiempo de
+procesamiento entre frames</strong></p>
+<p>El problema es que el tiempo de procesamiento puede incrementarse de
+un sinfín de formas</p>
 </section>
 <section class="slide level2">
 
-<p>La creación de entidades, su destrucción y el pintado de las mismas afecta al rendimiento porque crear, destruir y recorrer la lista de entidades a pintar <strong>toma tiempo</strong></p>
+<p>La creación de entidades, su destrucción y el pintado de las mismas
+afecta al rendimiento porque crear, destruir y recorrer la lista de
+entidades a pintar <strong>toma tiempo</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Si el tiempo entre frame y frame excede los 16.6 ms, el <a href="https://en.wikipedia.org/wiki/Frame_rate"><em>frame rate</em></a> disminuirá por debajo de 60 fps</p>
+<p>Si el tiempo entre frame y frame excede los 16.6 ms, el <a
+href="https://en.wikipedia.org/wiki/Frame_rate"><em>frame rate</em></a>
+disminuirá por debajo de 60 fps</p>
 </section>
 <section class="slide level2">
 
-<p>En la pestaña “Rendering”, podemos activar la opción “Frame Rendering Stats” en Chrome</p>
+<p>En la pestaña “Rendering”, podemos activar la opción “Frame Rendering
+Stats” en Chrome</p>
 <figure>
-<img data-src="mostrar_rendering.png" style="width:30.0%" alt="Si está oculta la pestaña, la podemos mostrar" /><figcaption aria-hidden="true">Si está oculta la pestaña, la podemos mostrar</figcaption>
+<img data-src="mostrar_rendering.png" style="width:30.0%"
+alt="Si está oculta la pestaña, la podemos mostrar" />
+<figcaption aria-hidden="true">Si está oculta la pestaña, la podemos
+mostrar</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Además, en la pestaña “Performance”, podemos guardar una ejecución del programa y veremos qué funciones se ejecutan y cuánto tiempo tardan en hacerlo</p>
-<p>Hacer <em>profiling</em> es fundamental para ver cuál es el impacto <strong>real</strong> (y no sólo en teoría) de las partes de nuestro código</p>
+<p>Además, en la pestaña “Performance”, podemos guardar una ejecución
+del programa y veremos qué funciones se ejecutan y cuánto tiempo tardan
+en hacerlo</p>
+<p>Hacer <em>profiling</em> es fundamental para ver cuál es el impacto
+<strong>real</strong> (y no sólo en teoría) de las partes de nuestro
+código</p>
 </section>
 <section id="el-recolector-de-basura" class="slide level2">
 <h2>El recolector de basura</h2>
 <p>En JavaScript apenas nos preocupamos por la vida de un objeto</p>
-<p>Creamos el objeto con <code class="sourceCode javascript"><span class="kw">new</span></code> y cuando no lo necesitamos más, sencillamente dejamos de usarlo</p>
+<p>Creamos el objeto con <code
+class="sourceCode javascript"><span class="kw">new</span></code> y
+cuando no lo necesitamos más, sencillamente dejamos de usarlo</p>
 </section>
 <section class="slide level2">
 
-<p>¿Qué pasa con los objetos que ya no se usan? La respuesta es que son recogidos por el <a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">recolector de basura</a> y destruidos de forma que la memoria que ocupan queda disponible de nuevo</p>
+<p>¿Qué pasa con los objetos que ya no se usan? La respuesta es que son
+recogidos por el <a
+href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">recolector
+de basura</a> y destruidos de forma que la memoria que ocupan queda
+disponible de nuevo</p>
 </section>
 <section class="slide level2">
 
-<p>Para ver cómo funciona, activamos las opciones de desarrollo (en este caso, en Chrome), y en la pestaña “Performance” grabamos mientras ejecutamos un juego, activando la opción de “Memory”</p>
+<p>Para ver cómo funciona, activamos las opciones de desarrollo (en este
+caso, en Chrome), y en la pestaña “Performance” grabamos mientras
+ejecutamos un juego, activando la opción de “Memory”</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="profiling.png" alt="Ventana de resultados de profiling en Chrome" /><figcaption aria-hidden="true">Ventana de resultados de <em>profiling</em> en Chrome</figcaption>
+<img data-src="profiling.png"
+alt="Ventana de resultados de profiling en Chrome" />
+<figcaption aria-hidden="true">Ventana de resultados de
+<em>profiling</em> en Chrome</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>El recolector de basura es conveniente porque nos evita tener que liberar la memoria manualmente, previniendo que un objeto sea destruido accidentalmente cuando aún tenemos que usarlo</p>
-<p>Sin embargo, introduce un problema de impredecibilidad, dado que no sabemos <strong>ni cuándo sucederá ni cuánto tardará</strong></p>
+<p>El recolector de basura es conveniente porque nos evita tener que
+liberar la memoria manualmente, previniendo que un objeto sea destruido
+accidentalmente cuando aún tenemos que usarlo</p>
+<p>Sin embargo, introduce un problema de impredecibilidad, dado que no
+sabemos <strong>ni cuándo sucederá ni cuánto tardará</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Una recolección de basura especialmente larga puede tirar el rendimiento y nada garantiza que la siguiente recolección no haga lo mismo y suceda en menor tiempo del deseado</p>
+<p>Una recolección de basura especialmente larga puede tirar el
+rendimiento y nada garantiza que la siguiente recolección no haga lo
+mismo y suceda en menor tiempo del deseado</p>
 </section></section>
 <section>
 <section id="pooling" class="title-slide slide level1">
 <h1>Pooling</h1>
 
 </section>
-<section id="controlar-el-impacto-de-crear-y-destruir-objetos" class="slide level2">
+<section id="controlar-el-impacto-de-crear-y-destruir-objetos"
+class="slide level2">
 <h2>Controlar el impacto de crear y destruir objetos</h2>
-<p>Una forma de controlar el efecto de la creación de objetos y evitar la recolección de basura es mediante el uso del <strong><a href="https://en.wikipedia.org/wiki/Object_pool_pattern">patrón <em>Object Pool</em></a></strong> o depósito de objetos</p>
+<p>Una forma de controlar el efecto de la creación de objetos y evitar
+la recolección de basura es mediante el uso del <strong><a
+href="https://en.wikipedia.org/wiki/Object_pool_pattern">patrón
+<em>Object Pool</em></a></strong> o depósito de objetos</p>
 </section>
 <section class="slide level2">
 
-<p>La idea es sencilla: primero crearemos un <em>pool</em> (depósito) de objetos estimando los que vayamos a utilizar durante el programa</p>
+<p>La idea es sencilla: primero crearemos un <em>pool</em> (depósito) de
+objetos estimando los que vayamos a utilizar durante el programa</p>
 <figure>
-<img data-src="pool.svg" style="width:40.0%" alt="Pool de objetos" /><figcaption aria-hidden="true">Pool de objetos</figcaption>
+<img data-src="pool.svg" style="width:40.0%" alt="Pool de objetos" />
+<figcaption aria-hidden="true">Pool de objetos</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Cuando necesitemos un objeto, <strong>en lugar de crearlo, se lo pediremos al <em>pool</em></strong> y luego lo usaremos normalmente</p>
+<p>Cuando necesitemos un objeto, <strong>en lugar de crearlo, se lo
+pediremos al <em>pool</em></strong> y luego lo usaremos normalmente</p>
 <figure>
-<img data-src="takepool.svg" style="width:40.0%" alt="Coger un objeto del pool" /><figcaption aria-hidden="true">Coger un objeto del pool</figcaption>
+<img data-src="takepool.svg" style="width:40.0%"
+alt="Coger un objeto del pool" />
+<figcaption aria-hidden="true">Coger un objeto del pool</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Una vez terminemos de usar el objeto, <strong>cuando ya no lo necesitemos, lo devolveremos al <em>pool</em></strong></p>
+<p>Una vez terminemos de usar el objeto, <strong>cuando ya no lo
+necesitemos, lo devolveremos al <em>pool</em></strong></p>
 <figure>
-<img data-src="storepool.svg" style="width:40.0%" alt="Devolver el objeto al pool" /><figcaption aria-hidden="true">Devolver el objeto al pool</figcaption>
+<img data-src="storepool.svg" style="width:40.0%"
+alt="Devolver el objeto al pool" />
+<figcaption aria-hidden="true">Devolver el objeto al pool</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Cuando necesitemos otro, volveremos a pedirlo al <em>pool</em> de objetos</p>
-<p>A lo largo de la ejecución del programa, los depósitos de objetos pueden permanecer fijos o redimensionarse de acuerdo a las necesidades del mismo</p>
+<p>Cuando necesitemos otro, volveremos a pedirlo al <em>pool</em> de
+objetos</p>
+<p>A lo largo de la ejecución del programa, los depósitos de objetos
+pueden permanecer fijos o redimensionarse de acuerdo a las necesidades
+del mismo</p>
 </section></section>
 <section>
-<section id="el-ciclo-de-vida-de-las-entidades" class="title-slide slide level1">
+<section id="el-ciclo-de-vida-de-las-entidades"
+class="title-slide slide level1">
 <h1>El ciclo de vida de las entidades</h1>
 
 </section>
-<section id="reemplazar-la-creación-constante-con-un-pool" class="slide level2">
+<section id="reemplazar-la-creación-constante-con-un-pool"
+class="slide level2">
 <h2>Reemplazar la creación constante con un <em>pool</em></h2>
-<p>Si creamos una entidad con <code class="sourceCode javascript"><span class="kw">new</span></code>, como hacíamos con los <em>sprites</em>, el objeto morirá cuando lo hace cualquier otro objeto de JavaScript, es decir, cuando nada hace referencia a él</p>
+<p>Si creamos una entidad con <code
+class="sourceCode javascript"><span class="kw">new</span></code>, como
+hacíamos con los <em>sprites</em>, el objeto morirá cuando lo hace
+cualquier otro objeto de JavaScript, es decir, cuando nada hace
+referencia a él</p>
 <p>En general, al salir del <em>scope</em></p>
 </section>
 <section class="slide level2">
 
-<p>Pero si añadimos la entidad al juego, bien explícitamente o a través de los métodos factoría de <code>add</code>, esta se mantendrá viva mientras dure el juego</p>
+<p>Pero si añadimos la entidad al juego, bien explícitamente o a través
+de los métodos factoría de <code>add</code>, esta se mantendrá viva
+mientras dure el juego</p>
 </section>
 <section class="slide level2">
 
-<p>La manera en que podemos destruir una entidad, es decir, eliminar todas sus referencias de forma que el recolector de basura pueda llevársela es mediante el método <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject#destroy"><code class="sourceCode javascript"><span class="fu">destroy</span>()</code></a> de la entidad</p>
+<p>La manera en que podemos destruir una entidad, es decir, eliminar
+todas sus referencias de forma que el recolector de basura pueda
+llevársela es mediante el método <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject#destroy"><code
+class="sourceCode javascript"><span class="fu">destroy</span>()</code></a>
+de la entidad</p>
 </section>
 <section class="slide level2">
 
-<p>Por ejemplo, <a href="https://codepen.io/gjimenezucm/pen/MWmJder">el siguiente ejemplo</a> muestra un máximo de 10 sprites en pantalla destruyendo la entidad más vieja cuando excedemos el máximo</p>
+<p>Por ejemplo, <a href="https://codepen.io/gjimenezucm/pen/MWmJder">el
+siguiente ejemplo</a> muestra un máximo de 10 sprites en pantalla
+destruyendo la entidad más vieja cuando excedemos el máximo</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">preload</span> ()</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">setBaseURL</span>(<span class="st">&#39;https://labs.phaser.io/assets/&#39;</span>)<span class="op">;</span></span>
@@ -232,20 +300,31 @@
 </section>
 <section class="slide level2">
 
-<p>Como veremos en breve, a veces nos interesará no destruir la entidad pero sí <strong>dejarla inerte</strong>, de forma que no se actualice, ni se pinte, ni interactúe con nada hasta que vuelva a interesarnos</p>
+<p>Como veremos en breve, a veces nos interesará no destruir la entidad
+pero sí <strong>dejarla inerte</strong>, de forma que no se actualice,
+ni se pinte, ni interactúe con nada hasta que vuelva a interesarnos</p>
 </section>
 <section class="slide level2">
 
-<p>Phaser considera que una entidad “muerta”/“killed” ha dejado de existir y pone su atributo <code class="sourceCode javascript">active</code> a <code class="sourceCode javascript"><span class="kw">false</span></code></p>
+<p>Phaser considera que una entidad “muerta”/“killed” ha dejado de
+existir y pone su atributo <code
+class="sourceCode javascript">active</code> a <code
+class="sourceCode javascript"><span class="kw">false</span></code></p>
 </section>
 <section class="slide level2">
 
-<p>Aunque la nomenclatura resulte confusa, que una entidad “no esté activa” no significa que haya sido destruida</p>
-<p>Significa que, para Phaser, esta entidad no participará en las fases de actualización y pintado</p>
+<p>Aunque la nomenclatura resulte confusa, que una entidad “no esté
+activa” no significa que haya sido destruida</p>
+<p>Significa que, para Phaser, esta entidad no participará en las fases
+de actualización y pintado</p>
 </section>
 <section class="slide level2">
 
-<p>Para devolver una entidad a la existencia, según Phaser, usamos <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject#setActive"><code class="sourceCode javascript"><span class="fu">setActive</span>(<span class="kw">true</span>)</code> y <code class="sourceCode javascript"><span class="fu">setVisible</span>(<span class="kw">true</span>)</code></a></p>
+<p>Para devolver una entidad a la existencia, según Phaser, usamos <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObject#setActive"><code
+class="sourceCode javascript"><span class="fu">setActive</span>(<span class="kw">true</span>)</code>
+y <code
+class="sourceCode javascript"><span class="fu">setVisible</span>(<span class="kw">true</span>)</code></a></p>
 </section></section>
 <section>
 <section id="grupos-en-phaser" class="title-slide slide level1">
@@ -254,11 +333,17 @@
 </section>
 <section class="slide level2">
 
-<p>Como ocurre con todas las entidades de Phaser, un <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group">grupo</a> <strong>puede albergar otras entidades</strong> pero además, los grupos exponen una API especialmente diseñada para la <strong>búsqueda, ordenamiento y manipulación en grupo</strong> de las entidades que contiene</p>
+<p>Como ocurre con todas las entidades de Phaser, un <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group">grupo</a>
+<strong>puede albergar otras entidades</strong> pero además, los grupos
+exponen una API especialmente diseñada para la <strong>búsqueda,
+ordenamiento y manipulación en grupo</strong> de las entidades que
+contiene</p>
 </section>
 <section id="api-de-búsqueda" class="slide level2">
 <h2>API de búsqueda</h2>
-<p>Un grupo es parecido a un contenedor: creamos entidades y las añadimos al grupo</p>
+<p>Un grupo es parecido a un contenedor: creamos entidades y las
+añadimos al grupo</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> martian <span class="op">=</span> <span class="kw">new</span> <span class="fu">Martian</span>()<span class="op">;</span> <span class="co">// &#39;Martian&#39; es un &#39;Sprite&#39;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> enemies <span class="op">=</span> scene<span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">group</span>()<span class="op">;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>enemies<span class="op">.</span><span class="fu">add</span>(martian)<span class="op">;</span></span></code></pre></div>
@@ -266,7 +351,8 @@
 <section class="slide level2">
 
 <blockquote>
-<p>Aquí comentamos algunas funciones ilustrativas. Podéis usar, del API, las que más sentido tengan, sean éstas o no</p>
+<p>Aquí comentamos algunas funciones ilustrativas. Podéis usar, del API,
+las que más sentido tengan, sean éstas o no</p>
 </blockquote>
 </section>
 <section class="slide level2">
@@ -292,13 +378,24 @@
 </section>
 <section class="slide level2">
 
-<p>En los <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group"><em>grupos</em> (Group)</a> podemos <em>matar</em> una entidad usando el método <code class="sourceCode javascript"><span class="fu">kill</span>(gameObject)</code> o <code class="sourceCode javascript"><span class="fu">killAndHide</span>(gameObject)</code></p>
-<p>Al crear un grupo podemos utilizar el método <code class="sourceCode javascript"><span class="fu">getFirstAlive</span>()</code> que es propio de los grupos y devuelve la primera entidad cuya propiedad <code class="sourceCode javascript">active</code> sea <code class="sourceCode javascript"><span class="kw">true</span></code></p>
+<p>En los <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.Group"><em>grupos</em>
+(Group)</a> podemos <em>matar</em> una entidad usando el método <code
+class="sourceCode javascript"><span class="fu">kill</span>(gameObject)</code>
+o <code
+class="sourceCode javascript"><span class="fu">killAndHide</span>(gameObject)</code></p>
+<p>Al crear un grupo podemos utilizar el método <code
+class="sourceCode javascript"><span class="fu">getFirstAlive</span>()</code>
+que es propio de los grupos y devuelve la primera entidad cuya propiedad
+<code class="sourceCode javascript">active</code> sea <code
+class="sourceCode javascript"><span class="kw">true</span></code></p>
 </section>
 <section class="slide level2">
 
-<p><a href="https://codepen.io/gjimenezucm/pen/jOmyomL">Este otro ejemplo</a> mata los sprites más viejos pero no los destruye</p>
-<p>El efecto es parecido, pero no igual, puesto que los objetos siguen existiendo y la cantidad de memoria consumida se mantiene en aumento</p>
+<p><a href="https://codepen.io/gjimenezucm/pen/jOmyomL">Este otro
+ejemplo</a> mata los sprites más viejos pero no los destruye</p>
+<p>El efecto es parecido, pero no igual, puesto que los objetos siguen
+existiendo y la cantidad de memoria consumida se mantiene en aumento</p>
 </section>
 <section class="slide level2">
 
@@ -322,8 +419,10 @@
 
 <p>Si observamos la consola:</p>
 <ul>
-<li>En el primer ejemplo visto anteriormente, el conteo de entidades en la escena <strong>se mantiene constante</strong></li>
-<li>En el segundo ejemplo, el número de entidades <strong>no para de crecer</strong></li>
+<li>En el primer ejemplo visto anteriormente, el conteo de entidades en
+la escena <strong>se mantiene constante</strong></li>
+<li>En el segundo ejemplo, el número de entidades <strong>no para de
+crecer</strong></li>
 </ul>
 <!-- 
 ## API de ordenamiento
@@ -373,17 +472,24 @@ g.callAllExists('kill'); // lo mismo, pero sólo las que existen (exists -> es a
 ``` -->
 </section></section>
 <section>
-<section id="implementación-de-pooling-con-grupos-de-phaser" class="title-slide slide level1">
+<section id="implementación-de-pooling-con-grupos-de-phaser"
+class="title-slide slide level1">
 <h1>Implementación de pooling con grupos de Phaser</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Phaser no incluye pools directamente pero podemos utilizar nuestra propia clase <code class="sourceCode javascript">Pool</code> que utilice grupos internamente para ello</p>
+<p>Phaser no incluye pools directamente pero podemos utilizar nuestra
+propia clase <code class="sourceCode javascript">Pool</code> que utilice
+grupos internamente para ello</p>
 </section>
 <section id="creación-del-pool" class="slide level2">
 <h2>Creación del pool</h2>
-<p>El constructor de <em>Pool</em> recibe el juego en <code class="sourceCode javascript">scene</code>, <strong>añade un grupo al juego</strong> con <code class="sourceCode javascript">add<span class="op">.</span><span class="fu">group</span>()</code> y guarda ese grupo internamente</p>
+<p>El constructor de <em>Pool</em> recibe el juego en <code
+class="sourceCode javascript">scene</code>, <strong>añade un grupo al
+juego</strong> con <code
+class="sourceCode javascript">add<span class="op">.</span><span class="fu">group</span>()</code>
+y guarda ese grupo internamente</p>
 <p>También recibe la lista de entidades que se van a reciclar:</p>
 </section>
 <section class="slide level2">
@@ -401,7 +507,11 @@ g.callAllExists('kill'); // lo mismo, pero sólo las que existen (exists -> es a
 </section>
 <section id="recuperación-de-una-entidad" class="slide level2">
 <h2>Recuperación de una entidad</h2>
-<p>Recuperamos una entidad del <em>pool</em> utilizando el método <code class="sourceCode javascript"><span class="fu">spawn</span>()</code> que recibe las nuevas coordenadas del sprite <code class="sourceCode javascript">x</code> e <code class="sourceCode javascript">y</code>,</p>
+<p>Recuperamos una entidad del <em>pool</em> utilizando el método <code
+class="sourceCode javascript"><span class="fu">spawn</span>()</code> que
+recibe las nuevas coordenadas del sprite <code
+class="sourceCode javascript">x</code> e <code
+class="sourceCode javascript">y</code>,</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// A continuación del constructor</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">spawn</span> (x<span class="op">,</span> y) {</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> entity <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">_group</span><span class="op">.</span><span class="fu">getFirstDead</span>()<span class="op">;</span></span>
@@ -417,7 +527,11 @@ g.callAllExists('kill'); // lo mismo, pero sólo las que existen (exists -> es a
 <section class="slide level2">
 
 <h3 id="devolución-de-una-entidad">Devolución de una entidad</h3>
-<p>Devolver una entidad requiere llamar a los método <code class="sourceCode javascript"><span class="fu">setActive</span>(<span class="kw">false</span>)</code> y <code class="sourceCode javascript"><span class="fu">setVisible</span>(<span class="kw">false</span>)</code> sobre esa entidad</p>
+<p>Devolver una entidad requiere llamar a los método <code
+class="sourceCode javascript"><span class="fu">setActive</span>(<span class="kw">false</span>)</code>
+y <code
+class="sourceCode javascript"><span class="fu">setVisible</span>(<span class="kw">false</span>)</code>
+sobre esa entidad</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Estamos en la escena</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> c <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">pool</span><span class="op">.</span><span class="fu">spawn</span>(x<span class="op">,</span>y)<span class="op">;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">// ...</span></span>
@@ -427,7 +541,8 @@ g.callAllExists('kill'); // lo mismo, pero sólo las que existen (exists -> es a
 </section>
 <section class="slide level2">
 
-<p>O podemos añadir un método para pedir al pool que libere una entidad</p>
+<p>O podemos añadir un método para pedir al pool que libere una
+entidad</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// A continuación del spawn</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">release</span> (entity) {</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">_group</span><span class="op">.</span><span class="fu">killAndHide</span>(entity)<span class="op">;</span></span>
@@ -435,8 +550,10 @@ g.callAllExists('kill'); // lo mismo, pero sólo las que existen (exists -> es a
 </section>
 <section class="slide level2">
 
-<p>Podéis encontrar un ejemplo completo que usa <em>pooling</em> en el siguiente enlace:</p>
-<p><a href="https://codepen.io/gjimenezucm/pen/OJmWYGg" class="uri">https://codepen.io/gjimenezucm/pen/OJmWYGg</a> <!-- 
+<p>Podéis encontrar un ejemplo completo que usa <em>pooling</em> en el
+siguiente enlace:</p>
+<p><a href="https://codepen.io/gjimenezucm/pen/OJmWYGg"
+class="uri">https://codepen.io/gjimenezucm/pen/OJmWYGg</a> <!-- 
 ---
 
 

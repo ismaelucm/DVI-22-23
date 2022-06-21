@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,7 +102,9 @@
 </section>
 <section class="slide level2">
 
-<p>La gestión del teclado se hace a través de <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.InputPlugin"><code class="sourceCode javascript">scene<span class="op">.</span><span class="at">input</span></code></a></p>
+<p>La gestión del teclado se hace a través de <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.InputPlugin"><code
+class="sourceCode javascript">scene<span class="op">.</span><span class="at">input</span></code></a></p>
 </section>
 <section class="slide level2">
 
@@ -109,7 +114,10 @@
 </section>
 <section class="slide level2">
 
-<p>Una vez que existe la tecla (<code class="sourceCode javascript"><span class="kw">this</span><span class="op">.</span><span class="at">w</span></code>), podemos hacerle preguntas activamente en el <code class="sourceCode javascript">update</code>:</p>
+<p>Una vez que existe la tecla (<code
+class="sourceCode javascript"><span class="kw">this</span><span class="op">.</span><span class="at">w</span></code>),
+podemos hacerle preguntas activamente en el <code
+class="sourceCode javascript">update</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En el preUpdate...</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="kw">this</span><span class="op">.</span><span class="at">w</span><span class="op">.</span><span class="at">isDown</span>) {}<span class="op">;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="kw">this</span><span class="op">.</span><span class="at">w</span><span class="op">.</span><span class="at">isUp</span>) {}<span class="op">;</span></span></code></pre></div>
@@ -123,7 +131,10 @@
 </section>
 <section class="slide level2">
 
-<p>Una tecla que esté pulsándose siempre (es decir, que no se suelte), dirá que <code class="sourceCode javascript">isDown</code> es <code class="sourceCode javascript"><span class="kw">true</span></code> en cada ciclo</p>
+<p>Una tecla que esté pulsándose siempre (es decir, que no se suelte),
+dirá que <code class="sourceCode javascript">isDown</code> es <code
+class="sourceCode javascript"><span class="kw">true</span></code> en
+cada ciclo</p>
 </section>
 <section class="slide level2">
 
@@ -132,7 +143,9 @@
 </section>
 <section class="slide level2">
 
-<p>Hay más maneras de usar las teclas, <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.Keyboard">mirad la API</a></p>
+<p>Hay más maneras de usar las teclas, <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.Keyboard">mirad
+la API</a></p>
 </section></section>
 <section>
 <section id="cursores" class="title-slide slide level1">
@@ -141,13 +154,15 @@
 </section>
 <section class="slide level2">
 
-<p>Usar los <em>arriba</em>, <em>abajo</em>, <em>izquierda</em> y <em>derecha</em> es tan común, que existe:</p>
+<p>Usar los <em>arriba</em>, <em>abajo</em>, <em>izquierda</em> y
+<em>derecha</em> es tan común, que existe:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es una scene</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">cursors</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">keyboard</span><span class="op">.</span><span class="fu">createCursorKeys</span>()<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Con esto, se nos define un objeto con las 4 direcciones (más <code>space</code> y <code>shift</code>):</p>
+<p>Con esto, se nos define un objeto con las 4 direcciones (más
+<code>space</code> y <code>shift</code>):</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En el update de scene</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">cursors</span><span class="op">.</span><span class="at">up</span><span class="op">.</span><span class="at">isDown</span> <span class="op">&amp;&amp;</span> <span class="kw">this</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">onFloor</span>()) {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="fu">setVelocityY</span>(<span class="kw">this</span><span class="op">.</span><span class="at">jumpSpeed</span>)<span class="op">;</span></span>
@@ -167,7 +182,8 @@
 </section>
 <section class="slide level2">
 
-<p>Si quiero usar otros cursores, es cuestión de devolver un objeto con las mismas propiedades:</p>
+<p>Si quiero usar otros cursores, es cuestión de devolver un objeto con
+las mismas propiedades:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">cursorsZXSpectrum</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">keyboard</span><span class="op">.</span><span class="fu">addKeys</span>({</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">up</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">Q</span><span class="op">,</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">down</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span><span class="op">.</span><span class="at">A</span><span class="op">,</span></span>
@@ -178,7 +194,10 @@
 </section>
 <section class="slide level2">
 
-<p>Y, como habréis imaginado, los identificadores de las teclas están en <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.KeyCodes.html"><code class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span></code></a></p>
+<p>Y, como habréis imaginado, los identificadores de las teclas están en
+<a
+href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.KeyCodes.html"><code
+class="sourceCode javascript">Phaser<span class="op">.</span><span class="at">Input</span><span class="op">.</span><span class="at">Keyboard</span><span class="op">.</span><span class="at">KeyCodes</span></code></a></p>
 </section></section>
 <section>
 <section id="gamepads" class="title-slide slide level1">
@@ -187,8 +206,10 @@
 </section>
 <section class="slide level2">
 
-<p>Usar gamepads es igual de fácil que usar el teclado, pero ya hay muchas dependencias y diferencias</p>
-<p><strong>No todo va a funcionar tan bien y es posible que haya errores de detección</strong></p>
+<p>Usar gamepads es igual de fácil que usar el teclado, pero ya hay
+muchas dependencias y diferencias</p>
+<p><strong>No todo va a funcionar tan bien y es posible que haya errores
+de detección</strong></p>
 </section>
 <section class="slide level2">
 
@@ -212,8 +233,12 @@
 </section>
 <section class="slide level2">
 
-<p>Para saber si hay un pad conectado, sólo tenemos que ver si <code class="sourceCode javascript">gamepad<span class="op">.</span><span class="fu">getPad</span>(<span class="dv">0</span>)<span class="op">;</span></code> devuelve algo apropiado (con <code class="sourceCode javascript">axis<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span></code>):</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> pad <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">gamepad</span><span class="op">.</span><span class="fu">getPad</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<p>Para saber si hay un pad conectado, sólo tenemos que ver si <code
+class="sourceCode javascript">gamepad<span class="op">.</span><span class="fu">getPad</span>(<span class="dv">0</span>)<span class="op">;</span></code>
+devuelve algo apropiado (con <code
+class="sourceCode javascript">axis<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span></code>):</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> pad <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">gamepad</span><span class="op">.</span><span class="fu">getPad</span>(<span class="dv">0</span>)<span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(pad <span class="op">&amp;&amp;</span> pad<span class="op">.</span><span class="at">axis</span><span class="op">.</span><span class="at">length</span>) {</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;hay algo conectado&quot;</span>)<span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
@@ -221,18 +246,21 @@
 <section class="slide level2">
 
 <p>Pero podemos hacerlo más fácil:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> padExiste <span class="op">=</span> pad <span class="op">&amp;&amp;</span> pad<span class="op">.</span><span class="at">axis</span><span class="op">.</span><span class="at">length</span></span>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> padExiste <span class="op">=</span> pad <span class="op">&amp;&amp;</span> pad<span class="op">.</span><span class="at">axis</span><span class="op">.</span><span class="at">length</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> ejexIzda <span class="op">=</span> padExiste <span class="op">&amp;&amp;</span> pad<span class="op">.</span><span class="at">leftStick</span><span class="op">.</span><span class="at">x</span><span class="op">;</span></span></code></pre></div>
 <p><small>Si no hay pad, no dará excepción</small></p>
 </section>
 <section id="reaccionar-a-varias-entradas" class="slide level2">
 <h2>Reaccionar a varias entradas</h2>
-<p>Es muy posible que queramos que nuestro juego funcione tanto con pad como con teclado</p>
+<p>Es muy posible que queramos que nuestro juego funcione tanto con pad
+como con teclado</p>
 </section>
 <section class="slide level2">
 
 <p>Para no complicarnos mucho, simplemente hacemos:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> pad <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">gamepad</span><span class="op">.</span><span class="fu">getPad</span>(<span class="dv">0</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> pad <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">scene</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">gamepad</span><span class="op">.</span><span class="fu">getPad</span>(<span class="dv">0</span>)<span class="op">;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> padExiste <span class="op">=</span> pad <span class="op">&amp;&amp;</span> pad<span class="op">.</span><span class="at">axes</span><span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> leftPad <span class="op">=</span> padExiste <span class="op">&amp;&amp;</span> (pad<span class="op">.</span><span class="at">leftStick</span><span class="op">.</span><span class="at">x</span> <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">||</span> pad<span class="op">.</span><span class="at">left</span>)<span class="op">;</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -251,12 +279,16 @@
 </section>
 <section class="slide level2">
 
-<p>Phaser nos permite usar el cursor del ratón para entrada de forma sencilla</p>
+<p>Phaser nos permite usar el cursor del ratón para entrada de forma
+sencilla</p>
 </section>
 <section class="slide level2">
 
-<p>Podemos saber la posición <code class="sourceCode javascript">x</code> es <code class="sourceCode javascript">y</code> del puntero en todo momento:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es una scene</span></span>
+<p>Podemos saber la posición <code
+class="sourceCode javascript">x</code> es <code
+class="sourceCode javascript">y</code> del puntero en todo momento:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// this es una scene</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> pointer <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">activePointer</span><span class="op">;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Coordenada X&quot;</span><span class="op">,</span> pointer<span class="op">.</span><span class="at">worldX</span>)<span class="op">;</span></span>
@@ -266,17 +298,30 @@
 <section class="slide level2">
 
 <p>Para reacciones ante un evento del ratón:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerup&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerup&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (pointer<span class="op">.</span><span class="fu">leftButtonReleased</span>()) {</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// se ha soltado el botón izquierdo</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div>
-<p>También hay <code class="sourceCode javascript"><span class="st">&#39;pointerdown&#39;</span></code>, <code class="sourceCode javascript"><span class="st">&#39;wheel&#39;</span></code>, <code class="sourceCode javascript"><span class="st">&#39;gameobjectover&#39;</span></code> y <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.Events">otros muchos eventos a los que suscribirnos</a></p>
+<p>También hay <code
+class="sourceCode javascript"><span class="st">&#39;pointerdown&#39;</span></code>,
+<code
+class="sourceCode javascript"><span class="st">&#39;wheel&#39;</span></code>,
+<code
+class="sourceCode javascript"><span class="st">&#39;gameobjectover&#39;</span></code>
+y <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Input.Events">otros
+muchos eventos a los que suscribirnos</a></p>
 </section>
 <section class="slide level2">
 
-<p>Los <code class="sourceCode javascript">Sprite</code>s que se marcan con <code class="sourceCode javascript"><span class="fu">setInteractive</span>()</code> pueden recibir eventos del ratón:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en el preload</span></span>
+<p>Los <code class="sourceCode javascript">Sprite</code>s que se marcan
+con <code
+class="sourceCode javascript"><span class="fu">setInteractive</span>()</code>
+pueden recibir eventos del ratón:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en el preload</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;rock&#39;</span><span class="op">,</span> <span class="st">&#39;rock.png&#39;</span>)<span class="op">;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">// en el create</span></span>
@@ -284,23 +329,32 @@
 </section>
 <section class="slide level2">
 
-<p>Una vez que un <code class="sourceCode javascript">Sprite</code> es interactivo, registramos con <em>callbacks</em> el comportamiento cuando se hace clic sobre ellos:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">sprite</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerdown&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
+<p>Una vez que un <code class="sourceCode javascript">Sprite</code> es
+interactivo, registramos con <em>callbacks</em> el comportamiento cuando
+se hace clic sobre ellos:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">sprite</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerdown&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// hacer algo</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Para hacer que el menú contextual de la página web no se muestre con el botón derecho:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">mouse</span><span class="op">.</span><span class="fu">disableContextMenu</span>()<span class="op">;</span></span></code></pre></div>
+<p>Para hacer que el menú contextual de la página web no se muestre con
+el botón derecho:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>scene<span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">mouse</span><span class="op">.</span><span class="fu">disableContextMenu</span>()<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Para que el ratón no salga del área de juego:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerdown&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="fu">on</span>(<span class="st">&#39;pointerdown&#39;</span><span class="op">,</span> pointer <span class="kw">=&gt;</span> {</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">input</span><span class="op">.</span><span class="at">mouse</span><span class="op">.</span><span class="fu">requestPointerLock</span>()<span class="op">;</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">,</span> <span class="kw">this</span>)<span class="op">;</span></span></code></pre></div>
-<p><small><code class="sourceCode javascript"><span class="fu">requestPointerLock</span>()</code> sólo funciona si se le llama como resultado a un evento lanzado por el usuario, por protección de los navegadores</small></p>
+<p><small><code
+class="sourceCode javascript"><span class="fu">requestPointerLock</span>()</code>
+sólo funciona si se le llama como resultado a un evento lanzado por el
+usuario, por protección de los navegadores</small></p>
 </section></section>
     </div>
   </div>
@@ -342,7 +396,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

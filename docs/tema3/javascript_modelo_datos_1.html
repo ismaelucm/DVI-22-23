@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -93,39 +96,48 @@
 </section>
 
 <section>
-<section id="fundamentos-de-los-lenguajes" class="title-slide slide level1">
+<section id="fundamentos-de-los-lenguajes"
+class="title-slide slide level1">
 <h1>Fundamentos de los lenguajes</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Lenguaje de programación = sintaxis + modelo de datos + modelo de ejecución</p>
+<p>Lenguaje de programación = sintaxis + modelo de datos + modelo de
+ejecución</p>
 <p>(+ estilo)</p>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>La <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#Statements">sintaxis</a> es vuestra responsabilidad</li>
+<li>La <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#Statements">sintaxis</a>
+es vuestra responsabilidad</li>
 <li>El modelo de datos es mía</li>
 <li>El modelo de ejecución también</li>
 <li>Y la jerga es de ambos</li>
 </ul>
 </section></section>
 <section>
-<section id="experimentando-con-javascript" class="title-slide slide level1">
+<section id="experimentando-con-javascript"
+class="title-slide slide level1">
 <h1>Experimentando con JavaScript</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Vamos a experimentar con JavaScript así que necesitamos una forma rápida de inspeccionar expresiones y obtener feedback de lo que estamos haciendo</p>
+<p>Vamos a experimentar con JavaScript así que necesitamos una forma
+rápida de inspeccionar expresiones y obtener feedback de lo que estamos
+haciendo</p>
 <p>La mejor forma es utilizar la consola de <em>node</em>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> node <span class="at">--use_strict</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>La opción <code>--use_strict</code> activa el modo estricto de JavaScript que simplifica algunos aspectos del lenguaje</p>
-<p>Recorta algunas características pero los beneficios son mayores que las pérdidas</p>
+<p>La opción <code>--use_strict</code> activa el modo estricto de
+JavaScript que simplifica algunos aspectos del lenguaje</p>
+<p>Recorta algunas características pero los beneficios son mayores que
+las pérdidas</p>
 </section>
 <section class="slide level2">
 
@@ -142,11 +154,14 @@
 <section class="slide level2">
 
 <p>Para limpiar la pantalla presiona <code>ctrl+l</code></p>
-<p>Para salir de <em>node</em>, presiona <code>ctrl+c</code> dos veces seguidas</p>
+<p>Para salir de <em>node</em>, presiona <code>ctrl+c</code> dos veces
+seguidas</p>
 </section>
 <section class="slide level2">
 
-<p>Si no quieres lidiar con la consola de <em>node</em>, siempre puedes escribir un programa y usar <code>console.log()</code> para mostrar expresiones por pantalla</p>
+<p>Si no quieres lidiar con la consola de <em>node</em>, siempre puedes
+escribir un programa y usar <code>console.log()</code> para mostrar
+expresiones por pantalla</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// en prueba.js</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="dv">40</span> <span class="op">+</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> point <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">1</span> }<span class="op">;</span></span>
@@ -156,24 +171,32 @@
 <section class="slide level2">
 
 <p>Y ahora ejecutar el programa con node:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> node prueba.js</span>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> node prueba.js</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">42</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span> <span class="ex">x:</span> 1, y: 1 }</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Coordenada</span> X: 1</span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>El tema asume una única sesión de la consola de <em>node</em> a menos que se indique lo contrario</p>
-<p>Esto es importante porque <em>el estado se guarda entre instrucciones</em></p>
+<p>El tema asume una única sesión de la consola de <em>node</em> a menos
+que se indique lo contrario</p>
+<p>Esto es importante porque <em>el estado se guarda entre
+instrucciones</em></p>
 </section>
 <section class="slide level2">
 
-<p>Para la mayoría de los ejemplos, puedes mantener la misma sesión abierta pero si te encuentras con algo inesperado, antes de nada prueba a reiniciar la consola</p>
-<p>Para reiniciar la consola tienes que <strong>salir y volver a entrar</strong></p>
-<p>Lo mejor es que se tenga la presentación abierta a un lado y la consola <em>node</em> en el otro</p>
+<p>Para la mayoría de los ejemplos, puedes mantener la misma sesión
+abierta pero si te encuentras con algo inesperado, antes de nada prueba
+a reiniciar la consola</p>
+<p>Para reiniciar la consola tienes que <strong>salir y volver a
+entrar</strong></p>
+<p>Lo mejor es que se tenga la presentación abierta a un lado y la
+consola <em>node</em> en el otro</p>
 </section></section>
 <section>
-<section id="peculiaridades-de-la-sintaxis" class="title-slide slide level1">
+<section id="peculiaridades-de-la-sintaxis"
+class="title-slide slide level1">
 <h1>Peculiaridades de la sintaxis</h1>
 
 </section>
@@ -193,10 +216,12 @@
 </section>
 <section class="slide level2">
 
-<p>Vamos a declarar las variables con <code>let</code> o <code>const</code>:</p>
+<p>Vamos a declarar las variables con <code>let</code> o
+<code>const</code>:</p>
 <ul>
 <li><code>let</code>: Declara una variable de bloque</li>
-<li><code>const</code>: Declara una variable cuyo <em>valor</em> no puede ser cambiado</li>
+<li><code>const</code>: Declara una variable cuyo <em>valor</em> no
+puede ser cambiado</li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> b <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">&quot;Hola&quot;</span><span class="op">;</span>             <span class="co">// Permitido</span></span>
@@ -208,37 +233,51 @@
 
 <p>Veréis que también se pueden difinir variables con:</p>
 <ul>
-<li><code>var</code>: Variables globales o de función. Realizan <em>hoisting</em></li>
+<li><code>var</code>: Variables globales o de función. Realizan
+<em>hoisting</em></li>
 <li>Sin ninguna palabra clave delante: variables globales</li>
 </ul>
 <blockquote>
-<p><strong>No las usaremos en este curso (salvo que nos lo justifiquéis adecuadamente)</strong></p>
+<p><strong>No las usaremos en este curso (salvo que nos lo justifiquéis
+adecuadamente)</strong></p>
 </blockquote>
-<p><small>Cuando veamos el modelo de ejecución, veremos por qué</small></p>
+<p><small>Cuando veamos el modelo de ejecución, veremos por
+qué</small></p>
 </section>
 <section id="una-letiable-es-un-nombre" class="slide level2">
 <h2>Una <strong>letiable es un nombre</strong></h2>
-<p>Para el programa, quitando algunas excepciones, los nombres no tienen significado</p>
+<p>Para el programa, quitando algunas excepciones, los nombres no tienen
+significado</p>
 </section>
 <section id="un-valor-no-es-un-nombre" class="slide level2">
 <h2>Un <strong>valor no es un nombre</strong></h2>
-<p>De hecho, sólo las funciones pueden tener nombre para poder implementar recursividad</p>
+<p>De hecho, sólo las funciones pueden tener nombre para poder
+implementar recursividad</p>
 </section>
 <section class="slide level2">
 
-<p>Así que no es lo mismo el nombre <code class="sourceCode javascript">uno</code> que el valor <code class="sourceCode javascript"><span class="dv">1</span></code>, y por supuesto, no es obligatoria ninguna relación coherente entre el nombre y el valor</p>
+<p>Así que no es lo mismo el nombre <code
+class="sourceCode javascript">uno</code> que el valor <code
+class="sourceCode javascript"><span class="dv">1</span></code>, y por
+supuesto, no es obligatoria ninguna relación coherente entre el nombre y
+el valor</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> uno <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// para el programa tiene sentido. Puede que para el programador no</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>En general, hablando de booleanos, cadenas y números, decimos que los <strong>nombres guardan valores</strong></p>
-<p>Si hablamos de objetos y funciones decimos que los <strong>nombres apuntan a objetos o funciones</strong> o <strong>son referencias a objetos o funciones</strong></p>
+<p>En general, hablando de booleanos, cadenas y números, decimos que los
+<strong>nombres guardan valores</strong></p>
+<p>Si hablamos de objetos y funciones decimos que los <strong>nombres
+apuntan a objetos o funciones</strong> o <strong>son referencias a
+objetos o funciones</strong></p>
 </section>
 <section id="cadenas-de-caracteres-string" class="slide level2">
 <h2>Cadenas de caracteres (string)</h2>
 <ul>
 <li>Cadenas simples entre <code>" "</code> ó <code>' '</code></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals%3E">Cadenas de plantilla</a> entre ` `</li>
+<li><a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals%3E">Cadenas
+de plantilla</a> entre ` `</li>
 </ul>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s1 <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s2 <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
@@ -254,7 +293,8 @@
 </section>
 <section class="slide level2">
 
-<p>Se llama <strong>tipos primitivos</strong> a aquellos que vienen con el lenguaje y que permiten la creación de nuevos tipos más complejos</p>
+<p>Se llama <strong>tipos primitivos</strong> a aquellos que vienen con
+el lenguaje y que permiten la creación de nuevos tipos más complejos</p>
 </section>
 <section id="tipos-primitivos-1" class="slide level2">
 <h2>Tipos primitivos</h2>
@@ -268,15 +308,21 @@
 </ul>
 </section>
 <section id="objetos-y-null" class="slide level2">
-<h2>Objetos y <code class="sourceCode javascript"><span class="kw">null</span></code></h2>
+<h2>Objetos y <code
+class="sourceCode javascript"><span class="kw">null</span></code></h2>
 <p>Los objetos en JS son “no primitivos”</p>
 <p>Tienen <em>datos</em> y <em>métodos</em></p>
-<p><code class="sourceCode javascript"><span class="kw">null</span></code> es un tipo, aunque <code class="sourceCode javascript"><span class="kw">typeof</span> <span class="kw">null</span> <span class="op">===</span> <span class="st">&quot;object&quot;</span></code></p>
+<p><code
+class="sourceCode javascript"><span class="kw">null</span></code> es un
+tipo, aunque <code
+class="sourceCode javascript"><span class="kw">typeof</span> <span class="kw">null</span> <span class="op">===</span> <span class="st">&quot;object&quot;</span></code></p>
 </section>
 <section id="funciones" class="slide level2">
 <h2>Funciones</h2>
-<p>Las funciones se representan por su propio tipo, aunque también son <code class="sourceCode javascript">object</code></p>
-<p><code class="sourceCode javascript"><span class="kw">typeof</span> f <span class="op">===</span> <span class="st">&quot;function&quot;</span></code></p>
+<p>Las funciones se representan por su propio tipo, aunque también son
+<code class="sourceCode javascript">object</code></p>
+<p><code
+class="sourceCode javascript"><span class="kw">typeof</span> f <span class="op">===</span> <span class="st">&quot;function&quot;</span></code></p>
 <p>Tienen la propiedad de ser “llamables” (<em>callable</em>)</p>
 </section>
 <section class="slide level2">
@@ -290,8 +336,10 @@
 </section>
 <section class="slide level2">
 
-<p>Los puedes reconocer porque responden de manera distinta al operador <code>typeof</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> <span class="kw">true</span><span class="op">;</span></span>
+<p>Los puedes reconocer porque responden de manera distinta al operador
+<code>typeof</code>:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> <span class="kw">true</span><span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> <span class="fl">1234.5</span><span class="op">;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> <span class="st">&#39;I want to be a pirate!&#39;</span><span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> {}<span class="op">;</span></span>
@@ -299,8 +347,11 @@
 </section>
 <section class="slide level2">
 
-<p>En JavaScript podemos declarar una letiable y no asignarle ningún valor. En este caso el tipo de la letiable será <code>undefined</code></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> x<span class="op">;</span></span>
+<p>En JavaScript podemos declarar una letiable y no asignarle ningún
+valor. En este caso el tipo de la letiable será
+<code>undefined</code></p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> x<span class="op">;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> x<span class="op">;</span> <span class="co">// undefined</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span>    <span class="co">// tan pronto como le demos un valor, el tipo dejará de ser undefined</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> x<span class="op">;</span> <span class="co">// number</span></span></code></pre></div>
@@ -312,81 +363,123 @@
 </section>
 <section class="slide level2">
 
-<p>De entre todos los tipos, vamos a prestar atención a aquel cuyos valores permiten la composición con otros. Es decir, los de tipo <code>'object'</code></p>
+<p>De entre todos los tipos, vamos a prestar atención a aquel cuyos
+valores permiten la composición con otros. Es decir, los de tipo
+<code>'object'</code></p>
 </section>
 <section class="slide level2">
 
 <p>En JavaScript, los objetos son colecciones de valores etiquetados</p>
-<p>Por ejemplo, si queremos representar el punto <code>(10, 15)</code> del plano XY podemos etiquetar el valor en el eje X con la cadena <code>'x'</code> y el valor en el eje Y con la cadena <code>'y'</code></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> point <span class="op">=</span> { <span class="st">&#39;x&#39;</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="st">&#39;y&#39;</span><span class="op">:</span> <span class="dv">15</span> }<span class="op">;</span></span></code></pre></div>
+<p>Por ejemplo, si queremos representar el punto <code>(10, 15)</code>
+del plano XY podemos etiquetar el valor en el eje X con la cadena
+<code>'x'</code> y el valor en el eje Y con la cadena
+<code>'y'</code></p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> point <span class="op">=</span> { <span class="st">&#39;x&#39;</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="st">&#39;y&#39;</span><span class="op">:</span> <span class="dv">15</span> }<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Cada par etiqueta y valor se llama <strong>propiedad del objeto</strong></p>
-<p>No es algo estricto, pero cuando se habla de las propiedades de un objeto se suele referir a los valores mientras que para hablar de las etiquetas se suele decir <strong>nombre de la propiedad</strong></p>
+<p>Cada par etiqueta y valor se llama <strong>propiedad del
+objeto</strong></p>
+<p>No es algo estricto, pero cuando se habla de las propiedades de un
+objeto se suele referir a los valores mientras que para hablar de las
+etiquetas se suele decir <strong>nombre de la propiedad</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Si los nombres de las propiedades se escriben siguiendo las <a href="https://developer.mozilla.org/en-US/docs/Glossary/Identifier">reglas de formación de identificadores</a> en JavaScript, las comillas no son necesarias</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> point <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span> }<span class="op">;</span> <span class="co">// mucho más conveniente</span></span></code></pre></div>
+<p>Si los nombres de las propiedades se escriben siguiendo las <a
+href="https://developer.mozilla.org/en-US/docs/Glossary/Identifier">reglas
+de formación de identificadores</a> en JavaScript, las comillas no son
+necesarias</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> point <span class="op">=</span> { <span class="dt">x</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">10</span> }<span class="op">;</span> <span class="co">// mucho más conveniente</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Este es el caso <strong>más normal</strong>, <strong>el recomendado</strong> y el que usaremos a los largo del curso pero conviene saber que por detrás, <strong>el nombre de la propiedad es una cadena</strong></p>
-<p>Para acceder a las propiedades de un objeto usamos los corchetes con el nombre de la propiedad en medio:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>point[<span class="st">&#39;x&#39;</span>]<span class="op">;</span></span>
+<p>Este es el caso <strong>más normal</strong>, <strong>el
+recomendado</strong> y el que usaremos a los largo del curso pero
+conviene saber que por detrás, <strong>el nombre de la propiedad es una
+cadena</strong></p>
+<p>Para acceder a las propiedades de un objeto usamos los corchetes con
+el nombre de la propiedad en medio:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>point[<span class="st">&#39;x&#39;</span>]<span class="op">;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>point[<span class="st">&#39;y&#39;</span>]<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>De nuevo, si seguimos las reglas de formación de identificadores, podemos usar la notación punto para acceder a la propiedad, mucho más rápida de escribir:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">x</span><span class="op">;</span></span>
+<p>De nuevo, si seguimos las reglas de formación de identificadores,
+podemos usar la notación punto para acceder a la propiedad, mucho más
+rápida de escribir:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">x</span><span class="op">;</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">y</span><span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Para cambiar el valor de una propiedad usamos el operador de asignación:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<p>Para cambiar el valor de una propiedad usamos el operador de
+asignación:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">y</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>point[<span class="st">&#39;x&#39;</span>] <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>point[<span class="st">&#39;y&#39;</span>] <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Si accedemos a una <strong>propiedad que no existe</strong>, obtendremos <code>undefined</code>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> label <span class="op">=</span> point<span class="op">.</span><span class="at">label</span><span class="op">;</span> <span class="co">// será undefined. Compruébalo con typeof</span></span></code></pre></div>
+<p>Si accedemos a una <strong>propiedad que no existe</strong>,
+obtendremos <code>undefined</code>:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> label <span class="op">=</span> point<span class="op">.</span><span class="at">label</span><span class="op">;</span> <span class="co">// será undefined. Compruébalo con typeof</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>También es verdad que en cualquier momento podemos crear propiedades nuevas asignándoles un valor:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">label</span> <span class="op">=</span> <span class="st">&#39;origin&#39;</span><span class="op">;</span></span>
+<p>También es verdad que en cualquier momento podemos crear propiedades
+nuevas asignándoles un valor:</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>point<span class="op">.</span><span class="at">label</span> <span class="op">=</span> <span class="st">&#39;origin&#39;</span><span class="op">;</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>point<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="null" class="slide level2">
-<h2><code class="sourceCode javascript"><span class="kw">null</span></code></h2>
-<p>Existe un último valor muy relacionado con los objetos: <code class="sourceCode javascript"><span class="kw">null</span></code></p>
-<p>Tiene su propio tipo (<code class="sourceCode javascript"><span class="kw">null</span></code> es de tipo <code class="sourceCode javascript"><span class="kw">null</span></code>), pero la máquina virtual dice que el <code class="sourceCode javascript">object</code>, por motivos históricos:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="kw">typeof</span> <span class="kw">null</span><span class="op">;</span></span>
+<h2><code
+class="sourceCode javascript"><span class="kw">null</span></code></h2>
+<p>Existe un último valor muy relacionado con los objetos: <code
+class="sourceCode javascript"><span class="kw">null</span></code></p>
+<p>Tiene su propio tipo (<code
+class="sourceCode javascript"><span class="kw">null</span></code> es de
+tipo <code
+class="sourceCode javascript"><span class="kw">null</span></code>), pero
+la máquina virtual dice que el <code
+class="sourceCode javascript">object</code>, por motivos históricos:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="kw">typeof</span> <span class="kw">null</span><span class="op">;</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;object&#39;</span> </span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Este valor representa la <strong>ausencia de objeto</strong> y se suele utilizar para:</p>
+<p>Este valor representa la <strong>ausencia de objeto</strong> y se
+suele utilizar para:</p>
 <ul>
-<li>En funciones en las que se pregunta por un objeto, indicar que no se ha encontrado</li>
-<li>En relaciones de composición, indicar que el objeto compuesto ya no necesita al objeto componente</li>
+<li>En funciones en las que se pregunta por un objeto, indicar que no se
+ha encontrado</li>
+<li>En relaciones de composición, indicar que el objeto compuesto ya no
+necesita al objeto componente</li>
 </ul>
 </section>
 <section class="slide level2">
 
 <p>Cuidado con:</p>
-<p><code class="sourceCode javascript"><span class="kw">null</span> <span class="op">==</span> <span class="kw">undefined</span></code></p>
-<p><code class="sourceCode javascript"><span class="kw">null</span> <span class="op">===</span> <span class="kw">undefined</span></code></p>
+<p><code
+class="sourceCode javascript"><span class="kw">null</span> <span class="op">==</span> <span class="kw">undefined</span></code></p>
+<p><code
+class="sourceCode javascript"><span class="kw">null</span> <span class="op">===</span> <span class="kw">undefined</span></code></p>
 </section>
 <section class="slide level2">
 
-<p>Por ejemplo, en un RPG, preguntamos por el siguiente enemigo vivo para comprobar si podemos seguir en batalla:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getNextAliveEnemy</span>() {</span>
+<p>Por ejemplo, en un RPG, preguntamos por el siguiente enemigo vivo
+para comprobar si podemos seguir en batalla:</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getNextAliveEnemy</span>() {</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> nextEnemy<span class="op">;</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (aliveEnemies<span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    nextEnemy <span class="op">=</span> aliveEnemies[<span class="dv">0</span>]<span class="op">;</span></span>
@@ -400,7 +493,8 @@
 <section class="slide level2">
 
 <p>O bien, supón la ficha de personaje de un héroe:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> hero <span class="op">=</span> { <span class="dt">sword</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">shield</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">;</span></span>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> hero <span class="op">=</span> { <span class="dt">sword</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">shield</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>hero<span class="op">.</span><span class="at">sword</span> <span class="op">=</span> { <span class="dt">attack</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">magic</span><span class="op">:</span> <span class="dv">5</span> }<span class="op">;</span> <span class="co">// coge una espada</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>hero<span class="op">.</span><span class="at">sword</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span> <span class="co">// suelta la espada</span></span></code></pre></div>
 </section></section>
@@ -411,42 +505,58 @@
 </section>
 <section class="slide level2">
 
-<p>Las <strong>listas</strong> o <strong>arrays</strong> son colecciones de <strong>datos ordenados</strong></p>
+<p>Las <strong>listas</strong> o <strong>arrays</strong> son colecciones
+de <strong>datos ordenados</strong></p>
 <p>También son <code class="sourceCode javascript">object</code></p>
-<p>Tienen una propiedad <code>length</code> y se accede a sus propiedades por índice (número entero)</p>
+<p>Tienen una propiedad <code>length</code> y se accede a sus
+propiedades por índice (número entero)</p>
 </section>
 <section class="slide level2">
 
-<p>Los arrays en JavaScript no se parecen mucho a los arrays de bajo nivel (C/C++), que son <em>muy eficientes</em></p>
-<p>Para representar datos de manera eficiente, usamos <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Vectores_tipados">vectores tipados</a>, que son objetos concretos que provee el API estándar</p>
+<p>Los arrays en JavaScript no se parecen mucho a los arrays de bajo
+nivel (C/C++), que son <em>muy eficientes</em></p>
+<p>Para representar datos de manera eficiente, usamos <a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Vectores_tipados">vectores
+tipados</a>, que son objetos concretos que provee el API estándar</p>
 </section>
 <section class="slide level2">
 
 <p>Por ejemplo, la lista de comandos de un menú:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> menu <span class="op">=</span> [<span class="st">&#39;Attack&#39;</span><span class="op">,</span> <span class="st">&#39;Defense&#39;</span><span class="op">,</span> <span class="st">&#39;Inventory&#39;</span>]<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> menu <span class="op">=</span> [<span class="st">&#39;Attack&#39;</span><span class="op">,</span> <span class="st">&#39;Defense&#39;</span><span class="op">,</span> <span class="st">&#39;Inventory&#39;</span>]<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>En este tipo de objetos, el orden importa</p>
-<p>Para acceder a los distintos valores usamos su <strong>índice</strong> en la lista entre corchetes. Los índices <strong>comienzan en 0</strong></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>menu[<span class="dv">0</span>]<span class="op">;</span></span>
+<p>Para acceder a los distintos valores usamos su
+<strong>índice</strong> en la lista entre corchetes. Los índices
+<strong>comienzan en 0</strong></p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>menu[<span class="dv">0</span>]<span class="op">;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>menu[<span class="dv">1</span>]<span class="op">;</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>menu[<span class="dv">2</span>]<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Se puede consultar la longitud de un array, accediendo a la propiedad <code class="sourceCode javascript">length</code></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="at">length</span><span class="op">;</span></span></code></pre></div>
+<p>Se puede consultar la longitud de un array, accediendo a la propiedad
+<code class="sourceCode javascript">length</code></p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="at">length</span><span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Como en el caso de los objetos que no son arrays, podemos cambiar cualquier valor en cualquier momento usando el operador de asignación:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>menu[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;Special&#39;</span><span class="op">;</span> <span class="co">// reemplaza Wait con Special</span></span></code></pre></div>
+<p>Como en el caso de los objetos que no son arrays, podemos cambiar
+cualquier valor en cualquier momento usando el operador de
+asignación:</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>menu[<span class="dv">0</span>] <span class="op">=</span> <span class="st">&#39;Special&#39;</span><span class="op">;</span> <span class="co">// reemplaza Wait con Special</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>También como en el caso de los objetos, podemos acceder a un valor que no existe y recuperarlo o asignarlo en cualquier momento:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>menu <span class="op">=</span> [<span class="st">&#39;Attack&#39;</span><span class="op">,</span> <span class="st">&#39;Defense&#39;</span><span class="op">,</span> <span class="st">&#39;Inventory&#39;</span>]<span class="op">;</span></span>
+<p>También como en el caso de los objetos, podemos acceder a un valor
+que no existe y recuperarlo o asignarlo en cualquier momento:</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>menu <span class="op">=</span> [<span class="st">&#39;Attack&#39;</span><span class="op">,</span> <span class="st">&#39;Defense&#39;</span><span class="op">,</span> <span class="st">&#39;Inventory&#39;</span>]<span class="op">;</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>menu<span class="op">;</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> item <span class="op">=</span> menu[<span class="dv">10</span>]<span class="op">;</span></span>
@@ -457,62 +567,93 @@
 </section>
 <section class="slide level2">
 
-<p>Si asignamos a un índice <strong>por encima de la longitud actual, extendemos el array hasta ese índice</strong></p>
+<p>Si asignamos a un índice <strong>por encima de la longitud actual,
+extendemos el array hasta ese índice</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Se puede añadir un elemento al final del array, llamando al método <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><code class="sourceCode javascript"><span class="fu">push</span>()</code></a>:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">push</span>(<span class="st">&#39;Magic&#39;</span>)<span class="op">;</span></span></code></pre></div>
+<p>Se puede añadir un elemento al final del array, llamando al método <a
+href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><code
+class="sourceCode javascript"><span class="fu">push</span>()</code></a>:</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">push</span>(<span class="st">&#39;Magic&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>También se puede quitar un elemento por el final usando el método <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"><code class="sourceCode javascript"><span class="fu">pop</span>()</code></a>:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">pop</span>()<span class="op">;</span></span></code></pre></div>
+<p>También se puede quitar un elemento por el final usando el método <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"><code
+class="sourceCode javascript"><span class="fu">pop</span>()</code></a>:</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">pop</span>()<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Se puede alterar una lista (insertar o borrar elementos) en cualquier lugar usando el método <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><code class="sourceCode javascript"><span class="fu">splice</span>()</code></a>:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Inspecciona la lista tras cada operación</span></span>
+<p>Se puede alterar una lista (insertar o borrar elementos) en cualquier
+lugar usando el método <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><code
+class="sourceCode javascript"><span class="fu">splice</span>()</code></a>:</p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Inspecciona la lista tras cada operación</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">splice</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">&#39;Magic&#39;</span>)<span class="op">;</span> <span class="co">// añade Magic antes de Inventory</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">splice</span>(<span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="st">&#39;Ench. Inventory&#39;</span>)<span class="op">;</span> <span class="co">// reemplaza Magic and Inventory with Ench. Inventory</span></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">splice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">&#39;Wait&#39;</span>)<span class="op">;</span> <span class="co">// añade Wait al principio de la lista</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Se puede recorrer con un <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of"><code class="sourceCode javascript"><span class="cf">for</span><span class="op">...</span><span class="kw">of</span></code></a></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">let</span> item <span class="kw">of</span> menu) {</span>
+<p>Se puede recorrer con un <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of"><code
+class="sourceCode javascript"><span class="cf">for</span><span class="op">...</span><span class="kw">of</span></code></a></p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">let</span> item <span class="kw">of</span> menu) {</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(item)<span class="op">;</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Se pueden recorrer con un <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><code class="sourceCode javascript"><span class="bu">Array</span><span class="op">.</span><span class="at">forEach</span></code></a>:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">forEach</span>( </span>
+<p>Se pueden recorrer con un <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach"><code
+class="sourceCode javascript"><span class="bu">Array</span><span class="op">.</span><span class="at">forEach</span></code></a>:</p>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">forEach</span>( </span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  (item) <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(item)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">forEach</span>( </span>
 <span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  (item<span class="op">,</span> index) <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span>index<span class="sc">}</span><span class="vs">: </span><span class="sc">${</span>item<span class="sc">}</span><span class="vs">`</span>)</span>
 <span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div>
-<p><small>Ya veremos que <code class="sourceCode javascript"><span class="kw">=&gt;</span></code> sirve para definir una función</small></p>
+<p><small>Ya veremos que <code
+class="sourceCode javascript"><span class="kw">=&gt;</span></code> sirve
+para definir una función</small></p>
 </section>
 <section class="slide level2">
 
-<p>Se puede buscar un elemento y su posición en el array con <code>find</code> y <code>findIndex</code></p>
-<p>Se puede comprobar si todos los elementos cumplen una condición con <code>every</code></p>
-<p>Se puede crear un nuevo array con los elementos que cumplen una condición con <code>filter</code></p>
-<p>Se puede crear un nuevo array aplicando una función a cada elemento con <code>map</code></p>
-<p>… <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">y mucho más</a></p>
+<p>Se puede buscar un elemento y su posición en el array con
+<code>find</code> y <code>findIndex</code></p>
+<p>Se puede comprobar si todos los elementos cumplen una condición con
+<code>every</code></p>
+<p>Se puede crear un nuevo array con los elementos que cumplen una
+condición con <code>filter</code></p>
+<p>Se puede crear un nuevo array aplicando una función a cada elemento
+con <code>map</code></p>
+<p>… <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">y
+mucho más</a></p>
 </section></section>
 <section>
-<section id="distinguir-entre-objetos-y-arrays" class="title-slide slide level1">
+<section id="distinguir-entre-objetos-y-arrays"
+class="title-slide slide level1">
 <h1>Distinguir entre objetos y arrays</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Arrays y objetos tienen tipo <code>object</code> así que usaremos el método <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"><code class="sourceCode javascript"><span class="bu">Array</span><span class="op">.</span><span class="fu">isArray</span>()</code></a> para distinguirlos</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> obj <span class="op">=</span> {}<span class="op">;</span> <span class="co">// el objeto vacío es tan válido como cualquier otro</span></span>
+<p>Arrays y objetos tienen tipo <code>object</code> así que usaremos el
+método <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray"><code
+class="sourceCode javascript"><span class="bu">Array</span><span class="op">.</span><span class="fu">isArray</span>()</code></a>
+para distinguirlos</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> obj <span class="op">=</span> {}<span class="op">;</span> <span class="co">// el objeto vacío es tan válido como cualquier otro</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> arr <span class="op">=</span> []<span class="op">;</span> <span class="co">// una lista sin elementos, como te puedes imaginar</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> obj<span class="op">;</span> <span class="co">// será object</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="kw">typeof</span> arr<span class="op">;</span> <span class="co">// será object</span></span>
@@ -521,12 +662,15 @@
 </section>
 <section id="composición-de-objetos" class="slide level2">
 <h2>Composición de objetos</h2>
-<p>Objetos y arrays permiten cualquier composición de objetos. Es decir, sus valores pueden ser otros objetos y arrays, números, cadenas o funciones</p>
+<p>Objetos y arrays permiten cualquier composición de objetos. Es decir,
+sus valores pueden ser otros objetos y arrays, números, cadenas o
+funciones</p>
 </section>
 <section class="slide level2">
 
 <p>Ficha de personaje:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> hero <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> hero <span class="op">=</span> {</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Link&#39;</span><span class="op">,</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">life</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">weapon</span><span class="op">:</span> { <span class="dt">kind</span><span class="op">:</span> <span class="st">&#39;sword&#39;</span><span class="op">,</span> <span class="dt">power</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">magicPower</span><span class="op">:</span> <span class="dv">5</span> }<span class="op">,</span></span>
@@ -542,7 +686,8 @@
 <section class="slide level2">
 
 <p>Algunas propiedades:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>hero<span class="op">.</span><span class="at">name</span><span class="op">;</span> <span class="co">// el nombre del héroe</span></span>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>hero<span class="op">.</span><span class="at">name</span><span class="op">;</span> <span class="co">// el nombre del héroe</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>hero<span class="op">.</span><span class="at">weapon</span><span class="op">.</span><span class="at">kind</span><span class="op">;</span> <span class="co">// el tipo de arma</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>hero<span class="op">.</span><span class="at">inventory</span>[<span class="dv">0</span>]<span class="op">;</span> <span class="co">// el primer slot del inventario</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>hero<span class="op">.</span><span class="at">inventory</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">item</span><span class="op">;</span> <span class="co">// qué hay en el primer slot del inventario</span></span>
@@ -555,14 +700,24 @@
 </section>
 <section class="slide level2">
 
-<p>En JavaScript, el operador de igualdad estricta o identidad es <code class="sourceCode javascript"><span class="op">===</span></code> (el triple igual)</p>
-<p>Esto permite comparar dos objetos y decidir si <strong>son iguales</strong></p>
-<p>También existe el operador de desigualdad <code class="sourceCode javascript"><span class="op">!==</span></code> que compara dos objetos y decide si <strong>no son iguales</strong></p>
+<p>En JavaScript, el operador de igualdad estricta o identidad es <code
+class="sourceCode javascript"><span class="op">===</span></code> (el
+triple igual)</p>
+<p>Esto permite comparar dos objetos y decidir si <strong>son
+iguales</strong></p>
+<p>También existe el operador de desigualdad <code
+class="sourceCode javascript"><span class="op">!==</span></code> que
+compara dos objetos y decide si <strong>no son iguales</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Para los tipos <code class="sourceCode javascript">bool</code>, <code class="sourceCode javascript">string</code>, <code class="sourceCode javascript">number</code> y <code class="sourceCode javascript"><span class="kw">undefined</span></code>, dos valores son iguales si tienen la <strong>misma forma</strong>:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Todas estas comparaciones son verdaderas</span></span>
+<p>Para los tipos <code class="sourceCode javascript">bool</code>, <code
+class="sourceCode javascript">string</code>, <code
+class="sourceCode javascript">number</code> y <code
+class="sourceCode javascript"><span class="kw">undefined</span></code>,
+dos valores son iguales si tienen la <strong>misma forma</strong>:</p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Todas estas comparaciones son verdaderas</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Hola&quot;</span> <span class="op">===</span> <span class="st">&quot;Hola&quot;</span><span class="op">;</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Hola&quot;</span> <span class="op">!==</span> <span class="st">&quot;hola&quot;</span><span class="op">;</span></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="kw">true</span> <span class="op">===</span> <span class="kw">true</span><span class="op">;</span></span>
@@ -572,8 +727,10 @@
 </section>
 <section class="slide level2">
 
-<p>Para <code>object</code> y <code>symbol</code>, dos objetos son iguales sólo si se refieren al mismo objeto o símbolo:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>({} <span class="op">!==</span> {})<span class="op">;</span> <span class="co">// da igual la forma, esto son dos objetos distintos</span></span>
+<p>Para <code>object</code> y <code>symbol</code>, dos objetos son
+iguales sólo si se refieren al mismo objeto o símbolo:</p>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>({} <span class="op">!==</span> {})<span class="op">;</span> <span class="co">// da igual la forma, esto son dos objetos distintos</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>({} <span class="op">!==</span> [])<span class="op">;</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>[] <span class="op">!==</span> []<span class="op">;</span> <span class="co">// igual que antes</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>] <span class="op">!==</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">;</span> <span class="co">// la forma da igual, los objetos son distintos</span></span>
@@ -587,17 +744,24 @@
 </section>
 <section class="slide level2">
 
-<p>El operador <code class="sourceCode javascript"><span class="op">==</span></code> es el operador de igualdad abstracta o débil. Es parecido, pero hace <strong>peligrosas</strong> conversiones de tipo:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">===</span> <span class="st">&#39;3&#39;</span><span class="op">;</span> <span class="co">// false</span></span>
+<p>El operador <code
+class="sourceCode javascript"><span class="op">==</span></code> es el
+operador de igualdad abstracta o débil. Es parecido, pero hace
+<strong>peligrosas</strong> conversiones de tipo:</p>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">===</span> <span class="st">&#39;3&#39;</span><span class="op">;</span> <span class="co">// false</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">==</span> <span class="st">&#39;3&#39;</span><span class="op">;</span>  <span class="co">// true</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;24&quot;</span> <span class="op">&gt;</span> <span class="st">&quot;120&quot;</span><span class="op">;</span> <span class="co">// true</span></span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="dv">24</span> <span class="op">&gt;</span> <span class="dv">120</span><span class="op">;</span>     <span class="co">// false</span></span></code></pre></div>
-<p>En general, usad siempre <code class="sourceCode javascript"><span class="op">===</span></code></p>
+<p>En general, usad siempre <code
+class="sourceCode javascript"><span class="op">===</span></code></p>
 </section>
 <section class="slide level2">
 
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Equality_comparisons_and_sameness">Comparadores de igualdad en JS</a></p>
+<p><a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Equality_comparisons_and_sameness">Comparadores
+de igualdad en JS</a></p>
 </section>
 <section class="slide level2">
 
@@ -609,19 +773,24 @@
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">.</span><span class="fu">map</span>(parseInt)</span>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> [<span class="dv">10</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">.</span><span class="fu">map</span>(parseInt)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>[ <span class="dv">10</span><span class="op">,</span> <span class="kw">NaN</span><span class="op">,</span> <span class="dv">2</span> ]</span></code></pre></div>
-<p>(<a href="https://stackoverflow.com/a/14528430">Hay una explicación</a>)</p>
+<p>(<a href="https://stackoverflow.com/a/14528430">Hay una
+explicación</a>)</p>
 </section></section>
 <section>
-<section id="funciones-referencias-a-funciones-y-llamadas-a-funciones" class="title-slide slide level1">
+<section id="funciones-referencias-a-funciones-y-llamadas-a-funciones"
+class="title-slide slide level1">
 <h1>Funciones, referencias a funciones y llamadas a funciones</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Hay dos formas de definir una función. Una es usando la <strong>declaración de función</strong>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Introduce una letiable factorial que apunta a la función factorial</span></span>
+<p>Hay dos formas de definir una función. Una es usando la
+<strong>declaración de función</strong>:</p>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Introduce una letiable factorial que apunta a la función factorial</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">factorial</span>(number) {</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (number <span class="op">===</span> <span class="dv">0</span>) {</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">;</span></span>
@@ -631,17 +800,22 @@
 </section>
 <section class="slide level2">
 
-<p>En este caso el nombre de la función (antes de los paréntesis) es obligatorio</p>
+<p>En este caso el nombre de la función (antes de los paréntesis) es
+obligatorio</p>
 <p>Esto tiene dos implicaciones:</p>
 <ul>
-<li>Permite implementar <strong>llamadas recursivas</strong> como la del ejemplo</li>
-<li><strong>Crea un nombre</strong> <code>factorial</code> para referirnos a esa función</li>
+<li>Permite implementar <strong>llamadas recursivas</strong> como la del
+ejemplo</li>
+<li><strong>Crea un nombre</strong> <code>factorial</code> para
+referirnos a esa función</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>La otra forma es usa una <strong>expresión de función</strong>. Esta se parece más a como creamos un número o una cadena:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Introduce una letiable recursiveFunction que apunta a OTRA funcion factorial</span></span>
+<p>La otra forma es usa una <strong>expresión de función</strong>. Esta
+se parece más a como creamos un número o una cadena:</p>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Introduce una letiable recursiveFunction que apunta a OTRA funcion factorial</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> recursiveFunction <span class="op">=</span> <span class="kw">function</span> <span class="fu">factorial</span>(number) {</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (number <span class="op">===</span> <span class="dv">0</span>) {</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">;</span></span>
@@ -653,18 +827,25 @@
 
 <p>En este último caso, hay dos nombres:</p>
 <ul>
-<li>Uno es el nombre de la función <code class="sourceCode javascript">factorial</code> que existe para poder referirnos a ella dentro del cuerpo de la función</li>
-<li>El otro es la letiable <code class="sourceCode javascript">recursiveFunction</code> que referencia a la función</li>
+<li>Uno es el nombre de la función <code
+class="sourceCode javascript">factorial</code> que existe para poder
+referirnos a ella dentro del cuerpo de la función</li>
+<li>El otro es la letiable <code
+class="sourceCode javascript">recursiveFunction</code> que referencia a
+la función</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>Ambos referencian a la misma función (con dos nombres diferentes) y ambos podrían usarse para hacer la llamada recursiva</p>
+<p>Ambos referencian a la misma función (con dos nombres diferentes) y
+ambos podrían usarse para hacer la llamada recursiva</p>
 </section>
 <section class="slide level2">
 
-<p>La misma función puede referirse desde múltiples letiables o, dicho de otra manera, tener muchos nombres:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> a <span class="op">=</span> recursiveFunction<span class="op">;</span></span>
+<p>La misma función puede referirse desde múltiples letiables o, dicho
+de otra manera, tener muchos nombres:</p>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> a <span class="op">=</span> recursiveFunction<span class="op">;</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> b <span class="op">=</span> recursiveFunction<span class="op">;</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">===</span> b<span class="op">;</span> <span class="co">// es cierto, se refieren a la misma función</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>a<span class="op">.</span><span class="at">name</span><span class="op">;</span> <span class="co">// el nombre de la función no tiene que ver con el de la letiable</span></span>
@@ -673,21 +854,30 @@
 </section>
 <section class="slide level2">
 
-<p>Tampoco podemos confundir la referencia a la función <code class="sourceCode javascript">factorial</code> y la llamada a la misma función <code class="sourceCode javascript"><span class="fu">factorial</span>(<span class="dv">10</span>)</code></p>
+<p>Tampoco podemos confundir la referencia a la función <code
+class="sourceCode javascript">factorial</code> y la llamada a la misma
+función <code
+class="sourceCode javascript"><span class="fu">factorial</span>(<span class="dv">10</span>)</code></p>
 </section>
 <section class="slide level2">
 
-<p>Con la primera forma <strong>nos referimos al objeto</strong> que encapsula el código que hay que ejecutar</p>
-<p>No requiere parámetros porque no queremos ejecutar el código sino sólo referirnos a la función</p>
+<p>Con la primera forma <strong>nos referimos al objeto</strong> que
+encapsula el código que hay que ejecutar</p>
+<p>No requiere parámetros porque no queremos ejecutar el código sino
+sólo referirnos a la función</p>
 </section>
 <section class="slide level2">
 
-<p>Con la segunda estamos <strong>pidiendo a la función que se ejecute</strong> y por tanto tenemos que aportar todos los parámetros necesarios</p>
+<p>Con la segunda estamos <strong>pidiendo a la función que se
+ejecute</strong> y por tanto tenemos que aportar todos los parámetros
+necesarios</p>
 </section>
 <section class="slide level2">
 
-<p>En realidad, existe una tercera forma de definir una función: la función <em>anónima</em>:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> f <span class="op">=</span> <span class="kw">function</span>( a ) {</span>
+<p>En realidad, existe una tercera forma de definir una función: la
+función <em>anónima</em>:</p>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> f <span class="op">=</span> <span class="kw">function</span>( a ) {</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>f<span class="op">;</span> </span>
@@ -695,8 +885,10 @@
 </section>
 <section class="slide level2">
 
-<p>Se suelen usar cuando es necesario pasar una función como parámetro:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">forEach</span>( </span>
+<p>Se suelen usar cuando es necesario pasar una función como
+parámetro:</p>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">forEach</span>( </span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> (item) {</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(item)<span class="op">;</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  }</span>
@@ -704,11 +896,17 @@
 </section>
 <section class="slide level2">
 
-<p>Las <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"><em>arrow functions</em></a> (<code class="sourceCode javascript"><span class="kw">=&gt;</span></code>) son una forma más compacta para definir este tipo de funciones:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> f <span class="op">=</span> ( a ) <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span>
+<p>Las <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"><em>arrow
+functions</em></a> (<code
+class="sourceCode javascript"><span class="kw">=&gt;</span></code>) son
+una forma más compacta para definir este tipo de funciones:</p>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> f <span class="op">=</span> ( a ) <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(a)<span class="op">;</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>menu<span class="op">.</span><span class="fu">forEach</span>( (item) <span class="kw">=&gt;</span> <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(item) )<span class="op">;</span></span></code></pre></div>
-<p><small>Tienen una propiedad muy interesante con respecto al <code>this</code> que veremos más adelante</small></p>
+<p><small>Tienen una propiedad muy interesante con respecto al
+<code>this</code> que veremos más adelante</small></p>
 </section></section>
     </div>
   </div>
@@ -750,7 +948,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -759,7 +957,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

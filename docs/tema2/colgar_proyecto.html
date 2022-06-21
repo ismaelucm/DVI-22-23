@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -37,25 +40,40 @@
 <section class="slide level2">
 
 <p>Hay que alojar el proyecto en un sitio web</p>
-<p>Todos, a través del <a href="https://docs.github.com/en/pages/getting-started-with-github-pages">servicio de páginas públicas en GitHub</a> podéis simplemente hacer un commit del proyecto y servir la URL</p>
+<p>Todos, a través del <a
+href="https://docs.github.com/en/pages/getting-started-with-github-pages">servicio
+de páginas públicas en GitHub</a> podéis simplemente hacer un commit del
+proyecto y servir la URL</p>
 </section>
 <section class="slide level2">
 
 <p>Alternativas:</p>
 <ol type="1">
-<li>Sólo tenéis que crear una rama <code>main</code> en un repositorio, y tener ahí el archivo <code>index.html</code> apropiado (los servidores web usan el documento <code>index.html</code> como el servido por defecto)</li>
-<li>Tener nuestra versión de producción en una carpeta <code>docs</code> de <code>main</code> (tenéis que configurarlo en “Settings”)</li>
-<li>Tener nuestra versión de producción en una rama <code>gh-pages</code> (que podéis/deberíais crear como <a href="https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/">orphan branch</a>)</li>
+<li>Sólo tenéis que crear una rama <code>main</code> en un repositorio,
+y tener ahí el archivo <code>index.html</code> apropiado (los servidores
+web usan el documento <code>index.html</code> como el servido por
+defecto)</li>
+<li>Tener nuestra versión de producción en una carpeta <code>docs</code>
+de <code>main</code> (tenéis que configurarlo en “Settings”)</li>
+<li>Tener nuestra versión de producción en una rama
+<code>gh-pages</code> (que podéis/deberíais crear como <a
+href="https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/">orphan
+branch</a>)</li>
 </ol>
 </section>
 <section class="slide level2">
 
-<p>Una ventaja de hacerlo desde <code>main</code> es que no hay que hacer nada más que desarrollar y hacer <code>push</code>, y servimos los mismos archivos de desarrollo</p>
-<p>En general <em>esto no es idóneo</em>, pero acelera y simplifica el proceso</p>
+<p>Una ventaja de hacerlo desde <code>main</code> es que no hay que
+hacer nada más que desarrollar y hacer <code>push</code>, y servimos los
+mismos archivos de desarrollo</p>
+<p>En general <em>esto no es idóneo</em>, pero acelera y simplifica el
+proceso</p>
 </section>
 <section class="slide level2">
 
-<p>Una ventaja de hacerlo desde <code>docs</code> o desde <code>gh-pages</code> es que, si el repositorio es privado, sólo se servirá/será público lo de esa carpeta</p>
+<p>Una ventaja de hacerlo desde <code>docs</code> o desde
+<code>gh-pages</code> es que, si el repositorio es privado, sólo se
+servirá/será público lo de esa carpeta</p>
 </section>
 <section id="rutas" class="slide level2">
 <h2>Rutas</h2>
@@ -67,22 +85,30 @@
 --- -->
 <p>Tened cuidado con los recursos:</p>
 <ul>
-<li>Referenciadlos con <strong>rutas relativas</strong> a vuestros <code>.html</code> y <code>.js</code> (<code>imgs/imagen.png</code>), en vez de <strong>rutas absolutas</strong> (<code>http://mi.ruta.cambiante/imgs/imagen.png</code>)</li>
+<li>Referenciadlos con <strong>rutas relativas</strong> a vuestros
+<code>.html</code> y <code>.js</code> (<code>imgs/imagen.png</code>), en
+vez de <strong>rutas absolutas</strong>
+(<code>http://mi.ruta.cambiante/imgs/imagen.png</code>)</li>
 <li>Aseguraos de que están cargados antes de iniciar su uso</li>
 <li>Aseguraos de que están siempre disponibles</li>
 </ul>
 </section>
 <section id="página-en-la-que-incluir-el-proyecto" class="slide level2">
 <h2>Página en la que incluir el proyecto</h2>
-<p>El archivo <code>index.html</code> tiene que ser una página presentable y “bonita”</p>
+<p>El archivo <code>index.html</code> tiene que ser una página
+presentable y “bonita”</p>
 </section>
 <section class="slide level2">
 
-<p>Tiene que tener el título del proyecto, un resumen del GDD (una versión en HTML), enlaces pertinentes (como, por ejemplo, al código en <code>GitHub</code>), instrucciones y cualquier información adicional relevante</p>
+<p>Tiene que tener el título del proyecto, un resumen del GDD (una
+versión en HTML), enlaces pertinentes (como, por ejemplo, al código en
+<code>GitHub</code>), instrucciones y cualquier información adicional
+relevante</p>
 </section>
 <section class="slide level2">
 
-<p>Además, hay que poner la licencia del mismo e información de la asignatura</p>
+<p>Además, hay que poner la licencia del mismo e información de la
+asignatura</p>
 </section></section>
 <section>
 <section id="desarrollo-y-despliegue" class="title-slide slide level1">
@@ -92,7 +118,8 @@
 <section class="slide level2">
 
 <p>No tenéis que desarrollar con la máquina de GitHub, sino en local</p>
-<p>Hacer <code>push</code> para probar es lento y es una carga innecesaria</p>
+<p>Hacer <code>push</code> para probar es lento y es una carga
+innecesaria</p>
 </section>
 <section class="slide level2">
 
@@ -119,7 +146,8 @@
 <p>Cuando funcione:</p>
 <ul>
 <li>Hacer <code>push</code> y publicar <code>main</code></li>
-<li>Publicar sólo carpeta <code>docs</code> o rama <code>gh-pages</code> y copiar a esta carpeta/rama sólo cuando haya material mejorado</li>
+<li>Publicar sólo carpeta <code>docs</code> o rama <code>gh-pages</code>
+y copiar a esta carpeta/rama sólo cuando haya material mejorado</li>
 </ul>
 <!-- 
 # Makefiles
@@ -246,7 +274,7 @@ Esto hace que publicar en la carpeta `docs` sea mucho más sencillo -->
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

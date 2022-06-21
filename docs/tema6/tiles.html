@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,25 +102,34 @@
 </section>
 <section id="qué-es-un-tile" class="slide level2">
 <h2>Qué es un tile</h2>
-<p>Un <em>tile</em> (o baldosa) es un imagen, generalmente cuadrada y, generalmente, de tamaño fijo, que se usa para dibujar un elemento en un videojuego</p>
+<p>Un <em>tile</em> (o baldosa) es un imagen, generalmente cuadrada y,
+generalmente, de tamaño fijo, que se usa para dibujar un elemento en un
+videojuego</p>
 </section>
 <section class="slide level2">
 
-<p>Los tiles simplifican el desarrollo, ya que hacen que el mundo se considere <strong>una matriz discreta</strong></p>
+<p>Los tiles simplifican el desarrollo, ya que hacen que el mundo se
+considere <strong>una matriz discreta</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Los tiles pueden ser usados para dibujar (por ejemplo, el mapa o el fondo) y también <em>para la lógica del juego</em> (como en los <a href="https://es.wikipedia.org/wiki/Roguelike">roguelikes</a>)</p>
+<p>Los tiles pueden ser usados para dibujar (por ejemplo, el mapa o el
+fondo) y también <em>para la lógica del juego</em> (como en los <a
+href="https://es.wikipedia.org/wiki/Roguelike">roguelikes</a>)</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="https://upload.wikimedia.org/wikipedia/commons/2/29/Dungeon_crawl_stone_soup.png" data-weight="50%" alt="Dungeon Crawl" /><figcaption aria-hidden="true">Dungeon Crawl</figcaption>
+<img
+data-src="https://upload.wikimedia.org/wikipedia/commons/2/29/Dungeon_crawl_stone_soup.png"
+data-weight="50%" alt="Dungeon Crawl" />
+<figcaption aria-hidden="true">Dungeon Crawl</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Cada <em>tile</em> es una imagen particular, independiente… ¡O no!</p>
+<p>Cada <em>tile</em> es una imagen particular, independiente… ¡O
+no!</p>
 </section></section>
 <section>
 <section id="tile-maps" class="title-slide slide level1">
@@ -126,11 +138,14 @@
 </section>
 <section id="qué-es-un-tile-map" class="slide level2">
 <h2>Qué es un tile map</h2>
-<p>Un <strong>tile map</strong> es una simplificación de un mundo en 2D en la que dicho mundo es dividido en una cuadrícula de tamaño fijo (una matriz 2D)</p>
+<p>Un <strong>tile map</strong> es una simplificación de un mundo en 2D
+en la que dicho mundo es dividido en una cuadrícula de tamaño fijo (una
+matriz 2D)</p>
 </section>
 <section class="slide level2">
 
-<p>En cada “celda” se pinta un tile, generalmente extraído de un <em>tile set</em></p>
+<p>En cada “celda” se pinta un tile, generalmente extraído de un
+<em>tile set</em></p>
 <!-- Cada una de los rectángulos que forman la cuadrícula, en realidad representa un -->
 <!-- fragmento o *frame* de un *spritesheet*. -->
 </section>
@@ -150,7 +165,10 @@
 <section id="ejemplo-de-tile-map" class="slide level2">
 <h2>Ejemplo de tile map</h2>
 <figure>
-<img data-src="tilemap_zelda.png" style="height:75.0%" alt="Tilemap de “The Legend of Zelda”" /><figcaption aria-hidden="true">Tilemap de “The Legend of Zelda”</figcaption>
+<img data-src="tilemap_zelda.png" style="height:75.0%"
+alt="Tilemap de “The Legend of Zelda”" />
+<figcaption aria-hidden="true">Tilemap de “The Legend of
+Zelda”</figcaption>
 </figure>
 </section></section>
 <section>
@@ -160,17 +178,22 @@
 </section>
 <section class="slide level2">
 
-<p>Un tile set se suele implementar como un archivo de imagen en el que cada celda representa un tile</p>
+<p>Un tile set se suele implementar como un archivo de imagen en el que
+cada celda representa un tile</p>
 </section>
 <section id="ejemplo-de-tile-set" class="slide level2">
 <h2>Ejemplo de tile set</h2>
 <figure>
-<img data-src="tileset_zelda.png" style="height:75.0%" alt="Tileset de “The Legend of Zelda”" /><figcaption aria-hidden="true">Tileset de “The Legend of Zelda”</figcaption>
+<img data-src="tileset_zelda.png" style="height:75.0%"
+alt="Tileset de “The Legend of Zelda”" />
+<figcaption aria-hidden="true">Tileset de “The Legend of
+Zelda”</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Cada celda del tile set representa una imagen <em>independiente</em></p>
+<p>Cada celda del tile set representa una imagen
+<em>independiente</em></p>
 <p>Esto funciona bien para cosas aisladas: monedas, árboles, cajas…</p>
 </section>
 <section class="slide level2">
@@ -180,27 +203,42 @@
 <section id="la-playa" class="slide level2">
 <h2>La playa</h2>
 <figure>
-<img data-src="http://opengameart.org/sites/default/files/styles/medium/public/preview_128.png" alt="Tile set de “playa”" /><figcaption aria-hidden="true"><a href="http://opengameart.org/content/happyland-tileset">Tile set de “playa”</a></figcaption>
+<img
+data-src="http://opengameart.org/sites/default/files/styles/medium/public/preview_128.png"
+alt="Tile set de “playa”" />
+<figcaption aria-hidden="true"><a
+href="http://opengameart.org/content/happyland-tileset">Tile set de
+“playa”</a></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Para evitar los “cortes”, los tiles normalmente están creados para repetirse en la escena sin que se vean costuras, de forma que se pueden construir escenas muy complejas</p>
+<p>Para evitar los “cortes”, los tiles normalmente están creados para
+repetirse en la escena sin que se vean costuras, de forma que se pueden
+construir escenas muy complejas</p>
 </section>
 <section class="slide level2">
 
-<p>Se ocupa <strong>mucha menos memoria</strong> que dibujando la escena en una imagen (se carga una, se usa muchas veces)</p>
+<p>Se ocupa <strong>mucha menos memoria</strong> que dibujando la escena
+en una imagen (se carga una, se usa muchas veces)</p>
 </section>
 <section id="por-qué-es-más-eficiente" class="slide level2">
 <h2>¿Por qué es más eficiente?</h2>
 <ul>
-<li>Mapa de 4096 <span class="math inline">×</span> 1024 con tiles de 64 <span class="math inline">×</span> 64:
+<li>Mapa de 4096 <span class="math inline">×</span> 1024 con tiles de 64
+<span class="math inline">×</span> 64:
 <ul>
-<li><p>Sin tile map: 4096 <span class="math inline">×</span> 1024 <span class="math inline">×</span> 4B de color = <strong>16.7 MB</strong></p></li>
-<li><p>Con tile map: tile map de 64 <span class="math inline">×</span> 16 tiles y tile set de 1024 <span class="math inline">×</span> 1024 con 256 tiles (16 <span class="math inline">×</span> 16)</p>
+<li><p>Sin tile map: 4096 <span class="math inline">×</span> 1024 <span
+class="math inline">×</span> 4B de color = <strong>16.7
+MB</strong></p></li>
+<li><p>Con tile map: tile map de 64 <span class="math inline">×</span>
+16 tiles y tile set de 1024 <span class="math inline">×</span> 1024 con
+256 tiles (16 <span class="math inline">×</span> 16)</p>
 <ul>
-<li>Tamaño del tile map = 1024 <span class="math inline">×</span> 1B</li>
-<li>Tamaño del tile set = 1024 <span class="math inline">×</span> 1024 <span class="math inline">×</span> 4B de color = 4 MB</li>
+<li>Tamaño del tile map = 1024 <span class="math inline">×</span>
+1B</li>
+<li>Tamaño del tile set = 1024 <span class="math inline">×</span> 1024
+<span class="math inline">×</span> 4B de color = 4 MB</li>
 <li>Tamaño total = <strong>4.01 MB</strong></li>
 </ul></li>
 </ul></li>
@@ -209,15 +247,19 @@
 <section id="otras-ventajas" class="slide level2">
 <h2>Otras ventajas:</h2>
 <ul>
-<li>Al tener todos los tiles en la misma hoja de sprites sólo necesitamos una llamada a pintado para pintar todo el escenario</li>
-<li>Cuando cargamos desde Internet, es fundamental reducir los tiempos de carga</li>
-<li>Dibujar la escena es más sencillo, sobre todo con un editor de tiles</li>
+<li>Al tener todos los tiles en la misma hoja de sprites sólo
+necesitamos una llamada a pintado para pintar todo el escenario</li>
+<li>Cuando cargamos desde Internet, es fundamental reducir los tiempos
+de carga</li>
+<li>Dibujar la escena es más sencillo, sobre todo con un editor de
+tiles</li>
 <li>Podemos reutilizar tiles en diferentes escenarios.</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>La desventaja es que los gráficos del escenario <strong>están repetidos</strong></p>
+<p>La desventaja es que los gráficos del escenario <strong>están
+repetidos</strong></p>
 </section>
 <section class="slide level2">
 
@@ -234,24 +276,30 @@
 </section>
 <section class="slide level2">
 
-<p>Crear el tile map a mano es mucho mas complejo y propenso a errores</p>
+<p>Crear el tile map a mano es mucho mas complejo y propenso a
+errores</p>
 </section>
 <section id="tiled" class="slide level2">
 <h2>Tiled</h2>
-<p><a href="http://www.mapeditor.org/">Tiled</a> es un editor de niveles 2D que ayuda a desarrollar escenarios para juegos</p>
+<p><a href="http://www.mapeditor.org/">Tiled</a> es un editor de niveles
+2D que ayuda a desarrollar escenarios para juegos</p>
 </section>
 <section class="slide level2">
 
-<p>Puede exportar a diferentes formatos, entre ellos el formato JSON que usa Phaser</p>
+<p>Puede exportar a diferentes formatos, entre ellos el formato JSON que
+usa Phaser</p>
 </section>
 <section class="slide level2">
 
-<p>Tiene soporte para diferentes capas (<strong>layers</strong>) e incluso para añadir una capa especial de objetos con la ubicación de los objetos en el mapa</p>
+<p>Tiene soporte para diferentes capas (<strong>layers</strong>) e
+incluso para añadir una capa especial de objetos con la ubicación de los
+objetos en el mapa</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="tiled.png" alt="La interfaz de Tiled" /><figcaption aria-hidden="true">La interfaz de Tiled</figcaption>
+<img data-src="tiled.png" alt="La interfaz de Tiled" />
+<figcaption aria-hidden="true">La interfaz de Tiled</figcaption>
 </figure>
 </section>
 <section id="partes-de-la-interfaz-de-tiled" class="slide level2">
@@ -266,21 +314,27 @@
 </section>
 <section id="crear-un-nuevo-proyecto" class="slide level2">
 <h2>Crear un nuevo proyecto</h2>
-<p>Creamos un nuevo proyecto en <code>Archivo</code> <span class="math inline">→</span> <code>Nuevo</code> y aparecerá la ventana de creación del tile map</p>
+<p>Creamos un nuevo proyecto en <code>Archivo</code> <span
+class="math inline">→</span> <code>Nuevo</code> y aparecerá la ventana
+de creación del tile map</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="tiled_nuevo_proyecto.png" style="width:40.0%" alt="Nuevo proyecto" /><figcaption aria-hidden="true">Nuevo proyecto</figcaption>
+<img data-src="tiled_nuevo_proyecto.png" style="width:40.0%"
+alt="Nuevo proyecto" />
+<figcaption aria-hidden="true">Nuevo proyecto</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <p>Aquí establecemos:</p>
 <ul>
-<li>El tamaño del patrón (tile) y el número de patrones que tendrá el nivel</li>
+<li>El tamaño del patrón (tile) y el número de patrones que tendrá el
+nivel</li>
 <li>Si queremos vista ortogonal o isométrica</li>
-<li>El formato de la capa de patrones para Phaser ha de ser <em>Base64 (uncompressed)</em> sin comprimir</li>
+<li>El formato de la capa de patrones para Phaser ha de ser <em>Base64
+(uncompressed)</em> sin comprimir</li>
 <li><em>No</em> creamos un mapa infinito</li>
 </ul>
 </section>
@@ -290,10 +344,13 @@
 <section class="slide level2">
 
 <ul>
-<li>Base ortogonal es la tradicional en los juegos 2D (visto “desde arriba” o “lateral”)</li>
-<li>Base isométrica es una vista ortogonal especial que simula el 3D sin corrección de perspectiva
+<li>Base ortogonal es la tradicional en los juegos 2D (visto “desde
+arriba” o “lateral”)</li>
+<li>Base isométrica es una vista ortogonal especial que simula el 3D sin
+corrección de perspectiva
 <ul>
-<li>Todos los ejes forman un ángulo de 120º. El dibujo se gira 45º para poner la esquina del escenario frente al espectador</li>
+<li>Todos los ejes forman un ángulo de 120º. El dibujo se gira 45º para
+poner la esquina del escenario frente al espectador</li>
 <li>La cámara se situaría en la esquina superior</li>
 </ul></li>
 </ul>
@@ -301,19 +358,27 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="isometrica.png" style="width:75.0%" alt="Perspectiva isométrica" /><figcaption aria-hidden="true">Perspectiva isométrica</figcaption>
+<img data-src="isometrica.png" style="width:75.0%"
+alt="Perspectiva isométrica" />
+<figcaption aria-hidden="true">Perspectiva isométrica</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="isometrica_tiled.png" style="width:60.0%" alt="Perspectiva isométrica en Tiled" /><figcaption aria-hidden="true">Perspectiva isométrica en Tiled</figcaption>
+<img data-src="isometrica_tiled.png" style="width:60.0%"
+alt="Perspectiva isométrica en Tiled" />
+<figcaption aria-hidden="true">Perspectiva isométrica en
+Tiled</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ortogonal_tiled.png" style="height:75.0%" alt="Perspectiva ortogonal en Tiled" /><figcaption aria-hidden="true">Perspectiva ortogonal en Tiled</figcaption>
+<img data-src="ortogonal_tiled.png" style="height:75.0%"
+alt="Perspectiva ortogonal en Tiled" />
+<figcaption aria-hidden="true">Perspectiva ortogonal en
+Tiled</figcaption>
 </figure>
 </section>
 <section id="usar-tilesets" class="slide level2">
@@ -322,40 +387,55 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="add_tileset.png" style="height:60.0%" alt="Añadir un tileset" /><figcaption aria-hidden="true">Añadir un tileset</figcaption>
+<img data-src="add_tileset.png" style="height:60.0%"
+alt="Añadir un tileset" />
+<figcaption aria-hidden="true">Añadir un tileset</figcaption>
 </figure>
 </section>
 <section id="importante" class="slide level2">
 <h2>Importante</h2>
-<p><strong>El nombre que le demos al tile set</strong> se usará posteriormente para cargar el spritesheet con los tiles en Phaser</p>
+<p><strong>El nombre que le demos al tile set</strong> se usará
+posteriormente para cargar el spritesheet con los tiles en Phaser</p>
 </section>
 <section id="añadir-una-capa" class="slide level2">
 <h2>Añadir una capa</h2>
 <p>Podemos añadir nuevas capas</p>
-<p>Las capas son importantes para diferenciar los objetos del fondo con los objetos del suelo</p>
+<p>Las capas son importantes para diferenciar los objetos del fondo con
+los objetos del suelo</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="nueva_capa.png" style="height:75.0%" alt="Añadir capas" /><figcaption aria-hidden="true">Añadir capas</figcaption>
+<img data-src="nueva_capa.png" style="height:75.0%"
+alt="Añadir capas" />
+<figcaption aria-hidden="true">Añadir capas</figcaption>
 </figure>
 </section>
 <section id="exportar" class="slide level2">
 <h2>Exportar</h2>
 <p>Los mapas se guardan con la extensión <code>.tmx</code></p>
-<p>Para usar el mapa que hemos creado, <em>lo tenemos que exportar a JSON</em> (<code>.json</code>)</p>
+<p>Para usar el mapa que hemos creado, <em>lo tenemos que exportar a
+JSON</em> (<code>.json</code>)</p>
 <p><small>Hay más formatos, pero lo mejor opción es JSON</small></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="export_tiled.png" alt="Para que la exportación no dé problemas con Phaser, lo ideal es activar Embed tilesets y Resolve object types and properties en las propiedades de Tiled" /><figcaption aria-hidden="true">Para que la exportación no dé problemas con Phaser, lo ideal es activar <code>Embed tilesets</code> y <code>Resolve object types and properties</code> en <strong>las propiedades de Tiled</strong></figcaption>
+<img data-src="export_tiled.png"
+alt="Para que la exportación no dé problemas con Phaser, lo ideal es activar Embed tilesets y Resolve object types and properties en las propiedades de Tiled" />
+<figcaption aria-hidden="true">Para que la exportación no dé problemas
+con Phaser, lo ideal es activar <code>Embed tilesets</code> y
+<code>Resolve object types and properties</code> en <strong>las
+propiedades de Tiled</strong></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="exportar_tiled.png" alt="Archivo \rightarrow Exportar como..." /><figcaption aria-hidden="true"><code>Archivo</code> <span class="math inline">→</span> <code>Exportar como...</code></figcaption>
+<img data-src="exportar_tiled.png"
+alt="Archivo \rightarrow Exportar como..." />
+<figcaption aria-hidden="true"><code>Archivo</code> <span
+class="math inline">→</span> <code>Exportar como...</code></figcaption>
 </figure>
 </section></section>
 <section>
@@ -365,7 +445,9 @@
 </section>
 <section id="phaser-3.50" class="slide level2">
 <h2>Phaser 3.50</h2>
-<p>A partir de Phaser 3.50.0 <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap">cambia la API de los mapas</a>, y se hace algo mejor (y más potente)</p>
+<p>A partir de Phaser 3.50.0 <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap">cambia
+la API de los mapas</a>, y se hace algo mejor (y más potente)</p>
 <p>Tened cuidado con las versiones en la documentación disponible</p>
 </section>
 <section id="tilemaps-en-phaser" class="slide level2">
@@ -377,30 +459,44 @@
 <li>Creación de las capas</li>
 </ol>
 </section>
-<section id="carga-de-archivos-de-datos-e-imágenes" class="slide level2">
+<section id="carga-de-archivos-de-datos-e-imágenes"
+class="slide level2">
 <h2>1. Carga de archivos de datos e imágenes</h2>
-<p>Para cargar el fichero de descripción del tile map, usamos <code class="sourceCode javascript"><span class="fu">tilemapTiledJSON</span>()</code> en <code class="sourceCode javascript"><span class="fu">preload</span>()</code></p>
+<p>Para cargar el fichero de descripción del tile map, usamos <code
+class="sourceCode javascript"><span class="fu">tilemapTiledJSON</span>()</code>
+en <code
+class="sourceCode javascript"><span class="fu">preload</span>()</code></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">tilemapTiledJSON</span>(<span class="st">&#39;tilemap&#39;</span><span class="op">,</span> <span class="st">&#39;tilemap.json&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <ul>
 <li>El primer parámetro es el nombre del recurso en la cache</li>
-<li>El segundo es el fichero JSON que contiene la descripción del mapa</li>
+<li>El segundo es el fichero JSON que contiene la descripción del
+mapa</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>Esto sólo carga el archivo del tilemap, no <em>crea</em> un tilemap en el juego</p>
+<p>Esto sólo carga el archivo del tilemap, no <em>crea</em> un tilemap
+en el juego</p>
 </section>
 <section class="slide level2">
 
-<p>Para cargar el atlas de patrones usaremos la carga de imagenes normal: <code class="sourceCode javascript">load<span class="op">.</span><span class="at">image</span></code></p>
+<p>Para cargar el atlas de patrones usaremos la carga de imagenes
+normal: <code
+class="sourceCode javascript">load<span class="op">.</span><span class="at">image</span></code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">load</span><span class="op">.</span><span class="fu">image</span>(<span class="st">&#39;patronesTilemap&#39;</span><span class="op">,</span> <span class="st">&#39;images/patrones.png&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="creación-del-tilemap" class="slide level2">
 <h2>2. Creación del tilemap</h2>
-<p>Para crear un tilemap usamos <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObjectCreator#tilemap">el subsistema <code>make.tilemap</code></a> y el recurso cargado en la cache como <em>tilemap</em>, en el método <code class="sourceCode javascript"><span class="fu">create</span>()</code> (<strong>no en <code class="sourceCode javascript"><span class="fu">preload</span>()</code></strong>)</p>
+<p>Para crear un tilemap usamos <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.GameObjects.GameObjectCreator#tilemap">el
+subsistema <code>make.tilemap</code></a> y el recurso cargado en la
+cache como <em>tilemap</em>, en el método <code
+class="sourceCode javascript"><span class="fu">create</span>()</code>
+(<strong>no en <code
+class="sourceCode javascript"><span class="fu">preload</span>()</code></strong>)</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">map</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">make</span><span class="op">.</span><span class="fu">tilemap</span>({ </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">key</span><span class="op">:</span> <span class="st">&#39;tilemap&#39;</span><span class="op">,</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">tileWidth</span><span class="op">:</span> <span class="dv">64</span><span class="op">,</span> </span>
@@ -409,41 +505,62 @@
 </section>
 <section class="slide level2">
 
-<p><a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap">Este objeto</a> tiene propiedades importantes como el ancho y el alto (en tiles y en píxels) que son útiles para establecer los límites (<em>bounds</em>) del mundo y de la cámara</p>
-<p>Así mismo, tiene métodos para convertir coordenadas del mundo en tiles y viceversa o para acceder a información de los tiles o de las capas.</p>
+<p><a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap">Este
+objeto</a> tiene propiedades importantes como el ancho y el alto (en
+tiles y en píxels) que son útiles para establecer los límites
+(<em>bounds</em>) del mundo y de la cámara</p>
+<p>Así mismo, tiene métodos para convertir coordenadas del mundo en
+tiles y viceversa o para acceder a información de los tiles o de las
+capas.</p>
 </section>
 <section id="texturas-de-los-tilesets" class="slide level2">
 <h2>3. Texturas de los tilesets</h2>
-<p>Posteriormente creamos los tilesets, asignando las imágenes cargadas a los tileset usados en el tilemap:</p>
+<p>Posteriormente creamos los tilesets, asignando las imágenes cargadas
+a los tileset usados en el tilemap:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset1 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;nombreTilemap&#39;</span><span class="op">,</span> <span class="st">&#39;claveTextura&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>La textura debe estar previamente cargada y el nombre de la textura en el mapa de tiles es conocido (está en el JSON exportado desde Tiled)</p>
+<p>La textura debe estar previamente cargada y el nombre de la textura
+en el mapa de tiles es conocido (está en el JSON exportado desde
+Tiled)</p>
 </section>
 <section class="slide level2">
 
-<p>Un mapa de tiles puede tener más de una textura asociada, por lo que hay que asignar el nombre usado en el editor al asignar al tileset al nombre de la textura cargada en la cache (está en el JSON exportado desde Tiled)</p>
+<p>Un mapa de tiles puede tener más de una textura asociada, por lo que
+hay que asignar el nombre usado en el editor al asignar al tileset al
+nombre de la textura cargada en la cache (está en el JSON exportado
+desde Tiled)</p>
 </section>
 <section class="slide level2">
 
-<p>Por ejemplo, <code class="sourceCode javascript"><span class="st">&#39;patrones&#39;</span></code> y <code class="sourceCode javascript"><span class="st">&#39;patronesFondo&#39;</span></code> son nombres de tilesets en Tiled—los que están en las pestañas:</p>
+<p>Por ejemplo, <code
+class="sourceCode javascript"><span class="st">&#39;patrones&#39;</span></code>
+y <code
+class="sourceCode javascript"><span class="st">&#39;patronesFondo&#39;</span></code>
+son nombres de tilesets en Tiled—los que están en las pestañas:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset1 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;patrones&#39;</span><span class="op">,</span> <span class="st">&#39;idImagen&#39;</span>)<span class="op">;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> tileset2 <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">addTilesetImage</span>(<span class="st">&#39;patronesFondo&#39;</span><span class="op">,</span> <span class="st">&#39;idImagen2&#39;</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="creación-de-las-capas" class="slide level2">
 <h2>4. Creación de las capas</h2>
-<p>Por último, es necesario crear las capas para que el mapa se visualice.</p>
-<p>Como hemos visto, en el editor de tiles podemos crear diferentes capas o <em>layers</em></p>
+<p>Por último, es necesario crear las capas para que el mapa se
+visualice.</p>
+<p>Como hemos visto, en el editor de tiles podemos crear diferentes
+capas o <em>layers</em></p>
 </section>
 <section class="slide level2">
 
-<p>Las capas tienen entidad única y se pueden manejar independientemente (por ejemplo, para colisiones)</p>
-<p>Una capa permite diferenciar los objetos del fondo con los objetos de frente o tener diferentes fondos</p>
+<p>Las capas tienen entidad única y se pueden manejar independientemente
+(por ejemplo, para colisiones)</p>
+<p>Una capa permite diferenciar los objetos del fondo con los objetos de
+frente o tener diferentes fondos</p>
 </section>
 <section class="slide level2">
 
-<p>Si hay capas creadas en el editor, podemos asignar estas capas (<em>layers</em>) en Phaser:</p>
+<p>Si hay capas creadas en el editor, podemos asignar estas capas
+(<em>layers</em>) en Phaser:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// tileset1, tileset2 han sido creados con `addTilesetImage`</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">backgroundLayer</span> <span class="op">=</span> </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">map</span><span class="op">.</span><span class="fu">createLayer</span>(<span class="st">&#39;BackgroundLayer&#39;</span><span class="op">,</span> </span>
@@ -463,16 +580,20 @@
 </section>
 <section class="slide level2">
 
-<p>Una parte importante, una vez que tenemos el mapa, es que los tiles tengan <em>propiedades físicas</em></p>
+<p>Una parte importante, una vez que tenemos el mapa, es que los tiles
+tengan <em>propiedades físicas</em></p>
 </section>
 <section id="colisión-por-propiedades" class="slide level2">
 <h2>Colisión por propiedades</h2>
-<p>Por ejemplo, dada una capa (<code class="sourceCode javascript">layer</code>), podemos hacer que todos aquellos tiles que tengan cierta propiedad, colisionen:</p>
+<p>Por ejemplo, dada una capa (<code
+class="sourceCode javascript">layer</code>), podemos hacer que todos
+aquellos tiles que tengan cierta propiedad, colisionen:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>layer<span class="op">.</span><span class="fu">setCollisionByProperty</span>({ <span class="dt">colisiona</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="colisión-por-inclusión" class="slide level2">
 <h2>Colisión por inclusión</h2>
-<p>O podemos hacer que los tiles con <em>id</em> en un rango concreto, colisionen:</p>
+<p>O podemos hacer que los tiles con <em>id</em> en un rango concreto,
+colisionen:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// así colisionarán todos los tiles de la capa </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">// asumiendo que no hay id &gt; 999</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>layer<span class="op">.</span><span class="fu">setCollisionBetween</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">999</span>)<span class="op">;</span></span></code></pre></div>
@@ -485,14 +606,19 @@
 </section>
 <section id="colisiones-de-sprites-con-capas" class="slide level2">
 <h2>Colisiones de Sprites con capas</h2>
-<p>Aunque hayamos activado las colisiones para los tiles, <em>tenemos que activar <code>colliders</code> para cada entidad que lo necesite</em>:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> layer)<span class="op">;</span></span></code></pre></div>
+<p>Aunque hayamos activado las colisiones para los tiles, <em>tenemos
+que activar <code>colliders</code> para cada entidad que lo
+necesite</em>:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(player<span class="op">,</span> layer)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>También podemos eliminar un <code>collider</code> antes creado</p>
-<p>Por ejemplo, para hacer que se puedan cruzar zonas que antes no se podía:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">collider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(</span>
+<p>Por ejemplo, para hacer que se puedan cruzar zonas que antes no se
+podía:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">collider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">physics</span><span class="op">.</span><span class="at">add</span><span class="op">.</span><span class="fu">collider</span>(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                  <span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">,</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                  room<span class="op">.</span><span class="at">foreground</span>)<span class="op">;</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">// y, después</span></span>
@@ -501,8 +627,10 @@
 <section class="slide level2">
 
 <p>Los ejemplos anteriores son para <em>Arcade</em></p>
-<p>Para que funcione la colisión con <em>Matter.js</em>, hay que poner <strong>también</strong>:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">matter</span><span class="op">.</span><span class="at">world</span><span class="op">.</span><span class="fu">convertTilemapLayer</span>(suelo)<span class="op">;</span></span></code></pre></div>
+<p>Para que funcione la colisión con <em>Matter.js</em>, hay que poner
+<strong>también</strong>:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">matter</span><span class="op">.</span><span class="at">world</span><span class="op">.</span><span class="fu">convertTilemapLayer</span>(suelo)<span class="op">;</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="capas-de-objetos" class="title-slide slide level1">
@@ -511,22 +639,32 @@
 </section>
 <section class="slide level2">
 
-<p>Además de los tiles que forman el escenario, también podemos poner a nuestros personajes en Tiled</p>
+<p>Además de los tiles que forman el escenario, también podemos poner a
+nuestros personajes en Tiled</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="crear_capa_objetos.png" alt="Estos personajes debemos ponerlos en capas de objetos" /><figcaption aria-hidden="true">Estos personajes debemos ponerlos en capas de <em>objetos</em></figcaption>
+<img data-src="crear_capa_objetos.png"
+alt="Estos personajes debemos ponerlos en capas de objetos" />
+<figcaption aria-hidden="true">Estos personajes debemos ponerlos en
+capas de <em>objetos</em></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Después, desde Phaser, <strong>no</strong> crearemos layers de Phaser desde las capas de objetos de Tiled, sino que crearemos <code class="sourceCode javascript">Sprite</code>s a partir de los objetos de la capa</p>
+<p>Después, desde Phaser, <strong>no</strong> crearemos layers de Phaser
+desde las capas de objetos de Tiled, sino que crearemos <code
+class="sourceCode javascript">Sprite</code>s a partir de los objetos de
+la capa</p>
 </section>
 <section class="slide level2">
 
-<p>Lo haremos con <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap#createFromObjects"><code class="sourceCode javascript">createFromObjects</code></a>:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// con el GID de objeto</span></span>
+<p>Lo haremos con <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Tilemaps.Tilemap#createFromObjects"><code
+class="sourceCode javascript">createFromObjects</code></a>:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// con el GID de objeto</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>conId1 <span class="op">=</span> map<span class="op">.</span><span class="fu">createFromObjects</span>(<span class="st">&#39;nombreDeCapaObjetosEnTiled&#39;</span><span class="op">,</span> {<span class="dt">gid</span><span class="op">:</span> <span class="dv">1</span>})</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">// o con el nombre del objeto (`name` en Tiled)</span></span>
@@ -538,32 +676,47 @@
 </section>
 <section class="slide level2">
 
-<p>Si no quiero <code class="sourceCode javascript">Sprite</code>s, podemos decirle el tipo (que tiene que heredar de <code class="sourceCode javascript">GameObject</code>):</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">createFromObjects</span>(layerName<span class="op">,</span> {</span>
+<p>Si no quiero <code class="sourceCode javascript">Sprite</code>s,
+podemos decirle el tipo (que tiene que heredar de <code
+class="sourceCode javascript">GameObject</code>):</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">createFromObjects</span>(layerName<span class="op">,</span> {</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;heart-container&#39;</span><span class="op">,</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">classType</span><span class="op">:</span> HeartContainer</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Phaser colocará estos <code class="sourceCode javascript">Sprite</code>s en el lugar apropiado</p>
-<p>Cualquier propiedad de GameObject añadida en Tiled será copiada en el GameObject creado (por ejemplo, <code>alpha</code>)</p>
-<p>Cualquier otra propiedad será añadida al <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Data.DataManager"><code>data</code></a> del GameObject (acceso a propiedades con <code>getData(key)</code> y <code>setData(key, value)</code>)</p>
+<p>Phaser colocará estos <code
+class="sourceCode javascript">Sprite</code>s en el lugar apropiado</p>
+<p>Cualquier propiedad de GameObject añadida en Tiled será copiada en el
+GameObject creado (por ejemplo, <code>alpha</code>)</p>
+<p>Cualquier otra propiedad será añadida al <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Data.DataManager"><code>data</code></a>
+del GameObject (acceso a propiedades con <code>getData(key)</code> y
+<code>setData(key, value)</code>)</p>
 </section>
 <section id="crear-los-objetos-analizando-el-mapa" class="slide level2">
 <h2>Crear los objetos analizando el mapa</h2>
-<p>Para no usar <code class="sourceCode javascript"><span class="fu">createFromObjects</span>()</code>, también podemos examinar la capa a mano y crear los objetos directamente</p>
-<p><strong>Este código se creó para Phaser &lt; 3.50, no suele ser necesario con las últimas versiones</strong></p>
+<p>Para no usar <code
+class="sourceCode javascript"><span class="fu">createFromObjects</span>()</code>,
+también podemos examinar la capa a mano y crear los objetos
+directamente</p>
+<p><strong>Este código se creó para Phaser &lt; 3.50, no suele ser
+necesario con las últimas versiones</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Los objetos de una capa de <em>objetos</em> los podemos encontrar en:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span></span></code></pre></div>
+<p>Los objetos de una capa de <em>objetos</em> los podemos encontrar
+en:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>Así, podemos iterar sobre ellos:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En Tiled tiene que haber una capa de objetos llamada `capaObjetos`</span></span>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En Tiled tiene que haber una capa de objetos llamada `capaObjetos`</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> scene<span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span>) {</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// `objeto.name` u `objeto.type` nos llegan de las propiedades del</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// objeto en Tiled</span></span>
@@ -574,8 +727,10 @@
 </section>
 <section class="slide level2">
 
-<p>Además, podemos examinar las propiedades que hayamos añadido al objeto en Tiled:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> scene<span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span>) {</span>
+<p>Además, podemos examinar las propiedades que hayamos añadido al
+objeto en Tiled:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> scene<span class="op">.</span><span class="at">mapa</span><span class="op">.</span><span class="fu">getObjectLayer</span>(<span class="st">&#39;capaObjetos&#39;</span>)<span class="op">.</span><span class="at">objects</span>) {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (objeto<span class="op">.</span><span class="at">name</span> <span class="op">===</span> <span class="st">&#39;player&#39;</span>) {</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> jugador <span class="op">=</span> <span class="kw">new</span> <span class="fu">Player</span>(scene<span class="op">,</span> objeto<span class="op">.</span><span class="at">x</span><span class="op">,</span> objeto<span class="op">.</span><span class="at">y</span>)</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">const</span> { name<span class="op">,</span> value } <span class="kw">of</span> objeto<span class="op">.</span><span class="at">properties</span>) {</span>
@@ -587,7 +742,8 @@
 <section class="slide level2">
 
 <p>Una función para cargar:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cargar</span>(mapa<span class="op">,</span> capa<span class="op">,</span> tipo<span class="op">,</span> callback) {</span>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">cargar</span>(mapa<span class="op">,</span> capa<span class="op">,</span> tipo<span class="op">,</span> callback) {</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> objetos <span class="op">=</span> mapa<span class="op">.</span><span class="fu">getObjectLayer</span>(capa)<span class="op">.</span><span class="at">objects</span><span class="op">.</span><span class="fu">filter</span>(x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="at">type</span> <span class="op">===</span> tipo)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">const</span> objeto <span class="kw">of</span> objetos) {</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> props <span class="op">=</span> {}</span>
@@ -603,7 +759,8 @@
 <section class="slide level2">
 
 <p>Y, para usarla:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cargar</span>(<span class="kw">this</span><span class="op">.</span><span class="at">mapa</span><span class="op">,</span> <span class="st">&#39;objetos&#39;</span><span class="op">,</span> <span class="st">&#39;player&#39;</span><span class="op">,</span> ({ x<span class="op">,</span> y<span class="op">,</span> props }) <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cargar</span>(<span class="kw">this</span><span class="op">.</span><span class="at">mapa</span><span class="op">,</span> <span class="st">&#39;objetos&#39;</span><span class="op">,</span> <span class="st">&#39;player&#39;</span><span class="op">,</span> ({ x<span class="op">,</span> y<span class="op">,</span> props }) <span class="kw">=&gt;</span> {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">player</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Player</span>(<span class="kw">this</span><span class="op">,</span> x<span class="op">,</span> y)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">player</span><span class="op">.</span><span class="at">vida</span> <span class="op">=</span> props<span class="op">.</span><span class="at">vida</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
@@ -615,20 +772,28 @@
 </section>
 <section class="slide level2">
 
-<p>Escalar un mapa, o cualquier otra cosa, es posible, pero es mucho más fácil diseñar todo a una escala dada</p>
+<p>Escalar un mapa, o cualquier otra cosa, es posible, pero es mucho más
+fácil diseñar todo a una escala dada</p>
 </section>
 <section class="slide level2">
 
-<p>Es decir, que los assets estén <em>dibujados</em> con escalas relativas, sin que haya que redimensionar algunos elementos para que encaje</p>
+<p>Es decir, que los assets estén <em>dibujados</em> con escalas
+relativas, sin que haya que redimensionar algunos elementos para que
+encaje</p>
 </section>
 <section class="slide level2">
 
-<p>Sin embargo, el tamaño de página, dispositivo y pantalla en el que se ejecutará el juego puede cambiar, por lo que reescalar puede ser necesario</p>
+<p>Sin embargo, el tamaño de página, dispositivo y pantalla en el que se
+ejecutará el juego puede cambiar, por lo que reescalar puede ser
+necesario</p>
 </section>
 <section class="slide level2">
 
-<p>Phaser 3 lo pone muy fácil con la <a href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Types.Core.ScaleConfig">propiedad <code>scale</code></a> de la configuración:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
+<p>Phaser 3 lo pone muy fácil con la <a
+href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Types.Core.ScaleConfig">propiedad
+<code>scale</code></a> de la configuración:</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">width</span><span class="op">:</span> <span class="dv">1024</span><span class="op">,</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">height</span><span class="op">:</span> <span class="dv">768</span><span class="op">,</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scale</span><span class="op">:</span> {</span>
@@ -637,33 +802,44 @@
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">autoCenter</span><span class="op">:</span> Phaser<span class="op">.</span><span class="at">Scale</span><span class="op">.</span><span class="at">CENTER_BOTH</span></span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p><small>Cambiando <code class="sourceCode javascript">width</code> y <code class="sourceCode javascript">height</code> y el tamaño del canvas, se ajusta el tamaño del juego</small></p>
+<p><small>Cambiando <code class="sourceCode javascript">width</code> y
+<code class="sourceCode javascript">height</code> y el tamaño del
+canvas, se ajusta el tamaño del juego</small></p>
 </section>
 <section class="slide level2">
 
-<p>Pero este escalado hará que los bordes de los píxeles pequeños, al agrandar, se vean difuminados (por el algoritmo de escalado)</p>
+<p>Pero este escalado hará que los bordes de los píxeles pequeños, al
+agrandar, se vean difuminados (por el algoritmo de escalado)</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="blur.png" style="width:60.0%" alt="Filtro de escalado con difuminado" /><figcaption aria-hidden="true">Filtro de escalado con difuminado</figcaption>
+<img data-src="blur.png" style="width:60.0%"
+alt="Filtro de escalado con difuminado" />
+<figcaption aria-hidden="true">Filtro de escalado con
+difuminado</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <p>Afortunadamente, Phaser sabe que adoramos el pixelart:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> config <span class="op">=</span> {</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pixelArt</span><span class="op">:</span> <span class="kw">true</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="pixel.png" style="width:40.0%" alt="Filtro de escalado para pixelart" /><figcaption aria-hidden="true">Filtro de escalado para pixelart</figcaption>
+<img data-src="pixel.png" style="width:40.0%"
+alt="Filtro de escalado para pixelart" />
+<figcaption aria-hidden="true">Filtro de escalado para
+pixelart</figcaption>
 </figure>
 </section></section>
 <section>
-<section id="tiles-que-no-son-cuadrados" class="title-slide slide level1">
+<section id="tiles-que-no-son-cuadrados"
+class="title-slide slide level1">
 <h1>Tiles que no son cuadrados</h1>
 
 </section>
@@ -673,38 +849,59 @@
 </section>
 <section class="slide level2">
 
-<p>Pero con <em>Matter.js</em> es posible conseguir que las físicas de un tile tenga otra forma</p>
+<p>Pero con <em>Matter.js</em> es posible conseguir que las físicas de
+un tile tenga otra forma</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="slope.png" style="width:50.0%" alt="Tile con forma de cuesta que debería tener una colisión no cuadrada" /><figcaption aria-hidden="true">Tile con forma de cuesta que debería tener una colisión no cuadrada</figcaption>
+<img data-src="slope.png" style="width:50.0%"
+alt="Tile con forma de cuesta que debería tener una colisión no cuadrada" />
+<figcaption aria-hidden="true">Tile con forma de cuesta que debería
+tener una colisión no cuadrada</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="slope_tileset.png" alt="Primero, tenemos un tileset cargado" /><figcaption aria-hidden="true">Primero, tenemos un tileset cargado</figcaption>
+<img data-src="slope_tileset.png"
+alt="Primero, tenemos un tileset cargado" />
+<figcaption aria-hidden="true">Primero, tenemos un tileset
+cargado</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Vamos a las propiedades del tileset <img data-src="iconopropiedades.png" alt="icono de propiedades" />, y luego a editar las colisiones <img data-src="editarcolision.png" /></p>
+<p>Vamos a las propiedades del tileset <img
+data-src="iconopropiedades.png" alt="icono de propiedades" />, y luego a
+editar las colisiones <img data-src="editarcolision.png" /></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="slopecolision.png" style="width:40.0%" alt="Y, en Tiled, dibujamos la forma de colisión que deseemos" /><figcaption aria-hidden="true">Y, en Tiled, dibujamos la forma de colisión que deseemos</figcaption>
+<img data-src="slopecolision.png" style="width:40.0%"
+alt="Y, en Tiled, dibujamos la forma de colisión que deseemos" />
+<figcaption aria-hidden="true">Y, en Tiled, dibujamos la forma de
+colisión que deseemos</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Cuando hagáis esto, es recomendable que se lo pongáis fácil a <em>Matter.js</em> haciendo los polígonos <strong>convexos</strong></p>
-<p>Si el polígono es cóncavo, tendrá que subdividir el polígono en varios convexos, o usar una malla que tenga más coste (casco convexo)</p>
+<p>Cuando hagáis esto, es recomendable que se lo pongáis fácil a
+<em>Matter.js</em> haciendo los polígonos <strong>convexos</strong></p>
+<p>Si el polígono es cóncavo, tendrá que subdividir el polígono en
+varios convexos, o usar una malla que tenga más coste (casco
+convexo)</p>
 </section>
 <section class="slide level2">
 
-<p>Tenéis <a href="https://phaser.io/examples/v3/view/tilemap/collision/matter#">varios ejemplos</a> del uso de <a href="https://phaser.io/examples/v3/view/tilemap/collision/matter-detect-collision-with-tile">Tilemaps con Matter</a> en <a href="https://phaser.io/examples/v3/view/tilemap/collision/matter-platformer-modify-map">la página de Phaser</a></p>
+<p>Tenéis <a
+href="https://phaser.io/examples/v3/view/tilemap/collision/matter#">varios
+ejemplos</a> del uso de <a
+href="https://phaser.io/examples/v3/view/tilemap/collision/matter-detect-collision-with-tile">Tilemaps
+con Matter</a> en <a
+href="https://phaser.io/examples/v3/view/tilemap/collision/matter-platformer-modify-map">la
+página de Phaser</a></p>
 </section></section>
     </div>
   </div>

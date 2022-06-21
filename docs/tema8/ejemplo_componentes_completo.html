@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -93,14 +96,19 @@
 </section>
 
 <section>
-<section id="una-implementación-de-arquitectura-de-componentes-en-javascript" class="title-slide slide level1">
+<section
+id="una-implementación-de-arquitectura-de-componentes-en-javascript"
+class="title-slide slide level1">
 <h1>Una implementación de arquitectura de componentes en JavaScript</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Vamos a implementar un sistema <em>muy simple</em> de entidades, componentes y <strong>mensajes</strong></p>
-<p><span class="fragment">Hasta ahora no hemos visto los <em>mensajes</em>, pero son una técnica muy usada para <strong>desacoplar</strong> los componentes, y las entidades</span></p>
+<p>Vamos a implementar un sistema <em>muy simple</em> de entidades,
+componentes y <strong>mensajes</strong></p>
+<p><span class="fragment">Hasta ahora no hemos visto los
+<em>mensajes</em>, pero son una técnica muy usada para
+<strong>desacoplar</strong> los componentes, y las entidades</span></p>
 </section></section>
 <section>
 <section id="arquitectura" class="title-slide slide level1">
@@ -110,7 +118,10 @@
 <section class="slide level2">
 
 <figure>
-<img data-src="arquitectura.pu.svg" alt="Diagrama UML de la arquitectura" /><figcaption aria-hidden="true">Diagrama UML de la arquitectura</figcaption>
+<img data-src="arquitectura.pu.svg"
+alt="Diagrama UML de la arquitectura" />
+<figcaption aria-hidden="true">Diagrama UML de la
+arquitectura</figcaption>
 </figure>
 </section>
 <section id="game-el-juego" class="slide level2">
@@ -127,8 +138,10 @@
 </section>
 <section id="entitiy-las-entidades" class="slide level2">
 <h2><code>Entitiy</code> → las entidades</h2>
-<p>En una arquitectura simple de componentes, una <code>Entity</code> es poco más que una lista de componentes</p>
-<p>Esto significa que todo lo “interesante” estará <strong>delegado</strong> en los componentes</p>
+<p>En una arquitectura simple de componentes, una <code>Entity</code> es
+poco más que una lista de componentes</p>
+<p>Esto significa que todo lo “interesante” estará
+<strong>delegado</strong> en los componentes</p>
 </section>
 <section id="component-los-componentes" class="slide level2">
 <h2><code>Component</code> → los componentes</h2>
@@ -137,7 +150,8 @@
 </section>
 <section id="message-los-mensajes" class="slide level2">
 <h2><code>Message</code> → los mensajes</h2>
-<p>Los sistemas de paso de mensajes son muy flexibles, pero aumentan la arquitectura y tienen <em>impacto en la eficiencia</em></p>
+<p>Los sistemas de paso de mensajes son muy flexibles, pero aumentan la
+arquitectura y tienen <em>impacto en la eficiencia</em></p>
 </section></section>
 <section>
 <section id="bucle-principal" class="title-slide slide level1">
@@ -206,7 +220,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -215,7 +229,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

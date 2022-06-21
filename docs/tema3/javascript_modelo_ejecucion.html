@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -99,15 +102,21 @@
 </section>
 <section class="slide level2">
 
-<p>JavaScript se caracteriza por facilitar (que no forzar) un modelo de ejecución asíncrono donde los resultados <strong>no se encuentran disponibles inmediatamente</strong>, sino que lo estarán en un futuro</p>
+<p>JavaScript se caracteriza por facilitar (que no forzar) un modelo de
+ejecución asíncrono donde los resultados <strong>no se encuentran
+disponibles inmediatamente</strong>, sino que lo estarán en un
+futuro</p>
 </section>
 <section class="slide level2">
 
-<p>Esto quiere decir que el lenguaje está diseñado para responder bien a resultados que llegan cuando están preparados, mientras que la ejecución sigue su curso</p>
+<p>Esto quiere decir que el lenguaje está diseñado para responder bien a
+resultados que llegan cuando están preparados, mientras que la ejecución
+sigue su curso</p>
 </section>
 <section class="slide level2">
 
-<p>Para esto, hay una serie de particularidades del modelo de ejecución que vamos a ver en este tema</p>
+<p>Para esto, hay una serie de particularidades del modelo de ejecución
+que vamos a ver en este tema</p>
 </section></section>
 <section>
 <section id="ámbito-y-hoisting" class="title-slide slide level1">
@@ -116,16 +125,24 @@
 </section>
 <section class="slide level2">
 
-<p>Como en muchos lenguajes, los nombres de las variables <strong>pueden reutilizarse</strong> y guardar valores distintos siempre y cuando se encuentren en <strong>ámbitos distintos</strong></p>
+<p>Como en muchos lenguajes, los nombres de las variables <strong>pueden
+reutilizarse</strong> y guardar valores distintos siempre y cuando se
+encuentren en <strong>ámbitos distintos</strong></p>
 </section>
 <section class="slide level2">
 
-<p>El ámbito o <em>scope</em> de una variable es la porción de código donde puede ser utilizada</p>
-<p><strong>Variables con el mismo nombre en ámbitos distintos son variables distintas</strong></p>
+<p>El ámbito o <em>scope</em> de una variable es la porción de código
+donde puede ser utilizada</p>
+<p><strong>Variables con el mismo nombre en ámbitos distintos son
+variables distintas</strong></p>
 </section>
 <section class="slide level2">
 
-<p>El <strong>ámbito en JavaScript es el cuerpo de la función</strong>, delimitado entre el par de llaves <code class="sourceCode javascript">{</code> y <code class="sourceCode javascript">}</code> que siguen a la lista de parámetros de la función</p>
+<p>El <strong>ámbito en JavaScript es el cuerpo de la función</strong>,
+delimitado entre el par de llaves <code
+class="sourceCode javascript">{</code> y <code
+class="sourceCode javascript">}</code> que siguen a la lista de
+parámetros de la función</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">introduction</span>() {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Esta es la variable text</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
@@ -143,8 +160,10 @@
 </section>
 <section class="slide level2">
 
-<p>En JavaScript, las funciones pueden definirse dentro de otras funciones y de esta forma, anidar ámbitos</p>
-<p>El anidamiento de funciones es útil cuando se quieren usar <strong>pequeñas funciones auxiliares</strong></p>
+<p>En JavaScript, las funciones pueden definirse dentro de otras
+funciones y de esta forma, anidar ámbitos</p>
+<p>El anidamiento de funciones es útil cuando se quieren usar
+<strong>pequeñas funciones auxiliares</strong></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getEven</span>(list) {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">isEven</span>(n) {</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></span>
@@ -156,11 +175,14 @@
 </section>
 <section class="slide level2">
 
-<p>Como el ámbito es el de la función, el mismo nombre en una función anidada se puede referir a dos cosas</p>
+<p>Como el ámbito es el de la función, el mismo nombre en una función
+anidada se puede referir a dos cosas</p>
 </section>
 <section class="slide level2">
 
-<p><strong>Si se usa con <code class="sourceCode javascript"><span class="kw">var</span></code></strong>, se estará declarando <strong>otra variable distinta</strong>:</p>
+<p><strong>Si se usa con <code
+class="sourceCode javascript"><span class="kw">var</span></code></strong>,
+se estará declarando <strong>otra variable distinta</strong>:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">introduction</span>() {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Esta es una variable text</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
@@ -179,12 +201,23 @@
 </section>
 <section class="slide level2">
 
-<p>En el caso anterior, decimos que la variable <code class="sourceCode javascript">text</code> de la función anidada <code class="sourceCode javascript"><span class="fu">greetings</span>()</code> oculta a la variable <code class="sourceCode javascript">text</code> de la función <code class="sourceCode javascript"><span class="fu">introduction</span>()</code></p>
+<p>En el caso anterior, decimos que la variable <code
+class="sourceCode javascript">text</code> de la función anidada <code
+class="sourceCode javascript"><span class="fu">greetings</span>()</code>
+oculta a la variable <code class="sourceCode javascript">text</code> de
+la función <code
+class="sourceCode javascript"><span class="fu">introduction</span>()</code></p>
 </section>
 <section class="slide level2">
 
-<p>Recuerda que para introducir una <strong>nueva variable</strong> necesitas declararla con <code class="sourceCode javascript"><span class="kw">var</span></code> antes de usarla (o al mismo tiempo que la asignas)</p>
-<p>Si omites la palabra <code class="sourceCode javascript"><span class="kw">var</span></code>, no estás creando una nueva variable sino <strong>reutilizando</strong> la que ya existía</p>
+<p>Recuerda que para introducir una <strong>nueva variable</strong>
+necesitas declararla con <code
+class="sourceCode javascript"><span class="kw">var</span></code> antes
+de usarla (o al mismo tiempo que la asignas)</p>
+<p>Si omites la palabra <code
+class="sourceCode javascript"><span class="kw">var</span></code>, no
+estás creando una nueva variable sino <strong>reutilizando</strong> la
+que ya existía</p>
 </section>
 <section class="slide level2">
 
@@ -206,7 +239,9 @@
 </section>
 <section id="hoisting" class="slide level2">
 <h2>Hoisting</h2>
-<p>En JavaScript da igual a qué altura de la función declares una variable JavaScript asumirá cualquier declaración como si ocurriese al comienzo de la función</p>
+<p>En JavaScript da igual a qué altura de la función declares una
+variable JavaScript asumirá cualquier declaración como si ocurriese al
+comienzo de la función</p>
 </section>
 <section class="slide level2">
 
@@ -234,22 +269,30 @@
 </section>
 <section class="slide level2">
 
-<p>Esto quiere decir que todo lo que declaremos dentro de una función, aunque esté en otro ámbito, <em>afectará a toda la función</em>:</p>
+<p>Esto quiere decir que todo lo que declaremos dentro de una función,
+aunque esté en otro ámbito, <em>afectará a toda la función</em>:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(<span class="kw">var</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> b <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> b<span class="op">++</span>)<span class="op">;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(b)<span class="op">;</span> <span class="co">// 10</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Además, <code class="sourceCode javascript"><span class="kw">var</span></code> a nivel global hace que el objeto <code class="sourceCode javascript"><span class="bu">window</span></code> en un navegador almacene el valor:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<p>Además, <code
+class="sourceCode javascript"><span class="kw">var</span></code> a nivel
+global hace que el objeto <code
+class="sourceCode javascript"><span class="bu">window</span></code> en
+un navegador almacene el valor:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">window</span><span class="op">.</span><span class="at">a</span>)<span class="op">;</span> <span class="co">// imprime &quot;4&quot;</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Fíjate que JavaScript <strong><em>alza</em> la declaración de la variable, no la inicialización</strong></p>
-<p>Es por eso que este código no falla pero imprime <code class="sourceCode javascript"><span class="kw">undefined</span></code>:</p>
+<p>Fíjate que JavaScript <strong><em>alza</em> la declaración de la
+variable, no la inicialización</strong></p>
+<p>Es por eso que este código no falla pero imprime <code
+class="sourceCode javascript"><span class="kw">undefined</span></code>:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
@@ -258,8 +301,10 @@
 </section>
 <section class="slide level2">
 
-<p>En modo estricto, usar una variable que no ha sido declarada <strong>es un error</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
+<p>En modo estricto, usar una variable que no ha sido declarada
+<strong>es un error</strong></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>() {</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span> <span class="co">// comenta esto después de probar f</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  i <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -267,8 +312,11 @@
 </section>
 <section class="slide level2">
 
-<p>Con las declaraciones de funciones esto no pasa: cuando una declaración de función se alza, se alza entera, <strong>definición incluida</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getEven</span>(list) {</span>
+<p>Con las declaraciones de funciones esto no pasa: cuando una
+declaración de función se alza, se alza entera, <strong>definición
+incluida</strong></p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getEven</span>(list) {</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> list<span class="op">.</span><span class="fu">filter</span>(isEven)<span class="op">;</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">isEven</span>(n) {</span>
@@ -280,45 +328,77 @@
 </section>
 <section class="slide level2">
 
-<p>Esto permite una bonita forma de ordenar el código en el que las funciones auxiliares pueden situarse más abajo en las funciones que las utilicen</p>
+<p>Esto permite una bonita forma de ordenar el código en el que las
+funciones auxiliares pueden situarse más abajo en las funciones que las
+utilicen</p>
 <p>Así, viendo sólo la línea:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> list<span class="op">.</span><span class="fu">filter</span>(isEven)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> list<span class="op">.</span><span class="fu">filter</span>(isEven)<span class="op">;</span></span></code></pre></div>
 <p>Ya podemos saber qué significa</p>
 </section>
 <section class="slide level2">
 
-<p>Y si aun tenemos dudas, podemos bajar e investigar qué es esa función</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">isEven</span>(n) {</span>
+<p>Y si aun tenemos dudas, podemos bajar e investigar qué es esa
+función</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">isEven</span>(n) {</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
 </section>
 <section id="let" class="slide level2">
-<h2><code class="sourceCode javascript"><span class="kw">let</span></code></h2>
-<p><code class="sourceCode javascript"><span class="kw">let</span></code> es una forma de declarar variables que se añadió en <a href="https://en.wikipedia.org/wiki/ECMAScript#Versions">ES6</a></p>
+<h2><code
+class="sourceCode javascript"><span class="kw">let</span></code></h2>
+<p><code
+class="sourceCode javascript"><span class="kw">let</span></code> es una
+forma de declarar variables que se añadió en <a
+href="https://en.wikipedia.org/wiki/ECMAScript#Versions">ES6</a></p>
 </section>
 <section class="slide level2">
 
-<p><code class="sourceCode javascript"><span class="kw">let</span></code> y <code class="sourceCode javascript"><span class="kw">var</span></code> son muy parecidos, y ambas valen para declarar variables en un ámbito</p>
-<p>Pero <code class="sourceCode javascript"><span class="kw">let</span></code> sólo crea variables <em>a partir de su definición</em>, no antes</p>
+<p><code
+class="sourceCode javascript"><span class="kw">let</span></code> y <code
+class="sourceCode javascript"><span class="kw">var</span></code> son muy
+parecidos, y ambas valen para declarar variables en un ámbito</p>
+<p>Pero <code
+class="sourceCode javascript"><span class="kw">let</span></code> sólo
+crea variables <em>a partir de su definición</em>, no antes</p>
 </section>
 <section class="slide level2">
 
-<p>Además, <code class="sourceCode javascript"><span class="kw">let</span></code> existe entre las llaves que lo delimitan <code class="sourceCode javascript">{}</code> (por ejemplo, sólo dentro de un <code class="sourceCode javascript"><span class="cf">for</span></code>), y no se extiende a toda la función</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(<span class="kw">let</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> b <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> b<span class="op">++</span>)<span class="op">;</span></span>
+<p>Además, <code
+class="sourceCode javascript"><span class="kw">let</span></code> existe
+entre las llaves que lo delimitan <code
+class="sourceCode javascript">{}</code> (por ejemplo, sólo dentro de un
+<code class="sourceCode javascript"><span class="cf">for</span></code>),
+y no se extiende a toda la función</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(<span class="kw">let</span> b <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> b <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> b<span class="op">++</span>)<span class="op">;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(b)<span class="op">;</span> <span class="co">// ReferenceError</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p><code class="sourceCode javascript"><span class="kw">let</span></code> a nivel global, a diferencia de <code class="sourceCode javascript"><span class="kw">var</span></code>, <strong>no</strong> hace que el objeto <code class="sourceCode javascript"><span class="bu">window</span></code> en un navegador almacene el valor:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<p><code
+class="sourceCode javascript"><span class="kw">let</span></code> a nivel
+global, a diferencia de <code
+class="sourceCode javascript"><span class="kw">var</span></code>,
+<strong>no</strong> hace que el objeto <code
+class="sourceCode javascript"><span class="bu">window</span></code> en
+un navegador almacene el valor:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> a <span class="op">=</span> <span class="dv">4</span><span class="op">;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">window</span><span class="op">.</span><span class="at">a</span>)<span class="op">;</span> <span class="co">// imprime &quot;undefined&quot;</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Mucha gente prefiere usar <code class="sourceCode javascript"><span class="kw">let</span></code> por defecto, porque una declaración con <code class="sourceCode javascript"><span class="kw">let</span></code> tiene reglas de hoisting diferentes:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">let_vs_var</span>() {</span>
+<p>Mucha gente prefiere usar <code
+class="sourceCode javascript"><span class="kw">let</span></code> por
+defecto, porque una declaración con <code
+class="sourceCode javascript"><span class="kw">let</span></code> tiene
+reglas de hoisting diferentes:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">let_vs_var</span>() {</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(bien)<span class="op">;</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(mal)<span class="op">;</span> <span class="co">// como `let` no hace hoisting, falla</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> bien <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
@@ -326,35 +406,55 @@
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </section>
 <section id="const" class="slide level2">
-<h2><code class="sourceCode javascript"><span class="kw">const</span></code></h2>
-<p><code class="sourceCode javascript"><span class="kw">const</span></code> tiene el mismo comportamiento en ámbito que <code class="sourceCode javascript"><span class="kw">let</span></code>, pero impide que la referencia cambie</p>
-<p>Pero lo referenciado <strong>sí</strong> puede cambiar (es “mutable”)</p>
+<h2><code
+class="sourceCode javascript"><span class="kw">const</span></code></h2>
+<p><code
+class="sourceCode javascript"><span class="kw">const</span></code> tiene
+el mismo comportamiento en ámbito que <code
+class="sourceCode javascript"><span class="kw">let</span></code>, pero
+impide que la referencia cambie</p>
+<p>Pero lo referenciado <strong>sí</strong> puede cambiar (es
+“mutable”)</p>
 </section>
 <section class="slide level2">
 
-<p>Aquí, lo declarado con <code class="sourceCode javascript"><span class="kw">const</span></code> se podría cambiar, pero no el objeto al que apunta la variable:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto <span class="op">=</span> {<span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span>}<span class="op">;</span></span>
+<p>Aquí, lo declarado con <code
+class="sourceCode javascript"><span class="kw">const</span></code> se
+podría cambiar, pero no el objeto al que apunta la variable:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> objeto <span class="op">=</span> {<span class="dt">x</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="dv">2</span>}<span class="op">;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>objeto<span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">4</span><span class="op">;</span> <span class="co">// ¡correcto!</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>objeto <span class="op">=</span> {<span class="dt">no</span><span class="op">:</span> <span class="st">&quot;funciona&quot;</span>}<span class="op">;</span> <span class="co">// da error</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>En general, usemos <code class="sourceCode javascript"><span class="kw">let</span></code> y <code class="sourceCode javascript"><span class="kw">const</span></code> siempre que no necesitemos nada sofisticado, son más “razonables” que <code class="sourceCode javascript"><span class="kw">var</span></code></p>
+<p>En general, usemos <code
+class="sourceCode javascript"><span class="kw">let</span></code> y <code
+class="sourceCode javascript"><span class="kw">const</span></code>
+siempre que no necesitemos nada sofisticado, son más “razonables” que
+<code
+class="sourceCode javascript"><span class="kw">var</span></code></p>
 </section></section>
 <section>
-<section id="diferencias-entre-ámbitos-en-node-y-el-navegador" class="title-slide slide level1">
+<section id="diferencias-entre-ámbitos-en-node-y-el-navegador"
+class="title-slide slide level1">
 <h1>Diferencias entre ámbitos en node y el navegador</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Hemos dicho que el ámbito en JavaScript es equivalente a la función pero sabemos que podemos abrir una consola o un fichero y empezar a declarar variables sin necesidad de escribir una función</p>
-<p>Esto es así porque estamos usando el <strong>ámbito global</strong></p>
-<p>El ámbito global está <strong>disponible en el navegador y en node</strong></p>
+<p>Hemos dicho que el ámbito en JavaScript es equivalente a la función
+pero sabemos que podemos abrir una consola o un fichero y empezar a
+declarar variables sin necesidad de escribir una función</p>
+<p>Esto es así porque estamos usando el <strong>ámbito
+global</strong></p>
+<p>El ámbito global está <strong>disponible en el navegador y en
+node</strong></p>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Esta es una variable text en el ámbito GLOBAL</span></span>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Esta es una variable text en el ámbito GLOBAL</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Esta es una función en el ámbito GLOBAL</span></span>
@@ -370,8 +470,10 @@
 <section class="slide level2">
 
 <p>Sin embargo, existe una peculiaridad en node</p>
-<p>El ámbito global es realmente <strong>local al fichero</strong>. Esto quiere decir que:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En a.js, text es visible únicamente dentro del FICHERO</span></span>
+<p>El ámbito global es realmente <strong>local al fichero</strong>. Esto
+quiere decir que:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">// En a.js, text es visible únicamente dentro del FICHERO</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;use strict&quot;</span><span class="op">;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> text <span class="op">=</span> <span class="st">&#39;I</span><span class="sc">\&#39;</span><span class="st">m Ziltoid, the Omniscient.&#39;</span><span class="op">;</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -386,12 +488,15 @@
 </section>
 <section class="slide level2">
 
-<p>Las funciones son datos y se crean cada vez que se encuentra una instrucción <code class="sourceCode javascript"><span class="kw">function</span></code></p>
+<p>Las funciones son datos y se crean cada vez que se encuentra una
+instrucción <code
+class="sourceCode javascript"><span class="kw">function</span></code></p>
 </section>
 <section class="slide level2">
 
 <p>De esta forma podemos crear una función que devuelva funciones</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">buildFunction</span>() {</span>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">buildFunction</span>() {</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span> () { <span class="cf">return</span> <span class="dv">42</span><span class="op">;</span> }<span class="op">;</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -408,8 +513,11 @@
 </section>
 <section class="slide level2">
 
-<p>Por sí sólo, este no es un mecanismo muy potente pero sabiendo que una función anidada puede acceder a las variables de los ámbitos superiores, podemos hacer algo así:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newDie</span>(sides) {</span>
+<p>Por sí sólo, este no es un mecanismo muy potente pero sabiendo que
+una función anidada puede acceder a las variables de los ámbitos
+superiores, podemos hacer algo así:</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newDie</span>(sides) {</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="kw">function</span> () {</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> sides) <span class="op">+</span> <span class="dv">1</span><span class="op">;</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
@@ -424,17 +532,23 @@
 </section>
 <section class="slide level2">
 
-<p>En JavaScript, <strong>las funciones retienen el acceso a las variables en ámbitos superiores</strong></p>
-<p>Una <strong>función que se refiere a alguna de las variables en ámbitos superiores se denomina <em>closure</em></strong></p>
+<p>En JavaScript, <strong>las funciones retienen el acceso a las
+variables en ámbitos superiores</strong></p>
+<p>Una <strong>función que se refiere a alguna de las variables en
+ámbitos superiores se denomina <em>closure</em></strong></p>
 </section>
 <section class="slide level2">
 
-<p>Esto <strong>no afecta al valor de <code class="sourceCode javascript"><span class="kw">this</span></code></strong> que seguirá siendo <strong>el destinatario del mensaje</strong></p>
+<p>Esto <strong>no afecta al valor de <code
+class="sourceCode javascript"><span class="kw">this</span></code></strong>
+que seguirá siendo <strong>el destinatario del mensaje</strong></p>
 </section>
 <section id="métodos-closures-y-this" class="slide level2">
-<h2>Métodos, closures y <code class="sourceCode javascript"><span class="kw">this</span></code></h2>
+<h2>Métodos, closures y <code
+class="sourceCode javascript"><span class="kw">this</span></code></h2>
 <p>Considera el siguiente ejemplo:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// lleva el histórico de tiradas</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
@@ -448,27 +562,45 @@
 </section>
 <section class="slide level2">
 
-<p>Nuestra intención es poder crear dados y llevar un registro de todas las tiradas que se hagan con estos dados</p>
+<p>Nuestra intención es poder crear dados y llevar un registro de todas
+las tiradas que se hagan con estos dados</p>
 <p>Pero esto no funciona:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">d10</span>()<span class="op">;</span> <span class="co">// ¡error!</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Y es así porque <strong><code class="sourceCode javascript"><span class="kw">this</span></code> siempre es el destinatario del mensaje</strong> y <code class="sourceCode javascript">d10</code> se está llamando como si fuera una función y no un método</p>
-<p>Recordad que podíamos hacer que cualquier función tomara un valor forzoso como <code class="sourceCode javascript"><span class="kw">this</span></code> con <code class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code> por lo que esto sí funciona pero es un engorro:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>d10<span class="op">.</span><span class="fu">apply</span>(diceUtils)<span class="op">;</span></span>
+<p>Y es así porque <strong><code
+class="sourceCode javascript"><span class="kw">this</span></code>
+siempre es el destinatario del mensaje</strong> y <code
+class="sourceCode javascript">d10</code> se está llamando como si fuera
+una función y no un método</p>
+<p>Recordad que podíamos hacer que cualquier función tomara un valor
+forzoso como <code
+class="sourceCode javascript"><span class="kw">this</span></code> con
+<code
+class="sourceCode javascript"><span class="op">.</span><span class="fu">apply</span>()</code>
+por lo que esto sí funciona pero es un engorro:</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>d10<span class="op">.</span><span class="fu">apply</span>(diceUtils)<span class="op">;</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>d10<span class="op">.</span><span class="fu">apply</span>(diceUtils)<span class="op">;</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>diceUtils<span class="op">.</span><span class="at">history</span><span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Lo que tenemos que hacer es que la función <code class="sourceCode javascript">die</code> dentro de <code class="sourceCode javascript">newDie</code> se refiera al <code class="sourceCode javascript"><span class="kw">this</span></code> del ámbito superior, no al suyo</p>
+<p>Lo que tenemos que hacer es que la función <code
+class="sourceCode javascript">die</code> dentro de <code
+class="sourceCode javascript">newDie</code> se refiera al <code
+class="sourceCode javascript"><span class="kw">this</span></code> del
+ámbito superior, no al suyo</p>
 </section>
 <section class="slide level2">
 
-<p>Podemos hacer esto de dos maneras. La primera es un mero juego de variables:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
+<p>Podemos hacer esto de dos maneras. La primera es un mero juego de
+variables:</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
@@ -485,7 +617,8 @@
 <section class="slide level2">
 
 <p>Esto sí funciona y es mucho más conveniente:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> d10 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">10</span>)<span class="op">;</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> d6 <span class="op">=</span> diceUtils<span class="op">.</span><span class="fu">newDie</span>(<span class="dv">6</span>)<span class="op">;</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">d10</span>()<span class="op">;</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">d6</span>()<span class="op">;</span></span>
@@ -494,12 +627,22 @@
 </section>
 <section class="slide level2">
 
-<p>La segunda forma es usando el método <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code class="sourceCode javascript"><span class="fu">bind</span>()</code></a> de las funciones</p>
+<p>La segunda forma es usando el método <a
+href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind"><code
+class="sourceCode javascript"><span class="fu">bind</span>()</code></a>
+de las funciones</p>
 </section>
 <section class="slide level2">
 
-<p>El método <code class="sourceCode javascript"><span class="fu">bind</span>()</code> de una función <strong>devuelve otra función cuyo <code class="sourceCode javascript"><span class="kw">this</span></code> será el primer parámetro de <code class="sourceCode javascript"><span class="fu">bind</span>()</code></strong>. De este modo:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
+<p>El método <code
+class="sourceCode javascript"><span class="fu">bind</span>()</code> de
+una función <strong>devuelve otra función cuyo <code
+class="sourceCode javascript"><span class="kw">this</span></code> será
+el primer parámetro de <code
+class="sourceCode javascript"><span class="fu">bind</span>()</code></strong>.
+De este modo:</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
@@ -516,8 +659,10 @@
 </section>
 <section class="slide level2">
 
-<p>Las dos formas son <strong>ampliamente utilizadas</strong> pero la segunda se ve escrita muchas veces de este modo:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
+<p>Las dos formas son <strong>ampliamente utilizadas</strong> pero la
+segunda se ve escrita muchas veces de este modo:</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> diceUtils <span class="op">=</span> {</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">history</span><span class="op">:</span> []<span class="op">,</span> <span class="co">// Lleva el histórico de dados</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">newDie</span><span class="op">:</span> <span class="kw">function</span> (sides) {</span>
@@ -531,19 +676,28 @@
 </section>
 <section class="slide level2">
 
-<p>Pero esto sigue siendo un poco pesado, y en ES6 se crearon las funciónes flecha:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> miFuncion <span class="op">=</span> (x) <span class="kw">=&gt;</span> x <span class="op">+</span> <span class="dv">2</span><span class="op">;</span></span>
+<p>Pero esto sigue siendo un poco pesado, y en ES6 se crearon las
+funciónes flecha:</p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> miFuncion <span class="op">=</span> (x) <span class="kw">=&gt;</span> x <span class="op">+</span> <span class="dv">2</span><span class="op">;</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">miFuncion</span>(<span class="dv">4</span>))<span class="op">;</span> <span class="co">// 6</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Por un lado, son ideales para programación funcional, y necesitan menos texto:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> x <span class="op">*</span> <span class="dv">3</span>)<span class="op">;</span></span></code></pre></div>
+<p>Por un lado, son ideales para programación funcional, y necesitan
+menos texto:</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">.</span><span class="fu">map</span>(x <span class="kw">=&gt;</span> x <span class="op">*</span> <span class="dv">3</span>)<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Y, por otro lado, <em>no sobreescriben <code class="sourceCode javascript"><span class="kw">this</span></code></em>, con lo que se usa el <code class="sourceCode javascript"><span class="kw">this</span></code> anterior:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Clase</span>() {</span>
+<p>Y, por otro lado, <em>no sobreescriben <code
+class="sourceCode javascript"><span class="kw">this</span></code></em>,
+con lo que se usa el <code
+class="sourceCode javascript"><span class="kw">this</span></code>
+anterior:</p>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Clase</span>() {</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">v</span> <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -599,7 +753,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,

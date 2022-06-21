@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -93,24 +96,34 @@
 </section>
 
 <section>
-<section id="objetos-y-paso-de-mensajes" class="title-slide slide level1">
+<section id="objetos-y-paso-de-mensajes"
+class="title-slide slide level1">
 <h1>Objetos y paso de mensajes</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Los objetos de JavaScript y el poder usar código como un valor más permite codificar los conceptos de objeto y paso de mensajes de la programación orientada a objetos</p>
+<p>Los objetos de JavaScript y el poder usar código como un valor más
+permite codificar los conceptos de objeto y paso de mensajes de la
+programación orientada a objetos</p>
 </section>
 <section id="codificando-el-estado" class="slide level2">
 <h2>Codificando el estado</h2>
-<p>Con lo que se ha visto hasta ahora se tiene suficiente conocimiento para codificar el estado</p>
-<p>El <strong>conjunto de atributos</strong> del objeto del modelado orientado a objetos se traduce al <strong>conjunto de propiedades</strong> de los objetos JavaScript</p>
+<p>Con lo que se ha visto hasta ahora se tiene suficiente conocimiento
+para codificar el estado</p>
+<p>El <strong>conjunto de atributos</strong> del objeto del modelado
+orientado a objetos se traduce al <strong>conjunto de
+propiedades</strong> de los objetos JavaScript</p>
 </section>
 <section class="slide level2">
 
-<p>En el ejemplo de Space Invaders, el estado de los enemigos formado por:</p>
+<p>En el ejemplo de Space Invaders, el estado de los enemigos formado
+por:</p>
 <figure>
-<img data-src="space-invaders-enemy-state.svg" style="width:60.0%" alt="Estado del enemigo en el modelado de Space Invaders" /><figcaption aria-hidden="true">Estado del enemigo en el modelado de Space Invaders</figcaption>
+<img data-src="space-invaders-enemy-state.svg" style="width:60.0%"
+alt="Estado del enemigo en el modelado de Space Invaders" />
+<figcaption aria-hidden="true">Estado del enemigo en el modelado de
+Space Invaders</figcaption>
 </figure>
 </section>
 <section class="slide level2">
@@ -125,14 +138,18 @@
 </section>
 <section class="slide level2">
 
-<p>La primera limitación en JavaScript es que <strong>no se puede restringir el acceso a las propiedades de un objeto</strong></p>
+<p>La primera limitación en JavaScript es que <strong>no se puede
+restringir el acceso a las propiedades de un objeto</strong></p>
 <p>Así, nada nos impide poder modificar la posición directamente</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">position</span><span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> <span class="co">// perfectamente válido</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Lo único que podemos hacer es desaconsejar al usuario que utilice las propiedades que determinemos como atributos</p>
-<p>Una práctica muy común es añadir un guíon bajo <code class="sourceCode javascript">_</code> a los atributos como indicando que son <strong>privados</strong></p>
+<p>Lo único que podemos hacer es desaconsejar al usuario que utilice las
+propiedades que determinemos como atributos</p>
+<p>Una práctica muy común es añadir un guíon bajo <code
+class="sourceCode javascript">_</code> a los atributos como indicando
+que son <strong>privados</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> enemy <span class="op">=</span> {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">_graphic</span><span class="op">:</span> <span class="st">&#39;specie01.png&#39;</span><span class="op">,</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">_currentDirection</span><span class="op">:</span> <span class="st">&#39;right&#39;</span><span class="op">,</span></span>
@@ -142,14 +159,19 @@
 </section>
 <section class="slide level2">
 
-<p>Pero esto es un convenio, y podemos seguir accediendo a los atributos</p>
+<p>Pero esto es un convenio, y podemos seguir accediendo a los
+atributos</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">_position</span><span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> <span class="co">// perfectamente válido también</span></span></code></pre></div>
 </section>
 <section id="codificando-la-api" class="slide level2">
 <h2>Codificando la API</h2>
-<p>Los <strong>métodos</strong> pueden implementarse como <strong>funciones</strong> en propiedades de un objeto:</p>
+<p>Los <strong>métodos</strong> pueden implementarse como
+<strong>funciones</strong> en propiedades de un objeto:</p>
 <figure>
-<img data-src="space-invaders-enemy-state.svg" style="width:60.0%" alt="API del enemigo en el modelado de Space Invaders" /><figcaption aria-hidden="true">API del enemigo en el modelado de Space Invaders</figcaption>
+<img data-src="space-invaders-enemy-state.svg" style="width:60.0%"
+alt="API del enemigo en el modelado de Space Invaders" />
+<figcaption aria-hidden="true">API del enemigo en el modelado de Space
+Invaders</figcaption>
 </figure>
 </section>
 <section class="slide level2">
@@ -168,7 +190,8 @@
 </section>
 <section class="slide level2">
 
-<p>Enviar un mensaje a un objeto consiste sencillamente <strong>acceder a una función propiedad del destinatario y llamarla</strong></p>
+<p>Enviar un mensaje a un objeto consiste sencillamente <strong>acceder
+a una función propiedad del destinatario y llamarla</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">shoot</span>()<span class="op">;</span> <span class="co">// primero accedemos con punto, luego llamamos con ()</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">moveLeft</span>()<span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">moveLeft</span>()<span class="op">;</span></span>
@@ -177,7 +200,8 @@
 </section>
 <section class="slide level2">
 
-<p>Cualquier función puede actuar como método. Y como cualquier propiedad de un objeto, podemos cambiarla en cualquier momento:</p>
+<p>Cualquier función puede actuar como método. Y como cualquier
+propiedad de un objeto, podemos cambiarla en cualquier momento:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">shoot</span>()<span class="op">;</span> <span class="co">// PICHIUM!</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">shoot</span> <span class="op">=</span> <span class="kw">function</span> () { <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;PAÑUM!&#39;</span>)<span class="op">;</span> }<span class="op">;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">shoot</span>()<span class="op">;</span> <span class="co">// PAÑUM!</span></span></code></pre></div>
@@ -191,43 +215,67 @@
 </section>
 <section class="slide level2">
 
-<p>Obviamente, echando un vistazo a lo que hace <code class="sourceCode javascript"><span class="fu">moveLeft</span>()</code> no podríamos decir que cambia el estado del objeto destinatario del mensaje</p>
+<p>Obviamente, echando un vistazo a lo que hace <code
+class="sourceCode javascript"><span class="fu">moveLeft</span>()</code>
+no podríamos decir que cambia el estado del objeto destinatario del
+mensaje</p>
 </section>
 <section class="slide level2">
 
-<p>Como cualquier función puede actuar como método, necesitamos una forma de <strong>referirnos al destinatario del mensaje</strong>, si existe</p>
-<p>Este se guarda en la letiable <strong><code class="sourceCode javascript"><span class="kw">this</span></code></strong></p>
-<p><span class="fragment">Ojo con <code class="sourceCode javascript"><span class="kw">this</span></code>… =)</span></p>
+<p>Como cualquier función puede actuar como método, necesitamos una
+forma de <strong>referirnos al destinatario del mensaje</strong>, si
+existe</p>
+<p>Este se guarda en la letiable <strong><code
+class="sourceCode javascript"><span class="kw">this</span></code></strong></p>
+<p><span class="fragment">Ojo con <code
+class="sourceCode javascript"><span class="kw">this</span></code>…
+=)</span></p>
 </section></section>
 <section>
 <section id="this" class="title-slide slide level1">
-<h1><code class="sourceCode javascript"><span class="kw">this</span></code></h1>
+<h1><code
+class="sourceCode javascript"><span class="kw">this</span></code></h1>
 
 </section>
 <section class="slide level2">
 
-<p>Con <code class="sourceCode javascript"><span class="kw">this</span></code>, vamos a implementar los métodos de movimiento:</p>
+<p>Con <code
+class="sourceCode javascript"><span class="kw">this</span></code>, vamos
+a implementar los métodos de movimiento:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">moveLeft</span> <span class="op">=</span> <span class="kw">function</span> () { <span class="kw">this</span><span class="op">.</span><span class="at">_position</span><span class="op">.</span><span class="at">x</span> <span class="op">-=</span> <span class="dv">2</span><span class="op">;</span> }<span class="op">;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">moveRight</span> <span class="op">=</span> <span class="kw">function</span> () { <span class="kw">this</span><span class="op">.</span><span class="at">_position</span><span class="op">.</span><span class="at">x</span> <span class="op">+=</span> <span class="dv">2</span><span class="op">;</span> }<span class="op">;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">advance</span> <span class="op">=</span> <span class="kw">function</span> () { <span class="kw">this</span><span class="op">.</span><span class="at">_position</span><span class="op">.</span><span class="at">y</span> <span class="op">+=</span> <span class="dv">2</span><span class="op">;</span> }<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Ahora puedes probar el mismo experimento de antes y ver cómo efectivamente alteramos el estado del objeto:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">;</span> <span class="co">// fíjate en la posición</span></span>
+<p>Ahora puedes probar el mismo experimento de antes y ver cómo
+efectivamente alteramos el estado del objeto:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">;</span> <span class="co">// fíjate en la posición</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">moveLeft</span>()<span class="op">;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">;</span> <span class="co">// fíjate en la posición otra vez</span></span></code></pre></div>
 </section>
 <section id="el-valor-de-this" class="slide level2">
-<h2>El valor de <code class="sourceCode javascript"><span class="kw">this</span></code></h2>
-<p>El valor de <code class="sourceCode javascript"><span class="kw">this</span></code> es uno de los aspectos más controvertidos de JavaScript</p>
-<p>En otros lenguajes métodos y funciones son cosas distintas y un método <strong>siempre</strong> tiene asociado un y sólo un objeto así que <code class="sourceCode javascript"><span class="kw">this</span></code> nunca cambia</p>
+<h2>El valor de <code
+class="sourceCode javascript"><span class="kw">this</span></code></h2>
+<p>El valor de <code
+class="sourceCode javascript"><span class="kw">this</span></code> es uno
+de los aspectos más controvertidos de JavaScript</p>
+<p>En otros lenguajes métodos y funciones son cosas distintas y un
+método <strong>siempre</strong> tiene asociado un y sólo un objeto así
+que <code
+class="sourceCode javascript"><span class="kw">this</span></code> nunca
+cambia</p>
 </section>
 <section class="slide level2">
 
-<p>Pero en JavaScript, <code class="sourceCode javascript"><span class="kw">this</span></code> depende de cómo llamemos a la función, si la llamamos como si fuera una función o si la llamamos como si fuera un método</p>
+<p>Pero en JavaScript, <code
+class="sourceCode javascript"><span class="kw">this</span></code>
+depende de cómo llamemos a la función, si la llamamos como si fuera una
+función o si la llamamos como si fuera un método</p>
 <p>Considera la siguiente función:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">inspect</span>() {</span>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">inspect</span>() {</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// sólo inspecciona this</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Tipo:&#39;</span><span class="op">,</span> <span class="kw">typeof</span> <span class="kw">this</span>)<span class="op">;</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&#39;Valor:&#39;</span><span class="op">,</span> <span class="kw">this</span>)<span class="op">;</span></span>
@@ -236,7 +284,8 @@
 <section class="slide level2">
 
 <p>Y prueba lo siguiente:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Piensa qué puede valer this antes de probar cada ejemplo</span></span>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Piensa qué puede valer this antes de probar cada ejemplo</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> ship1 <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;T-Fighter&#39;</span><span class="op">,</span> <span class="dt">method</span><span class="op">:</span> inspect }<span class="op">;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> ship2 <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;X-Wing&#39;</span><span class="op">,</span> <span class="dt">method</span><span class="op">:</span> inspect }<span class="op">;</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>ship1<span class="op">.</span><span class="fu">method</span>()<span class="op">;</span></span>
@@ -245,38 +294,59 @@
 </section>
 <section class="slide level2">
 
-<p>En el último caso, el valor de <code class="sourceCode javascript"><span class="kw">this</span></code> es <strong>el objeto global</strong> porque la función no se está usando como un método por lo que no hay destinatario</p>
-<p>En JavaScript podemos hacer que cualquier objeto sea <code class="sourceCode javascript"><span class="kw">this</span></code> en cualquier función</p>
+<p>En el último caso, el valor de <code
+class="sourceCode javascript"><span class="kw">this</span></code> es
+<strong>el objeto global</strong> porque la función no se está usando
+como un método por lo que no hay destinatario</p>
+<p>En JavaScript podemos hacer que cualquier objeto sea <code
+class="sourceCode javascript"><span class="kw">this</span></code> en
+cualquier función</p>
 </section>
 <section class="slide level2">
 
-<p>Para ello usaremos <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/apply"><code class="sourceCode javascript"><span class="fu">apply</span>()</code></a> en una función:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> onlyNameShip <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Death Star&#39;</span> }<span class="op">;</span></span>
+<p>Para ello usaremos <a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/apply"><code
+class="sourceCode javascript"><span class="fu">apply</span>()</code></a>
+en una función:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> onlyNameShip <span class="op">=</span> { <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Death Star&#39;</span> }<span class="op">;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>inspect<span class="op">.</span><span class="fu">apply</span>(onlyNameShip)<span class="op">;</span> <span class="co">// hace que this valga onlyNameShip en inspect</span></span></code></pre></div>
-<p>A <a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/#this-value"><code class="sourceCode javascript"><span class="kw">this</span></code></a> se le conoce también como <strong>objeto de contexto</strong> y utilizaremos este término de cuando en cuando</p>
+<p>A <a
+href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/#this-value"><code
+class="sourceCode javascript"><span class="kw">this</span></code></a> se
+le conoce también como <strong>objeto de contexto</strong> y
+utilizaremos este término de cuando en cuando</p>
 </section></section>
 <section>
-<section id="tipos-y-constructores-de-objetos" class="title-slide slide level1">
+<section id="tipos-y-constructores-de-objetos"
+class="title-slide slide level1">
 <h1>Tipos y constructores de objetos</h1>
 
 </section>
 <section class="slide level2">
 
 <p>Javascript permite modelar <strong>prototipos de objetos</strong></p>
-<p>JavaScript no permite modelar tipos nuevos y tendremos que dar un rodeo</p>
-<p>Esta es una de las principales diferencias con otros lenguajes orientados a objetos</p>
+<p>JavaScript no permite modelar tipos nuevos y tendremos que dar un
+rodeo</p>
+<p>Esta es una de las principales diferencias con otros lenguajes
+orientados a objetos</p>
 </section>
 <section class="slide level2">
 
-<p>Lo que vamos a hacer es saltarnos el concepto de tipo para abordar directamente el de constructor</p>
+<p>Lo que vamos a hacer es saltarnos el concepto de tipo para abordar
+directamente el de constructor</p>
 <figure>
-<img data-src="space-invaders-constructor-example.svg" style="width:60.0%" alt="Constructores de objetos" /><figcaption aria-hidden="true">Constructores de objetos</figcaption>
+<img data-src="space-invaders-constructor-example.svg"
+style="width:60.0%" alt="Constructores de objetos" />
+<figcaption aria-hidden="true">Constructores de objetos</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Vamos a crear dos funciones constructoras, una para puntos y otra para disparos:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newPoint</span>(x<span class="op">,</span> y) {</span>
+<p>Vamos a crear dos funciones constructoras, una para puntos y otra
+para disparos:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newPoint</span>(x<span class="op">,</span> y) {</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> obj <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  obj<span class="op">.</span><span class="at">x</span> <span class="op">=</span> x<span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  obj<span class="op">.</span><span class="at">y</span> <span class="op">=</span> y<span class="op">;</span></span>
@@ -295,12 +365,15 @@
 </section>
 <section class="slide level2">
 
-<p>La forma de las funciones constructoras es muy similar: crear un objeto vacío, establecer las propiedades del objeto y devolver el nuevo objeto</p>
+<p>La forma de las funciones constructoras es muy similar: crear un
+objeto vacío, establecer las propiedades del objeto y devolver el nuevo
+objeto</p>
 </section>
 <section class="slide level2">
 
 <p>Ahora podemos crear un nuevo disparo con algo así:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Velocidad positiva para que se mueva hacia abajo</span></span>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Velocidad positiva para que se mueva hacia abajo</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> enemyShot <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Velocidad negativa para que se mueva hacia arriba</span></span>
@@ -310,8 +383,10 @@
 </section>
 <section id="reaprovechando-funcionalidad" class="slide level2">
 <h2>Reaprovechando funcionalidad</h2>
-<p>El problema con esta aproximación es que estamos creando funciones distintas para comportamientos idénticos. Una función por objeto</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s1 <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<p>El problema con esta aproximación es que estamos creando funciones
+distintas para comportamientos idénticos. Una función por objeto</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s1 <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s2 <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s3 <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>s1<span class="op">.</span><span class="at">advance</span> <span class="op">!==</span> s2<span class="op">.</span><span class="at">advance</span><span class="op">;</span></span>
@@ -320,13 +395,17 @@
 </section>
 <section class="slide level2">
 
-<p>Esto es altamente ineficiente dado que cada función ocupa un espacio distinto en memoria</p>
-<p>No necesitamos distintas funciones sino una solamente actuando sobre distintos objetos</p>
+<p>Esto es altamente ineficiente dado que cada función ocupa un espacio
+distinto en memoria</p>
+<p>No necesitamos distintas funciones sino una solamente actuando sobre
+distintos objetos</p>
 </section>
 <section class="slide level2">
 
-<p>Así que vamos a <strong>crear un objeto que contenga sólamente la API</strong>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> shotAPI <span class="op">=</span> {</span>
+<p>Así que vamos a <strong>crear un objeto que contenga sólamente la
+API</strong>:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> shotAPI <span class="op">=</span> {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">advance</span><span class="op">:</span> <span class="kw">function</span> () {</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">_position</span><span class="op">.</span><span class="at">y</span> <span class="op">+=</span> <span class="kw">this</span><span class="op">.</span><span class="at">_velocity</span><span class="op">;</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  }</span>
@@ -335,7 +414,8 @@
 <section class="slide level2">
 
 <p>Y a usarlo en la creación del objeto para referenciar la API:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newShot</span>(position<span class="op">,</span> velocity) {</span>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newShot</span>(position<span class="op">,</span> velocity) {</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> obj <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  obj<span class="op">.</span><span class="at">_position</span> <span class="op">=</span> position<span class="op">;</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  obj<span class="op">.</span><span class="at">_velocity</span> <span class="op">=</span> velocity<span class="op">;</span></span>
@@ -345,8 +425,11 @@
 </section>
 <section class="slide level2">
 
-<p>Ahora todas las instancias comparten la misma función pero cada función actúa sobre el objeto correspondiente gracias al uso de <code class="sourceCode javascript"><span class="kw">this</span></code>:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s1 <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<p>Ahora todas las instancias comparten la misma función pero cada
+función actúa sobre el objeto correspondiente gracias al uso de <code
+class="sourceCode javascript"><span class="kw">this</span></code>:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s1 <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s2 <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> s3 <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>s1<span class="op">.</span><span class="at">advance</span> <span class="op">===</span> s2<span class="op">.</span><span class="at">advance</span><span class="op">;</span> <span class="co">// ahora SÍ son iguales</span></span>
@@ -355,8 +438,11 @@
 </section>
 <section class="slide level2">
 
-<p>Para hacer todavía más fuerte la asociación entre el constructor y la API, modificamos el <strong>objeto con la API como una propiedad de la función constructora</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newShot</span>(position<span class="op">,</span> velocity) {</span>
+<p>Para hacer todavía más fuerte la asociación entre el constructor y la
+API, modificamos el <strong>objeto con la API como una propiedad de la
+función constructora</strong></p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newShot</span>(position<span class="op">,</span> velocity) {</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> obj <span class="op">=</span> {}<span class="op">;</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  obj<span class="op">.</span><span class="at">_position</span> <span class="op">=</span> position<span class="op">;</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  obj<span class="op">.</span><span class="at">_velocity</span> <span class="op">=</span> velocity<span class="op">;</span></span>
@@ -378,17 +464,25 @@
 </section>
 <section class="slide level2">
 
-<p>JavaScript posee una característica muy representativa y única del lenguaje: <strong>la cadena de prototipos</strong></p>
-<p>Puedes experimentar con ella en <a href="http://www.objectplayground.com/">Object Playground</a>, una excelente herramienta que te ayudará a visualizarla</p>
+<p>JavaScript posee una característica muy representativa y única del
+lenguaje: <strong>la cadena de prototipos</strong></p>
+<p>Puedes experimentar con ella en <a
+href="http://www.objectplayground.com/">Object Playground</a>, una
+excelente herramienta que te ayudará a visualizarla</p>
 </section>
 <section class="slide level2">
 
-<p>La idea no es complicada. La cadena de prototipos <strong>es una lista de búsqueda para las propiedades</strong></p>
-<p>Cada elemento de la cadena es <strong>prototipo</strong> del objeto anterior</p>
+<p>La idea no es complicada. La cadena de prototipos <strong>es una
+lista de búsqueda para las propiedades</strong></p>
+<p>Cada elemento de la cadena es <strong>prototipo</strong> del objeto
+anterior</p>
 </section>
 <section class="slide level2">
 
-<p>Cuando accedemos a la propiedad de un objeto, esta propiedad se busca en el objeto y si no se encuentra, se busca en el prototipo del objeto, y así sucesivamente hasta alcanzar la propiedad o el final de esta cadena</p>
+<p>Cuando accedemos a la propiedad de un objeto, esta propiedad se busca
+en el objeto y si no se encuentra, se busca en el prototipo del objeto,
+y así sucesivamente hasta alcanzar la propiedad o el final de esta
+cadena</p>
 </section>
 <section class="slide level2">
 
@@ -402,8 +496,11 @@ obj1.z ------------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Crear esta jerarquía en JavaScript requiere el uso de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/create"><code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>()</code></a>:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">// La cadena se monta de atrás hacia adelante</span></span>
+<p>Crear esta jerarquía en JavaScript requiere el uso de <a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/create"><code
+class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>()</code></a>:</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">// La cadena se monta de atrás hacia adelante</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> obj3 <span class="op">=</span> { <span class="dt">f</span><span class="op">:</span> <span class="dv">6</span> }<span class="op">;</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Encadenamos obj2 a obj3</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> obj2 <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>(obj3)<span class="op">;</span></span>
@@ -422,12 +519,21 @@ obj1.z ------------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>El método <code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>()</code> crea un nuevo objeto vacío (como <code class="sourceCode javascript">{}</code>) cuyo prototipo es el objeto pasado como parámetro</p>
+<p>El método <code
+class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>()</code>
+crea un nuevo objeto vacío (como <code
+class="sourceCode javascript">{}</code>) cuyo prototipo es el objeto
+pasado como parámetro</p>
 </section>
 <section class="slide level2">
 
-<p>Se puede usar el método <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty"><code class="sourceCode javascript"><span class="fu">hasOwnProperty</span>()</code></a> para determinar si una propiedad pertenece a un objeto sin atravesar la cadena de prototipos:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>obj1<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;c&#39;</span>)<span class="op">;</span></span>
+<p>Se puede usar el método <a
+href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty"><code
+class="sourceCode javascript"><span class="fu">hasOwnProperty</span>()</code></a>
+para determinar si una propiedad pertenece a un objeto sin atravesar la
+cadena de prototipos:</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>obj1<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;c&#39;</span>)<span class="op">;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>obj1<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;d&#39;</span>)<span class="op">;</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>obj1<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;f&#39;</span>)<span class="op">;</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>obj1<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;z&#39;</span>)<span class="op">;</span></span>
@@ -444,20 +550,26 @@ obj1.z ------------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Se puede usar el método <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf"><code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="at">getPrototypeOf</span></code></a> para obtener el prototipo de un objeto:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">getPrototypeOf</span>(obj1) <span class="op">===</span> obj2<span class="op">;</span></span>
+<p>Se puede usar el método <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf"><code
+class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="at">getPrototypeOf</span></code></a>
+para obtener el prototipo de un objeto:</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">getPrototypeOf</span>(obj1) <span class="op">===</span> obj2<span class="op">;</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">getPrototypeOf</span>(obj2) <span class="op">===</span> obj3<span class="op">;</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">getPrototypeOf</span>(obj3) <span class="op">===</span> <span class="bu">Object</span><span class="op">.</span><span class="at">prototype</span><span class="op">;</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">getPrototypeOf</span>(<span class="bu">Object</span><span class="op">.</span><span class="at">prototype</span>) <span class="op">===</span> <span class="kw">null</span><span class="op">;</span></span></code></pre></div>
 </section></section>
 <section>
-<section id="constructores-y-cadenas-de-prototipos" class="title-slide slide level1">
+<section id="constructores-y-cadenas-de-prototipos"
+class="title-slide slide level1">
 <h1>Constructores y cadenas de prototipos</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Los prototipos se prestan a ser el lugar ideal para contener la API que es el comportamiento común de todos los objetos de un tipo</p>
+<p>Los prototipos se prestan a ser el lugar ideal para contener la API
+que es el comportamiento común de todos los objetos de un tipo</p>
 <pre><code>let obj = newShot()                   newShot.api
 {_position: {x: 10...}...} --&gt; {advance: function...};
 
@@ -468,7 +580,8 @@ obj.goBack ----------------------------------------------X</code></pre>
 <section class="slide level2">
 
 <p>Para crear este enlace modificaremos el constructor:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newShot</span>(position<span class="op">,</span> velocity) {</span>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">newShot</span>(position<span class="op">,</span> velocity) {</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Con esto la API es el prototipo del objeto</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> obj <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>(newShot<span class="op">.</span><span class="at">api</span>)<span class="op">;</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  obj<span class="op">.</span><span class="at">_position</span> <span class="op">=</span> position<span class="op">;</span></span>
@@ -485,7 +598,8 @@ obj.goBack ----------------------------------------------X</code></pre>
 <section class="slide level2">
 
 <p>Y ahora probamos a crear un nuevo disparo:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> shot <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">0</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> shot <span class="op">=</span> <span class="fu">newShot</span>(<span class="fu">newPoint</span>(<span class="dv">0</span><span class="op">,</span><span class="dv">0</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>shot<span class="op">;</span> <span class="co">// al inspeccionar shot sólo se muestran las propiedades del objeto</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>shot<span class="op">.</span><span class="at">advance</span><span class="op">;</span> <span class="co">// pero advance existe en su prototipo</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>shot<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;advance&#39;</span>)<span class="op">;</span></span>
@@ -493,38 +607,56 @@ obj.goBack ----------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Si hiciéramos esto con todos los constructores, cláramente encontraríamos un patrón:</p>
+<p>Si hiciéramos esto con todos los constructores, cláramente
+encontraríamos un patrón:</p>
 <ol type="1">
 <li>Crea un objeto para contener la API</li>
 <li>Implementa la API como propiedades de este objeto</li>
-<li>En el constructor haz que este objeto sea el prototipo de un nuevo objeto</li>
+<li>En el constructor haz que este objeto sea el prototipo de un nuevo
+objeto</li>
 <li>Establece las propiedades del nuevo objeto con el estado</li>
 <li>Devuelve el nuevo objeto</li>
 </ol>
 </section>
 <section class="slide level2">
 
-<p>Sólo los pasos 2 y 4 involucran diferencias de un constructor a otro. Todo lo demás es exactamente igual. Tanto es así que JavaScript lo tiene en cuenta y viene con los mecanismos para automatizar los pasos 1, 3 y 5</p>
+<p>Sólo los pasos 2 y 4 involucran diferencias de un constructor a otro.
+Todo lo demás es exactamente igual. Tanto es así que JavaScript lo tiene
+en cuenta y viene con los mecanismos para automatizar los pasos 1, 3 y
+5</p>
 </section>
 <section class="slide level2">
 
-<p>Primero, JavaScript permite que cualquier función pueda usarse como constructor</p>
+<p>Primero, JavaScript permite que cualquier función pueda usarse como
+constructor</p>
 </section>
 <section class="slide level2">
 
-<p>Cada vez que escribimos una función, JavaScript <strong>crea una propiedad de la función llamada <code>prototype</code></strong> que es un objeto con una única propiedad <code>constructor</code> que apunta a la función</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">anyFunction</span>() {}</span>
+<p>Cada vez que escribimos una función, JavaScript <strong>crea una
+propiedad de la función llamada <code>prototype</code></strong> que es
+un objeto con una única propiedad <code>constructor</code> que apunta a
+la función</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">anyFunction</span>() {}</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>anyFunction<span class="op">.</span><span class="at">prototype</span><span class="op">;</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>anyFunction<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">constructor</span> <span class="op">===</span> anyFunction<span class="op">;</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Esto automatiza el paso 1. Ya no es necesario el objeto <code class="sourceCode javascript">api</code> que preparábamos nosotros manualmente</p>
+<p>Esto automatiza el paso 1. Ya no es necesario el objeto <code
+class="sourceCode javascript">api</code> que preparábamos nosotros
+manualmente</p>
 </section>
 <section class="slide level2">
 
-<p>Ahora, al llamar a la función con el operador <code class="sourceCode javascript"><span class="kw">new</span></code> delante, se crea un <strong>nuevo objeto cuyo prototipo es precisamente la propiedad <code class="sourceCode javascript">prototype</code></strong> de la función:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> obj <span class="op">=</span> <span class="kw">new</span> <span class="fu">anyFunction</span>()<span class="op">;</span></span>
+<p>Ahora, al llamar a la función con el operador <code
+class="sourceCode javascript"><span class="kw">new</span></code>
+delante, se crea un <strong>nuevo objeto cuyo prototipo es precisamente
+la propiedad <code
+class="sourceCode javascript">prototype</code></strong> de la
+función:</p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> obj <span class="op">=</span> <span class="kw">new</span> <span class="fu">anyFunction</span>()<span class="op">;</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> anotherObj <span class="op">=</span> <span class="kw">new</span> <span class="fu">anyFunction</span>()<span class="op">;</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Los objetos son distintos</span></span>
@@ -538,12 +670,20 @@ obj.goBack ----------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Con esto automatizamos el paso 3. Ya no es necesario llamar a <code class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>()</code> para establecer la cadena de prototipos entre objeto y API</p>
+<p>Con esto automatizamos el paso 3. Ya no es necesario llamar a <code
+class="sourceCode javascript"><span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>()</code>
+para establecer la cadena de prototipos entre objeto y API</p>
 </section>
 <section class="slide level2">
 
-<p>Finalmente, cuando se llama con <code class="sourceCode javascript"><span class="kw">new</span></code>, la <strong>función recibe como objeto de contexto (recuerda, el <code class="sourceCode javascript"><span class="kw">this</span></code>) el elemento que está siendo creado</strong> lo que nos permite establecer sus atributos</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Hero</span>(name) {</span>
+<p>Finalmente, cuando se llama con <code
+class="sourceCode javascript"><span class="kw">new</span></code>, la
+<strong>función recibe como objeto de contexto (recuerda, el <code
+class="sourceCode javascript"><span class="kw">this</span></code>) el
+elemento que está siendo creado</strong> lo que nos permite establecer
+sus atributos</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Hero</span>(name) {</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">name</span> <span class="op">=</span> name<span class="op">;</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">sword</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">shield</span> <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
@@ -554,9 +694,14 @@ obj.goBack ----------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Si la <strong>función devuelve nada</strong>, el resultado del operador <code class="sourceCode javascript"><span class="kw">new</span></code> será el nuevo objeto. Esto automatiza el paso 5 puesto que no es necesario devolver el nuevo objeto, esta devolución se hace implícita</p>
+<p>Si la <strong>función devuelve nada</strong>, el resultado del
+operador <code
+class="sourceCode javascript"><span class="kw">new</span></code> será el
+nuevo objeto. Esto automatiza el paso 5 puesto que no es necesario
+devolver el nuevo objeto, esta devolución se hace implícita</p>
 <p>Veamos como queda el constructor de punto:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Point</span>(x<span class="op">,</span> y) {</span>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Point</span>(x<span class="op">,</span> y) {</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">x</span> <span class="op">=</span> x<span class="op">;</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">y</span> <span class="op">=</span> y<span class="op">;</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
@@ -564,7 +709,8 @@ obj.goBack ----------------------------------------------X</code></pre>
 <section class="slide level2">
 
 <p>Y el del disparo:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Shot</span>(position<span class="op">,</span> velocity) {</span>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Shot</span>(position<span class="op">,</span> velocity) {</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_position</span> <span class="op">=</span> position<span class="op">;</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_velocity</span> <span class="op">=</span> velocity<span class="op">;</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -576,8 +722,10 @@ obj.goBack ----------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Ahora crear los objetos será cuestión de usar <code class="sourceCode javascript"><span class="kw">new</span></code>:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> enemyShot <span class="op">=</span> <span class="kw">new</span> <span class="fu">Shot</span>(<span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<p>Ahora crear los objetos será cuestión de usar <code
+class="sourceCode javascript"><span class="kw">new</span></code>:</p>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> enemyShot <span class="op">=</span> <span class="kw">new</span> <span class="fu">Shot</span>(<span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">15</span>)<span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> allyShot <span class="op">=</span> <span class="kw">new</span> <span class="fu">Shot</span>(<span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">15</span><span class="op">,</span> <span class="dv">585</span>)<span class="op">,</span> <span class="op">-</span><span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>enemyShot <span class="op">!==</span> allyShot<span class="op">;</span></span></code></pre></div>
 </section></section>
@@ -588,20 +736,27 @@ obj.goBack ----------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Sabemos como crear objetos con atributos y métodos y sabemos como hacerlo eficazmente usando constructores y la cadena de prototipos</p>
+<p>Sabemos como crear objetos con atributos y métodos y sabemos como
+hacerlo eficazmente usando constructores y la cadena de prototipos</p>
 <figure>
-<img data-src="space-invaders-hierarchy.svg" style="width:50.0%" alt="Relación de herencia entre nave y los enemigos y la nave aliada" /><figcaption aria-hidden="true">Relación de herencia entre nave y los enemigos y la nave aliada</figcaption>
+<img data-src="space-invaders-hierarchy.svg" style="width:50.0%"
+alt="Relación de herencia entre nave y los enemigos y la nave aliada" />
+<figcaption aria-hidden="true">Relación de herencia entre nave y los
+enemigos y la nave aliada</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Falta explicar cómo podemos crear una <strong>relación de herencia</strong></p>
-<p>Usemos el ejemplo de los enemigos y la nave protagonista de la lección anterior</p>
+<p>Falta explicar cómo podemos crear una <strong>relación de
+herencia</strong></p>
+<p>Usemos el ejemplo de los enemigos y la nave protagonista de la
+lección anterior</p>
 </section>
 <section class="slide level2">
 
 <p>Necesitaremos pues nuestros constructores de puntos y disparos:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Point</span>(x<span class="op">,</span> y) {</span>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Point</span>(x<span class="op">,</span> y) {</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">x</span> <span class="op">=</span> x<span class="op">;</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">y</span> <span class="op">=</span> y<span class="op">;</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -618,7 +773,8 @@ obj.goBack ----------------------------------------------X</code></pre>
 <section class="slide level2">
 
 <p>El constructor del enemigo podría ser:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Enemy</span>(graphic<span class="op">,</span> position<span class="op">,</span> score) {</span>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Enemy</span>(graphic<span class="op">,</span> position<span class="op">,</span> score) {</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_graphic</span> <span class="op">=</span> graphic<span class="op">;</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_currentDirection</span> <span class="op">=</span> <span class="st">&#39;right&#39;</span><span class="op">;</span></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_position</span> <span class="op">=</span> position<span class="op">;</span></span>
@@ -637,7 +793,8 @@ obj.goBack ----------------------------------------------X</code></pre>
 <section class="slide level2">
 
 <p>Y el de la nave aliada:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Ally</span>(position) {</span>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Ally</span>(position) {</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_graphic</span> <span class="op">=</span> <span class="st">&#39;ally.png&#39;</span><span class="op">;</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_position</span> <span class="op">=</span> position<span class="op">;</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -652,8 +809,10 @@ obj.goBack ----------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Podemos pensar en un constructor que capture las propiedades comunes de ambos tipos:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Ship</span>(graphic<span class="op">,</span> position) {</span>
+<p>Podemos pensar en un constructor que capture las propiedades comunes
+de ambos tipos:</p>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Ship</span>(graphic<span class="op">,</span> position) {</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_graphic</span> <span class="op">=</span> graphic<span class="op">;</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_position</span> <span class="op">=</span> position<span class="op">;</span></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -663,18 +822,24 @@ obj.goBack ----------------------------------------------X</code></pre>
 </section>
 <section class="slide level2">
 
-<p>No incluimos disparar porque unos disparan hacia arriba y otros hacia abajo</p>
+<p>No incluimos disparar porque unos disparan hacia arriba y otros hacia
+abajo</p>
 </section>
 <section class="slide level2">
 
-<p>Recordemos que ahora los constructores de la nave aliada y los enemigos pedirán primero al constructor de nave una nave y luego la personalizarán</p>
+<p>Recordemos que ahora los constructores de la nave aliada y los
+enemigos pedirán primero al constructor de nave una nave y luego la
+personalizarán</p>
 <figure>
-<img data-src="space-invaders-hierarchy-constructor.svg" style="width:50.0%" alt="Jerarquía de constructores" /><figcaption aria-hidden="true">Jerarquía de constructores</figcaption>
+<img data-src="space-invaders-hierarchy-constructor.svg"
+style="width:50.0%" alt="Jerarquía de constructores" />
+<figcaption aria-hidden="true">Jerarquía de constructores</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Enemy</span>(graphic<span class="op">,</span> position<span class="op">,</span> score) {</span>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Enemy</span>(graphic<span class="op">,</span> position<span class="op">,</span> score) {</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  Ship<span class="op">.</span><span class="fu">apply</span>(<span class="kw">this</span><span class="op">,</span> [graphic<span class="op">,</span> position])<span class="op">;</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_currentDirection</span> <span class="op">=</span> <span class="st">&#39;right&#39;</span><span class="op">;</span></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">_score</span> <span class="op">=</span> score<span class="op">;</span></span>
@@ -683,15 +848,25 @@ obj.goBack ----------------------------------------------X</code></pre>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Ally</span>(position) {</span>
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  Ship<span class="op">.</span><span class="fu">apply</span>(<span class="kw">this</span><span class="op">,</span> [<span class="st">&#39;ally.png&#39;</span><span class="op">,</span> position])<span class="op">;</span></span>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>Con <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/apply"><code class="sourceCode javascript"><span class="fu">apply</span>()</code></a> se puede ejecutar una función indicando cuál será su objeto de contexto y sus parámetros</p>
+<p>Con <a
+href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/apply"><code
+class="sourceCode javascript"><span class="fu">apply</span>()</code></a>
+se puede ejecutar una función indicando cuál será su objeto de contexto
+y sus parámetros</p>
 </section>
 <section class="slide level2">
 
-<p>Con la configuración anterior, las nuevas instancias de enemigos y aliados pasarán primero por el constructor de <code class="sourceCode javascript">Ship</code> que establecerá los <strong>atributos comunes</strong> y luego serán modificados cada uno por el constructor pertinente para convertirse en enemigos o aliados concretamente</p>
+<p>Con la configuración anterior, las nuevas instancias de enemigos y
+aliados pasarán primero por el constructor de <code
+class="sourceCode javascript">Ship</code> que establecerá los
+<strong>atributos comunes</strong> y luego serán modificados cada uno
+por el constructor pertinente para convertirse en enemigos o aliados
+concretamente</p>
 </section>
 <section class="slide level2">
 
-<p>En cuanto a la API, lo ideal sería contar con una cadena de prototipos de esta forma:</p>
+<p>En cuanto a la API, lo ideal sería contar con una cadena de
+prototipos de esta forma:</p>
 <pre><code>  new Enemy()          Enemy.prototype      Ship.prototype
 { _position: ...} --&gt; { advance: ... } --&gt; { moveLeft: ... }
 enemy._score ---↑            ↑                   ↑
@@ -700,15 +875,30 @@ enemy.moveLeft ----------------------------------|</code></pre>
 </section>
 <section class="slide level2">
 
-<p>De forma que los atributos del enemigo estén en la instancia, la API específica en la propiedad <code class="sourceCode javascript">prototype</code> del constructor <code>Enemy</code> y la API común en la propiedad <code class="sourceCode javascript">prototype</code> del constructor <code class="sourceCode javascript">Ship</code></p>
+<p>De forma que los atributos del enemigo estén en la instancia, la API
+específica en la propiedad <code
+class="sourceCode javascript">prototype</code> del constructor
+<code>Enemy</code> y la API común en la propiedad <code
+class="sourceCode javascript">prototype</code> del constructor <code
+class="sourceCode javascript">Ship</code></p>
 </section>
 <section class="slide level2">
 
-<p>Como ocurría con el ejemplo en la sección anterior, tendremos que crear la cadena de atrás hacia adelante. El enlace entre las instancias y los constructores nos lo proporciona JavaScript al utilizar <code class="sourceCode javascript"><span class="kw">new</span></code> pero el enlace entre la propiedad <code class="sourceCode javascript">prototype</code> de <code class="sourceCode javascript">Enemy</code> y de <code class="sourceCode javascript">Ship</code> <strong>tenemos que establecerlo manualmente</strong></p>
+<p>Como ocurría con el ejemplo en la sección anterior, tendremos que
+crear la cadena de atrás hacia adelante. El enlace entre las instancias
+y los constructores nos lo proporciona JavaScript al utilizar <code
+class="sourceCode javascript"><span class="kw">new</span></code> pero el
+enlace entre la propiedad <code
+class="sourceCode javascript">prototype</code> de <code
+class="sourceCode javascript">Enemy</code> y de <code
+class="sourceCode javascript">Ship</code> <strong>tenemos que
+establecerlo manualmente</strong></p>
 </section>
 <section id="herencia-en-el-tipo-enemy" class="slide level2">
-<h2>Herencia en el tipo <code class="sourceCode javascript">Enemy</code></h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Inspecciona la propiedad prototype</span></span>
+<h2>Herencia en el tipo <code
+class="sourceCode javascript">Enemy</code></h2>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Inspecciona la propiedad prototype</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>Enemy<span class="op">.</span><span class="at">prototype</span><span class="op">;</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co">// Enlaza ambas propiedades prototype</span></span>
@@ -733,8 +923,10 @@ enemy.moveLeft ----------------------------------|</code></pre>
 <span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div>
 </section>
 <section id="herencia-en-el-tipo-ally" class="slide level2">
-<h2>Herencia en el tipo <code class="sourceCode javascript">Ally</code></h2>
-<div class="sourceCode" id="cb41"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Lo mismo para el aliado</span></span>
+<h2>Herencia en el tipo <code
+class="sourceCode javascript">Ally</code></h2>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Lo mismo para el aliado</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>Ally<span class="op">.</span><span class="at">prototype</span> <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>(Ship<span class="op">.</span><span class="at">prototype</span>)<span class="op">;</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>Ally<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">constructor</span> <span class="op">=</span> Ally</span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -746,8 +938,10 @@ enemy.moveLeft ----------------------------------|</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Ahora sí, podemos crear un enemigo y un aliado usando sus constructores:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> enemy <span class="op">=</span> <span class="kw">new</span> <span class="fu">Enemy</span>(<span class="st">&#39;enemy1.png&#39;</span><span class="op">,</span> <span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>)<span class="op">,</span> <span class="dv">40</span>)<span class="op">;</span></span>
+<p>Ahora sí, podemos crear un enemigo y un aliado usando sus
+constructores:</p>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> enemy <span class="op">=</span> <span class="kw">new</span> <span class="fu">Enemy</span>(<span class="st">&#39;enemy1.png&#39;</span><span class="op">,</span> <span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">10</span>)<span class="op">,</span> <span class="dv">40</span>)<span class="op">;</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> ally <span class="op">=</span> <span class="kw">new</span> <span class="fu">Ally</span>(<span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">10</span><span class="op">,</span> <span class="dv">590</span>))<span class="op">;</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="fu">getPrototypeOf</span>(ally) <span class="op">===</span> Ally<span class="op">.</span><span class="at">prototype</span><span class="op">;</span></span>
@@ -759,7 +953,8 @@ enemy.moveLeft ----------------------------------|</code></pre>
 <section class="slide level2">
 
 <p>Y comprobar dónde está cada propiedad</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;_score&#39;</span>)<span class="op">;</span></span>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;_score&#39;</span>)<span class="op">;</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;advance&#39;</span>)<span class="op">;</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="fu">hasOwnProperty</span>(<span class="st">&#39;moveLeft&#39;</span>)<span class="op">;</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -778,18 +973,36 @@ enemy.moveLeft ----------------------------------|</code></pre>
 </section>
 <section class="slide level2">
 
-<p>Las relaciones de herencia que acabamos de establecer nos permiten decir que un enemigo es una instancia del tipo <code class="sourceCode javascript">Enemy</code> pero también lo es del tipo <code class="sourceCode javascript">Ship</code></p>
-<p>Una misma instancia <strong>tiene múltiples formas</strong> gracias a la herencia En programación orientada a objetos a esto se lo llama <strong>polimorfismo</strong></p>
+<p>Las relaciones de herencia que acabamos de establecer nos permiten
+decir que un enemigo es una instancia del tipo <code
+class="sourceCode javascript">Enemy</code> pero también lo es del tipo
+<code class="sourceCode javascript">Ship</code></p>
+<p>Una misma instancia <strong>tiene múltiples formas</strong> gracias a
+la herencia En programación orientada a objetos a esto se lo llama
+<strong>polimorfismo</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Alternativamente podemos decir que un enemigo es una instancia de <code class="sourceCode javascript">Enemy</code> porque tiene la API de <code class="sourceCode javascript">Enemy</code> o que es una instancia de <code class="sourceCode javascript">Ship</code> porque tiene la API de <code class="sourceCode javascript">Ship</code></p>
-<p>Esto es equivalente a decir que las propiedades <code class="sourceCode javascript">prototype</code> de <code class="sourceCode javascript">Enemy</code> y <code class="sourceCode javascript">Ship</code> están en la cadena de prototipos del objeto</p>
+<p>Alternativamente podemos decir que un enemigo es una instancia de
+<code class="sourceCode javascript">Enemy</code> porque tiene la API de
+<code class="sourceCode javascript">Enemy</code> o que es una instancia
+de <code class="sourceCode javascript">Ship</code> porque tiene la API
+de <code class="sourceCode javascript">Ship</code></p>
+<p>Esto es equivalente a decir que las propiedades <code
+class="sourceCode javascript">prototype</code> de <code
+class="sourceCode javascript">Enemy</code> y <code
+class="sourceCode javascript">Ship</code> están en la cadena de
+prototipos del objeto</p>
 </section>
 <section class="slide level2">
 
-<p>El operador <code class="sourceCode javascript"><span class="kw">instanceof</span></code> devuelve verdadero si la propiedad <code class="sourceCode javascript">prototype</code> de la función de la derecha está en la cadena de prototipos del objeto de la izquierda</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>enemy <span class="kw">instanceof</span> Enemy<span class="op">;</span>  <span class="co">// el primer eslabón</span></span>
+<p>El operador <code
+class="sourceCode javascript"><span class="kw">instanceof</span></code>
+devuelve verdadero si la propiedad <code
+class="sourceCode javascript">prototype</code> de la función de la
+derecha está en la cadena de prototipos del objeto de la izquierda</p>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>enemy <span class="kw">instanceof</span> Enemy<span class="op">;</span>  <span class="co">// el primer eslabón</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>enemy <span class="kw">instanceof</span> Ship<span class="op">;</span>   <span class="co">// el segundo</span></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>enemy <span class="kw">instanceof</span> <span class="bu">Object</span><span class="op">;</span> <span class="co">// el tercero</span></span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -797,33 +1010,54 @@ enemy.moveLeft ----------------------------------|</code></pre>
 </section>
 <section class="slide level2">
 
-<p>En lo referente al estado, resulta conveniente saber qué constructor ha construido el objeto. Esto es como determinar cuál es el <strong>primer eslabón</strong> de la cadena de prototipos</p>
+<p>En lo referente al estado, resulta conveniente saber qué constructor
+ha construido el objeto. Esto es como determinar cuál es el
+<strong>primer eslabón</strong> de la cadena de prototipos</p>
 </section>
 <section class="slide level2">
 
-<p>Como todos los prototipos tienen una propiedad <code class="sourceCode javascript">constructor</code> que referencia al constructor que los tiene, proporcionar esta propiedad siempre recaerá sobre el primer prototipo</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">constructor</span><span class="op">;</span></span>
+<p>Como todos los prototipos tienen una propiedad <code
+class="sourceCode javascript">constructor</code> que referencia al
+constructor que los tiene, proporcionar esta propiedad siempre recaerá
+sobre el primer prototipo</p>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode js"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">constructor</span><span class="op">;</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">constructor</span> <span class="op">===</span> Enemy<span class="op">;</span> <span class="co">// fue construido por Enemy, no por Ship</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>enemy<span class="op">.</span><span class="at">constructor</span> <span class="op">!==</span> Ship<span class="op">;</span> <span class="co">// es cierto que Ship fue utilizado pero nada más</span></span></code></pre></div>
 </section>
 <section id="duck-typing" class="slide level2">
 <h2>Duck typing</h2>
 <blockquote>
-<p>In other words, don’t check whether it IS-a duck: check whether it QUACKS-like-a duck, WALKS-like-a duck, etc, etc, depending on exactly what subset of duck-like behaviour you need to play your language-games with</p>
+<p>In other words, don’t check whether it IS-a duck: check whether it
+QUACKS-like-a duck, WALKS-like-a duck, etc, etc, depending on exactly
+what subset of duck-like behaviour you need to play your language-games
+with</p>
 </blockquote>
-<p><a href="https://groups.google.com/forum/?hl=en#!msg/comp.lang.python/CCs2oJdyuzc/NYjla5HKMOIJ">Alex Martelli sobre polimorfismo</a></p>
+<p><a
+href="https://groups.google.com/forum/?hl=en#!msg/comp.lang.python/CCs2oJdyuzc/NYjla5HKMOIJ">Alex
+Martelli sobre polimorfismo</a></p>
 </section>
 <section class="slide level2">
 
-<p>La frase se refiere a que más que comprobar si algo es una instancia de un tipo, deberíamos comprobar si tiene la funcionalidad que necesitamos</p>
+<p>La frase se refiere a que más que comprobar si algo es una instancia
+de un tipo, deberíamos comprobar si tiene la funcionalidad que
+necesitamos</p>
 </section>
 <section class="slide level2">
 
-<p>JavaScript es tan dinámico que el operador <code class="sourceCode javascript"><span class="kw">instanceof</span></code> y la propiedad <code class="sourceCode javascript">constructor</code> sólo tienen sentido si seguimos los convenios aprendidos en la lección</p>
+<p>JavaScript es tan dinámico que el operador <code
+class="sourceCode javascript"><span class="kw">instanceof</span></code>
+y la propiedad <code class="sourceCode javascript">constructor</code>
+sólo tienen sentido si seguimos los convenios aprendidos en la
+lección</p>
 </section>
 <section class="slide level2">
 
-<p>Nada nos impide borrar la propiedad <code class="sourceCode javascript">constructor</code> de un prototipo o sobreescribirla en un objeto determinado. En las nuevas versiones de JavaScript, el prototipo de un objeto puede cambiar después de haber sido construido</p>
+<p>Nada nos impide borrar la propiedad <code
+class="sourceCode javascript">constructor</code> de un prototipo o
+sobreescribirla en un objeto determinado. En las nuevas versiones de
+JavaScript, el prototipo de un objeto puede cambiar después de haber
+sido construido</p>
 </section></section>
     </div>
   </div>
@@ -865,7 +1099,7 @@ enemy.moveLeft ----------------------------------|</code></pre>
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -874,7 +1108,7 @@ enemy.moveLeft ----------------------------------|</code></pre>
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -47,7 +50,8 @@
 <li>Elemento añadido a HTML5 que permite dibujar gráficos</li>
 <li>Canvas 2D
 <ul>
-<li>API de dibujo 2D: pintar una imagen, dibujar una curva bézier, manipular píxeles, etc.</li>
+<li>API de dibujo 2D: pintar una imagen, dibujar una curva bézier,
+manipular píxeles, etc.</li>
 </ul></li>
 <li>Canvas 3D
 <ul>
@@ -59,13 +63,15 @@
 <section id="webaudio" class="slide level2">
 <h2>WebAudio</h2>
 <ul>
-<li>Control total sobre la reproducción: panning, volumen, seek, loop, etc.</li>
+<li>Control total sobre la reproducción: panning, volumen, seek, loop,
+etc.</li>
 <li>Formato dependiente del navegador: MP3, OGG, WAV…</li>
 <li>Audio posicional</li>
 <li>Síntesis de audio
 <ul>
 <li>Osciladores, filtros. etc.</li>
-<li>Sí, puedes programarte <a href="https://djen.co/">tu propio sintetizador</a></li>
+<li>Sí, puedes programarte <a href="https://djen.co/">tu propio
+sintetizador</a></li>
 </ul></li>
 </ul>
 </section>
@@ -113,43 +119,55 @@
 <section id="gods-will-be-watching" class="slide level2">
 <h2>Gods will be watching</h2>
 <figure>
-<img data-src="godswillbewatching.png" style="width:70.0%" alt="Gods Will Be Watching" /><figcaption aria-hidden="true">Gods Will Be Watching</figcaption>
+<img data-src="godswillbewatching.png" style="width:70.0%"
+alt="Gods Will Be Watching" />
+<figcaption aria-hidden="true">Gods Will Be Watching</figcaption>
 </figure>
-<p><small><a href="http://www.deconstructeam.com/games/gods-will-be-watching-es/" class="uri">http://www.deconstructeam.com/games/gods-will-be-watching-es/</a></small></p>
+<p><small><a
+href="http://www.deconstructeam.com/games/gods-will-be-watching-es/"
+class="uri">http://www.deconstructeam.com/games/gods-will-be-watching-es/</a></small></p>
 </section>
-<section id="dicey-dungeons-terry-cavanagh" class="slide level2" width="70%">
+<section id="dicey-dungeons-terry-cavanagh" class="slide level2"
+width="70%">
 <h2 width="70%">Dicey Dungeons (Terry Cavanagh)</h2>
 <figure>
-<img data-src="dicey-dungeons.png" alt="Dicey Dungeons" /><figcaption aria-hidden="true">Dicey Dungeons</figcaption>
+<img data-src="dicey-dungeons.png" alt="Dicey Dungeons" />
+<figcaption aria-hidden="true">Dicey Dungeons</figcaption>
 </figure>
-<p><small><a href="https://terrycavanaghgames.com/dice/9/html5/" class="uri">https://terrycavanaghgames.com/dice/9/html5/</a></small></p>
+<p><small><a href="https://terrycavanaghgames.com/dice/9/html5/"
+class="uri">https://terrycavanaghgames.com/dice/9/html5/</a></small></p>
 </section>
 <section id="heroes-of-paragon" class="slide level2">
 <h2>Heroes of Paragon</h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dhP5tR1KIss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><a href="https://apps.facebook.com/heroesofp" class="uri">https://apps.facebook.com/heroesofp</a></p>
+<p><a href="https://apps.facebook.com/heroesofp"
+class="uri">https://apps.facebook.com/heroesofp</a></p>
 </section>
 <section id="the-curious-expedition" class="slide level2">
 <h2>The curious expedition</h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/O5rfiQJTVqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><a href="http://www.curious-expedition.com/" class="uri">http://www.curious-expedition.com/</a></p>
+<p><a href="http://www.curious-expedition.com/"
+class="uri">http://www.curious-expedition.com/</a></p>
 </section>
 <section id="iron-maiden-speed-of-light" class="slide level2">
 <h2>Iron Maiden: Speed of Light</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yLuliCWjGXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><a href="http://speedoflight.ironmaiden.com/" class="uri">http://speedoflight.ironmaiden.com/</a></p>
+<p><a href="http://speedoflight.ironmaiden.com/"
+class="uri">http://speedoflight.ironmaiden.com/</a></p>
 </section>
 <section id="elliot-quest" class="slide level2">
 <h2>Elliot Quest</h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qisxfEWLOrU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><a href="http://elliotquest.com/" class="uri">http://elliotquest.com/</a></p>
+<p><a href="http://elliotquest.com/"
+class="uri">http://elliotquest.com/</a></p>
 </section></section>
 <section>
-<section id="videojuegos-amateur-demos-comerciales-game-jams-etc." class="title-slide slide level1">
+<section id="videojuegos-amateur-demos-comerciales-game-jams-etc."
+class="title-slide slide level1">
 <h1>Videojuegos amateur, demos comerciales, game jams, etc.</h1>
 
 </section>
@@ -157,56 +175,74 @@
 <h2>Playcanvas’ Swooop</h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zU9MMbWyMzs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><a href="https://playcanv.as/p/JtL2iqIH/" class="uri">https://playcanv.as/p/JtL2iqIH/</a></p>
+<p><a href="https://playcanv.as/p/JtL2iqIH/"
+class="uri">https://playcanv.as/p/JtL2iqIH/</a></p>
 </section>
 <section id="evil-glitch" class="slide level2">
 <h2>Evil Glitch</h2>
-<p><a href="http://js13kgames.com/games/evil-glitch/index.html"><img data-src="evil_glitch.png" alt="Evil Glitch screenshot" /></a></p>
-<p><a href="http://js13kgames.com/games/evil-glitch/index.html" class="uri">http://js13kgames.com/games/evil-glitch/index.html</a></p>
+<p><a href="http://js13kgames.com/games/evil-glitch/index.html"><img
+data-src="evil_glitch.png" alt="Evil Glitch screenshot" /></a></p>
+<p><a href="http://js13kgames.com/games/evil-glitch/index.html"
+class="uri">http://js13kgames.com/games/evil-glitch/index.html</a></p>
 </section>
 <section id="agar.io-y-slither.io" class="slide level2">
 <h2>Agar.io y Slither.io</h2>
 <figure>
-<img data-src="slither-agar.png" style="width:70.0%" alt="Agar.io y Slither.io" /><figcaption aria-hidden="true">Agar.io y Slither.io</figcaption>
+<img data-src="slither-agar.png" style="width:70.0%"
+alt="Agar.io y Slither.io" />
+<figcaption aria-hidden="true">Agar.io y Slither.io</figcaption>
 </figure>
-<p><small><a href="https://www.agar.io/" class="uri">https://www.agar.io/</a></small></p>
-<p><small><a href="http://slither.io/" class="uri">http://slither.io/</a></small></p>
+<p><small><a href="https://www.agar.io/"
+class="uri">https://www.agar.io/</a></small></p>
+<p><small><a href="http://slither.io/"
+class="uri">http://slither.io/</a></small></p>
 </section>
 <section id="helloenjoys-hellorun" class="slide level2">
 <h2>Helloenjoy’s HelloRun</h2>
 <iframe src="https://player.vimeo.com/video/73947186?color=ff1561" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
 </iframe>
-<p><a href="https://helloenjoy.com" class="uri">https://helloenjoy.com</a></p>
+<p><a href="https://helloenjoy.com"
+class="uri">https://helloenjoy.com</a></p>
 </section>
 <section id="language-of-the-gods" class="slide level2">
 <h2>Language of the Gods</h2>
 <figure>
-<img data-src="lotg.png" style="width:40.0%" alt="Language of the Gods (ladybenko)" /><figcaption aria-hidden="true">Language of the Gods (ladybenko)</figcaption>
+<img data-src="lotg.png" style="width:40.0%"
+alt="Language of the Gods (ladybenko)" />
+<figcaption aria-hidden="true">Language of the Gods
+(ladybenko)</figcaption>
 </figure>
-<p><small><a href="https://ladybenko.itch.io/the-language-of-the-gods-ld36" class="uri">https://ladybenko.itch.io/the-language-of-the-gods-ld36</a></small></p>
+<p><small><a
+href="https://ladybenko.itch.io/the-language-of-the-gods-ld36"
+class="uri">https://ladybenko.itch.io/the-language-of-the-gods-ld36</a></small></p>
 </section></section>
 <section>
-<section id="experimentos-y-curiosidades" class="title-slide slide level1">
+<section id="experimentos-y-curiosidades"
+class="title-slide slide level1">
 <h1>Experimentos y curiosidades</h1>
 
 </section>
 <section id="simulación-de-fluidos-con-webgl" class="slide level2">
 <h2>Simulación de fluidos con WebGL</h2>
-<p><a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/" class="uri">https://paveldogreat.github.io/WebGL-Fluid-Simulation/</a></p>
+<p><a href="https://paveldogreat.github.io/WebGL-Fluid-Simulation/"
+class="uri">https://paveldogreat.github.io/WebGL-Fluid-Simulation/</a></p>
 </section>
 <section id="quake-js" class="slide level2">
 <h2>Quake JS</h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uEBX152k9FQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
-<p><a href="http://www.quakejs.com/" class="uri">http://www.quakejs.com/</a></p>
+<p><a href="http://www.quakejs.com/"
+class="uri">http://www.quakejs.com/</a></p>
 </section>
 <section id="nes-emulator" class="slide level2">
 <h2>NES Emulator</h2>
-<p><a href="https://fir.sh/projects/jsnes/" class="uri">https://fir.sh/projects/jsnes/</a></p>
+<p><a href="https://fir.sh/projects/jsnes/"
+class="uri">https://fir.sh/projects/jsnes/</a></p>
 </section>
 <section id="pcjs-machines" class="slide level2">
 <h2>PCjs machines</h2>
-<p><a href="http://www.pcjs.org/" class="uri">http://www.pcjs.org/</a></p>
+<p><a href="http://www.pcjs.org/"
+class="uri">http://www.pcjs.org/</a></p>
 </section>
 <section id="webamp" class="slide level2">
 <h2>Webamp</h2>
@@ -225,8 +261,10 @@
 <section id="más-demos" class="slide level2">
 <h2>Más demos</h2>
 <ul>
-<li>WebGL experiments <a href="https://www.chromeexperiments.com/webgl" class="uri">https://www.chromeexperiments.com/webgl</a></li>
-<li>Three.js featured projects <a href="https://threejs.org/" class="uri">https://threejs.org/</a></li>
+<li>WebGL experiments <a href="https://www.chromeexperiments.com/webgl"
+class="uri">https://www.chromeexperiments.com/webgl</a></li>
+<li>Three.js featured projects <a href="https://threejs.org/"
+class="uri">https://threejs.org/</a></li>
 </ul>
 </section></section>
     </div>
@@ -269,7 +307,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -278,7 +316,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

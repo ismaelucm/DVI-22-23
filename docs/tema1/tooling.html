@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -93,7 +96,8 @@
 </section>
 
 <section>
-<section id="las-herramientas-son-importantes" class="title-slide slide level1">
+<section id="las-herramientas-son-importantes"
+class="title-slide slide level1">
 <h1>Las herramientas <strong>son importantes</strong></h1>
 
 </section>
@@ -120,7 +124,8 @@
 </section>
 <section id="toolset-js" class="slide level2">
 <h2>Toolset JS</h2>
-<p>Existen entornos de desarrollo integrados (IDEs) que permiten trabajar en JavaScript</p>
+<p>Existen entornos de desarrollo integrados (IDEs) que permiten
+trabajar en JavaScript</p>
 <p>Nosotros no vamos a trabajar con ellos</p>
 <blockquote>
 <p>El objetivo es aprender cómo funcionan cada una de las piezas</p>
@@ -128,67 +133,89 @@
 </section>
 <section class="slide level2">
 
-<p>El <strong>ecosistema</strong> de herramientas de JS es muy amplio y hay muchas opciones</p>
-<p>Podéis usar las que queráis, pero <strong>tenéis que hacer las entregas según el toolset que se establezca</strong></p>
+<p>El <strong>ecosistema</strong> de herramientas de JS es muy amplio y
+hay muchas opciones</p>
+<p>Podéis usar las que queráis, pero <strong>tenéis que hacer las
+entregas según el toolset que se establezca</strong></p>
 </section>
 <section id="editor-de-textos" class="slide level2">
 <h2>Editor de textos</h2>
-<p>En general, la mayor parte del tiempo se interactúa con el editor de textos</p>
+<p>En general, la mayor parte del tiempo se interactúa con el editor de
+textos</p>
 <p>Esto lo convierte en una de las herramientas fundamentales</p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="vscode.png" style="width:70.0%" alt="VSCode" /><figcaption aria-hidden="true">VSCode</figcaption>
+<img data-src="vscode.png" style="width:70.0%" alt="VSCode" />
+<figcaption aria-hidden="true">VSCode</figcaption>
 </figure>
 </section>
 <section id="consola" class="slide level2">
 <h2>Consola</h2>
-<p>La consola (<em>emulador de terminal</em>) es la herramienta a través de la cual se interactúa con el sistema operativo mediante comandos textuales</p>
+<p>La consola (<em>emulador de terminal</em>) es la herramienta a través
+de la cual se interactúa con el sistema operativo mediante comandos
+textuales</p>
 </section>
 <section class="slide level2">
 
-<p>La consola es menos evidente para el usuario, pero tiene un sinfín de posibilidades y ofrece mucha <strong>potencia de uso</strong></p>
+<p>La consola es menos evidente para el usuario, pero tiene un sinfín de
+posibilidades y ofrece mucha <strong>potencia de uso</strong></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="iterm.png" style="width:70.0%" alt="iTerm2" /><figcaption aria-hidden="true">iTerm2</figcaption>
+<img data-src="iterm.png" style="width:70.0%" alt="iTerm2" />
+<figcaption aria-hidden="true">iTerm2</figcaption>
 </figure>
 </section>
 <section id="intérprete" class="slide level2">
 <h2>Intérprete</h2>
-<p>El <em>intérprete</em> es el programa que recibe el código (en forma de archivo o de instrucciones separadas) y se encarga de ejecutarlo</p>
+<p>El <em>intérprete</em> es el programa que recibe el código (en forma
+de archivo o de instrucciones separadas) y se encarga de ejecutarlo</p>
 </section>
 <section id="navegador" class="slide level2">
 <h2>Navegador</h2>
 </section>
 <section class="slide level2">
 
-<p>Un navegador es un programa capaz de analizar archivos en HTML y mostrarlos como una <a href="https://es.wikipedia.org/wiki/P%C3%A1gina_web">página web</a>.</p>
-<p><img data-src="firefox.png" style="width:40.0%" alt="Firefox" /><br />
+<p>Un navegador es un programa capaz de analizar archivos en HTML y
+mostrarlos como una <a
+href="https://es.wikipedia.org/wiki/P%C3%A1gina_web">página web</a>.</p>
+<p><img data-src="firefox.png" style="width:40.0%"
+alt="Firefox" /><br />
 </p>
-<p>Hoy en día, los navegadores más usados contienen un intérprete de JavaScript.</p>
+<p>Hoy en día, los navegadores más usados contienen un intérprete de
+JavaScript.</p>
 </section>
 <section class="slide level2">
 
-<p>Además, los navegadores proveen al intérprete con un modelo del documento (<a href="https://es.wikipedia.org/wiki/Document_Object_Model">DOM-Document Object Model</a>), que es un API para acceder a una página web</p>
+<p>Además, los navegadores proveen al intérprete con un modelo del
+documento (<a
+href="https://es.wikipedia.org/wiki/Document_Object_Model">DOM-Document
+Object Model</a>), que es un API para acceder a una página web</p>
 </section>
 <section id="servidores-web" class="slide level2">
 <h2>Servidores web</h2>
-<p>Un <em><a href="https://es.wikipedia.org/wiki/Servidor_web">servidor web</a></em> es un programa de ordenador que, a través de la red, “escucha” peticiones según el protocolo HTTP y envía, como respuesta, páginas web</p>
+<p>Un <em><a href="https://es.wikipedia.org/wiki/Servidor_web">servidor
+web</a></em> es un programa de ordenador que, a través de la red,
+“escucha” peticiones según el protocolo HTTP y envía, como respuesta,
+páginas web</p>
 </section>
 <section id="librerías" class="slide level2">
 <h2>Librerías</h2>
 </section>
 <section class="slide level2">
 
-<p>Crear programas que ya han sido programados por otros es una <strong>pérdida de tiempo</strong></p>
+<p>Crear programas que ya han sido programados por otros es una
+<strong>pérdida de tiempo</strong></p>
 </section>
 <section class="slide level2">
 
-<p>Las librerías son fragmentos de código que quedan disponibles para el programador:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// usamos librerías para imprimir contenido</span></span>
+<p>Las librerías son fragmentos de código que quedan disponibles para el
+programador:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// usamos librerías para imprimir contenido</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;hola&quot;</span>)<span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">// o para mejorar nuestro estilo de código</span></span>
@@ -202,7 +229,8 @@
 </section>
 <section id="gestión-de-versiones" class="slide level2">
 <h2>Gestión de versiones</h2>
-<p>Aparte de los programas muy pequeños, nadie escribe un programa, lo termina y no vuelve a tocarlo nunca</p>
+<p>Aparte de los programas muy pequeños, nadie escribe un programa, lo
+termina y no vuelve a tocarlo nunca</p>
 </section>
 <section class="slide level2">
 
@@ -224,11 +252,13 @@
 </ul>
 </section></section>
 <section>
-<section id="herramientas-para-este-curso" class="title-slide slide level1">
+<section id="herramientas-para-este-curso"
+class="title-slide slide level1">
 <h1>Herramientas para este curso</h1>
 
 </section>
-<section id="herramientas-para-desarrollar-juegos-en-la-web" class="slide level2">
+<section id="herramientas-para-desarrollar-juegos-en-la-web"
+class="slide level2">
 <h2>Herramientas para desarrollar juegos en la web</h2>
 <p>Vamos a seguir estas ideas, usando herramientas profesionales</p>
 </section>
@@ -267,49 +297,71 @@
 <li><a href="http://cmder.net/">Cmder</a></li>
 <li><a href="https://conemu.github.io/">Conemu</a></li>
 <li><a href="https://www.iterm2.com/">iTerm2</a></li>
-<li>Casi cualquiera en GNU/Linux (<a href="https://es.wikipedia.org/wiki/GNOME_Terminal">GNOME Terminal</a>, <a href="https://www.kde.org/applications/system/konsole/">Konsole</a>)</li>
+<li>Casi cualquiera en GNU/Linux (<a
+href="https://es.wikipedia.org/wiki/GNOME_Terminal">GNOME Terminal</a>,
+<a
+href="https://www.kde.org/applications/system/konsole/">Konsole</a>)</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>La <em>shell</em> es el programa que se ejecuta en la terminal (que es la ventana)</p>
-<p>En <strong>fundamental</strong> diferenciar entre emulador de terminal (la “ventana”) y el “shell”, que es el programa que <strong>se ejecuta dentro de la ventana</strong> y que procesa nuestros comandos</p>
+<p>La <em>shell</em> es el programa que se ejecuta en la terminal (que
+es la ventana)</p>
+<p>En <strong>fundamental</strong> diferenciar entre emulador de
+terminal (la “ventana”) y el “shell”, que es el programa que <strong>se
+ejecuta dentro de la ventana</strong> y que procesa nuestros
+comandos</p>
 </section>
 <section id="alternativas-típicas-para-la-shell" class="slide level2">
 <h2>Alternativas típicas para la shell</h2>
 <ul>
-<li><a href="https://www.cygwin.com/">Cygwin</a>, o para más comodidad <a href="https://msys2.github.io/">MSYS2</a>, permiten correr shell UNIX en Windows</li>
+<li><a href="https://www.cygwin.com/">Cygwin</a>, o para más comodidad
+<a href="https://msys2.github.io/">MSYS2</a>, permiten correr shell UNIX
+en Windows</li>
 <li><a href="https://es.wikipedia.org/wiki/Bash">Bash</a></li>
 <li><a href="http://www.zsh.org/">Zsh</a></li>
 </ul>
 </section>
 <section id="intérprete-1" class="slide level2">
 <h2>Intérprete</h2>
-<p>Las primeras semanas usaremos <code>node.js</code>, con la versión <strong>que haya instalada en los laboratorios</strong></p>
+<p>Las primeras semanas usaremos <code>node.js</code>, con la versión
+<strong>que haya instalada en los laboratorios</strong></p>
 <figure>
-<img data-src="logonode.svg" style="width:40.0%" alt="Node.js" /><figcaption aria-hidden="true">Node.js</figcaption>
+<img data-src="logonode.svg" style="width:40.0%" alt="Node.js" />
+<figcaption aria-hidden="true">Node.js</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p><code>Node.js</code> incluye un <em>gestor de paquetes</em>, <a href="https://www.npmjs.com/"><code>npm</code></a></p>
+<p><code>Node.js</code> incluye un <em>gestor de paquetes</em>, <a
+href="https://www.npmjs.com/"><code>npm</code></a></p>
 <figure>
-<img data-src="npm.png" alt="npm" /><figcaption aria-hidden="true"><code>npm</code></figcaption>
+<img data-src="npm.png" alt="npm" />
+<figcaption aria-hidden="true"><code>npm</code></figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Un gestor de paquetes es una herramienta, generalmente con interfaz de terminal, que permite instalar librerías, gestionar dependencias entre ellas y lanzar aplicaciones con comandos simples</p>
+<p>Un gestor de paquetes es una herramienta, generalmente con interfaz
+de terminal, que permite instalar librerías, gestionar dependencias
+entre ellas y lanzar aplicaciones con comandos simples</p>
 </section>
 <section class="slide level2">
 
-<p>Así, no hace falta buscar una librería en Internet, encontrar la carpeta donde descargarla, probar la versión, ver que falla y tener que buscar la dependencia…</p>
+<p>Así, no hace falta buscar una librería en Internet, encontrar la
+carpeta donde descargarla, probar la versión, ver que falla y tener que
+buscar la dependencia…</p>
 </section>
 <section class="slide level2">
 
-<p>Los paquetes tienen <a href="http://npm.anvaka.com/">dependencias</a>. Por ejemplo, <a href="http://npm.anvaka.com/#/view/2d/brows%20erify"><code>browserify</code></a></p>
+<p>Los paquetes tienen <a
+href="http://npm.anvaka.com/">dependencias</a>. Por ejemplo, <a
+href="http://npm.anvaka.com/#/view/2d/brows%20erify"><code>browserify</code></a></p>
 <figure>
-<img data-src="browserify.png" style="width:50.0%" alt="Ejemplo de dependencias de browserify" /><figcaption aria-hidden="true">Ejemplo de dependencias de <code>browserify</code></figcaption>
+<img data-src="browserify.png" style="width:50.0%"
+alt="Ejemplo de dependencias de browserify" />
+<figcaption aria-hidden="true">Ejemplo de dependencias de
+<code>browserify</code></figcaption>
 </figure>
 </section>
 <section class="slide level2">
@@ -318,53 +370,70 @@
 </section>
 <section id="navegador-1" class="slide level2">
 <h2>Navegador</h2>
-<p>Usaremos Chrome/Chromium, con la versión <strong>que haya instalada en los laboratorios</strong></p>
+<p>Usaremos Chrome/Chromium, con la versión <strong>que haya instalada
+en los laboratorios</strong></p>
 <figure>
-<img data-src="chrome.png" alt="Navegador Chrome" /><figcaption aria-hidden="true">Navegador Chrome</figcaption>
+<img data-src="chrome.png" alt="Navegador Chrome" />
+<figcaption aria-hidden="true">Navegador Chrome</figcaption>
 </figure>
 </section>
 <section id="servidores-web-1" class="slide level2">
 <h2>Servidores web</h2>
-<p><strong>Es imprescindible que usemos un servidor para esta asignatura</strong></p>
+<p><strong>Es imprescindible que usemos un servidor para esta
+asignatura</strong></p>
 <p>Usaremos cualquier servidor <code>http</code></p>
-<p>Pero podemos no “instalar” ninguno y usar paquetes de Node para lanzar el servidor.</p>
+<p>Pero podemos no “instalar” ninguno y usar paquetes de Node para
+lanzar el servidor.</p>
 <p>Para probar, podéis instalar <code>http-server</code>:</p>
 </section>
 <section class="slide level2">
 
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npm install http-server <span class="co"># para instalarlo (no es necesario)</span></span>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npm install http-server <span class="co"># para instalarlo (no es necesario)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npx http-server  <span class="co"># para ejecutarlo</span></span></code></pre></div>
 <blockquote>
-<p><code>npm install</code> lo descarga, crea una carpeta para instalarlo y lo instala en local junto con sus dependencias</p>
+<p><code>npm install</code> lo descarga, crea una carpeta para
+instalarlo y lo instala en local junto con sus dependencias</p>
 </blockquote>
 <blockquote>
-<p><code>npx</code> lo ejecuta, pero además lo instala si no estaba instalado</p>
+<p><code>npx</code> lo ejecuta, pero además lo instala si no estaba
+instalado</p>
 </blockquote>
 </section>
 <section class="slide level2">
 
-<p>También está <code>live-server</code>, que actualiza automáticamente el navegador cuando hay cambios:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npm install live-server <span class="co"># para instalarlo (no es necesario)</span></span>
+<p>También está <code>live-server</code>, que actualiza automáticamente
+el navegador cuando hay cambios:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npm install live-server <span class="co"># para instalarlo (no es necesario)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npx live-server <span class="co"># para ejecutarlo</span></span></code></pre></div>
 </section>
 <section class="slide level2">
 
-<p>Estos programas sirven sólo <em>a partir del directorio en el que se ejecutan, <strong>nunca rutas por encima</strong></em></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pwd</span>
+<p>Estos programas sirven sólo <em>a partir del directorio en el que se
+ejecutan, <strong>nunca rutas por encima</strong></em></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pwd</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">/home/usuario/misarchivos</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd docs</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npx live-server <span class="co"># `localhost` equivale a `docs/`</span></span></code></pre></div>
-<p>En el caso anterior, no puedo ir a una URL <code class="sourceCode javascript"><span class="st">&#39;../anterior.png&#39;</span></code> que esté en <code>misarchivos</code></p>
+<p>En el caso anterior, no puedo ir a una URL <code
+class="sourceCode javascript"><span class="st">&#39;../anterior.png&#39;</span></code>
+que esté en <code>misarchivos</code></p>
 </section>
 <section class="slide level2">
 
-<p>Si la versión de <code>npm</code> es menor que 5.2.0, habrá que instalar <code>npx</code> de forma manual (hace falta ser administrador):</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npm install <span class="at">-g</span> npx</span></code></pre></div>
+<p>Si la versión de <code>npm</code> es menor que 5.2.0, habrá que
+instalar <code>npx</code> de forma manual (hace falta ser
+administrador):</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> npm install <span class="at">-g</span> npx</span></code></pre></div>
 </section>
 <section class="slide level2">
 
 <p>También podemos arrancar un servidor web por defecto en Python:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python <span class="at">-m</span> http.server</span>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> python <span class="at">-m</span> http.server</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Serving</span> HTTP on 0.0.0.0 port 8000 ...</span></code></pre></div>
 <blockquote>
 <p>Es decir, no es necesario <code>node</code> para un servidor web</p>
@@ -372,26 +441,34 @@
 </section>
 <section id="librerías-1" class="slide level2">
 <h2>Librerías</h2>
-<p>Usaremos muchas, pero en general sólo veremos algunas (la mayoría serán dependencias)</p>
-<p>Para los juegos usaremos <a href="http://phaser.io/" width="50%">Phaser</a></p>
+<p>Usaremos muchas, pero en general sólo veremos algunas (la mayoría
+serán dependencias)</p>
+<p>Para los juegos usaremos <a href="http://phaser.io/"
+width="50%">Phaser</a></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="phaser.png" style="height:20.0%" alt="Phaser" /><figcaption aria-hidden="true">Phaser</figcaption>
+<img data-src="phaser.png" style="height:20.0%" alt="Phaser" />
+<figcaption aria-hidden="true">Phaser</figcaption>
 </figure>
 </section>
 <section id="gestión-de-entregas" class="slide level2">
 <h2>Gestión de entregas</h2>
-<p>Las entregas del proyecto estarán disponibles en un repositorio <code>git</code></p>
-<p>Para entregar, hay que tener todo en un repositorio, según las condiciones de entrega (expuestas en el CV)</p>
+<p>Las entregas del proyecto estarán disponibles en un repositorio
+<code>git</code></p>
+<p>Para entregar, hay que tener todo en un repositorio, según las
+condiciones de entrega (expuestas en el CV)</p>
 </section>
 <section id="git" class="slide level2">
 <h2>Git</h2>
-<p><a href="https://git-scm.com/">Git</a> es el sistema de control de versiones que usaremos para la asignatura</p>
+<p><a href="https://git-scm.com/">Git</a> es el sistema de control de
+versiones que usaremos para la asignatura</p>
 <ul>
-<li><a href="http://rogerdudler.github.io/git-guide/index.es.html">Guía sencilla</a></li>
-<li><a href="https://github.com/delapuente/gitincouples">Git in Couples</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.es.html">Guía
+sencilla</a></li>
+<li><a href="https://github.com/delapuente/gitincouples">Git in
+Couples</a></li>
 </ul>
 </section>
 <section id="gestión-de-proyecto" class="slide level2">
@@ -400,7 +477,8 @@
 </section>
 <section class="slide level2">
 
-<p>Cualquier herramienta vale, pero usaremos alguna variante de Scrum, y habrá que marcar:</p>
+<p>Cualquier herramienta vale, pero usaremos alguna variante de Scrum, y
+habrá que marcar:</p>
 <ul>
 <li><em>Costes</em> de cada tarea/historia de usuario</li>
 <li><em>Responsable</em> de cada tarea</li>
@@ -447,7 +525,7 @@
 
         // Add the current slide number to the URL hash so that reloading the
         // page/copying the URL will return you to the same slide
-        hash: false,
+        hash: true,
 
         // Start with 1 for the hash rather than 0
         hashOneBasedIndex: false,
@@ -456,7 +534,7 @@
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: false,
+        history: true,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,

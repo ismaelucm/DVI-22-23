@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="../reveal.js/dist/reset.css">
   <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
   <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
@@ -89,7 +92,8 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Uso de los lenguajes interpretados en el desarrollo de videojuegos</h1>
+  <h1 class="title">Uso de los lenguajes interpretados en el desarrollo
+de videojuegos</h1>
 </section>
 
 <section>
@@ -99,20 +103,29 @@
 </section>
 <section id="qué-es-un-lenguaje-de-scripting" class="slide level2">
 <h2>¿Qué es un lenguaje de scripting?</h2>
-<p>Los lenguajes de scripting, normalmente interpretados, son lenguajes que son concebidos para ser usados para ampliar la funcionalidad de una herramienta</p>
+<p>Los lenguajes de scripting, normalmente interpretados, son lenguajes
+que son concebidos para ser usados para ampliar la funcionalidad de una
+herramienta</p>
 </section>
 <section class="slide level2">
 
-<p>Algunos lenguajes de scripting se crearon como lenguajes de propósito general (como Python) pero la mayoría de ellos surgieron como extensiones de herramientas específicas (como Ink o Squirrel)</p>
+<p>Algunos lenguajes de scripting se crearon como lenguajes de propósito
+general (como Python) pero la mayoría de ellos surgieron como
+extensiones de herramientas específicas (como Ink o Squirrel)</p>
 </section>
-<section id="javascript-como-lenguaje-de-scripting" class="slide level2">
+<section id="javascript-como-lenguaje-de-scripting"
+class="slide level2">
 <h2>Javascript como lenguaje de scripting</h2>
-<p>JavaScript fue concebido como una forma de programar sobre el navegador web</p>
+<p>JavaScript fue concebido como una forma de programar sobre el
+navegador web</p>
 </section>
 <section id="ejemplo-firefox" class="slide level2">
 <h2>Ejemplo: Firefox</h2>
 <figure>
-<img data-src="firefox_architecture.png" style="width:30.0%" alt="Ejemplo: arquitectura Firefox" /><figcaption aria-hidden="true">Ejemplo: arquitectura Firefox</figcaption>
+<img data-src="firefox_architecture.png" style="width:30.0%"
+alt="Ejemplo: arquitectura Firefox" />
+<figcaption aria-hidden="true">Ejemplo: arquitectura
+Firefox</figcaption>
 </figure>
 </section>
 <section id="ejemplo-firefox-1" class="slide level2">
@@ -125,7 +138,8 @@
 </ul></li>
 <li>El motor usa un interprete de JavaScript: Spider-Monkey</li>
 <li>El interprete de JavaScript se comunica con Gecko</li>
-<li>Lo que programas en JavaScript afecta al comportamiento del engine de Firefox</li>
+<li>Lo que programas en JavaScript afecta al comportamiento del engine
+de Firefox</li>
 </ul>
 </section>
 <section id="cómo-se-consigue" class="slide level2">
@@ -134,48 +148,63 @@
 <section class="slide level2">
 
 <ul>
-<li>Hay que crear una API en C/C++ a la que invocar desde JavaScript</li>
-<li>Hay que conectar el código en JavaScript con la invocación de las funciones nativas de la API en C/C++</li>
+<li>Hay que crear una API en C/C++ a la que invocar desde
+JavaScript</li>
+<li>Hay que conectar el código en JavaScript con la invocación de las
+funciones nativas de la API en C/C++</li>
 </ul>
 </section></section>
 <section>
-<section id="por-qué-se-usan-los-lenguajes-de-scripting" class="title-slide slide level1">
+<section id="por-qué-se-usan-los-lenguajes-de-scripting"
+class="title-slide slide level1">
 <h1>¿Por qué se usan los lenguajes de scripting?</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Si aislamos el núcleo de la aplicación/motor y creamos una API de scripting conseguimos desarrollos más ágiles y en el que se pueden separar mejor los roles del equipo de desarrollo</p>
+<p>Si aislamos el núcleo de la aplicación/motor y creamos una API de
+scripting conseguimos desarrollos más ágiles y en el que se pueden
+separar mejor los roles del equipo de desarrollo</p>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>El tiempo de iteración se reduce (no hay que recompilar ni enlazar con la aplicación/motor)</li>
-<li>No se necesita tener el código de la aplicación/motor para ampliarla</li>
-<li>Bien implementado, se pueden recargar los scripts nuevos sin parar la ejecución del programa (lo veremos con Tiled)</li>
+<li>El tiempo de iteración se reduce (no hay que recompilar ni enlazar
+con la aplicación/motor)</li>
+<li>No se necesita tener el código de la aplicación/motor para
+ampliarla</li>
+<li>Bien implementado, se pueden recargar los scripts nuevos sin parar
+la ejecución del programa (lo veremos con Tiled)</li>
 </ul>
 </section>
 <section class="slide level2">
 
 <p>Además:</p>
 <ul>
-<li>Solo necesitamos un editor de texto y no un compilador, por lo que, en algunos casos, reducimos costes de licencias.</li>
-<li>Los scripts se ejecutan en un sandbox que evita que un error de programación produzca un error catastrófico</li>
-<li>Añaden características que algunos lenguajes de alto nivel no tienen (como serialización)</li>
+<li>Solo necesitamos un editor de texto y no un compilador, por lo que,
+en algunos casos, reducimos costes de licencias.</li>
+<li>Los scripts se ejecutan en un sandbox que evita que un error de
+programación produzca un error catastrófico</li>
+<li>Añaden características que algunos lenguajes de alto nivel no tienen
+(como serialización)</li>
 </ul>
 </section>
 <section class="slide level2">
 
 <p>Pero no todo son ventajas:</p>
 <ul>
-<li>El uso de los lenguajes de scripting hace que el juego/aplicación pueda tener un rendimiento menor (más lentos)</li>
-<li>Es complicado tener que diseñar la API que permita la integración del lenguaje de scripting en la aplicación/motor</li>
-<li>Ausencia de herramientas de soporte (resaltado de sintaxis, depurador…)</li>
+<li>El uso de los lenguajes de scripting hace que el juego/aplicación
+pueda tener un rendimiento menor (más lentos)</li>
+<li>Es complicado tener que diseñar la API que permita la integración
+del lenguaje de scripting en la aplicación/motor</li>
+<li>Ausencia de herramientas de soporte (resaltado de sintaxis,
+depurador…)</li>
 <li>Ausencia de detección de errores (se detectan en ejecución)</li>
 </ul>
 </section></section>
 <section>
-<section id="otros-lenguajes-de-scripting" class="title-slide slide level1">
+<section id="otros-lenguajes-de-scripting"
+class="title-slide slide level1">
 <h1>Otros lenguajes de scripting</h1>
 
 </section>
@@ -185,49 +214,76 @@
 </section>
 <section id="lua" class="slide level2">
 <h2>Lua</h2>
-<p><a href="https://www.lua.org/">Lua</a> es uno de los lenguajes de scripting más usado en motores de juegos</p>
-<p>Es relativamente rápido y es muy fácil conectarlo con en motor en C/C++</p>
+<p><a href="https://www.lua.org/">Lua</a> es uno de los lenguajes de
+scripting más usado en motores de juegos</p>
+<p>Es relativamente rápido y es muy fácil conectarlo con en motor en
+C/C++</p>
 </section>
 <section class="slide level2">
 
-<p>Lua fue expresamente diseñado para ser usado como lenguaje de scripting sobre otros lenguajes</p>
-<p>Hay una gran <a href="https://en.wikipedia.org/wiki/Category:Lua_%28programming_language%29-scripted_video_games">lista de juegos que han utilizado Lua como lenguaje de scripting</a></p>
+<p>Lua fue expresamente diseñado para ser usado como lenguaje de
+scripting sobre otros lenguajes</p>
+<p>Hay una gran <a
+href="https://en.wikipedia.org/wiki/Category:Lua_%28programming_language%29-scripted_video_games">lista
+de juegos que han utilizado Lua como lenguaje de scripting</a></p>
 </section>
 <section class="slide level2">
 
 <p>Pero también se usa en aplicaciones</p>
 <ul>
-<li>El reproductor multimedia VLC <a href="ttps://forum.videolan.org/viewforum.php?f=29">utiliza Lua</a> para que los usuarios puedan crear sus propias extensiones</li>
-<li>OBS Studio permite ampliar la funcionalidad de la herramienta <a href="https://obsproject.com/docs/scripting.html">usando Lua y Python</a></li>
+<li>El reproductor multimedia VLC <a
+href="ttps://forum.videolan.org/viewforum.php?f=29">utiliza Lua</a> para
+que los usuarios puedan crear sus propias extensiones</li>
+<li>OBS Studio permite ampliar la funcionalidad de la herramienta <a
+href="https://obsproject.com/docs/scripting.html">usando Lua y
+Python</a></li>
 </ul>
 </section>
 <section id="php" class="slide level2">
 <h2>PHP</h2>
-<p>PHP es un lenguaje de scripting para permitir expandir la funcionalidad del servidor web Apache</p>
-<p>Hoy en día se usa como lenguaje de propósito general para crear aplicaciones web de servidor</p>
+<p>PHP es un lenguaje de scripting para permitir expandir la
+funcionalidad del servidor web Apache</p>
+<p>Hoy en día se usa como lenguaje de propósito general para crear
+aplicaciones web de servidor</p>
 </section>
 <section class="slide level2">
 
-<p>Su motor, <strong>Zend Engine</strong>, está escrito en C y puede ser usado desde cualquier servidor web como lenguaje de scripting de forma fácil</p>
-<p>También se puede extender su funcionalidad escribiendo extensiones en C</p>
+<p>Su motor, <strong>Zend Engine</strong>, está escrito en C y puede ser
+usado desde cualquier servidor web como lenguaje de scripting de forma
+fácil</p>
+<p>También se puede extender su funcionalidad escribiendo extensiones en
+C</p>
 </section>
 <section id="bash" class="slide level2">
 <h2>Bash</h2>
-<p>La consola de comandos Bash, consola principal de los sistemas Linux/Unix, tiene un lenguaje de scripting que permite programar sobre ella</p>
+<p>La consola de comandos Bash, consola principal de los sistemas
+Linux/Unix, tiene un lenguaje de scripting que permite programar sobre
+ella</p>
 </section>
 <section id="python" class="slide level2">
 <h2>Python</h2>
-<p>Python es un lenguaje de propósito general creado para que fuese fácil de aprender y de usar por usuarios con un nivel de alfabetización básico en lenguajes de programación</p>
-<p>Necesita un interprete que debemos instalar en el sistema para poder usarlo (similar a node con JavaScript) y se ha usado mucho como sustituto de los lenguajes de scripting clásicos para sistemas operativos como Bash o la consola de MS-DOS/Windows</p>
+<p>Python es un lenguaje de propósito general creado para que fuese
+fácil de aprender y de usar por usuarios con un nivel de alfabetización
+básico en lenguajes de programación</p>
+<p>Necesita un interprete que debemos instalar en el sistema para poder
+usarlo (similar a node con JavaScript) y se ha usado mucho como
+sustituto de los lenguajes de scripting clásicos para sistemas
+operativos como Bash o la consola de MS-DOS/Windows</p>
 </section>
 <section class="slide level2">
 
-<p>Actualmente el uso de Python se ha extendido enormemente, no sólo como lenguaje de propósito general, sino como lenguaje de <em>scripting de propósito general</em></p>
-<p>Python es relativamente fácil de usar desde una aplicación escrita en otro lenguaje (típicamente C/C++) por lo que se ha usado como lenguaje de scripting en muchas aplicaciones</p>
-<p><a href="https://docs.python.org/3/extending/embedding.html">Python en una aplicación</a></p>
+<p>Actualmente el uso de Python se ha extendido enormemente, no sólo
+como lenguaje de propósito general, sino como lenguaje de <em>scripting
+de propósito general</em></p>
+<p>Python es relativamente fácil de usar desde una aplicación escrita en
+otro lenguaje (típicamente C/C++) por lo que se ha usado como lenguaje
+de scripting en muchas aplicaciones</p>
+<p><a href="https://docs.python.org/3/extending/embedding.html">Python
+en una aplicación</a></p>
 </section></section>
 <section>
-<section id="uso-de-los-lenguajes-de-scripting-en-videojuegos" class="title-slide slide level1">
+<section id="uso-de-los-lenguajes-de-scripting-en-videojuegos"
+class="title-slide slide level1">
 <h1>Uso de los lenguajes de scripting en videojuegos</h1>
 
 </section>
@@ -241,130 +297,189 @@
 </ul>
 </section></section>
 <section>
-<section id="creación-de-contenidos-de-gameplay" class="title-slide slide level1">
+<section id="creación-de-contenidos-de-gameplay"
+class="title-slide slide level1">
 <h1>Creación de contenidos de gameplay</h1>
 
 </section>
 <section id="lua-en-cryengine" class="slide level2">
 <h2>Lua en CryEngine</h2>
-<p>El motor <a href="https://en.wikipedia.org/wiki/List_of_CryEngine_games">CryEngine de Crytek</a> utiliza Lua como lenguaje de scripting</p>
-<p>Los programadores del engine pueden exponer funciones de sus clases creadas en C++ para que los programadores de scripting en Lua puedan usarlas</p>
-<p><a href="http://docs.cryengine.com/display/SDKDOC4/Lua+Scripting">Lua en CryEngine</a></p>
+<p>El motor <a
+href="https://en.wikipedia.org/wiki/List_of_CryEngine_games">CryEngine
+de Crytek</a> utiliza Lua como lenguaje de scripting</p>
+<p>Los programadores del engine pueden exponer funciones de sus clases
+creadas en C++ para que los programadores de scripting en Lua puedan
+usarlas</p>
+<p><a href="http://docs.cryengine.com/display/SDKDOC4/Lua+Scripting">Lua
+en CryEngine</a></p>
 </section>
 <section id="luabind" class="slide level2">
 <h2>Luabind</h2>
-<p><a href="http://www.rasterbar.com/products/luabind.html">Luabind</a> es una librería que ayuda a usar Lua desde C++. Simplifica la tarea y permite hacer entre otras cosas:</p>
+<p><a href="http://www.rasterbar.com/products/luabind.html">Luabind</a>
+es una librería que ayuda a usar Lua desde C++. Simplifica la tarea y
+permite hacer entre otras cosas:</p>
 <ul>
 <li>Tener clases de C++ en Lua</li>
 <li>Tener funciones y clases de Lua en C++</li>
-<li>Polimorfismo de los métodos de una clase base en C++ desde una clase derivada en Lua</li>
+<li>Polimorfismo de los métodos de una clase base en C++ desde una clase
+derivada en Lua</li>
 </ul>
 </section>
 <section id="c-en-unity" class="slide level2">
 <h2>C# en Unity</h2>
 <ul>
 <li>El núcleo de Unity está implementado en C/C++</li>
-<li>Los GameObjects y algunos componentes están implementados en ese mismo lenguaje</li>
-<li>Si queremos crear nuevos componentes (y, por tanto, nuevo contenido) entonces usamos C# como lenguaje de scripting</li>
+<li>Los GameObjects y algunos componentes están implementados en ese
+mismo lenguaje</li>
+<li>Si queremos crear nuevos componentes (y, por tanto, nuevo contenido)
+entonces usamos C# como lenguaje de scripting</li>
 </ul>
 </section>
 <section class="slide level2">
 
 <ul>
-<li>Unity tiene un <em>wrapper</em> que permite la interconexión entre los scripts en C# y el núcleo en C++</li>
-<li>Los scripts son compilados usando los <em>scripting backends</em> Mono, .NET o IL2CPP e integrados en el ejecutable</li>
+<li>Unity tiene un <em>wrapper</em> que permite la interconexión entre
+los scripts en C# y el núcleo en C++</li>
+<li>Los scripts son compilados usando los <em>scripting backends</em>
+Mono, .NET o IL2CPP e integrados en el ejecutable</li>
 </ul>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="il2cpp.png" alt="Infraestructura de IL2CPP" /><figcaption aria-hidden="true">Infraestructura de IL2CPP</figcaption>
+<img data-src="il2cpp.png" alt="Infraestructura de IL2CPP" />
+<figcaption aria-hidden="true">Infraestructura de IL2CPP</figcaption>
 </figure>
-<p><small>Podéis conocer más sobre el scripting de Unity <a href="https://docs.unity3d.com/Manual/ScriptingSection.html">a través de su manual</a></small></p>
+<p><small>Podéis conocer más sobre el scripting de Unity <a
+href="https://docs.unity3d.com/Manual/ScriptingSection.html">a través de
+su manual</a></small></p>
 </section>
 <section id="scripting-visual" class="slide level2">
 <h2>Scripting Visual</h2>
-<p>Algunos motores usan lenguajes de scripting visual para la creación de contenidos</p>
-<p>Los lenguajes visuales se suelen componer de bloques con parámetros y flechas que indican el flujo de ejecución</p>
+<p>Algunos motores usan lenguajes de scripting visual para la creación
+de contenidos</p>
+<p>Los lenguajes visuales se suelen componer de bloques con parámetros y
+flechas que indican el flujo de ejecución</p>
 <p>La programación por bloques es más sencilla para no programadores</p>
 </section>
 <section id="bolt-en-unity" class="slide level2">
 <h2>Bolt en Unity</h2>
 <figure>
-<img data-src="bolt.png" alt="Bolt es el lenguaje de scripting visual para Unity" /><figcaption aria-hidden="true">Bolt es el lenguaje de scripting visual para Unity</figcaption>
+<img data-src="bolt.png"
+alt="Bolt es el lenguaje de scripting visual para Unity" />
+<figcaption aria-hidden="true">Bolt es el lenguaje de scripting visual
+para Unity</figcaption>
 </figure>
 </section>
 <section id="blueprints-en-unreal" class="slide level2">
 <h2>Blueprints en Unreal</h2>
 <figure>
-<img data-src="blueprint.png" alt="En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual" /><figcaption aria-hidden="true">En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual</figcaption>
+<img data-src="blueprint.png"
+alt="En Unreal se usan blueprints (en lugar de C++) para hacer scripting visual" />
+<figcaption aria-hidden="true">En Unreal se usan blueprints (en lugar de
+C++) para hacer scripting visual</figcaption>
 </figure>
 </section>
 <section id="ink" class="slide level2">
 <h2>Ink</h2>
 <ul>
-<li>Lenguaje y herramientas para la creación de videojuegos narrativos</li>
-<li>Usado en <a href="https://www.youtube.com/channel/UCvnHxTnr-J3xYg0RaVJVMUQ">80 days</a> o <a href="https://www.youtube.com/channel/UCUhIQUAgCHdZtfD-pz1nGPQ">Sorcery!</a></li>
-<li><a href="https://www.inklestudios.com/ink/">Ink es de acceso libre</a> y tiene un editor llamado <a href="https://github.com/inkle/inky">Inky, desarrollado en Javascript</a></li>
+<li>Lenguaje y herramientas para la creación de videojuegos
+narrativos</li>
+<li>Usado en <a
+href="https://www.youtube.com/channel/UCvnHxTnr-J3xYg0RaVJVMUQ">80
+days</a> o <a
+href="https://www.youtube.com/channel/UCUhIQUAgCHdZtfD-pz1nGPQ">Sorcery!</a></li>
+<li><a href="https://www.inklestudios.com/ink/">Ink es de acceso
+libre</a> y tiene un editor llamado <a
+href="https://github.com/inkle/inky">Inky, desarrollado en
+Javascript</a></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="ink.png" alt="Ejemplo del lenguaje Ink" /><figcaption aria-hidden="true">Ejemplo del lenguaje Ink</figcaption>
+<img data-src="ink.png" alt="Ejemplo del lenguaje Ink" />
+<figcaption aria-hidden="true">Ejemplo del lenguaje Ink</figcaption>
 </figure>
-<p><small>Más detalles sobre el lenguaje <a href="https://www.youtube.com/watch?v=KYBf6Ko1I2k">en esta charla de la GDC</a></small></p>
+<p><small>Más detalles sobre el lenguaje <a
+href="https://www.youtube.com/watch?v=KYBf6Ko1I2k">en esta charla de la
+GDC</a></small></p>
 </section>
 <section id="squirrel" class="slide level2">
 <h2>Squirrel</h2>
 <ul>
 <li>Lenguaje imperativo similar a Lua</li>
-<li>Desarrollado por <a href="http://squirrel-lang.org/">Alberto Demichelis</a></li>
-<li>Usado en <a href="https://www.youtube.com/channel/UCE8i1bve9eHEc_yn63NIX7A">Left 4 Dead 2</a> y <a href="https://www.youtube.com/channel/UCn0PHntRGo_-S700MrnY-bg">Portal 2</a></li>
+<li>Desarrollado por <a href="http://squirrel-lang.org/">Alberto
+Demichelis</a></li>
+<li>Usado en <a
+href="https://www.youtube.com/channel/UCE8i1bve9eHEc_yn63NIX7A">Left 4
+Dead 2</a> y <a
+href="https://www.youtube.com/channel/UCn0PHntRGo_-S700MrnY-bg">Portal
+2</a></li>
 </ul>
 </section>
 <section class="slide level2">
 
-<p>En <a href="https://developer.valvesoftware.com/wiki/L4D2_Vscripts">L4D2</a> se usa para:</p>
+<p>En <a
+href="https://developer.valvesoftware.com/wiki/L4D2_Vscripts">L4D2</a>
+se usa para:</p>
 <ul>
 <li>Añadir “inteligencia” e interacción a entidades del mundo</li>
 <li>Para crear mods de mapas y spawnear entidades</li>
-<li>Para modificar el comportamiento del <a href="https://steamcdn-a.akamaihd.net/apps/valve/2009/ai_systems_of_l4d_mike_booth.pdf">AI director, responsable de controlar la generación de hordas de infectados</a></li>
+<li>Para modificar el comportamiento del <a
+href="https://steamcdn-a.akamaihd.net/apps/valve/2009/ai_systems_of_l4d_mike_booth.pdf">AI
+director, responsable de controlar la generación de hordas de
+infectados</a></li>
 </ul>
 </section></section>
 <section>
-<section id="creación-de-herramientas-para-el-desarrollo-de-recursos" class="title-slide slide level1">
+<section id="creación-de-herramientas-para-el-desarrollo-de-recursos"
+class="title-slide slide level1">
 <h1>Creación de herramientas para el desarrollo de recursos</h1>
 
 </section>
 <section class="slide level2">
 
-<p>En la industria de videojuegos existen muchos roles: diseñadores, animadores, concept artists, músicos…</p>
+<p>En la industria de videojuegos existen muchos roles: diseñadores,
+animadores, concept artists, músicos…</p>
 <p>No todos programan (ni se espera que lo hagan)</p>
 </section>
 <section class="slide level2">
 
-<p>Los programadores no solo desarrollan gameplay sino que se encargan de la implementación de herramientas que ayuden a que otros miembros del equipo puedan hacer su trabajo</p>
-<p>Muchas de estas herramientas se desarrollan usando lenguajes de scripting</p>
+<p>Los programadores no solo desarrollan gameplay sino que se encargan
+de la implementación de herramientas que ayuden a que otros miembros del
+equipo puedan hacer su trabajo</p>
+<p>Muchas de estas herramientas se desarrollan usando lenguajes de
+scripting</p>
 </section>
 <section id="editor-de-sprites" class="slide level2">
 <h2>Editor de sprites</h2>
 <figure>
-<img data-src="piskel.png" style="width:50.0%" alt="Piskel" /><figcaption aria-hidden="true"><a href="https://www.piskelapp.com/p/create/sprite">Piskel</a></figcaption>
+<img data-src="piskel.png" style="width:50.0%" alt="Piskel" />
+<figcaption aria-hidden="true"><a
+href="https://www.piskelapp.com/p/create/sprite">Piskel</a></figcaption>
 </figure>
-<p><small>Desarrollado en JavaScript. Código disponible <a href="https://github.com/piskelapp/piskel">en este repositorio</a></small></p>
+<p><small>Desarrollado en JavaScript. Código disponible <a
+href="https://github.com/piskelapp/piskel">en este
+repositorio</a></small></p>
 </section>
 <section id="efectos-sonoros-y-música" class="slide level2">
 <h2>Efectos sonoros y música</h2>
 <figure>
-<img data-src="jsfxr.png" style="width:35.0%" alt="jsfxr" /><figcaption aria-hidden="true"><a href="https://sfxr.me/">jsfxr</a></figcaption>
+<img data-src="jsfxr.png" style="width:35.0%" alt="jsfxr" />
+<figcaption aria-hidden="true"><a
+href="https://sfxr.me/">jsfxr</a></figcaption>
 </figure>
-<p><small>Desarrollado en JavaScript. Código disponible <a href="https://github.com/chr15m/jsfxr">en este repositorio</a></small></p>
+<p><small>Desarrollado en JavaScript. Código disponible <a
+href="https://github.com/chr15m/jsfxr">en este
+repositorio</a></small></p>
 </section>
 <section id="efectos-sonoros-y-música-1" class="slide level2">
 <h2>Efectos sonoros y música</h2>
 <figure>
-<img data-src="chiptone.png" style="width:65.0%" alt="Chiptone" /><figcaption aria-hidden="true"><a href="https://sfbgames.itch.io/chiptone">Chiptone</a></figcaption>
+<img data-src="chiptone.png" style="width:65.0%" alt="Chiptone" />
+<figcaption aria-hidden="true"><a
+href="https://sfbgames.itch.io/chiptone">Chiptone</a></figcaption>
 </figure>
 </section>
 <section id="efectos-y-partículas" class="slide level2">
@@ -385,81 +500,126 @@
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> <span class="dv">300</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
-<p><small>Se puede ver en funcionamiento <a href="https://phaser.io/examples/v3/view/game-objects/particle-emitter/fire-max-10-particles#">en esta página</a></small></p>
+<p><small>Se puede ver en funcionamiento <a
+href="https://phaser.io/examples/v3/view/game-objects/particle-emitter/fire-max-10-particles#">en
+esta página</a></small></p>
 </section>
 <section id="editor-de-efectos-y-partículas" class="slide level2">
 <h2>Editor de efectos y partículas</h2>
 <figure>
-<img data-src="https://raw.githubusercontent.com/koreezgames/phaser3-particle-editor/master/showcase.gif" alt="Editor de partículas para Phaser3" /><figcaption aria-hidden="true">Editor de partículas <a href="https://koreezgames.github.io/phaser3-particle-editor/">para Phaser3</a></figcaption>
+<img
+data-src="https://raw.githubusercontent.com/koreezgames/phaser3-particle-editor/master/showcase.gif"
+alt="Editor de partículas para Phaser3" />
+<figcaption aria-hidden="true">Editor de partículas <a
+href="https://koreezgames.github.io/phaser3-particle-editor/">para
+Phaser3</a></figcaption>
 </figure>
-<p><small>Desarrollado en TypeScript. Código disponible <a href="https://github.com/koreezgames/phaser3-particle-editor">en este repositorio</a></small></p>
+<p><small>Desarrollado en TypeScript. Código disponible <a
+href="https://github.com/koreezgames/phaser3-particle-editor">en este
+repositorio</a></small></p>
 </section>
 <section id="editor-de-efectos-y-partículas-1" class="slide level2">
 <h2>Editor de efectos y partículas</h2>
 <figure>
-<img data-src="revoltfx.png" style="width:50.0%" alt="Editor de partículas para Pixi" /><figcaption aria-hidden="true">Editor de partículas <a href="https://editor.revoltfx.electronauts.net/">para Pixi</a></figcaption>
+<img data-src="revoltfx.png" style="width:50.0%"
+alt="Editor de partículas para Pixi" />
+<figcaption aria-hidden="true">Editor de partículas <a
+href="https://editor.revoltfx.electronauts.net/">para
+Pixi</a></figcaption>
 </figure>
-<p><small>Desarrollado en JavaScript. Código disponible <a href="https://github.com/bma73/revolt-fx">en este repositorio</a></small></p>
+<p><small>Desarrollado en JavaScript. Código disponible <a
+href="https://github.com/bma73/revolt-fx">en este
+repositorio</a></small></p>
 </section>
 <section id="editores-de-mapas-específicos" class="slide level2">
 <h2>Editores de mapas específicos</h2>
 <figure>
-<img data-src="rpg.jpg" alt="Editor de mapas para RPG, con desarrollo para HTML5 y JS" /><figcaption aria-hidden="true"><a href="https://deepnight.net/tools/rpg-map/">Editor de mapas para RPG</a>, con desarrollo para HTML5 y JS</figcaption>
+<img data-src="rpg.jpg"
+alt="Editor de mapas para RPG, con desarrollo para HTML5 y JS" />
+<figcaption aria-hidden="true"><a
+href="https://deepnight.net/tools/rpg-map/">Editor de mapas para
+RPG</a>, con desarrollo para HTML5 y JS</figcaption>
 </figure>
 </section></section>
 <section>
-<section id="extender-la-funcionalidad-de-herramientas" class="title-slide slide level1">
+<section id="extender-la-funcionalidad-de-herramientas"
+class="title-slide slide level1">
 <h1>Extender la funcionalidad de herramientas</h1>
 
 </section>
 <section class="slide level2">
 
-<p>Por último, vamos a ver que algunas de las herramientas usadas en el desarrollo de videojuegos pueden ser ampliadas y mejoradas para la realización de tareas específicas de nuestro equipo de desarrollo</p>
+<p>Por último, vamos a ver que algunas de las herramientas usadas en el
+desarrollo de videojuegos pueden ser ampliadas y mejoradas para la
+realización de tareas específicas de nuestro equipo de desarrollo</p>
 </section>
 <section class="slide level2">
 
-<p>Como hemos visto anteriormente, estas herramientas han de estar diseñadas para proporcionar una API que permita extender la herramienta con un lenguaje de scripting</p>
+<p>Como hemos visto anteriormente, estas herramientas han de estar
+diseñadas para proporcionar una API que permita extender la herramienta
+con un lenguaje de scripting</p>
 </section>
 <section id="extender-blender-con-python" class="slide level2">
 <h2>Extender Blender con Python</h2>
-<p><a href="https://www.blender.org/">Blender</a> es una herramienta de código libre para crear y renderizar objetos 3D</p>
-<p>Aunque Blender está escrito en C/C++ usa Python como lenguaje de scripting para facilitar la creación de macros y add-ons por parte de los usuarios</p>
+<p><a href="https://www.blender.org/">Blender</a> es una herramienta de
+código libre para crear y renderizar objetos 3D</p>
+<p>Aunque Blender está escrito en C/C++ usa Python como lenguaje de
+scripting para facilitar la creación de macros y add-ons por parte de
+los usuarios</p>
 </section>
 <section class="slide level2">
 
-<p>Blender dispone de una <a href="https://docs.blender.org/manual/en/latest/advanced/scripting/introduction.html">API de scripting en Python</a></p>
-<p>Podéis ver un ejemplo para la <a href="https://www.youtube.com/watch?v=4KwPhQX63SQ">creación de una herramienta de texto en este vídeo</a></p>
+<p>Blender dispone de una <a
+href="https://docs.blender.org/manual/en/latest/advanced/scripting/introduction.html">API
+de scripting en Python</a></p>
+<p>Podéis ver un ejemplo para la <a
+href="https://www.youtube.com/watch?v=4KwPhQX63SQ">creación de una
+herramienta de texto en este vídeo</a></p>
 </section>
 <section class="slide level2">
 
 <figure>
-<img data-src="serpens.jpg" alt="Serpens" /><figcaption aria-hidden="true">Serpens</figcaption>
+<img data-src="serpens.jpg" alt="Serpens" />
+<figcaption aria-hidden="true">Serpens</figcaption>
 </figure>
 </section>
 <section id="extender-krita-con-python" class="slide level2">
 <h2>Extender Krita con Python</h2>
 <figure>
-<img data-src="Krita.png" alt="Krita" /><figcaption aria-hidden="true">Krita</figcaption>
+<img data-src="Krita.png" alt="Krita" />
+<figcaption aria-hidden="true">Krita</figcaption>
 </figure>
 </section>
 <section class="slide level2">
 
-<p>Krita <a href="https://invent.kde.org/graphics/krita">está implementada en C++</a>…</p>
-<p>…pero dispone de una <a href="https://docs.krita.org/en/user_manual/python_scripting/introduction_to_python_scripting.html">API de scripting en Python</a></p>
+<p>Krita <a href="https://invent.kde.org/graphics/krita">está
+implementada en C++</a>…</p>
+<p>…pero dispone de una <a
+href="https://docs.krita.org/en/user_manual/python_scripting/introduction_to_python_scripting.html">API
+de scripting en Python</a></p>
 </section>
 <section class="slide level2">
 
-<p>Por ejemplo, un <a href="https://github.com/EugenDueck/kritaSpritesheetManager/tree/master/spritesheetExporter">exportador de animaciones a spritesheets para Phaser</a></p>
+<p>Por ejemplo, un <a
+href="https://github.com/EugenDueck/kritaSpritesheetManager/tree/master/spritesheetExporter">exportador
+de animaciones a spritesheets para Phaser</a></p>
 </section>
 <section id="extender-audacity-con-nyquist" class="slide level2">
 <h2>Extender Audacity con Nyquist</h2>
-<p><a href="https://audacity.es/">Audacity</a> es una herramienta de edición de audio <a href="https://github.com/audacity/audacity">de código abierto</a> implementada en C++</p>
-<p>Soporta distintos tipos de extensiones, muchas de ellas implementadas en C/C++, como LV2 o VST</p>
+<p><a href="https://audacity.es/">Audacity</a> es una herramienta de
+edición de audio <a href="https://github.com/audacity/audacity">de
+código abierto</a> implementada en C++</p>
+<p>Soporta distintos tipos de extensiones, muchas de ellas implementadas
+en C/C++, como LV2 o VST</p>
 </section>
 <section class="slide level2">
 
-<p>Pero también permite <a href="https://wiki.audacityteam.org/wiki/Nyquist_Documentation">crear extensiones usando Nyquist</a>, un lenguaje similar a LISP para la síntesis de audio</p>
-<p>Esto nos permite crear nuestros propios efectos para aplicarlos automáticamente al audio de nuestro videojuego</p>
+<p>Pero también permite <a
+href="https://wiki.audacityteam.org/wiki/Nyquist_Documentation">crear
+extensiones usando Nyquist</a>, un lenguaje similar a LISP para la
+síntesis de audio</p>
+<p>Esto nos permite crear nuestros propios efectos para aplicarlos
+automáticamente al audio de nuestro videojuego</p>
 </section>
 <section class="slide level2">
 
