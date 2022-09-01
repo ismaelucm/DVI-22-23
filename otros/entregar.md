@@ -12,30 +12,30 @@ Los hitos conllevarán una presentación pública en clase, el día correspondie
 
 La **clase tendrá que organizar la sesión** de presentaciones: el orden, el tiempo por grupo, cómo centralizar el material de presentación, controlar el tiempo de cada grupo, etcétera.
 
+Los puntos que se deben abordar durante la presentación aparecerán en la entrega del Campus Virtual.
+
 # Realimentación en las entregas
 
-La evaluación y la realimentación se hará en vivo, durante las horas de laboratorio, a cada grupo, siempre que los recursos de espacios y tiempo lo permitan. Un profesor se sentará con el grupo y evaluará, con preguntas, exposición por parte del grupo y prueba del videojuego desarrollado, el avance. Después, las conclusiones:
+La evaluación y la realimentación se hará en vivo, durante las horas de laboratorio, a cada grupo, siempre que los recursos de espacios y tiempo lo permitan. Se evaluará, con preguntas, la exposición por parte del grupo y el videojuego desarrollado hasta el momento. Después, las conclusiones:
 
 - Se explicarán verbalmente.
 - Se darán recomendaciones sobre mejoras, y su posible impacto en la nota.
 - Quedarán resumidas brevemente como una nota en el campus virtual.
 
-Ninguna evaluación tendrá peso excepto la última, pero los criterios de evaluación no variarán (o sufrirán variaciones mínimas para adecuarlos y mejorarlos), con lo que los estudiantes sabrán siempre cuál es su evaluación.
+Ninguna evaluación tendrá peso sobre la nota de la asignatura excepto la última, pero los criterios de evaluación no variarán (o sufrirán variaciones mínimas para adecuarlos y mejorarlos), con lo que los estudiantes sabrán siempre cuál es su evaluación.
 
 # Envíos
 
-Se rellenará el formulario general de envío para cada hito. Estará disponible en el Campus Virtual.
-
-En este formulario se adjuntará todo el material necesario.
+El envio de los hitos cumplidos se realizarán a través de las entregas que estarán disponibles en el Campus Virtual.
 
 ## Contenido del repositorio
 
 El repositorio de `git` tendrá la siguiente estructura desde la raíz:
 
-- `GDD.md`, en *game design document*, en [Markdown](https://guides.github.com/features/mastering-markdown/)
+- `GDD.md`, el *game design document*, en [Markdown](https://guides.github.com/features/mastering-markdown/)
 - `index.html`, con la página web del proyecto (el archivo que se verá al activar GitHub pages)
 - `architecture.md`, con los documentos y diagrama de arquitectura
-- `assets.md`, con la descripción de los assets y las decisiones de dirección artística
+- `assets.md`, con la descripción de los assets y las decisiones de dirección artística (Markdown)
 - `README.md`, el archivo en Markdown que se verá en la raíz de la página del repositorio. Tiene que contener, bien claro:
     - Una descripción general del proyecto
     - Un enlace a la página de gestión del proyecto (Trello, GitHub Project, Pivotal...)

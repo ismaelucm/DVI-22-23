@@ -107,11 +107,13 @@ Se calificarán todos los hitos, pero la nota final corresponderá al hito final
 
 La evaluación se hará por pesos:
 
-- **Implementación: 60%**
-- Diseño: 10%
-- Producción: 10%
-- Arte: 10%
-- Comunicación: 10%
+- **Implementación ($\geq 50$%)**
+- Diseño
+- Producción 
+- Arte 
+- Comunicación
+
+*\*Los pesos exactos estarán publicados en el Campus Virtual*
 
 ---
 
@@ -119,7 +121,7 @@ La evaluación se hará por pesos:
 
 > Independientemente de sus partes, el proyecto tiene que ser aceptable globalmente
 
-El proyecto tiene que **funcionar**, ser jugable completamente, tener un aspecto visual y gráfico aceptable y no tener errores graves
+El proyecto tiene que **funcionar**, ser jugable completamente, tener un aspecto visual y gráfico aceptable y no tener errores graves de código/ejecución
 
 A partir de esa premisa se pondrá la nota
 

@@ -4,7 +4,8 @@ title: Cómo preguntar dudas e informar de errores
 
 # Cuando surgen los errores
 
-Es normal (y positivo) que, durante el desarrollo de la asignatura, surjan errores de código y ejecución. Cuando sea así, podéis y debéis preguntar tanto a vuestros compañeros como al equipo docente.
+Es normal (y positivo) que, durante el desarrollo de la asignatura, surjan dudas y errores sobre el código y la ejecución. Cuando sea así, podéis y debéis preguntar tanto a vuestros compañeros como al equipo docente.
+en estos casos debemos usar el foro de la asignatura.
 
 # Antes de preguntar
 
@@ -15,7 +16,14 @@ Es normal (y positivo) que, durante el desarrollo de la asignatura, surjan error
 
 Ten en cuenta que cada pregunta requiere tiempo tuyo, de tus compañeros y de tus profesores. Y a nadie le sobra. Además, aunque sea cómodo y tentador preguntar sin haber hecho el trabajo primero, buscar e intentar encontrar la solución **es el mejor camino para convertirse en un buen programador**.
 
+![Diferencia programador Junior y Senior](buscar.png){width=20%}/
+
+Saber qué buscar cuando se tiene un problema es más importante de lo que parece. Por ejemplo google tiene [operadores para realizar búsquedas más precisas](https://support.google.com/websearch/answer/2466433?hl=en). Y normalmente se encuentran mejores resultados a problemas de programación con busquedas en inglés.
+
 Pero, por supuesto, no tiene sentido buscar como locos durante una semana. Si, tras la búsqueda, no habéis encontrado nada, es el momento de hacer la pregunta.
+
+Si habéis tenido un problema o una duda y habéis conseguido resolverla, evaluad si puede servir a otros compañeros y en ese caso compartid también vuestra experiencia.
+
 
 # Cómo preguntar
 
@@ -54,7 +62,7 @@ Para tener una solución, hay que hacer un diagnóstico. Y, para tener un diagn�
 >
 > Yo 1. arranco con `node init.js`{.sh}, 2. elijo "aplastar enemigo", 3. elijo "aplastar con alegría", y me sale el error que podéis ver en <http://pastebin.com/s2n986aund>.
 >
-> Mi código está en Github, en alumnofiera267/practica7, en el commit `a56afde34`...
+> Mi código está en Github, en alumnofiera267/practica7, en el commit `a56afde34`... (compartir enlace)
 >
 > Una captura de lo que me sale en el navegador está en <https://imagebin.ca/v/32HTFG3qbe4k>.
 >

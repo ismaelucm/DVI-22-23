@@ -23,7 +23,7 @@ Por tanto, no hay que descuidar ninguna de las partes aunque los números salgan
 
 # Contribución relativa por áreas
 
-En la entrega final del proyecto, el grupo declarará la contribución relativa de cada uno de sus miembros, por áreas. Esto quiere decir que se informará, por cada miembro, cuál ha sido su porcentaje en la implementación, arte, diseño, y demás aspectos del proyecto. Este peso se tendrá en cuenta para calcular la nota final (que dependerá, en última instancia, del equipo docente).
+En la entrega de cada hito, el grupo debe declarar la contribución relativa de cada uno de sus miembros, por áreas. Esto quiere decir que se informará, por cada miembro, cuál ha sido su porcentaje en la implementación, arte, diseño, y demás aspectos del proyecto. Este peso se tendrá en cuenta para calcular la nota final (que dependerá, en última instancia, del equipo docente).
 
 # Evaluación extraordinaria
 
