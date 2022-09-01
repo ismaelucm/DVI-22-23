@@ -2,20 +2,15 @@
 title: Proyectos en la red
 ---
 
+
+
 # ¿Proyectos o juegos?
 
 ---
 
 En realidad, hablaremos de videojuegos en HTML5
 
-Muchos aspectos son extrapolables a otros proyectos y sectores (móviles, por ejemplo)
-
-
-
-
-
-
-
+Muchos aspectos que comentaremos son extrapolables a otros proyectos y sectores (móviles, por ejemplo)
 
 
 
@@ -25,21 +20,15 @@ Muchos aspectos son extrapolables a otros proyectos y sectores (móviles, por ej
 
 ## Perdemos una buena parte del control sobre el cliente
 
----
-
 No sabemos, a priori, si el acceso a nuestro proyecto será con un PC, un móvil, una tablet...
-
----
 
 Además, no sabemos el navegador, ni podemos controlar el sistema operativo
 
-(Podemos, pero seguramente *no es lo ideal*)
+*(Podemos, pero seguramente *no es lo ideal*)*
 
 ---
 
 ## Los ciclos de desarrollo son **muy cortos**
-
----
 
 La competencia en la web en **inmensa**
 
@@ -47,36 +36,19 @@ La oferta cambia constantemente (literalmente, todos los días y a todas horas)
 
 ---
 
-
 ## La ganancia y pérdida de usuarios es muy rápida (**baja inercia**)
-
----
 
 En general, es difícil alinearse con "campañas" o "temporadas"
 
----
-
 Atraer al usuario es sólo el primer paso: hay que saber mantenerlo, hacer que comunique, comparta y dé publicidad
-
 
 ---
 
 ## Nuestro código se publica abierto
 
----
-
 (O una buena parte de él)
 
----
-
 Si nuestro juego corre completamente en cliente y está en JavaScript, cualquiera podrá ver nuestro código
-
-
-
-
-
-
-
 
 
 
@@ -112,22 +84,21 @@ El código no va a estar escondido, lo que cobra valor es la idea
 
 Por tanto, la idea tiene que estar muy pronto fuera, y constantemente depurada
 
+---
+
 ## El código abierto lo puede ver cualquiera
 
 ---
 
 La idea de que la implementación tiene valor en sí misma es cada vez menos importante
 
-Hoy en día, grandes proyectos de videojuegos han dado el salto al código abierto con muchísimo éxito
+Hoy en día, [grandes proyectos de videojuegos han dado el salto al código abierto](https://es.wikipedia.org/wiki/Anexo:Videojuegos_libres) con muchísimo éxito
 
 ---
-
 
 ## Desarrollo en cliente y servidor
 
----
-
-A pesar de que hemos trabajado principalmente con código en cliente, es muy común tener una parte del desarrollo en el servidor
+A pesar de que vamos a trabajar principalmente con código en cliente, es muy común tener una parte del desarrollo en el servidor
 
 ---
 
@@ -148,15 +119,11 @@ Esto quiere decir que un juego en Internet que corra en el navegador tienen much
 
 ## No olvidemos las pruebas
 
----
-
 Probad el juego antes de publicarlo
 
 ---
 
 Las pruebas tienen que ser estrictas, aburridas, mecánicas, exhaustivas y destinadas a hacer que algo se rompa
-
----
 
 Cada versión preparada para el lanzamiento tiene que tener su propio set de pruebas
 
@@ -164,13 +131,13 @@ Cada versión preparada para el lanzamiento tiene que tener su propio set de pru
 
 ## Mantenimiento
 
----
-
 Cualquier proyecto tiene que estar mantenido
 
 No es suficiente (ni de lejos) publicar la primera versión y dejar que el juego genere beneficios por sí mismo
 
 ---
+
+## Actualización constante
 
 - Corrección de errores
 - Añadido de características demandadas
@@ -179,23 +146,11 @@ No es suficiente (ni de lejos) publicar la primera versión y dejar que el juego
 
 
 
-
-
-
-
-
-
-
-
-
-
 # Cómo **aprovechar** las particularidades
 
 ---
 
 No todo son malas noticias
-
----
 
 La razón por lo que los juegos en el navegador tienen tanto éxito (y bastante futuro a priori) es que ofrecen muchas oportunidades
 
@@ -221,7 +176,6 @@ El cliente **no** tiene que:
 
 ---
 
-
 Uno de los principios básicos de cualquier proyecto es saber *cuál es el impacto que está teniendo*
 
 ---
@@ -245,8 +199,6 @@ Cuanto más accesibles y sencillas sean, más fácil es encontrar respuesta (nad
 ---
 
 ## Aplicar la realimentación, probar y volver a desplegar ha de ser rápido
-
----
 
 Si hay algo que un proyecto que no convence al jugador y no se arregla, el jugador desaparecerá
 

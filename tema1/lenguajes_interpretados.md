@@ -2,16 +2,23 @@
 title: 'Lenguajes interpretados y dinámicos'
 ...
 
+
+
 # Lenguajes interpretados
 
+---
 
 ## Lenguajes compilados a código máquina
 
 ![Funcionamiento (Ej. C++)](compilar.dot.svg)
 
+---
+
 ## Lenguajes compilados a código intermedio (bytecode)
 
 ![Funcionamiento (Ej. C#, Java)](compilado-bytecode.dot.svg)
+
+---
 
 ## Qué son lenguajes interpretados
 
@@ -21,18 +28,19 @@ Los [lenguajes interpretados](https://en.wikipedia.org/wiki/Interpreted_language
 
 ![Esquema de lenguaje interpretado](interpretes.dot.svg){height=30%}
 
-
-
+---
 
 ## Cómo funcionan
 
 ![Funcionamiento de un intérprete](instrucciones.dot.svg)
 
-## En comparación con los compilados
+---
 
+## En comparación con los compilados
 
 ![Funcionamiento de un programa compilado](compilado.dot.svg)
 
+---
 
 ## ECMAScript
 
@@ -42,7 +50,11 @@ Comenzó como un pequeño lenguaje que se interpretaba dentro de [Netscape](http
 
 ![Logo Netscape](netscape_logo.svg){width=50%}\
 
+
+
 # Lenguajes dinámicos
+
+---
 
 ## ¿Qué son los lenguajes dinámicos?
 
@@ -50,9 +62,13 @@ Son lenguajes *diseñados para* hacer durante la ejecución lo que otros hacen c
 
 Aunque no es una clasificación perfectamente formal, se esperan ciertos atributos en estos lenguajes
 
+---
+
 ## Evaluación
 
 Los lenguajes dinámicos suelen ser capaces de evaluar código generado dinámicamente, con una función de tipo `eval`{.js}
+
+---
 
 ## Objetos dinámicos
 
@@ -63,6 +79,7 @@ const a = {};     // se define el objeto sin campos
 a.campo = 'hola'; // se añade un campo nuevo
 ```
 
+---
 
 ## Introspección
 
@@ -70,9 +87,9 @@ Otra característica típica es la *introspección* (*reflection*), o conocer y 
 
 
 
-
 # Tipado dinámico y estático
 
+---
 
 ## Tipado estático
 
@@ -84,7 +101,7 @@ Por ejemplo, a través de la declaración de tipos:
 int a = 5;
 int suma(int x, int y) { return x + y; }
 ```
-
+---
 
 ## Compilado de tipos estáticos
 
@@ -95,6 +112,7 @@ int suma(int x, int y) { return x + y; }
 
 suma(4, "juan"); // el compilador lanza un error
 ```
+---
 
 ## Tipado dinámico
 
@@ -110,6 +128,8 @@ resta(4, "juan"); // el intérprete no da error hasta que esto no se ejecuta
 
 
 # JavaScript
+
+---
 
 ## JavaScript
 
@@ -127,6 +147,8 @@ else {
 }
 ```
 
+---
+
 ## JavaScript
 
 Su sintaxis es parecida a la de C/C++/Java (intencionadamente)
@@ -135,6 +157,7 @@ Cuando JS fue creado, Java estaba muy de moda. Por eso se eligieron el nombre y 
 
 > Pero JavaScript tiene **muy poco que ver con Java**
 
+---
 
 ## JavaScript en los navegadores
 
@@ -145,6 +168,8 @@ Además, tienen un API llamado DOM (*Document Object Model*) que permite acceder
 <!-- Prueba con el navegador para ver el acceso al DOM:
 document.getElementsByTagName("h2").forEach((item) => item.style.color = "red")
  -->
+
+ ---
 
 ## JavaScript en el mundo real
 
@@ -158,7 +183,11 @@ JavaScript hoy en día se usa para:
 - Scripting
 - *Servidores*
 
+
+
 # Ejecutando JavaScript
+
+---
 
 ## En el navegador
 
@@ -167,6 +196,8 @@ A lo largo del curso, escribiremos JavaScript que se ejecutará dentro del naveg
 Porque **el navegador tiene incluido un intérprete de Javascript**
 
 Pero hay otros intérpretes que son capaces de interpretar JavaScript y **algunos no son parte de un navegador**
+
+---
 
 ## Node.js
 
@@ -177,6 +208,8 @@ Pero hay otros intérpretes que son capaces de interpretar JavaScript y **alguno
 #. Crea una representación intermedia → ¡no lo compila!
 #. Ejecuta esa representación intermedia
 
+---
+
 ## Node.js como máquina virtual
 
 Por lo tanto, `Node.js` contiene una máquina virtual capaz de leer, entender y ejecutar JS
@@ -186,6 +219,8 @@ Una MV es sólo código, un programa que "simula" ser un ordenador
 Esta máquina se llama [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine))
 
 [**V8** es el motor de [Chrome](https://www.google.com/chrome/browser/desktop/index.html).]{.fragment}
+
+---
 
 ## Usando Node.js
 

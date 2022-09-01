@@ -1,16 +1,18 @@
 ---
-title: Videojuegos en Internet
+title: Videojuegos en la Web
 ---
 
 
 # Videojuegos en la web
 
+---
 
 ## El poder de una URL
 
 - Puedes distribuir tus juegos con un simple enlace
 - Se juega directamente en el navegador, sin _plugins_
 
+---
 
 ## `<canvas>`
 
@@ -21,6 +23,7 @@ title: Videojuegos en Internet
    - API de dibujo 3D: WebGL (implementación de OpenGL ES)
    - Podéis hacer juegos 2D con WebGL también
 
+---
 
 ## WebAudio
 
@@ -31,6 +34,7 @@ title: Videojuegos en Internet
   - Osciladores, filtros. etc.
   - Sí, puedes programarte [tu propio sintetizador](https://djen.co/)
 
+---
 
 ## Input
 
@@ -39,6 +43,7 @@ title: Videojuegos en Internet
 - Ratón, teclado...
 - Otros sensores: luminosidad, giroscopio, etc.
 
+---
 
 ## JavaScript mola
 
@@ -47,24 +52,28 @@ title: Videojuegos en Internet
 - Permite desarrollar rápido
 - ¡Scripting gratis!
 
+---
 
-<!-- ## ¡Pero yo quiero vender mi juego en un marketplace!
+## ¡Pero yo quiero vender mi juego en un marketplace!
 
 - Hay wrappers para poder distribuir tu juego en Steam, App Store, Google Play...
 - Permiten que tu juego HTML5 se distribuya como una aplicación nativa
-- Ejemplos: NW.js, Electron, CocoonJS... -->
+- Ejemplos: NW.js, Electron, CocoonJS... 
 
 
-## El futuro es WebAssembly
+
+<!--## ¿El futuro es [WebAssembly](https://webassembly.org/)?
 
 - Ultrarrápido y en bytecode
 - Traductor de LLVM (C/C++) a Webassembly
 - ¡Juegos con rendimiento nativo en el browser!
+[JavaScript VS Webassambly](https://snipcart.com/blog/webassembly-vs-javascript) -->
 
 
-# Showcase
 
 # Videojuegos comerciales
+
+---
 
 ## Gods will be watching
 
@@ -72,12 +81,15 @@ title: Videojuegos en Internet
 
 <small><http://www.deconstructeam.com/games/gods-will-be-watching-es/></small>
 
+---
+
 ## Dicey Dungeons (Terry Cavanagh){width=70%}
 
 ![Dicey Dungeons](dicey-dungeons.png)
 
 <small><https://terrycavanaghgames.com/dice/9/html5/></small>
 
+---
 
 ## Heroes of Paragon
 
@@ -85,6 +97,7 @@ title: Videojuegos en Internet
 
 <https://apps.facebook.com/heroesofp>
 
+---
 
 ## The curious expedition
 
@@ -92,6 +105,7 @@ title: Videojuegos en Internet
 
 <http://www.curious-expedition.com/>
 
+---
 
 ## Iron Maiden: Speed of Light
 
@@ -99,6 +113,7 @@ title: Videojuegos en Internet
 
 <http://speedoflight.ironmaiden.com/>
 
+---
 
 ## Elliot Quest
 
@@ -107,8 +122,10 @@ title: Videojuegos en Internet
 <http://elliotquest.com/>
 
 
+
 # Videojuegos amateur, demos comerciales, game jams, etc.
 
+---
 
 ## Playcanvas' Swooop
 
@@ -116,12 +133,15 @@ title: Videojuegos en Internet
 
 <https://playcanv.as/p/JtL2iqIH/>
 
+---
 
 ## Evil Glitch
 
 [![Evil Glitch screenshot](evil_glitch.png)](http://js13kgames.com/games/evil-glitch/index.html)
 
 <http://js13kgames.com/games/evil-glitch/index.html>
+
+---
 
 ## Agar.io y Slither.io
 
@@ -131,7 +151,7 @@ title: Videojuegos en Internet
 
 <small><http://slither.io/></small>
 
-
+---
 
 ## Helloenjoy's HelloRun
 
@@ -139,12 +159,14 @@ title: Videojuegos en Internet
 
 <https://helloenjoy.com>
 
+---
 
 ## Language of the Gods
 
 ![Language of the Gods (ladybenko)](lotg.png){width=40%}
 
 <small><https://ladybenko.itch.io/the-language-of-the-gods-ld36></small>
+
 
 
 # Experimentos y curiosidades
@@ -163,31 +185,41 @@ title: Videojuegos en Internet
 
 <http://www.quakejs.com/>
 
+---
 
 ## NES Emulator
 
 <https://fir.sh/projects/jsnes/>
 
+---
 
 ## PCjs machines
 
 <http://www.pcjs.org/>
 
+---
+
 ## Webamp
 
 <https://webamp.org>
 
-## A-Painter
+
+
+<!--## A-Painter
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MTt_mN9UBqs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+
+---
 
 ## Elm Time Travelling Debugger
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8VQ6e_o2aZo" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RUeLd7T7Xi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+---
 
 ## Más demos
 
 - WebGL experiments <https://www.chromeexperiments.com/webgl>
+
 - Three.js featured projects <https://threejs.org/>
