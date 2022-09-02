@@ -2,6 +2,7 @@
 title: El modelo de ejecución de JavaScript
 ---
 
+
 # Ejecución asíncrona
 
 ---
@@ -22,11 +23,9 @@ Para esto, hay una serie de particularidades del modelo de ejecución que vamos 
 
 ---
 
-
 Como en muchos lenguajes, los nombres de las variables **pueden reutilizarse** y guardar valores distintos siempre y cuando se encuentren en **ámbitos distintos**
 
 ---
-
 
 El ámbito o _scope_ de una variable es la porción de código donde puede ser utilizada
 
@@ -34,9 +33,7 @@ El ámbito o _scope_ de una variable es la porción de código donde puede ser u
 
 ---
 
-
 El **ámbito en JavaScript es el cuerpo de la función**, delimitado entre el par de llaves `{`{.js} y `}`{.js} que siguen a la lista de parámetros de la función
-
 
 ```js
 function introduction() {
@@ -57,12 +54,9 @@ introduction();
 
 ---
 
-
 En JavaScript, las funciones pueden definirse dentro de otras funciones y de esta forma, anidar ámbitos
 
-
 El anidamiento de funciones es útil cuando se quieren usar **pequeñas funciones auxiliares**
-
 
 ```js
 function getEven(list) {
@@ -76,7 +70,6 @@ getEven([1, 2, 3, 4, 5, 6]);
 ```
 
 ---
-
 
 Como el ámbito es el de la función, el mismo nombre en una función anidada se puede referir a dos cosas
 
@@ -104,13 +97,11 @@ introduction();
 
 ---
 
-
 En el caso anterior, decimos que la variable `text`{.js} de la función anidada `greetings()`{.js} oculta a la variable `text`{.js} de la función `introduction()`{.js}
 
 ---
 
 Recuerda que para introducir una **nueva variable** necesitas declararla con `var`{.js} antes de usarla (o al mismo tiempo que la asignas)
-
 
 Si omites la palabra `var`{.js}, no estás creando una nueva variable sino **reutilizando** la que ya existía
 
@@ -134,14 +125,13 @@ function introduction() {
 introduction();
 ```
 
+---
 
 ## Hoisting
-
 
 En JavaScript da igual a qué altura de la función declares una variable JavaScript asumirá cualquier declaración como si ocurriese al comienzo de la función
 
 ---
-
 
 Es decir que esto:
 
@@ -171,7 +161,6 @@ function f() {
 }
 ```
 
-
 ---
 
 Esto quiere decir que todo lo que declaremos dentro de una función, aunque esté en otro ámbito, *afectará a toda la función*:
@@ -193,7 +182,6 @@ Además, `var`{.js} a nivel global hace que el objeto `window`{.js} en un navega
 ```
 
 ---
-
 
 Fíjate que JavaScript **_alza_ la declaración de la variable, no la inicialización**
 
@@ -221,7 +209,6 @@ f();
 
 ---
 
-
 Con las declaraciones de funciones esto no pasa: cuando una declaración de función se alza, se alza entera, **definición incluida**
 
 ```js
@@ -238,7 +225,6 @@ getEven([1, 2, 3, 4, 5, 6]);
 
 ---
 
-
 Esto permite una bonita forma de ordenar el código en el que las funciones auxiliares pueden situarse más abajo en las funciones que las utilicen
 
 
@@ -251,7 +237,6 @@ return list.filter(isEven);
 Ya podemos saber qué significa
 
 ---
-
 
 Y si aun tenemos dudas, podemos bajar e investigar qué es esa función
 
@@ -282,7 +267,6 @@ for(let b = 0; b < 10; b++);
 console.log(b); // ReferenceError
 ```
 
-
 ---
 
 `let`{.js} a nivel global, a diferencia de `var`{.js}, **no** hace que el objeto `window`{.js} en un navegador almacene el valor:
@@ -307,6 +291,8 @@ function let_vs_var() {
 }
 ```
 
+---
+
 ## `const`{.js}
 
 `const`{.js} tiene el mismo comportamiento en ámbito que `let`{.js}, pero impide que la referencia cambie
@@ -327,13 +313,13 @@ objeto = {no: "funciona"}; // da error
 
 En general, usemos `let`{.js} y `const`{.js} siempre que no necesitemos nada sofisticado, son más "razonables" que `var`{.js}
 
+
+
 # Diferencias entre ámbitos en node y el navegador
 
 ---
 
-
 Hemos dicho que el ámbito en JavaScript es equivalente a la función pero sabemos que podemos abrir una consola o un fichero y empezar a declarar variables sin necesidad de escribir una función
-
 
 Esto es así porque estamos usando el **ámbito global**
 
@@ -372,17 +358,17 @@ var text = 'I\'m Ziltoid, the Omniscient.';
 var text = 'Greetings humans!';
 ```
 
+
+
 # _Closures_
 
 ---
-
 
 Las funciones son datos y se crean cada vez que se encuentra una instrucción `function`{.js}
 
 ---
 
 De esta forma podemos crear una función que devuelva funciones
-
 
 ```js
 function buildFunction() {
@@ -405,7 +391,6 @@ f !== g; // ...pero NO son la misma función
 
 Por sí sólo, este no es un mecanismo muy potente pero sabiendo que una función anidada puede acceder a las variables de los ámbitos superiores, podemos hacer algo así:
 
-
 ```js
 function newDie(sides) {
   return function () {
@@ -423,9 +408,7 @@ d20();
 
 ---
 
-
 En JavaScript, **las funciones retienen el acceso a las variables en ámbitos superiores**
-
 
 Una **función que se refiere a alguna de las variables en ámbitos superiores se denomina _closure_**
 
@@ -433,9 +416,11 @@ Una **función que se refiere a alguna de las variables en ámbitos superiores s
 
 Esto **no afecta al valor de `this`{.js}** que seguirá siendo **el destinatario del mensaje**
 
+---
 
 ## Métodos, closures y `this`{.js}
 
+---
 
 Considera el siguiente ejemplo:
 
@@ -457,7 +442,6 @@ let diceUtils = {
 
 Nuestra intención es poder crear dados y llevar un registro de todas las tiradas que se hagan con estos dados
 
-
 Pero esto no funciona:
 
 ```js
@@ -468,7 +452,6 @@ d10(); // ¡error!
 ---
 
 Y es así porque **`this`{.js} siempre es el destinatario del mensaje** y `d10`{.js} se está llamando como si fuera una función y no un método
-
 
 Recordad que podíamos hacer que cualquier función tomara un valor forzoso como `this`{.js} con `.apply()`{.js} por lo que esto sí funciona pero es un engorro:
 
@@ -485,7 +468,6 @@ Lo que tenemos que hacer es que la función `die`{.js} dentro de `newDie`{.js} s
 ---
 
 Podemos hacer esto de dos maneras. La primera es un mero juego de variables:
-
 
 ```js
 let diceUtils = {
@@ -504,7 +486,6 @@ let diceUtils = {
 ```
 
 ---
-
 
 Esto sí funciona y es mucho más conveniente:
 
@@ -526,7 +507,6 @@ La segunda forma es usando el método [`bind()`{.js}](https://developer.mozilla.
 El método `bind()`{.js} de una función **devuelve otra función cuyo `this`{.js} será
 el primer parámetro de `bind()`{.js}**. De este modo:
 
-
 ```js
 let diceUtils = {
   history: [], // Lleva el histórico de dados
@@ -546,9 +526,7 @@ let diceUtils = {
 
 ---
 
-
 Las dos formas son **ampliamente utilizadas** pero la segunda se ve escrita muchas veces de este modo:
-
 
 ```js
 let diceUtils = {
@@ -563,7 +541,6 @@ let diceUtils = {
   }
 }
 ```
-
 
 ---
 
@@ -603,9 +580,3 @@ const c = new Clase();
 console.log(c.mal()); // NaN, NaN, NaN
 console.log(c.bien()); // 5, 10, 15
 ```
-
-
-
-
-
-

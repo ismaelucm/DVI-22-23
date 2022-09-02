@@ -18,7 +18,7 @@ title: Videojuegos en la Web
 
 - Elemento añadido a HTML5 que permite dibujar gráficos
 - Canvas 2D
-   - API de dibujo 2D: pintar una imagen, dibujar una curva bézier, manipular píxeles, etc.
+   - API de dibujo 2D: pintar una imagen, dibujar una [curva bézier](https://replit.com/@parzibyte/Curva-cuadratica-de-Bezier-en-Canvas-con-JavaScript), manipular píxeles, etc.
 - Canvas 3D
    - API de dibujo 3D: WebGL (implementación de OpenGL ES)
    - Podéis hacer juegos 2D con WebGL también
@@ -77,7 +77,7 @@ title: Videojuegos en la Web
 
 ## Gods will be watching
 
-![Gods Will Be Watching](godswillbewatching.png){width=70%}
+![Gods Will Be Watching](godswillbewatching.png){width=50%}
 
 <small><http://www.deconstructeam.com/games/gods-will-be-watching-es/></small>
 
@@ -85,7 +85,7 @@ title: Videojuegos en la Web
 
 ## Dicey Dungeons (Terry Cavanagh){width=70%}
 
-![Dicey Dungeons](dicey-dungeons.png)
+![Dicey Dungeons](dicey-dungeons.png){width=80%}
 
 <small><https://terrycavanaghgames.com/dice/9/html5/></small>
 

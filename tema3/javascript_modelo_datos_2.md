@@ -2,6 +2,7 @@
 title:  El modelo de datos de JavaScript (2)
 ---
 
+
 # Objetos y paso de mensajes
 
 --- 
@@ -11,20 +12,17 @@ Los objetos de JavaScript y el poder usar código como un valor más permite cod
 
 ## Codificando el estado
 
-
 Con lo que se ha visto hasta ahora se tiene suficiente conocimiento para codificar el estado
 
 El **conjunto de atributos** del objeto del modelado orientado a objetos se traduce al **conjunto de propiedades** de los objetos JavaScript
 
 ---
 
-
 En el ejemplo de Space Invaders, el estado de los enemigos formado por:
 
 ![Estado del enemigo en el modelado de Space Invaders](space-invaders-enemy-state.svg){width=60%}
 
 ---
-
 
 Se puede codificar mediante:
 ```js
@@ -37,7 +35,6 @@ let enemy = {
 ```
 
 ---
-
 
 La primera limitación en JavaScript es que **no se puede restringir el acceso a las propiedades de un objeto**
 
@@ -66,13 +63,13 @@ let enemy = {
 
 ---
 
-
 Pero esto es un convenio, y podemos seguir accediendo a los atributos
 
 ```js
 enemy._position.x = 100; // perfectamente válido también
 ```
 
+---
 
 ## Codificando la API
 
@@ -100,9 +97,7 @@ let enemy = {
 
 ---
 
-
 Enviar un mensaje a un objeto consiste sencillamente **acceder a una función propiedad del destinatario y llamarla**
-
 
 ```js
 enemy.shoot(); // primero accedemos con punto, luego llamamos con ()
@@ -115,7 +110,6 @@ enemy['shoot'](); // es lo mismo, acceder con corchetes y llamar con ()
 ---
 
 Cualquier función puede actuar como método. Y como cualquier propiedad de un objeto, podemos cambiarla en cualquier momento:
-
 
 ```js
 enemy.shoot(); // PICHIUM!
@@ -139,13 +133,12 @@ Obviamente, echando un vistazo a lo que hace `moveLeft()`{.js} no podríamos dec
 
 ---
 
-
 Como cualquier función puede actuar como método, necesitamos una forma de **referirnos al destinatario del mensaje**, si existe
 
 Este se guarda en la letiable **`this`{.js}**
 
-
 [Ojo con `this`{.js}... =)]{.fragment}
+
 
 
 # `this`{.js}
@@ -162,7 +155,6 @@ enemy.advance = function () { this._position.y += 2; };
 
 ---
 
-
 Ahora puedes probar el mismo experimento de antes y ver cómo efectivamente alteramos el estado del objeto:
 
 ```js
@@ -171,19 +163,17 @@ enemy.moveLeft();
 enemy; // fíjate en la posición otra vez
 ```
 
+--
+
 ## El valor de `this`{.js}
 
-
 El valor de `this`{.js} es uno de los aspectos más controvertidos de JavaScript
-
 
 En otros lenguajes métodos y funciones son cosas distintas y un método **siempre** tiene asociado un y sólo un objeto así que `this`{.js} nunca cambia
 
 ---
 
-
 Pero en JavaScript, `this`{.js} depende de cómo llamemos a la función, si la llamamos como si fuera una función o si la llamamos como si fuera un método
-
 
 Considera la siguiente función:
 
@@ -212,7 +202,6 @@ inspect();
 
 En el último caso, el valor de `this`{.js} es **el objeto global** porque la función no se está usando como un método por lo que no hay destinatario
 
-
 En JavaScript podemos hacer que cualquier objeto sea `this`{.js} en cualquier función
 
 ---
@@ -224,7 +213,6 @@ Para ello usaremos
 let onlyNameShip = { name: 'Death Star' };
 inspect.apply(onlyNameShip); // hace que this valga onlyNameShip en inspect
 ```
-
 
 A [`this`{.js}](http://dmitrysoshnikov.com/ecmascript/javascript-the-core/#this-value) se le conoce también como **objeto de contexto** y utilizaremos este término de cuando en cuando
 
@@ -247,7 +235,6 @@ Lo que vamos a hacer es saltarnos el concepto de tipo para abordar directamente 
 ![Constructores de objetos](space-invaders-constructor-example.svg){width=60%}
 
 ---
-
 
 Vamos a crear dos funciones constructoras, una para puntos y otra para disparos:
 
@@ -272,11 +259,9 @@ function newShot(position, velocity) {
 
 ---
 
-
 La forma de las funciones constructoras es muy similar: crear un objeto vacío, establecer las propiedades del objeto y devolver el nuevo objeto
 
 ---
-
 
 Ahora podemos crear un nuevo disparo con algo así:
 
@@ -290,13 +275,12 @@ let allyShot = newShot(newPoint(15, 585), -2);
 enemyShot !== allyShot;
 ```
 
+---
 
 ## Reaprovechando funcionalidad
 
-
 El problema con esta aproximación es que estamos creando funciones distintas
 para comportamientos idénticos. Una función por objeto
-
 
 ```js
 let s1 = newShot(newPoint(15, 15), 2);
@@ -311,11 +295,9 @@ s3.advance !== s1.advance;
 
 Esto es altamente ineficiente dado que cada función ocupa un espacio distinto en memoria
 
-
 No necesitamos distintas funciones sino una solamente actuando sobre distintos objetos
 
 ---
-
 
 Así que vamos a **crear un objeto que contenga sólamente la API**:
 
@@ -342,7 +324,6 @@ function newShot(position, velocity) {
 ```
 
 ---
-
 
 Ahora todas las instancias comparten la misma función pero cada función actúa sobre el objeto correspondiente gracias al uso de `this`{.js}:
 
@@ -383,9 +364,7 @@ newShot.api = {
 
 ---
 
-
 JavaScript posee una característica muy representativa y única del lenguaje: **la cadena de prototipos**
-
 
 Puedes experimentar con ella en [Object Playground](http://www.objectplayground.com/), una excelente herramienta que te ayudará a visualizarla
 
@@ -397,11 +376,9 @@ Cada elemento de la cadena es **prototipo** del objeto anterior
 
 ---
 
-
 Cuando accedemos a la propiedad de un objeto, esta propiedad se busca en el objeto y si no se encuentra, se busca en el prototipo del objeto, y así sucesivamente hasta alcanzar la propiedad o el final de esta cadena
 
 ---
-
 
 Por ejemplo:
 
@@ -416,9 +393,7 @@ obj1.z ------------------------------------------------X
 
 ---
 
-
 Crear esta jerarquía en JavaScript requiere el uso de [`Object.create()`{.js}](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/create):
-
 
 ```js
 // La cadena se monta de atrás hacia adelante
@@ -441,14 +416,11 @@ obj1.z; // undefined
 
 ---
 
-
 El método `Object.create()`{.js} crea un nuevo objeto vacío (como `{}`{.js}) cuyo prototipo es el objeto pasado como parámetro
 
 ---
 
-
 Se puede usar el método [`hasOwnProperty()`{.js}](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty) para determinar si una propiedad pertenece a un objeto sin atravesar la cadena de prototipos:
-
 
 ```js
 obj1.hasOwnProperty('c');
@@ -483,9 +455,7 @@ Object.getPrototypeOf(Object.prototype) === null;
 
 ---
 
-
 Los prototipos se prestan a ser el lugar ideal para contener la API que es el comportamiento común de todos los objetos de un tipo
-
 
 ```
 let obj = newShot()                   newShot.api
@@ -518,7 +488,6 @@ newShot.api = {
 
 ---
 
-
 Y ahora probamos a crear un nuevo disparo:
 
 ```js
@@ -530,7 +499,6 @@ Object.getPrototypeOf(shot).hasOwnProperty('advance');
 ```
 
 ---
-
 
 Si hiciéramos esto con todos los constructores, cláramente encontraríamos un
 patrón:
@@ -544,21 +512,17 @@ patrón:
 
 ---
 
-
 Sólo los pasos 2 y 4 involucran diferencias de un constructor a otro. Todo lo
 demás es exactamente igual. Tanto es así que JavaScript lo tiene en cuenta
 y viene con los mecanismos para automatizar los pasos 1, 3 y 5
 
 ---
 
-
 Primero, JavaScript permite que cualquier función pueda usarse como constructor
 
 ---
 
-
 Cada vez que escribimos una función, JavaScript **crea una propiedad de la función llamada `prototype`** que es un objeto con una única propiedad `constructor` que apunta a la función
-
 
 ```js
 function anyFunction() {}
@@ -573,7 +537,6 @@ Esto automatiza el paso 1. Ya no es necesario el objeto `api`{.js} que preparáb
 ---
 
 Ahora, al llamar a la función con el operador `new`{.js} delante, se crea un **nuevo objeto cuyo prototipo es precisamente la propiedad `prototype`{.js}** de la función:
-
 
 ```js
 let obj = new anyFunction();
@@ -598,7 +561,6 @@ para establecer la cadena de prototipos entre objeto y API
 
 Finalmente, cuando se llama con `new`{.js}, la **función recibe como objeto de contexto (recuerda, el `this`{.js}) el elemento que está siendo creado** lo que nos permite establecer sus atributos
 
-
 ```js
 function Hero(name) {
   this.name = name;
@@ -612,9 +574,7 @@ hero;
 
 ---
 
-
 Si la **función devuelve nada**, el resultado del operador `new`{.js} será el nuevo objeto. Esto automatiza el paso 5 puesto que no es necesario devolver el nuevo objeto, esta devolución se hace implícita
-
 
 Veamos como queda el constructor de punto:
 
@@ -641,7 +601,6 @@ Shot.prototype.advance = function () {
 };
 ```
 
-
 --- 
 
 Ahora crear los objetos será cuestión de usar `new`{.js}:
@@ -658,9 +617,7 @@ enemyShot !== allyShot;
 
 ---
 
-
 Sabemos como crear objetos con atributos y métodos y sabemos como hacerlo eficazmente usando constructores y la cadena de prototipos
-
 
 ![Relación de herencia entre nave y los enemigos y la nave aliada](space-invaders-hierarchy.svg){width=50%}
 
@@ -752,16 +709,12 @@ No incluimos disparar porque unos disparan hacia arriba y otros hacia abajo
 
 ---
 
-
 Recordemos que ahora los constructores de la nave aliada y los enemigos pedirán
 primero al constructor de nave una nave y luego la personalizarán
 
 ![Jerarquía de constructores](space-invaders-hierarchy-constructor.svg){width=50%}
 
-
-
 ---
-
 
 ```js
 function Enemy(graphic, position, score) {
@@ -775,15 +728,11 @@ function Ally(position) {
 }
 ```
 
-
 Con [`apply()`{.js}](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/apply) se puede ejecutar una función indicando cuál será su objeto de contexto y sus parámetros
-
 
 ---
 
-
 Con la configuración anterior, las nuevas instancias de enemigos y aliados pasarán primero por el constructor de `Ship`{.js} que establecerá los **atributos comunes** y luego serán modificados cada uno por el constructor pertinente para convertirse en enemigos o aliados concretamente
-
 
 ---
 
@@ -799,13 +748,13 @@ enemy.moveLeft ----------------------------------|
 
 ---
 
-
 De forma que los atributos del enemigo estén en la instancia, la API específica en la propiedad `prototype`{.js} del constructor `Enemy` y la API común en la propiedad `prototype`{.js} del constructor `Ship`{.js}
 
 ---
 
-
 Como ocurría con el ejemplo en la sección anterior, tendremos que crear la cadena de atrás hacia adelante. El enlace entre las instancias y los constructores nos lo proporciona JavaScript al utilizar `new`{.js} pero el enlace entre la propiedad `prototype`{.js} de `Enemy`{.js} y de `Ship`{.js} **tenemos que establecerlo manualmente**
+
+---
 
 ## Herencia en el tipo `Enemy`{.js}
 
@@ -890,13 +839,11 @@ Ship.prototype.hasOwnProperty('moveLeft');
 
 ---
 
-
 Las relaciones de herencia que acabamos de establecer nos permiten decir que un enemigo es una instancia del tipo `Enemy`{.js} pero también lo es del tipo `Ship`{.js}
 
 Una misma instancia **tiene múltiples formas** gracias a la herencia En programación orientada a objetos a esto se lo llama **polimorfismo**
 
 ---
-
 
 Alternativamente podemos decir que un enemigo es una instancia de `Enemy`{.js} porque tiene la API de `Enemy`{.js} o que es una instancia de `Ship`{.js} porque tiene la API de `Ship`{.js}
 
@@ -920,7 +867,6 @@ En lo referente al estado, resulta conveniente saber qué constructor ha constru
 
 ---
 
-
 Como todos los prototipos tienen una propiedad `constructor`{.js} que referencia al constructor que los tiene, proporcionar esta propiedad siempre recaerá sobre el primer prototipo
 
 ```js
@@ -939,15 +885,12 @@ enemy.constructor !== Ship; // es cierto que Ship fue utilizado pero nada más
 
 ---
 
-
 La frase se refiere a que más que comprobar si algo es una instancia de un tipo, deberíamos comprobar si tiene la funcionalidad que necesitamos
 
 ---
 
-
 JavaScript es tan dinámico que el operador `instanceof`{.js} y la propiedad `constructor`{.js} sólo tienen sentido si seguimos los convenios aprendidos en la lección
 
 ---
-
 
 Nada nos impide borrar la propiedad `constructor`{.js} de un prototipo o sobreescribirla en un objeto determinado. En las nuevas versiones de JavaScript, el prototipo de un objeto puede cambiar después de haber sido construido

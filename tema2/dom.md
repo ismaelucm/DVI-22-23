@@ -3,9 +3,9 @@ title: "HTML y JS: Document Object Model"
 ---
 
 
-
 # JavaScript puede interactuar con la página web
 
+---
 
 ## Document Object Model
 
@@ -13,9 +13,9 @@ title: "HTML y JS: Document Object Model"
 - Los navegadores nos dan una **interfaz para interactuar** con esta estructura: el **DOM**
 - El punto de entrada para acceder al DOM es el objeto **global `document`{.js}**
 
+---
 
 ## Ejemplo de una sección del DOM
-
 
 ```html
 <article>
@@ -34,7 +34,7 @@ title: "HTML y JS: Document Object Model"
 
 ![Sección del DOM](dom_section.png)
 
-
+---
 
 ## ¿Qué podemos hacer con el DOM?
 
@@ -46,6 +46,7 @@ title: "HTML y JS: Document Object Model"
 
 # Acceder a elementos del DOM
 
+---
 
 ## Acceder a elementos por ID
 
@@ -59,6 +60,7 @@ Sólo selecciona un elemento (las ID's deben ser únicas)
 const button = document.getElementById('show-fullscreen');
 ```
 
+---
 
 ## Acceder a elementos por selector
 
@@ -75,6 +77,7 @@ const allPars = document.querySelectorAll('p');
 
 <small>Más info sobre selectores para usar con `querySelector` en [la MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors)</small>
 
+---
 
 ## Iterar sobre una lista de elementos
 
@@ -92,7 +95,6 @@ for (const i = 0; i < buttons.length; i++) {
 
 También podemos iterar con `Array.forEach`{.js} o con `for`{.js}/`of`{.js}:
 
-
 ```js
 for (const b of buttons) {
     b.style = "display: none";
@@ -103,8 +105,7 @@ buttons.forEach(b => {
 })
 ```
 
-
-
+---
 
 ## Navegar en el DOM
 
@@ -118,6 +119,7 @@ Con esto podemos recorrer todo el DOM en cualquier dirección
 
 # Propiedades interesantes de elementos del DOM
 
+---
 
 ## `innerHTML`{.js}
 
@@ -129,6 +131,7 @@ button.innerHTML = 'Aceptar';
 p.innerHTML = 'Párrafo con <b>negrita</b>';
 ```
 
+---
 
 ## `style`
 
@@ -144,6 +147,7 @@ button.style="display:inline-block;" // muestra el botón
 
 <small>Nota: `display:none` es universal, pero para mostrar un elemento debéis elegir entre varios valores, los más comunes son `inline`, `inline-block` y `block`, pero hay muchos otros.</small>
 
+---
 
 ## `classList`
 
@@ -163,6 +167,7 @@ button.classList.toggle('loading'); // doesn't work on IE
 
 # Manipular el DOM
 
+---
 
 ## Insertar elementos
 
@@ -188,6 +193,7 @@ document.body.appendChild(button);
 
 <small>[Snippet de código](https://jsfiddle.net/mpsjmz11/1/) online</small>
 
+---
 
 ## Eliminar elementos
 
@@ -203,12 +209,14 @@ button.parentNode.removeChild(button);
 
 # Eventos
 
+---
 
 ## Eventos en el DOM
 
 - Los elementos del DOM disparan eventos a los que podemos subscribirnos (click en un botón, cambio del texto de un `<input>`{.html}, cuando seleccionamos una checkbox, etcétera)
 - `window`{.js} también dispara eventos: `load`{.js}, `resize`{.js}...
 
+---
 
 ## Escuchar eventos
 
@@ -216,6 +224,7 @@ button.parentNode.removeChild(button);
     - Usando el método `Event.addEventListener`{.js}
     - Usando los _on-event handlers_ (p.ej `onclick`{.js}, `onfocus`{.js}...)
 
+---
 
 ## On-event handlers
 
@@ -231,6 +240,7 @@ button.onclick = null;
 
 <small>Documentación [en la MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers)</small>
 
+---
 
 ## Event listeners
 
@@ -247,6 +257,7 @@ button.removeEventListener('click', sayHi);
 
 <small>Documentación [en la MDN](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)</small>
 
+---
 
 ## Bubbling
 
@@ -270,6 +281,7 @@ section.addEventListener('click', function () {
 
 <small>[Snippet de código](https://jsfiddle.net/mcx0hkou/1/) online</small>
 
+---
 
 ## Interrumpir el bubbling
 
@@ -292,6 +304,7 @@ button.addEventListener('click', function (e) {
 });
 ```
 
+---
 
 ## Cancelar el evento
 
@@ -313,7 +326,7 @@ link.addEventListener('click', function (evt) {
 });
 ```
 
-
+---
 
 ## Toda la documentación de esto está en la MDN
 

@@ -24,7 +24,9 @@ No sabemos, a priori, si el acceso a nuestro proyecto será con un PC, un móvil
 
 Además, no sabemos el navegador, ni podemos controlar el sistema operativo
 
-*(Podemos, pero seguramente *no es lo ideal*)*
+*(Podemos, pero *no es lo ideal*)*
+
+[Ejemplo de API que puede obtener info del sistema operativo](https://developer.mozilla.org/es/docs/Web/API/Navigator)
 
 ---
 
@@ -56,7 +58,7 @@ Si nuestro juego corre completamente en cliente y está en JavaScript, cualquier
 
 ---
 
-## Ser visibles
+## Conseguir Visibilidad
 
 ---
 

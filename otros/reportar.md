@@ -85,6 +85,11 @@ En el foro del Campus Virtual. **No se contestará a dudas técnicas en el corre
 
 Cualquier pregunta privada ocurre varias veces, todos los años. Si vuestra pregunta está en el foro, todos podrán beneficiarse de la solución, además de que otro compañero puede ayudaros y, a veces, con menos retraso que el equipo docente (estamos siempre atentos, pero no damos abasto muchas veces).
 
+## Al crear un tema, el asunto también es importante
+
+Sed descriptivos a la hora de crear un nuevo tema en el foro. Si bien el asunto debe ser corto, también debe resumir el tipo de problema.
+No creéis por ejemplo temas con el asunto "Error javascript". Intentad especificar sobre qué es el error o la duda dando algo más de información, esto puede ayudar a otros compañeros a la hora de buscar si su problema ya ha sido compartido y resuelto. Completad el asunto por ejemplo con el mensaje de error si es informativo o la acción / llamada que os da problemas.
+
 # Compartir es positivo
 
 No tengáis miedo de compartir material. Mostrar el código y leer código de los demás es muy didáctico y facilita la colaboración. El valor no está en el uso que se le dé a vuestro código, **lo que tiene valor es lo que aprendéis mientras lo escribís**.

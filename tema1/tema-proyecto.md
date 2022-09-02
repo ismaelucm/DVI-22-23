@@ -34,8 +34,9 @@ Segunda pista:
 - La estatua (visual)
 - El ente esculpido (personaje)
 - La intención del autor (simbologia)
+- El autor de la obra
 
----
+
 
 # Ejemplo motivador
 

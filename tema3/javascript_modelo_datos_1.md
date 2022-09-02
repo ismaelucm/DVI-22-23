@@ -2,6 +2,7 @@
 title:  El modelo de datos de JavaScript (1)
 ---
 
+
 # Fundamentos de los lenguajes
 
 ---
@@ -12,7 +13,6 @@ Lenguaje de programación = sintaxis + modelo de datos + modelo de ejecución
 
 ---
 
-
 - La [sintaxis](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference#Statements)
 es vuestra responsabilidad
 - El modelo de datos es mía
@@ -20,8 +20,8 @@ es vuestra responsabilidad
 - Y la jerga es de ambos
 
 
-# Experimentando con JavaScript
 
+# Experimentando con JavaScript
 
 ---
 
@@ -40,7 +40,6 @@ La opción `--use_strict` activa el modo estricto de JavaScript que simplifica a
 Recorta algunas características pero los beneficios son mayores que las pérdidas
 
 ---
-
 
 Ahora puedes probar a introducir algunas expresiones:
 
@@ -65,7 +64,6 @@ Para salir de _node_, presiona `ctrl+c` dos veces seguidas
 
 Si no quieres lidiar con la consola de _node_, siempre puedes escribir un programa y usar `console.log()` para mostrar expresiones por pantalla
 
-
 ```js
 // en prueba.js
 console.log(40 + 2);
@@ -75,7 +73,6 @@ console.log('Coordenada X:', point.x);
 ```
 
 ---
-
 
 Y ahora ejecutar el programa con node:
 
@@ -99,6 +96,7 @@ Para la mayoría de los ejemplos, puedes mantener la misma sesión abierta pero 
 Para reiniciar la consola tienes que **salir y volver a entrar**
 
 Lo mejor es que se tenga la presentación abierta a un lado y la consola _node_ en el otro
+
 
 
 # Peculiaridades de la sintaxis
@@ -147,12 +145,13 @@ Veréis que también se pueden difinir variables con:
 
 <small>Cuando veamos el modelo de ejecución, veremos por qué</small>
 
+---
+
 ## Una **letiable es un nombre**
 
 Para el programa, quitando algunas excepciones, los nombres no tienen significado
 
 ---
-
 
 ## Un **valor no es un nombre**
 
@@ -161,7 +160,6 @@ De hecho, sólo las funciones pueden tener nombre para poder implementar recursi
 ---
 
 Así que no es lo mismo el nombre `uno`{.js} que el valor `1`{.js}, y por supuesto, no es obligatoria ninguna relación coherente entre el nombre y el valor
-
 
 ```js
 let uno = 2; // para el programa tiene sentido. Puede que para el programador no
@@ -172,6 +170,8 @@ let uno = 2; // para el programa tiene sentido. Puede que para el programador no
 En general, hablando de booleanos, cadenas y números, decimos que los **nombres guardan valores**
 
 Si hablamos de objetos y funciones decimos que los **nombres apuntan a objetos o funciones** o **son referencias a objetos o funciones**
+
+---
 
 ## Cadenas de caracteres (string)
 
@@ -187,6 +187,8 @@ console.log(`La suma de ${s1} y ${s2} es ${s1 + s2}.`);
 ```
 
 <small>En C# se conoce como cadenas interpoladas</small>
+
+
 
 # Tipos primitivos
 
@@ -250,7 +252,6 @@ typeof function () { return 42; };
 
 ---
 
-
 En JavaScript podemos declarar una letiable y no asignarle ningún valor. En este caso el tipo de la letiable será `undefined`
 
 ```js
@@ -260,20 +261,19 @@ x = 5;    // tan pronto como le demos un valor, el tipo dejará de ser undefined
 typeof x; // number
 ```
 
+
+
 # Objetos en JavaScript
 
 ---
-
 
 De entre todos los tipos, vamos a prestar atención a aquel cuyos valores permiten la composición con otros. Es decir, los de tipo `'object'`
 
 ---
 
-
 En JavaScript, los objetos son colecciones de valores etiquetados
 
 Por ejemplo, si queremos representar el punto `(10, 15)` del plano XY podemos etiquetar el valor en el eje X con la cadena `'x'` y el valor en el eje Y con la cadena `'y'`
-
 
 ```js
 let point = { 'x': 10, 'y': 15 };
@@ -289,7 +289,6 @@ No es algo estricto, pero cuando se habla de las propiedades de un objeto se sue
 
 Si los nombres de las propiedades se escriben siguiendo las [reglas de formación de identificadores](https://developer.mozilla.org/en-US/docs/Glossary/Identifier) en JavaScript, las comillas no son necesarias
 
-
 ```js
 let point = { x: 10, y: 10 }; // mucho más conveniente
 ```
@@ -297,7 +296,6 @@ let point = { x: 10, y: 10 }; // mucho más conveniente
 ---
 
 Este es el caso **más normal**, **el recomendado** y el que usaremos a los largo del curso pero conviene saber que por detrás, **el nombre de la propiedad es una cadena**
-
 
 Para acceder a las propiedades de un objeto usamos los corchetes con el nombre de la propiedad en medio:
 
@@ -316,7 +314,6 @@ point.y;
 ```
 
 ---
-
 
 Para cambiar el valor de una propiedad usamos el operador de asignación:
 
@@ -348,7 +345,6 @@ point;
 
 ## `null`{.js}
 
-
 Existe un último valor muy relacionado con los objetos: `null`{.js}
 
 Tiene su propio tipo (`null`{.js} es de tipo `null`{.js}), pero la máquina virtual dice que el `object`{.js}, por motivos históricos:
@@ -357,7 +353,6 @@ Tiene su propio tipo (`null`{.js} es de tipo `null`{.js}), pero la máquina virt
 > typeof null;
 'object' 
 ```
-
 
 ---
 
@@ -393,7 +388,6 @@ function getNextAliveEnemy() {
 
 ---
 
-
 O bien, supón la ficha de personaje de un héroe:
 
 ```js
@@ -402,11 +396,11 @@ hero.sword = { attack: 20, magic: 5 }; // coge una espada
 hero.sword = null; // suelta la espada
 ```
 
+
+
 # Arrays
 
 ---
-
-
 
 Las **listas** o **arrays** son colecciones de **datos ordenados**
 
@@ -447,8 +441,6 @@ Se puede consultar la longitud de un array, accediendo a la propiedad `length`{.
 ```js
 menu.length;
 ```
-
-
 
 ---
 
@@ -547,8 +539,6 @@ Se puede crear un nuevo array aplicando una función a cada elemento con `map`
 
 ---
 
-
-
 Arrays y objetos tienen tipo `object` así que usaremos el método [`Array.isArray()`{.js}](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray) para distinguirlos
 
 ```js
@@ -560,11 +550,9 @@ Array.isArray(obj); // será false
 Array.isArray(arr); // será true
 ```
 
-
 ---
 
 ## Composición de objetos
-
 
 Objetos y arrays permiten cualquier composición de objetos. Es decir, sus valores pueden ser otros objetos y arrays, números, cadenas o funciones
 
@@ -599,6 +587,8 @@ hero.inventory[0].item; // qué hay en el primer slot del inventario
 hero.inventory[2].item.power; // el poder del item del tercer slot del inventario
 ```
 
+
+
 # Identidad de los objetos
 
 ---
@@ -613,7 +603,6 @@ También existe el operador de desigualdad `!==`{.js} que compara dos objetos y 
 
 Para los tipos `bool`{.js}, `string`{.js}, `number`{.js} y `undefined`{.js}, dos valores son iguales si tienen la **misma forma**:
 
-
 ```js
 // Todas estas comparaciones son verdaderas
 "Hola" === "Hola";
@@ -623,7 +612,7 @@ true === true;
 123 === 122 + 1; // primero se resuelve la expresión, luego se compara
 undefined === undefined;
 ```
-  
+
 ---
 
 Para `object` y `symbol`, dos objetos son iguales sólo si se refieren al mismo objeto o símbolo:
@@ -677,11 +666,11 @@ En general, usad siempre `===`{.js}
 
 ([Hay una explicación](https://stackoverflow.com/a/14528430))
 
+
+
 # Funciones, referencias a funciones y llamadas a funciones
 
-
 ---
-
 
 Hay dos formas de definir una función. Una es usando la **declaración de función**:
 
@@ -697,11 +686,9 @@ function factorial(number) {
 
 ---
 
-
 En este caso el nombre de la función (antes de los paréntesis) es obligatorio
 
 Esto tiene dos implicaciones:
-
 
 - Permite implementar **llamadas recursivas** como la del ejemplo
 - **Crea un nombre** `factorial` para referirnos a esa función
@@ -733,7 +720,6 @@ Ambos referencian a la misma función (con dos nombres diferentes) y ambos podr�
 
 ---
 
-
 La misma función puede referirse desde múltiples letiables o, dicho de otra manera, tener muchos nombres:
 
 ```js
@@ -751,16 +737,13 @@ Tampoco podemos confundir la referencia a la función `factorial`{.js} y la llam
 
 ---
 
-
 Con la primera forma **nos referimos al objeto** que encapsula el código que hay que ejecutar
 
 No requiere parámetros porque no queremos ejecutar el código sino sólo referirnos a la función
 
 ---
 
-
 Con la segunda estamos **pidiendo a la función que se ejecute** y por tanto tenemos que aportar todos los parámetros necesarios
-
 
 ---
 
@@ -797,8 +780,3 @@ menu.forEach( (item) => console.log(item) );
 ```
 
 <small>Tienen una propiedad muy interesante con respecto al `this` que veremos más adelante</small>
-
-
-
-
-

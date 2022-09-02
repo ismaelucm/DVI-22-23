@@ -83,7 +83,7 @@ a.campo = 'hola'; // se añade un campo nuevo
 
 ## Introspección
 
-Otra característica típica es la *introspección* (*reflection*), o conocer y cambiar las propiedades del programa en sí
+Otra característica típica es la [*introspección* (*reflection*)](https://stackoverflow.com/questions/53170245/what-is-concept-of-reflection-in-javascript), o conocer y cambiar las propiedades del programa en sí
 
 
 
