@@ -162,15 +162,19 @@ Porque TCP (el "sistema" que usa Internet) permite conectarme a mi propia máqui
 
 ## 1. Petición HTTP GET a un servidor
 
-![Petición HTTP GET](request_dance_step1.png)
+![Petición HTTP GET](request_dance_step1.png){width=60%}
 
 Se hace un HTTP GET a una URL, y si el recurso existe (y no está cacheado), el servidor lo retorna
+
+[(Existen más métodos de petición)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+
+[Curiosidad - Errores HTTP](https://http.cat/)
 
 ---
 
 ## 2. Descarga de archivos
 
-![Descarga de archivos](request_dance_step2.png)
+![Descarga de archivos](request_dance_step2.png){width=70%}
 
 Los archivos HTML pueden hacer referencia a otros recursos... que el navegador deberá pedir al servidor
 
