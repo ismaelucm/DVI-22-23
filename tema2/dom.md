@@ -149,6 +149,21 @@ button.style="display:inline-block;" // muestra el botón
 
 ---
 
+## style vs getComputedStyle()
+
+consultar una propiedad CSS con .style puede dar problemas si no hemos trabajado antes con ella
+
+```javascript
+const display = button.style.display; 
+// devolverá una cadena vacia si no se ha modificado antes en el 
+// HTML o mediante JS
+									
+const display = window.getComputedStyle(button).display 
+// devolverá el valor teniendo en cuenta el archivo .css externo 
+// y el valor por defecto del navegador
+```
+[Para más info...](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
+
 ## `classList`
 
 - Nos permite acceder a las **clases CSS** de un elemento
