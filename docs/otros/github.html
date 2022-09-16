@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Github</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../docs.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Github</h1>
+</header>
+<p>Comandos y forma de trabajar en grupos con GitHub</p>
+<h2 id="comandos-importantes">Comandos importantes</h2>
+<p>-Clonar un repositorio en local:</p>
+<pre><code>    git clone &lt;https://link-con-nombre-del-repositorio&gt;</code></pre>
+<p>-Crear una rama:</p>
+<pre><code>    git branch &lt;nombre-de-la-rama&gt;</code></pre>
+<p>-Visualizar las ramas</p>
+<pre><code>    git branch --list</code></pre>
+<p>-Cambiar a otra rama</p>
+<pre><code>    git checkout &lt;nombre-de-la-rama&gt;</code></pre>
+<p>-Crear y cambiar de rama</p>
+<pre><code>    git checkout -b &lt;nombre-de-la-rama&gt;</code></pre>
+<p>-Actualizar datos locales</p>
+<pre><code>    git fetch</code></pre>
+<p>-Descargar datos del repositorio</p>
+<pre><code>    git pull &lt;nombre-remoto&gt; &lt;nombre-rama&gt;</code></pre>
+<p>*normalmente git pull origin &lt;nombre-de-la-rama</p>
+<p>-Subir cambios realizados</p>
+<pre><code>    git push &lt;nombre-remoto&gt; &lt;nombre-rama&gt;</code></pre>
+<p>*normalmente git push origin &lt;nombre-de-la-rama)</p>
+<p>-Mostrar últimos commits de la rama actual</p>
+<pre><code>    git log</code></pre>
+<p>-Registrar cambios para hacer después hacer un commit</p>
+<pre><code>    git add -A</code></pre>
+<p>*con -A se registran todos los cambios, pero también podemos hacerlo
+por ficheros con git add <nombre-archivo></p>
+<p>-Hacer commit de los cambios registrados</p>
+<pre><code>    git commit -m “mensaje que resume los cambios”</code></pre>
+<p>-Actualizar tu rama descargan commits de otra rama</p>
+<pre><code>    git rebase &lt;nombre-remoto&gt; &lt;nombre-rama&gt;</code></pre>
+<h2 id="comandos-avanzados">Comandos avanzados</h2>
+<p>-Guardar cambios registrados pero sin commitear en una pila local</p>
+<pre><code>    git stash</code></pre>
+<p>*permite mover cambios de rama o reservarlos. Tiene comandos para
+usar los cambios guardados en la pila como: git stash apply, git stash
+pop</p>
+<p>-Eliminar commits en ramas locales</p>
+<pre><code>    git reset HEAD~&lt;nºcommits a eliminar&gt;</code></pre>
+<p>*existen varias opciones de reset como por ejemplo –soft y –hard. Con
+–soft eliminaremos los commits pero los cambios seguirán estando, esto
+permite rehacer los commits o guardar los cambios en una pila. Por su
+parte la opción –hard elimina los commits indicados y además elimina los
+cambios. Hay que tener mucho cuidado al usar este comando.</p>
+<h2 id="recomendación-de-forma-de-trabajar">Recomendación de forma de
+trabajar</h2>
+<p>El grupo tendrá al menos tantas ramas de trabajo como miembros del
+grupo + 2. En un grupo de 4 tendremos las siguientes 6 ramas:</p>
+<ul>
+<li><p><code>master</code></p></li>
+<li><p><code>io-pages</code></p></li>
+<li><p><code>miembro1</code></p></li>
+<li><p><code>miembro2</code></p></li>
+<li><p><code>miembro3</code></p></li>
+<li><p><code>miembro4</code></p></li>
+</ul>
+<p>A la hora de trabajar, los miembros deben actualizar siempre su rama
+local con el master del repositorio para asegurarse de tener los últimos
+cambios del proyecto. Para ellos por ejemplo el miembro 1 cuando vaya a
+trabajar en algo del proyecto hará:</p>
+<ul>
+<li><p><code>git fetch</code> //actualizamos la información que tenemos
+sobre el repositorio</p></li>
+<li><p><code>git checkout miembro1</code> //nos cambiamos a nuestra rama
+si no estamos en ella</p></li>
+<li><p><code>git rebase origin master</code> //actualizamos nuestra rama
+con lo nuevo que haya en la rama master del repositorio</p></li>
+<li><p>trabajamos en los archivos locales</p></li>
+<li><p><code>git add -A</code> //registramos los cambios</p></li>
+<li><p><code>git commit -m “nuevo_commit”</code> //creamos un
+commit</p></li>
+<li><p><code>git push origin miembro1</code> //subimos nuestro commit
+con los cambios a nuestra rama del repositorio</p></li>
+<li><p>ahora desde github se debe crear una pull request contra la rama
+master, otro miembro debe revisar los cambios y aceptarlos para que
+pasen a formar parte de master</p></li>
+<li><p>si la rama master tiene cambios que se quieren desplegar, se debe
+actualizar la rama io-pages con el master (puede ser mediante PR o
+actualizando la rama en local y subiendo los cambios</p></li>
+</ul>
+<h2 id="creando-prs">Creando PRs</h2>
+<p>Una <em>Pull Request</em> (PR) es la acción de validar un código que
+se va a mergear de una rama a otra</p>
+<p>Para crear una PR seguimos los siguientes pasos:</p>
+<ul>
+<li><p>Pulsamos en la pestaña “Pull requests” y luego en el botón verde
+“New pull request”</p>
+<p><img src="gh_pestanas_pr.jpg" /></p></li>
+<li><p>Seleccionamos de “base:” la rama que queremos actualizar y de
+“compare:” la rama actualizada con nuestros cambios</p>
+<p><img src="gh_crear_pr.jpg" /></p></li>
+<li><p>Esto mostrará los commits que son nuevos y no tiene la rama
+seleccionada como “base”. Si está todo bien pulsamos sobre “Create pull
+request”</p></li>
+<li><p>Ponemos una descripción del pull request y un título y volvemos a
+pulsar en “Create pull request”.</p></li>
+<li><p>Ya solo queda aceptar y “mergear” el pull request.</p>
+<p><img src="gh_validar_pr.jpg" /></p></li>
+</ul>
+</body>
+</html>
