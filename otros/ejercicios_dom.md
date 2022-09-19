@@ -56,7 +56,7 @@ window.onload = function () {
 
 ---
 
-**Pregunta**: ¿Por qué sucede esto?
+### --> **Ejercicio 1**: Contesta a la pregunta: ¿Por qué sucede esto?
 
 Recursos:
 
@@ -110,7 +110,7 @@ Comprueba que se inserta una imagen nueva con cada click en el botón:
 
 ---
 
-**Ejercicio**: en vez de crear un objeto `Image`, modifica el código para insertar HTML directamente como contenido del párrafo con `id` `kittens`.
+### --> **Ejercicio 2**: en vez de crear un objeto `Image`, modifica el código para insertar HTML directamente como contenido del párrafo con `id` `kittens`.
 
 Recursos:
 
@@ -313,7 +313,7 @@ Con esto, cada vez que se pulse el botón se añade la clase CSS `dead` al elemn
 
 ---
 
-**Ejercicio**: prueba a desactivar el botón de kill si la opción seleccionada del `<select>`{.html} es un personaje que ya está muerto.
+### --> **Ejercicio 3**: prueba a desactivar el botón de kill si la opción seleccionada del `<select>`{.html} es un personaje que ya está muerto.
 
 - Desactiva el botón nada más matar al personaje, poniendo la propiedad `disabled` de `<button>`{.html} a `true`.
 - Subscríbete al evento `change` de `<select>`{.html}, que se dispara cuando el valor seleccionado cambia.
@@ -432,7 +432,7 @@ function render() {
     // Borra todo...
     context.clearRect(0, 0, 800, 600);
     // ...y repinta.
-    renderParty();
+    renderParty(t);
     console.log('Delta time:', t - lastRender);
     lastRender = t;
     render();
@@ -539,7 +539,7 @@ party.forEach(function (char, index) {
 
 ---
 
-**Ejercicio**: modifica los `hp` de la lista `party` para que estén al máximo y haz que cuando reciban un golpe la barra se anime hasta el nuevo valor.
+### --> **Ejercicio 4**: modifica los `hp` de la lista `party` para que estén al máximo y haz que cuando reciban un golpe la barra se anime hasta el nuevo valor.
 
 # Recursos
 
