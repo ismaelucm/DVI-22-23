@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../docs.css" />
@@ -34,10 +39,6 @@ repositorio y/o al juego.</p>
 <p>Los hitos conllevarán una presentación pública en clase, el día
 correspondiente a la presentación o un día alternativo cercano, si fuera
 necesario.</p>
-<p>La <strong>clase tendrá que organizar la sesión</strong> de
-presentaciones: el orden, el tiempo por grupo, cómo centralizar el
-material de presentación, controlar el tiempo de cada grupo,
-etcétera.</p>
 <p>Los puntos que se deben abordar durante la presentación aparecerán en
 la entrega del Campus Virtual.</p>
 <h1 id="realimentación-en-las-entregas">Realimentación en las
@@ -54,6 +55,9 @@ nota.</li>
 <li>Quedarán resumidas brevemente como una nota en el campus
 virtual.</li>
 </ul>
+<p>Las preguntas y comentarios puedes realizarse en sesiones posteriores
+de laboratorio según el tiempo de las presentaciones y el número de
+grupos.</p>
 <p>Ninguna evaluación tendrá peso sobre la nota de la asignatura excepto
 la última, pero los criterios de evaluación no variarán (o sufrirán
 variaciones mínimas para adecuarlos y mejorarlos), con lo que los
@@ -65,29 +69,33 @@ entregas que estarán disponibles en el Campus Virtual.</p>
 <p>El repositorio de <code>git</code> tendrá la siguiente estructura
 desde la raíz:</p>
 <ul>
-<li><code>GDD.md</code>, el <em>game design document</em>, en <a
-href="https://guides.github.com/features/mastering-markdown/">Markdown</a></li>
 <li><code>index.html</code>, con la página web del proyecto (el archivo
 que se verá al activar GitHub pages)</li>
-<li><code>architecture.md</code>, con los documentos y diagrama de
-arquitectura</li>
-<li><code>assets.md</code>, con la descripción de los assets y las
-decisiones de dirección artística (Markdown)</li>
-<li><code>README.md</code>, el archivo en Markdown que se verá en la
-raíz de la página del repositorio. Tiene que contener, bien claro:
-<ul>
-<li>Una descripción general del proyecto</li>
-<li>Un enlace a la página de gestión del proyecto (Trello, GitHub
-Project, Pivotal…)</li>
-<li>Un enlace a la página web pública con la versión de publicación del
-juego</li>
-</ul></li>
 <li><code>/src</code>, con el código</li>
 <li><code>/assets</code>, con los recursos de audio, vídeo, mapas y
 demás (debidamente organizados)</li>
 <li><code>/slides</code>, donde se guardarán los recursos que se hayan
 usado en las presentaciones (transparencias PowerPoint, por
 ejemplo)</li>
+<li><code>README.md</code>, el archivo en <a
+href="https://guides.github.com/features/mastering-markdown/">Markdown</a>
+que se verá en la raíz de la página del repositorio. Tiene que contener,
+bien claro:
+<ul>
+<li>Que el proyecto es un trabajo universitario</li>
+<li>Redes sociales creadas para el proyecto (opcional)</li>
+<li>Una descripción general del proyecto</li>
+<li>Un enlace a la página web pública con la versión de publicación del
+juego</li>
+</ul></li>
+<li><code>GDD.md</code>, el <em>game design document</em> (puede formar
+parte del README.md)</li>
+<li><code>architecture.md</code>, con los documentos y diagrama de
+arquitectura (puede formar parte del README.md)</li>
+<li><code>assets.md</code>, descripción de los assets, las decisiones de
+dirección artística y donde se han obtenido. En caso de los assets
+propios debe indicarse la licencia ya sea propietaria o libre (puede
+formar parte del README.md)</li>
 </ul>
 </body>
 </html>
