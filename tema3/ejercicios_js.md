@@ -1,10 +1,11 @@
 ---
-title: Ejercicios
+title: Ejercicios JavaScript
 ---
 
 # Objetivos
 
-Probad estos ejemplos y tratad de responder a las preguntas. Si os atascáis con lo que hace una función, buscad en Internet la función acompañado de "mdn".
+Probad estos ejemplos y tratad de responder a las preguntas y hacer las modificaciones de código que se piden. 
+Si os atascáis con lo que hace una función, buscad en Internet la función acompañado de "mdn".
 
 # Valores booleanos en JavaScript
 
@@ -16,6 +17,18 @@ const v = 0; // después de esta prueba, cambia el valor de v por otro número.
 ```
 
 Descubre qué valores son ciertos y cuales falsos para todos los tipos: números, cadenas, objetos, funciones y undefined.
+
+---
+
+### --> **Ejercicio 1**: Escribe en un archivo el código probado y con comentarios de si los valores son ciertos o falsos.
+Ejemplo:
+```js
+!!0 // false
+!![] // true
+```
+
+Fijaros que !!0 se evalua a false y !!\[] se evalue a true pero sin embargo 0==\[] devuelve true \
+[Algo más de info aquí](https://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/)
 
 # Expresiones booleanas en JavaScript
 
@@ -69,16 +82,23 @@ function pad(target, targetLengthIn, fillIn) {
   }
   return result;
 }
+```
+---
 
-// intenta predecir el resultado de las siguientes llamadas
+### --> **Ejercicio 2**: Intenta predecir el resultado de las siguientes llamadas:
+
+```js
 pad(3);
 pad(2, 5);
 pad(2, 5, '*');
 ```
 
+Escribe en un documento el código probado, el resultado predicho y el resultado devuelto. \
+No te preocupes si no has acertado, lo importante es que acabes entendiendo que está pasando.
+
 # Buenas prácticas en el diseño de APIs
 
-Hemos dicho muchas veces que el estado no se debería exponer pero siempre acabamos enseñando este tipo de modelado para los puntos:
+El estado no se debería exponer pero siempre acabamos enseñando este tipo de modelado para los puntos:
 
 ```js
 const p = { x: 5, y: 5 };
@@ -121,11 +141,11 @@ function scale(point, factor) {
 scale(p, 10);
 ```
 
-Pero reconozcámoslo, escribir esto es un rollo soberano.
+Pero reconozcámoslo, escribir todo esto para todos nuestro objetos es muy pesado.
 
 # Propiedades computadas al rescate
 
-JavaScript permite definir un tipo especial de propiedades llamadas normalmente _propiedades computadas_ de esta guisa:
+JavaScript permite definir un tipo especial de propiedades llamadas normalmente _propiedades computadas_ de esta manera:
 
 ```js
 const p = {
@@ -154,7 +174,7 @@ function scale(point, factor) {
 scale(p, 10);
 ```
 
-Escribirlo sigue siendo un muermo (menos mal que estudiaremos como hacer factorías de objetos) pero utilizarlo es mucho más claro. Así, si ahora decides que sería mejor exponer el nombre de los ejes en mayúscula, puedes hacer:
+Escribirlo sigue siendo pesado pero utilizarlo es mucho más claro. Así, si ahora decides que sería mejor exponer el nombre de los ejes en mayúscula, puedes hacer:
 
 ```js
 const p = {
@@ -211,10 +231,12 @@ point; // no se observan propiedades...
 point.x; // ...pero aquí están.
 point.y;
 ```
+---
 
-¿Te atreves a decir por qué cuando inspeccionamos el objeto no aparecen sus propiedades? ¿Cómo podrías arreglarlo? ¿Cómo harías para que sólo se vieran las propiedades que son parte de la API?
-
+### --> **Ejercicio 3**: ¿Te atreves a decir por qué cuando inspeccionamos el objeto no aparecen sus propiedades? ¿Cómo podrías arreglarlo? ¿Cómo harías para que sólo se vieran las propiedades que son parte de la API?.
 No te lances a usar `Object.defineProperty()`{.js} si no tienes **muy claro** qué significan los términos **configurable**, **enumerable** y **writable**.
+
+Crea un archivo con las respuestas y otro con un ejemplo de código.
 
 # Usando funciones como si fueran métodos
 
@@ -233,7 +255,10 @@ fire.apply(ship, ['pichium']);
 fire.call(ship, 'pañum');
 ```
 
-¿Cuál es la diferencia entre `.apply()`{.js} y `.call()`{.js}?
+---
+
+### --> **Ejercicio 4**: ¿Cuál es la diferencia entre `.apply()`{.js} y `.call()`{.js}?
+Crea un archivo con las respuesta
 
 # Propiedades dinámicas
 
@@ -279,7 +304,10 @@ attack(enemy, hero);
 attack(hero, enemy);
 ```
 
-¿Podrías modificar el efecto del arma del héroe para incapacitar al enemigo pero no matarlo ni dañarlo? Intenta hacerlo sin reescribir el ejemplo entero.
+---
+
+### --> **Ejercicio 5**: ¿Podrías modificar el efecto del arma del héroe para incapacitar al enemigo pero no matarlo ni dañarlo? Intenta hacerlo sin reescribir el ejemplo entero.
+Crea un archivo.js con las modificaciones necesarias.
 
 # Objetos como algo más que objetos
 
@@ -304,7 +332,6 @@ Prueba a usar la función por ti mismo.
 
 Lo que JavaScript llama objetos se conoce en otros lenguajes de programación como mapas o diccionarios y a los nombres de las propiedades se los llama _claves_.
 
-¿Puedes pensar en al menos una aplicacion más?
 
 # Funciones como parámetros
 
@@ -512,8 +539,6 @@ log2(p);
 log1('Greetings', 'humans!');
 ```
 
-¿Cual es el problema? ¿Por qué no funciona el último ejemplo?
-
 Para hacer que funcione, tendríamos que llamar a `console.log()`{.js} con un número de parámetros que no sabemos a priori. Podemos usar `arguments`{.js}, no obstante:
 
 ```js
@@ -535,7 +560,10 @@ log2(p);
 log1('Greetings', 'humans!');
 ```
 
-¿Podrías decir qué hace cada línea en la función `newLog()`{.js}?
+
+
+### --> **Ejercicio 6**: ¿Podrías decir qué hace cada línea en la función `newLog()`{.js}?---
+Crea un documento con las respuestas.
 
 # Asincronía y closures
 
@@ -557,7 +585,8 @@ Trata de predecir qué pasará al ejecutar el siguiente código:
 scheduleTasks(5);
 ```
 
-¿Hace lo que esperabas? Si no es así, ¿por qué? ¿cómo lo arreglarías? Pista: necesitas la función [`.bind()`{.js}](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind).
+### --> **Ejercicio 7**: ¿Hace lo que esperabas? Si no es así, ¿por qué? ¿cómo lo arreglarías? Pista: necesitas la función [`.bind()`{.js}](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind).
+Crea un documento con la respuestas
 
 # Eventos y métodos
 
@@ -594,28 +623,28 @@ const id = setInterval(obj.advance.bind(obj), 1 * 1000);
 
 A estas alturas ya deberías saber cómo funciona `bind()`{.js} o qué hace. Si aun no lo tienes claro, búscalo en la MDN.
 
-La tarea es la siguiente: crea una función `bind()`{.js} que simule el comportamiento del método de las funciones `.bind()`{.js}. Como se pide una función y no un método, el primer parámetro será la función. Así pues, en vez de usarse así:
+### --> **Ejercicio 8**: Crea una función `bind()`{.js} que simule el comportamiento del método de las funciones `.bind()`{.js}. Como se pide una función y no un método, el primer parámetro será la función. Así pues, en vez de usarse así:
 
 ```js
-function die(sides) {
+function dice(sides) {
   const result = Math.floor(Math.random() * sides) + 1;
   this.history.push(result);
   return result;
 }
 const obj = { history: [] };
-const d20 = die.bind(obj, 20);
+const d20 = dice.bind(obj, 20);
 d20();
 ```
 
 La usaremos de esta otra forma:
 
 ```js
-function die(sides) {
+function dice(sides) {
   const result = Math.floor(Math.random() * sides) + 1;
   this.history.push(result);
   return result;
 }
 const obj = { history: [] };
-const d20 = bind(die, obj, 20); // fíjate en que ahora die es el primer parámetro
+const d20 = bind(dice, obj, 20); // fíjate en que ahora dice es el primer parámetro
 d20();
 ```
