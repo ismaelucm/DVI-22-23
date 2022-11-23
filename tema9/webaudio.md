@@ -218,13 +218,13 @@ Hoy en día las tecnologías web permiten reproducir audio desde el navegador
 
 ```html
 <audio controls>
-  <source src="https://upload.wikimedia.org/wikipedia/en/4/45/ACDC_-_Back_In_Black-sample.ogg" type="audio/ogg">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/c/ce/NEFFEX_-_Born_A_Rockstar_%28Copyright_Free%29.opus">
   Tu navegador no soporta audio
 </audio>
 ```
 
 <audio controls>
-  <source src="https://upload.wikimedia.org/wikipedia/en/4/45/ACDC_-_Back_In_Black-sample.ogg" type="audio/ogg">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/c/ce/NEFFEX_-_Born_A_Rockstar_%28Copyright_Free%29.opus">
   Tu navegador no soporta audio
 </audio>
 
