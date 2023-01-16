@@ -7,7 +7,10 @@
   - make 
   - graphviz 
   - plantuml
-  - dot
+  
+Necesario 'dot' (libreria de npm)
+  
+Después npm install para el resto de dependencias
 
 *En windows pandoc y pandoc-crossref se pueden descargar con [Scoop](https://scoop.sh/)
 
