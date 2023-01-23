@@ -77,7 +77,6 @@ Podéis escribirme para tutorías \
 
 # Evaluación
 
----
 
 ## Método de evaluación
 
@@ -170,7 +169,7 @@ Podéis obtener insignias en el CV por logros concretos relacionados con:
 ![Insignia Género Metroidvania](https://drive.google.com/uc?export=view&id=1gLq_T1YkPm7t3DbRRj5HyW6XwcINjagK){width=15%}
 
 -->
----
+
 
 ## Ficha docente
 
@@ -206,7 +205,7 @@ Si ponéis de vuestra parte, aprenderemos todos y haremos proyectos de los que e
 
 El material original de la asignatura ha sido creado por Carlos León, en colaboración con **Mozilla**
 
-Ismael Sagredo y Antonio Calvo Morata
+Con aportaciones de Ismael Sagredo y Antonio Calvo Morata
 
 ![Mozilla](mozilla.png){width=20%}\
 
