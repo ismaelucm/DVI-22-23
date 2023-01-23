@@ -67,8 +67,12 @@ Despacho 409 (4ª planta) \
 Podéis escribirme para tutorías \
 <toni@ucm.es>
 
-**_Unknown_**
 
+**Ismael Sagredo Olivenza**
+
+Despacho 409 (4ª planta) \
+Podéis escribirme para tutorías \
+<isagredo@ucm.es>
 
 
 # Evaluación
@@ -77,13 +81,11 @@ Podéis escribirme para tutorías \
 
 ## Método de evaluación
 
-Examen en convocatoria ordinaria y/o extraordinaria (60% de la nota)
-
-Proyecto, por grupos (40% de la nota)
+Proyecto, por grupos (100% de la nota)
 
 ---
 
-## Entregas
+<!--## Entregas
 
 Hay que entregar *todo* (examen y proyecto)
 
@@ -92,6 +94,7 @@ Hay que entregar *todo* (examen y proyecto)
 Todo lo aprobado se guarda para la convocatoria extraordinaria
 
 ---
+-->
 
 ## El proyecto
 
@@ -149,6 +152,7 @@ Se hará control de copias
 
 # Otra información
 
+<!--
 ---
 
 ## Insignias
@@ -165,6 +169,7 @@ Podéis obtener insignias en el CV por logros concretos relacionados con:
 ![Insignia Entregas](https://drive.google.com/uc?export=view&id=18FCh1frO32fbejEYasWeECrtPMSu1fwA){width=15%}
 ![Insignia Género Metroidvania](https://drive.google.com/uc?export=view&id=1gLq_T1YkPm7t3DbRRj5HyW6XwcINjagK){width=15%}
 
+-->
 ---
 
 ## Ficha docente
@@ -201,6 +206,8 @@ Si ponéis de vuestra parte, aprenderemos todos y haremos proyectos de los que e
 
 El material original de la asignatura ha sido creado por Carlos León, en colaboración con **Mozilla**
 
+Ismael Sagredo y Antonio Calvo Morata
+
 ![Mozilla](mozilla.png){width=20%}\
 
-¡Gracias a [Salvador de la Puente](https://es.linkedin.com/in/delapuente), [Belén Albeza](https://es.linkedin.com/in/belenalbeza) e [Ismael Sagredo](https://es.linkedin.com/in/ismael-sagredo-olivenza-b16b6937)!
+¡Gracias especiales a [Salvador de la Puente](https://es.linkedin.com/in/delapuente) y [Belén Albeza](https://es.linkedin.com/in/belenalbeza)
