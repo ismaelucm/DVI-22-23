@@ -85,16 +85,6 @@ Proyecto, por grupos (100% de la nota)
 
 ---
 
-<!--## Entregas
-
-Hay que entregar *todo* (examen y proyecto)
-
-**Todo** tiene que tener una nota **$\geq 5$**
-
-Todo lo aprobado se guarda para la convocatoria extraordinaria
-
----
--->
 
 ## El proyecto
 
@@ -152,24 +142,6 @@ Se hará control de copias
 
 # Otra información
 
-<!--
----
-
-## Insignias
-
-Podéis obtener insignias en el CV por logros concretos relacionados con:
-
-- Implementar mecánicas/géneros concretos de juego
-- Participación en clase
-- Participación en el foro del campus
-- Compleción de ejercicios/contenido opcional
-- Calidad del proyecto (código, estilo, temática...)
-
-![Insignia Participación](https://drive.google.com/uc?export=view&id=1y6w5xM2aI4e-MyvzIv5ullOTm6sBiHMy){width=15%}
-![Insignia Entregas](https://drive.google.com/uc?export=view&id=18FCh1frO32fbejEYasWeECrtPMSu1fwA){width=15%}
-![Insignia Género Metroidvania](https://drive.google.com/uc?export=view&id=1gLq_T1YkPm7t3DbRRj5HyW6XwcINjagK){width=15%}
-
--->
 ---
 
 ## Ficha docente
