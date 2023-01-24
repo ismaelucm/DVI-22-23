@@ -2,10 +2,6 @@
 title: Introducción Diseño de Videojuegos
 ---
 
-# Introducción Diseño de Videojuegos
-
----
-
 # ¿Qué es un videojuego?
 
 ---
@@ -25,7 +21,7 @@ jugador"
 
 ## ¿Qué caracteriza a un juego?
 
-- Objetivo (Proposito)
+- Objetivo (Propósito)
 - Reglas: normas que definan la acción y los límites de esta
 - Retos: Algún tipo de dificultad a superar 
 - Refuerzos y castigos: El jugador debe saber cuando lo hace bien y cuando mal
@@ -34,11 +30,11 @@ jugador"
 
 ## Géneros
 
-Igual que en las películas. Juegos que tienen ciertas características comunes que permite englobarlos en un mismo genero. Jerarquía de géneros...
-- Algunos: Plataformas, acción, beat 'm ups, lucha
+Igual que en las películas. Juegos que tienen ciertas características comunes que permite englobarlos en un mismo género. Jerarquía de géneros...
+
+- Algunos: Plataformas, acción, beat 'em ups, lucha
 - Tipos de cámara: primera, tercera, cenital, isométrica, lateral, on-rail....
 
----
 
 # Historia de los videojuegos
 
@@ -55,9 +51,9 @@ Igual que en las películas. Juegos que tienen ciertas características comunes 
 ---
 
 - Spacewar (1962) (en el MIT)
-    - Como podemos ver todo era campo y solo universidades...
+    - Todo era campo y solo universidades...
 
-![Spacewar](intro_videojuegos_002.png)
+![Spacewar](intro_videojuegos_002.png){width=80%}
 
 ---
 
@@ -73,6 +69,7 @@ Igual que en las películas. Juegos que tienen ciertas características comunes 
 
 ---
 
+
 ## Segunda generación de consolas (1977)
 
 - Se caracterizan por permitir cartuchos  intercambiables
@@ -80,7 +77,7 @@ Igual que en las películas. Juegos que tienen ciertas características comunes 
 - Empezó muy bien perooo...
 - Fuerte Crack de los videojuegos (calidad penosa)
 
-![ET](intro_videojuegos_004.png)
+![ET](intro_videojuegos_004.png){width=60%}
 
 ---
 
@@ -89,18 +86,18 @@ Igual que en las películas. Juegos que tienen ciertas características comunes 
 - Nes, Master System
 - Resurgimiento y aparición de Nintendo con toda su fuerza
 - Sega comienza también a asomar la patita
-- PReludio de la guerra de consolas de los 90
+- Preludio de la guerra de consolas de los 90
 
-![NES](intro_videojuegos_004.png)
+![NES](intro_videojuegos_005.png)
 
 ---
 
 ## Cuarta generación de consolas (Los 16 Bits)
 - Hasta ahora los procesadores era de 8 bits.
-- Ahora surgen procesadores de 16
-- Pasar de 8 a 16 bits tenía implicaciones. A partir de 32...
-– Super Nintendo, Mega Drive (Genesis), Turbografx16, Neo Geo
-– Máquina arcade en tu hogar
+- Ahora surgen procesadores de 16 bits
+- Pasar de 8 a 16 bits tenía implicaciones. A partir de 32..
+- Super Nintendo, Mega Drive (Genesis), Turbografx16, Neo Geo
+- Máquina arcade en tu hogar
 
 ---
 
@@ -109,24 +106,24 @@ Igual que en las películas. Juegos que tienen ciertas características comunes 
 - Primer juego considerado 3D o pseudo 3D: Knight Lore, Spectrum en perspectiva isométrica 3D (Ultimate => Rare)
 - Máquinas arcade (Virtua Racing)
 - Algunos intentos en los 16 bits (V racing, Star Fox)
-- PC: 1992( ID Software: wolfenstain 3D, DooM) (Pseud0 3D)
+- PC: 1992( ID Software: wolfenstain 3D, DooM) (Pseudo 3D)
 
 ---
 
 ## El 3D "casi" como lo conocemos hoy
 
-- Quake (1996)
-- Quake II / Half life
-- Playstation (1995), Sega Saturn (1994) Nintendo 64 (1996) (32 Bits*)
+- Quake (1996), Quake II / Half life
+- Playstation (1995), Sega Saturn (1994) Nintendo 64 (1996) (32 Bits*) (Super Mario 64, Tomb Raider, Metal Gear Solid, Tekken...)
+![Quake](intro_videojuegos_007.png){width=60%}
 
 ---
 
 ## Las consolas portátiles
 
-– GameBoy (1989)
-– Atari Linx
-– Game Gear
-– GameBoy advance
+- GameBoy (1989)
+- Atari Linx
+- Game Gear
+- GameBoy advance
 - PSP
 - Las modernas: Vita, Switch, "SteamDeck" ...
 
@@ -135,17 +132,26 @@ Igual que en las películas. Juegos que tienen ciertas características comunes 
 ## La irrupción del PC
 
 - Época dorada 1996-2002
-- Aparición de las aceleradoras gráficas (3DFX, Nvidia TNT) => GPUS (Gfoce 256)
-- Shaders programables
+- Aparición de las aceleradoras gráficas (3DFX, Nvidia TNT) => GPUS (Gfoce 256) Aceleración de geometría
+- Shaders programables => GeForce 3 (2001)
 
 ---
 
 ## Consolas con shaders programables
 
 - Xbox (SD)
-- Xbox 360 (HD)
-- PS3 (HD)
-- Las modernas
+- Xbox 360 (HD) en adelante
+- PS3 (HD) en adelante
+- Wii u en adelante
+
+---
+
+## La GPU cada vez cobra más protagonismo
+
+- GPGPU: Physx, Compuiter Units (DX 10 en adelante => Wii u primera consola)
+- Teselación (DX 11 en adelante, Xbox 360*, ps4/one en adelante)
+- Raytracing (Dx 12 ultimate, ps5, series X en adelante, Nvidia RTX)
+- Deep learning (Nvidia RTX)
 
 ---
 
@@ -164,15 +170,18 @@ Igual que en las películas. Juegos que tienen ciertas características comunes 
 - Nube
 - Plataformas digitales (Steam)
 
-# Roles en el desarrollo de juegos:
+
+
+# Roles en el desarrollo de juegos
 
 ---
 
 ## 3 perfiles básicos y multiples adicionales
 
-- Diseñador
-- Programador
-- Artista
+- Diseñador: El que idea el juego
+- Programador: El que lo implementa
+- Artista: el que aporta los assets gráficos
+- Otros: Sonido, guion, marketing, producción, etc...
 
 ---
 
@@ -191,7 +200,7 @@ Es el encargado de diseñar la experiencia de juego
 
 - Capacidad de comunicación
 - Buena comunicación escrita
-- Conocimientos informáticos. Cuantos más mejor.
+- Conocimientos informáticos. Cuantos más mejor
 - Conocimientos de hardware
 - Nociones de arte
 - Inglés.
@@ -200,12 +209,14 @@ Es el encargado de diseñar la experiencia de juego
 
 ## Algunos Diseñadores Famosos.
 
-- Miyamoto (Nintendo)
-- Peter Molyneux (Microsoft, Lionhead Studios, Bullfrog)
-- Ken Levine (Irrational games)
-- American McGee (ID software)
-- Jonh Romero (ID Software)
-- Hideo Kojima (Konami)
+- Miyamoto (Nintendo) : Super Mario Bros, Zelda
+- Peter Molyneux (Microsoft, Lionhead Studios, Bullfrog): Populous, Black & White
+- Ken Levine (Irrational games): Bioshock
+- American McGee (ID software): Doom, Quake, Alice: Madness Returns
+- Kim Swift (Valve): Portal
+- Robin Walker (Valve): Half Life 1, 2, Alyx, Portal
+- Jonh Romero (ID Software): DooM, Quake
+- Hideo Kojima (Konami): Metal Gear Solid
 
 --- 
 
@@ -213,7 +224,6 @@ Es el encargado de diseñar la experiencia de juego
 
 Tarea para casa, buscar un diseñador de vuestro juego favorito y el próximo día lo comentamos
 
----
 
 
 # Elementos formales del diseño de videojuegos
@@ -223,11 +233,11 @@ Tarea para casa, buscar un diseñador de vuestro juego favorito y el próximo d�
 
 ## Información disponible
 
-- Publica
-- Oculta
-- Privada
-- Privilegiada
-- Compartida
+- Pública: El jugador tiene información completa sobre el juego
+- Oculta: Información oculta para otros jugadores. La más común
+- Privada: Hay parte de información oculta pero se puede revelar
+- Privilegiada: Un jugador tiene toda la información y el resto menos
+- Compartida: Cuando se decide compartir información de forma voluntaria
 
 ---
 
@@ -240,6 +250,7 @@ Tarea para casa, buscar un diseñador de vuestro juego favorito y el próximo d�
 - Reglas: conjunto de posibilidades de interacción de los 
 jugadores con el juego (implícitas y explicitas)
 
+
 ---
 
 ## Modelo MDA
@@ -247,7 +258,7 @@ jugadores con el juego (implícitas y explicitas)
 - Mecánicas: acciones que el jugador puede llevar a cabo en el juego
 - Dinámicas: resultado de combinar diferentes 
 mecánicas (Estrategias)
-- Experiencias (Aesthetics): la sensaciones que el jugador experimenta al jugar
+- Experiencias (Aesthetics): las sensaciones que el jugador experimenta al jugar
 
 ---
 
@@ -280,6 +291,7 @@ mecánicas (Estrategias)
 
 ## Feedback
 El jugador necesita retroalimentación
+
 - Para saber qué acción ha realizado
 - Para saber si la acción realizada ha tenido alguna consecuencia
 - Para saber si la consecuencia ha sido positiva o negativa
@@ -293,7 +305,7 @@ El feedback debe ser gratificante, espectacular, vistoso, que suene bien, que te
 ---
 
 
-# Core loop
+## Core loop
 
 Es el conjunto de mecánicas que el jugador debe repetir una y otra vez
 
@@ -312,7 +324,7 @@ Negativos: Penalizan la progresión (Pueden percibirse como injustos, pero manti
 
 En el equilibrio de ambos esta el truco :)
 
+---
 
 
-
-
+## ¿Preguntas?
